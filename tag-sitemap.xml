@@ -639,14 +639,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Travel/</loc>
+        <loc>http://uegeek.com/tags/%E4%B8%AD%E6%AC%A7/</loc>
         <lastmod>2016-08-06T02:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E4%B8%AD%E6%AC%A7/</loc>
+        <loc>http://uegeek.com/tags/Travel/</loc>
         <lastmod>2016-08-06T02:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
