@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,Coding," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="编程语言虽说跟自然语言类似，但有一些本质的区别，如果不理解这些区别，编程的槛始终过不去。这篇文章尝试把几个最要紧的概念提取出来咀嚼消化。  一、变量 vs 替身例如：想要写个程序，实现：周一至至周日显示不同的早餐菜单。 我们需要有一个东西来代表“今天是周几”。可能性有 7 种，但是活在当下的只有 1 个，于是需要一个“替身”，框定它的“变身”范围是周一至周日，然后让它根据条件变变变……">
+<meta name="keywords" content="Python,Coding">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[设计师学编程]那些绕不过的概念">
+<meta property="og:url" content="http://uegeek.com/coding-concepts.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="编程语言虽说跟自然语言类似，但有一些本质的区别，如果不理解这些区别，编程的槛始终过不去。这篇文章尝试把几个最要紧的概念提取出来咀嚼消化。  一、变量 vs 替身例如：想要写个程序，实现：周一至至周日显示不同的早餐菜单。 我们需要有一个东西来代表“今天是周几”。可能性有 7 种，但是活在当下的只有 1 个，于是需要一个“替身”，框定它的“变身”范围是周一至周日，然后让它根据条件变变变……">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.uegeek.com/wp-content/uploads/2015/04/weekdays.png">
+<meta property="og:image" content="http://blog.purentonline.com/wp-content/uploads/2009/10/laduree-macarons-paris-pic1.jpg">
+<meta property="og:image" content="https://static.squarespace.com/static/52536652e4b007332ef4ecf4/52dec946e4b0ca499f87bce7/52dec96de4b0ca499f88a52b/1315347922006/1000w/MaximeBrunelle-2.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/thumbnail/604e48d0jw1eqr3oey2dcj205e05kq3c.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/qrcode_for_gh_48d79033755a_258.jpg">
+<meta property="og:updated_time" content="2016-01-03T15:34:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[设计师学编程]那些绕不过的概念">
+<meta name="twitter:description" content="编程语言虽说跟自然语言类似，但有一些本质的区别，如果不理解这些区别，编程的槛始终过不去。这篇文章尝试把几个最要紧的概念提取出来咀嚼消化。  一、变量 vs 替身例如：想要写个程序，实现：周一至至周日显示不同的早餐菜单。 我们需要有一个东西来代表“今天是周几”。可能性有 7 种，但是活在当下的只有 1 个，于是需要一个“替身”，框定它的“变身”范围是周一至周日，然后让它根据条件变变变……">
+<meta name="twitter:image" content="http://www.uegeek.com/wp-content/uploads/2015/04/weekdays.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/coding-concepts.html"/>
+
+
+
+
+
+  <title>[设计师学编程]那些绕不过的概念 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/coding-concepts.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">[设计师学编程]那些绕不过的概念</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-04-18T15:16:02+08:00">
+                2015-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/动手/" itemprop="url" rel="index">
+                    <span itemprop="name">动手</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/coding-concepts.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="coding-concepts.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>编程语言虽说跟自然语言类似，但有一些本质的区别，如果不理解这些区别，编程的槛始终过不去。这篇文章尝试把几个最要紧的概念提取出来咀嚼消化。 </p>
+<h3 id="一、变量-vs-替身"><a href="#一、变量-vs-替身" class="headerlink" title="一、变量 vs 替身"></a>一、变量 vs 替身</h3><p>例如：想要写个程序，实现：周一至至周日显示不同的早餐菜单。</p>
+<p>我们需要有一个东西来代表“今天是周几”。可能性有 7 种，但是活在当下的只有 1 个，于是需要一个“替身”，框定它的“变身”范围是周一至周日，然后让它根据条件变变变……</p>
+<a id="more"></a>
+<p><a href="http://www.uegeek.com/wp-content/uploads/2015/04/weekdays.png" target="_blank" rel="noopener"><img src="http://www.uegeek.com/wp-content/uploads/2015/04/weekdays.png" alt="weekdays"></a></p>
+<p>这是对编程思维的第一个训练：<strong>【抽象】将某种类型、某个范围内变化的“实例”，抽象为一个“代号”。</strong></p>
+<p>坑：</p>
+<p><strong>变量命名</strong></p>
+<p>大妈在上周的 QA 里面提过，这几乎是一个终极问题…… 我的理解是，这个命名同时承载了占位符、运算对象、功能解释、类型暗示、作用域暗示 等等的使命，于是短了烧脑，长了烧眼……</p>
+<p><strong>理解成本</strong></p>
+<p>虽然程序是自己写的，变量是自己命名的，但是每一次回看程序时，都存在“翻译”变量名的隐性步骤，这个步骤消耗了很多认知资源，相当于脑子里面得有很多对牵线木偶，运行前是一个，运行后是另一个……相信这是老手感受不到/回忆不起的一种状态。尤其当程序长了以后，变量越来越多，记忆变量和管理变量都成问题，还容易犯看错变量名的错误。</p>
+<p>填坑：</p>
+<ul>
+<li>定义函数时想想丫的用途和变化范围，加注释</li>
+<li>避免用三个字母以内的命名，使用一个月后再来仍然能快速理解的命名</li>
+<li>变量多的话，分一下组，或者动手画一下它们的关系帮助理清思路</li>
+</ul>
+<h3 id="二、数组-vs-分格抽屉"><a href="#二、数组-vs-分格抽屉" class="headerlink" title="二、数组 vs 分格抽屉"></a>二、数组 vs 分格抽屉</h3><p>替身虽好，但是有时候还是不好管理，执行命令起来效率有点儿低，因为同质性不够高（虽然替身都是人，但可能年龄、爱好、性取向、左撇右撇、甜豆花派咸豆花派等等都不尽相同）、以及没有按顺序排列。</p>
+<p>于是我们需要一个更“军事化”的组织——数组。数组就像一个分格抽屉：</p>
+<p><img src="http://blog.purentonline.com/wp-content/uploads/2009/10/laduree-macarons-paris-pic1.jpg" alt=""></p>
+<p>从外面看来，一个抽屉就是一个东西（里面能装很多东西）；打开抽屉，里面是按照顺序放置的同一类东西，每一格都有位置编号（指针）。</p>
+<p>这是对编程思维的第二个训练：<strong>【压缩】对同样的东西，折叠再折叠，收纳再收纳。</strong></p>
+<p>坑：</p>
+<p><strong>抽象</strong></p>
+<p>因为抽象，容易见抽屉而不见格子。写下数组太轻松 array[] ，但是一旦加入到运算中（尤其是循环），脑内演化就容易一团浆糊。</p>
+<p><strong>抽屉里面的抽屉</strong></p>
+<p>复杂性上升一维，需要先辨别是哪个抽屉，然后再定位到抽屉内的单元。</p>
+<p><img src="https://static.squarespace.com/static/52536652e4b007332ef4ecf4/52dec946e4b0ca499f87bce7/52dec96de4b0ca499f88a52b/1315347922006/1000w/MaximeBrunelle-2.jpg" alt=""></p>
+<p>小抽屉为大抽屉增加了多样性，一个抽屉放马卡龙，一个放铜锣烧，一个放…益力多…………</p>
+<p>至于N维数组……</p>
+<p><img src="http://ww2.sinaimg.cn/thumbnail/604e48d0jw1eqr3oey2dcj205e05kq3c.jpg" alt=""></p>
+<p>填坑：</p>
+<ul>
+<li>克服对数组的心理恐惧，多使用这么简洁高效的工具，嗯</li>
+<li>为对抗数组高浓缩占位符的假象，见到数组自动脑补几个空行给它</li>
+<li>对循环语句中的数组尤其警惕，试着画一画？<br>数组一直是我的槛，回头需要再补看视频和笨方法，专门写写数组的笔记。</li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="三、判断-循环-vs-防伪点钞机"><a href="#三、判断-循环-vs-防伪点钞机" class="headerlink" title="三、判断+循环 vs 防伪点钞机"></a>三、判断+循环 vs 防伪点钞机</h3><p>嗯？点钞机？</p>
+<p>点钞机工作特点：根据设定的条件，重复同一步骤。这正是 “判断+循环”的精髓。感谢它将我们从机械劳动中解放出来。</p>
+<p>下面的代码虽然只有几行，但是综合了变量、运算、循环判断、数组等等，浓缩是浓缩，坑也很多……</p>
+<blockquote>
+<p>for shapes in shape_list:</p>
+<p>if shapes[1] == “circle”:</p>
+<p>canvas.draw_circle(shapes[0],Radius, 1, “Black”,shapes[2])</p>
+<p>else:</p>
+<p>canvas.draw_polygon(shapes[0], 1, “Black”,shapes[2])</p>
+</blockquote>
+<p>以上对编程思维的第三个训练：<strong>【自动化】找出条件，识别共同步骤，循环处理，实现量变到质变。</strong></p>
+<p>坑：</p>
+<p><strong>抽象</strong><br>循环里面如果有个函数调用，再来个二维数组，脑子马上就浆糊了</p>
+<p>填坑：</p>
+<p>用 viz mode 这类的可视化工具帮助理解，训练循环折叠思维…… 推荐偶像<a href="http://worrydream.com/" target="_blank" rel="noopener">Bret Victor</a>的一篇文章：<a href="http://worrydream.com/#!/LearnableProgramming" target="_blank" rel="noopener">LEARNABLE PROGRAM — Designing a programming system for understanding programs</a> ，中文版 <a href="http://chengyichao.info/learnable-programming/" target="_blank" rel="noopener">易学编程:一个帮助理解程序的编程系统的设计</a></p>
+<p>&nbsp;</p>
+<h3 id="四、函数-vs-百宝袋"><a href="#四、函数-vs-百宝袋" class="headerlink" title="四、函数 vs 百宝袋"></a>四、函数 vs 百宝袋</h3><p>每个函数，都是哆啦A梦百宝袋里面的一件宝物！</p>
+<p>宝物的特点是什么？实现大雄的一个愿望。至于怎么实现的，大雄并不用担心。当然，想实现多个愿望，最好不要指望于一件宝物，那样往往会出bug……</p>
+<p>说回最开始一周早餐菜单的例子。要 print 不同的菜单，我们需要先判断今天是周几，这件事可以写到一个函数 whatIsTheDay() 中。以后一旦要做这件事，就 call 一下这个函数，外包这项任务给它，自己就翘着二郎腿等着它给出结果。一个程序中有多个函数，也就成了一个百宝袋。</p>
+<p>函数的强大之处还在于，可以通过参数实现定制化需求。比如我们在函数 whatIsTheDay(year,month,date) 加入三个参数 year 、month 和 date ，告诉函数：“我想知道 某年、某月、某日 是周几 ”</p>
+<p>以上是对编程思维的第四个训练：<strong>【模块化】分产承包，责任到户；结果导向，过程自理。</strong></p>
+<p>坑：</p>
+<p><strong>贵圈太乱</strong></p>
+<p>函数的调用关系复杂，你调我，它调你，你调你自己……</p>
+<p><strong>参数传递和返回结果</strong></p>
+<p>参数传递引入了新变量（认知内存中又要处理多一套对应关系 &gt;_&lt;），容易跟全局变量、函数内的局部变量混淆。而返回结果又是一个隐式的变量，不可见但影响重大。</p>
+<p><strong>交叉并行路径</strong></p>
+<p>如果只有一个明确起点，调用关系也单纯的程序就很好办。但事实往往是有多个起点入口，调用关系也复杂，偏偏程序是线性写下来的，不能按照从头到尾的顺序去读。于是到底程序从哪里开始，zeng 地蹿到了哪里，很让人头疼……</p>
+<p><strong>自定义函数和内置函数</strong></p>
+<p>内置函数的说法不对，因为那时还没有了解类，所以觉得类似frame.start()这种东西从哪来的，就把丫们看成内置函数。因为丫们不是自己亲生的，所以经常觉得陌生，尤其搞不清楚丫们之间的关系。</p>
+<p>填坑：</p>
+<ul>
+<li>明确函数功能，加注释</li>
+<li>牢记函数的输入（函数参数）和输出（返回值）</li>
+<li>多进行局部调试，print 函数返回值</li>
+<li>函数之间的调用关系，通过可视化帮助理解<br>&nbsp;</li>
+</ul>
+<h3 id="五、类-vs-招聘职位"><a href="#五、类-vs-招聘职位" class="headerlink" title="五、类 vs 招聘职位"></a>五、类 vs 招聘职位</h3><p>每一个类都包含属性（变量和值）和行为（函数）。对比一下：</p>
+<p>JD（招聘职位描述）：</p>
+<blockquote>
+<p>WXG01-微信高级交互设计师（广州）</p>
+<p>工作职责：</p>
+<ul>
+<li><p>参与微信相关产品从概念到原型的设计过程，输出相关设计文档；</p>
+</li>
+<li><p>对产品持续进行设计优化，提升用户体验；</p>
+</li>
+<li><p>协调和推动可用性测试及用户研究，以验证现有和将来的功能设计；</p>
+</li>
+<li><p>负责设计前瞻性的相关研究。</p>
+</li>
+</ul>
+<p>工作要求：</p>
+<ul>
+<li><p>工业设计、心理学、计算机、视觉传达相关背景，本科及以上学历；</p>
+</li>
+<li><p>3年以上工作经验，主导过1000万+用户的移动互联网产品的设计，具备多领域设计工作相关经验，如产品设计、硬件设计、视觉设计等；</p>
+</li>
+<li><p>对互联网交互设计有深刻理解，具备完整的理论和技术体系；</p>
+</li>
+<li><p>优秀的产品意识，良好的全局观、前瞻性和判断力；</p>
+</li>
+<li><p>同理心强烈，擅长换位及独立思考，卓越的情景还原能力；</p>
+</li>
+<li><p>优秀的沟通、组织和项目管理能力；</p>
+</li>
+<li><p>性格乐观向上，兴趣爱好广泛。</p>
+</li>
+</ul>
+</blockquote>
+<p>类：</p>
+<blockquote>
+<p>class Character:</p>
+<p>def <strong>init</strong>(self, name, initial_health): # <strong>int</strong> 初始化对象</p>
+<p>self.name = name # self 是新的对象的引用</p>
+<p>self.health = initial_health # name 和 health 是self对象中的域(field)</p>
+<p>self.inventory = []</p>
+<p>def <strong>str</strong>(self):</p>
+<p>s = “Name: “ + self.name</p>
+<p>s += “ Health: “ + str(self.health)</p>
+<p>s += “ Inventory: “ + str(self.inventory)</p>
+<p>return s</p>
+<p>def grab(self, item): # methond defines the behaviors of objects</p>
+<p>self.inventory.append(item)</p>
+<p>def get_health(self): # method 所有方法的第一个参数都是self</p>
+<p>return self.health</p>
+</blockquote>
+<p>工作要求其实就相当于类的“属性”，作为这类人，本身需要具备什么样的条件和素质；工作职责相当于类的“行为”，这类人要干什么事情。</p>
+<p>类和函数的区别在于，类只能操作某个类型的对象，而不能通过其他方法直接被调用。</p>
+<p>面向对象编程的强大之处，对于一个类，理解其接口和已实现的方法，就可以使用了。</p>
+<p>这是对编程思维的第五个训练：<strong>【面向对象】：打包成型，封装上架</strong></p>
+<p>坑：还没有真正练习过 囧，待踩。</p>
+<p>今天先到这~ 可能有很多不恰当的类别，请各位程序猿轻拍~</p>
+<hr>
+<div class="image-package imagebubble"><br><img src="http://7xjpra.com1.z0.glb.clouddn.com/qrcode_for_gh_48d79033755a_258.jpg" alt=""><br><div class="image-caption">00的公众号，更多分享酝酿中……</div><br></div>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Coding/" rel="tag"># Coding</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/what-is-ixd.html" rel="next" title="交互设计是什么？可以吃吗？">
+                <i class="fa fa-chevron-left"></i> 交互设计是什么？可以吃吗？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/questions-as-map.html" rel="prev" title="送给自己的人生地图">
+                送给自己的人生地图 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、变量-vs-替身"><span class="nav-number">1.</span> <span class="nav-text">一、变量 vs 替身</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、数组-vs-分格抽屉"><span class="nav-number">2.</span> <span class="nav-text">二、数组 vs 分格抽屉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、判断-循环-vs-防伪点钞机"><span class="nav-number">3.</span> <span class="nav-text">三、判断+循环 vs 防伪点钞机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、函数-vs-百宝袋"><span class="nav-number">4.</span> <span class="nav-text">四、函数 vs 百宝袋</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、类-vs-招聘职位"><span class="nav-number">5.</span> <span class="nav-text">五、类 vs 招聘职位</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/coding-concepts.html';
+          this.page.identifier = 'coding-concepts.html';
+          this.page.title = '[设计师学编程]那些绕不过的概念';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

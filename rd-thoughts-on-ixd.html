@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="IxD,Note,交互设计," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="好久没有正儿八经写笔记了，翻完两遍《交互设计沉思录》，还是云里雾里，不得不借助敲键盘来整理一下思路。 这是一本探讨理论的书。这类书很难写，读者一般在读的过程中频频点头认同作者的观点，但是一放下书，却又好像什么都没得到。对这一类的书，如果看完后刷新了自己对该领域的认识，就可以认为是一本好书吧。至于刷新认识，大概是看书里有没有提供一个好用的框架，帮助自己去理解这个领域，弥补过去因视角和深度的缺乏导">
+<meta name="keywords" content="IxD,Note,交互设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="科技，美学，人性——交互设计的十字路口">
+<meta property="og:url" content="http://uegeek.com/rd-thoughts-on-ixd.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="好久没有正儿八经写笔记了，翻完两遍《交互设计沉思录》，还是云里雾里，不得不借助敲键盘来整理一下思路。 这是一本探讨理论的书。这类书很难写，读者一般在读的过程中频频点头认同作者的观点，但是一放下书，却又好像什么都没得到。对这一类的书，如果看完后刷新了自己对该领域的认识，就可以认为是一本好书吧。至于刷新认识，大概是看书里有没有提供一个好用的框架，帮助自己去理解这个领域，弥补过去因视角和深度的缺乏导">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img3.douban.com/lpic/s17505146.jpg">
+<meta property="og:updated_time" content="2016-01-04T14:53:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="科技，美学，人性——交互设计的十字路口">
+<meta name="twitter:description" content="好久没有正儿八经写笔记了，翻完两遍《交互设计沉思录》，还是云里雾里，不得不借助敲键盘来整理一下思路。 这是一本探讨理论的书。这类书很难写，读者一般在读的过程中频频点头认同作者的观点，但是一放下书，却又好像什么都没得到。对这一类的书，如果看完后刷新了自己对该领域的认识，就可以认为是一本好书吧。至于刷新认识，大概是看书里有没有提供一个好用的框架，帮助自己去理解这个领域，弥补过去因视角和深度的缺乏导">
+<meta name="twitter:image" content="http://img3.douban.com/lpic/s17505146.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/rd-thoughts-on-ixd.html"/>
+
+
+
+
+
+  <title>科技，美学，人性——交互设计的十字路口 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/rd-thoughts-on-ixd.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">科技，美学，人性——交互设计的十字路口</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-05-20T23:42:18+08:00">
+                2013-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计/" itemprop="url" rel="index">
+                    <span itemprop="name">设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/rd-thoughts-on-ixd.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="rd-thoughts-on-ixd.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img3.douban.com/lpic/s17505146.jpg" alt="交互设计沉思录"> </p>
+<p>好久没有正儿八经写笔记了，翻完两遍《<a href="http://book.douban.com/subject/19934344/" target="_blank" rel="noopener">交互设计沉思录</a>》，还是云里雾里，不得不借助敲键盘来整理一下思路。</p>
+<p>这是一本探讨理论的书。这类书很难写，读者一般在读的过程中频频点头认同作者的观点，但是一放下书，却又好像什么都没得到。对这一类的书，如果看完后刷新了自己对该领域的认识，就可以认为是一本好书吧。至于刷新认识，大概是看书里有没有提供一个好用的框架，帮助自己去理解这个领域，弥补过去因视角和深度的缺乏导致的局限。这么看来，这是一本好书。<br><a id="more"></a><br>Jon在引言中首先指出了交互相关书籍的两大主题：一是集中在人机交互领域，局限在于被认知心理学和计算机科学所限定，过于强调界面元素，力图得出创建界面的最佳实践、启示和指导原则；二是集中在形体创造设计，考察元素的各种形状、组合或布局的美学价值及情感价值。但探讨技术和形式之间的语义关联几乎是一个空白。</p>
+<h3 id="交互设计为什么重要？"><a href="#交互设计为什么重要？" class="headerlink" title="交互设计为什么重要？"></a><strong>交互设计为什么重要？</strong></h3><p>交互设计立足于人、技术、设计三个领域，因为从“人”的因素出发，所以才需要去寻找技术和设计融合的最佳途径，以解决“人”的问题，提升“人”在科技世界中的生活品质。</p>
+<p>Jon对交互设计的定义是：<strong>在人与产品、服务或系统之间创建一系列对话</strong>。这种观点并不新鲜，但是作者尤其强调了“时间”因素。交互即对话，对话是随时间推进而演变的，是易变和流动的，接受、拒绝、理解、困惑贯穿其中。区分用户界面设计和交互设计，时间维度是关键，两者对时间在产品使用过程中所扮演角色的理解有本质的不同。交互设计的价值之所以被逐渐认识，正是因为人们对与自己打交道的物品/系统的要求越来越高，互动发生在一定时间段，而不仅仅是接触的一瞬间。怎样让机器/系统拥有与人自然对话的能力，弥合语言鸿沟促进对话，是交互设计师的责任所在。</p>
+<p>交互设计师是行为的塑造者，借由人与产品之间的持续对话来支持产品的使用体验。交互设计的目标是试图随着时间的推移，逐渐理解并塑造人的行为。所以其使命首先是观察人类：尝试理解并改变人们做什么事情、经历什么样的感受，以及脑子里思考什么事情；然后在复杂想法中寻求平衡：需要考虑问题的两个极端——最大的和最小的、概念层面和实效层面的、人类层面和技术层面的等。</p>
+<p>顺便提一下困扰自己的问题：互动设计和交互设计的区别是什么？Jon认为互动式媒体设计几乎总是以技术为中心，而交互设计以人为中心。这一点很好地体现在一般的设计过程中。</p>
+<h3 id="万变不离其宗的设计过程"><a href="#万变不离其宗的设计过程" class="headerlink" title="万变不离其宗的设计过程"></a><strong>万变不离其宗的设计过程</strong></h3><p>CMU的设计流程框架：define定义——discover发现——synthesize综合——construct建构——refine精化——reflect反思</p>
+<p>IDEO的四步设计过程：observation——brainstorming——prototyping——implementation</p>
+<p>Design Edge的三部设计过程：define——discover——develop</p>
+<p>Smart Design的三步设计过程：conceive——create——complete</p>
+<p>这些经典的设计过程，基本都包含以下步骤：</p>
+<ul>
+<li>a 定义设计问题或机遇：人们所处的场景和经历的故事是什么？</li>
+<li>b 发现隐藏的欲求、需求和欲望：尝试理解人们做什么事情以及为什么，实境调查的四大原则是focus、context、partnership和interpretation</li>
+<li>c 综合、建构和精化：先发散探索多种解决方式，然后收敛定位最佳答案</li>
+<li>d 反思和评估<br>可见设计思维所强调的是情境启发、定义问题和方案探索。</li>
+</ul>
+<p>信息架构是很多交互设计师的工作范畴之一。在虚拟的空间中为人们提供类似地图的指向服务，是互联网时代设计师的一大课题。信息架构从效用来说，是为了让人们在浏览、使用某个产品时，清楚自己在哪里、可以去哪里、怎么去哪里；而从根本目标来看，信息架构其实是为了实现从数据到信息到知识到智慧的升华。信息是能表述意义的数据组织形式，经由信息得出原则、理论、论点等就产生了知识，智慧是以新的、与众不同的方式应用知识获得的启示。</p>
+<p>设计过程中常用的一些可视化方法：</p>
+<ul>
+<li>用亲和图组织数据</li>
+<li>用概念图将系统视觉化</li>
+<li>用流程图展现决策过程</li>
+<li>用Ecosystem Diagram展现Engagement Point</li>
+<li>用Journey Map体现交互序列 ：常用来描述线性的最佳场景</li>
+</ul>
+<p>设计的难点有二：如何发现隐含的限制条件，如何把握隐含限制条件与明确限制条件之间的平衡。</p>
+<h3 id="交互设计不仅仅关乎可用性和效率"><a href="#交互设计不仅仅关乎可用性和效率" class="headerlink" title="交互设计不仅仅关乎可用性和效率"></a><strong>交互设计不仅仅关乎可用性和效率</strong></h3><p>关注可用性的设计师会致力于减少设计在认知上的不协调，强调速度和完成任务所需的时间，旨在把用户使用复杂系统时可能犯下的错误的数目见到最小。但如果要让用户与产品发生的交互能以具有诗意的方式与用户产生共鸣，还必需满足三点：</p>
+<ol>
+<li>交互要有代入感；</li>
+<li>对于索要完成的任务而言，交互要足够复杂，以使用户进入一种专注的状态；</li>
+<li>交互具有高度可感知性。</li>
+</ol>
+<h3 id="交互设计对文化的影响"><a href="#交互设计对文化的影响" class="headerlink" title="交互设计对文化的影响"></a><strong>交互设计对文化的影响</strong></h3><p>交互设计如何影响并塑造着文化，Jon花了不少篇幅去阐述。他认为设计师所缺乏的不是解决社会问题、影响文化的能力，而是责任感和自我意识。设计师能做的最重大却也经常是最缺乏深思熟虑的决定，就是选择设计什么样的东西。并非所有设计问题都同等重要，也并不是所有设计问题都值得去解决。设计师需要明白，自己的工作之所以能够开展，是因为自己对解决问题的领域或类型做出了选择，自己的时间用在何处依赖于这个决定。Jon在最后一部分几乎是大声疾呼设计师们反思自己的工作和贡献，提醒我们设计的思维和方法其实有更广阔的价值空间。</p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>用Jon的话总结并且自勉吧：</p>
+<blockquote>
+<p>只有把科技、美学和人性三者融合到一起，我们才能踏入交互设计的世界。交互设计研究的是人与事物之间的对话，因此它能为科技的进步带来和谐之音。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/IxD/" rel="tag"># IxD</a>
+          
+            <a href="/tags/Note/" rel="tag"># Note</a>
+          
+            <a href="/tags/交互设计/" rel="tag"># 交互设计</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/konwing-without-understanding.html" rel="next" title="知道，但并不懂得">
+                <i class="fa fa-chevron-left"></i> 知道，但并不懂得
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/leapmotion-app.html" rel="prev" title="Leapmotion那些让手抽筋的app">
+                Leapmotion那些让手抽筋的app <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#交互设计为什么重要？"><span class="nav-number">1.</span> <span class="nav-text">交互设计为什么重要？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#万变不离其宗的设计过程"><span class="nav-number">2.</span> <span class="nav-text">万变不离其宗的设计过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交互设计不仅仅关乎可用性和效率"><span class="nav-number">3.</span> <span class="nav-text">交互设计不仅仅关乎可用性和效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交互设计对文化的影响"><span class="nav-number">4.</span> <span class="nav-text">交互设计对文化的影响</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">5.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/rd-thoughts-on-ixd.html';
+          this.page.identifier = 'rd-thoughts-on-ixd.html';
+          this.page.title = '科技，美学，人性——交互设计的十字路口';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

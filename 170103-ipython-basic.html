@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,Data Science,IPython," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="Python,Data Science,IPython">
+<meta property="og:type" content="article">
+<meta property="og:title" content="菜鸟数据科学入门02 - IPython 基础">
+<meta property="og:url" content="http://uegeek.com/170103-ipython-basic.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/170103IPython_basic_title.png">
+<meta property="og:image" content="http://image.slidesharecdn.com/1idanielrodriguez-160614230356/95/connecting-python-to-the-spark-ecosystem-3-638.jpg?cb=1465945555">
+<meta property="og:image" content="http://jupyter.org/assets/jupyterpreview.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/IP.SS.cell.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/IP.SS.celltype.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/IP.SS.tab.jpg">
+<meta property="og:updated_time" content="2017-01-07T09:41:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="菜鸟数据科学入门02 - IPython 基础">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/170103IPython_basic_title.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/170103-ipython-basic.html"/>
+
+
+
+
+
+  <title>菜鸟数据科学入门02 - IPython 基础 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/170103-ipython-basic.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">菜鸟数据科学入门02 - IPython 基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-03T18:07:48+08:00">
+                2017-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/动手/" itemprop="url" rel="index">
+                    <span itemprop="name">动手</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/170103-ipython-basic.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="170103-ipython-basic.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/170103IPython_basic_title.png" alt=""></p>
+<a id="more"></a> 
+<h2 id="一、为什么要用-IPython？"><a href="#一、为什么要用-IPython？" class="headerlink" title="一、为什么要用 IPython？"></a>一、为什么要用 IPython？</h2><p><a href="http://ipython.org/" target="_blank" rel="noopener">IPython</a> (Interactive Python 的简写) 是一个强大的交互式 Python Shell，由 Fernando Perez 在 2001 发起。它的目标是提供 “Tools for the entire life cycle of research computing.” 如果说 Python 是数据科学操作的引擎，那么 IPython 就是交互式的控制面板。</p>
+<p>IPython 的优点：</p>
+<ul>
+<li>交互式和批处理功能</li>
+<li>提高编写、测试速度，执行结果立即可见，方便调试</li>
+<li>同时保存脚本和计算过程，可重复可互动</li>
+<li>丰富的数据可视化工具</li>
+<li>能在本地计算机上对远程服务器中的数据进行分析</li>
+<li>兼容 markdown 语法，满足数据分析、课程教学、博客写作等需求</li>
+</ul>
+<p>Python Scientific Ecosystem</p>
+<p><img src="http://image.slidesharecdn.com/1idanielrodriguez-160614230356/95/connecting-python-to-the-spark-ecosystem-3-638.jpg?cb=1465945555" alt=""></p>
+<p>IPython 只是为 NumPy、Scipy、Pandas、Matplotlib 等包提供一个交互式接口。其本身并不提供科学计算的功能。这些工具组合在一起，形成了可以匹敌如 Matlab、Mathmatic 这些复杂工具的科学计算框架。</p>
+<h2 id="二、Shell-or-Notebook"><a href="#二、Shell-or-Notebook" class="headerlink" title="二、Shell or Notebook?"></a>二、Shell or Notebook?</h2><p>使用 IPython 有两种方式（前提是已经<a href="http://jupyter.readthedocs.io/en/latest/install.html" target="_blank" rel="noopener">安装好 IPython</a>）。</p>
+<h3 id="在命令行中使用"><a href="#在命令行中使用" class="headerlink" title="在命令行中使用"></a>在命令行中使用</h3><p>在命令行中输入 <code>ipython</code>，进入 IPython 环境：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Python 2.7.10 (default, Jul 30 2016, 19:40:32)</span><br><span class="line">Type &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line"></span><br><span class="line">IPython 5.1.0 -- An enhanced Interactive Python.</span><br><span class="line">?         -&gt; Introduction and overview of IPython&apos;s features.</span><br><span class="line">%quickref -&gt; Quick reference.</span><br><span class="line">help      -&gt; Python&apos;s own help system.</span><br><span class="line">object?   -&gt; Details about &apos;object&apos;, use &apos;object??&apos; for extra details.</span><br><span class="line"></span><br><span class="line">In [1]:</span><br></pre></td></tr></table></figure>
+<h3 id="在-Jupyter-Notebook-中使用"><a href="#在-Jupyter-Notebook-中使用" class="headerlink" title="在 Jupyter Notebook 中使用"></a>在 Jupyter Notebook 中使用</h3><p><a href="http://jupyter.org/" target="_blank" rel="noopener">Jupyter Notebook</a> 是基于浏览器的 IPython shell 图形界面，非常适合用于开发、协同、分享甚至是发布数据科学研究成果。Notebook 以 JSON 格式保存整个交互式会话，可以兼容 Python 代码，文本标记语言如 Markdown，图片，视频，媒体内容等。 IPython Notebook 在 Python 社区中越来越普遍，特别是在科学研究与教育领域，很多课程/博客/书籍都是用 Notebook 写的。</p>
+<p><a href="http://jupyter.org/install.html" target="_blank" rel="noopener">安装 Jupyter</a> 后，在命令行输入 <code>jupyter notebook</code>，进入 IPython 环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[I 15:28:38.305 NotebookApp] Serving notebooks from local directory: /Users/kidult/Workspace/PresentWrok/OpenMind/2016.OM.DS/my_venv</span><br><span class="line">[I 15:28:38.305 NotebookApp] 0 active kernels</span><br><span class="line">[I 15:28:38.305 NotebookApp] The Jupyter Notebook is running at: http://localhost:8888/</span><br><span class="line">[I 15:28:38.305 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).</span><br></pre></td></tr></table></figure>
+<p>浏览器会打开本地的 Jupyter 控制台，新建或选择 .ipynb 后缀文件打开，就可以看到 Notebook 的页面了：</p>
+<p><img src="http://jupyter.org/assets/jupyterpreview.png" alt=""></p>
+<h2 id="三、Notebook-基本结构和操作"><a href="#三、Notebook-基本结构和操作" class="headerlink" title="三、Notebook 基本结构和操作"></a>三、Notebook 基本结构和操作</h2><p>在 Jupyter Notebook 中，基本的操作单元是 cell：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/IP.SS.cell.jpg" alt=""></p>
+<p>每个 cell 由 <code>In</code>和<code>Out</code>，即输入和输出部分组成。在这里，IPython 实际上生成了名叫 <code>In</code>和<code>Out</code> 的 Python 变量，把操作历史存储起来，以便随时调用。<code>_</code>可调用上一个输出，<code>_X</code>可调用 <code>Out[X]</code> 的输出。</p>
+<p>IPython 中的 cell 支持 Markdown 格式，所以很适合用来生成带源码和运行结果的文档。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/IP.SS.celltype.jpg" alt=""></p>
+<p>Notebook 中常用操作</p>
+<p>命令模式 (按 <code>Esc</code> 键进入)</p>
+<table>
+<thead>
+<tr>
+<th>键盘</th>
+<th>命令</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>↩</td>
+<td>回车</td>
+<td>进入编辑模式</td>
+</tr>
+<tr>
+<td>⇧↩</td>
+<td>shift+回车</td>
+<td>运行 cell，选择下一个 cell</td>
+</tr>
+<tr>
+<td>M</td>
+<td>M 键</td>
+<td>切换为 Markdown 格式</td>
+</tr>
+<tr>
+<td>A</td>
+<td>A 键</td>
+<td>在上方插入 cell </td>
+</tr>
+<tr>
+<td>B</td>
+<td>B 键</td>
+<td>在下方插入 cell </td>
+</tr>
+<tr>
+<td>D,D</td>
+<td>按两次 D 键</td>
+<td>删除所选 cell</td>
+</tr>
+<tr>
+<td>H</td>
+<td>H 键</td>
+<td>显示快捷键</td>
+</tr>
+</tbody>
+</table>
+<p>编辑模式 (按 <code>Enter</code> 键进入)</p>
+<table>
+<thead>
+<tr>
+<th>键盘</th>
+<th>命令</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>⌘]</td>
+<td>command + ]</td>
+<td>缩进</td>
+</tr>
+<tr>
+<td>⌘[</td>
+<td>command + ]</td>
+<td>取消缩进</td>
+</tr>
+<tr>
+<td>⌘Z</td>
+<td>command + Z</td>
+<td>撤销</td>
+</tr>
+<tr>
+<td>⌘⇧Z</td>
+<td>command + shift + Z</td>
+<td>重做</td>
+</tr>
+<tr>
+<td>⌘↑</td>
+<td>command + up 键</td>
+<td>跳到 cell 开头</td>
+</tr>
+<tr>
+<td>⌘↓</td>
+<td>command + down 键</td>
+<td>跳到 cell 结尾</td>
+</tr>
+</tbody>
+</table>
+<h2 id="四、实用功能"><a href="#四、实用功能" class="headerlink" title="四、实用功能"></a>四、实用功能</h2><h3 id="Tab自动补全"><a href="#Tab自动补全" class="headerlink" title="Tab自动补全"></a>Tab自动补全</h3><p>在输入命令时按下 tab 键，可以查看补全选项：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/IP.SS.tab.jpg" alt=""></p>
+<h3 id="用-查询文档"><a href="#用-查询文档" class="headerlink" title="用 ? 查询文档"></a>用 <code>?</code> 查询文档</h3><p>比如，要查询 <code>len</code> 的用法，只需要输入 <code>len?</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [2]: len?</span><br><span class="line"></span><br><span class="line">Type:        builtin_function_or_method</span><br><span class="line">String form: &lt;built-in function len&gt;</span><br><span class="line">Namespace:   Python builtin</span><br><span class="line">Docstring:</span><br><span class="line">len(object) -&gt; integer</span><br><span class="line"></span><br><span class="line">Return the number of items of a sequence or mapping.</span><br></pre></td></tr></table></figure>
+<p>另外，用 <code>??</code> 可以查看源代码，比如输入<code>square??</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [8]: square??</span><br><span class="line"></span><br><span class="line">Type:        function</span><br><span class="line">String form: &lt;function square at 0x103713cb0&gt;</span><br><span class="line">Definition:  square(a)</span><br><span class="line">Source:</span><br><span class="line">def square(a):</span><br><span class="line">    &quot;Return the square of a&quot;</span><br><span class="line">    return a ** 2</span><br></pre></td></tr></table></figure>
+<h3 id="魔法命令"><a href="#魔法命令" class="headerlink" title="魔法命令"></a>魔法命令</h3><p>通过<code>%lsmagic</code>即可查看，以下为部分命令：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>命令说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%hist</td>
+<td>查询输入的历史</td>
+</tr>
+<tr>
+<td>%reset</td>
+<td>清空 namespace</td>
+</tr>
+<tr>
+<td>%time</td>
+<td>显示 Python语句的执行时间，包括 cpu time 和 wall clock time</td>
+</tr>
+<tr>
+<td>%timeit</td>
+<td>显示 Python语句的执行时间，但是这个命令会多次执行相应的语句（可以指定次数）<code>%timeit</code>  </td>
+</tr>
+<tr>
+<td>%bookmark</td>
+<td>用于存储常用路径</td>
+</tr>
+<tr>
+<td>%cd</td>
+<td>进入目录命令</td>
+</tr>
+<tr>
+<td>%env</td>
+<td>显示系统环境变量</td>
+</tr>
+<tr>
+<td>%pushd dir</td>
+<td>将当前目录入栈，并进入dir指定的目录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="http://nbviewer.jupyter.org/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/Index.ipynb" target="_blank" rel="noopener">Python Data Science Handbook</a></li>
+<li><a href="http://ipython.org/" target="_blank" rel="noopener">IPython.org</a></li>
+<li><a href="https://www.gitbook.com/book/itacey/learning_ipython" target="_blank" rel="noopener">学习IPython进行交互式编程和数据可视化</a></li>
+<li><a href="https://www.zhihu.com/question/51467397" target="_blank" rel="noopener">使用IPython有哪些好处？ - 知乎</a></li>
+<li><a href="http://www.jianshu.com/p/61f8f7a68bbe" target="_blank" rel="noopener">为什么要使用IPython？ - 简书</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Data-Science/" rel="tag"># Data Science</a>
+          
+            <a href="/tags/IPython/" rel="tag"># IPython</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/170101-data-science-toolkit.html" rel="next" title="菜鸟数据科学入门01 - 工具包概略">
+                <i class="fa fa-chevron-left"></i> 菜鸟数据科学入门01 - 工具包概略
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/170105-read-what-is-design.html" rel="prev" title="17°读书会笔记[1]-设计是什么">
+                17°读书会笔记[1]-设计是什么 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、为什么要用-IPython？"><span class="nav-number">1.</span> <span class="nav-text">一、为什么要用 IPython？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Shell-or-Notebook"><span class="nav-number">2.</span> <span class="nav-text">二、Shell or Notebook?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在命令行中使用"><span class="nav-number">2.1.</span> <span class="nav-text">在命令行中使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-Jupyter-Notebook-中使用"><span class="nav-number">2.2.</span> <span class="nav-text">在 Jupyter Notebook 中使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Notebook-基本结构和操作"><span class="nav-number">3.</span> <span class="nav-text">三、Notebook 基本结构和操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、实用功能"><span class="nav-number">4.</span> <span class="nav-text">四、实用功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tab自动补全"><span class="nav-number">4.1.</span> <span class="nav-text">Tab自动补全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用-查询文档"><span class="nav-number">4.2.</span> <span class="nav-text">用 ? 查询文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#魔法命令"><span class="nav-number">4.3.</span> <span class="nav-text">魔法命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">4.4.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/170103-ipython-basic.html';
+          this.page.identifier = '170103-ipython-basic.html';
+          this.page.title = '菜鸟数据科学入门02 - IPython 基础';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

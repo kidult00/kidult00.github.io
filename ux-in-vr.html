@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="VR," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="VR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VR 中的体验要素">
+<meta property="og:url" content="http://uegeek.com/ux-in-vr.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/UXinVR.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/UX-dimension.png">
+<meta property="og:image" content="http://i-cdn.phonearena.com/images/article/82273-image/A-new-research-deals-with-VR-motion-sickness-in-an-innovative-way.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/maxresdefault.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/VRlatency.png">
+<meta property="og:image" content="http://pop.h-cdn.co/assets/16/19/640x716/gallery-1462890237-vrvoid2.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Vrideo-Gear-VR-Video.png">
+<meta property="og:image" content="http://static1.squarespace.com/static/54a39ca2e4b01ff9ee486c1d/t/561fbcb6e4b0aac55322c0fc/1444920531434/?format=2500w">
+<meta property="og:image" content="http://forum.unity3d.com/attachments/notouchguiscreenshot-png.123221/">
+<meta property="og:updated_time" content="2016-09-25T23:53:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VR 中的体验要素">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/UXinVR.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/ux-in-vr.html"/>
+
+
+
+
+
+  <title>VR 中的体验要素 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/ux-in-vr.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">VR 中的体验要素</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-09T07:24:11+08:00">
+                2016-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/动手/" itemprop="url" rel="index">
+                    <span itemprop="name">动手</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/ux-in-vr.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="ux-in-vr.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/UXinVR.png" alt=""></p>
+<a id="more"></a> 
+<p>对大部分设计师来说，VR 是一个全新的领域。VR 中关于 UX (User Experience) 的研究并不多。这个时候要提出类似 Web 时代的用户体验要素，还为时尚早。不过我们可以试着总结一下，影响 VR 中用户体验的要素可能会有哪些。</p>
+<p>先想想这样一个问题：</p>
+<blockquote>
+<p>什么样的体验，是好的 VR 体验？</p>
+<p>可以从哪几个维度去评估呢？</p>
+</blockquote>
+<p>00 试着先用两个维度来概括：舒适度和沉浸感。不一定正确、全面，只是作为梳理的线索，欢迎大家补充。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/UX-dimension.png" alt=""></p>
+<h3 id="舒适度"><a href="#舒适度" class="headerlink" title="舒适度"></a>舒适度</h3><h4 id="减少眩晕"><a href="#减少眩晕" class="headerlink" title="减少眩晕"></a>减少眩晕</h4><p>体验过 VR ，特别是早期设备的人，除了惊异于沉浸的体验之余，多少会感到不舒服 —— 有点眩晕，头盔挺沉的，手臂僵硬……</p>
+<p><img src="http://i-cdn.phonearena.com/images/article/82273-image/A-new-research-deals-with-VR-motion-sickness-in-an-innovative-way.jpg" alt=""></p>
+<p>舒适度是 VR 用户体验的第一要素（因为实在还说不上舒适）。“晕 VR” 目前还是普遍现象，相信随着对晕动症 (Motion sickness) 研究的深入和技术进步，在 VR 中的舒适感会持续提升。可以想象，VR 中的应用尤其是游戏，需要提供关于 3D、运动等舒适度的选项，帮助那些生理反应更敏感的用户调整到最优的个性化体验：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxresdefault.jpg" alt=""><br>游戏 Smash Hit Plunder 中的 VR 舒适度选项</p>
+<p>比如，在迷宫类的 VR 游戏中，可以提供运动时的 “关灯” 模式，降低运动时画面的亮度，甚至隐藏空间画面，只提供必要的指引信息，这样可以最大程度减少因为动画带来的眩晕感。 </p>
+<h4 id="降低延迟"><a href="#降低延迟" class="headerlink" title="降低延迟"></a>降低延迟</h4><p>延迟一直是 VR 中的技术难题。延迟来自信号传递、屏幕刷新和计算机读取延迟。主要指标是延迟率： VR 头盔显示设备的视觉观测与头部运动的匹配程度。分为帧间延迟和帧内延迟。帧间延迟指头部转动经过的画面中每一帧之间的处理与显示时间。而帧内延迟是指人头转的时候，构成画面帧的像素点在每一帧结束时会跳回原点，这时候，人眼的视觉暂留现象会保留上一帧和这一帧的图像，产生拖影现象。</p>
+<p>在头显设备中，图像都来自即时渲染，所以延迟很容易被感知。从下图可以看到，VR 应用中，运动检测需要大约 200 毫秒，传输需要约 200 毫秒，渲染成像需要约 200 毫秒。如何降低延迟率，将是 VR 体验的关键。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/VRlatency.png" alt=""></p>
+<h3 id="沉浸感"><a href="#沉浸感" class="headerlink" title="沉浸感"></a>沉浸感</h3><h4 id="物体细节"><a href="#物体细节" class="headerlink" title="物体细节"></a>物体细节</h4><p><img src="http://pop.h-cdn.co/assets/16/19/640x716/gallery-1462890237-vrvoid2.jpg" alt=""></p>
+<p>VR 不是真实世界的镜子，但是用户在虚拟世界中的预期，绝不会低于真实世界。简单到一张桌子，一级阶梯，都应该具备相应细节，让人形成（至少是被建构的）“真实”的感觉。在 VR 场景中，不再能够像过去 2D 界面一样，通过“进入二级页面和返回”的方式，来限定画面展示和互动层级 —— 用户拥有更大的自由探索空间，向着任意方向移动，预期着看到所有可见物体的细节。</p>
+<h3 id="界面元素"><a href="#界面元素" class="headerlink" title="界面元素"></a>界面元素</h3><p>VR 中的界面元素，比如人物属性、按钮等，应该融入在 VR 场景中，或者集中展示在某个区域，而不能像桌面/移动端游戏中那样跟随着人或物品移动。</p>
+<p>在 2D 世界中，界面元素是平面化的，但是在 VR 中，用户视野和视角很多样，所以菜单、按钮这些界面元素，也应该跟随视角变化，而不是生硬地把一块 2D 补丁甩在 3D 场景里。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Vrideo-Gear-VR-Video.png" alt=""></p>
+<p>目前，VR 设备的分辨率还不理想，菜单、按钮等界面元素需要适当放大，变得更显眼。</p>
+<h3 id="音效"><a href="#音效" class="headerlink" title="音效"></a>音效</h3><p>让人感觉身临其境的音效和音乐，是沉浸式体验的助推器。打造优质的 VR 体验，需要更专业的音乐人、音效师和技术（例如<a href="https://www.audiokinetic.com/products/wwise/" target="_blank" rel="noopener">Wwise</a>）参与进来。Oculus 也放出了<a href="https://developer3.oculus.com/documentation/audiosdk/latest/" target="_blank" rel="noopener">音频的 SDK</a>。后续的文章我们再深入讨论 VR 中的音效。</p>
+<h3 id="运动"><a href="#运动" class="headerlink" title="运动"></a>运动</h3><p>在 VR 的世界里，用户和环境之间障碍已扫除，界面的边界被完全打破，移动也就变得复杂起来。</p>
+<p>不同场景下的运动方式不同，应该让用户坐着还是站立？应该让场景环境移动，还是让用户移动？运动空间如何设计？运动范围如何限制？怎么样的运动路径和范围，对人体尺度而言最舒适？这些都是需要仔细考虑的问题。</p>
+<p><img src="http://static1.squarespace.com/static/54a39ca2e4b01ff9ee486c1d/t/561fbcb6e4b0aac55322c0fc/1444920531434/?format=2500w" alt=""></p>
+<h3 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h3><p>在 VR 时代，鼠标和点击操作对象都已成为过去。新的交互方式层出不穷：手柄、手套、光学追踪隔空手势、座椅、……大浪淘沙后，哪些方式会最终沉淀下来成为行业标准呢？现在下结论还为时过早，我们需要不断地尝试和测试。</p>
+<p><img src="http://forum.unity3d.com/attachments/notouchguiscreenshot-png.123221/" alt=""></p>
+<hr>
+<p>这篇文章从舒适度和沉浸感两个维度出发，整理了 VR 中影响用户体验的要素：眩晕，延迟；物体细节，界面元素，音效，运动，交互等。当然，这只是一篇粗糙的整理和思考，希望大家一起讨论和完善！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VR/" rel="tag"># VR</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/vr-index.html" rel="next" title="VR 学习图谱">
+                <i class="fa fa-chevron-left"></i> VR 学习图谱
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/learning-about-learn.html" rel="prev" title="重启学习系统，做个知识炼金术士">
+                重启学习系统，做个知识炼金术士 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#舒适度"><span class="nav-number">1.</span> <span class="nav-text">舒适度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#减少眩晕"><span class="nav-number">1.1.</span> <span class="nav-text">减少眩晕</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#降低延迟"><span class="nav-number">1.2.</span> <span class="nav-text">降低延迟</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#沉浸感"><span class="nav-number">2.</span> <span class="nav-text">沉浸感</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#物体细节"><span class="nav-number">2.1.</span> <span class="nav-text">物体细节</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#界面元素"><span class="nav-number">3.</span> <span class="nav-text">界面元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音效"><span class="nav-number">4.</span> <span class="nav-text">音效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运动"><span class="nav-number">5.</span> <span class="nav-text">运动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交互"><span class="nav-number">6.</span> <span class="nav-text">交互</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/ux-in-vr.html';
+          this.page.identifier = 'ux-in-vr.html';
+          this.page.title = 'VR 中的体验要素';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Design,交互设计,控件," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="每次进入一个新的领域，都免不了踩着不一样的学习曲线，从起点开始慢慢爬。交互设计并不像其他领域有很成熟的学科体系，怎样才能在实践中不断总结，提升自己的能力？ 这个问题让我想到了每个人都最熟悉的语言学习过程。">
+<meta name="keywords" content="Design,交互设计,控件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习交互设计的”语言“">
+<meta property="og:url" content="http://uegeek.com/study-ixd-language.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="每次进入一个新的领域，都免不了踩着不一样的学习曲线，从起点开始慢慢爬。交互设计并不像其他领域有很成熟的学科体系，怎样才能在实践中不断总结，提升自己的能力？ 这个问题让我想到了每个人都最熟悉的语言学习过程。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/ixdlanguage.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/controls.png">
+<meta property="og:updated_time" content="2016-01-04T17:03:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习交互设计的”语言“">
+<meta name="twitter:description" content="每次进入一个新的领域，都免不了踩着不一样的学习曲线，从起点开始慢慢爬。交互设计并不像其他领域有很成熟的学科体系，怎样才能在实践中不断总结，提升自己的能力？ 这个问题让我想到了每个人都最熟悉的语言学习过程。">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/ixdlanguage.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/study-ixd-language.html"/>
+
+
+
+
+
+  <title>学习交互设计的”语言“ | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/study-ixd-language.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学习交互设计的”语言“</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-08-12T21:40:55+08:00">
+                2012-08-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计/" itemprop="url" rel="index">
+                    <span itemprop="name">设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/study-ixd-language.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="study-ixd-language.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>每次进入一个新的领域，都免不了踩着不一样的学习曲线，从起点开始慢慢爬。交互设计并不像其他领域有很成熟的学科体系，怎样才能在实践中不断总结，提升自己的能力？</p>
+<p>这个问题让我想到了每个人都最熟悉的语言学习过程。<br><a id="more"></a></p>
+<h3 id="我们如何学习语言？"><a href="#我们如何学习语言？" class="headerlink" title="我们如何学习语言？"></a><strong>我们如何学习语言？</strong></h3><p>学习母语时，我们首先学会“听”大量的词语和句子，然后从“妈妈”、“爸爸”这些最重要最简单的词汇开始学习，慢慢地会把几个词语连起来组成句子，然后能用好些句子表达完整的意思。学习外语时，先是背单词，单词组成了短语和句子，然后通过课文学习语法，掌握了基本的阅读、对话能力，还需要去进一步了解这种语言背后的文化和思维方式，才能更好地与他人沟通。从学习语言的根本目——“交流”来看，每个学习者需要解决两个基本问题：</p>
+<h4 id="1-如何表达？"><a href="#1-如何表达？" class="headerlink" title="1.如何表达？"></a>1.如何表达？</h4><ul>
+<li>学习词汇：首先知道一个意思可以用什么词汇表达，这是最基本的，再怎么强调都不为过，想想看，如果把“luck”说成“fuck”会有什么后果…… :P</li>
+<li>学习语法：怎样把多个意思单元（词汇）用别人可以理解的逻辑连接起来，表达完整的意思。</li>
+</ul>
+<h4 id="2-如何交流？"><a href="#2-如何交流？" class="headerlink" title="2.如何交流？"></a>2.如何交流？</h4><p>学会了词汇和语法并不代表就能沟通无障碍，有效的交流还需要双方付出更多的努力：</p>
+<ul>
+<li>理解交流的目的：是获得信息、情感沟通、阐述观点还是通知……？</li>
+<li>理解双方的关系：是询问与解答、平等讨论、宣布与获知还是其他？</li>
+<li>理解对方：是一个怎样的人？价值观怎样？可能有怎样的思维方式？在对话中关心的是什么？可能会做出怎样的回应……？</li>
+<li>在对话过程中积极促进信息传达：理解对方的意思，给予适当的反馈，清晰表达自己的意思，遵守一般逻辑，消除双方的信息不对等……</li>
+</ul>
+<h3 id="交互设计扮演什么角色？"><a href="#交互设计扮演什么角色？" class="headerlink" title="交互设计扮演什么角色？"></a><strong>交互设计扮演什么角色？</strong></h3><p>回过头来看看交互设计，设计师们充当的其实是<strong>”翻译“</strong>的角色：使用者和某个系统所用的是各自的”语言“，他们如何进行有效沟通？</p>
+<p>设计师一方面要理解用户的”语言“（Alen cooper所说的”心理模型“ mental model）：</p>
+<ul>
+<li><p>他们是怎样一群人？为什么来使用这个产品？从什么渠道过来？目标是什么？会怎样操作？需要什么反馈？遇到什么问题？会怎样解决？……<br>另一方面，设计师需要知道系统的”语言“（Alen cooper所说的”实现模型“ ）：</p>
+</li>
+<li><p>有哪些组成部分，各部分关系是什么；有哪些数据，数据怎么产生，怎么获取，怎么输出……</p>
+</li>
+</ul>
+<p>了解双方的情况后，设计师开始用设计的”语言“（Alen cooper所说的”表现模型“represented model）去描绘界面（interface），让用户和系统的”对话“顺利进行，用户最终达到目标，系统体现自身价值。总结一下：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/ixdlanguage.png" alt=""></p>
+<h3 id="交互设计需要学习什么？"><a href="#交互设计需要学习什么？" class="headerlink" title="交互设计需要学习什么？"></a><strong>交互设计需要学习什么？</strong></h3><p>接着上一部分，做一个对应的类比，看看作为交互设计师我们应该学习和掌握什么：</p>
+<h4 id="1-如何表达"><a href="#1-如何表达" class="headerlink" title="1.如何表达"></a>1.如何表达</h4><ul>
+<li>词汇：基本控件（如命令按钮、链接、复选框等）</li>
+<li>短语：组件（如文本编辑器组件、翻页组件、内容列表等）</li>
+<li>语法：模式（如页面结构模式、导航模式、页面组织模式、动作和命令模式、复杂信息呈现模式、输入和编辑模式等）</li>
+</ul>
+<h4 id="2-如何交流"><a href="#2-如何交流" class="headerlink" title="2.如何交流"></a>2.如何交流</h4><ul>
+<li>用户：人口统计学信息、用户分类、相关产品使用经验、使用目标、体验目标、任务和子任务……</li>
+<li>系统：基本组成、信息架构、数据流、页面结构……</li>
+<li>交互：使用场景，软硬件平台，辅助工具，如何输入，如何输出，命令和反馈……</li>
+</ul>
+<p>因为转做交互的时间不长，还没有能力总结”如何交流“部分，就从最基本的”词汇“开始吧。</p>
+<h3 id="交互设计的”词汇“"><a href="#交互设计的”词汇“" class="headerlink" title="交互设计的”词汇“"></a><strong>交互设计的”词汇“</strong></h3><p>每个领域都有最基本的“词汇”，设计的基本词汇就是用于表达设计思维的“元素”。在互联网产品交互设计领域，交互界面相对简单，主要都是通过电脑屏幕、移动设备屏幕去展现，设计师手上的材料无外乎各种页面、页面之间的连接，以及页面内承载、表达各种内容和互动方式的“控件”。控件指用户与系统进行交互的<strong>屏幕对象单元</strong>，它具有可操作性或指示性。</p>
+<p>对基本控件的学习是基础中的基础，为了避免犯把”luck“说成”fuck“的低级错误，我决定先把pc/web的基本控件学习一遍，一是因为操作系统和web上的基本控件由来已久，在设计中最为常见；二是有大量的案例可供学习，微软总结了十分细致全面的 <a href="http://msdn.microsoft.com/en-us/library/aa511258.aspx" target="_blank" rel="noopener">Windows User Experience Interaction Guidelines</a> ，是极佳的教材。</p>
+<p>接下来的系列文章，以基本控件为单元，整理每种控件的描述和设计要点。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/controls.png" alt=""></p>
+<p>————————- 去看看这一系列的纠结文章 ————————–</p>
+<p><a href="http://www.uegeek.com/ixd/ixd_controls_buttons" title="Permanent Link to 基本交互控件[1]：命令按钮(Buttons)" target="_blank" rel="noopener">基本交互控件[1]：命令按钮(Buttons)</a></p>
+<p><a href="http://www.uegeek.com/ixd/ixd_controls_links" target="_blank" rel="noopener">基本交互控件[2]：链接(Links)</a></p>
+<hr>
+<p></p>
+<div>欢迎一起探讨~   (00的更多联系方式请见“<a href="http://www.uegeek.com/about" target="_blank" rel="noopener">About页面</a>”)</div><br><div></div><br>
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Design/" rel="tag"># Design</a>
+          
+            <a href="/tags/交互设计/" rel="tag"># 交互设计</a>
+          
+            <a href="/tags/控件/" rel="tag"># 控件</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/director-and-pm.html" rel="next" title="没有未尽之路，只有未尽之念">
+                <i class="fa fa-chevron-left"></i> 没有未尽之路，只有未尽之念
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/ixd-controls-buttons.html" rel="prev" title="基本交互控件[1]：命令按钮(Buttons)">
+                基本交互控件[1]：命令按钮(Buttons) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#我们如何学习语言？"><span class="nav-number">1.</span> <span class="nav-text">我们如何学习语言？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-如何表达？"><span class="nav-number">1.1.</span> <span class="nav-text">1.如何表达？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-如何交流？"><span class="nav-number">1.2.</span> <span class="nav-text">2.如何交流？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交互设计扮演什么角色？"><span class="nav-number">2.</span> <span class="nav-text">交互设计扮演什么角色？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交互设计需要学习什么？"><span class="nav-number">3.</span> <span class="nav-text">交互设计需要学习什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-如何表达"><span class="nav-number">3.1.</span> <span class="nav-text">1.如何表达</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-如何交流"><span class="nav-number">3.2.</span> <span class="nav-text">2.如何交流</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交互设计的”词汇“"><span class="nav-number">4.</span> <span class="nav-text">交互设计的”词汇“</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/study-ixd-language.html';
+          this.page.identifier = 'study-ixd-language.html';
+          this.page.title = '学习交互设计的”语言“';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

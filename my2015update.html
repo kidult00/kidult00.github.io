@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="总结,2015," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="又到了写年底总结的时候。 总觉得“总结”这个词有点儿消极——道理都明白，写出来洋洋洒洒，但一年好像又白过了。 为什么我们不能像 APP 一样，写写今年最大的版本迭代都更新了什么？   Description 路痴 喜欢吃咸肉粽和甜豆花的南方人，同时也爱吃羊肉和凉皮~ 交互设计shi 擅长走路、F2F熬鸡汤、碎碎念、搞卫生   What’s NewDec 25, 2015 1. Hack 和 Pul">
+<meta name="keywords" content="总结,2015">
+<meta property="og:type" content="article">
+<meta property="og:title" content="00牌机器人2015版本更新记录">
+<meta property="og:url" content="http://uegeek.com/my2015update.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="又到了写年底总结的时候。 总觉得“总结”这个词有点儿消极——道理都明白，写出来洋洋洒洒，但一年好像又白过了。 为什么我们不能像 APP 一样，写写今年最大的版本迭代都更新了什么？   Description 路痴 喜欢吃咸肉粽和甜豆花的南方人，同时也爱吃羊肉和凉皮~ 交互设计shi 擅长走路、F2F熬鸡汤、碎碎念、搞卫生   What’s NewDec 25, 2015 1. Hack 和 Pul">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/00robot.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/qr.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/congjiangsuan.png">
+<meta property="og:image" content="http://img3.douban.com/mpic/s11214645.jpg">
+<meta property="og:image" content="http://img3.doubanio.com/mpic/s6738709.jpg">
+<meta property="og:image" content="http://img3.douban.com/mpic/s28355811.jpg">
+<meta property="og:image" content="http://img3.douban.com/mpic/s27814883.jpg">
+<meta property="og:image" content="http://img3.douban.com/mpic/s28335050.jpg">
+<meta property="og:updated_time" content="2016-01-03T12:15:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="00牌机器人2015版本更新记录">
+<meta name="twitter:description" content="又到了写年底总结的时候。 总觉得“总结”这个词有点儿消极——道理都明白，写出来洋洋洒洒，但一年好像又白过了。 为什么我们不能像 APP 一样，写写今年最大的版本迭代都更新了什么？   Description 路痴 喜欢吃咸肉粽和甜豆花的南方人，同时也爱吃羊肉和凉皮~ 交互设计shi 擅长走路、F2F熬鸡汤、碎碎念、搞卫生   What’s NewDec 25, 2015 1. Hack 和 Pul">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/00robot.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/my2015update.html"/>
+
+
+
+
+
+  <title>00牌机器人2015版本更新记录 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/my2015update.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">00牌机器人2015版本更新记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-25T21:20:13+08:00">
+                2015-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/叽歪/" itemprop="url" rel="index">
+                    <span itemprop="name">叽歪</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/my2015update.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="my2015update.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>又到了写年底总结的时候。</p>
+<p>总觉得“总结”这个词有点儿消极——道理都明白，写出来洋洋洒洒，但一年好像又白过了。</p>
+<p>为什么我们不能像 APP 一样，写写今年最大的版本迭代都更新了什么？</p>
+<div class="image-package imagebubble"><img src="http://7xjpra.com1.z0.glb.clouddn.com/00robot.png" alt=""></div>
+
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><ul>
+<li>路痴</li>
+<li>喜欢吃咸肉粽和甜豆花的南方人，同时也爱吃羊肉和凉皮~</li>
+<li>交互设计shi</li>
+<li>擅长走路、F2F熬鸡汤、碎碎念、搞卫生</li>
+</ul>
+<hr>
+<h2 id="What’s-New"><a href="#What’s-New" class="headerlink" title="What’s New"></a>What’s New</h2><p>Dec 25, 2015</p>
+<h3 id="1-Hack-和-Pull"><a href="#1-Hack-和-Pull" class="headerlink" title="1. Hack 和 Pull"></a>1. Hack 和 Pull</h3><p>首先刷新的是对这两个动词的认识。</p>
+<a id="more"></a>
+<h4 id="Hack"><a href="#Hack" class="headerlink" title="Hack"></a>Hack</h4><p>任何事物和体系都可以 hack，也应该 hack。 现有体系和规则，如果站在内部往外看，基本觉得是铜墙铁壁滴水不漏，让人不假思索就全盘接受。但如果你被打晕拖出去，醒来再看，可能瞬间就发现漏洞百出。系统内一些长期被奉为圭臬的规则，搞不好只是一开始时某个随机事件的偶然结果，结果就这么搞 siao 地固化下来。</p>
+<p>Hack 心态不是要推翻一切。只是鼓励我们从旁观者的角度，尽快抽取出游戏规则——如果可能、如果需要，最好改变游戏规则，甚至重新制定规则。</p>
+<p>哦对了，Hack也是学习任何东西首先应该具备的态度。</p>
+<h4 id="Pull"><a href="#Pull" class="headerlink" title="Pull"></a>Pull</h4><p>作为资深的信息焦虑机器人，robot00 知道自己接收信息的方式相当被动：电视里面放广告就看广告，朋友圈里转文章就看文章，畅销榜放着哪些书就看哪些书，大数据火了看大数据，芈月传火了看芈月传。可是我们生活在一个每18个月全球信息总量就会翻倍的世界。就这么对待越来越稀缺的注意力，真是有点儿戏。</p>
+<p>今年尝试从“被 push 模式”升级成“主动 pull 模式”。一方面减少花在支离破碎的信息源（尤其是微信）的时间，另一方面通过感兴趣的主题去找书、找 mooc、看 wiki、看 github、看微博微信豆瓣……</p>
+<p>从今年写读书笔记的经验来看，pull 和 push 两种模式真的差别简直巨大。</p>
+<p>今年写了三个“pull”系列：<a href="http://www.jianshu.com/users/2LSzkz/latest_articles" target="_blank" rel="noopener">「德意志笔记」、「中欧四国扫盲贴」、「场景化设计」</a></p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/qr.png" alt=""></p>
+<p>&nbsp;</p>
+<p>每个系列都写得很痛苦：需要先查资料，看书看视频，要么是总结实际做过的项目。多个途径看完资料，然后抽出一个线头来串起要写的内容，再提炼观点，找资料找论据找栗子。这种强度跟随机读完一本书写一篇笔记完全不同。折腾过后，对主题的理解当然比孤立地读一本书来得要深刻。</p>
+<h3 id="2-少拖延，不焦虑"><a href="#2-少拖延，不焦虑" class="headerlink" title="2. 少拖延，不焦虑"></a>2. 少拖延，不焦虑</h3><p>这一年终于不再受拖延的困扰。并不是做到了不拖延，而是明白拖延的症结所在：</p>
+<ul>
+<li>没有意识到心智资源极端有限</li>
+<li>欲望太多，期望太高</li>
+<li>把时间花在事前选择判断，而不是产出结果</li>
+</ul>
+<p>懂得注意力、心力（will power）都是极端稀缺的资源以后，就明白该怎么对付拖延：</p>
+<ul>
+<li><p>精简欲望，逃出心力黑洞<br>无论是购买欲念，还是兴趣欲念，还是改变世界的欲念，1-2个就差不多了。少了没活力，多了伤身体。诸如做决定、无效的争论、坚持每天做 xxx，都特别耗心力。少做一件，估计能多活几天。选出最重要的几件事去劳心劳力就差不多了。</p>
+</li>
+<li><p>委派任务，购买服务<br>事情做不完，多半是做了太多可以由别人做的事情。如果调动资源的能力没有增强，事情却越积越多，怎么可能不拖延？想办法把不擅长的任务委派出去，或者更简单一点——购买服务，而不是自己亲手去做。比如雇一个人，买一个好一点 VPN，买一个 Alfred，能节省好多时间精力。</p>
+</li>
+<li><p><code>If</code> 纠结/患得患失 <code>Then</code> 开始动手<br>纠结的成因有两个：贪心，反馈不足。这时候如果停下来继续纠结，会进入恶性循环——反馈继续缺失，没法做出合理判断。只能告诉自己，一切都是 tradeoff，选出更重要的一个因素，然后往前推进，在做的过程中根据反馈不断调整。</p>
+</li>
+</ul>
+<h3 id="3-作品作品作品"><a href="#3-作品作品作品" class="headerlink" title="3. 作品作品作品"></a>3. 作品作品作品</h3><p>无论是开智群、YC 创业课、BVM 计划，都在反复强调两个字：作品。</p>
+<p>写了一年公众号，做了小小书童，开了学画大作战群，越来越明白作品的分量。</p>
+<p><a href="http://v.qq.com/page/b/o/l/b015562y5ol.html" target="_blank" rel="noopener">小小书童介绍视频</a></p>
+<p>学画大作战群每日合集:</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/congjiangsuan.png" alt=""></p>
+<p>简书上记录今年共写了 7w 多字，获得 500 个喜欢：平均140个字才换来一个喜欢，正好是微博的长度……(当然，这可能只是说明 robot00 的文章实在不怎么吸引)</p>
+<p>从一个简单的想法，到用 Markdown 写出大纲，然后编辑、配图，在难用的公众平台编辑器中来回修改，同步发到简书、博客、豆瓣、KM 等等地方，还要想朋友圈广告词…… 这些事情做下来，才知道想要留下一点东西也是不容易。</p>
+<blockquote>
+<p>作品，逼人进行更多更优质的输入。<br>作品，逼人从无序变得有序。<br>作品，留下连接入口。<br>作品，创造更多可能性。</p>
+</blockquote>
+<p>不要忘记，基因的目标是复制，成功的标准就是数量。模因也一样。如果没有作品，模因根本没有生存机器。</p>
+<hr>
+<p>好了，道理够多了，如果超过三个，连自己都记不住。三个年度更新</p>
+<p>也不写什么自 high 型 “新年计划” 了。</p>
+<p><strong>用作品说话，明年见。</strong></p>
+<hr>
+<h3 id="Bonus"><a href="#Bonus" class="headerlink" title="Bonus"></a>Bonus</h3><p>值得推荐的工具</p>
+<ol>
+<li>Alfred：Mac 必备，用好 workflow，效率提升至少 500%</li>
+<li>Git：版本管理系统，请看「多用 Git 少缴税」</li>
+<li>Markdown：聚焦于内容的书写方式</li>
+<li>Sketch + Keynote：BP 视频都能用这个做，妥妥的</li>
+<li>Workflowy：树形列表工具，可以用做 PKM（个人知识管理） 索引，以及替代 to do list</li>
+</ol>
+<p>值得一读再读的书</p>
+<p><a href="http://book.douban.com/subject/26576861/" target="_blank" rel="noopener">自私的基因</a></p>
+<p><img src="http://img3.douban.com/mpic/s11214645.jpg" alt=""></p>
+<p><a href="http://book.douban.com/subject/6687032/" target="_blank" rel="noopener">经验的疆界</a></p>
+<p><img src="http://img3.doubanio.com/mpic/s6738709.jpg" alt=""></p>
+<p><a href="http://book.douban.com/subject/26576861/" target="_blank" rel="noopener">最好的告别</a></p>
+<p><img src="http://img3.douban.com/mpic/s28355811.jpg" alt=""></p>
+<p><a href="http://book.douban.com/subject/25985021/" target="_blank" rel="noopener">人类简史</a></p>
+<p><img src="http://img3.douban.com/mpic/s27814883.jpg" alt=""></p>
+<p><a href="http://book.douban.com/subject/26658379/" target="_blank" rel="noopener">必然</a></p>
+<p><img src="http://img3.douban.com/mpic/s28335050.jpg" alt=""></p>
+<hr>
+<p>节日快乐<br>新年快乐</p>
+<p>© 00<br>2015.12.25@ GZ</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+            <a href="/tags/2015/" rel="tag"># 2015</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/scenario-design-4.html" rel="next" title="场景化设计系列之四：场景化设计六步法">
+                <i class="fa fa-chevron-left"></i> 场景化设计系列之四：场景化设计六步法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/happynewyearhappynewmac.html" rel="prev" title="Happy New Year, Happy New Mac">
+                Happy New Year, Happy New Mac <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What’s-New"><span class="nav-number">2.</span> <span class="nav-text">What’s New</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Hack-和-Pull"><span class="nav-number">2.1.</span> <span class="nav-text">1. Hack 和 Pull</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hack"><span class="nav-number">2.1.1.</span> <span class="nav-text">Hack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pull"><span class="nav-number">2.1.2.</span> <span class="nav-text">Pull</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-少拖延，不焦虑"><span class="nav-number">2.2.</span> <span class="nav-text">2. 少拖延，不焦虑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-作品作品作品"><span class="nav-number">2.3.</span> <span class="nav-text">3. 作品作品作品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bonus"><span class="nav-number">2.4.</span> <span class="nav-text">Bonus</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/my2015update.html';
+          this.page.identifier = 'my2015update.html';
+          this.page.title = '00牌机器人2015版本更新记录';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

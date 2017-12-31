@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="交互设计,Checklist,Interaction design,Usability," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="“优化已有产品的体验”，这是用户体验相关岗位职责中常见的描述。我们的产品常常是在快速的迭代过程中不断完善的，就像孩子生下来需要养育才能长大一样，优化已有功能/产品，和设计新功能/产品同样重要，不可偏废。 但是，相比实现新功能，已有功能的优化总是显得没有那么紧迫而且很零散，导致了迭代优化的计划总是被归入“重要不紧急”甚至是“不重要不紧急”的象限，变成了东一棒子西一榔锤的买卖。我们可以通过可用性测试">
+<meta name="keywords" content="交互设计,Checklist,Interaction design,Usability">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web交互设计优化的简易Check list">
+<meta property="og:url" content="http://uegeek.com/ixd-quick-checklist.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="“优化已有产品的体验”，这是用户体验相关岗位职责中常见的描述。我们的产品常常是在快速的迭代过程中不断完善的，就像孩子生下来需要养育才能长大一样，优化已有功能/产品，和设计新功能/产品同样重要，不可偏废。 但是，相比实现新功能，已有功能的优化总是显得没有那么紧迫而且很零散，导致了迭代优化的计划总是被归入“重要不紧急”甚至是“不重要不紧急”的象限，变成了东一棒子西一榔锤的买卖。我们可以通过可用性测试">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.uegeek.com/wp-content/uploads/2011/01/check-list-blog-banner.png">
+<meta property="og:image" content="http://uedc.163.com/wp-content/uploads/2011/01/1.视力.png">
+<meta property="og:image" content="http://uedc.163.com/wp-content/uploads/2011/01/2.智商.png">
+<meta property="og:image" content="http://uedc.163.com/wp-content/uploads/2011/01/3.记忆.png">
+<meta property="og:image" content="http://uedc.163.com/wp-content/uploads/2011/01/4.体力.png">
+<meta property="og:image" content="http://uedc.163.com/wp-content/uploads/2011/01/priority.png">
+<meta property="og:updated_time" content="2016-01-05T14:17:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web交互设计优化的简易Check list">
+<meta name="twitter:description" content="“优化已有产品的体验”，这是用户体验相关岗位职责中常见的描述。我们的产品常常是在快速的迭代过程中不断完善的，就像孩子生下来需要养育才能长大一样，优化已有功能/产品，和设计新功能/产品同样重要，不可偏废。 但是，相比实现新功能，已有功能的优化总是显得没有那么紧迫而且很零散，导致了迭代优化的计划总是被归入“重要不紧急”甚至是“不重要不紧急”的象限，变成了东一棒子西一榔锤的买卖。我们可以通过可用性测试">
+<meta name="twitter:image" content="http://www.uegeek.com/wp-content/uploads/2011/01/check-list-blog-banner.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/ixd-quick-checklist.html"/>
+
+
+
+
+
+  <title>Web交互设计优化的简易Check list | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/ixd-quick-checklist.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Web交互设计优化的简易Check list</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-01-30T23:20:45+08:00">
+                2011-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计/" itemprop="url" rel="index">
+                    <span itemprop="name">设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/ixd-quick-checklist.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="ixd-quick-checklist.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="http://www.uegeek.com/wp-content/uploads/2011/01/check-list-blog-banner.png" target="_blank" rel="noopener"><img src="http://www.uegeek.com/wp-content/uploads/2011/01/check-list-blog-banner.png" alt=""></a></p>
+<p>“优化已有产品的体验”，这是用户体验相关岗位职责中常见的描述。我们的产品常常是在快速的迭代过程中不断完善的，就像孩子生下来需要养育才能长大一样，优化已有功能/产品，和设计新功能/产品同样重要，不可偏废。</p>
+<p>但是，相比实现新功能，已有功能的优化总是显得没有那么紧迫而且很零散，导致了迭代优化的计划总是被归入“重要不紧急”甚至是“不重要不紧急”的象限，变成了东一棒子西一榔锤的买卖。我们可以通过可用性测试来发现问题，但是测试往往受到时间、用户邀约、场地和设备等条件的限制，可能无法进行。更多时候，设计师需要根据一定的原则（例如可用性准则）进行走查，以快速地发现并解决问题。</p>
+<p>这篇小文章关心的问题是：如果想对非娱乐导向产品已有的交互设计进行优化，我们</p>
+<ul>
+<li>需要从哪些方面考虑</li>
+<li>遵从什么样的原则</li>
+<li>如何开始检查现有的设计</li>
+<li>如何确定优化的优先级<a id="more"></a>
+</li>
+</ul>
+<p>而不涉及：</p>
+<ul>
+<li>新功能/产品的交互设计过程</li>
+<li>娱乐导向产品的设计优化</li>
+<li>产品概念、功能层次的优化</li>
+<li>适合每一类型产品的tips</li>
+<li>具体的优化方法</li>
+</ul>
+<h3 id="一、需要优化什么-Considerations"><a href="#一、需要优化什么-Considerations" class="headerlink" title="一、需要优化什么 (Considerations)"></a>一、需要优化什么 (Considerations)</h3><p>“设计原则的主要目的之一就是优化用户的产品体验。对于生产工具和其他非娱乐导向的产品而言，这意味着将工作负荷降至最低。”——《交互设计精髓》</p>
+<p>行为和界面层面的设计原则告诉我们，应该为降低用户的工作负荷而设计。但是我们常常不够贴心，不知不觉就对用户设下了种种考验，让他们抓狂：</p>
+<h4 id="1-视觉负担-visual-work"><a href="#1-视觉负担-visual-work" class="headerlink" title="1.视觉负担 visual work"></a>1.视觉负担 visual work</h4><ul>
+<li>需要分解布局</li>
+<li>需要区分内容层次</li>
+<li>需要区分视觉元素</li>
+<li>需要努力定位目标信息</li>
+<li>需要识别阅读起点</li>
+<li>需要经常变换视线</li>
+<li>视觉流被干扰、打断</li>
+</ul>
+<p><img src="http://uedc.163.com/wp-content/uploads/2011/01/1.视力.png" alt="" title="visual"></p>
+<h4 id="2-认知负担-cognitive-work"><a href="#2-认知负担-cognitive-work" class="headerlink" title="2.认知负担 cognitive work"></a>2.认知负担 cognitive work</h4><ul>
+<li>需要理解不熟悉的概念和模式</li>
+<li>需要理解冗长、生涩的文本内容</li>
+<li>需要理解混乱的结构和布局</li>
+<li>需要理解模棱两可的操作</li>
+<li>需要猜测系统状态、行为、结果</li>
+</ul>
+<p><img src="http://uedc.163.com/wp-content/uploads/2011/01/2.智商.png" alt="" title="cognitive"></p>
+<h4 id="3-记忆负担-memory-work"><a href="#3-记忆负担-memory-work" class="headerlink" title="3.记忆负担 memory work"></a>3.记忆负担 memory work</h4><ul>
+<li>需要记住对象的各种属性（名字、位置、大小、颜色）</li>
+<li>需要记住对象的关联</li>
+<li>需要记住操作的命令、步骤、结果</li>
+<li>需要记住以往的操作</li>
+</ul>
+<p><img src="http://uedc.163.com/wp-content/uploads/2011/01/3.记忆.png" alt="" title="memory"></p>
+<h4 id="4-物理负担-physical-work"><a href="#4-物理负担-physical-work" class="headerlink" title="4.物理负担 physical work"></a>4.物理负担 physical work</h4><ul>
+<li>需要长距离移动鼠标</li>
+<li>需要进行（多次）点击</li>
+<li>需要执行不同的鼠标手势</li>
+<li>需要多种操作组合</li>
+<li>需要切换输入模式</li>
+<li>需要进出不同的页面/区域</li>
+<li>需要长时间等待</li>
+</ul>
+<p><img src="http://uedc.163.com/wp-content/uploads/2011/01/4.体力.png" alt="" title="physical"></p>
+<h3 id="二、优化目标-Goal"><a href="#二、优化目标-Goal" class="headerlink" title="二、优化目标 (Goal)"></a>二、优化目标 (Goal)</h3><p>仔细检查已有的设计，或多或少总是能发现问题。在解决问题之前，我们应该清楚要往什么方向进行优化：</p>
+<h4 id="1-基于可用性的目标"><a href="#1-基于可用性的目标" class="headerlink" title="1.基于可用性的目标"></a>1.基于可用性的目标</h4><ul>
+<li><strong>易于识别/定位/阅读</strong></li>
+<li><strong>易于理解/学习/记忆</strong></li>
+<li><strong>易于操作</strong></li>
+</ul>
+<p>优化的最重要的目的，是让产品更好用，使设计符合<a href="www.useit.com/papers/heuristic/heuristic_list.html">Jakob Nielsen的十条可用性准则</a>：</p>
+<ol>
+<li>通过有效的反馈信息提供显著的系统状态</li>
+<li>符合用户的真实世界</li>
+<li>用户自由控制权</li>
+<li>一致性和标准性</li>
+<li>预防出错</li>
+<li>识别而不是回忆</li>
+<li>灵活、便捷的使用</li>
+<li>美观，精简的设计</li>
+<li>协助用户认识，分析和改正错误</li>
+<li>帮助和说明</li>
+</ol>
+<h4 id="2-基于产品的目标"><a href="#2-基于产品的目标" class="headerlink" title="2.基于产品的目标"></a>2.基于产品的目标</h4><p>需要根据不同产品进行定义。例如，对于快速注册流程的优化，目的是让用户用最方便完成注册进入目标页面，优化目标可能是最小化输入、最短等待时间等。</p>
+<h3 id="三、快速检查清单-Check-list"><a href="#三、快速检查清单-Check-list" class="headerlink" title="三、快速检查清单 (Check list)"></a>三、快速检查清单 (Check list)</h3><p>为了达到优化的目标，整理了一个简易的checklist（pdf版本下载链接请见文末），方便在走查时对架构、布局、内容、行为四个方面对照检查：</p>
+<p><strong>1.架构和导航Architecture and navigation</strong></p>
+<ul>
+<li>是否采用了用户熟悉或容易理解的结构？</li>
+<li>是否能识别当前在网站中的位置？</li>
+<li>是否能清晰表达页面之间的结构？</li>
+<li>是否能快速回到首页/主要页面？</li>
+<li>链接名称与页面名称是否相对应？</li>
+<li>当前页面的结构和布局是否清晰？</li>
+</ul>
+<p><strong>2.布局和设计Layout and design</strong></p>
+<ul>
+<li>是否采用了用户熟悉的界面元素和控件？</li>
+<li>界面元素和控件的文字、位置、布局、分组、大小、颜色、形状等是否合理、容易识别、一致？</li>
+<li>界面元素/控件之间的关系是否表达正确？</li>
+<li>主要操作/阅读区域的视线是否流畅？</li>
+<li>其他文本（称谓、提示语、提供反馈）是否一致？</li>
+</ul>
+<p><strong>3.内容和可读性Content and readability</strong></p>
+<ul>
+<li>文字内容的交流对象是用户吗？</li>
+<li>语言是否简洁、易懂、礼貌？</li>
+<li>内容表达的含义是否一致？</li>
+<li>重要内容是否处于显著位置？</li>
+<li>是否在需要时提供必要的信息？</li>
+<li>是否有干扰视线和注意力的元素？</li>
+</ul>
+<p><strong>4.行为和互动Behavior and interaction</strong></p>
+<ul>
+<li>是否告知、引导用户可以做什么？</li>
+<li>是否告知需要进行哪些步骤？（op）</li>
+<li>是否告知需要多少时间完成？（op）</li>
+<li>是否告知第一步做什么？（op）</li>
+<li>是否告知输入/操作限制？</li>
+<li>是否有必要的系统/用户行为反馈？</li>
+<li>是否允许必要的撤销操作？</li>
+<li>是否页面上所有操作都必须由用户完成？</li>
+<li>是否已将操作步骤、点击次数减至最少？</li>
+<li>是否所有跳转都是必须的（无法在当前页面呈现）？</li>
+</ul>
+<p>以上只是一个不完全的清单，同学们可以根据自己的实践经验修改，也可以参考更全面、权威的可用性测试检查表，如<a href="http://oldwww.acm.org/perlman/question.cgi?form=PUTQ" target="_blank" rel="noopener">普渡大学可用性测试检查列表</a>。</p>
+<h3 id="四、确定优先级-Priority"><a href="#四、确定优先级-Priority" class="headerlink" title="四、确定优先级 (Priority)"></a>四、确定优先级 (Priority)</h3><p>当我们通过checklist将需要优化的问题筛选出来以后，可以根据问题的严重性和解决的问题的成本（时间、人力等）来综合考虑问题的优先级，例如，问题严重性得分高而且优化成本低的问题，应该优先解决。</p>
+<p><img src="http://uedc.163.com/wp-content/uploads/2011/01/priority.png" alt="" title="priority"></p>
+<h3 id="五、小结"><a href="#五、小结" class="headerlink" title="五、小结"></a>五、小结</h3><p>Considerations：为降低用户的视觉负担、认知负担、记忆负担以及物理负担而优化设计</p>
+<p>Goal：使设计易于识别/定位/阅读，易于理解/学习/记忆，易于操作，符合可用性原则和产品目标</p>
+<p>Check list：交互设计快速检查清单v1  PDF版本  <a href="http://www.slideshare.net/kidult/v1-6751535/download" target="_blank" rel="noopener">Download</a></p>
+
+
+	<div class="row">
+    <embed src="http://7xjpra.com1.z0.glb.clouddn.com/IxDChecklist-00.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+<p>Priority：根据问题的严重性和成本综合考虑，优先解决严重且成本低的问题。</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ol>
+<li>《About Face3：交互设计精髓》</li>
+<li>《人机交互：以用户为中心的设计和评估》</li>
+<li><a href="http://www.useit.com/papers/heuristic/heuristic_list.html" target="_blank" rel="noopener">Ten Usability Heuristics</a></li>
+<li><a href="http://oldwww.acm.org/perlman/question.cgi?form=PUTQ" target="_blank" rel="noopener">Purdue Usability Testing Questionnaire</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/交互设计/" rel="tag"># 交互设计</a>
+          
+            <a href="/tags/Checklist/" rel="tag"># Checklist</a>
+          
+            <a href="/tags/Interaction-design/" rel="tag"># Interaction design</a>
+          
+            <a href="/tags/Usability/" rel="tag"># Usability</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/rd-information-design.html" rel="next" title="读书笔记-信息设计">
+                <i class="fa fa-chevron-left"></i> 读书笔记-信息设计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/rd-designing-interface.html" rel="prev" title="Designing Interfaces中文版摘要">
+                Designing Interfaces中文版摘要 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、需要优化什么-Considerations"><span class="nav-number">1.</span> <span class="nav-text">一、需要优化什么 (Considerations)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-视觉负担-visual-work"><span class="nav-number">1.1.</span> <span class="nav-text">1.视觉负担 visual work</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-认知负担-cognitive-work"><span class="nav-number">1.2.</span> <span class="nav-text">2.认知负担 cognitive work</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-记忆负担-memory-work"><span class="nav-number">1.3.</span> <span class="nav-text">3.记忆负担 memory work</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-物理负担-physical-work"><span class="nav-number">1.4.</span> <span class="nav-text">4.物理负担 physical work</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、优化目标-Goal"><span class="nav-number">2.</span> <span class="nav-text">二、优化目标 (Goal)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-基于可用性的目标"><span class="nav-number">2.1.</span> <span class="nav-text">1.基于可用性的目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-基于产品的目标"><span class="nav-number">2.2.</span> <span class="nav-text">2.基于产品的目标</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、快速检查清单-Check-list"><span class="nav-number">3.</span> <span class="nav-text">三、快速检查清单 (Check list)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、确定优先级-Priority"><span class="nav-number">4.</span> <span class="nav-text">四、确定优先级 (Priority)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、小结"><span class="nav-number">5.</span> <span class="nav-text">五、小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/ixd-quick-checklist.html';
+          this.page.identifier = 'ixd-quick-checklist.html';
+          this.page.title = 'Web交互设计优化的简易Check list';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

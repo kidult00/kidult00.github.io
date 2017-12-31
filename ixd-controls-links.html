@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Design,IxD,交互设计,控件," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="基本交互控件第二篇，来看看容易与命令按钮混淆的链接~ 一、这是什么链接主要用于：  跳转其他页面、窗口； 触发某种操作的控件； 显示说明； 选择选项  链接由图标（可选），文字，经过状态，提示（可选）等要素组成。">
+<meta name="keywords" content="Design,IxD,交互设计,控件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基本交互控件[2]：链接(Links)">
+<meta property="og:url" content="http://uegeek.com/ixd-controls-links.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="基本交互控件第二篇，来看看容易与命令按钮混淆的链接~ 一、这是什么链接主要用于：  跳转其他页面、窗口； 触发某种操作的控件； 显示说明； 选择选项  链接由图标（可选），文字，经过状态，提示（可选）等要素组成。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/1linktype.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/2clickable.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/3mouseover.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/4linkambigues.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/5linkredundency.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/6linknext.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/7navi&func.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/8feedback.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/9infotip.png">
+<meta property="og:updated_time" content="2016-08-06T02:54:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基本交互控件[2]：链接(Links)">
+<meta name="twitter:description" content="基本交互控件第二篇，来看看容易与命令按钮混淆的链接~ 一、这是什么链接主要用于：  跳转其他页面、窗口； 触发某种操作的控件； 显示说明； 选择选项  链接由图标（可选），文字，经过状态，提示（可选）等要素组成。">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/1linktype.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/ixd-controls-links.html"/>
+
+
+
+
+
+  <title>基本交互控件[2]：链接(Links) | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/ixd-controls-links.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基本交互控件[2]：链接(Links)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-24T19:41:55+08:00">
+                2012-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计/" itemprop="url" rel="index">
+                    <span itemprop="name">设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/ixd-controls-links.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="ixd-controls-links.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="http://www.uegeek.com/ixd/study_ixd_language" target="_blank" rel="noopener">基本交互控件</a>第二篇，来看看容易与<a href="http://www.uegeek.com/ixd/ixd_controls_buttons" target="_blank" rel="noopener">命令按钮</a>混淆的链接~</p>
+<h3 id="一、这是什么"><a href="#一、这是什么" class="headerlink" title="一、这是什么"></a>一、这是什么</h3><p>链接主要用于：</p>
+<ul>
+<li>跳转其他页面、窗口；</li>
+<li>触发某种操作的控件；</li>
+<li>显示说明；</li>
+<li>选择选项</li>
+</ul>
+<p>链接由图标（可选），文字，经过状态，提示（可选）等要素组成。<br><a id="more"></a><br>常见类型包括：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/1linktype.png" alt=""></p>
+<h3 id="二、设计要点"><a href="#二、设计要点" class="headerlink" title="二、设计要点"></a>二、设计要点</h3><h4 id="链接应能根据视觉外观识别，不需要鼠标移上-点击之后才能判断是否可点"><a href="#链接应能根据视觉外观识别，不需要鼠标移上-点击之后才能判断是否可点" class="headerlink" title="链接应能根据视觉外观识别，不需要鼠标移上/点击之后才能判断是否可点"></a><strong>链接应能根据视觉外观识别，不需要鼠标移上/点击之后才能判断是否可点</strong></h4><p>如下图，各大搜索引擎的搜索结果页，都能一目了然地分辨出可点击的链接：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/2clickable.png" alt=""></p>
+<h4 id="鼠标移上应有表示可点击的反馈（如下划线、文字颜色改变、鼠标变手型等）"><a href="#鼠标移上应有表示可点击的反馈（如下划线、文字颜色改变、鼠标变手型等）" class="headerlink" title="鼠标移上应有表示可点击的反馈（如下划线、文字颜色改变、鼠标变手型等）"></a><strong>鼠标移上应有表示可点击的反馈（如下划线、文字颜色改变、鼠标变手型等）</strong></h4><p>目的是增强链接可点的提示，同时也帮助使用者更好识别将要点击的链接</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/3mouseover.png" alt=""></p>
+<h4 id="不是链接的文字避免使用链接颜色"><a href="#不是链接的文字避免使用链接颜色" class="headerlink" title="不是链接的文字避免使用链接颜色"></a><strong>不是链接的文字避免使用链接颜色</strong></h4><h4 id="保证链接在各种状态下文字颜色的可读性"><a href="#保证链接在各种状态下文字颜色的可读性" class="headerlink" title="保证链接在各种状态下文字颜色的可读性"></a><strong>保证链接在各种状态下文字颜色的可读性</strong></h4><h4 id="点击链接的结果可以预测"><a href="#点击链接的结果可以预测" class="headerlink" title="点击链接的结果可以预测"></a><strong>点击链接的结果可以预测</strong></h4><p>下图是windows中的一个反例，链接的描述过于模糊，难以预料点击后的结果：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/4linkambigues.png" alt=""></p>
+<h4 id="不要增加“点击”“链接”等多余的文字"><a href="#不要增加“点击”“链接”等多余的文字" class="headerlink" title="不要增加“点击”“链接”等多余的文字"></a><strong>不要增加“点击”“链接”等多余的文字</strong></h4><p>如下图，右侧的链接文字冗余，“点击此处”可以去掉，链接本身就包含“点击我可以xxx”的含义：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/5linkredundency.png" alt=""></p>
+<h4 id="如果是图标-文字链接，图标应在文字之前，且点击图标和文字的效果应相同"><a href="#如果是图标-文字链接，图标应在文字之前，且点击图标和文字的效果应相同" class="headerlink" title="如果是图标+文字链接，图标应在文字之前，且点击图标和文字的效果应相同"></a>如果是图标+文字链接，图标应在文字之前，且点击图标和文字的效果应相同</h4><h4 id="不要使用仅有图标的链接，用户难以识别图标包含链接"><a href="#不要使用仅有图标的链接，用户难以识别图标包含链接" class="headerlink" title="不要使用仅有图标的链接，用户难以识别图标包含链接"></a>不要使用仅有图标的链接，用户难以识别图标包含链接</h4><h4 id="避免将两个链接相邻放置，看上去像是一个链接"><a href="#避免将两个链接相邻放置，看上去像是一个链接" class="headerlink" title="避免将两个链接相邻放置，看上去像是一个链接"></a>避免将两个链接相邻放置，看上去像是一个链接</h4><p>如下图，“UX”和“guidelines”是两个链接，容易引起误解：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/6linknext.png" alt=""></p>
+<h4 id="如有必要，区分导航链接和操作链接，用名词描述导航链接，用动词描述操作链接"><a href="#如有必要，区分导航链接和操作链接，用名词描述导航链接，用动词描述操作链接" class="headerlink" title="如有必要，区分导航链接和操作链接，用名词描述导航链接，用动词描述操作链接"></a>如有必要，区分导航链接和操作链接，用名词描述导航链接，用动词描述操作链接</h4><p>如下图来自虾米网的例子，点击“自定义个人主页”当前页面操作，点击“我收藏的精选集”跳转到相应页面：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/7navi&amp;func.png" alt=""></p>
+<h4 id="链接被点击后，如不能即时响应，需提供正在处理的反馈提示"><a href="#链接被点击后，如不能即时响应，需提供正在处理的反馈提示" class="headerlink" title="链接被点击后，如不能即时响应，需提供正在处理的反馈提示"></a>链接被点击后，如不能即时响应，需提供正在处理的反馈提示</h4><p>如下图，在Wordpress后台点击“保存草稿”后，按钮禁用，右侧有正在处理的图标提示：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/8feedback.png" alt=""></p>
+<h4 id="对于导航链接，考虑是否需要区分已访问链接的颜色"><a href="#对于导航链接，考虑是否需要区分已访问链接的颜色" class="headerlink" title="对于导航链接，考虑是否需要区分已访问链接的颜色"></a>对于导航链接，考虑是否需要区分已访问链接的颜色</h4><p>一般而言，高级别的导航不区分链接是否已访问，除非需要在大量导航链接中帮助用户快速区分哪些已经访问过。</p>
+<h4 id="为链接添加有用的信息提示（infotip）而不是仅仅重复链接文字"><a href="#为链接添加有用的信息提示（infotip）而不是仅仅重复链接文字" class="headerlink" title="为链接添加有用的信息提示（infotip）而不是仅仅重复链接文字"></a>为链接添加有用的信息提示（infotip）而不是仅仅重复链接文字</h4><p>如下图，google calendar中对日期链接的提示只是简单日期，并没有起到提供额外有用信息的作用：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/9infotip.png" alt=""></p>
+<h3 id="三、讨论"><a href="#三、讨论" class="headerlink" title="三、讨论"></a>三、讨论</h3><p><strong>与按钮相比，链接更适用于</strong>：</p>
+<ul>
+<li>用作导航，去到另一个页面或窗口（向导窗口的上一步、下一步除外），按钮更常用于触发模态窗口以收集更多信息；</li>
+<li>动作命令被包含在一段文字中；</li>
+<li>被触发的动作并不是当前页面的主要操作；</li>
+<li>命令属于菜单或一组链接的一部分；</li>
+<li>描述命令的文字过长，影响按钮的视觉效果。</li>
+</ul>
+<h3 id="四、Check-list"><a href="#四、Check-list" class="headerlink" title="四、Check list"></a>四、Check list</h3><p>当在设计中使用到链接时，可以对照这个列表检查设计是否合理：</p>
+<p>□       是否应该使用链接而不是其他控件<br>□       使用纯文字or纯图标or文字+图标？为什么<br>□       链接中，图标是否在文字之前<br>□       点击图标和点击文字效果是否一样<br>□       链接外观看上去是否可点击<br>□       鼠标移上时是否有可点击反馈<br>□       点击链接的结果是否可以预测<br>□       是否有线索帮助区分导航链接和操作链接<br>□       按钮是否触发即时结果，如需等待是否有足够反馈<br>□       是否需要区分未访问和已访问链接的颜色<br>□       导航链接是否链接到了合适的位置，例如某段具体的内容而不是文章开头<br>□       链接到外部网站的链接应该通过信息提示给出URL</p>
+<p>————————- 去看看同一系列的纠结文章 ————————–</p>
+<p>前言：<a href="http://www.uegeek.com/ixd/study_ixd_language" target="_blank" rel="noopener">学习交互设计的语言</a></p>
+<p><a href="http://www.uegeek.com/ixd/ixd_controls_buttons" title="Permanent Link to 基本交互控件[1]：命令按钮(Buttons)" target="_blank" rel="noopener">基本交互控件[1]：命令按钮(Buttons)</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Design/" rel="tag"># Design</a>
+          
+            <a href="/tags/IxD/" rel="tag"># IxD</a>
+          
+            <a href="/tags/交互设计/" rel="tag"># 交互设计</a>
+          
+            <a href="/tags/控件/" rel="tag"># 控件</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/design-is-relationships.html" rel="next" title="无协调，不设计">
+                <i class="fa fa-chevron-left"></i> 无协调，不设计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/tw-snapshot.html" rel="prev" title="台湾印象">
+                台湾印象 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、这是什么"><span class="nav-number">1.</span> <span class="nav-text">一、这是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、设计要点"><span class="nav-number">2.</span> <span class="nav-text">二、设计要点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#链接应能根据视觉外观识别，不需要鼠标移上-点击之后才能判断是否可点"><span class="nav-number">2.1.</span> <span class="nav-text">链接应能根据视觉外观识别，不需要鼠标移上/点击之后才能判断是否可点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#鼠标移上应有表示可点击的反馈（如下划线、文字颜色改变、鼠标变手型等）"><span class="nav-number">2.2.</span> <span class="nav-text">鼠标移上应有表示可点击的反馈（如下划线、文字颜色改变、鼠标变手型等）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不是链接的文字避免使用链接颜色"><span class="nav-number">2.3.</span> <span class="nav-text">不是链接的文字避免使用链接颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保证链接在各种状态下文字颜色的可读性"><span class="nav-number">2.4.</span> <span class="nav-text">保证链接在各种状态下文字颜色的可读性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#点击链接的结果可以预测"><span class="nav-number">2.5.</span> <span class="nav-text">点击链接的结果可以预测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不要增加“点击”“链接”等多余的文字"><span class="nav-number">2.6.</span> <span class="nav-text">不要增加“点击”“链接”等多余的文字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果是图标-文字链接，图标应在文字之前，且点击图标和文字的效果应相同"><span class="nav-number">2.7.</span> <span class="nav-text">如果是图标+文字链接，图标应在文字之前，且点击图标和文字的效果应相同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不要使用仅有图标的链接，用户难以识别图标包含链接"><span class="nav-number">2.8.</span> <span class="nav-text">不要使用仅有图标的链接，用户难以识别图标包含链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#避免将两个链接相邻放置，看上去像是一个链接"><span class="nav-number">2.9.</span> <span class="nav-text">避免将两个链接相邻放置，看上去像是一个链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如有必要，区分导航链接和操作链接，用名词描述导航链接，用动词描述操作链接"><span class="nav-number">2.10.</span> <span class="nav-text">如有必要，区分导航链接和操作链接，用名词描述导航链接，用动词描述操作链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链接被点击后，如不能即时响应，需提供正在处理的反馈提示"><span class="nav-number">2.11.</span> <span class="nav-text">链接被点击后，如不能即时响应，需提供正在处理的反馈提示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对于导航链接，考虑是否需要区分已访问链接的颜色"><span class="nav-number">2.12.</span> <span class="nav-text">对于导航链接，考虑是否需要区分已访问链接的颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为链接添加有用的信息提示（infotip）而不是仅仅重复链接文字"><span class="nav-number">2.13.</span> <span class="nav-text">为链接添加有用的信息提示（infotip）而不是仅仅重复链接文字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、讨论"><span class="nav-number">3.</span> <span class="nav-text">三、讨论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、Check-list"><span class="nav-number">4.</span> <span class="nav-text">四、Check list</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/ixd-controls-links.html';
+          this.page.identifier = 'ixd-controls-links.html';
+          this.page.title = '基本交互控件[2]：链接(Links)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

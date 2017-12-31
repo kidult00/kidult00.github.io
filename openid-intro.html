@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="OpenID," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="这几周有关OpenID的新闻不断：Google Profile变身OpenID、WordPress上的Google Friend Connect插件实现OpenID留言、OpenID先驱JanRain获得325万美元风险投资、雅虎将全面支持Facebook Connect服务…… 正好前段时间看了一些OpenID的资料，希望下面的内容可以帮助大家了解OpenID（参考资料见附录）。">
+<meta name="keywords" content="OpenID">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是OpenID？OpenID概念、原理和案例">
+<meta property="og:url" content="http://uegeek.com/openid-intro.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="这几周有关OpenID的新闻不断：Google Profile变身OpenID、WordPress上的Google Friend Connect插件实现OpenID留言、OpenID先驱JanRain获得325万美元风险投资、雅虎将全面支持Facebook Connect服务…… 正好前段时间看了一些OpenID的资料，希望下面的内容可以帮助大家了解OpenID（参考资料见附录）。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://pic.yupoo.com/uegeek/925288c8bb35/25ydjbip.jpg">
+<meta property="og:image" content="http://pic.yupoo.com/uegeek/619008c8bb35/ukb6ajyg.jpg">
+<meta property="og:image" content="http://pic.yupoo.com/uegeek/204368c8bb36/q58bu7m4.jpg">
+<meta property="og:image" content="http://pic.yupoo.com/uegeek/904788c8bb38/xzcewveb.jpg">
+<meta property="og:image" content="http://pic.yupoo.com/uegeek/685648c8bb38/1suazdjm.jpg">
+<meta property="og:image" content="http://pic.yupoo.com/uegeek/593718c8bb39/0wzof2mj.jpg">
+<meta property="og:image" content="http://pic.yupoo.com/uegeek/662358c8bb3a/rsiwljqc.jpg">
+<meta property="og:image" content="http://pic.yupoo.com/uegeek/130528c8bb3c/5mg4d207.jpg">
+<meta property="og:image" content="http://pic.yupoo.com/uegeek/578018c8bb3b/kab72slp.jpg">
+<meta property="og:image" content="http://pic.yupoo.com/uegeek/878718c8bb3e/66evqd7v.jpg">
+<meta property="og:updated_time" content="2016-01-06T00:28:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="什么是OpenID？OpenID概念、原理和案例">
+<meta name="twitter:description" content="这几周有关OpenID的新闻不断：Google Profile变身OpenID、WordPress上的Google Friend Connect插件实现OpenID留言、OpenID先驱JanRain获得325万美元风险投资、雅虎将全面支持Facebook Connect服务…… 正好前段时间看了一些OpenID的资料，希望下面的内容可以帮助大家了解OpenID（参考资料见附录）。">
+<meta name="twitter:image" content="http://pic.yupoo.com/uegeek/925288c8bb35/25ydjbip.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/openid-intro.html"/>
+
+
+
+
+
+  <title>什么是OpenID？OpenID概念、原理和案例 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/openid-intro.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">什么是OpenID？OpenID概念、原理和案例</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2009-12-12T21:25:20+08:00">
+                2009-12-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/叽歪/" itemprop="url" rel="index">
+                    <span itemprop="name">叽歪</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/openid-intro.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="openid-intro.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这几周有关OpenID的新闻不断：<a href="http://www.google.org.cn/posts/google-profiles-can-be-used-as-openid.html" target="_blank" rel="noopener">Google Profile变身OpenID</a>、WordPress上的Google Friend Connect<a href="http://www.google.org.cn/posts/comment-in-wordpress-blog-using-google-friend-connect.html" target="_blank" rel="noopener">插件</a>实现OpenID留言、OpenID先驱<a href="http://news.cnfol.com/091208/101,1587,6921509,00.shtml" target="_blank" rel="noopener">JanRain获得325万美元风险投资</a>、<a href="http://www.weblust.cn/%20http://news.iresearch.cn/0468/20091203/106267.shtml" target="_blank" rel="noopener">雅虎将全面支持Facebook Connect服务</a>…… 正好前段时间看了一些OpenID的资料，希望下面的内容可以帮助大家了解OpenID（参考资料见附录）。<br><a id="more"></a></p>
+<h3 id="1-OpenID介绍"><a href="#1-OpenID介绍" class="headerlink" title="1.OpenID介绍"></a>1.OpenID介绍</h3><h4 id="1-1概念"><a href="#1-1概念" class="headerlink" title="1.1概念"></a>1.1概念</h4><p>OpenID 是一个以用户为中心的数字身份识别框架，是一个以URL为身份标识的分散式身份验证解决方案，它具有开放、分散、自由等特性。</p>
+<p><img src="http://pic.yupoo.com/uegeek/925288c8bb35/25ydjbip.jpg" alt="clip_image002" title="clip_image002"></p>
+<p>OpenID 的创建基于这样一个概念：可以通过URL来认证一个网站的唯一身份，同理，也可以让每人通过一个URL(一个OpenID身份就是一个URL)，在多个网站上进行登录，作为用户的身份认证。</p>
+<p>形象一点来说：URL是护照，OpenID服务器就是户口所在地。首先在一个OpenID服务器网站注册，获得一个URL，等于申请一个了“出入许可证”。然后可以直接使用这个URL来登录别的网站，也可以把这个URL加到自己的主页，让个人主页的URL具备OpenID URL的功能，就像是一个复印件。然后就可以拿这个URL到支持OpenID的网站去登录了。不需要每个网站都注册一遍，因为你的信息已经保存在OpenID服务器上，并获得那些网站的认可。好比是银行卡可以在银联内的多家银行取钱一样。不用担心自己的用户名被别人抢注，也不用怕忘记那许多用户名和密码。</p>
+<p>谁将拥有或控制的OpenID ？</p>
+<p>OpenID的出现缘于开源社区，其目的是为了解决现有技术所不能轻易解决的问题。OpenID不属于任何人，也不应该属于任何人。任何人都可以选择成为一个OpenID用户或成为一个OpenID的免费提供方，而不需要注册或者被任何组织批准允许。OpenID基金会的成立，目的是为了协助开源社区的管理和发展，以促进和支持OpenID的扩展和应用 。</p>
+<h4 id="1-2基本原理简述"><a href="#1-2基本原理简述" class="headerlink" title="1.2基本原理简述"></a>1.2基本原理简述</h4><p>OpenID系统由三部分角色组成：</p>
+<ul>
+<li>End User — 终端用户，使用OpenID作为网络通行证的互联网用户；</li>
+<li>Relying Part（RP） — OpenID支持方，支持End User用OpenID登录自己的网站；</li>
+<li>OpenID Provider（OP） — OpenID提供方，提供OpenID注册、存储等服务。</li>
+</ul>
+<p>USER —— 使用OpenID</p>
+<p>RP —— 支持OpenID登录</p>
+<p>OP ——  提供OpenID</p>
+<p>使用 OpenID时，URL就是用户名，密码存储在一个 OpenID 服务网站（OP）上。登录RP时需要提交两个重要信息，一个是你的名字，一个是OpenID网站的网址。例如我在OP：open.cn上的账号是：kidult，我的OpenID就是<a href="http://kidult.openid.cn/。" target="_blank" rel="noopener">http://kidult.openid.cn/。</a></p>
+<p>打个<a href="http://blog.bluesky.cn/archives/358/what-is-openid.html" target="_blank" rel="noopener">比方</a>，你到朋友公司，要经过门卫，门卫需要确认你的身份。这时候，你就是用户，门卫就是网站登录框，朋友就是一个OpenID中介。</p>
+<blockquote>
+<p>你要进门，告诉门卫：“我要找某某某。” </p>
+<p>门卫打电话问你朋友：“这有个人说是找你的。”</p>
+<p>门卫把电话交给你，你给朋友暗号：“地瓜地瓜，我是土豆。”</p>
+<p>再把电话交给门卫，朋友告诉门卫：“没错，他是我朋友，让他进来吧。”<br>事实上， “门卫” 并不需要认识你朋友，只需要通过一种通用的协议与OpenID的网站交换确认信息就行了，“门卫”和OpenID网站之间的信息是建立在tcp/ip基础上的比较可靠的唯一通路上，除非别人知道你的OpenID密码，或者黑客通过某种手段劫持他们之间的通信，或者劫持OpenID网站域名，否则别人不能冒充你的身份。</p>
+</blockquote>
+<p><a href="http://image-001.yo2cdn.com/wp-content/uploads/208/20875/2009/12/clip-image014.jpg" target="_blank" rel="noopener"><img src="http://pic.yupoo.com/uegeek/619008c8bb35/ukb6ajyg.jpg" alt="OpenID原理" title="OpenID原理"></a></p>
+<h4 id="1-3-OpenID优缺点"><a href="#1-3-OpenID优缺点" class="headerlink" title="1.3 OpenID优缺点"></a>1.3 OpenID优缺点</h4><p><strong>优点</strong>：</p>
+<p>对用户</p>
+<p>1. 简化注册登录流程：一定程度上避免了重复注册、填写身份资料的繁琐过程，不需要注册邮件确认，登录更快捷。<br>2. 一处注册，处处通行：免去记忆大量账号的麻烦，一个OpenID就在任何支持OpenID的网站自由登录。</p>
+<p><a href="http://image-001.yo2cdn.com/wp-content/uploads/208/20875/2009/12/clip-image015.png" target="_blank" rel="noopener"><img src="http://pic.yupoo.com/uegeek/204368c8bb36/q58bu7m4.jpg" alt="clip_image015" title="clip_image015"></a></p>
+<p>3. 减少密码泄露风险：频繁登录各种网站，容易被垃圾网站暗地里收集密码和资料，或者冒充用户身份发送垃圾信息。</p>
+<p>4. 用户拥有账号信息控制权：根据对网站的信任程度，用户可以清楚的控制哪些profile信息可以被共享，例如姓名、地址、电话号码等。</p>
+<p>对网站（RP）</p>
+<p>1. 共享用户资源：给所有支持 OpenID 的网站带来了价值。</p>
+<p>2.已经有相当数量的高端注册用户可以直接使用，不必从零开始；</p>
+<p>3.可以不负担自己建立会员系统或登录功能所需要的开发成本、机器、带宽、安全费用；</p>
+<p>4.用户数据是安全的，用户数据不统一存储，用户可以任意选择、更换存储的server。没有组织，没有任何一个地方可以做root，没有任何一个机构或者个人能够从这里面获利。</p>
+<p><strong>缺点</strong>：</p>
+<p>1. 任何人都可以建立一个网站提供OpenID验证服务，而网站性能参差不齐，导致OpenID的验证过程不是很稳定。</p>
+<p>2. 如果提供OpenID验证服务的网站突然关闭的话，可能会导致大量用户无法使用多个网站的服务。</p>
+<p>3. 目前几乎所有支持OpenID的网站都很谨慎地将其做为一种可供选择的辅助登录方法，这会在很大程度上阻碍OpenID的发展。</p>
+<p>4. 目前支持OpenID的网站还不多，其独特的使用方法并不被多数用户所熟悉。</p>
+<p>More about OpenID…</p>
+<p><a href="http://image-001.yo2cdn.com/wp-content/uploads/208/20875/2009/12/clip-image017.png" target="_blank" rel="noopener"><img src="http://pic.yupoo.com/uegeek/904788c8bb38/xzcewveb.jpg" alt="clip_image017" title="clip_image017"></a></p>
+<h4 id="1-4-OpenID跟Passport的比较"><a href="#1-4-OpenID跟Passport的比较" class="headerlink" title="1.4 OpenID跟Passport的比较"></a>1.4 OpenID跟Passport的比较</h4><p>网络通行证进化历程：</p>
+<ul>
+<li>最原始的注册方式，自选字母或是数字等组合作为ID；</li>
+<li>到了传说中的web2.0时代，用邮箱作为ID来注册，但是隐患是“不请自来”的邮件；</li>
+<li>现在，用OpenID登录，即，不用担心垃圾邮件，省去填定个人资料的过程，节省了注册时间。</li>
+</ul>
+<p>目前互联网上的主流帐号管理方式有两种：</p>
+<ul>
+<li>单一帐号系统。只提供单一服务的网站采用的用户帐号管理模式。用户注册后使用此帐号可以在其网上上实现所有功能操作。</li>
+<li>通行证。例如google、163、微软等提供多套服务的网站采用的帐号管理程序。用户在注册一次之后，使用该帐号可以在这些网站所属群里面自由使用。</li>
+</ul>
+<p>与目前流行的网站帐号系统（Passport）相比，OpenID具有开放性以及分散式的特点。它不基于某一应用网站的注册程序，而且不限制于单一网站的登录使用。</p>
+<h3 id="2-相关案例"><a href="#2-相关案例" class="headerlink" title="2.相关案例"></a>2.相关案例</h3><p>目前，OpenID联盟包括的知名网站有：Google，IBM，雅虎，微软，Myspace，Facebook等。</p>
+<h4 id="2-1-国外OpenID"><a href="#2-1-国外OpenID" class="headerlink" title="2.1 国外OpenID"></a>2.1 国外OpenID</h4><p>其实很多网站的账号本身就是一个OpenID：</p>
+<ul>
+<li>AOL - OpenID.aol.com/screenname</li>
+<li>Blogger - username.blogger.com</li>
+<li>Bloglines - d.bloglines.com/username</li>
+<li>Flickr - www.flickr.com/photos/username</li>
+<li>LiveDoor - profile.livedoor.com/username</li>
+<li>LiveJournal - username.livejournal.com</li>
+<li>SmugMug - username.smugmug.com</li>
+<li>Technorati - technorati.com/people/technorati/username</li>
+<li>Vox - member.vox.com</li>
+<li>Yahoo - <a href="http://OpenID.yahoo.com" target="_blank" rel="noopener">http://OpenID.yahoo.com</a></li>
+<li>WordPress.com - username.wordpress.com</li>
+<li>Ziki.com</li>
+</ul>
+<p>表 2 一些OpenID提供方比较</p>
+<p>(易用性 安全性 用户信息 多ID管理 反钓鱼 密码保护)</p>
+<p><a href="http://image-001.yo2cdn.com/wp-content/uploads/208/20875/2009/12/clip-image023.png" target="_blank" rel="noopener"><img src="http://pic.yupoo.com/uegeek/685648c8bb38/1suazdjm.jpg" alt="clip_image023" title="clip_image023"></a></p>
+<p><a href="http://OpenIDexplained.com/get?sort=feature0&amp;default=desc&amp;dir=desc" target="_blank" rel="noopener">via</a></p>
+<p>Facebook 作为RP支持OpenID</p>
+<p>2009年5月19日，facebook宣布正式启用OpenID登录系统，允许用户使用Gmail或其它支持OpenID的网站帐号登录Facebook。可以用Gmail帐号登录Facebook，也就是说，当你在Gmail里浏览邮件时，点击了一个Facebook的链接，你不需要再输入密码，就能到达你自己的Facebook页面里。</p>
+<p>OpenID是一个非盈利性质的联盟，期望推动用一个帐号/密码来登录所有网站。这可以省掉大量的用户不停注册的时间，以及一堆帐号/密码的麻烦。</p>
+<p>但是很多OpenID的参与者都不像Facebook这么彻底，例如不能用Facebook帐号登录Gmail。为什么Facebook这么做？Facebook说：”我们认为，开放有助于培育出一个强大的开发人员社区。”Facebook在测试中发现，利用OpenID注册Facebook的新用户”更可能”成为Facebook的活跃用户。</p>
+<p>当然，最真实的原因来自：Facebook从一开始就是一个彻底的”开放”态度，它让用户用自己的Email地址作为Facebook的帐号，而从来没有生成Facebook自己的帐号。所以，它采纳OpenID跟自己的历史逻辑一致，没有任何损失。</p>
+<h4 id="2-2-Yahoo-ID和Google-ID"><a href="#2-2-Yahoo-ID和Google-ID" class="headerlink" title="2.2 Yahoo ID和Google ID"></a>2.2 Yahoo ID和Google ID</h4><p>Yahoo</p>
+<p><a href="http://image-001.yo2cdn.com/wp-content/uploads/208/20875/2009/12/clip-image025.png" target="_blank" rel="noopener"><img src="http://pic.yupoo.com/uegeek/593718c8bb39/0wzof2mj.jpg" alt="clip_image025" title="clip_image025"></a></p>
+<blockquote>
+<p>OpenID技术让你可以用Yahoo!账号登录许多网站。一旦启用您的Yahoo！ OpenID的访问帐户，您可以简单地告诉任何支持OpenID的网站，你是Yahoo！用户。 </p>
+<p>当您访问的网站支持OpenID登录，您只需找到Yahoo！登录按钮。或者你看到一个OpenID图标，只需在文本框输入“yahoo.com”。登录信息将被发送到Yahoo！验证您的Yahoo！ ID和密码，然后登录到该网站。</p>
+</blockquote>
+<p>例子：用yahoo账号登录plaxo</p>
+<p><a href="http://image-001.yo2cdn.com/wp-content/uploads/208/20875/2009/12/clip-image038.png" target="_blank" rel="noopener"><img src="http://pic.yupoo.com/uegeek/662358c8bb3a/rsiwljqc.jpg" alt="clip_image038" title="clip_image038"></a></p>
+<p>安全措施：Yahoo! sign-in seal (安全图章)</p>
+<p><a href="http://image-001.yo2cdn.com/wp-content/uploads/208/20875/2009/12/clip-image040.png" target="_blank" rel="noopener"><img src="http://pic.yupoo.com/uegeek/130528c8bb3c/5mg4d207.jpg" alt="clip_image040" title="clip_image040"></a></p>
+<p>一个安全图章是一个只在本机显示的秘密的信息或照片。每次登录都寻找它，以确保您在一个真正的雅虎正在网站。如果消息，照片，或颜色是不同的，你可能在访问一个钓鱼网站。</p>
+<p>Google</p>
+<p>Google期望用户用Gmail的帐号登录其他网站，比如Facebook，但是，它不允许用户用其它Facebook的帐号来登录Gmail。（<a href="http://www.weblust.cn/#googlemusic" target="_blank" rel="noopener">例外</a>）</p>
+<p>Google OpenID解决方案：Federated Login</p>
+<p>基于OpenID标准。第三方网站和应用程序现在可以使用google帐户注册和登录。</p>
+<p><a href="http://image-001.yo2cdn.com/wp-content/uploads/208/20875/2009/12/clip-image051.jpg" target="_blank" rel="noopener"><img src="http://pic.yupoo.com/uegeek/578018c8bb3b/kab72slp.jpg" alt="clip_image051" title="clip_image051"></a></p>
+<p>图 2 Google Federated Login原理</p>
+<p>（谷歌作为Relying Part）</p>
+<p><a href="http://image-001.yo2cdn.com/wp-content/uploads/208/20875/2009/12/clip-image058.jpg" target="_blank" rel="noopener"><img src="http://pic.yupoo.com/uegeek/878718c8bb3e/66evqd7v.jpg" alt="clip_image058" title="clip_image058"></a></p>
+<p>为什么谷歌音乐支持人人ID、live ID、Yahoo! ID登录？有兴趣的同学可以看<a href="http://www.naodi.net/blog/why-not-use-google-music-google-account-login/" target="_blank" rel="noopener">这里</a>。</p>
+<h4 id="2-3-国内类OpenID"><a href="#2-3-国内类OpenID" class="headerlink" title="2.3 国内类OpenID"></a>2.3 国内类OpenID</h4><p>国内支持OpenID的Relying Part：<a href="http://www.yupoo.com/" target="_blank" rel="noopener">Yupoo又拍</a>，<a href="http://www.loopo.cn/" target="_blank" rel="noopener">乐铺</a>，……</p>
+<p>国内OpenID Provider：OpenID.cn，<a href="http://www.onedoor.cn/openid/info" target="_blank" rel="noopener">豌豆</a>，……</p>
+<p>更多的是类OpenID 提供方和类OpenID Relying Part</p>
+<p>类OpenID Relying Part：京东商城、土豆、D1、99网上书城、365商城、钻石小鸟，等等。</p>
+<p>类OpenID Provider：支付宝、人人网、QQ等。</p>
+<h6 id="附：如何在我的网站上用支付宝账户登录功能？-via"><a href="#附：如何在我的网站上用支付宝账户登录功能？-via" class="headerlink" title="附：如何在我的网站上用支付宝账户登录功能？(via)"></a>附：如何在我的网站上用支付宝账户登录功能？(<a href="http://dev.alipay.com/devclub/mvnforum/viewthread_thread,518_lastpage,yes/viewthread_thread,424_lastpage,yes;jsessionid=1DD89CC7C085FC36916F2AAD0FDD6952" target="_blank" rel="noopener">via</a>)</h6><p>答： </p>
+<p>1、确认您签约的合同中是否有该项服务，我们称之为“免注册登陆”、“信任登陆”等。</p>
+<p>2、若有该项服务，且已开通该项权限功能，请从客户经理那获得，免注册登陆的接口资料。若没有，则请联系客户经理 或拨打商户客服电话0571-88158090</p>
+<p>3、根据接口资料与接口代码DEMO，类似接入支付宝支付接口的方式，接入这个接口到商户网站中，并与商户网站里的会员数据库衔接。</p>
+<p>具体实现步骤可参考：<a href="http://dev.alipay.com/devclub/mvnforum/viewthread_thread,398" target="_blank" rel="noopener">http://dev.alipay.com/devclub/mvnforum/viewthread_thread,398</a></p>
+<p>流程 ：</p>
+<p>1、 用户在访问您的网站时，在您的登陆框里，点击功能按钮“支付宝会员登陆”</p>
+<p>2、 通过您做好的接口与支付宝的网关，页面跳转到支付宝专门为会员免注册登陆设计的登陆页面</p>
+<p>3、 用户填写登陆帐号密码登陆进去以后，支付宝会把这个用户的相关信息发送回本网站，同时页面跳回到本网站已设置好路径的返回页，本网站通过该返回页执行程序实现用户在本网站的自动登陆（此登陆并非登陆到支付宝网站上，而是登陆到本网站里）。</p>
+<h4 id="2-4-小结"><a href="#2-4-小结" class="headerlink" title="2.4 小结"></a>2.4 小结</h4><p>封闭性质的OpenID——形似而非神似</p>
+<p>OpenID：双向开放</p>
+<ul>
+<li>类OpenID：单向有选择性的开放，提供接口，通过合作或开放给用户自行添加</li>
+<li>真正的OpenID支持网站（OI）：影响力太弱</li>
+<li>类OpenID Provider（OP）：重量级公司，用户量庞大且较为优质，活跃度高。都不是真正的开放，自身产品不支持OpenID登录。</li>
+<li>类OpenID Relying Part（OR）：实力较强，多是服务型网站，以电子商务网站为多，跟几大OP有深入的良好合作关系（互补的性质 &gt; 竞争性质），看重的是强强联合，打通用户资源。</li>
+</ul>
+<hr>
+<p>[1]. OpenID Wikipedia, <a href="http://en.wikipedia.org/wiki/Openid" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/OpenID</a></p>
+<p>[2]. Six Apart - Labs: OpenID, <a href="http://www.sixapart.com/labs/openid/" target="_blank" rel="noopener">http://www.sixapart.com/labs/OpenID/</a></p>
+<p>[3]. OpenID Explained , <a href="http://openidexplained.com/" target="_blank" rel="noopener">http://OpenIDexplained.com/</a></p>
+<p>[4]. OpenID百度百科, <a href="http://baike.baidu.com/view/832917.html?wtp=tt" target="_blank" rel="noopener">http://baike.baidu.com/view/832917.html?wtp=tt</a></p>
+<p>[5]. OpenID使用手册, <a href="http://www.matrix.org.cn/resource/article/2007-09-20/187c9604-671e-11dc-91f8-0da64dffe568.html" target="_blank" rel="noopener">http://www.matrix.org.cn/resource/article/2007-09-20/187c9604-671e-11dc-91f8-0da64dffe568.html</a></p>
+<p>[6]. Towards an OpenID-based solution to the Social Network Interoperability problem，Position paper for the W3C Workshop on the Futureof Social Networking</p>
+<p>[7]. Slideshare.net Results 1-12 of 1160 for “ OpenID”  <a href="http://www.slideshare.net/search/slideshow?q=+OpenID&amp;submit=post&amp;searchfrom=header" target="_blank" rel="noopener">http://www.slideshare.net/search/slideshow?q=+OpenID&amp;submit=post&amp;searchfrom=header</a></p>
+<p>[8]. 什么是OpenID , David, March 23, 2008, <a href="http://blog.iyi.cn/start/2008/03/openid.html" target="_blank" rel="noopener">http://blog.iyi.cn/start/2008/03/OpenID.html</a></p>
+<p>[9]. 什么是OpenID , OpenID的工作原理简述, OpenID的两种模式, <a href="http://vovo.net.cn/go/OpenID" target="_blank" rel="noopener">http://vovo.net.cn/go/OpenID</a></p>
+<p>[10]. OpenID初体验, 2008-09-10, <a href="http://www.tiray.net/post/OpenID-experience.aspx" target="_blank" rel="noopener">http://www.tiray.net/post/OpenID-experience.aspx</a></p>
+<p>[11]. OpenID，新的用户登录体验, <a href="http://www.adxonist.com/archives/32" target="_blank" rel="noopener">http://www.adxonist.com/archives/32</a></p>
+<p>[12]. OpenID的用户体验 (一), <a href="http://www.adxonist.com/archives/34" target="_blank" rel="noopener">http://www.adxonist.com/archives/34</a></p>
+<p>[13]. OpenID的用户体验 (二), <a href="http://www.adxonist.com/archives/39" target="_blank" rel="noopener">http://www.adxonist.com/archives/39</a></p>
+<p>[14]. OpenID的用户体验 (三), <a href="http://www.adxonist.com/archives/54" target="_blank" rel="noopener">http://www.adxonist.com/archives/54</a></p>
+<p>[15]. OpenID系列(一)：注册篇, <a href="http://www.kuqin.com/shuoit/20080411/6538.html" target="_blank" rel="noopener">http://www.kuqin.com/shuoit/20080411/6538.html</a></p>
+<p>[16]. OpenID系列(二)：使用自己的URL, <a href="http://www.kuqin.com/shuoit/20080411/6539.html" target="_blank" rel="noopener">http://www.kuqin.com/shuoit/20080411/6539.html</a></p>
+<p>[17]. 国外各大OI、OP、RP网站</p>
+<p>[18]. 国内各大OP、RP网站</p>
+<p>by 00</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OpenID/" rel="tag"># OpenID</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/ucd-annual-meeting-2009.html" rel="next" title="UCD年会收获：开放、思考、积累">
+                <i class="fa fa-chevron-left"></i> UCD年会收获：开放、思考、积累
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/talk-about-product-design.html" rel="prev" title="漫话产品设计">
+                漫话产品设计 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-OpenID介绍"><span class="nav-number">1.</span> <span class="nav-text">1.OpenID介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1概念"><span class="nav-number">1.1.</span> <span class="nav-text">1.1概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2基本原理简述"><span class="nav-number">1.2.</span> <span class="nav-text">1.2基本原理简述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-OpenID优缺点"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 OpenID优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-OpenID跟Passport的比较"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 OpenID跟Passport的比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-相关案例"><span class="nav-number">2.</span> <span class="nav-text">2.相关案例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-国外OpenID"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 国外OpenID</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-Yahoo-ID和Google-ID"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Yahoo ID和Google ID</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-国内类OpenID"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 国内类OpenID</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#附：如何在我的网站上用支付宝账户登录功能？-via"><span class="nav-number">2.3.0.1.</span> <span class="nav-text">附：如何在我的网站上用支付宝账户登录功能？(via)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-小结"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 小结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/openid-intro.html';
+          this.page.identifier = 'openid-intro.html';
+          this.page.title = '什么是OpenID？OpenID概念、原理和案例';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

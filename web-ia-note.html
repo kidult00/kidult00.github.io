@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Design,Note,Navigation,IA,信息架构," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="入行也有一些时日了，曾经看到不少文档和设计稿里，有一部分是对“信息架构”的说明。这些说明其实一般也就是个网站的sitemap，甚至只是最粗略的导航和页面关系说明——这只是信息架构非常小的一个部分？到底什么是信息架构？ 读完在“想读”list里蹲了好久的《Web信息架构》，感觉有点如释重负，仿佛自己久治不愈的拖延症稍微有了一点点起色。读电子版的一大好处就是感觉不到书的厚度，读着、读着、读着，突然就发">
+<meta name="keywords" content="Design,Note,Navigation,IA,信息架构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="没事别随便提信息架构——读Web信息架构">
+<meta property="og:url" content="http://uegeek.com/web-ia-note.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="入行也有一些时日了，曾经看到不少文档和设计稿里，有一部分是对“信息架构”的说明。这些说明其实一般也就是个网站的sitemap，甚至只是最粗略的导航和页面关系说明——这只是信息架构非常小的一个部分？到底什么是信息架构？ 读完在“想读”list里蹲了好久的《Web信息架构》，感觉有点如释重负，仿佛自己久治不愈的拖延症稍微有了一点点起色。读电子版的一大好处就是感觉不到书的厚度，读着、读着、读着，突然就发">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/qrcode_for_gh_48d79033755a_258.jpg">
+<meta property="og:updated_time" content="2016-01-04T16:51:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="没事别随便提信息架构——读Web信息架构">
+<meta name="twitter:description" content="入行也有一些时日了，曾经看到不少文档和设计稿里，有一部分是对“信息架构”的说明。这些说明其实一般也就是个网站的sitemap，甚至只是最粗略的导航和页面关系说明——这只是信息架构非常小的一个部分？到底什么是信息架构？ 读完在“想读”list里蹲了好久的《Web信息架构》，感觉有点如释重负，仿佛自己久治不愈的拖延症稍微有了一点点起色。读电子版的一大好处就是感觉不到书的厚度，读着、读着、读着，突然就发">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/qrcode_for_gh_48d79033755a_258.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/web-ia-note.html"/>
+
+
+
+
+
+  <title>没事别随便提信息架构——读Web信息架构 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/web-ia-note.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">没事别随便提信息架构——读Web信息架构</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-09-10T23:36:44+08:00">
+                2012-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计/" itemprop="url" rel="index">
+                    <span itemprop="name">设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/web-ia-note.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="web-ia-note.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>入行也有一些时日了，曾经看到不少文档和设计稿里，有一部分是对“信息架构”的说明。这些说明其实一般也就是个网站的sitemap，甚至只是最粗略的导航和页面关系说明——这只是信息架构非常小的一个部分？到底什么是信息架构？</p>
+<p>读完在“想读”list里蹲了好久的《<a href="http://book.douban.com/subject/3169342/" target="_blank" rel="noopener">Web信息架构</a>》，感觉有点如释重负，仿佛自己久治不愈的拖延症稍微有了一点点起色。读电子版的一大好处就是感觉不到书的厚度，读着、读着、读着，突然就发现读完了。</p>
+<p>言归正传，这是一本“严谨”又“热情”的书，严谨的部分很实在地介绍了信息架构的基本概念、方法、案例等；热情的部分简直是本书的bonus，作为一个新兴的、跨学科的、价值待证明的领域，作者用自己丰富的经验，用絮叨又幽默的语气，向我们述说着这个行当面临着哪些挑战，哪些组织的哪些层级的哪些人，会提出怎样的挑战和疑问，作为一名靠谱的信息架构师，应该以什么样的态度去面对和回答这些问题。——真的，没事别乱提信息架构。</p>
+<a id="more"></a>
+<h3 id="一、信息架构是干什么的？"><a href="#一、信息架构是干什么的？" class="headerlink" title="一、信息架构是干什么的？"></a><strong>一、信息架构是干什么的？</strong></h3><h4 id="1-什么时候需要考虑信息架构？"><a href="#1-什么时候需要考虑信息架构？" class="headerlink" title="1.什么时候需要考虑信息架构？"></a>1.什么时候需要考虑信息架构？</h4><blockquote>
+<p>信息正好处在数据和知识之间混乱的地带。</p>
+</blockquote>
+<p>信息的结构化程度不如数据，可传递性（可描述性？）又好于知识，是我们在网络上查看、搜寻的最一般的类型。</p>
+<p>当一个网站/系统需要帮助其使用者更好地从大量数据中获取信息时，就需要考虑信息架构。越是以信息查询、获取、消费、生产等作为核心业务的网站，信息架构越重要。例如，内容型网站（如资讯门户、企业内网）、电子商务网站、垂直类社交网站（如问答类）的信息架构，比工具型网站（如日程管理、邮箱）要重要得多。</p>
+<h4 id="2-信息架构由什么组成"><a href="#2-信息架构由什么组成" class="headerlink" title="2.信息架构由什么组成"></a>2.信息架构由什么组成</h4><p>网站的信息架构可以分为元素、关系和表达三部分。</p>
+<ul>
+<li>元素可以用建筑的砖块来类比。支撑一个建筑的基本构成单元是什么？有多少种？体量多大？什么材质？——基本的信息单元是什么，由谁产生，如何更新，有哪些自有的和附加的属性/元数据，它们如何描述信息，如果在信息存取过程中发挥作用；</li>
+<li>关系可以用建筑的骨架结构来类比。一个建筑的基本架构是怎样的？有哪些空间单元？它们各自的作用是什么？如何联通？——数据如何产生、如何分类、如何组织、如何流动、如何发生关系；</li>
+<li>表达可以用建筑的外观和环境标识来类比。人们看到建筑有什么感受？身处其中时有什么感受？如何在其中穿行，根据指示到达要去的地方？——使用者在哪里通过什么方式获得信息？界面对信息的描述、指示和引导是否充足有效？<br></li>
+</ul>
+<h4 id="3-信息架构要做的事情"><a href="#3-信息架构要做的事情" class="headerlink" title="3.信息架构要做的事情"></a>3.信息架构要做的事情</h4><ul>
+<li>设计结构（Structuring）——决定网站信息“单元”的粒度（granularity），及信息单元的相对大小或粗糙程度。</li>
+<li>决定组织方式（Organizing）——将组件组合成有意义而且各有个特色的类别。</li>
+<li>制定标签（Labeling）——如何称呼这些类别，如何导航。</li>
+</ul>
+<p><span style="color: #993300;"><strong>信息架构的目标在于合理组织网站需要承载的信息，让人们通过浏览、搜索、提问等方式找到想要的东西。</strong></span></p>
+<h3 id="二、如何搭建和优化网站的信息架构？"><a href="#二、如何搭建和优化网站的信息架构？" class="headerlink" title="二、如何搭建和优化网站的信息架构？"></a><strong>二、如何搭建和优化网站的信息架构？</strong></h3><p>实践信息架构设计模式的基础：用户，内容，情境。</p>
+<ul>
+<li>必须了解网站背后的商业目的，以及可供设计和实践的资源，想办法把信息架构和企业的目标、策略、文化结合起来。</li>
+<li>必须注意目前内容的质量和数量，以及一年后会如何改变。所有权（内容谁提供？所有权是否分散？是否有外部信息提供商授权的内容？），格式，结构（文件、内容组件、xml），元数据（有多少元数据用来描述内容和对象？手动还是自动加入标签？质量和一致性程度如何？是否有受控词表？用户是否可以自定义标签？），数量，动态性（成长率或周转率如何？明年会增加多少内容？内容多久会过时？）</li>
+<li>必须了解主要观众的信息需求和信息搜寻行为。</li>
+</ul>
+<h4 id="1-探索不用类型的使用者，有哪些信息需求，以及什么样的信息获取策略，现在的系统存在什么问题"><a href="#1-探索不用类型的使用者，有哪些信息需求，以及什么样的信息获取策略，现在的系统存在什么问题" class="headerlink" title="1.探索不用类型的使用者，有哪些信息需求，以及什么样的信息获取策略，现在的系统存在什么问题"></a>1.探索不用类型的使用者，有哪些信息需求，以及什么样的信息获取策略，现在的系统存在什么问题</h4><p>四种常见的信息需求：</p>
+<ul>
+<li>已知条目搜索（known-item seeking）——正确的东西</li>
+<li>探索式搜索（exploratory seeking）——一些好东西：  在搜索和浏览过程中学习，并不期待得到“正确”答案</li>
+<li>无遗漏式研究（exhaustive research）——每样东西：  搜索某一主题的任何信息</li>
+<li>重新找到——再次需要</li>
+</ul>
+<p>一些研究方法：</p>
+<p>【背景研究】</p>
+<ul>
+<li>短期和长期目标是什么？</li>
+<li>商业计划是什么？政治因素如何？</li>
+<li>计划和预算？</li>
+<li>观众是谁？</li>
+<li>观众为什么要访问这个网站？为什么会常来？</li>
+<li>用户应该能做什么事情？</li>
+<li>内容怎么建立？怎么管理？谁来做？</li>
+<li>技术基础架构是什么？</li>
+<li>以前有什么行得通？什么行不通？</li>
+</ul>
+<p>【涉众访谈 stakeholder interview】</p>
+<p>【启发式评估 heuristic evaluation】</p>
+<p>【内容分析 content analysisi】</p>
+<p>目的是找出内容和元数据内的模式与关系，为内容做更好的结构、组织，以及访问途径。对每一种内容对象记录：</p>
+<ul>
+<li>结构化元数据：描述该对象的信息等级。有没有标题？内容有没有分节？用户想直接获取这些信息吗？</li>
+<li>描述性元数据：主题？用户？格式？…………</li>
+<li>管理性元数据：描述该对象和商业情境的关系。谁创建了这个对象？谁拥有？合适建立的？何时应该移除？</li>
+</ul>
+<p>记住自己的问题：</p>
+<ol>
+<li>这个对象是什么？</li>
+<li>如何描述这个对象？</li>
+<li>这个对象和其他对象有何差别？</li>
+<li>怎样让人找到？</li>
+</ol>
+<p>【内容映射 content mapping】<br>将现有的内容结构、组织和位置进行可视化表达，如</p>
+<p>【标杆法 benchmarking】</p>
+<ul>
+<li>竞争式标杆法：与他人做横向比较</li>
+<li>前后式标杆法：与自己做时间上的纵向比较</li>
+</ul>
+<p>【卡片分类 card sorting】</p>
+<p>让我们了解用户的心智模型，他们在脑中默默编组、排序、为任务和内容制定名称的方式。</p>
+<p>此外还有使用量统计，搜索日志分析，客服信息，问卷，情境式调查（contextual inquiry），焦点小组，访谈，用户测试等方法。</p>
+<h4 id="2-理清所有的数据类型、属性、来源、更新情况等自有属性，回答它们如何组织的问题"><a href="#2-理清所有的数据类型、属性、来源、更新情况等自有属性，回答它们如何组织的问题" class="headerlink" title="2.理清所有的数据类型、属性、来源、更新情况等自有属性，回答它们如何组织的问题"></a>2.理清所有的数据类型、属性、来源、更新情况等自有属性，回答它们如何组织的问题</h4><blockquote>
+<p>理解的源头就是分类——Hayden White</p>
+</blockquote>
+<p>组织系统由<strong>组织体系</strong>和<strong>组织结构</strong>组成。</p>
+<p>A.<strong>组织体系</strong>定义内容条目之间共享的特性，而且会影响这些条目的逻辑分组方式。</p>
+<p>(1).精确性组织体系：可以将信息分成定义明确、互斥的区域。常见的是按字母顺序、按年表、按地理位置排序。</p>
+<p>(2).模糊性组织体系：依赖的是体系构建的质量，以及体系内个别条目摆放的位置。常见的类型：</p>
+<ul>
+<li>按主题。设计时需要定义好内容的范围，注意涵盖面的广度</li>
+<li>按任务。将内容和应用程序组织成流程、功能或工作的集合。最常见的是电商网站</li>
+<li>按用户。如果用户群可以界定的比较清楚，可以提供很好的个性化服务，但模糊性依然存在，对系统“猜测”的要求很高</li>
+<li>按隐喻。多用于游戏</li>
+<li>混用</li>
+</ul>
+<p>B.<strong>组织结构</strong>定义内容条目和群组之间的关系类型。</p>
+<p>(1).等级式：自上而下的分类，类别互斥（在排他性和包容性之间取得平衡），平衡宽度（每一层选项数量）和深度（层级数）；</p>
+<p>(2).数据库模式：自下而上的做法，使用受控词表的元数据为文件和其他信息对象打上标签，就可以进行有力的搜索、浏览、过滤以及动态链接。ERD（entity relationship diagram）是在设计和采用数据库之前，建立与调整数据模型的方法。大型网站最好依赖CMS来管理元数据和受控词表。</p>
+<p>(3).超文本：涉及两种主要组件：要彼此链接的条目或信息块，以及块状信息之间的链接。缺点是难以看清全貌，用户无法在网站组织上建立心智模型，所以通常不作为主要的组织结构。</p>
+<p>&nbsp;</p>
+<p><strong>设计标签</strong></p>
+<p>通用原则：尽量窄化范围，开发一致的标签系统而非标签。<br>为什么一致性很重要？因为一致性代表的就是<strong>可预测性</strong>，当系统可预测时，就<strong>容易学习</strong>。</p>
+<p>影响一致性的因素：风格，版面形式（字体、字号、颜色、空白、分组方式等），语法（动宾？问句？），粒度，理解性（没有重要的遗漏），用户（如果有必要，为每一类用户开发独立的标签系统）</p>
+<p>创建新的标签系统</p>
+<ul>
+<li>从已有内容中抽取（慢，费力）</li>
+<li>要求内容作者为内容建议标签</li>
+<li>找用户代言人或主题专家（SME）</li>
+<li>直接来自用户（如卡片分类，对小群标签如导航比较适用，自由列表）</li>
+<li>间接来自用户（如query日志分析、标签分析）</li>
+</ul>
+<p>&nbsp;</p>
+<h4 id="3-要满足使用者的需求，数据应该如何被提取，如何呈现"><a href="#3-要满足使用者的需求，数据应该如何被提取，如何呈现" class="headerlink" title="3.要满足使用者的需求，数据应该如何被提取，如何呈现"></a>3.要满足使用者的需求，数据应该如何被提取，如何呈现</h4><p>信息架构为内容提供了情境：</p>
+<ul>
+<li>告诉我们现在在哪里；</li>
+<li>协助我们移动到其他关系紧密的网页；</li>
+<li>协助我们以层级方式（结构和目录）和情境方式（相关内容和功能）在网站内移动；</li>
+<li>让我们可以操控内容以便浏览（如筛选和排序）；</li>
+<li>让我们知道可以去哪里找到基本服务（如登录和帮助）。</li>
+</ul>
+<p>提供浏览信息的帮助：</p>
+<ul>
+<li>组织系统：网站内容分类或分组的主要方式（如按主题/任务/用户/年代），也称分类法和等级体系；</li>
+<li>全站导航系统</li>
+<li>区域导航系统</li>
+<li>网站地图/目录</li>
+<li>网站索引：排序后的链接列表</li>
+<li>网站指南：针对特定主题提供特定信息，以及连向网站中相关子主题的链接</li>
+<li>网站向导：可以通过一系列的步骤来引导用户，也有连向网站中相关子主题的链接</li>
+<li>情境式导航系统：用链接同意连向相关内容，通常内嵌在文字内，一般用来连接网站中高度专业化的内容，</li>
+</ul>
+<p>提供搜索信息的帮助：</p>
+<ul>
+<li>搜索界面</li>
+<li>查询语言：搜索查询的语法；</li>
+<li>查询构造器：一些提升查询效果的方式，场景包括拼写检查器（qc？），词干分析、概念搜索（？），以及从词典取出同义词；</li>
+<li>搜索算法：决定哪些内容可以满足用户的查询；</li>
+<li>搜索区域：网站内容子集，经过特殊的索引设计以满足较细致的搜索；</li>
+<li>搜索结果：如何分类、分级、排序、聚类，显示多少结果。</li>
+</ul>
+<p>隐藏的组件</p>
+<ul>
+<li>受控词表和叙词表：预先确定描述特定领域的较佳词汇。通常包含上位类、下位类、相关关系的叙词链接和优选词的说明。搜索系统可以从受控词表中取出查询的同义词以提升查询效果。</li>
+<li>搜索算法</li>
+<li>最佳猜测（best bets）：匹配较佳的搜索结果，编辑和主题专家会决定哪些查询应该取出最佳猜测（直达区~~）</li>
+</ul>
+<p>高级导航方法</p>
+<ul>
+<li>个性化和定制化：个性化是我们猜测用户想要什么（but 过去的绩效无法保证未来的成效）；定制化是用户告诉我们他想要什么（but “don’t make me think”）</li>
+<li>可视化</li>
+<li>社会化导航：协同过滤、推荐引擎</li>
+</ul>
+<h3 id="三、信息架构的挑战和机会在哪里？"><a href="#三、信息架构的挑战和机会在哪里？" class="headerlink" title="三、信息架构的挑战和机会在哪里？"></a><strong>三、信息架构的挑战和机会在哪里？</strong></h3><p>1.价值待证明</p>
+<p>2.跨学科、多领域</p>
+<p>3.对象的不可控性：信息模糊性（语言的天然属性），异质性（组成元素之间的差异，难以结构化），不同观点的差异性（必需摆脱自己心中为内容命名和组织的模式），</p>
+<p>4.需要深入企业和组织，在复杂的内部政治环境中减少混乱和不确定性，寻求合理的解决办法。</p>
+<p>&nbsp;</p>
+<div>by <a href="http://www.uegeek.com/" target="_blank" rel="noopener">00</a></div>
+
+<hr>
+<div class="image-package imagebubble"><br><img src="http://7xjpra.com1.z0.glb.clouddn.com/qrcode_for_gh_48d79033755a_258.jpg" alt=""><br><div class="image-caption">00的公众号，更多分享酝酿中……</div><br></div>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Design/" rel="tag"># Design</a>
+          
+            <a href="/tags/Note/" rel="tag"># Note</a>
+          
+            <a href="/tags/Navigation/" rel="tag"># Navigation</a>
+          
+            <a href="/tags/IA/" rel="tag"># IA</a>
+          
+            <a href="/tags/信息架构/" rel="tag"># 信息架构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/ixd-controls-buttons.html" rel="next" title="基本交互控件[1]：命令按钮(Buttons)">
+                <i class="fa fa-chevron-left"></i> 基本交互控件[1]：命令按钮(Buttons)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/design-is-relationships.html" rel="prev" title="无协调，不设计">
+                无协调，不设计 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、信息架构是干什么的？"><span class="nav-number">1.</span> <span class="nav-text">一、信息架构是干什么的？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-什么时候需要考虑信息架构？"><span class="nav-number">1.1.</span> <span class="nav-text">1.什么时候需要考虑信息架构？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-信息架构由什么组成"><span class="nav-number">1.2.</span> <span class="nav-text">2.信息架构由什么组成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-信息架构要做的事情"><span class="nav-number">1.3.</span> <span class="nav-text">3.信息架构要做的事情</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、如何搭建和优化网站的信息架构？"><span class="nav-number">2.</span> <span class="nav-text">二、如何搭建和优化网站的信息架构？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-探索不用类型的使用者，有哪些信息需求，以及什么样的信息获取策略，现在的系统存在什么问题"><span class="nav-number">2.1.</span> <span class="nav-text">1.探索不用类型的使用者，有哪些信息需求，以及什么样的信息获取策略，现在的系统存在什么问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-理清所有的数据类型、属性、来源、更新情况等自有属性，回答它们如何组织的问题"><span class="nav-number">2.2.</span> <span class="nav-text">2.理清所有的数据类型、属性、来源、更新情况等自有属性，回答它们如何组织的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-要满足使用者的需求，数据应该如何被提取，如何呈现"><span class="nav-number">2.3.</span> <span class="nav-text">3.要满足使用者的需求，数据应该如何被提取，如何呈现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、信息架构的挑战和机会在哪里？"><span class="nav-number">3.</span> <span class="nav-text">三、信息架构的挑战和机会在哪里？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/web-ia-note.html';
+          this.page.identifier = 'web-ia-note.html';
+          this.page.title = '没事别随便提信息架构——读Web信息架构';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

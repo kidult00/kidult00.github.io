@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Deep learning,深度学习,AI,Docker," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="Deep learning,深度学习,AI,Docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DeepLearning-1：神经网络和 Docker 入门">
+<meta property="og:url" content="http://uegeek.com/170304-deeplearning-week0.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/dl-week0-title.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/download_tensorflow_image.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/docker_mirror.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/docker-image-loaded.png">
+<meta property="og:updated_time" content="2017-03-04T14:04:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DeepLearning-1：神经网络和 Docker 入门">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/dl-week0-title.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/170304-deeplearning-week0.html"/>
+
+
+
+
+
+  <title>DeepLearning-1：神经网络和 Docker 入门 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/170304-deeplearning-week0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">DeepLearning-1：神经网络和 Docker 入门</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-04T21:58:23+08:00">
+                2017-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/动手/" itemprop="url" rel="index">
+                    <span itemprop="name">动手</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/170304-deeplearning-week0.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="170304-deeplearning-week0.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/dl-week0-title.png" alt=""></p>
+<a id="more"></a> 
+<h2 id="一、神经网络简介"><a href="#一、神经网络简介" class="headerlink" title="一、神经网络简介"></a>一、神经网络简介</h2><p>人工神经网络：在输入层和输出层中间加入多个隐层。</p>
+<ul>
+<li>Top-down approach to AI ：西蒙为代表的符号学派<ul>
+<li>形式化方法，将知识表示为符号</li>
+<li>运用逻辑进行推理</li>
+<li>对自然语言、图像问题基本毫无办法</li>
+</ul>
+</li>
+<li>Bottom-up approach to AI：神经网络，从最底层（神经元）开始构建</li>
+</ul>
+<p>神经网络的历史</p>
+<ul>
+<li>40年代：概念雏形（没有学习算法）</li>
+<li>50年代：可用的学习算法 - 感知机</li>
+<li>1969年：Minsky 泼冷水</li>
+<li>70年代：BP 算法，训练多层神经网络</li>
+<li>90年代：SVM 支持向量机「打败」神经网络</li>
+<li>2006：深层网络理论、实验上有所突破</li>
+<li>2012：ImageNet，大幅提升结果（错误率 15.3%）</li>
+</ul>
+<p>深度学习框架很多，不需要纠结使用哪种框架：</p>
+<ul>
+<li>Tensorflow：Google 开源主推，是最流行的框架，文档齐全。底层是 C++ ，如果对性能要求不高，用 Python 开发的效率更高</li>
+<li>MXNet：亚马逊主推</li>
+<li>Caffe：图形领域，自然语言处理稍弱</li>
+<li>Torch：Facebook 主推</li>
+</ul>
+<h2 id="二、Docker-环境安装和配置"><a href="#二、Docker-环境安装和配置" class="headerlink" title="二、Docker 环境安装和配置"></a>二、Docker 环境安装和配置</h2><p>Docker 是什么？容器化技术的实现，可以理解为一个轻量级的虚拟环境。</p>
+<p>之前 00 被 Python 的版本和各种包虐过，所以折腾了 <a href="https://virtualenv.pypa.io/en/stable/" target="_blank" rel="noopener">Virtualenv</a> 的方法，一个项目新建一个 Python 环境。那么 Docker 跟 Virtualenv 的区别是什么呢？</p>
+<blockquote>
+<p>Docker completely isolates the TensorFlow installation from pre-existing packages on your machine. The Docker container contains TensorFlow and all its dependencies. </p>
+</blockquote>
+<p>Docker 有一个 Image 的概念，可以理解为别人已经制作好的环境（类似安卓手机装机软件），把 Python + TensorFlow + Jupyter Notebook 打包好。</p>
+<h3 id="Docker-安装和配置步骤"><a href="#Docker-安装和配置步骤" class="headerlink" title="Docker 安装和配置步骤"></a>Docker 安装和配置步骤</h3><p>第一步：下载 <a href="https://store.docker.com/editions/community/docker-ce-desktop-mac?tab=description" target="_blank" rel="noopener">Docker Community Edition for Mac</a>安装。</p>
+<p>用 <code>docker version</code> 可以查看版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">kidults-NMB:~ kidult$ docker version</span><br><span class="line">Client:</span><br><span class="line"> Version:      17.03.0-ce</span><br><span class="line"> API version:  1.26</span><br><span class="line"> Go version:   go1.7.5</span><br><span class="line"> Git commit:   60ccb22</span><br><span class="line"> Built:        Thu Feb 23 10:40:59 2017</span><br><span class="line"> OS/Arch:      darwin/amd64</span><br><span class="line"></span><br><span class="line">Server:</span><br><span class="line"> Version:      17.03.0-ce</span><br><span class="line"> API version:  1.26 (minimum version 1.12)</span><br><span class="line"> Go version:   go1.7.5</span><br><span class="line"> Git commit:   3a232c8</span><br><span class="line"> Built:        Tue Feb 28 07:52:04 2017</span><br><span class="line"> OS/Arch:      linux/amd64</span><br><span class="line"> Experimental: true</span><br></pre></td></tr></table></figure>
+<p>使用 Docker 时，命令行相当于客户端，服务器端在安装完成后需要启动。</p>
+<p>第二步：到 <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker hub</a> 找到 TensorFlow Image ，以此为模板构建自己的容器。参考 <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/docker/README.md" target="_blank" rel="noopener">Using TensorFlow via Docker</a>，用 <code>run</code> 命令加载 TensorFlow image：</p>
+<p><code>docker run -it -p 8888:8888 tensorflow/tensorflow</code></p>
+<p>开始下载后，发现速度非常慢：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/download_tensorflow_image.png" alt=""></p>
+<p>参考小伙伴的 <a href="http://www.jianshu.com/p/d896ec46db66" target="_blank" rel="noopener">Docker Hub Mirror加速Docker官方镜像下载</a> 笔记，使用镜像下载。在 Mac 上配置<a href="https://www.daocloud.io/mirror#accelerator-doc" target="_blank" rel="noopener">加速器</a>很简单，右键点击桌面顶栏的 docker 图标，选择 Preferences ，在 Advanced 标签下的 Registry mirrors 列表中加入镜像地址: <code>http://d43d99f5.m.daocloud.io Copy</code>，点击 Apply &amp; Restart 按钮使设置生效。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/docker_mirror.png" alt=""></p>
+<p>再次运行<code>docker run -it -p 8888:8888 tensorflow/tensorflow</code>，速度飞了起来~</p>
+<p>下载成功后，可以在浏览器看到 Jupyter Notebook 界面：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/docker-image-loaded.png" alt=""></p>
+<h3 id="Docker-常用命令"><a href="#Docker-常用命令" class="headerlink" title="Docker 常用命令"></a>Docker 常用命令</h3><ul>
+<li>关闭 docker：control+c</li>
+<li>查看运行状态：<code>docker ps</code> </li>
+<li>把本地目录映射到容器：<code>docker run -it -p 8888:8888 -v 原路径:目标路径 tensorflow/tensorflow</code></li>
+<li><p>查看历史容器：<code>docker ps -a</code> </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">kidults-NMB:my_venv kidult$ docker ps -a</span><br><span class="line">CONTAINER ID        IMAGE                   COMMAND             CREATED             STATUS                      PORTS                              NAMES</span><br><span class="line">f4eaa7828ac5        tensorflow/tensorflow   &quot;/run_jupyter.sh&quot;   7 minutes ago       Up About a minute           6006/tcp, 0.0.0.0:8888-&gt;8888/tcp   priceless_mccarthy</span><br><span class="line">b09563e0479b        tensorflow/tensorflow   &quot;/run_jupyter.sh&quot;   52 minutes ago      Exited (0) 7 minutes ago                                       silly_chandrasekhar</span><br><span class="line">d669d764de48        tensorflow/tensorflow   &quot;/run_jupyter.sh&quot;   About an hour ago   Exited (0) 52 minutes ago                                      relaxed_davinci</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>恢复历史容器：<code>docker start -i id</code> (ID只需要写前几位)</p>
+</li>
+<li>删除容器：<code>docker rm id</code> </li>
+<li>重命名容器：<code>docker rename CONTAINER ID XXX</code>(重命名为 dl)</li>
+<li>在容器里安装包：<code>!pip install xxx</code></li>
+</ul>
+<p>参考 <a href="https://github.com/junjielizero/DeepLearning101/blob/master/ch0/note/README.md" target="_blank" rel="noopener">junjielizero 同学的笔记</a>，优化了几个步骤：</p>
+<ol>
+<li><p>创建跟 github 同步的容器：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 8888:8888 -v ~/Workspace/DeepLearning101/:/Workspace/DeepLearning101 -w /Workspace/DeepLearning101 tensorflow/tensorflow</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给 docker 启动命令起别名</p>
+<p> 把课程容器改名为<code>dl</code>，然后新建别名 <code>alias dsdl=&quot;docker start -i dl&quot;</code></p>
+</li>
+<li><p>在 iTerm2 运行 <code>dsdl</code>，按着 Command 点击链接 localhost:8888 即可打开项目</p>
+</li>
+</ol>
+<h2 id="三、词频统计作业"><a href="#三、词频统计作业" class="headerlink" title="三、词频统计作业"></a>三、词频统计作业</h2><blockquote>
+<p>统计 <a href="https://github.com/AIMinder/DeepLearning101/blob/master/ch0/code/happiness.txt" target="_blank" rel="noopener">happiness.txt</a> 的词频</p>
+</blockquote>
+<p>思路：读取文件 → 用 jieba 分词 → 清除非中文字符 → 用 counter 计数 → 用 sorted 排序</p>
+<ol>
+<li><p>读取文件</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">loadfile = open(<span class="string">'happiness.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line">text = loadfile.read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">loadfile.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用 jieba 分词</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">words = jieba.cut(text)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清除非中文字符</p>
+<blockquote>
+<p>re.match(pattern, string, flags=0)</p>
+<p>If zero or more characters at the beginning of string match the regular expression pattern, return a corresponding MatchObject instance. Return None if the string does not match the pattern.</p>
+</blockquote>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">   	<span class="keyword">if</span> re.match(<span class="string">u'([\u4e00-\u9fff]+)'</span>, word):</span><br><span class="line">  		     segments.append(word)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用 Counter 计数，用 sorted 排序</p>
+<p> Counter 用法</p>
+<blockquote>
+<p>collections.Counter([iterable-or-mapping])</p>
+<p>A Counter is a dict subclass for counting hashable objects. It is an unordered collection where elements are stored as dictionary keys and their counts are stored as dictionary values.</p>
+</blockquote>
+<p> sorted 用法</p>
+<blockquote>
+<p>sorted(iterable[, cmp[, key[, reverse]]])<br> Return a new sorted list from the items in iterable.</p>
+<p>cmp specifies a custom comparison function of two arguments which should return a negative, zero or positive number depending on whether the first argument is considered smaller than, equal to, or larger than the second argument: cmp=lambda x,y: cmp(x.lower(), y.lower()). The default value is None.</p>
+</blockquote>
+<p> lambda 表达式用法</p>
+<blockquote>
+<p>通常在需要一个函数但是又不想命名一个函数时使用，即匿名函数。比如实现一个可以求list中所有元素和的函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from functools import reduce </span><br><span class="line">l = [1,2,3,5,-9,0,45,-99] </span><br><span class="line">reduce(lambda x,y:x+y,l)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p> 在这里，用 Counter 统计字典中词的出现次数，以 lambda 取字典中的 value 值（key 是 x[0]，value 就是 x[1]）用 sorted 方法按降序排序：</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sorted_list = sorted(Counter(dict).items(), key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>], reverse=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>最后，完整的代码和结果如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jieba <span class="comment"># for spliting</span></span><br><span class="line"><span class="keyword">import</span> re <span class="comment"># for regular expression</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter <span class="comment"># for stat</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Read file</span></span><br><span class="line">loadfile = open(<span class="string">'happiness.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line">text = loadfile.read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">loadfile.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Split words into a dict</span></span><br><span class="line">dict = []</span><br><span class="line">words = jieba.cut(text)</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">    <span class="keyword">if</span> re.match(<span class="string">u'([\u4e00-\u9fff]+)'</span>, word):</span><br><span class="line">        dict.append(word)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Sort the list</span></span><br><span class="line">sorted_list = sorted(Counter(dict).items(), key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>], reverse=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print result</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> sorted_list[:<span class="number">10</span>]:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">" '%s' : %d "</span> % (i[<span class="number">0</span>], i[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<pre><code>&apos;的&apos; : 22848 
+&apos;是&apos; : 4123 
+&apos;在&apos; : 3538 
+&apos;他&apos; : 2522 
+&apos;了&apos; : 2288 
+&apos;人&apos; : 2089 
+&apos;他们&apos; : 1811 
+&apos;和&apos; : 1746 
+&apos;有&apos; : 1478 
+&apos;我&apos; : 1433 
+</code></pre><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul>
+<li><a href="https://github.com/dccrazyboy/pyeco/blob/master/pyeco.rst" target="_blank" rel="noopener">Python开发生态环境简介</a></li>
+<li><a href="https://www.tensorflow.org/install/install_mac" target="_blank" rel="noopener">Installing TensorFlow on Mac OS X </a></li>
+<li><a href="https://hub.docker.com/r/tensorflow/tensorflow/" target="_blank" rel="noopener">tensorflow/tensorflow - Docker Hub</a></li>
+<li><a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/docker/README.md" target="_blank" rel="noopener">Using TensorFlow via Docker</a></li>
+<li><a href="http://www.jianshu.com/p/d896ec46db66" target="_blank" rel="noopener">Docker学习笔记(2)–使用Docker Hub Mirror加速Docker官方镜像下载</a></li>
+<li><a href="https://www.daocloud.io/mirror#accelerator-doc" target="_blank" rel="noopener">配置 Docker 加速器</a></li>
+<li><a href="https://computers.tutsplus.com/tutorials/speed-up-your-terminal-workflow-with-command-aliases-and-profile--mac-30515" target="_blank" rel="noopener">Speed Up Your Terminal Workflow with Command Aliases and .profile</a></li>
+<li><a href="https://github.com/fxsjy/jieba" target="_blank" rel="noopener">fxsjy/jieba: 结巴中文分词</a></li>
+<li><a href="https://www.zhihu.com/question/20125256" target="_blank" rel="noopener">Lambda 表达式有何用处？如何使用？</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Deep-learning/" rel="tag"># Deep learning</a>
+          
+            <a href="/tags/深度学习/" rel="tag"># 深度学习</a>
+          
+            <a href="/tags/AI/" rel="tag"># AI</a>
+          
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/170225-design-for-real-world.html" rel="next" title="17°读书会笔记[4]- 为真实的世界设计">
+                <i class="fa fa-chevron-left"></i> 17°读书会笔记[4]- 为真实的世界设计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/170312-deeplearning-week1.html" rel="prev" title="DeepLearning-2 语言模型和 N-gram">
+                DeepLearning-2 语言模型和 N-gram <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、神经网络简介"><span class="nav-number">1.</span> <span class="nav-text">一、神经网络简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Docker-环境安装和配置"><span class="nav-number">2.</span> <span class="nav-text">二、Docker 环境安装和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-安装和配置步骤"><span class="nav-number">2.1.</span> <span class="nav-text">Docker 安装和配置步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-常用命令"><span class="nav-number">2.2.</span> <span class="nav-text">Docker 常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、词频统计作业"><span class="nav-number">3.</span> <span class="nav-text">三、词频统计作业</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ref"><span class="nav-number">3.1.</span> <span class="nav-text">Ref</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/170304-deeplearning-week0.html';
+          this.page.identifier = '170304-deeplearning-week0.html';
+          this.page.title = 'DeepLearning-1：神经网络和 Docker 入门';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

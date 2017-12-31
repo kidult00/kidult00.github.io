@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Design,交互设计,控件," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="基本交互控件第一篇，我们来整理命令按钮的设计要点~ （为什么要写这个系列？请看之前的文章 “学习交互设计的语言”）">
+<meta name="keywords" content="Design,交互设计,控件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基本交互控件[1]：命令按钮(Buttons)">
+<meta property="og:url" content="http://uegeek.com/ixd-controls-buttons.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="基本交互控件第一篇，我们来整理命令按钮的设计要点~ （为什么要写这个系列？请看之前的文章 “学习交互设计的语言”）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/1buttoncategory.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/2buttoncomponent.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/3weibopost.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/4winfirewall.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/5fbpost.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/6weibodelete.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/7weiboempty.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/8qqclose.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/9buttonlink.png">
+<meta property="og:updated_time" content="2016-08-06T02:16:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基本交互控件[1]：命令按钮(Buttons)">
+<meta name="twitter:description" content="基本交互控件第一篇，我们来整理命令按钮的设计要点~ （为什么要写这个系列？请看之前的文章 “学习交互设计的语言”）">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/1buttoncategory.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/ixd-controls-buttons.html"/>
+
+
+
+
+
+  <title>基本交互控件[1]：命令按钮(Buttons) | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/ixd-controls-buttons.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基本交互控件[1]：命令按钮(Buttons)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-08-26T22:51:03+08:00">
+                2012-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计/" itemprop="url" rel="index">
+                    <span itemprop="name">设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/ixd-controls-buttons.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="ixd-controls-buttons.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>基本交互控件第一篇，我们来整理命令按钮的设计要点~</p>
+<p>（为什么要写这个系列？请看之前的文章 “<a href="http://www.uegeek.com/ixd/study_ixd_language" target="_blank" rel="noopener">学习交互设计的语言</a>”）<br><a id="more"></a></p>
+<h3 id="一、这是什么"><a href="#一、这是什么" class="headerlink" title="一、这是什么"></a>一、这是什么</h3><p>命令按钮按钮主要用于：</p>
+<ul>
+<li>指示当前页面、对话框中重要的操作命令（可能包含多个相似命令）</li>
+<li>触发即时的操作结果</li>
+<li>也可以用作需要强调的页面跳转链接</li>
+</ul>
+<p>常见类型包括：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/1buttoncategory.png" alt=""></p>
+<h3 id="二、命令按钮的组成"><a href="#二、命令按钮的组成" class="headerlink" title="二、命令按钮的组成"></a>二、命令按钮的组成</h3><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/2buttoncomponent.png" alt=""></p>
+<h3 id="三、设计要点"><a href="#三、设计要点" class="headerlink" title="三、设计要点"></a>三、设计要点</h3><h4 id="同样的命令出现在不同的页面上，文字、样式和位置应保持一致"><a href="#同样的命令出现在不同的页面上，文字、样式和位置应保持一致" class="headerlink" title="同样的命令出现在不同的页面上，文字、样式和位置应保持一致"></a>同样的命令出现在不同的页面上，文字、样式和位置应保持一致</h4><p>如下图，新浪微博在不同页面的微博发布按钮保持一致。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/3weibopost.png" alt=""></p>
+<h4 id="命令按钮主要用于触发操作结果，而设置状态应该由单选按钮、复选框等实现"><a href="#命令按钮主要用于触发操作结果，而设置状态应该由单选按钮、复选框等实现" class="headerlink" title="命令按钮主要用于触发操作结果，而设置状态应该由单选按钮、复选框等实现"></a>命令按钮主要用于触发操作结果，而设置状态应该由单选按钮、复选框等实现</h4><p>如下图，win7中的防火墙设置窗口，选择选项由单选按钮完成，出发操作结果由按钮完成：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/4winfirewall.png" alt=""></p>
+<h4 id="按钮被点击后，如不能即时响应，需提供正在处理的反馈提示"><a href="#按钮被点击后，如不能即时响应，需提供正在处理的反馈提示" class="headerlink" title="按钮被点击后，如不能即时响应，需提供正在处理的反馈提示"></a>按钮被点击后，如不能即时响应，需提供正在处理的反馈提示</h4><p>如下图，在facebook发布状态，点击“post”按钮后，文本框右上角有通用的处理中提示：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/5fbpost.png" alt=""></p>
+<h4 id="在对话框中区分主要命令和次要命令，危险命令和安全命令"><a href="#在对话框中区分主要命令和次要命令，危险命令和安全命令" class="headerlink" title="在对话框中区分主要命令和次要命令，危险命令和安全命令"></a>在对话框中区分主要命令和次要命令，危险命令和安全命令</h4><p>如下图，新浪微博删除某条微博的二次确认对话框，确定按钮为主要命令，取消按钮为次要命令：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/6weibodelete.png" alt=""></p>
+<h4 id="命令按钮和其他相关控件的位置关系"><a href="#命令按钮和其他相关控件的位置关系" class="headerlink" title="命令按钮和其他相关控件的位置关系"></a>命令按钮和其他相关控件的位置关系</h4><ul>
+<li>命令按钮位于其他控件右侧，顶端对齐；</li>
+<li>命令按钮位于其他控件下方，左对齐；</li>
+<li>在控件之间垂直居中对齐</li>
+</ul>
+<h4 id="如果按钮隶属于其他控件，当这个控件未激活时，按钮也应该是不可用状态"><a href="#如果按钮隶属于其他控件，当这个控件未激活时，按钮也应该是不可用状态" class="headerlink" title="如果按钮隶属于其他控件，当这个控件未激活时，按钮也应该是不可用状态"></a>如果按钮隶属于其他控件，当这个控件未激活时，按钮也应该是不可用状态</h4><p>如下图，新浪微博发布框，如果没有任何文字输入，发布按钮处于不可用状态：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/7weiboempty.png" alt=""></p>
+<h4 id="如果使用对话框向用户进行提问，按钮文字应当与问题匹配"><a href="#如果使用对话框向用户进行提问，按钮文字应当与问题匹配" class="headerlink" title="如果使用对话框向用户进行提问，按钮文字应当与问题匹配"></a>如果使用对话框向用户进行提问，按钮文字应当与问题匹配</h4><p>如下图，QQ关闭多个会话窗口时的二次确认，问题是“确定……吗？”，按钮对应的文字是“确定”和“取消”，符合当前情况：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/8qqclose.png" alt=""></p>
+<h4 id="明确区分按钮与链接，按钮上的文字，不应增加下划线或鼠标经过的效果"><a href="#明确区分按钮与链接，按钮上的文字，不应增加下划线或鼠标经过的效果" class="headerlink" title="明确区分按钮与链接，按钮上的文字，不应增加下划线或鼠标经过的效果"></a>明确区分按钮与链接，按钮上的文字，不应增加下划线或鼠标经过的效果</h4><p>下图的按钮中的文字，错误地混合了链接的样式</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/9buttonlink.png" alt=""></p>
+<h4 id="慎用“图标-文字”按钮，如果图标不能很好地促进理解，宁愿只用文字"><a href="#慎用“图标-文字”按钮，如果图标不能很好地促进理解，宁愿只用文字" class="headerlink" title="慎用“图标+文字”按钮，如果图标不能很好地促进理解，宁愿只用文字"></a>慎用“图标+文字”按钮，如果图标不能很好地促进理解，宁愿只用文字</h4><h4 id="分隔按钮的设计要点"><a href="#分隔按钮的设计要点" class="headerlink" title="分隔按钮的设计要点"></a>分隔按钮的设计要点</h4><ul>
+<li>将最常用命令作为默认命令；</li>
+<li>默认命令出现在下拉列表中首位，使用粗体以区别于其他命令；</li>
+<li>如果最常用的命令是用户上次选择的命令，则将默认状态改为上次的选择，如颜色选择器；</li>
+<li>使用信息提示说明当前按钮的用途</li>
+</ul>
+<h4 id="按钮文字的设计要点"><a href="#按钮文字的设计要点" class="headerlink" title="按钮文字的设计要点"></a>按钮文字的设计要点</h4><ul>
+<li>给每一个按钮（包括图标按钮）起名，让读屏软件可以读取；</li>
+<li>明确表达操作结果，如“保存草稿”要好于“保存”；</li>
+<li>如果点击按钮不是触发立即的操作，不要使用“马上/立即xxx”。例如“下载”按钮可以指向跳转页面，“立即下载”则应在当前状态触发下载</li>
+</ul>
+<h3 id="四、讨论"><a href="#四、讨论" class="headerlink" title="四、讨论"></a>四、讨论</h3><p><strong>与链接相比，按钮更适用于</strong>：</p>
+<ul>
+<li>触发一个即时响应的操作，并且这个操作是当前页面/窗口的主要目的；</li>
+<li>在窗口中收集用户输入信息和做出选择；</li>
+<li>操作可能引起显著的、有风险的结果，无法撤销；</li>
+<li>描述命令的文字较少；</li>
+<li>命令不被包含在整段文字中</li>
+</ul>
+<p><strong>按钮什么时候应该与单选按钮结合使用</strong>（单选按钮进行选择，按钮进行确定）：</p>
+<ul>
+<li>可选的操作项超过5个；</li>
+<li>用户在操作前需要查看相关信息，或者要进行更多的交互；</li>
+<li>用户将选项理解为选择而不是命令</li>
+</ul>
+<h3 id="五、Check-list"><a href="#五、Check-list" class="headerlink" title="五、Check list"></a>五、Check list</h3><p>当在设计中使用到命令按钮时，可以对照这个列表检查设计是否合理：</p>
+<p>□   是否应该使用按钮而不是其他控件<br>□   使用纯文字or纯图标or文字+图标？为什么<br>□   按钮文字是否能够准确描述所触发的动作<br>□   是否指定了“正常—经过—按下—聚焦—不可用”等5种状态<br>□   是否给出了合适的title/tooltip/infotip信息<br>□   何时需要指定按钮不可用状态<br>□   是否需要指定快捷键<br>□   是否需要指定默认回车键触发<br>□   按钮是否触发即时结果，如需等待是否有足够反馈<br>□   点击按钮后各种情况的反馈如何<br>□   与周围其他控件是否对齐，是否有从属关系<br>□   一个页面是否出现了多个按钮，是否需要指定主要按钮<br>□   与其他页面、位置同样功能的按钮在样式、文字上是否一致？</p>
+<p>&nbsp;</p>
+<p>————————- 去看看同一系列的纠结文章 ————————–</p>
+<p>前言：<a href="http://www.uegeek.com/ixd/study_ixd_language" target="_blank" rel="noopener">学习交互设计的语言</a></p>
+<p><a href="http://www.uegeek.com/ixd/ixd_controls_links" target="_blank" rel="noopener">基本交互控件[2]：链接(Links)</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Design/" rel="tag"># Design</a>
+          
+            <a href="/tags/交互设计/" rel="tag"># 交互设计</a>
+          
+            <a href="/tags/控件/" rel="tag"># 控件</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/study-ixd-language.html" rel="next" title="学习交互设计的”语言“">
+                <i class="fa fa-chevron-left"></i> 学习交互设计的”语言“
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/web-ia-note.html" rel="prev" title="没事别随便提信息架构——读Web信息架构">
+                没事别随便提信息架构——读Web信息架构 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、这是什么"><span class="nav-number">1.</span> <span class="nav-text">一、这是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、命令按钮的组成"><span class="nav-number">2.</span> <span class="nav-text">二、命令按钮的组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、设计要点"><span class="nav-number">3.</span> <span class="nav-text">三、设计要点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同样的命令出现在不同的页面上，文字、样式和位置应保持一致"><span class="nav-number">3.1.</span> <span class="nav-text">同样的命令出现在不同的页面上，文字、样式和位置应保持一致</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令按钮主要用于触发操作结果，而设置状态应该由单选按钮、复选框等实现"><span class="nav-number">3.2.</span> <span class="nav-text">命令按钮主要用于触发操作结果，而设置状态应该由单选按钮、复选框等实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按钮被点击后，如不能即时响应，需提供正在处理的反馈提示"><span class="nav-number">3.3.</span> <span class="nav-text">按钮被点击后，如不能即时响应，需提供正在处理的反馈提示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在对话框中区分主要命令和次要命令，危险命令和安全命令"><span class="nav-number">3.4.</span> <span class="nav-text">在对话框中区分主要命令和次要命令，危险命令和安全命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令按钮和其他相关控件的位置关系"><span class="nav-number">3.5.</span> <span class="nav-text">命令按钮和其他相关控件的位置关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果按钮隶属于其他控件，当这个控件未激活时，按钮也应该是不可用状态"><span class="nav-number">3.6.</span> <span class="nav-text">如果按钮隶属于其他控件，当这个控件未激活时，按钮也应该是不可用状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果使用对话框向用户进行提问，按钮文字应当与问题匹配"><span class="nav-number">3.7.</span> <span class="nav-text">如果使用对话框向用户进行提问，按钮文字应当与问题匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#明确区分按钮与链接，按钮上的文字，不应增加下划线或鼠标经过的效果"><span class="nav-number">3.8.</span> <span class="nav-text">明确区分按钮与链接，按钮上的文字，不应增加下划线或鼠标经过的效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#慎用“图标-文字”按钮，如果图标不能很好地促进理解，宁愿只用文字"><span class="nav-number">3.9.</span> <span class="nav-text">慎用“图标+文字”按钮，如果图标不能很好地促进理解，宁愿只用文字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分隔按钮的设计要点"><span class="nav-number">3.10.</span> <span class="nav-text">分隔按钮的设计要点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按钮文字的设计要点"><span class="nav-number">3.11.</span> <span class="nav-text">按钮文字的设计要点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、讨论"><span class="nav-number">4.</span> <span class="nav-text">四、讨论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、Check-list"><span class="nav-number">5.</span> <span class="nav-text">五、Check list</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/ixd-controls-buttons.html';
+          this.page.identifier = 'ixd-controls-buttons.html';
+          this.page.title = '基本交互控件[1]：命令按钮(Buttons)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

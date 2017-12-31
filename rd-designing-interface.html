@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Design,Note,交互设计,Interface,Pattern," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="“模式是某个对象的结构和行为上的特点”，这是一本关于界面设计模式的书。为什么界面设计中模式很重要？因为 对设计师而言：  模式捕捉了常用的结构，是关于best practice的总结和沉淀 模式可以快速复用，提供设计的模块化素材  对使用者而言  界面的习惯用法在增多，模式使用得当的设计得让人有熟悉感，易学习  全书的思路大概是：基于对用户的理解而进行模式的探索和积累——内容组织和结构模式——导航">
+<meta name="keywords" content="Design,Note,交互设计,Interface,Pattern">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Designing Interfaces中文版摘要">
+<meta property="og:url" content="http://uegeek.com/rd-designing-interface.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="“模式是某个对象的结构和行为上的特点”，这是一本关于界面设计模式的书。为什么界面设计中模式很重要？因为 对设计师而言：  模式捕捉了常用的结构，是关于best practice的总结和沉淀 模式可以快速复用，提供设计的模块化素材  对使用者而言  界面的习惯用法在增多，模式使用得当的设计得让人有熟悉感，易学习  全书的思路大概是：基于对用户的理解而进行模式的探索和积累——内容组织和结构模式——导航">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-01-05T13:59:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Designing Interfaces中文版摘要">
+<meta name="twitter:description" content="“模式是某个对象的结构和行为上的特点”，这是一本关于界面设计模式的书。为什么界面设计中模式很重要？因为 对设计师而言：  模式捕捉了常用的结构，是关于best practice的总结和沉淀 模式可以快速复用，提供设计的模块化素材  对使用者而言  界面的习惯用法在增多，模式使用得当的设计得让人有熟悉感，易学习  全书的思路大概是：基于对用户的理解而进行模式的探索和积累——内容组织和结构模式——导航">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/rd-designing-interface.html"/>
+
+
+
+
+
+  <title>Designing Interfaces中文版摘要 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/rd-designing-interface.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Designing Interfaces中文版摘要</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-02-19T10:37:16+08:00">
+                2011-02-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计/" itemprop="url" rel="index">
+                    <span itemprop="name">设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/rd-designing-interface.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="rd-designing-interface.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>“模式是某个对象的结构和行为上的特点”，这是一本关于界面设计模式的书。为什么界面设计中模式很重要？因为</p>
+<p>对设计师而言：</p>
+<ul>
+<li>模式捕捉了常用的结构，是关于best practice的总结和沉淀</li>
+<li>模式可以快速复用，提供设计的模块化素材</li>
+</ul>
+<p>对使用者而言</p>
+<ul>
+<li>界面的习惯用法在增多，模式使用得当的设计得让人有熟悉感，易学习</li>
+</ul>
+<p>全书的思路大概是：基于对用户的理解而进行模式的探索和积累——内容组织和结构模式——导航模式——布局模式——操作和任务模式——大容量信息展示——少量信息输入模式——大量信息编辑模式——视觉模式</p>
+<a id="more"></a>
+<h3 id="01-用户做些什么"><a href="#01-用户做些什么" class="headerlink" title="01 用户做些什么"></a>01 用户做些什么</h3><p>好的界面设计并非始于图片，而是对人的理解：人们喜欢什么，为什么会使用某种特定的软件，他们可能会怎样与之交互。人们使用工具的理由包括：寻找信息或对象，学习知识，进行交易，控制或监视，建造某种东西，和其他人交谈，娱乐等等。</p>
+<p>交互设计第一步：找出用户的目的。界面设计真正的艺术在于解决正确的问题。<br>用户的学习动机：用户愿意花多大的努力来学习使用你的界面？</p>
+<ul>
+<li>为熟练用户设计的软件：Photoshop，Dreamweaver、Web服务器的系统管理工具。为有效的操作而不是可学习性进行优化。</li>
+<li>中间状态：Office，邮件客户端，网络浏览器，手机应用。大部分情况：人们很快学会了基本知识，达到自己满意的熟练程度，并且在不需要完成更具体的目标时不用进一步学习。</li>
+<li>为偶尔使用而设计：设置桌面背景的Win或Mac控件，在线商店的购买页面，安装向导。提供向导的形式，不需要用户特地集中注意力，用户通常没有学习这些界面的动机。</li>
+</ul>
+<p>用户的行为模式：</p>
+<ol>
+<li>Safe Exploration 安全探索：好的软件鼓励用户尝试不熟悉的操作，不必付出任何代价</li>
+<li>Instant Gratification 即使满足：立刻从行为得到结果；为用户提供明显的任务起点</li>
+<li>Satisficing 满意即可：当了解所有可能的选择需要付出时间和努力的时候，人们愿意接受“够用”而不是“最佳”的选择（Herbert Simon）。视觉复杂性常常诱使非专家用户采用满意即可的策略，只寻找第一个可行的选择。</li>
+<li>Changes in Midstream 中途变卦：让用户可以进行其他选择，并且容易重新进入（reentrance），例如邮件草稿</li>
+<li>Deferred Choices 延后选择：不要让用户一开始就面临太多选择，在将来可以回到需要延后填写的字段</li>
+<li>Incremental Construction 递增构建：创建某个东西的过程是增量式的，应支持快速的变化和保存，持续告诉用户整个目标对象的样子和它们的行为</li>
+<li>Habituation 习惯：外部一致性和内部一致性</li>
+<li>Spatial Memory 空间记忆：人们常通过回忆东西或文档的位置来再次找到它们，而不是通过名字，适用于对象数目不太大的情况</li>
+<li>Prospective Memory 前瞻记忆：计划在将来完成某事，会设置一些提示物来提醒自己。</li>
+<li>Streamlined Repetition 简化重复工作</li>
+<li>Keyboard Only 只支持键盘</li>
+<li>Other People’s Advice 旁人建议</li>
+</ol>
+<h3 id="02-组织内容：信息架构和应用结构"><a href="#02-组织内容：信息架构和应用结构" class="headerlink" title="02 组织内容：信息架构和应用结构"></a>02 组织内容：信息架构和应用结构</h3><p>如何组织内容？一是切分内容（Dividing stuff up），想象动作和对象怎样才能和主题最顺畅的结合起来，先考虑内容<strong>组织方式和任务流</strong>。二是用物理结构把内容用页面、窗口、面板等元素表达出来。</p>
+<p>大多数应用程序是根据这些方式来组织的：</p>
+<ul>
+<li>对象列表（list of objects），“你将操作什么对象？”，例如满是邮件的收件箱，通过线性模型、二维表格、类别、层次、空间等方式进行组织</li>
+<li>动作或任务列表（list of actions），“你想进行什么操作？”，如浏览、购买、出售、注册</li>
+<li>某种主题类别的列表（list of subject categories），如健康、科学、技术，适合组织名词对象，不太适合组织动作</li>
+<li>工具列表（list of tools），如日历、地址簿、写字板</li>
+</ul>
+<p>可以根据软件本质和所在领域/主题、用户领域知识、用户计算机熟练程度、心智模型等来组织。心智模型是用户基于以前的经验或了解，它表示<strong>用户对某个东西的认知程度</strong>，也就是他认为他已经知道的那部分。</p>
+<p>模式：</p>
+<ul>
+<li>双面板选择器（Two-Panel Selector）:“选择-显示”，适用于展现对象列表、类别列表、动作列表，显示设备需要足够大</li>
+<li>画布加调色板工具条（Canvas Plus Palette）：图形编辑器，创建新对象，将工具条放在画布左边或上边</li>
+<li>单窗口深入（One-Window Drilldown）：用单一窗口显示每一页面，适用于显示空间有限或复杂性低的应用</li>
+<li>可选视图（Alternative Views）：进行结构上的改变，以支持不同目的的操作</li>
+<li>向导（Wizard）：适用于用户面临又长又复杂而且陌生的任务。但在确定要做什么的时候，决策就是一种负担：不要让我考虑，告诉我接下来做什么就好</li>
+<li>需要时显示（Extras on Demand）：让80%的使用情形更容易，让20%能达到</li>
+<li>有趣的分支（Intriguing Branches）：要提供明显的方式回到主要的工作流中</li>
+<li>多级帮助（Multi-Level Help）</li>
+</ul>
+<h3 id="03-到处走走：导航，路标和找路"><a href="#03-到处走走：导航，路标和找路" class="headerlink" title="03 到处走走：导航，路标和找路"></a>03 到处走走：导航，路标和找路</h3><p>导航问题：</p>
+<ul>
+<li>现在在哪里</li>
+<li>可以去哪里</li>
+<li>接下来去哪里</li>
+<li>如何去到</li>
+</ul>
+<p>常规的路标（Signposts）包括页面和窗口标题，网页标识（logo），其他有标记的设备，Tab，选择指示器。</p>
+<p>页面关联模式：</p>
+<ul>
+<li>清楚的入口点（Clear Entry Points）：只在界面上显示几个入口，让它们面向任务，并具有自描述性。这些入口应该涵盖人们来这里的理由</li>
+<li>金字塔（Pyramid）：用Back/Next链接来关联一系列页面，由主页链接到所有页面，如幻灯片、向导、书的章节等</li>
+<li>全局导航（Global Navigation）：一个好的全局导航面板应该是一个良好定义顶视觉框架的组件。用户通常不会注意网站或UI是怎么组织的，而是简单的沿着最近或最明显的路标往前走，知道找到想要的内容为止。</li>
+<li>模态面板（Moda Panel）</li>
+<li>中心和辐条（Hub and Spoke）：把应用顶各个栏目分割成几个迷你的小应用，每个应用都有一个入口，并且可以回到主页。应用相对独立。特别适用于小屏幕设备，常与单窗口深入一起使用</li>
+</ul>
+<p>路标模式：</p>
+<ul>
+<li>序列地图（Sequence Map）：在一系列页面的每一页上，显示所有页面顺序的地图以及当前位置的指示</li>
+<li>注释滚动条（Annotated Scrollbar）：滚动条滚动的同时作为位置指示器</li>
+<li>面包屑层级结构（Breadcrumbs）：在层级结构的每一页面，显示所有父级页面的链接</li>
+<li>颜色编码的栏目（Color-Coded Sections）：不应成为唯一的栏目区分方式</li>
+</ul>
+<p>其他</p>
+<ul>
+<li>动画转换（Animated Transition）：把突然出现或位置移动的转换用动画来显示，保持用户在当前虚拟空间中的位置感，可以跟踪变化顶位置，而不是费力去寻找。300微秒的动画在平滑滚动的时候最理想</li>
+<li>逃生舱（Escape Hatch）：在限制了导航选择的页面上，提供能离开回到熟悉地方顶按钮或链接</li>
+</ul>
+<h3 id="04-组织页面：页面元素的布局"><a href="#04-组织页面：页面元素的布局" class="headerlink" title="04 组织页面：页面元素的布局"></a>04 组织页面：页面元素的布局</h3><p>页面布局是一种艺术，它通过操纵用户在页面上的注意力来完成对含义、顺序和交互点的传达。</p>
+<p><strong>视觉层次</strong>（Visual Hierarchy: What’s important）：主次分明，读者能从页面布局推导出信息结构。左上角优先，空白，字体对比，前景和背景颜色对比，位置、对齐、缩进，图形（线条、方框、颜色条）</p>
+<p><strong>视觉流</strong>（Visual flow: What should I look at next）：良好的视觉层次在页面上建立了许多焦点，控制和引导焦点之间的视觉流</p>
+<p><strong>分组和对齐</strong>（Grouping and alignment: What goes with what）：格式塔（Gestalt）心理学：</p>
+<ul>
+<li>相邻性：相邻物体产生关联</li>
+<li>相似性：想同大小、形状、颜色、方向的物体产生关联</li>
+<li>连续性：由对齐或小元素组成的连续线条和曲线</li>
+<li>封闭性：简单封闭的区域</li>
+</ul>
+<p>模式</p>
+<p>整体视觉层次模式：</p>
+<ul>
+<li>视觉框架（Visual Framework）：使用相同的基本布局、颜色、格式方案来设计页面。颜色、字体、路标、导航、带标题栏目、间隔和对齐、整体布局网格等保持一致。</li>
+<li>中央舞台（Center Stage）：适用于表格和数据表、表单、网页、图形编辑器等。大小：中央舞台至少有左右边距的两倍宽，上下边距的两倍高；颜色：与周围元素形成对比</li>
+</ul>
+<p>内容组块模式：</p>
+<ul>
+<li>带标题的栏目（Titled Sections）</li>
+<li>卡片堆（Card Stack）：把不同栏目的内容组织成几个单独的面板。横向tab页通常只支持6个或更少的卡片，如果一行实在显示不下，就水平滚动而不是两行</li>
+<li>可关闭的面板（Closable Panels）：在很多可以使用卡片堆模式的地方都可以使用。链接箭头向下表示已经打开，向右表示关闭</li>
+<li>可移动的面板（Movable Panels）</li>
+</ul>
+<p>视觉流细节：</p>
+<ul>
+<li>右对齐/左对齐（Right/Left Alignment）</li>
+<li>对角平衡（Diagonal Balance）：用不对称的方式布置页面，把视觉重量放在左上角和右下角来使页面保持平衡</li>
+<li>属性表（Property Sheet）：使用两栏或表单格式的布局告诉用户，一个对象的属性可以在这个页面进行编辑。如果可以实现及时刷新就及时刷新</li>
+</ul>
+<p>动态布局模式：</p>
+<ul>
+<li>响应式展开（Responsive Disclosure）：从最小限度的用户界面开始，在每个步骤显示更多，引导用户完成一系列步骤</li>
+<li>响应式允许（Responsive Enabling）：当设计响应式允许或响应式展开界面时，要保证只禁止确实不能使用或不应该使用的元素，要避免没有提供任何线索来说明为什么一个元素被禁止，尽量将它们和开关控件放在一起</li>
+<li>流式布局（Liquid Layout）：当调整窗口大小时，页面元素的大小和位置也相应变化，让页面一直保持填满的状态</li>
+</ul>
+<h3 id="05-完成任务：动作和命令"><a href="#05-完成任务：动作和命令" class="headerlink" title="05 完成任务：动作和命令"></a>05 完成任务：动作和命令</h3><p>常规动作表现形式</p>
+<ul>
+<li>按钮</li>
+<li>菜单条：显示一个应用所包含的完整动作集合，并以可预测的方式组织。读屏软件可以访问这些动作</li>
+<li>弹出菜单/上下文菜单：右键菜单或者一些动作之后出现，列出有关的动作，而不是所有可能的动作</li>
+<li>下拉菜单：下拉控件的典型应用是设置状态，而不是执行动作</li>
+<li>工具条</li>
+<li>链接：很多web应用的做法是 用按钮强调动作，用链接显示其他内容</li>
+<li>动作面板</li>
+<li>不可见动作：在对象上双击，键盘动作，托拽，命令行键入</li>
+</ul>
+<p>模式：</p>
+<ul>
+<li>按钮分组（Button Groups）</li>
+<li>动作面板（Action Panel）：例如PPT新演示文档面板，可见性和自由展示的需要。形式自由</li>
+<li>突出的“完成”按钮（Prominent “Done” Button）：把完成一项任务的按钮放在视觉流的末尾，加大尺寸并为它提供合适的标签</li>
+<li>智能菜单项（Smart Menu Items）：动态改变，在使用前就能明确知道可以进行哪些操作</li>
+<li>预览（Preview）：提交重量级操作前，显示任何可以告诉他将会发生什么结果的信息</li>
+<li>进度提示（Progress Indicator）：超过两秒的打断当前任务的操作，可以考虑使用。告诉用户：当前正在做什么；已经完成了多少比例；还需要多少时间才能完成；如何停止这项任务</li>
+<li>可取消性（Cancelability）：首先找出某种方式让耗时的操作加快速度，至少让它看起来更快一些。在进度指示或显示操作结果的地方提供取消按钮，并对操作即时响应</li>
+<li>多极撤销（Multi-Level Undo）：人们期望能撤销这些改变：文字输入，数据库事务，图片或画布的修改，布局变化（位置、大小、顺序、分组），文件操作，对象的创建、删除和重组，剪切、复制、粘贴操作</li>
+<li>命令历史（Command History）：</li>
+<li>宏（Macros）</li>
+</ul>
+<h3 id="06-显示复杂数据：树、表格及其他信息图形"><a href="#06-显示复杂数据：树、表格及其他信息图形" class="headerlink" title="06 显示复杂数据：树、表格及其他信息图形"></a>06 显示复杂数据：树、表格及其他信息图形</h3><p>Information Graphics带着给用户传递数据的目标，对数据进行可视化展示。良好的交互式信息图形为用户提供以下问题的答案：</p>
+<ul>
+<li>数据是如何组织的？</li>
+<li>它们之间的关系如何？</li>
+<li>我能怎样进一步了解这些数据？</li>
+<li>我可以重新组织这些数据来换一种方式看待它吗？</li>
+<li>只要把我想知道的数据显示就可以了</li>
+<li>具体的数据值是多少？</li>
+</ul>
+<p>组织模型 Organizational Models</p>
+<ul>
+<li>线性模型</li>
+<li>表格</li>
+<li>层级模型</li>
+<li>网络模型（组织模型）</li>
+<li>地理模型（空间模型）</li>
+<li>其他模型</li>
+</ul>
+<p>前摄变量（Preattentive Variables）：一些可视化特性是前摄的，在用户有意识的注意他们之前，他们就已经开始传达信息了。包括色调、亮度、颜色饱和度、底纹、位置和对齐、方向、大小、形状。</p>
+<p>“Focus plus Context”焦点加上下文：一个好的可视化界面，应该允许用户把注意力集中在一个兴趣点上，同时在它周围显示足够的素材。</p>
+<p>导航和浏览：滚动和平移，缩放，打开和关闭兴趣点，深入到兴趣点内部</p>
+<p>排序和重新排列：字母顺序、数字顺序、日期或时间顺序、物理地点顺序、根据类别或标记排序、受欢迎程度，用户设计的排列方法，完全随机排列</p>
+<p>搜索和过滤：用户意图–把注意力集中到感兴趣的那部分数据，去掉其他数据。高度交互（尽快响应用户请求）、迭代（允许不断细化直到获得想要的结果）、上下文相关（在整个上下文中显示结果）</p>
+<p>实际数据：标签，图例，坐标轴、量尺、比例和时间轴，数据提示（datatips），数据刷（data brushing）</p>
+<p>模式</p>
+<p>一般模式</p>
+<ul>
+<li>总揽加细节（Overview Plus Detail）：Micro and Macro reading。视野框和详细视图之间的反应最好在十分之一秒以内（标准的直接操作反应时间）</li>
+<li>数据提示（Datatips）：当鼠标划过兴趣点时，把相关数据显示在工具提示或其他浮动窗口上</li>
+<li>动态查询（Dynamic Queries）：充满交互性的快速过滤数据的方式</li>
+<li>数据刷（Data Brushing）：让用户在一个视图里选择数据，然后在另一个视图里同时显示这些数据。选择数据的方式：画方框，鼠标单击，shift+单击，control+单击，在数据点外围画不规则“套索”，通过菜单项、按钮或按键取消选择。</li>
+<li>局部缩放（Local Zooming）：鼠标移动时页面会变形，鼠标位置的数据项变大</li>
+</ul>
+<p>标签和列表模式</p>
+<ul>
+<li>斑马行（Row Striping）：在表格行上使用两种样式类似但颜色不同的背景，来间隔显示数据</li>
+<li>可排序表格（Sortable Table）</li>
+<li>跳转到对象（Jump to Item）：输入某个对象名称时，直接跳转到该对象并选中</li>
+<li>新对象行（New-Item Row）：在表格的最后一行创建新的对象</li>
+</ul>
+<p>层级结构组织模式</p>
+<ul>
+<li>级联列表（Cascading Lists）：对每一层级对象的选择，会将其子对象显示在下一层级的列表中</li>
+<li>树状表格（Tree Table）</li>
+</ul>
+<p>多维数据组织模式</p>
+<ul>
+<li>多Y值图表（Multi-Y Graph）：将多个图表的曲线一个接一个从上到下摆放在一个面板里，共享y轴</li>
+<li>大量小对象（Small Multiples）：需要用两个以上的维度或独立变量来显示一个大型数据集</li>
+<li>树状地图（Treemap）：用不同大小的矩形来表示多维数据或层级结构的数据。关键是确定用那些可视化变量对那些数据属性进行编码.</li>
+</ul>
+<h3 id="07-从用户获得输入：表单和控件"><a href="#07-从用户获得输入：表单和控件" class="headerlink" title="07 从用户获得输入：表单和控件"></a>07 从用户获得输入：表单和控件</h3><p>控件选择考虑因素：可使用的空间，用户电脑使用经验，用户领域经验，来自其他应用的期望，可用的技术</p>
+<ul>
+<li>对象列表LISTS OF ITEMS：选择一个或两个选项；进行n选1（n很小）；进行n选1（n很大）；从n个选项里选择多个；为输入建立列表；建立有序对象</li>
+<li>文字TEXT：输入一行文本；要么输入一行文本，要么从多个选项中选择；输入多行无格式文本；输入多行有格式文本</li>
+<li>数字NUMBERS：允许输入任何数字类型；从一个有界范围内输入数字；从一个大范围内输入一个字范围</li>
+<li>日期或时间DTES OR TIMES</li>
+</ul>
+<p>模式</p>
+<p>文本输入框模式：</p>
+<ul>
+<li>容错格式（Forgiving Format）</li>
+<li>结构化格式（Structured Format）：一组格式预定的文本输入框</li>
+<li>填空（Fill-in-the-Blanks）</li>
+<li>输入提示（Input Hints）：在文本框旁边</li>
+<li>输入提醒（Input Prompt）：预先填写在文本框内进行提示</li>
+<li>自动完成（Anto completion）</li>
+</ul>
+<p>其他</p>
+<ul>
+<li>下拉选择器（Dropdown Chooser）</li>
+<li>图示选项（Illstrated Choices）</li>
+<li>列表建造器（List Builder）：同时显示源列表和目的列表，让用户在他们之间移动项目</li>
+<li>良好的默认值（Good Defaults）</li>
+<li>错误显示在同一页（Same-Page Error Messages）</li>
+</ul>
+<h3 id="08-Builder和编辑器"><a href="#08-Builder和编辑器" class="headerlink" title="08 Builder和编辑器"></a><strong>08 Builder和编辑器</strong></h3><ul>
+<li>页面布局和格式化的文本编辑器：word，quark，indesign</li>
+<li>图像编辑器：ps，gimp，macpaint</li>
+<li>矢量图形编辑器：ppt，illustrator，omnigraffle</li>
+<li>网站Builder：dw，golive</li>
+<li>GUI Builder和代码编辑器：visual studio，eclipse，interface builder</li>
+<li>常见的文本编辑器：notepad，emacs，web页面</li>
+</ul>
+<p>模式</p>
+<ul>
+<li>就地编辑（Edit-in-Place）</li>
+<li>智能选择（Smart Selection）</li>
+<li>组合选择（Composite Selection）</li>
+<li>一次性模态（One-Off Mode）：一个模态打开时，执行一次操作，然后自动切换回默认模态或前一个模态</li>
+<li>弹性加载模态（Spring-Loaded Mode）：通过按住某个键或鼠标进入某种模态（如shift键输入大写字母）</li>
+<li>强制调整大小（Constrained Resize）</li>
+<li>磁性吸附（Magnetism）</li>
+<li>对齐指示线（guides）</li>
+<li>粘贴变种（Paste Variations）</li>
+</ul>
+<h3 id="09-修饰外观：视觉风格和美感"><a href="#09-修饰外观：视觉风格和美感" class="headerlink" title="09 修饰外观：视觉风格和美感"></a>09 修饰外观：视觉风格和美感</h3><p>颜色：</p>
+<ul>
+<li>在深色背景上放置浅色前景对象，或者反过来</li>
+<li>永远不要采用红色和绿色来区分重要的元素（10%的男性和1%的女性有某种程度的色盲）</li>
+<li>不用采用互补色的背景和前景（如红色和蓝色）</li>
+<li>冷色调（红、橙、黄、褐、米）和暖色调（蓝、绿、紫、灰、白）</li>
+<li>深背景和浅背景：浅背景更常用于计算机界面</li>
+<li>强对比和弱对比：强对比会让人觉得紧张、有力和大胆，弱对比会更平滑，更让人放松</li>
+<li>饱和色和不饱和色：高饱和度颜色生动、明亮、有力、温暖，但容易使视觉疲劳</li>
+</ul>
+<p>排版：</p>
+<ul>
+<li>显示器上无衬线（Sans-Serif）字体表现更好，印刷品上衬线字体更具可读性</li>
+<li>避免使用斜体、草书和其他装饰性字体</li>
+<li>可能的情况下，把大量文本放在中等宽度的区域里，如10~12个英文单词</li>
+</ul>
+<p>空间和拥挤 Spaciousness and crowding</p>
+<p>曲线和角度 Angles and curves：注意曲线相切的视觉效果，考虑视觉焦点的引导</p>
+<p>底纹和旋律 Texture and rhythm</p>
+<p>模式</p>
+<ul>
+<li>深色背景（Deep Background）：用图片或渐变颜色作为页面的背景，这样能可视化的拉开和前景元素的距离。柔和的焦点，避免太多细节，颜色渐变，深度暗示，没有强烈的焦点</li>
+<li>少一点色彩，多一些价值（Few Hues, Many Values）：选择最多三种主要颜色样式应用在页面上</li>
+<li>角落处理（Corner Treatments）</li>
+<li>边界回应字体（Borders that Echo Fonts）：在描画边界和其他线条的时候，使用设计中某种主要字体所使用的颜色、粗细和曲线</li>
+<li><p>发丝（Hairlines）：在边界、水平标尺和Texture上使用一个像素宽的线条</p>
+<ul>
+<li>通过为标题加下划线来区分带标题的栏目</li>
+<li>用水平分割线、垂直分隔线或封闭的边界来划分不同的内容区域</li>
+<li>引导视线穿过一个组合元素的指示线</li>
+<li>在不同背景颜色的区域之间，清楚标识它们的边界</li>
+<li>用在底纹上，例如格线或一组水平线</li>
+<li>用在图标、图片和画出的图形里</li>
+<li>用在控件周围的边界上</li>
+</ul>
+</li>
+<li><p>粗细字体对比（Contrasting Font Weights）</p>
+</li>
+<li>皮肤（Skins）</li>
+</ul>
+<p>End</p>
+<p>by <a href="http://www.uegeek.com/" target="_blank" rel="noopener">00</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Design/" rel="tag"># Design</a>
+          
+            <a href="/tags/Note/" rel="tag"># Note</a>
+          
+            <a href="/tags/交互设计/" rel="tag"># 交互设计</a>
+          
+            <a href="/tags/Interface/" rel="tag"># Interface</a>
+          
+            <a href="/tags/Pattern/" rel="tag"># Pattern</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/ixd-quick-checklist.html" rel="next" title="Web交互设计优化的简易Check list">
+                <i class="fa fa-chevron-left"></i> Web交互设计优化的简易Check list
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/df-interaction-design.html" rel="prev" title="咬文嚼字之 什么是交互设计">
+                咬文嚼字之 什么是交互设计 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#01-用户做些什么"><span class="nav-number">1.</span> <span class="nav-text">01 用户做些什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#02-组织内容：信息架构和应用结构"><span class="nav-number">2.</span> <span class="nav-text">02 组织内容：信息架构和应用结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#03-到处走走：导航，路标和找路"><span class="nav-number">3.</span> <span class="nav-text">03 到处走走：导航，路标和找路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#04-组织页面：页面元素的布局"><span class="nav-number">4.</span> <span class="nav-text">04 组织页面：页面元素的布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#05-完成任务：动作和命令"><span class="nav-number">5.</span> <span class="nav-text">05 完成任务：动作和命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#06-显示复杂数据：树、表格及其他信息图形"><span class="nav-number">6.</span> <span class="nav-text">06 显示复杂数据：树、表格及其他信息图形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#07-从用户获得输入：表单和控件"><span class="nav-number">7.</span> <span class="nav-text">07 从用户获得输入：表单和控件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#08-Builder和编辑器"><span class="nav-number">8.</span> <span class="nav-text">08 Builder和编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#09-修饰外观：视觉风格和美感"><span class="nav-number">9.</span> <span class="nav-text">09 修饰外观：视觉风格和美感</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/rd-designing-interface.html';
+          this.page.identifier = 'rd-designing-interface.html';
+          this.page.title = 'Designing Interfaces中文版摘要';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

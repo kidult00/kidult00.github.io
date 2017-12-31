@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HackYourself,心智," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="HackYourself,心智">
+<meta property="og:type" content="article">
+<meta property="og:title" content="心智乐高02 - 可得性偏差">
+<meta property="og:url" content="http://uegeek.com/mindlego2-availability.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/LeogofMentalModel02.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/timetraecl08.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/BiasCard01.png">
+<meta property="og:updated_time" content="2016-10-24T00:55:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="心智乐高02 - 可得性偏差">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/LeogofMentalModel02.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/mindlego2-availability.html"/>
+
+
+
+
+
+  <title>心智乐高02 - 可得性偏差 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/mindlego2-availability.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">心智乐高02 - 可得性偏差</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-11T08:42:04+08:00">
+                2016-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书/" itemprop="url" rel="index">
+                    <span itemprop="name">读书</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/mindlego2-availability.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="mindlego2-availability.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/LeogofMentalModel02.png" alt=""></p>
+<a id="more"></a> 
+<blockquote>
+<p>I soon learned that one wins awards mainly for winning awards: an example of what Bob Merton calls the Matthew Effect. It is akin also to the phenomenon known in politics as “availability,” or name recognition. Once one becomes sufficiently well known, one’s name surfaces automatically as soon as an award committee assembles. </p>
+<p>—— 诺贝尔奖得主、人工智能之父 Herbert Simon</p>
+</blockquote>
+<p>可得性偏差 (Availability Heuristic）指人们会根据认知上易得的程度来判断事件的可能性。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/timetraecl08.jpg" alt=""></p>
+<p>由于受记忆力或知识的局限，人们在进行预测和决策时，大多利用自己熟悉的或能够凭想象构造而得到的信息，导致那些易见的、容易记起的信息所占比重过大，而忽略其他有助于形成正确评估的重要信息。例如，你会通过想象某个企业可能会遇到的各种难题来估测其倒闭的概率。</p>
+<p>“会哭的孩子有奶吃”，我们那捉襟见肘的认知资源也是这么对待客观事件的。那些“浓妆艳抹”的事件、那些更容易提取的信息，总是更能捕获我们的注意力，从而导致概率误判。</p>
+<h2 id="认识可得性偏差"><a href="#认识可得性偏差" class="headerlink" title="认识可得性偏差"></a>认识可得性偏差</h2><p>可得性偏差最常见的 3 个来源是：近期事件，个人经历，生动的记忆。</p>
+<h3 id="因例子的可提取性导致偏差-（Ease-of-Recall）"><a href="#因例子的可提取性导致偏差-（Ease-of-Recall）" class="headerlink" title="因例子的可提取性导致偏差 （Ease of Recall）"></a>因例子的可提取性导致偏差 （Ease of Recall）</h3><p>例子很容易提取的类别，会比频率相同但例子较难想到的类别显得更重要。熟悉度和显著程度会影响例子的可提取性。最近发生的事情可能会比之前发生的事更容易获得。例如，对交通事故的主观概率，会在你见到一辆翻到在路边的车后暂时升高。又比如，人们总是在刚刚经历了意外之后，才为自己买保险，但保险本应该为预见和抵御风险而准备，而不是事后诸葛亮。</p>
+<h3 id="因搜索集合的有效性导致偏差-（Retrievability）"><a href="#因搜索集合的有效性导致偏差-（Retrievability）" class="headerlink" title="因搜索集合的有效性导致偏差 （Retrievability）"></a>因搜索集合的有效性导致偏差 （Retrievability）</h3><p>假设从某个英文文本中随机抽取一个词（含有3个或更多字母的词）。这个词更有可能是以 r 开头还是以 r 作为第三个字母？人们在回答这个问题时，会回忆首字母为 r 的单词（例如road）以及第三个字母为 r 的单词（例如car），然后通过想到这两个词的容易程度来评估相对频率。因为从记忆中搜寻单词的首字母要比搜寻其第三个字母更为容易，所以大多数人都判断以某个辅音开头的单词要比第三个字母为该辅音的单词多。但实际上，例如 r 或 k 的辅音字母，出现在第三个字母的频率都要比出现在开头的频率高。</p>
+<h3 id="想象力的偏差"><a href="#想象力的偏差" class="headerlink" title="想象力的偏差"></a>想象力的偏差</h3><p>评估某类事件发生的频率，这类事件的实例没有储存在你的大脑中，但可以通过一定的规则构建一些实例。你通常会构建几个实例，并通过构建这些实例的容易程度来评估其频率或概率。</p>
+<p>例如，通过想象某次探险中无法应对的意外事件来评估风险。如果能想到许多这样生动的意外事件，这次探险就会显得尤其危险，尽管想到这些灾难的容易程度并不能反映出它们实际发生的可能性。相反，如果没能想到某些可能的危险，那将要承担的风险就会被低估。</p>
+<p>另一个有趣的例子，是鲨鱼和游泳者。圣地亚哥附近海域的死亡情况表明，平均来说，鲨鱼杀死一个游泳者，也会拯救十个人的生命。每次有游泳者死亡，溺水死亡的人数也会下降了几年，然后恢复到正常水平。但人们只会注意到鲨鱼攻击造成的死亡，因为它更为生动。</p>
+<h3 id="可得性偏差导致相关性错觉"><a href="#可得性偏差导致相关性错觉" class="headerlink" title="可得性偏差导致相关性错觉"></a>可得性偏差导致相关性错觉</h3><p>根据两个事件相互关联的强度，可以判断出它们同时发生的频率。当两个事件关联性强的时候，你可能会认为它们经常同时发生。当事件频繁地同时发生时，这两个事件之间的关联性会得以增强。所以，人们常常使用可得性（提取、构建和联想等）去估测类别的数量、事件的可能性或是事件同时发生的频率，但是这些判断往往并不准确。</p>
+<h2 id="识别和预防"><a href="#识别和预防" class="headerlink" title="识别和预防"></a>识别和预防</h2><p>可得性造成的偏误，会导致我们做出不合理的判断。那么应该怎么识别出自己有没有可得性偏差呢？</p>
+<p>00 做了一套简单的提示卡片，可以时不时拿出来复习，或者在思考和决策时作为参考。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/BiasCard01.png" alt=""></p>
+<p>如需下载可得性偏差提示卡片的 PDF 版本，请关注公众号 HackYourself，输入“卡片1”，即可获得。</p>
+<ul>
+<li>我的观点有哪些证据？我马上想到这些证据，是不是仅仅因为它容易获得？</li>
+<li>我做这个判断是不是因为最近发生了某些事件/意外？我对这些事件/意外产生了什么情绪？</li>
+<li>这个问题是否需要“记忆”和“个人经验”之外的更多证据？哪里可以找到这一类的证据？</li>
+<li>这件事情需要评估风险吗（比如飞机失事，投资，换工作）？我的判断依据中有哪些“画面感”很强的想象、记忆、媒体报道？哪里可以找到更多经过统计检验的客观数据？</li>
+<li>我之前的想法是根据零星的经验去推断吗？是否有自上而下可以覆盖问题全貌的框架？</li>
+</ul>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>Pohl, R. F. (2012). Cognitive Illusions: A Handbook on Fallacies and Biases in Thinking, Judgement and Memory. Psychology Press.</li>
+<li>Simon, H. A. (1996). Models of My Life (First Edition edition). Cambridge, Mass.: The MIT Press.</li>
+<li>Tversky, A., &amp; Kahneman, D. (1974). Judgment under uncertainty: Heuristics and biases. Science, 185, 1124-1131., 185, 1124–1131.</li>
+<li>丹尼尔·卡尼曼. (2012). 思考，快与慢. (胡晓姣, 李爱民, &amp; 何梦莹, Trans.). 中信出版社. </li>
+<li>Availability heuristic. (2016, September 26). In <a href="https://en.wikipedia.org/w/index.php?title=Availability_heuristic&amp;oldid=741281488" target="_blank" rel="noopener">Wikipedia</a>.</li>
+<li>List of cognitive biases. (2016, September 28). In <a href="https://en.wikipedia.org/w/index.php?title=List_of_cognitive_biases&amp;oldid=741652912" target="_blank" rel="noopener">Wikipedia</a>. </li>
+<li>List of fallacies. (2016, September 24). In <a href="https://en.wikipedia.org/w/index.php?title=List_of_fallacies&amp;oldid=740960832" target="_blank" rel="noopener">Wikipedia</a>. </li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HackYourself/" rel="tag"># HackYourself</a>
+          
+            <a href="/tags/心智/" rel="tag"># 心智</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/mindlego1.html" rel="next" title="心智乐高01 - 寻找智慧组块">
+                <i class="fa fa-chevron-left"></i> 心智乐高01 - 寻找智慧组块
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/mindlego3-baseratefallcy.html" rel="prev" title="心智乐高03 - 基本比率谬误">
+                心智乐高03 - 基本比率谬误 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#认识可得性偏差"><span class="nav-number">1.</span> <span class="nav-text">认识可得性偏差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#因例子的可提取性导致偏差-（Ease-of-Recall）"><span class="nav-number">1.1.</span> <span class="nav-text">因例子的可提取性导致偏差 （Ease of Recall）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#因搜索集合的有效性导致偏差-（Retrievability）"><span class="nav-number">1.2.</span> <span class="nav-text">因搜索集合的有效性导致偏差 （Retrievability）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#想象力的偏差"><span class="nav-number">1.3.</span> <span class="nav-text">想象力的偏差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可得性偏差导致相关性错觉"><span class="nav-number">1.4.</span> <span class="nav-text">可得性偏差导致相关性错觉</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#识别和预防"><span class="nav-number">2.</span> <span class="nav-text">识别和预防</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">2.1.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/mindlego2-availability.html';
+          this.page.identifier = 'mindlego2-availability.html';
+          this.page.title = '心智乐高02 - 可得性偏差';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

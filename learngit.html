@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Coding,Git," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="一、为什么要了解GitGit是一套版本管理系统。看到“Git版本管理”，一大部分盆友已经转身想走，在你握着门把手准备开门走人时，请最后听我说完最后一句：人人都需要版本管理，git可以帮你少交停电/蓝屏/死机税，提高产出效率，不来一发吗？ 试过半夜写汇报ppt吗？’汇报ppt’→’汇报ppt1’→’汇报ppt11’→’汇报ppt2015-03-17’→’汇报ppt2015-03-17新’→’汇报pp">
+<meta name="keywords" content="Coding,Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多用Git少交税">
+<meta property="og:url" content="http://uegeek.com/learngit.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="一、为什么要了解GitGit是一套版本管理系统。看到“Git版本管理”，一大部分盆友已经转身想走，在你握着门把手准备开门走人时，请最后听我说完最后一句：人人都需要版本管理，git可以帮你少交停电/蓝屏/死机税，提高产出效率，不来一发吗？ 试过半夜写汇报ppt吗？’汇报ppt’→’汇报ppt1’→’汇报ppt11’→’汇报ppt2015-03-17’→’汇报ppt2015-03-17新’→’汇报pp">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/1workspace.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/2index.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/3localrepo.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/4remoterepo.png">
+<meta property="og:image" content="http://blog.osteele.com/images/2008/git-transport.png">
+<meta property="og:image" content="http://rogerdudler.github.io/git-guide/img/branches.png">
+<meta property="og:image" content="http://rogerdudler.github.io/git-guide/img/trees.png">
+<meta property="og:image" content="http://marklodato.github.io/visual-git-guide/basic-usage.svg">
+<meta property="og:image" content="http://marklodato.github.io/visual-git-guide/basic-usage-2.svg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/qrcode_for_gh_48d79033755a_258.jpg">
+<meta property="og:updated_time" content="2016-01-03T16:15:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="多用Git少交税">
+<meta name="twitter:description" content="一、为什么要了解GitGit是一套版本管理系统。看到“Git版本管理”，一大部分盆友已经转身想走，在你握着门把手准备开门走人时，请最后听我说完最后一句：人人都需要版本管理，git可以帮你少交停电/蓝屏/死机税，提高产出效率，不来一发吗？ 试过半夜写汇报ppt吗？’汇报ppt’→’汇报ppt1’→’汇报ppt11’→’汇报ppt2015-03-17’→’汇报ppt2015-03-17新’→’汇报pp">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/1workspace.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/learngit.html"/>
+
+
+
+
+
+  <title>多用Git少交税 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/learngit.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">多用Git少交税</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-03-18T21:23:15+08:00">
+                2015-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/动手/" itemprop="url" rel="index">
+                    <span itemprop="name">动手</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/learngit.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="learngit.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一、为什么要了解Git"><a href="#一、为什么要了解Git" class="headerlink" title="一、为什么要了解Git"></a>一、为什么要了解Git</h3><p>Git是一套版本管理系统。看到“Git版本管理”，一大部分盆友已经转身想走，在你握着门把手准备开门走人时，请最后听我说完最后一句：人人都需要版本管理，git可以帮你少交停电/蓝屏/死机税，提高产出效率，不来一发吗？</p>
+<p>试过半夜写汇报ppt吗？’汇报ppt’→’汇报ppt1’→’汇报ppt11’→’汇报ppt2015-03-17’→’汇报ppt2015-03-17新’→’汇报ppt2015-03-17新1’……无休止的命名斗争，这就是自然而然的版本管理，只不过，没有好的工具，所以显得一团mess。</p>
+<p>无论学生党还是设计师（改20个版本后终于顺利用回第1版），无论公众号运营还是音乐人，都持续产出着自己的“半成品/作品”。99.999%的作品都不可能一气呵成，比如这篇笔记的第一个commit版本，简直惨不忍睹。如果有版本管理意识，以及高效、方便的工具，生活也许可以简单许多，更不要说天有不测风云的停电忘保存、脑残删备份等等好事等着我们。</p>
+<p>来吧，fork有用有趣的东西，git你应该在意的东西，日拱一卒，打造我们的作品。<a id="more"></a></p>
+<h3 id="二、Git主要概念"><a href="#二、Git主要概念" class="headerlink" title="二、Git主要概念"></a>二、Git主要概念</h3><p>Git实现在本地和远端进行版本管理。</p>
+<h4 id="1-工作空间"><a href="#1-工作空间" class="headerlink" title="1.工作空间"></a>1.工作空间</h4><p>四个空间概念：工作目录(workspace)，暂存区(index)，本地仓库(local repository)，远程仓库(remote repository)</p>
+<p>想象一下，我们开一个包子店(图片做的不是同一款包子，见谅)~</p>
+<ul>
+<li><p>首先，得有一张<strong>大桌子</strong>用来和面、擀皮儿、包馅等等，这张桌子相当于workspace，随你折腾的地方，工作主要都在这里进行。</p>
+<div class="image-package imagebubble"><img src="http://7xjpra.com1.z0.glb.clouddn.com/1workspace.png" alt=""></div>
+</li>
+<li><p>然后，包好的包子们会放到一个<strong>蒸笼</strong>里，等待被蒸，这个蒸笼就是index暂存区。蒸笼用来放我们想保留的成品或半成品，至于选哪些卖出去，这是以后考虑的事情。</p>
+<div class="image-package imagebubble"><img src="http://7xjpra.com1.z0.glb.clouddn.com/2index.png" alt=""></div>
+</li>
+<li><p>下一步，蒸包子。蒸好的包子已经可以吃了，但是我们还是得先把它们从蒸笼拿出来放在<strong>盘子</strong>里。盘子就类似本地仓库local repository，里面都是等待出货的好东西。当然，你也可以在最后一刻把看不顺眼的包子扔掉，或者自己吃掉。</p>
+<div class="image-package imagebubble"><img src="http://7xjpra.com1.z0.glb.clouddn.com/3localrepo.png" alt=""></div>
+</li>
+<li><p>最后一步就是把包子送到<strong>货架/客人的桌上</strong>。公之于众的货架，就是远程仓库remote repository，丑媳妇终于见公婆啦。</p>
+<div class="image-package imagebubble"><img src="http://7xjpra.com1.z0.glb.clouddn.com/4remoterepo.png" alt=""></div>
+
+</li>
+</ul>
+<p>配合下面这张图，我们对Git就有一个基本概念了。</p>
+<div class="image-package imagebubble"><img src="http://blog.osteele.com/images/2008/git-transport.png" alt=""></div>
+
+<h4 id="2-Head-amp-branch-amp-master-amp-origin"><a href="#2-Head-amp-branch-amp-master-amp-origin" class="headerlink" title="2.Head &amp; branch &amp; master &amp; origin"></a>2.Head &amp; branch &amp; master &amp; origin</h4><p>Git系统的实质更像是一棵大树，树干（就是Head啦）是最后一次提交的成果。在树干上，你可以开无数的分支（就是branch啦）胡弄，弄乱了也不怕，大不了剪掉再开一个，树干不受任何影响。折腾ok的分支，最后可以merge到默认branch也就是master上。</p>
+<p>用技术性语言描述，分支用来将特性开发绝缘开来。在创建仓库的时候，master 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。</p>
+<div class="image-package imagebubble"><img src="http://rogerdudler.github.io/git-guide/img/branches.png" alt=""></div><br>那origin又是什么？origin是远程默认的仓库。clone完成之后，Git会自动将远程仓库命名为origin。<br><br>那Head和master又是什么关系？Head其实只是个指针，指向当前最近commit的branch。而master是本地默认的branch，所以Head经常都是指向master。另外Head是官方定义的，而master和origin都是大家常用的命名，并不一定要叫master和origin。<sup>[2]</sup><br>.<br><br><br>#### 3.工作流：add &amp; commit &amp; push<br><br>- 把包子从桌子挪到蒸笼，叫add————已修改modified————汇报ppt初稿写成；<br>- 把包子从蒸笼挪到盘子，叫commit————已暂存staged————汇报ppt完稿存到u盘/网盘什么的；<br>- 把包子从盘子挪到货架，叫push————已提交commited——汇报ppt发送到boss邮箱。<br><br><div class="image-package imagebubble"><img src="http://rogerdudler.github.io/git-guide/img/trees.png" alt=""></div>
+
+<p>Git的好处之一是，包子包好后，还可以回退……</p>
+<div class="image-package imagebubble"><img src="http://marklodato.github.io/visual-git-guide/basic-usage.svg" alt=""></div>
+
+<p>捷径：</p>
+<div class="image-package imagebubble"><img src="http://marklodato.github.io/visual-git-guide/basic-usage-2.svg" alt=""></div>
+
+<h3 id="三、配置"><a href="#三、配置" class="headerlink" title="三、配置"></a>三、配置</h3><p>1.工作目录<br>2.本地仓库<br>3.远程仓库</p>
+<h3 id="四、常用命令"><a href="#四、常用命令" class="headerlink" title="四、常用命令"></a>四、常用命令</h3><p>最常用：<code>git command --help</code></p>
+<h4 id="1-创建"><a href="#1-创建" class="headerlink" title="1.创建"></a>1.创建</h4><p><strong>需要进入目标目录进行操作</strong></p>
+<ul>
+<li>创建新仓库：<code>git init</code></li>
+<li>创建一个本地仓库的克隆版本：<code>git clone /path/to/repository</code></li>
+<li>克隆远端服务器上的仓库： <code>git clone username@host:/path/to/repository</code></li>
+</ul>
+<h4 id="2-查询"><a href="#2-查询" class="headerlink" title="2.查询"></a>2.查询</h4><p><code>git status</code></p>
+<ul>
+<li>staged:已在index，等待被commit.</li>
+<li>unstaged:文件做了改动，但还不能被commit.</li>
+<li>untracked:Git还没有开始跟踪，需要先add.</li>
+<li>deleted:文件已被删除，等待remove.<br>Staging Area:commit前把文件们收集到一起，以便打包commit。</li>
+</ul>
+<h4 id="3-add-添加"><a href="#3-add-添加" class="headerlink" title="3.add/添加"></a>3.add/添加</h4><ul>
+<li>添加到暂存区（让Git开始跟踪更改，也就是从untracked变为tracked）：<code>git add &amp;lt;filename&amp;gt;</code> 或 <code>git add *</code></li>
+<li>添加全部文件：<code>git add -A</code>， -A 表示包含删除的文件。</li>
+<li>git reset: <code>git reset &amp;lt;filename&amp;gt;</code> 从staging area移除文件。</li>
+</ul>
+<h4 id="4-commit-提交"><a href="#4-commit-提交" class="headerlink" title="4.commit/提交"></a>4.commit/提交</h4><p>“commit” 可以理解为一次快照，帮助我们把所有改动以timeline的方式组织起来。</p>
+<ul>
+<li>提交改动(到head，但还没到远程服务器)：<code>git commit -m &quot;代码提交信息&quot;</code> git commit -m ‘Add all files’</li>
+<li>把所有当前目录下的文件加入暂存区域再运行commit：<code>git commit -a</code></li>
+<li>提交到远程仓库：<code>git push origin master</code> （可以把 master 换成你想要推送的任何分支）。<br>如果还没有克隆现有仓库，并想将仓库连接到某个远程服务器：<code>git remote add origin &amp;lt;server&amp;gt;</code>。</li>
+</ul>
+<h4 id="5-push-推送"><a href="#5-push-推送" class="headerlink" title="5.push/推送"></a>5.push/推送</h4><p>将文件推送到远程仓库中：<code>git push -u origin master</code>。远程仓库默认叫<strong>origin</strong> 。-u 告诉Git记住参数，下次可以直接使用push。</p>
+<h4 id="6-pull-拉取"><a href="#6-pull-拉取" class="headerlink" title="6.pull/拉取"></a>6.pull/拉取</h4><p>更新本地仓库至最新改动：<code>git pull origin master</code></p>
+<h4 id="7-checkout-切换"><a href="#7-checkout-切换" class="headerlink" title="7.checkout/切换"></a>7.checkout/切换</h4><p>checkout命令用于从历史提交（或者暂存区域）中拷贝文件到工作目录，也可用于切换分支</p>
+<ul>
+<li>切换分支： <code>git checkout &amp;lt;branch&amp;gt;</code></li>
+<li>新建并切换到分支：<code>git checkout -b new_branch</code> 等同于：<code>git branch new_branch</code> +<code>git checkout new_branch</code></li>
+<li>把文件从暂存区域复制到工作目录，用来丢弃本地修改：<code>git checkout --&amp;lt;files&amp;gt;</code></li>
+<li>回滚到复制最后一次提交:<code>git checkout HEAD -- &amp;lt;files&amp;gt;</code></li>
+</ul>
+<h4 id="8-diff-比对"><a href="#8-diff-比对" class="headerlink" title="8.diff/比对"></a>8.diff/比对</h4><p><code>git diff</code></p>
+<h4 id="9-reset-撤销"><a href="#9-reset-撤销" class="headerlink" title="9.reset/撤销"></a>9.reset/撤销</h4><ul>
+<li>从index中撤销所有文件：<code>git reset</code></li>
+<li>从index中撤销最后一次add的文件：<code>git reset --&amp;lt;flies&amp;gt;</code></li>
+<li>恢复之前版本：<code>git reset --hard</code></li>
+<li>回滚到最近一次：<code>git checkout -- &amp;lt;target&amp;gt;</code></li>
+</ul>
+<h4 id="10-merge"><a href="#10-merge" class="headerlink" title="10.merge"></a>10.merge</h4><p>合并其他分支到当前分支：<code>git merge</code></p>
+<h4 id="11-remove-amp-clean"><a href="#11-remove-amp-clean" class="headerlink" title="11.remove &amp; clean"></a>11.remove &amp; clean</h4><ul>
+<li>从硬盘和index移除文件：<code>git rm</code></li>
+<li>删除分支<code>git branch -d &amp;lt;branch name&amp;gt;</code></li>
+</ul>
+<h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul>
+<li>[1]. <a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="noopener">Git简明指南</a></li>
+<li>[2]. <a href="http://stackoverflow.com/questions/8196544/what-are-the-git-concepts-of-head-master-origin" target="_blank" rel="noopener">What are the git concepts of HEAD, master, origin?</a></li>
+<li>[3]. <a href="https://try.github.io/" target="_blank" rel="noopener">Try Git</a></li>
+<li>[4]. <a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="noopener">图解Git</a></li>
+<li>[5]. <a href="https://github.com/progit/progit/tree/master/zh" target="_blank" rel="noopener">Pro Git中文版</a></li>
+<li>[6]. <a href="https://github.com/blynn/gitmagic/tree/master/zh_cn" target="_blank" rel="noopener">Gitmagic中文版</a></li>
+</ul>
+<hr>
+<div class="image-package imagebubble"><br><img src="http://7xjpra.com1.z0.glb.clouddn.com/qrcode_for_gh_48d79033755a_258.jpg" alt=""><br><div class="image-caption">00的公众号，更多分享酝酿中……</div><br></div>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Coding/" rel="tag"># Coding</a>
+          
+            <a href="/tags/Git/" rel="tag"># Git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/change-note.html" rel="next" title="莫弃疗——关于改变的改变">
+                <i class="fa fa-chevron-left"></i> 莫弃疗——关于改变的改变
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/the-ambiguities-of-experience.html" rel="prev" title="组织和经验的迷思——读⎡经验的疆界⎦">
+                组织和经验的迷思——读⎡经验的疆界⎦ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、为什么要了解Git"><span class="nav-number">1.</span> <span class="nav-text">一、为什么要了解Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Git主要概念"><span class="nav-number">2.</span> <span class="nav-text">二、Git主要概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-工作空间"><span class="nav-number">2.1.</span> <span class="nav-text">1.工作空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Head-amp-branch-amp-master-amp-origin"><span class="nav-number">2.2.</span> <span class="nav-text">2.Head &amp; branch &amp; master &amp; origin</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、配置"><span class="nav-number">3.</span> <span class="nav-text">三、配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、常用命令"><span class="nav-number">4.</span> <span class="nav-text">四、常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建"><span class="nav-number">4.1.</span> <span class="nav-text">1.创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-查询"><span class="nav-number">4.2.</span> <span class="nav-text">2.查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-add-添加"><span class="nav-number">4.3.</span> <span class="nav-text">3.add/添加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-commit-提交"><span class="nav-number">4.4.</span> <span class="nav-text">4.commit/提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-push-推送"><span class="nav-number">4.5.</span> <span class="nav-text">5.push/推送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-pull-拉取"><span class="nav-number">4.6.</span> <span class="nav-text">6.pull/拉取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-checkout-切换"><span class="nav-number">4.7.</span> <span class="nav-text">7.checkout/切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-diff-比对"><span class="nav-number">4.8.</span> <span class="nav-text">8.diff/比对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-reset-撤销"><span class="nav-number">4.9.</span> <span class="nav-text">9.reset/撤销</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-merge"><span class="nav-number">4.10.</span> <span class="nav-text">10.merge</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-remove-amp-clean"><span class="nav-number">4.11.</span> <span class="nav-text">11.remove &amp; clean</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ref"><span class="nav-number">5.</span> <span class="nav-text">Ref</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/learngit.html';
+          this.page.identifier = 'learngit.html';
+          this.page.title = '多用Git少交税';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

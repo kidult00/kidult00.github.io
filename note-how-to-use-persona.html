@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Note,Persona," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="在上一篇笔记中，我们回顾了三种人物角色——定性人物角色、经定量验证的定性人物角色、定量人物角色，它们的创建方法。在了解了什么是人物角色，如何创建人物角色后，我们自然会关心下一个问题：怎样使用人物角色？ 一、如何使人物角色可信? 能代表所关注的用户； 角色的属性和描述是准确而完整的； 这些角色能涵盖所有用户。  这三个标准（有效性、完整性、全面性）用于衡量人物角色是否创建成功。">
+<meta name="keywords" content="Note,Persona">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读书笔记-赢在用户[3]：如何使用人物角色">
+<meta property="og:url" content="http://uegeek.com/note-how-to-use-persona.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="在上一篇笔记中，我们回顾了三种人物角色——定性人物角色、经定量验证的定性人物角色、定量人物角色，它们的创建方法。在了解了什么是人物角色，如何创建人物角色后，我们自然会关心下一个问题：怎样使用人物角色？ 一、如何使人物角色可信? 能代表所关注的用户； 角色的属性和描述是准确而完整的； 这些角色能涵盖所有用户。  这三个标准（有效性、完整性、全面性）用于衡量人物角色是否创建成功。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/8lswa5yf.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/8lswa5yf.jpg">
+<meta property="og:updated_time" content="2016-01-06T00:14:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="读书笔记-赢在用户[3]：如何使用人物角色">
+<meta name="twitter:description" content="在上一篇笔记中，我们回顾了三种人物角色——定性人物角色、经定量验证的定性人物角色、定量人物角色，它们的创建方法。在了解了什么是人物角色，如何创建人物角色后，我们自然会关心下一个问题：怎样使用人物角色？ 一、如何使人物角色可信? 能代表所关注的用户； 角色的属性和描述是准确而完整的； 这些角色能涵盖所有用户。  这三个标准（有效性、完整性、全面性）用于衡量人物角色是否创建成功。">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/8lswa5yf.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/note-how-to-use-persona.html"/>
+
+
+
+
+
+  <title>读书笔记-赢在用户[3]：如何使用人物角色 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/note-how-to-use-persona.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">读书笔记-赢在用户[3]：如何使用人物角色</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2010-02-08T22:45:14+08:00">
+                2010-02-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计/" itemprop="url" rel="index">
+                    <span itemprop="name">设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/note-how-to-use-persona.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="note-how-to-use-persona.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在<a href="http://www.uegeek.com/reading/note_how_to_create_persona" target="_blank" rel="noopener">上一篇笔记</a>中，我们回顾了三种<a href="http://www.uegeek.com/reading/note_what_is_persona" target="_blank" rel="noopener">人物角色</a>——定性人物角色、经定量验证的定性人物角色、定量人物角色，它们的创建方法。在了解了<a href="http://www.uegeek.com/reading/note_what_is_persona" target="_blank" rel="noopener">什么是人物角色</a>，<a href="http://www.uegeek.com/reading/note_how_to_create_persona" target="_blank" rel="noopener">如何创建人物角色</a>后，我们自然会关心下一个问题：怎样使用人物角色？</p>
+<h3 id="一、如何使人物角色可信"><a href="#一、如何使人物角色可信" class="headerlink" title="一、如何使人物角色可信?"></a>一、如何使人物角色可信?</h3><ul>
+<li><span style="font-weight: normal; font-size: 13px;">能代表所关注的用户；</span></li>
+<li><span style="font-weight: normal; font-size: 13px;">角色的属性和描述是准确而完整的；</span></li>
+<li><span style="font-weight: normal; font-size: 13px;">这些角色能涵盖所有用户。</span></li>
+</ul>
+<p>这三个标准（有效性、完整性、全面性）用于衡量人物角色是否创建成功。</p>
+<a id="more"></a>
+<h3 id="二、人物角色包括哪些相关信息？"><a href="#二、人物角色包括哪些相关信息？" class="headerlink" title="二、人物角色包括哪些相关信息？"></a>二、人物角色包括哪些相关信息？</h3><ul>
+<li>关键差异（明确的目标、行为和观点）：如果只给10秒，我们会怎么描述一个角色？</li>
+<li>姓名，照片，个人信息（职业和公司、住址、年龄、家庭情况、爱好、性格），领域行业信息（过往经历、当前状态、未来计划、动机、抱怨和痛处［参考《赢在用户》p120-121］），计算机和互联网使用情况（程度，目的，每周在线时间，电脑配置、计算机/互联网经验、互联网主要使用方式、喜欢的网站等），简介，附加属性，语录，商业目标，人物角色优先级，场景等。</li>
+</ul>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/8lswa5yf.jpg" alt="" title="persona_storyboard"></p>
+<p>此外，还需要为人物角色设定优先级和场景（scenario）：</p>
+<p>人物角色的特点在于将事实转化为故事，用丰富的细节去描绘用户的形象，帮助我们聚焦、沉浸在角色的情境中。所以，一些有助于我们理解这个角色（尤其是人物的目标、行为和观点）的信息，都可以考虑包含在对角色的描述中。</p>
+<p>也许，在初次接触人物角色的细节描述时，我们会觉得不大习惯：为什么要（貌似）凭空捏造出大量的细节？告诉我用户大概是怎样的不就ok了？我面对的一群而不是一个用户呀~</p>
+<p>问题是，我们是否对自己的想象力和共情的能力过于太乐观呢？就如同拍照和素描的区别：仅仅将一个场景拍下来，不对着照片，我们很可能还是无法详细描述出每一个细节；但是素描则不同，每一个细节的表达和处理，都是经过仔细的观察、思考、揣摩、平衡的结果，否则素描作品就会“失真”。人物角色的相关信息，其实相当于提供了一个模拟的情境，让我们不得不去“观察”、“揣摩”我们的素描对象——用户。</p>
+<h3 id="三、如何保持人物角色的活力？"><a href="#三、如何保持人物角色的活力？" class="headerlink" title="三、如何保持人物角色的活力？"></a>三、如何保持人物角色的活力？</h3><p>这个问题绝对不容忽视，尤其是当团队首次创建和使用人物角色。人物角色不是未某个项目、某次特殊需求而创建的。持续使用和更新，将核心用户的形象融入到每个成员开发、设计思维中，才是人物角色的使命。我们需要不断地完善、展示、解释、使用它：</p>
+<ul>
+<li>建立人物角色文档</li>
+<li>展示人物角色</li>
+<li>与人物角色一起生活</li>
+</ul>
+<h3 id="四、哪些层面的工作可以使用人物角色？"><a href="#四、哪些层面的工作可以使用人物角色？" class="headerlink" title="四、哪些层面的工作可以使用人物角色？"></a>四、哪些层面的工作可以使用人物角色？</h3><p>将人物角色放回到产品设计的过程中，它所处的位置大致是：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/8lswa5yf.jpg" alt=""></p>
+<p>下面我们来看看人物角色在从策略指导到产品完成的过程中可以起到什么作用：</p>
+<h4 id="1-制定商业策略"><a href="#1-制定商业策略" class="headerlink" title="1.制定商业策略"></a>1.制定商业策略</h4><blockquote>
+<p>策略是一个企业做出的、关于<strong>如何利用资源来最大化商业利益</strong>的决策的总和。</p>
+</blockquote>
+<p>企业必须决定哪一个机会对于所拥有的资源是最值得追求的。将有限的资源投入到为核心用户提供服务中，肯定是保险且有益的选择。策略型的人物角色正是帮助团队进行决策的有效工具。</p>
+<p>在策略讨论会中，列出每一个人物角色的“关键<strong>目标、行为和观点</strong>”，并讨论可以用来满足这些需求的、可能的解决方案。应该关注使我们在行业内与众不同的解决方案，而不是那些本来就应该逐渐提升的、不能使我们与竞争对手有所区别的改善措施。</p>
+<h4 id="2-定义产品特性和功能、内容范围"><a href="#2-定义产品特性和功能、内容范围" class="headerlink" title="2.定义产品特性和功能、内容范围"></a>2.定义产品特性和功能、内容范围</h4><p>两种能用人物角色为项目建立范围的方法：</p>
+<p>①头脑风暴：基于人物角色的目标、行为和观点来集体讨论有可能的特性、功能和内容。</p>
+<p>列出人物角色的目标，同时列出对于每个人物角色我们想达到的所有商业目标，让他们关联起来。</p>
+<p>②优先级别：基于对人物角色很重要的方面来确定最终应该纳入考虑范围的相关功能。</p>
+<p>竞争对手分析：试着把人物角色加进去，评估每一个功能在多大程度上满足每一个人物角色的需求。</p>
+<p>创建范围矩阵：不涉及竞争对手，仅对人物角色进行功能的优先级、工作量的评估。</p>
+<h4 id="3-指导结构、内容和设计"><a href="#3-指导结构、内容和设计" class="headerlink" title="3.指导结构、内容和设计"></a>3.指导结构、内容和设计</h4><h5 id="①建立结构：信息架构和交互设计"><a href="#①建立结构：信息架构和交互设计" class="headerlink" title="①建立结构：信息架构和交互设计"></a>①建立结构：信息架构和交互设计</h5><ul>
+<li><p>进行任务分析</p>
+<p>任务分析要对场景进行深入研究，直到识别出它的最小组成部分为止。得到的是一个待完成事项的列表，用于详细说明这次体验的结构。</p>
+<p>任务分析应该反映哪些是可能的途径，并按“业务”、“内容”、“技术”等给出约束条件。输出的是很多个独立的任务分析，然后创建一个支持所有独立任务的架构。</p>
+</li>
+<li><p>撰写用例</p>
+<p>任务分析关注于用户体验的视角，用例关注范围还包括了系统的视角和行为。用例讨论的是普通用户。每个人物角色都有自己的一系列用例。</p>
+<p>一个典型的用例还会有可选流程、后置条件、假设和关于这个用例的开放议题。</p>
+</li>
+<li><p>建立网站架构和页面结构</p>
+<p>为人物角色建立网站的基本架构。</p>
+</li>
+<li><p>定义导航</p>
+<p>首先，明确对于每一个人物角色来说，哪一条路径是最核心的路径。然后，弄清楚每一个人物角色离开一个页面后会去的地方。建立一系列规则，来定义网站导航系统。使用人物角色来确定导航文字。</p>
+</li>
+<li><p>设计网站搜索</p>
+<p>弄清楚首要人物角色想看什么类型的搜索结果，然后考虑每一条结果中应该出现哪些内容，他希望用什么样的顺序来浏览？需要过滤功能吗？</p>
+</li>
+</ul>
+<h5 id="②建设内容"><a href="#②建设内容" class="headerlink" title="②建设内容"></a>②建设内容</h5><p>理解哪些内容将帮助用户完成目标。与其向用户描述产品，不如告诉他们可以用这些产品“做什么”。</p>
+<blockquote>
+<p>文章或产品描述:人物角色需要了解什么，对什么感兴趣；</p>
+<p>指导文字：去哪里，做什么； </p>
+<p>文档和帮助：规划用户会在什么地方需要额外帮助；</p>
+<p>错误信息：用户想听到什么</p>
+<p>图像、声音：提供合适的体验</p>
+</blockquote>
+<p>建立能影响人物角色的内容，风格是关键的因素。用什么方式说出来，和说什么同样重要。注意词汇、语气、正式程度。</p>
+<p><strong>了解每个人物角色需要的东西，以及在什么时候需要。</strong>将这些内容整合到任务分析或用例中，或用独立内容文档识别每个人物角色所有的内容需求。</p>
+<h5 id="③确定视觉设计"><a href="#③确定视觉设计" class="headerlink" title="③确定视觉设计"></a>③确定视觉设计</h5><p>为每一个人物角色建立一套风格指南，或情绪板。</p>
+<hr>
+<p>三篇关于人物角色的笔记告一段落了。00也总算对人物角色方法有了初步的认识。如果你有任何想法想跟大家分享，赶紧留言或留下相关链接吧~</p>
+<p>希望以后能够有机会再跟大家分享关于人物角色的实践经验 :P</p>
+<hr>
+<p>补充</p>
+<h4 id="怎样创建已有产品的人物角色？怎样创建新产品的人物角色？"><a href="#怎样创建已有产品的人物角色？怎样创建新产品的人物角色？" class="headerlink" title="怎样创建已有产品的人物角色？怎样创建新产品的人物角色？"></a>怎样创建已有产品的人物角色？怎样创建新产品的人物角色？</h4><p>回答这个问题，首先还是要明确为什么要创建人物角色。目的是为不同类型的用户提供更好地服务，让我们在决策和设计时能高度focus。这么看来，对处在不同生命周期的产品，创建人物角色的方法其实应该是大致类似的，只不过可获得的数据、选取的处理方法有所不同。</p>
+<ol>
+<li><p>对老产品（整体层面的产品，例如邮箱），除了定性的方法，用户行为日志能很好地帮助我们寻找和聚焦核心用户群，在定性验证时能有更多的数据支持；</p>
+</li>
+<li><p>对新产品（局部层面的产品，例如邮箱聊天），根据产品性质对全局的人物角色进行细化和调整；</p>
+</li>
+<li><p>对全新的全局产品（例如sns），人物角色更重要的作用，是根据目标和决策，综合用户的需求、目标、动机，来辅助具体的设计，更多采用访谈和问卷的方法，可能包括一些市场研究的方法。</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Note/" rel="tag"># Note</a>
+          
+            <a href="/tags/Persona/" rel="tag"># Persona</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/note-how-to-create-persona.html" rel="next" title="读书笔记-赢在用户[2]：如何创建人物角色">
+                <i class="fa fa-chevron-left"></i> 读书笔记-赢在用户[2]：如何创建人物角色
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/a-brief-summary-about-twitter.html" rel="prev" title="Twitter/微博客的学习摘要">
+                Twitter/微博客的学习摘要 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、如何使人物角色可信"><span class="nav-number">1.</span> <span class="nav-text">一、如何使人物角色可信?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、人物角色包括哪些相关信息？"><span class="nav-number">2.</span> <span class="nav-text">二、人物角色包括哪些相关信息？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、如何保持人物角色的活力？"><span class="nav-number">3.</span> <span class="nav-text">三、如何保持人物角色的活力？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、哪些层面的工作可以使用人物角色？"><span class="nav-number">4.</span> <span class="nav-text">四、哪些层面的工作可以使用人物角色？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-制定商业策略"><span class="nav-number">4.1.</span> <span class="nav-text">1.制定商业策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-定义产品特性和功能、内容范围"><span class="nav-number">4.2.</span> <span class="nav-text">2.定义产品特性和功能、内容范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-指导结构、内容和设计"><span class="nav-number">4.3.</span> <span class="nav-text">3.指导结构、内容和设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#①建立结构：信息架构和交互设计"><span class="nav-number">4.3.1.</span> <span class="nav-text">①建立结构：信息架构和交互设计</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#②建设内容"><span class="nav-number">4.3.2.</span> <span class="nav-text">②建设内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#③确定视觉设计"><span class="nav-number">4.3.3.</span> <span class="nav-text">③确定视觉设计</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎样创建已有产品的人物角色？怎样创建新产品的人物角色？"><span class="nav-number">4.4.</span> <span class="nav-text">怎样创建已有产品的人物角色？怎样创建新产品的人物角色？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/note-how-to-use-persona.html';
+          this.page.identifier = 'note-how-to-use-persona.html';
+          this.page.title = '读书笔记-赢在用户[3]：如何使用人物角色';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

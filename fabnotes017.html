@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Note,Arduino,Fab,Maker," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="Note,Arduino,Fab,Maker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="作业8：刻板焊接烧程序[FabNotes017]">
+<meta property="og:url" content="http://uegeek.com/fabnotes017.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week8.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/FabISPMakeHex.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/usbtinyisp.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/ISPmakefile.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/boardfuseok.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/boardfusemake.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/arduinoAddBoard.png">
+<meta property="og:image" content="http://highlowtech.org/wp-content/uploads/2011/10/boards-manager.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/arduinosetting.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/arduinochangepin.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/boardsucceed.jpeg">
+<meta property="og:updated_time" content="2016-08-06T14:31:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="作业8：刻板焊接烧程序[FabNotes017]">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week8.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/fabnotes017.html"/>
+
+
+
+
+
+  <title>作业8：刻板焊接烧程序[FabNotes017] | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/fabnotes017.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">作业8：刻板焊接烧程序[FabNotes017]</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-08T22:35:37+08:00">
+                2016-05-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/动手/" itemprop="url" rel="index">
+                    <span itemprop="name">动手</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/fabnotes017.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="fabnotes017.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/week8.png" alt=""></p>
+<a id="more"></a>
+<p>这周的作业是</p>
+<blockquote>
+<p>阅读一款微处理器的说明</p>
+<p>制作电路板并编写程序使其运行</p>
+</blockquote>
+<h3 id="第一轮尝试-自己制作-ISP"><a href="#第一轮尝试-自己制作-ISP" class="headerlink" title="第一轮尝试: 自己制作 ISP"></a>第一轮尝试: 自己制作 ISP</h3><p>ISP 是为 AVR 芯片制作的编程器，这里有详细的 <a href="http://archive.fabacademy.org/archives/2016/doc/programming_FabISP.html" target="_blank" rel="noopener">DIY ISP 教程</a>。</p>
+<p>依着教程画葫芦：</p>
+<ul>
+<li><a href="http://www.obdev.at/products/crosspack/index.html" target="_blank" rel="noopener">下载安装 Crosspack AVR</a></li>
+<li>Get Make </li>
+<li>下载固件 <a href="http://www.as220.org/fabacademy/downloads/fabISP_mac.0.8.2_firmware.zip" target="_blank" rel="noopener">FabISP Firmware for MacOS 10.8.2</a></li>
+<li>解压固件，命令行进入解压后的目录</li>
+<li>用编辑器打开 Makefile</li>
+<li><p>将模式由 “avrisp2” 改为 “usbtiny”</p>
+<p>  也就是找到以下代码，将注释转移到 “avrisp2”那一行，然后保存文件</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#AVRDUDE = avrdude -c usbtiny -p $(DEVICE) # edit this line for your programmer</span></span><br><span class="line">AVRDUDE = avrdude -c avrisp2 -P usb -p $(DEVICE) <span class="comment"># edit this line for your programmer</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命令行进入固件目录，输入命令 <code>make clean</code></p>
+<p>  如果正常，将返回结果 <code>rm -f main.hex main.lst main.obj main.cof main.list main.map main.eep.hex main.elf *.o usbdrv/*.o main.s usbdrv/oddebug.s usbdrv/usbdrv.s</code></p>
+<p>  但是这时出现了错误：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kidults-NMB:fabISP_mac.0.8.2_firmware kidult$ make hex</span><br><span class="line">avr-gcc -Wall -Os -DF_CPU=20000000	 -Iusbdrv -I. -DDEBUG_LEVEL=0 -mmcu=attiny44 -c usbdrv/usbdrv.c -o usbdrv/usbdrv.o</span><br><span class="line">make: avr-gcc: No such file or directory</span><br><span class="line">make: *** [usbdrv/usbdrv.o] Error 1</span><br></pre></td></tr></table></figure>
+<p>  好吧，忘记插我的 FabISP 到电脑了……插好后再试，ok 的：</p>
+<p>  <img src="http://7xjpra.com1.z0.glb.clouddn.com/FabISPMakeHex.png" alt=""></p>
+</li>
+<li><p>下一步，需要设置 fuse，让板子能使用外部的 clock ：输入命令 <code>make fuse</code></p>
+<p>  又出现了错误：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">avrdude -c usbtiny -p attiny44  -U hfuse:w:0xDF:m -U lfuse:w:0xFF:m</span><br><span class="line">avrdude: Error: Could not find USBtiny device (0x1781/0xc9f)</span><br><span class="line">avrdude <span class="keyword">done</span>.  Thank you.</span><br><span class="line">make: *** [fuse] Error 1</span><br></pre></td></tr></table></figure>
+<p>  查了一圈 google，搞不明白为什么。似乎是 GCC 编译问题，或者是我的板子有问题。第一轮尝试以失败告终。</p>
+</li>
+</ul>
+<h3 id="第二轮尝试-使用现成的-USBtinyISP"><a href="#第二轮尝试-使用现成的-USBtinyISP" class="headerlink" title="第二轮尝试: 使用现成的 USBtinyISP"></a>第二轮尝试: 使用现成的 USBtinyISP</h3><p>首先，下载 <a href="http://academy.cba.mit.edu/classes/embedded_programming/hello.ftdi.44.echo.c" target="_blank" rel="noopener">hello.ftdi.44.echo.c</a>, <a href="http://academy.cba.mit.edu/classes/embedded_programming/hello.ftdi.44.echo.c.make" target="_blank" rel="noopener">hello.ftdi.44.echo.c.make</a> 。然后将板子连接到 USBtinyISP:</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/usbtinyisp.jpeg" alt=""></p>
+<p>此处需要吐槽一下 New MacBook，只有一个 typeC 接口，一开始 USBtinyISP 接上去灯不亮，以为是我的 typeC 转接口坏了。试了大半个晚上后放弃。第二天试了一下连在另一台 MacBook Pro 上，USBtinyISP 的灯又亮了。插回到 New MacBook，依然不亮，怀疑是不是数据线坏了，又折腾半个晚上。偶然间又发现，充满电再插 USBtinyISP 会亮……所以问题可能出在 typeC 转接口对 USB 供电不足……</p>
+<p>折腾两三个晚上，终于到下一步。命令行进入前面下载好的两个文件的目录，输入命令：<br> <code>make -f hello.ftdi.44.echo.c.make</code></p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/ISPmakefile.png" alt=""></p>
+<p>Make 成功了。然后是 <code>sudo make -f hello.ftdi.44.echo.c.make program-usbtiny-fuses</code></p>
+<p>又出现错误提示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">avr-objcopy -O ihex hello.ftdi.44.echo.out hello.ftdi.44.echo.c.hex;\</span><br><span class="line">	avr-size --mcu=attiny44 --format=avr hello.ftdi.44.echo.out</span><br><span class="line">AVR Memory Usage</span><br><span class="line">----------------</span><br><span class="line">Device: attiny44</span><br><span class="line"></span><br><span class="line">Program:     758 bytes (18.5% Full)</span><br><span class="line">(.text + .data + .bootloader)</span><br><span class="line"></span><br><span class="line">Data:         64 bytes (25.0% Full)</span><br><span class="line">(.data + .bss + .noinit)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">avrdude -p t44 -P usb -c usbtiny -U lfuse:w:0x5E:m</span><br><span class="line"></span><br><span class="line">avrdude: initialization failed, rc=-1</span><br><span class="line">         Double check connections and try again, or use -F to override</span><br><span class="line">         this check.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">avrdude <span class="keyword">done</span>.  Thank you.</span><br><span class="line"></span><br><span class="line">make: *** [program-usbtiny-fuses] Error 1</span><br></pre></td></tr></table></figure>
+<p>又开始到处 Google。查看了一下 <a href="http://archive.fabacademy.org/archives/2016/doc/fuses.html" target="_blank" rel="noopener">fuse 的含义</a> ：</p>
+<blockquote>
+<p>What are the fuses?</p>
+<p>There are 3 bytes of permanent storage in the chip called ‘fuse low byte’, ‘fuse high byte’ and ‘fuse extended byte’. These bytes are called fuses and can be reprogrammed as many times as you want and determines the behaviour of the chip. To do that, their value is not erased when the chip is powered off or reprogrammed.</p>
+<p>Each microchip has its own definition for the values that must have the fuses. </p>
+</blockquote>
+<p>将错误信息复制到 Google，找到了之前的<a href="http://fab.cba.mit.edu/classes/863.12/people/laia.mogassoldevila/projects/p6.html" target="_blank" rel="noopener">fab note</a>。里面让安装<a href="http://www.ftdichip.com/Drivers/VCP.htm" target="_blank" rel="noopener">FTDI 芯片的驱动</a>。然并卵，安装好驱动依然是错误提示。</p>
+<p>肯定是板子出问题了。需要去实验室重新刻板子和焊电路。但是实验室扩建装修中，一眨眼几个星期就过去了………………</p>
+<h3 id="第三轮尝试"><a href="#第三轮尝试" class="headerlink" title="第三轮尝试"></a>第三轮尝试</h3><p>终于盼到实验室重新开放，在空气质量500的房间中刻板子，然后搜刮了元器件回家打算自己焊。好不容易把东西凑齐，开工后发现焊锡太粗太劣质，根本没法焊。重新买了焊锡线，开工后崩溃地发现，电烙铁没有买配焊台的，调不了温度，焊枪温度太高，很容易把板子上面的铜面焊焦了。可好的板子都用完了，还是没有重新作出电路板来。</p>
+<p>等到周末，又去到实验室老老实实刻板子，焊元件。</p>
+<p>电路板完成后，连上 USBtinyISP，终于 fuse 成功：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/boardfuseok.png" alt=""></p>
+<p>下一步</p>
+<p><code>make -f hello.ftdi.44.echo.c.make program-usbtiny</code></p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/boardfusemake.png" alt=""></p>
+<p>现在，可以将程序烧录到板子上了。</p>
+<p>照着教程下载 <a href="http://academy.cba.mit.edu/classes/input_devices/python/term.py" target="_blank" rel="noopener">term.py</a>，输入命令 <code>python term.py /dev/ttyUSB0 115200</code>，继续是熟悉的错误提示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"term.py"</span>, line <span class="number">89</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    ser = serial.Serial(port,speed)</span><br><span class="line">  File <span class="string">"/Library/Python/2.7/site-packages/serial/serialutil.py"</span>, line <span class="number">180</span>, <span class="keyword">in</span> __init__</span><br><span class="line">    self.open()</span><br><span class="line">  File <span class="string">"/Library/Python/2.7/site-packages/serial/serialposix.py"</span>, line <span class="number">294</span>, <span class="keyword">in</span> open</span><br><span class="line">    <span class="keyword">raise</span> SerialException(msg.errno, <span class="string">"could not open port %s: %s"</span> % (self._port, msg))</span><br><span class="line">serial.serialutil.SerialException: [Errno <span class="number">2</span>] could <span class="keyword">not</span> open port /dev/ttyUSB0: [Errno <span class="number">2</span>] No such file <span class="keyword">or</span> directory: <span class="string">'/dev/ttyUSB0'</span></span><br></pre></td></tr></table></figure>
+<p>已经处在崩溃边缘，实验室的小伙伴提醒我用 Arduino 去烧程序。于是振作着继续尝试：</p>
+<ol>
+<li><p>添加板子</p>
+<p> 打开 Arduino 的设置，在 “Additional Boards Manager URLs:” 里填上</p>
+<blockquote>
+<p><a href="https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json" target="_blank" rel="noopener">https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json</a></p>
+</blockquote>
+<p> <img src="http://7xjpra.com1.z0.glb.clouddn.com/arduinoAddBoard.png" alt=""></p>
+<p> 然后找到菜单里的 “Tools &gt; Board” ，打开 boards manager 。滚到列表底部，可以看到 “ATtiny”.<br> <img src="http://highlowtech.org/wp-content/uploads/2011/10/boards-manager.png" alt=""></p>
+<p> 安装，然后关闭 boards manager。</p>
+</li>
+<li><p>设置</p>
+<p> 设置 board:”ATtiny”, Processor:”ATtiny44”, Clock:”20 MHz”, Port:”USB”</p>
+<p> <img src="http://7xjpra.com1.z0.glb.clouddn.com/arduinosetting.png" alt=""></p>
+</li>
+<li><p>修改程序</p>
+<p> Load Arduino 自带的 Blink example, 把 13 号引脚改为 7:</p>
+<p> <img src="http://7xjpra.com1.z0.glb.clouddn.com/arduinochangepin.png" alt=""></p>
+</li>
+<li><p>Burn Bootloader</p>
+</li>
+<li><p>成功了！</p>
+<p> <img src="http://7xjpra.com1.z0.glb.clouddn.com/boardsucceed.jpeg" alt=""></p>
+</li>
+</ol>
+<hr>
+<p>一周的作业用了快两个月才完成，觉得毕业希望已经渺茫…………</p>
+<hr>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="http://highlowtech.org/?p=1695" target="_blank" rel="noopener">Programming an ATtiny w/ Arduino 1.6 (or 1.0)</a></li>
+<li><a href="http://www.instructables.com/id/Arduino-Examples-2-Use-an-Arduino-as-a-FTDI-Progr/" target="_blank" rel="noopener">Use an Arduino as a FTDI Programmer</a></li>
+<li><a href="http://fabacademy.org/archives/2015/eu/students/koch.juliette/week7.html" target="_blank" rel="noopener">classmate’s note1</a></li>
+<li><a href="http://fabacademy.org/archives/2015/eu/students/aloy_ciller.mariona/p/module-seven.html" target="_blank" rel="noopener">classmate’s note2</a></li>
+<li><a href="http://fabacademy.org/archives/2015/eu/students/escario_mendez.alejandro/embedded_programming.html" target="_blank" rel="noopener">classmate’s note3</a></li>
+<li><a href="http://archive.fabacademy.org/archives/2016/fablabshenzhen/students/408/Web/#p=week_08__embedded_programming" target="_blank" rel="noopener">classmate’s note4</a></li>
+</ul>
+<h3 id="课程资源"><a href="#课程资源" class="headerlink" title="课程资源"></a>课程资源</h3><ul>
+<li><a href="http://fabacademy.org/class-schedule-2016/" target="_blank" rel="noopener">Fab Academy 2016 课表</a></li>
+<li><a href="https://vimeo.com/159242917" target="_blank" rel="noopener">Week8 课程视频</a></li>
+<li><a href="http://academy.cba.mit.edu/classes/embedded_programming/index.html" target="_blank" rel="noopener">Week8 课程大纲</a></li>
+<li><a href="https://www.gitbook.com/read/book/kidult00/00fabnotes" target="_blank" rel="noopener">我的英文笔记 Gitbook</a></li>
+<li><a href="http://mp.weixin.qq.com/mp/homepage?__biz=MzAxNDE2NzAxOQ==&amp;hid=3&amp;sn=c37847b5d6e0f007c88dbc5e9e0c0199#wechat_redirect" target="_blank" rel="noopener">公众号文章列表</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Note/" rel="tag"># Note</a>
+          
+            <a href="/tags/Arduino/" rel="tag"># Arduino</a>
+          
+            <a href="/tags/Fab/" rel="tag"># Fab</a>
+          
+            <a href="/tags/Maker/" rel="tag"># Maker</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/fabnotes016.html" rel="next" title="第八周：嵌入式编程[FabNotes016]">
+                <i class="fa fa-chevron-left"></i> 第八周：嵌入式编程[FabNotes016]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/fabnotes018.html" rel="prev" title="第九周：机械设计[FabNotes018]">
+                第九周：机械设计[FabNotes018] <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一轮尝试-自己制作-ISP"><span class="nav-number">1.</span> <span class="nav-text">第一轮尝试: 自己制作 ISP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二轮尝试-使用现成的-USBtinyISP"><span class="nav-number">2.</span> <span class="nav-text">第二轮尝试: 使用现成的 USBtinyISP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三轮尝试"><span class="nav-number">3.</span> <span class="nav-text">第三轮尝试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#课程资源"><span class="nav-number">5.</span> <span class="nav-text">课程资源</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/fabnotes017.html';
+          this.page.identifier = 'fabnotes017.html';
+          this.page.title = '作业8：刻板焊接烧程序[FabNotes017]';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

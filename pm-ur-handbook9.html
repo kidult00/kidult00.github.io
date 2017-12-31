@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="设计师,产品经理,用户研究," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="设计师,产品经理,用户研究">
+<meta property="og:type" content="article">
+<meta property="og:title" content="产品经理的用研手册09 - 精益的本质：一切皆假设">
+<meta property="og:url" content="http://uegeek.com/pm-ur-handbook9.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/article9-titu.png">
+<meta property="og:image" content="http://cdn4.infoqstatic.com/statics_s1_20161122-0331/resource/articles/twitter-ab-test-practise-part01/zh/resources/002.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/09-URandLean.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/02-HowtoBetterCategories.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/02-UserScenario.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/02-UserSnapshotTemp.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/03-ValueFormula.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/07-InterviewTech.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/02-DifPMDifGoal.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/PDE.IMG.QR.png">
+<meta property="og:updated_time" content="2016-12-29T10:10:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="产品经理的用研手册09 - 精益的本质：一切皆假设">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/article9-titu.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/pm-ur-handbook9.html"/>
+
+
+
+
+
+  <title>产品经理的用研手册09 - 精益的本质：一切皆假设 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/pm-ur-handbook9.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">产品经理的用研手册09 - 精益的本质：一切皆假设</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-29T17:48:03+08:00">
+                2016-12-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计/" itemprop="url" rel="index">
+                    <span itemprop="name">设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pm-ur-handbook9.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="pm-ur-handbook9.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/article9-titu.png" alt=""></p>
+<a id="more"></a> 
+<p>在本系列的开篇<a href="(http://www.uegeek.com/pm-ur-handbook1.html">「朦胧的用户，懵懂的你」</a>)中，我们讨论过用研为什么无用。其中一个重要原因是，互联网产品的更新迭代速度以周、甚至以天计，可是用户研究项目从立项、方案设计、执行、分析到结果，动辄数周，这种节奏难以匹配需求。为了快，大家更倾向于用「试错」的办法，而不是充分论证再行动。</p>
+<p>这种「试错」的方法，最近几年越来越流行，它有一个新名称，叫「精益」。这么看来，用户研究难以适应互联网的节奏，跟「精益」的思路背道而驰。是这样吗？</p>
+<h2 id="用户研究与精益创业"><a href="#用户研究与精益创业" class="headerlink" title="用户研究与精益创业"></a>用户研究与精益创业</h2><p>表面上，用户研究和互联网快速迭代、精益式的做法相互矛盾，但是 00 的观点却相反：它们的核心思路是一致的。</p>
+<h3 id="对用研的误解"><a href="#对用研的误解" class="headerlink" title="对用研的误解"></a>对用研的误解</h3><p>用户研究最核心的并不是各种眼花缭乱的方法，而是研究的内核、解决问题的根本思路：先「假设」后「验证」。</p>
+<p>为什么那么多人觉得用研难而无用？因为难的不是操作，而是面对一切问题首先承认自己无知、需要从头去验证的根本态度。有了这种态度，才会严肃对待「假设」、「试验」、「信度和效度」。只不过，严谨的代价是时间和精力等各项成本投入。</p>
+<h3 id="对精益的误解"><a href="#对精益的误解" class="headerlink" title="对精益的误解"></a>对精益的误解</h3><p>在「精益」快速普及流行过后，不少人打着「精益」的旗号继续在低效试错，给原本盲目的做法披上了一件光鲜的外衣。于是有不少人开始批评精益的思路。这依然是对精益的误解。</p>
+<p>精益的本质，也是「假设」-「验证」的循环。</p>
+<p><img src="http://cdn4.infoqstatic.com/statics_s1_20161122-0331/resource/articles/twitter-ab-test-practise-part01/zh/resources/002.png" alt=""></p>
+<p>快速试错只是精益的表象，缩短「假设」-「验证」的循环才是精益的精髓。因为盲目试错的过程中，我们其实不知道自己在试验的到底是什么，缺乏「假设」的「验证」，等于没有验证，最终无助于找到对的方向。</p>
+<h3 id="一切都皆假设"><a href="#一切都皆假设" class="headerlink" title="一切都皆假设"></a>一切都皆假设</h3><p>对创业团队而言，对从 0 到 1 的产品而言，用户群、需求、解决方案、体验目标，一切都只是未经验证的假设。</p>
+<p>比如，有这样一个产品定义：</p>
+<blockquote>
+<p>对希望提升睡眠质量、获得深度放松体验的用户，在睡前及放松场景，提供一个手机 APP，播放舒缓的音乐和催眠引导语，帮助用户深度放松，提高休息质量。</p>
+</blockquote>
+<p>一旦仔细拆分开来，可以发现，其实每一部分都不是「事实」，而是待验证的假设：</p>
+<blockquote>
+<p>对希望提升睡眠质量，获得深度放松体验的用户 —— 用户需求假设</p>
+<p>在睡前及放松场景，—— 场景假设</p>
+<p>提供一个手机 APP，播放舒缓的音乐和催眠引导语， —— 解决方案假设</p>
+<p>帮助用户深度放松，提高休息质量。—— 体验目标假设</p>
+</blockquote>
+<p>我们太容易把假设当成了洞察。作为一个猜想，全心全意期待的，就是被验证，不论结果是被证明还是被反驳。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/09-URandLean.jpg" alt=""></p>
+<h2 id="用户研究如何助力精益创业？"><a href="#用户研究如何助力精益创业？" class="headerlink" title="用户研究如何助力精益创业？"></a>用户研究如何助力精益创业？</h2><p>在价值观层面，只要突破对「研究」所抱有的冗长、龟毛、小题大做的刻板印象，回归到研究的本质，就能更深入地理解「精益」的内涵。</p>
+<p>在方法论层面，只要明确了「一切皆假设」「一切待验证」，「望闻问切」的用研四式全部都可以指向实际问题求解，不再为了「严谨」而用研，而是为了「解答和验证」去做用研。</p>
+<p>假设和验证总是成对出现，不可分离。有了假设，我们才知道待验证的是什么，在观察时才有重点、在收集反馈时才知道轻重缓急、在主动询问时更容易直切主题、在试验时能少一些认知偏差。</p>
+<p>亲爱的产品经理们，请每天都问一问自己：</p>
+<blockquote>
+<p>我的假设是什么？</p>
+<p>哪些重要问题其实仍待验证？</p>
+<p>如何用最小行动去验证？</p>
+</blockquote>
+<h3 id="用户需求假设如何验证"><a href="#用户需求假设如何验证" class="headerlink" title="用户需求假设如何验证"></a>用户需求假设如何验证</h3><p>可验证的东西，首先必需得是可以准确描述的。</p>
+<p>你可以清楚地描述产品的用户群体如何分类，每一类有什么特征吗？在哪里可以找到一定规模的用户？请回顾本系列第二篇文章<a href="http://www.uegeek.com/pm-ur-handbook2.html" target="_blank" rel="noopener">你真的懂用户吗？</a>。通过目标区分用户，通过对场景的描述建立用户快照。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/02-HowtoBetterCategories.jpg" alt=""></p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/02-UserScenario.jpg" alt=""></p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/02-UserSnapshotTemp.jpg" alt=""></p>
+<p>在建立了初步的用户快照的基础上，我们反复对用户进行「望闻问切」，即观察、倾听反馈、主动询问、做试验，来验证和修正用户快照，最终得到更接近真实的用户角色和用户画像。</p>
+<p>接着，你可以清楚描述用户的需求吗？在用户提供的场景故事中，反复提炼需求，尤其是真正有价值的需求。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/03-ValueFormula.jpg" alt=""></p>
+<p>相比需求是否存在，更加难以判断的是需求的市场规模。我们可以尝试通过一些侧面信息来辅助分析。</p>
+<ul>
+<li>需求有多迫切？对整个生活的影响有多大？</li>
+<li>异质人群（不同社会阶层、年龄、生活状态）是否都反映出类似的诉求</li>
+<li>搜索指数和关键词热度，流量的上下游来源和去向</li>
+<li>国内外已有的解决方案，数量和程度</li>
+<li>类似行业成熟市场的规模，或其他区域同类市场的规模</li>
+</ul>
+<p>欢迎大家多补充这一部分的经验。</p>
+<p>判断了市场规模之后，还需要估计触达用户的成本、建设渠道的成本。在触达用户之后，还得考虑说服用户接受、购买解决方案的成本。</p>
+<h3 id="场景假设如何验证"><a href="#场景假设如何验证" class="headerlink" title="场景假设如何验证"></a>场景假设如何验证</h3><p>相比用户和需求假设，场景则容易验证得多：去现场观察，直接向用户询问。</p>
+<p>请回顾本系列<a href="http://www.uegeek.com/pm-ur-handbook4.html" target="_blank" rel="noopener">第 5 篇</a>和<a href="http://www.uegeek.com/pm-ur-handbook7.html" target="_blank" rel="noopener">第 7 篇</a>，用研四式中的「望」和「问」，每次实际接触用户时，都收集具体的使用场景、抽取出共性，并且结合用户快照中的场景假设，去做对比。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/07-InterviewTech.jpg" alt=""></p>
+<h3 id="解决方案假设如何验证"><a href="#解决方案假设如何验证" class="headerlink" title="解决方案假设如何验证"></a>解决方案假设如何验证</h3><p>解决方案真的能解决问题吗？通过观察（望）和做实验（切），能很好回答这个问题。尤其注意观察那些能反映出解决方案是否有效的数据指标，是否符合预期？</p>
+<p>如果发现了现实和预期不符的疑点，进一步倾听用户怎么说（闻），以及向用户询问（问）他们的感受和态度。</p>
+<p>有时候，我们提供的解决方案也许是有效的，但是不具备独特性，容易被取代。</p>
+<p>还有的情况是，解决方案是有效的，但是用户并没有直接付费的意愿，那就需要调整商业模式，找出「羊毛出在猪身上」的可行通路。</p>
+<p>更进一步，商业模式可行，还需要把生产成本控制在收益之下，或者能够找到进一步降低成本的路径。</p>
+<h3 id="体验目标假设如何验证"><a href="#体验目标假设如何验证" class="headerlink" title="体验目标假设如何验证"></a>体验目标假设如何验证</h3><p>这是最难验证的假设。</p>
+<p>体验很重要，但是到底有多重要？跟实用性目的相比，孰轻孰重？它会怎样影响用户的认知和传播？</p>
+<p>也许，这就是产品经理工作中真正艺术的部分。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/02-DifPMDifGoal.jpg" alt=""></p>
+<p>让自己文艺起来吧，让自己成为洞察人性的高手吧，产品经理们！</p>
+<hr>
+<p>如需转载本文，请联系 uegeek@gmail.com</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/PDE.IMG.QR.png" alt=""></p>
+<ul>
+<li><a href="http://www.uegeek.com/pm-ur-handbook1.html" target="_blank" rel="noopener">产品经理的用研手册01 - 朦胧的用户，懵懂的你</a></li>
+<li><a href="http://www.uegeek.com/pm-ur-handbook2.html" target="_blank" rel="noopener">产品经理的用研手册02 - 你真的懂用户吗？</a></li>
+<li><a href="http://www.uegeek.com/pm-ur-handbook3.html" target="_blank" rel="noopener">产品经理的用研手册03 - 成也需求，败也需求</a></li>
+<li><a href="http://www.uegeek.com/pm-ur-handbook4.html" target="_blank" rel="noopener">产品经理的用研手册04 - 做问题求解者，先对症后下药</a></li>
+<li><a href="http://www.uegeek.com/pm-ur-handbook5.html" target="_blank" rel="noopener">产品经理的用研手册05 - 用研四式之「望」</a></li>
+<li><a href="http://www.uegeek.com/pm-ur-handbook6.html" target="_blank" rel="noopener">产品经理的用研手册06 - 用研四式之「闻」</a></li>
+<li><a href="http://www.uegeek.com/pm-ur-handbook7.html" target="_blank" rel="noopener">产品经理的用研手册07 - 用研四式之「问」</a></li>
+<li><a href="http://www.uegeek.com/pm-ur-handbook8.html" target="_blank" rel="noopener">产品经理的用研手册08 - 用研四式之「切」</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/设计师/" rel="tag"># 设计师</a>
+          
+            <a href="/tags/产品经理/" rel="tag"># 产品经理</a>
+          
+            <a href="/tags/用户研究/" rel="tag"># 用户研究</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/pm-ur-handbook8.html" rel="next" title="产品经理的用研手册08 - 用研四式之「切」">
+                <i class="fa fa-chevron-left"></i> 产品经理的用研手册08 - 用研四式之「切」
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/pm-ur-handbook10.html" rel="prev" title="产品经理的用研手册10 - 沟通的秘密武器">
+                产品经理的用研手册10 - 沟通的秘密武器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户研究与精益创业"><span class="nav-number">1.</span> <span class="nav-text">用户研究与精益创业</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对用研的误解"><span class="nav-number">1.1.</span> <span class="nav-text">对用研的误解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对精益的误解"><span class="nav-number">1.2.</span> <span class="nav-text">对精益的误解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一切都皆假设"><span class="nav-number">1.3.</span> <span class="nav-text">一切都皆假设</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户研究如何助力精益创业？"><span class="nav-number">2.</span> <span class="nav-text">用户研究如何助力精益创业？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户需求假设如何验证"><span class="nav-number">2.1.</span> <span class="nav-text">用户需求假设如何验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景假设如何验证"><span class="nav-number">2.2.</span> <span class="nav-text">场景假设如何验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案假设如何验证"><span class="nav-number">2.3.</span> <span class="nav-text">解决方案假设如何验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#体验目标假设如何验证"><span class="nav-number">2.4.</span> <span class="nav-text">体验目标假设如何验证</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/pm-ur-handbook9.html';
+          this.page.identifier = 'pm-ur-handbook9.html';
+          this.page.title = '产品经理的用研手册09 - 精益的本质：一切皆假设';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

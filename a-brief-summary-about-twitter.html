@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Twitter,产品研究,微博客," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="一、概述Twitter的产生源自一个很简单的问题：“What are you doing?” 后来Twitter团队将这句话演变为“Share and discover what’s happening right now, anywhere in the world”。">
+<meta name="keywords" content="Twitter,产品研究,微博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Twitter&#x2F;微博客的学习摘要">
+<meta property="og:url" content="http://uegeek.com/a-brief-summary-about-twitter.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="一、概述Twitter的产生源自一个很简单的问题：“What are you doing?” 后来Twitter团队将这句话演变为“Share and discover what’s happening right now, anywhere in the world”。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://pic.yupoo.com/uegeek/411598ed481e/small.jpg">
+<meta property="og:updated_time" content="2016-08-06T02:13:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Twitter&#x2F;微博客的学习摘要">
+<meta name="twitter:description" content="一、概述Twitter的产生源自一个很简单的问题：“What are you doing?” 后来Twitter团队将这句话演变为“Share and discover what’s happening right now, anywhere in the world”。">
+<meta name="twitter:image" content="http://pic.yupoo.com/uegeek/411598ed481e/small.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/a-brief-summary-about-twitter.html"/>
+
+
+
+
+
+  <title>Twitter/微博客的学习摘要 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/a-brief-summary-about-twitter.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Twitter/微博客的学习摘要</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2010-02-28T11:44:10+08:00">
+                2010-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/叽歪/" itemprop="url" rel="index">
+                    <span itemprop="name">叽歪</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/a-brief-summary-about-twitter.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="a-brief-summary-about-twitter.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><p>Twitter的产生源自一个很简单的问题：<strong>“What are you doing?” <span style="font-weight: normal;">后来Twitter团队将这句话演变为</span>“Share and discover what’s happening right now, anywhere in the world”。</strong><br><a id="more"></a></p>
+<p>Wiki相关条目的描述：</p>
+<blockquote>
+<p><a href="http://zh.wikipedia.org/zh-hans/%E5%BE%AE%E5%8D%9A%E5%AE%A2" target="_blank" rel="noopener">微博客</a>（Microlog，微部落格、微网志、微型网志） 是一种允许用户及时更新简短文本（通常少于200字）并可以公开发布的博客形式。它允许任何人阅读或者只能由用户选择的群组阅读。</p>
+<p>Twitter 是一个社交网络及微型部落格服务。用户可以经由Twitter网站或Twitter客户端、SMS、IM、RSS、Email等，输入最多140字的文字更新。<br>Wiki link：<a href="http://en.wikipedia.org/wiki/Microblogging" target="_blank" rel="noopener">Microblogging</a> | <a href="http://en.wikipedia.org/wiki/Twitter" target="_blank" rel="noopener">Twitter</a> | <a href="http://zh.wikipedia.org/wiki/Twitter" target="_blank" rel="noopener">Twitter(中文)</a> | <a href="http://zh.wikipedia.org/zh-hans/%E5%BE%AE%E5%8D%9A%E5%AE%A2" target="_blank" rel="noopener">微博客</a></p>
+<p>“Twitter就像你在一个盛大的聚会中经过某些人时偷听到的对话。”<br>Twitter for beginners：<a href="http://www.crowinfodesign.com/downloads/twitter.pdf" target="_blank" rel="noopener">英文版PDF</a> | <a href="http://docs.google.com/ViewDoc?docid=dfs98nc3_197xphstjw6" target="_blank" rel="noopener">中文版Docs</a></p>
+</blockquote>
+<p>国内微博服务：滔滔、新浪微博、139说客、网易微博、饭否、叽歪、嘀咕、QQ邮箱广播、Follow5、做啥、贫嘴、Fexion网、同学、我烧叨叨、MySpace聚友、蟹爪、相闻、爱唠叨、微可、easytalk、随时记、碎碎念、推客、迷你博客等</p>
+<p>国外微博服务：Twitter、Yahoo meme、Plurk、jaiku、tumblelog、Thumbcast、Twingr、Sideblog 、Yammer 、Juick, etc.</p>
+<h3 id="二、Twitter的组成和功能"><a href="#二、Twitter的组成和功能" class="headerlink" title="二、Twitter的组成和功能"></a>二、Twitter的组成和功能</h3><h4 id="组成："><a href="#组成：" class="headerlink" title="组成："></a>组成：</h4><p>Tweets</p>
+<p>Tweets也就是Twitter消息，140个字符。Tweets可以用于回答”What are you doing? “ ，”What are you thinking? “这些问题，当然并不局限于此。</p>
+<p>Timeline</p>
+<p>Twitter时间线(TimeLine)是一些Tweets列表，显示在你的Twitter主页上，包含了所Follow的推友的Tweets，也包含你自已的。Public Timeline (公众时间线<a href="http://twitter.com/public_timeline)则包含了所有Twitter用户发布的Tweets。" target="_blank" rel="noopener">http://twitter.com/public_timeline)则包含了所有Twitter用户发布的Tweets。</a></p>
+<p>@reply（回复）</p>
+<p>回复某条Tweet。这个@Replies(回复)并不是私密消息。</p>
+<p>Direct message (私密消息）</p>
+<p>你可以发送一条Direct Messages(私密消息)给某一位follow你的人。</p>
+<p>RT(Retweet回推/转发)</p>
+<p>把某条Tweet再次分享给其他推友，你的推友也许会重复你的动作，进行再一次的RT。</p>
+<p>Tweet Status(消息状态)</p>
+<p>点击Timeline中某条Tweet消息的Tweet Status(消息状态，也就是时间)元素，就可以显示单条的Tweet消息。</p>
+<h4 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h4><ul>
+<li>（1）记录和发布消息</li>
+<li>（2）获得消息、定向阅读</li>
+<li>（3）分享信息流</li>
+<li>（4）关注一个人</li>
+<li>（5）沟通</li>
+</ul>
+<h3 id="三、特点"><a href="#三、特点" class="headerlink" title="三、特点"></a>三、特点</h3><p>属性：Social Media</p>
+<p>产品特性关键词：Follow机制、实时、开放、简洁、海量、高效交互、可传播、碎片化、自媒体</p>
+<p>Microblog是一种社会化媒体，以媒体为基础，以社区为条件。它是一种给与用户极大参与空间的新型在线媒体，具有参与、公开、交流、对话、社区化和流通性等特征。在应用中，交互性、信息的传播能力较传统更强，用户的黏着度也更高。</p>
+<h4 id="1-微博客对信息的处理"><a href="#1-微博客对信息的处理" class="headerlink" title="1.微博客对信息的处理"></a>1.微博客对信息的处理</h4><p>一个微博客系统能保持正常的运转，从信息的产生，信息的分类存储，信息的检索，信息在用户间的传递，到依附这个信息所产生的互动，都是这些基础模块之间的相互配合，有序组织的结果。</p>
+<p>微博是一种典型的轻量级应用。“轻”指的是三方面：一是信息粒度足够小，二是传播成本足够低，三是反馈周期短。用户对于“轻”信息和“重”信息都有需求。140个字数限制使得信息的粒度足够小，所以信息的生产成本足够小，门槛降低；同时因为信息粒度足够小，所以也可以增加信息生产的频次，同时使得信息的消费也变得更容易；因为粒度足够小，还可以使人利用闲散时间来消费。(<a href="http://www.5gme.com/space-2109-do-blog-id-86262.html" target="_blank" rel="noopener">via</a>)</p>
+<p>微博客信息特点</p>
+<ul>
+<li>信息的权威度、可信度来自于人</li>
+<li>信息具有很强时效性</li>
+<li>社区化的信息传递</li>
+<li>信息获取的局部筛选</li>
+<li>初步实现信息的按需获得和推送</li>
+<li>可控的信息消费周期</li>
+<li>信息碎片化</li>
+</ul>
+<h4 id="2-微博客对关系的处理"><a href="#2-微博客对关系的处理" class="headerlink" title="2.微博客对关系的处理"></a>2.微博客对关系的处理</h4><p>Twitter的”单向广播”特点非常明显，这一点不同于 IM的”点对点沟通”以及”群沟通”。Twitter有两类特征明显的用户：“话唠型”和“粉丝型”。</p>
+<p>Follow关系</p>
+<p><a href="http://www.uegeek.com/" target="_blank" rel="noopener"><img src="http://pic.yupoo.com/uegeek/411598ed481e/small.jpg" alt="" title="twitterfollow"></a></p>
+<p>你的Twitter社区可以分为三个部分：</p>
+<ul>
+<li>双向Follow，个人的讨论区域。</li>
+<li>Follow你的人但你没有Follow他们，你的粉丝。</li>
+<li>你Follow的人但他们没有Follow你，你是粉丝，或者对方是Twitter bot。</li>
+</ul>
+<p>Twitter的关键是它的交际性——充满了各种社交姿态。这一点是Facebook和其他社交网络的共同点，但Twitter的独特之处在于联系是不对称的。Twitter把每一个人都定位为旁观者。你可以很方便地参与到你旁观的世界，这种安全距离的社交，正是利用了互联网匿名性，广泛性，用极低的成本实现了对现实世界虚拟形式的旁观。</p>
+<h4 id="3-微博客对沟通方式的处理"><a href="#3-微博客对沟通方式的处理" class="headerlink" title="3.微博客对沟通方式的处理"></a>3.微博客对沟通方式的处理</h4><p>微博的沟通方式有别于博客、聊天工具，它是半公开的，一对多、一对一并存的广播模式。微博的follow、retweet和reply机制使得信息的传播成本和反馈周期都很小，从信息生产到信息传播，可以形成一个信息增值的过程（RT和回复增加原始信息的价值）。</p>
+<p>Twitter跟SNS本质上都是信息传播效率的产物。</p>
+<blockquote>
+<p>Twitter和SNS对于信息传播效率的区别在于，Twitter是从传播方式切入，而SNS是从传播途径（传播渠道）切入，而随着时间的推移，Twitter式的微博客模式正在成为SNS的消息传播机制。(<a href="http://blog.sina.com.cn/s/blog_45db55eb0100crbx.html" target="_blank" rel="noopener">via</a>)</p>
+</blockquote>
+<p>Twitter是一个简单便捷却又精确定位的广播平台。首先，一对多的沟通方式，可以瞬间把个人消息或者组织的消息快捷地广播出去。同时由于信息含量的限制，使信息更容易被接受和传播。另外，加入了大量包括手机和即时通讯的信息流的入口，让它成为信息的集散地，巩固了在即时信息流中的地位。</p>
+<h3 id="四、第三方及移动应用"><a href="#四、第三方及移动应用" class="headerlink" title="四、第三方及移动应用"></a>四、第三方及移动应用</h3><p>Twitter本身并不提供复杂的功能，几乎所有忠实用户都会有自己喜爱的第三方应用。这些第三方应用渗透到各平台各个领域，和Twitter共同构成一个包含很多可能性的互联网商业生态环境，Twitter的开放性让很多人看好它的商业前景。</p>
+<p>常用Twitter客户端分类汇总</p>
+<ol>
+<li><p>浏览器类：TwitterFox, Power Twitter(Firefox), Twitter sidebar(Maxthon), Opera(Twitter widget)。</p>
+</li>
+<li><p>移动类：Twibble(JAVA) ,Twitterberry(Blackberry) ,Gravity,Twittai(S60) , TwitterFon, Hahlo(iPhone) ,TwidRoid(Android G1) , Mobile Tweete</p>
+</li>
+<li><p>客户端类：Twhirl, Spaz, gTwitter, Witty, Twitterrific, TwettDeck, Seesmic DeskTop, Nambu<br>软件内置：OutTwit, SpreadTweet, Tweets in Excel</p>
+</li>
+<li><p>邮件类：TwitterMail, Twitter Gadget For Gamil, TwitterGadget</p>
+</li>
+<li><p>博客类：多是基于Wordpress博客体系的应用。例如：Twitter Badge, TwitThis, Twitter Wordpress Sidebar Widget, Twitter Feed。</p>
+</li>
+<li><p>其他</p>
+</li>
+</ol>
+<p>通过IM：国内的“微博”会提供一些官方的MSN、QQ、Gtalk等“机器人”服务。而国外也有一个应用叫Twittd，它是一个支持通过多种IM更新Twitter，支持Skype，Gtalk，MSN，Yahoo Message的非常实用的应用。</p>
+<p>通过web：还有一些Twitter的web应用，例如一站式更新的Ping.fm、HelloTxt以及同步大巴；将Feed输出到Twitter的Feedlr；定时发布tweet的应用的twuffer；对话形式展现tweets的Quotably以及群组Twitter应用 GroupTweet等都能加强Twitter体验。</p>
+<h3 id="五、微博客的价值体现"><a href="#五、微博客的价值体现" class="headerlink" title="五、微博客的价值体现"></a>五、微博客的价值体现</h3><p>Google 和 Yahoo: “信息服务公司” , Twitter、Facebook: “网络服务公司” –Sean Parke</p>
+<p>个人价值体现：</p>
+<ul>
+<li>获得资讯（对人、对事件、对新闻、对话题等）</li>
+<li>社交活动（话题交流、资讯分享、头脑风暴、情感交流）</li>
+<li>个人媒体（自我展示，输出观点，张扬个性、价值和魅力）</li>
+</ul>
+<p>商业价值体现：</p>
+<ul>
+<li>娱乐明星播报平台</li>
+<li>运营商分成</li>
+<li>媒体内容发布</li>
+<li>本地信息服务</li>
+<li>广告</li>
+<li>预订服务</li>
+<li>搜索</li>
+<li>消费者即时体验反馈</li>
+</ul>
+<h3 id="六、竞争优势"><a href="#六、竞争优势" class="headerlink" title="六、竞争优势"></a>六、竞争优势</h3><p>1.价值</p>
+<p>如上所述</p>
+<p>2.简单</p>
+<p>用户界面方面，Twitter让用户几乎不需要过多思考就能理解和上手；产品模式方面，Twitter让人与人之间的沟通变得更加轻松和简单；使用方式方面，Twitter极尽所能为用户创造着简单，用户可以通过Web界面、手机、 IM等多种方式发布消息，真正体现了Anytime, Anywhere的概念。(<a href="http://www.myeverfly.com/?p=200" target="_blank" rel="noopener">via</a>)</p>
+<p>3.适用性</p>
+<p>即时通信工具日益多元化，目前主流即时通信工具还不能互联互通，在产品特性上也未能满足多样的沟通需求，且没有一个即时工具能够处在绝对领导地位时，为第三方的准实时工具让出了空间。</p>
+<p>4.开放</p>
+<p>如果Twitter仅仅是一个网页形式的微博客的话，根本不可能取得今天的成就。它专注于产品的核心价值，并且提供开放的API，让第三方开发者在其上发挥想象力，于是一大批基于Twitter API的应用涌现出来，在表现层上极大的丰富了用户的使用体验。</p>
+<p>5.创新</p>
+<p>产品创新：赢在创新的互动机制上，在作者与跟踪者（Follower）之间制造不平衡关系。</p>
+<p>创新主体：给予了用户创新的条件。</p>
+<h3 id="七、微博的困境"><a href="#七、微博的困境" class="headerlink" title="七、微博的困境"></a>七、微博的困境</h3><p>1.去中心化？</p>
+<p>我们看到Twitter由<a href="http://tech.sina.com.cn/i/2009-06-12/16233175010.shtml" target="_blank" rel="noopener">5%的用户贡献了75%的内容</a> ，看到新浪名人微博的火爆，去中心化的微博因为带有强烈的媒体特征，似乎同时也在制造着局部的中心化。</p>
+<p>2.信息噪音</p>
+<p>微博客中的信息数量和更新速率很大程度上超过了以往的信息沟通方式，在过滤和推送机制还未完善时，如何面对更加汹涌的实时信息流？如何处理可能的信息遗失和持续的信息焦虑？</p>
+<p>3.信息甄别与监管</p>
+<ul>
+<li>信息真假的甄别</li>
+<li>信息传播介质的可信度认证</li>
+<li>信息传播权限及传播速率</li>
+<li>信息质量的评价内容及评价者的认可度</li>
+<li>不良信息的控制</li>
+</ul>
+<p>4.盈利模式</p>
+<p>大家都觉得Twitter能盈利，但具体如何盈利，目前还不明晰。</p>
+<hr>
+<p><a href="http://www.uegeek.com/" target="_blank" rel="noopener">00</a> 2010.2.28整理</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Twitter/" rel="tag"># Twitter</a>
+          
+            <a href="/tags/产品研究/" rel="tag"># 产品研究</a>
+          
+            <a href="/tags/微博客/" rel="tag"># 微博客</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/note-how-to-use-persona.html" rel="next" title="读书笔记-赢在用户[3]：如何使用人物角色">
+                <i class="fa fa-chevron-left"></i> 读书笔记-赢在用户[3]：如何使用人物角色
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/persona-intro-ppt.html" rel="prev" title="Persona:Web人物角色介绍">
+                Persona:Web人物角色介绍 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、概述"><span class="nav-number">1.</span> <span class="nav-text">一、概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Twitter的组成和功能"><span class="nav-number">2.</span> <span class="nav-text">二、Twitter的组成和功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#组成："><span class="nav-number">2.1.</span> <span class="nav-text">组成：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#功能："><span class="nav-number">2.2.</span> <span class="nav-text">功能：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、特点"><span class="nav-number">3.</span> <span class="nav-text">三、特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-微博客对信息的处理"><span class="nav-number">3.1.</span> <span class="nav-text">1.微博客对信息的处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-微博客对关系的处理"><span class="nav-number">3.2.</span> <span class="nav-text">2.微博客对关系的处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-微博客对沟通方式的处理"><span class="nav-number">3.3.</span> <span class="nav-text">3.微博客对沟通方式的处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、第三方及移动应用"><span class="nav-number">4.</span> <span class="nav-text">四、第三方及移动应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、微博客的价值体现"><span class="nav-number">5.</span> <span class="nav-text">五、微博客的价值体现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、竞争优势"><span class="nav-number">6.</span> <span class="nav-text">六、竞争优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、微博的困境"><span class="nav-number">7.</span> <span class="nav-text">七、微博的困境</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/a-brief-summary-about-twitter.html';
+          this.page.identifier = 'a-brief-summary-about-twitter.html';
+          this.page.title = 'Twitter/微博客的学习摘要';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

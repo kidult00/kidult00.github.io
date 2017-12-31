@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Note,Arduino,Fab,Maker," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="Note,Arduino,Fab,Maker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="作业11：输入设备[FabNotes023]">
+<meta property="og:url" content="http://uegeek.com/fabnotes023.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week11.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/attiny45.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week11-eagle-sch.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week11-eagle-brd.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/setDRCclearance.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/input-trace.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/input-outline.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week11-fabmodule.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/wee11-board.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/arduinosetting8m.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week11-arduino.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week11-on.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week11-off.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/hello.light.45.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week11mylightboard.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/WeChat_1464706293.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/hello.button.45.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week11myswitchboard.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/WeChat_1464706284.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/WeChat_1464706285.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/hello.temp.45.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week11mytempboard.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/WeChat_1464706291.jpeg">
+<meta property="og:updated_time" content="2016-08-06T14:32:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="作业11：输入设备[FabNotes023]">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week11.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/fabnotes023.html"/>
+
+
+
+
+
+  <title>作业11：输入设备[FabNotes023] | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/fabnotes023.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">作业11：输入设备[FabNotes023]</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-30T22:38:53+08:00">
+                2016-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/动手/" itemprop="url" rel="index">
+                    <span itemprop="name">动手</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/fabnotes023.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="fabnotes023.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/week11.png" alt=""></p>
+<a id="more"></a> 
+<h1 id="作业11：输入设备-FabNotes023"><a href="#作业11：输入设备-FabNotes023" class="headerlink" title="作业11：输入设备[FabNotes023]"></a>作业11：输入设备[FabNotes023]</h1><blockquote>
+<p>给微控制器电路增加一个传感器，测量感兴趣的值</p>
+</blockquote>
+<p>这周开始，芯片 Attiny45 将会频繁出场:</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/attiny45.jpg" alt=""></p>
+<h3 id="电路设计"><a href="#电路设计" class="headerlink" title="电路设计"></a>电路设计</h3><p>尝试用 phototransistor （光电晶体管）作为输入模块，去控制 LED 。</p>
+<p>在 Eagle 先画 schematic:</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/week11-eagle-sch.png" alt=""></p>
+<p>然后生成 board。可以先用 autorouter 自动布线，然后再根据需要手动调整。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/week11-eagle-brd.png" alt=""></p>
+<p>在完成设计之前，需要用 ERC 命令检查 schematic 的错误，用 DRC 检查 board 的错误。根据机器刀头的尺寸，设置线路间隔为 16mil 。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/setDRCclearance.png" alt=""></p>
+<p>全部仔细检查后，再分别把 top 图层和 dimension 图层输出为两个 png 文件，要注意勾选单色输出：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/input-trace.png" alt=""></p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/input-outline.png" alt=""></p>
+<p><a href="http://archive.fabacademy.org/archives/2016/fablabshenzhen/students/417/uploads/Week15EagleFiles.zip" target="_blank" rel="noopener">Download the eagle sch &amp; brd &amp; png files</a>.</p>
+<h3 id="电路板制作"><a href="#电路板制作" class="headerlink" title="电路板制作"></a>电路板制作</h3><p>依然使用 Roland SMR-20 刻电路板，用 1/64 刀头刻线路，1/32 切割外框。在 fabmodules.org 里面，设置输入的 png 图像 dpi 为 1500 ，然后计算雕刻路径：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/week11-fabmodule.png" alt=""></p>
+<p>将元件们焊好：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/wee11-board.jpeg" alt=""></p>
+<h3 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h3><p>这周开始用 Arduino 写程序。在上传之前，需要选好板子的类型以及芯片。 Attiny45 使用 8 MHz 内频。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/arduinosetting8m.png" alt=""></p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/week11-arduino.png" alt=""></p>
+<p>代码如下，也可以<a href="http://archive.fabacademy.org/archives/2016/fablabshenzhen/students/417/uploads/Week11-code-myinput.ino" target="_blank" rel="noopener">到这里下载</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  // set pin numbers:</span><br><span class="line">const int buttonPin = 3;     // the number of the pushbutton pin</span><br><span class="line">const int ledPin =  4;      // the number of the LED pin</span><br><span class="line"></span><br><span class="line">// variables will change:</span><br><span class="line">int buttonState = 0;         // variable for reading the pushbutton status</span><br><span class="line"></span><br><span class="line">void setup() &#123;</span><br><span class="line">  // initialize the LED pin as an output:</span><br><span class="line">  pinMode(ledPin, OUTPUT);</span><br><span class="line">  // initialize the pushbutton pin as an input:</span><br><span class="line">  pinMode(buttonPin, INPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void loop() &#123;</span><br><span class="line">  // read the state of the pushbutton value:</span><br><span class="line">  buttonState = digitalRead(buttonPin);</span><br><span class="line"></span><br><span class="line">  // check if the pushbutton is pressed.</span><br><span class="line">  // if it is, the buttonState is HIGH:</span><br><span class="line">  if (buttonState == HIGH) &#123;</span><br><span class="line">    // turn LED on:</span><br><span class="line">    digitalWrite(ledPin, HIGH);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    // turn LED off:</span><br><span class="line">    digitalWrite(ledPin, LOW);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个简单的电路程序中，光电晶体管起到开关的作用，根据光亮控制电路中 LED 的明灭：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/week11-on.jpeg" alt=""></p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/week11-off.jpeg" alt=""></p>
+<h3 id="试验1：用-Python-和串口通信"><a href="#试验1：用-Python-和串口通信" class="headerlink" title="试验1：用 Python 和串口通信"></a>试验1：用 Python 和串口通信</h3><p>制作一块带有光电晶体管的板子：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/hello.light.45.png" alt=""></p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/week11mylightboard.jpeg" alt=""></p>
+<p>下载 <a href="http://academy.cba.mit.edu/classes/input_devices/light/hello.light.45.c" target="_blank" rel="noopener">hello.light.45.c</a> 和 <a href="http://academy.cba.mit.edu/classes/input_devices/light/hello.light.45.make" target="_blank" rel="noopener">makefile</a>。在 terminal cd 进入文件夹，输入命令 <code>make -f hello.light.45.make</code></p>
+<p>得到回应：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">avr-gcc -mmcu=attiny45 -Wall -Os -DF_CPU=8000000 -I./ -o hello.button.45.out hello.button.45.c</span><br><span class="line">avr-objcopy -O ihex hello.button.45.out hello.button.45.c.hex;\</span><br><span class="line">	avr-size --mcu=attiny45 --format=avr hello.button.45.out</span><br><span class="line">AVR Memory Usage</span><br><span class="line">----------------</span><br><span class="line">Device: attiny45</span><br><span class="line"></span><br><span class="line">Program:     364 bytes (8.9% Full)</span><br><span class="line">(.text + .data + .bootloader)</span><br><span class="line"></span><br><span class="line">Data:          0 bytes (0.0% Full)</span><br><span class="line">(.data + .bss + .noinit)</span><br></pre></td></tr></table></figure>
+<p>然后输入命令： <code>sudo make -f hello.light.45.make program-usbtiny</code></p>
+<p>得到回应：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">avr-objcopy -O ihex hello.light.45.out hello.light.45.c.hex;\</span><br><span class="line">	avr-size --mcu=attiny45 --format=avr hello.light.45.out</span><br><span class="line">AVR Memory Usage</span><br><span class="line">----------------</span><br><span class="line">Device: attiny45</span><br><span class="line"></span><br><span class="line">Program:     502 bytes (12.3% Full)</span><br><span class="line">(.text + .data + .bootloader)</span><br><span class="line"></span><br><span class="line">Data:          1 bytes (0.4% Full)</span><br><span class="line">(.data + .bss + .noinit)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">avrdude -p t45 -P usb -c usbtiny -U flash:w:hello.light.45.c.hex</span><br><span class="line"></span><br><span class="line">avrdude: AVR device initialized and ready to accept instructions</span><br><span class="line"></span><br><span class="line">Reading | ################################################## | 100% 0.00s</span><br><span class="line"></span><br><span class="line">avrdude: Device signature = 0x1e9206</span><br><span class="line">avrdude: NOTE: &quot;flash&quot; memory has been specified, an erase cycle will be performed</span><br><span class="line">         To disable this feature, specify the -D option.</span><br><span class="line">avrdude: erasing chip</span><br><span class="line">avrdude: reading input file &quot;hello.light.45.c.hex&quot;</span><br><span class="line">avrdude: input file hello.light.45.c.hex auto detected as Intel Hex</span><br><span class="line">avrdude: writing flash (502 bytes):</span><br><span class="line"></span><br><span class="line">Writing | ################################################## | 100% 0.74s</span><br><span class="line"></span><br><span class="line">avrdude: 502 bytes of flash written</span><br><span class="line">avrdude: verifying flash memory against hello.light.45.c.hex:</span><br><span class="line">avrdude: load data flash data from input file hello.light.45.c.hex:</span><br><span class="line">avrdude: input file hello.light.45.c.hex auto detected as Intel Hex</span><br><span class="line">avrdude: input file hello.light.45.c.hex contains 502 bytes</span><br><span class="line">avrdude: reading on-chip flash data:</span><br><span class="line"></span><br><span class="line">Reading | ################################################## | 100% 0.94s</span><br><span class="line"></span><br><span class="line">avrdude: verifying ...</span><br><span class="line">avrdude: 502 bytes of flash verified</span><br></pre></td></tr></table></figure>
+<p>Python 程序可以<a href="http://academy.cba.mit.edu/classes/input_devices/light/hello.light.45.py" target="_blank" rel="noopener">在这里下载</a>.</p>
+<p>用 USB to TTL 连接好板子并运行程序：</p>
+<p><code>python hello.light.45.py /dev/ttyUSB0</code></p>
+<p>这时出现错误提示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;hello.light.45.py&quot;, line 62, in &lt;module&gt;</span><br><span class="line">    ser = serial.Serial(port,9600)</span><br><span class="line">  File &quot;/Library/Python/2.7/site-packages/serial/serialutil.py&quot;, line 180, in __init__</span><br><span class="line">    self.open()</span><br><span class="line">  File &quot;/Library/Python/2.7/site-packages/serial/serialposix.py&quot;, line 294, in open</span><br><span class="line">    raise SerialException(msg.errno, &quot;could not open port %s: %s&quot; % (self._port, msg))</span><br><span class="line">serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: &apos;/dev/ttyUSB0&apos;</span><br></pre></td></tr></table></figure>
+<p>Google 一下这个问题 <a href="http://answers.ros.org/question/41275/failed-to-open-port-devttyusb0/" target="_blank" rel="noopener">Failed to open port /dev/ttyUSB0 - ROS Answers: Open Source Q&amp;A Forum</a>。</p>
+<p>问题可能是因为我还没有装 FTDI （用于 USB 和串口通信）驱动。 </p>
+<p>使用命令 <code>ls /dev/tty*</code> 可以列出当前可用的串口。确实没有 /dev/tty.usbserial-A400gwhT 串口。所以我尝试安装 FTDI 驱动 - <a href="http://www.ftdichip.com/Drivers/D2XX.htm" target="_blank" rel="noopener">D2XX Direct Drivers</a> 以及 <a href="http://www.ftdichip.com/Drivers/VCP.htm" target="_blank" rel="noopener">Virtual COM Port Drivers</a>。但是依然不成功。</p>
+<p>接着，Google 到这一篇 <a href="https://learn.sparkfun.com/tutorials/how-to-install-ftdi-drivers/all#mac" target="_blank" rel="noopener">How to Install FTDI Drivers - learn.sparkfun.com</a> 照着再装了一遍驱动。重启电脑后，插入 FTDI 2 USB 设备， /dev/tty.usbserial-A400gwhT 总算出现在串口列表中。</p>
+<p>接着，尝试用新的串口运行程序：</p>
+<p><code>python hello.light.45.py /dev/tty.usbserial-A400gwhT 9600</code></p>
+<p>继续看到错误提示：</p>
+<p><code>command line: hello.light.45.py serial_port</code></p>
+<p>到 python 程序中仔细看了看，将 len(sys.argv) 从 2 改为 3:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (len(sys.argv) != 3):</span><br><span class="line">   print &quot;command line: hello.light.45.py serial_port&quot;</span><br><span class="line">   sys.exit()</span><br><span class="line">port = sys.argv[1]</span><br></pre></td></tr></table></figure>
+<p>问题解决：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/WeChat_1464706293.jpeg" alt=""></p>
+<p><a href="https://youtu.be/GiuYhmkRabA" target="_blank" rel="noopener">测试视频</a></p>
+<h3 id="实验2：开关"><a href="#实验2：开关" class="headerlink" title="实验2：开关"></a>实验2：开关</h3><p>做了一个带开关的板子：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/hello.button.45.png" alt=""></p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/week11myswitchboard.jpeg" alt=""></p>
+<p>下载 <a href="http://academy.cba.mit.edu/classes/input_devices/button/hello.button.45.c" target="_blank" rel="noopener">hello.button.45.c</a> 和 <a href="http://academy.cba.mit.edu/classes/input_devices/button/hello.button.45.make" target="_blank" rel="noopener">makefile</a>。 在 terminal cd 进入文件夹，运行命令： <code>make -f hello.button.45.make</code> 和 <code>sudo make -f hello.button.45.make program-usbtiny</code>。都正常。</p>
+<p>然后用 TTL 2 USB 连接板子：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/WeChat_1464706284.jpeg" alt=""></p>
+<p>运行命令</p>
+<p><code>python term.py /dev/tty.usbserial-A400gwhT 9600</code></p>
+<p>每按一次按钮，屏幕打出一个“du”：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/WeChat_1464706285.jpeg" alt=""></p>
+<p><a href="https://youtu.be/WI6ty3sx18U" target="_blank" rel="noopener">测试视频</a></p>
+<h3 id="实验3：温度传感器"><a href="#实验3：温度传感器" class="headerlink" title="实验3：温度传感器"></a>实验3：温度传感器</h3><p>做了一个带有温度传感器的板子：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/hello.temp.45.png" alt=""></p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/week11mytempboard.jpeg" alt=""></p>
+<p>下载 <a href="http://academy.cba.mit.edu/classes/input_devices/temp/hello.temp.45.c" target="_blank" rel="noopener">hello.temp.45.c</a> 和 <a href="http://academy.cba.mit.edu/classes/input_devices/temp/hello.temp.45.make" target="_blank" rel="noopener">makefile</a>。输入命令 <code>make -f hello.button.45.make</code> 和 <code>sudo make -f hello.button.45.make program-usbtiny</code>。</p>
+<p>然后运行程序 <code>python hello.temp.45.py /dev/tty.usbserial-A400gwhT 9600</code> 。传感器开始实时监测温度变化。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/WeChat_1464706291.jpeg" alt=""></p>
+<h3 id="课程资源"><a href="#课程资源" class="headerlink" title="课程资源"></a>课程资源</h3><ul>
+<li><a href="http://fabacademy.org/class-schedule-2016/" target="_blank" rel="noopener">Fab Academy 2016 课表</a></li>
+<li><a href="https://vimeo.com/162721990" target="_blank" rel="noopener">Week11 课程视频</a></li>
+<li><a href="http://academy.cba.mit.edu/classes/input_devices/" target="_blank" rel="noopener">Week11 课程大纲</a></li>
+<li><a href="https://www.gitbook.com/read/book/kidult00/00fabnotes" target="_blank" rel="noopener">我的英文笔记 Gitbook</a></li>
+<li><a href="http://mp.weixin.qq.com/mp/homepage?__biz=MzAxNDE2NzAxOQ==&amp;hid=3&amp;sn=c37847b5d6e0f007c88dbc5e9e0c0199#wechat_redirect" target="_blank" rel="noopener">公众号文章列表</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Note/" rel="tag"># Note</a>
+          
+            <a href="/tags/Arduino/" rel="tag"># Arduino</a>
+          
+            <a href="/tags/Fab/" rel="tag"># Fab</a>
+          
+            <a href="/tags/Maker/" rel="tag"># Maker</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/fabnotes022.html" rel="next" title="第十一周：输入设备[FabNotes022]">
+                <i class="fa fa-chevron-left"></i> 第十一周：输入设备[FabNotes022]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/fabnotes024.html" rel="prev" title="第十二周：模具和铸件[FabNotes024]">
+                第十二周：模具和铸件[FabNotes024] <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#作业11：输入设备-FabNotes023"><span class="nav-number">1.</span> <span class="nav-text">作业11：输入设备[FabNotes023]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#电路设计"><span class="nav-number">1.0.1.</span> <span class="nav-text">电路设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#电路板制作"><span class="nav-number">1.0.2.</span> <span class="nav-text">电路板制作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序"><span class="nav-number">1.0.3.</span> <span class="nav-text">程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#试验1：用-Python-和串口通信"><span class="nav-number">1.0.4.</span> <span class="nav-text">试验1：用 Python 和串口通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实验2：开关"><span class="nav-number">1.0.5.</span> <span class="nav-text">实验2：开关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实验3：温度传感器"><span class="nav-number">1.0.6.</span> <span class="nav-text">实验3：温度传感器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#课程资源"><span class="nav-number">1.0.7.</span> <span class="nav-text">课程资源</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/fabnotes023.html';
+          this.page.identifier = 'fabnotes023.html';
+          this.page.title = '作业11：输入设备[FabNotes023]';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

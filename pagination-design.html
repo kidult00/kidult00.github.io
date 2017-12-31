@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="IxD,交互设计,Navigation,Pagination," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="1.什么时候需要进行翻页设计当网页内容较多、不能在限定区域内显示完全时，需要进行分页呈现。为了方便用户在多个页面间跳转和快速定位（尤其是按顺序翻页），通过翻页设计提供多个页面间的导航。 2.设计翻页要考虑的问题 分页的内容是什么类型？ 页面数量有多少？ 查看最多的是哪些页面？ 手动全部翻一遍的可能性有多大？ 是否会不按顺序翻页？为什么？ 是否会查看已翻过的页面？ 翻页是否需要在列表顶部和底部都出现">
+<meta name="keywords" content="IxD,交互设计,Navigation,Pagination">
+<meta property="og:type" content="article">
+<meta property="og:title" content="纠结的翻页设计">
+<meta property="og:url" content="http://uegeek.com/pagination-design.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="1.什么时候需要进行翻页设计当网页内容较多、不能在限定区域内显示完全时，需要进行分页呈现。为了方便用户在多个页面间跳转和快速定位（尤其是按顺序翻页），通过翻页设计提供多个页面间的导航。 2.设计翻页要考虑的问题 分页的内容是什么类型？ 页面数量有多少？ 查看最多的是哪些页面？ 手动全部翻一遍的可能性有多大？ 是否会不按顺序翻页？为什么？ 是否会查看已翻过的页面？ 翻页是否需要在列表顶部和底部都出现">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/1medish.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/2medish.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/3medish.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/4Navigation.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/5medish.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/6medish.png">
+<meta property="og:updated_time" content="2016-08-06T02:51:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="纠结的翻页设计">
+<meta name="twitter:description" content="1.什么时候需要进行翻页设计当网页内容较多、不能在限定区域内显示完全时，需要进行分页呈现。为了方便用户在多个页面间跳转和快速定位（尤其是按顺序翻页），通过翻页设计提供多个页面间的导航。 2.设计翻页要考虑的问题 分页的内容是什么类型？ 页面数量有多少？ 查看最多的是哪些页面？ 手动全部翻一遍的可能性有多大？ 是否会不按顺序翻页？为什么？ 是否会查看已翻过的页面？ 翻页是否需要在列表顶部和底部都出现">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/1medish.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/pagination-design.html"/>
+
+
+
+
+
+  <title>纠结的翻页设计 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/pagination-design.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">纠结的翻页设计</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-07-15T15:20:30+08:00">
+                2011-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计/" itemprop="url" rel="index">
+                    <span itemprop="name">设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pagination-design.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="pagination-design.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-什么时候需要进行翻页设计"><a href="#1-什么时候需要进行翻页设计" class="headerlink" title="1.什么时候需要进行翻页设计"></a>1.什么时候需要进行翻页设计</h3><p>当网页内容较多、不能在限定区域内显示完全时，需要进行分页呈现。为了方便用户在多个页面间跳转和快速定位（尤其是按顺序翻页），通过翻页设计提供多个页面间的导航。</p>
+<h3 id="2-设计翻页要考虑的问题"><a href="#2-设计翻页要考虑的问题" class="headerlink" title="2.设计翻页要考虑的问题"></a>2.设计翻页要考虑的问题</h3><ul>
+<li>分页的内容是什么类型？</li>
+<li>页面数量有多少？</li>
+<li>查看最多的是哪些页面？</li>
+<li>手动全部翻一遍的可能性有多大？</li>
+<li>是否会不按顺序翻页？为什么？</li>
+<li>是否会查看已翻过的页面？</li>
+<li>翻页是否需要在列表顶部和底部都出现？</li>
+<li>……<a id="more"></a>
+</li>
+</ul>
+<h3 id="3-好的翻页设计要点"><a href="#3-好的翻页设计要点" class="headerlink" title="3.好的翻页设计要点"></a>3.好的翻页设计要点</h3><ul>
+<li>扩大可点区域</li>
+<li>不要使用下划线</li>
+<li>清晰标识当前页面</li>
+<li>给页面链接之间留出足够间距</li>
+<li>提供上一页/下一页链接</li>
+<li>如果需要，使用首页和末页链接</li>
+<li>将首页和末页链接放在翻页区域之外</li>
+<li>提供上一页/下一页链接位置保持固定</li>
+<li>页码数量不宜过长（用户视线游离）或过短（页面数量显示太少）</li>
+</ul>
+<h3 id="4-设计元素讨论"><a href="#4-设计元素讨论" class="headerlink" title="4.设计元素讨论"></a>4.设计元素讨论</h3><h4 id="1-第一页"><a href="#1-第一页" class="headerlink" title="1)第一页"></a>1)第一页</h4><p>Q：是否应一直显示第一页链接？</p>
+<p>A：大部分的翻页都保持第一页链接可见。如果返回第一页的可能性很小，或者希望将用户注意力保持在当前页面以及周边页面，则不保留第一页链接，如google搜索结果页面。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/1medish.png" alt=""></p>
+<p>Q：如果一直显示第一页链接，如何返回第一页？</p>
+<p>A：一种是固定第一页的数字链接，一种是提供“&lt;&lt;第一页”/”&lt;&lt;首页”/”&lt;&lt;First”的链接或按钮</p>
+<h4 id="2-最后一页"><a href="#2-最后一页" class="headerlink" title="2)最后一页"></a>2)最后一页</h4><p>Q：是否应一直显示最后一页链接？</p>
+<p>A：显示最后一页链接的好处是，告诉用户页面数量，使其能够评估网站内容丰富程度，并且提供从后往前翻页的捷径（适用于用户熟悉的内容）。如果靠后的内容质量较差，或者不鼓励逆向翻页的操作，可以不提供最后一页的链接。</p>
+<p>如果不显示最后一页链接，应提供其他的线索提示页面数量，否则可能造成仅有当前显示页数的误解。<br><img src="http://7xjpra.com1.z0.glb.clouddn.com/2medish.png" alt=""></p>
+<p>Q：如果一直显示最后一页链接，如何跳转？<br>A：一种是固定最后一页的数字链接，一种是提供“最后一页&gt;&gt;”/”末页&gt;&gt;”/”Last&gt;&gt;”链接或按钮</p>
+<h4 id="3-上一页-下一页（翻页）"><a href="#3-上一页-下一页（翻页）" class="headerlink" title="3)上一页/下一页（翻页）"></a>3)上一页/下一页（翻页）</h4><p>Q：上一页/下一页是否必需？<br>A：一般而言，如果翻页操作较频繁，应提供上一页/下一页链接（注意保持位置固定），方便快速翻页。翻页链接常用尖括号+文字表示：<br>&lt;&lt;Previous &lt;上一页<br>Next&gt;&gt; &gt;下一页</p>
+<p>Q：上一页的位置与下一页紧邻还是分离？<br>A：大部分的翻页将上一页链接放在页码条的左侧。如果前后来回翻页的操作较频繁，可以将上一页放在页码条右侧，紧邻下一页链接。<br><img src="http://7xjpra.com1.z0.glb.clouddn.com/3medish.png" alt=""></p>
+<p>Q：上一页下一页的样式是否需要区别设计？<br>A：根据使用的频率，可以对两者进行区别设计，例如下一页使用比较多，可以设计得更突出一些。</p>
+<h4 id="4-当前页"><a href="#4-当前页" class="headerlink" title="4)当前页"></a>4)当前页</h4><p>当前页的样式应与其他页样式有明显区别，并且hover样式不改变、不可点击。</p>
+<p>通过“强调”进行区分（更强调当前页，增强位置感），或者通过“弱化”进行区分（更强调hover页，增强点击行为引导）。</p>
+<h4 id="5-非当前页"><a href="#5-非当前页" class="headerlink" title="5)非当前页"></a>5)非当前页</h4><ul>
+<li>Normal：多设计为外框+数字的样式，能更容易识别翻页区域</li>
+<li>Hover：应与当前页、非当前页的普通样式有明显的区分</li>
+<li>Click：一般不对点击样式另行设计</li>
+<li>Visited：一般不对访问过的样式另行设计</li>
+</ul>
+<h4 id="6-总页数"><a href="#6-总页数" class="headerlink" title="6)总页数"></a>6)总页数</h4><p>建议提供总页数，可以告知用户明确的信息量和翻页范围；但如果总页数很多或者总页数变化很频繁的情况下，系统需要计算出所有的页数，可能会导致页面性能降低。</p>
+<h4 id="7-页码间距"><a href="#7-页码间距" class="headerlink" title="7)页码间距"></a>7)页码间距</h4><p>为页码之间留出足够的间距，减少误点的可能性。为页码加外框能较好地保证页码之间的区隔，外框之间最好也留出一定间隔。</p>
+<h4 id="8-可点区域"><a href="#8-可点区域" class="headerlink" title="8)可点区域"></a>8)可点区域</h4><p>根据费茨定律 ，扩大可点区域，可以减少鼠标移动、点击链接的时间。为页码加外框能有效地扩大可点区域。还可以通过其他设计达到这一目的，如google搜索结果的翻页：<br><img src="http://7xjpra.com1.z0.glb.clouddn.com/4Navigation.png" alt=""></p>
+<h4 id="9-手动输入页码进行快速跳转"><a href="#9-手动输入页码进行快速跳转" class="headerlink" title="9)手动输入页码进行快速跳转"></a>9)手动输入页码进行快速跳转</h4><p>何时需要？</p>
+<ul>
+<li>增加后面页面的曝光需求（如淘宝）</li>
+<li>内容与用户关系较密切，是用户所熟悉的（如个人图片库）</li>
+<li>用户可能按照大致的线索(如时间)，跳转到某些页面查看(如邮件列表页面)</li>
+</ul>
+<p>有哪些跳转方式？</p>
+<ul>
+<li><p>下拉列表，适用于页数较少的翻页<br><img src="http://7xjpra.com1.z0.glb.clouddn.com/5medish.png" alt=""></p>
+</li>
+<li><p>输入框+按钮</p>
+</li>
+</ul>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/6medish.png" alt=""></p>
+<h3 id="5-参考文章"><a href="#5-参考文章" class="headerlink" title="5.参考文章"></a>5.参考文章</h3><ul>
+<li><a href="http://www.smashingmagazine.com/2007/11/16/pagination-gallery-examples-and-good-practices/" target="_blank" rel="noopener">Pagination Gallery: Examples And Good Practices</a></li>
+<li><a href="http://www.cooper.com/journal/2009/12/making_pagination_meaningful.html" target="_blank" rel="noopener">Making pagination meaningful</a></li>
+<li><a href="http://www.uxmatters.com/mt/archives/2010/03/pagination-in-web-forms-evaluating-the-effectiveness-of-web-forms.php" target="_blank" rel="noopener">Pagination in Web Forms | Evaluating the Effectiveness of Web Forms</a></li>
+<li><a href="http://mis-algoritmos.com/2007/03/16/some-styles-for-your-pagination/" target="_blank" rel="noopener">Some styles for your pagination</a></li>
+<li><a href="http://www.ue-ui.com/about-page.html" target="_blank" rel="noopener">关于分页</a></li>
+<li><a href="http://www.shui-mo.com/2011/06/19/websitepage/" target="_blank" rel="noopener">关于网站分页的那点事儿</a></li>
+<li><a href="http://blog.csdn.net/menhal/article/details/4084804" target="_blank" rel="noopener">带页码的翻页体验与设计比较</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/IxD/" rel="tag"># IxD</a>
+          
+            <a href="/tags/交互设计/" rel="tag"># 交互设计</a>
+          
+            <a href="/tags/Navigation/" rel="tag"># Navigation</a>
+          
+            <a href="/tags/Pagination/" rel="tag"># Pagination</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/two-years.html" rel="next" title="两周年">
+                <i class="fa fa-chevron-left"></i> 两周年
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/writing-for-better-thinking.html" rel="prev" title="书写是为了更好地思考">
+                书写是为了更好地思考 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么时候需要进行翻页设计"><span class="nav-number">1.</span> <span class="nav-text">1.什么时候需要进行翻页设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-设计翻页要考虑的问题"><span class="nav-number">2.</span> <span class="nav-text">2.设计翻页要考虑的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-好的翻页设计要点"><span class="nav-number">3.</span> <span class="nav-text">3.好的翻页设计要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-设计元素讨论"><span class="nav-number">4.</span> <span class="nav-text">4.设计元素讨论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-第一页"><span class="nav-number">4.1.</span> <span class="nav-text">1)第一页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-最后一页"><span class="nav-number">4.2.</span> <span class="nav-text">2)最后一页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-上一页-下一页（翻页）"><span class="nav-number">4.3.</span> <span class="nav-text">3)上一页/下一页（翻页）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-当前页"><span class="nav-number">4.4.</span> <span class="nav-text">4)当前页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-非当前页"><span class="nav-number">4.5.</span> <span class="nav-text">5)非当前页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-总页数"><span class="nav-number">4.6.</span> <span class="nav-text">6)总页数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-页码间距"><span class="nav-number">4.7.</span> <span class="nav-text">7)页码间距</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-可点区域"><span class="nav-number">4.8.</span> <span class="nav-text">8)可点区域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-手动输入页码进行快速跳转"><span class="nav-number">4.9.</span> <span class="nav-text">9)手动输入页码进行快速跳转</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-参考文章"><span class="nav-number">5.</span> <span class="nav-text">5.参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/pagination-design.html';
+          this.page.identifier = 'pagination-design.html';
+          this.page.title = '纠结的翻页设计';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

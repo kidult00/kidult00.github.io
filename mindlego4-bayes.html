@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HackYourself,心智,统计," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="HackYourself,心智,统计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="心智乐高04 很傻很天真的贝叶斯定理">
+<meta property="og:url" content="http://uegeek.com/mindlego4-bayes.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Bayes'_Theorem_MMB_01.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/TomasBayes.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/WechatIMG2.jpeg">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/71d8066a406fb22ce08eec25dd04870779345cd3">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/bayesformula-r.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/bayesexample.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/bayesexample-1.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/bayes-fomula2.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/bayes-table1.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/bayes-fomula3.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/bayes-fomula6.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/bayes-table2.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/bayes-fomula4.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/bayes-fomula5.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/bayes_in_the_head.jpeg">
+<meta property="og:updated_time" content="2016-11-16T13:36:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="心智乐高04 很傻很天真的贝叶斯定理">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Bayes'_Theorem_MMB_01.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/mindlego4-bayes.html"/>
+
+
+
+
+
+  <title>心智乐高04 很傻很天真的贝叶斯定理 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/mindlego4-bayes.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">心智乐高04 很傻很天真的贝叶斯定理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-30T21:25:57+08:00">
+                2016-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书/" itemprop="url" rel="index">
+                    <span itemprop="name">读书</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/mindlego4-bayes.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="mindlego4-bayes.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Bayes&#39;_Theorem_MMB_01.jpg" alt=""></p>
+<a id="more"></a> 
+<p>感谢大家对标题党 00 的宽容，这篇文章的完整标题应该是：很傻很天真 - 但是拥有迷妹万千 - 不黄很暴力 - 十分钟提高智商的贝叶斯定理。</p>
+<p>上一篇心智乐高探讨了基本比率谬误（base rate fallacy），有盆友在留言中提到了贝叶斯。懵懂的 00 一时回答不出来，于是心智乐高第四篇，我们严肃正经地来八卦一下特别重要的贝叶斯定理。</p>
+<p>等等，为什么我们要去了解一个数学定理……还是统计学定理？</p>
+<p>在你点返回、骂辣鸡、愤而取关之前，再看几条对贝叶斯的安利：</p>
+<ul>
+<li>一个看上去很傻很天真的定理，却在学术和生活中意外的很强大很好用</li>
+<li>你看不见它，它却无处不在，几乎所有需要作出概率预测的地方，它都阴魂不散</li>
+<li>是机器学习的核心方法之一</li>
+<li>关键时刻可以令你智商上线，用来保命，或者挣得巨额财富</li>
+</ul>
+<p>（啊，简直 POI 根妹即视感！)</p>
+<p>贝叶斯在生活中真的有用嘛？别着急，00 先代表广大宅男/宅女提一个问题：</p>
+<blockquote>
+<p>我发给女神/男神的微信，只有一半会收到回复，她/他是喜欢我还是讨厌我？我们有发展的可能吗……</p>
+</blockquote>
+<p>然后我们来慢慢解答。</p>
+<h2 id="贝叶斯定理的由来"><a href="#贝叶斯定理的由来" class="headerlink" title="贝叶斯定理的由来"></a>贝叶斯定理的由来</h2><p>话说 18 世纪 70 年代，有个一个牧师叫 Thomas Bayes，为解决一个「逆向概率」问题写了一篇文章。尝试解答在没有太多可靠证据的情况下，怎样做出更符合数学逻辑的推测。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/TomasBayes.jpeg" alt=""></p>
+<p>所谓「逆向概率」是相对「正向概率」而言。正向概率的问题很容易理解，如“假设袋子里面有 N 个白球，M 个黑球，你伸手进去摸一把，摸出黑球的概率是多大”。但是实际场景中，这个问题往往是反过来的：“如果事先并不知道袋子里面黑白球的比例，而是闭着眼睛摸出一个（或好几个）球，观察这些取出来的球的颜色，我们可以对袋子里面黑白球的比例作出什么样的推测”。</p>
+<p>贝叶斯推断与其他统计学推断方法截然不同。它建立在主观判断的基础上，也就是说，你可以不需要客观证据，先估计一个值，然后根据实际结果不断修正。</p>
+<p>贝叶斯生前并没有发表他的文章，他的“朋友” Richard Price 在他死后去他的住处揩油，发现了这篇文章，并发表出来。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/WechatIMG2.jpeg" alt=""></p>
+<p>1812 年，法国人 Pierre Simona 将贝叶斯的理论进一步发展为条件概率，帮助人们在概率相关的决策过程中，通过新获得的观察结果来更正对概率的判断。</p>
+<p>贝叶斯定理（Bayes’ theorem）告知我们如何利用新证据修改已有的看法。在事件 B 出现的前提下，事件 A 出现的概率，等于 A 和 B 都出现的概率，除以 B 出现的概率。用公式表示就是：</p>
+<p><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/71d8066a406fb22ce08eec25dd04870779345cd3" alt=""></p>
+<p>几个相关概念：</p>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%85%88%E9%AA%8C%E6%A6%82%E7%8E%87" target="_blank" rel="noopener">先验概率</a>：在考虑观测数据前，能表达不确定量 p 的概率分布</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%90%8E%E9%AA%8C%E6%A6%82%E7%8E%87" target="_blank" rel="noopener">后验概率</a>：在考虑和给出相关证据或数据后所得到的条件概率</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87" target="_blank" rel="noopener">条件概率</a>：事件 A 在另外一个事件 B 已经发生条件下的发生概率，表示为 P(A|B)</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E4%BC%BC%E7%84%B6%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">可能性函数/似然函数</a>：一种关于统计模型中参数的函数，用于在已知某些观测所得到的结果时，对有关事物的性质的参数进行估计</li>
+</ul>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/bayesformula-r.png" alt=""></p>
+<p>这就是贝叶斯定理的含义：我们先预估一个「先验概率」，然后加入实验结果，看这个实验到底是增强还是削弱了「先验概率」，由此得到更接近事实的「后验概率」。</p>
+<h2 id="「AM-I-SICK？」贝叶斯定理的经典用法"><a href="#「AM-I-SICK？」贝叶斯定理的经典用法" class="headerlink" title="「AM I SICK？」贝叶斯定理的经典用法"></a>「AM I SICK？」贝叶斯定理的经典用法</h2><p>假设，有一种叫做「叶贝死」的病，人群中得病概率是万分之一，即 0.0001。然后，有一种测试可以检测你是否患有「叶贝死」病，准确率为 99.9%。你做了一次测试，结果被告知得病了！</p>
+<p>然后你的世界坍塌了，把这个不幸的消息告诉家人，开始准备遗嘱，甚至皈依了一个莫名其妙的宗教，好走完最后的日子……</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/bayesexample.jpeg" alt=""></p>
+<p>这个时候，你的智商不知道被谁通知上线了，让我们再找回检测报告，看看遗漏了些什么。</p>
+<h3 id="逃出生天之图解版"><a href="#逃出生天之图解版" class="headerlink" title="逃出生天之图解版"></a>逃出生天之图解版</h3><p>我们知道，每当 1 万人中会有 1 个人患病，这也意味着另外 9999 个人没病。</p>
+<p>再来看看检测的准确率。如果真正患病的人去做检查，那么 99.9% 的概率会被诊断出来。如果实际上没有患病的人，会有 0.1% 的概率会被误诊断。于是这 1 万人中，9989 人相安无事，总共有 11 人被诊断为「叶贝死」，但只有 1 人真正患病。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/bayesexample-1.png" alt=""></p>
+<p>所以，你虽然被告知患病，但实际上真正患病的概率是：1/11 ，约 9%。</p>
+<h3 id="逃出生天之公式版"><a href="#逃出生天之公式版" class="headerlink" title="逃出生天之公式版"></a>逃出生天之公式版</h3><p>把题目正经描述一下：</p>
+<blockquote>
+<p>已知「叶贝死」的发病率是0.0001，即10000人中会有1个人得病。现有一种测试可以检验患者是否得病，的准确率是0.999，即在患者确实得病的情况下，它有 99.9% 的可能呈现阳性。它的误报率是 0.1%，即在没有得病的情况下，它有 0.1% 的可能呈现阳性。 现在张三的检验结果为阳性，请问他确实得病的可能性有多大？</p>
+</blockquote>
+<p>用贝叶斯定理进行计算，步骤是这样的：</p>
+<p>令 <code>S</code> 表示患病事件，<code>N</code>表示未患病事件，<code>Y</code>表示检验结果为阳性事件。</p>
+<p>我们想要计算的是，在检验结果为阳性的条件下，张三确实「叶贝死」的概率： </p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/bayes-fomula2.jpeg" alt=""></p>
+<p>从题目中找到公式右边的三个变量：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/bayes-table1.jpeg" alt=""></p>
+<p>将表格中的值代入上面公式可得</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/bayes-fomula3.jpeg" alt=""></p>
+<p>结果为：9%</p>
+<h2 id="女-男神到底爱不爱我"><a href="#女-男神到底爱不爱我" class="headerlink" title="女/男神到底爱不爱我"></a>女/男神到底爱不爱我</h2><p>正襟危坐这么久，终于可以回到正题胡说八道了。</p>
+<blockquote>
+<p>我发给女神/男神的微信，只有一半会收到回复，她/他是喜欢我还是讨厌我？我们有发展的可能吗……</p>
+</blockquote>
+<p>世界上不知道有多少痴汉，每天在痴痴地等着某个微信好友头像出现新消息提示。每发出一条消息，心中就有一群问题如羊驼般呼啸而过：ta 在忙吗？会不会看不到我的消息？一分钟过去了他还是没有回我的消息，我要不要再等等？刚才那条消息会不会太无聊了啊我自己可能都懒得回我怎么这么蠢啊？不过说不定 ta 今天心情好或者正在无聊地等车呢？不知道其他人给他发消息他会秒回呢还是要等高冷的一小时？哎呀如果 ta 回复了我该说些什么呢？啊啊啊什么时候可以见到 ta？我们都认识这么久了 ta 对我到底有没有意思呢？…………</p>
+<p>生活在这些问题中，实在是太可怕了。</p>
+<p>自黑党的痴汉们，做痴汉也要做得有极客范。用贝叶斯定理来帮助我们 YY 吧！把羊驼们哄回羊圈，沐浴斋戒，摊开纸笔，写下通往未知和答案的神奇公式：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/bayes-fomula6.jpeg" alt=""></p>
+<ul>
+<li>P(喜欢一个人|回微信)：回复微信的情况下喜欢一个人的概率</li>
+<li>P(回微信|喜欢一个人)：喜欢一个人时会回复微信的概率</li>
+<li>P(喜欢一个人)：女/男神喜欢一个人的概率</li>
+<li>P(回微信)：女/男神正常情况下回复微信的概率</li>
+</ul>
+<p>假设你通过八卦、潜伏、收买人心、纯粹臆想等花式调研，获得了以下情报：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/bayes-table2.jpeg" alt=""></p>
+<p>那么计算的结果是：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/bayes-fomula4.jpeg" alt=""></p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/bayes-fomula5.jpeg" alt=""></p>
+<p>结论1：女神真难追啊！</p>
+<p>结论2：少年你想多了，这概率比 P2P 的投资回报率还低，还是乖乖回家提升自己吧！</p>
+<p>结论3：愚蠢的人类，用微信就想推断女/男神的心？有本事约去旅行看看？</p>
+<blockquote>
+<p>注：这部分纯属胡说八道，请勿作为指引！如路遇女/男神，还请勇敢壁咚</p>
+</blockquote>
+<h2 id="你贝叶斯了吗？"><a href="#你贝叶斯了吗？" class="headerlink" title="你贝叶斯了吗？"></a>你贝叶斯了吗？</h2><p>贝叶斯定理，其实体现了一种概率观，它利用过往信息来逐渐逼近事件发生概率，这是一种启发式的统计学思考方式。</p>
+<p>具有贝叶斯思维的人，并不试图刻画事件本身，甚至也不去假设那类事件是随机的，或者有一个逼近极限的总体概率。而只是从观察者信息补全的角度出发，先从以往经验中总结一个大致结果，再基于这个结果判断下次出现这类事件的概率，每次的结果会不断修正之前的判断，如此往复。这个过程反应的是我们知识状态的情况，而并非试图描述客观世界中事件发生的概率。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/bayes_in_the_head.jpeg" alt=""></p>
+<p>人类基因里可以给予我们的直觉只能指导我们如何觅食，躲避天敌，在危险的世界活下来。而一旦涉及到科学范畴，那些原始的直觉就不起作用了。想用更理性的思维分析周遭，就要摒弃固有的直觉，不断通过理解与学习建立新的直觉。</p>
+<p>今天，你贝叶斯了吗？</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://en.wikipedia.org/wiki/Bayes%27_theorem" target="_blank" rel="noopener">Bayes’ theorem - Wikipedia</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AE%9A%E7%90%86" target="_blank" rel="noopener">贝叶斯定理 - 维基百科，自由的百科全书</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%85%88%E9%AA%8C%E6%A6%82%E7%8E%87" target="_blank" rel="noopener">先验概率 - 维基百科，自由的百科全书</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%90%8E%E9%AA%8C%E6%A6%82%E7%8E%87" target="_blank" rel="noopener">后验概率 - 维基百科，自由的百科全书</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87" target="_blank" rel="noopener">条件概率 - 维基百科，自由的百科全书</a></li>
+<li><a href="http://mindhacks.cn/2008/09/21/the-magical-bayesian-method/" target="_blank" rel="noopener">数学之美番外篇：平凡而又神奇的贝叶斯方法</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2011/08/bayesian_inference_part_one.html" target="_blank" rel="noopener">贝叶斯推断及其互联网应用（一）：定理简介 - 阮一峰的网络日志</a></li>
+<li><a href="https://www.youtube.com/watch?v=BcvLAw-JRss" target="_blank" rel="noopener">Everything You Ever Wanted to Know About Bayes’ Theorem But Were Afraid To Ask. - YouTube</a></li>
+<li><a href="http://www.bilibili.com/video/av4412031/" target="_blank" rel="noopener">医生说你得病、你就真的得病了吗？</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HackYourself/" rel="tag"># HackYourself</a>
+          
+            <a href="/tags/心智/" rel="tag"># 心智</a>
+          
+            <a href="/tags/统计/" rel="tag"># 统计</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/woop-for-procrastination.html" rel="next" title="拖延这件小事，讨论一次就够了">
+                <i class="fa fa-chevron-left"></i> 拖延这件小事，讨论一次就够了
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/mindlego5-doubleblind.html" rel="prev" title="心智乐高 05 - 科学星球的入场券：双盲实验">
+                心智乐高 05 - 科学星球的入场券：双盲实验 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#贝叶斯定理的由来"><span class="nav-number">1.</span> <span class="nav-text">贝叶斯定理的由来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#「AM-I-SICK？」贝叶斯定理的经典用法"><span class="nav-number">2.</span> <span class="nav-text">「AM I SICK？」贝叶斯定理的经典用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逃出生天之图解版"><span class="nav-number">2.1.</span> <span class="nav-text">逃出生天之图解版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逃出生天之公式版"><span class="nav-number">2.2.</span> <span class="nav-text">逃出生天之公式版</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#女-男神到底爱不爱我"><span class="nav-number">3.</span> <span class="nav-text">女/男神到底爱不爱我</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你贝叶斯了吗？"><span class="nav-number">4.</span> <span class="nav-text">你贝叶斯了吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/mindlego4-bayes.html';
+          this.page.identifier = 'mindlego4-bayes.html';
+          this.page.title = '心智乐高04 很傻很天真的贝叶斯定理';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

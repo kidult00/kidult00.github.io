@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Design,设计,交互设计,服务设计,o2o,体验,场景," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="&amp;nbsp; 这是欧洲战争史上一个真实的故事。  一支几百人的小部队在瑞士与德国之间的崇山峻岭间迷路了。在盲目找路的过程中，给养越来越少，部队在深山里越陷越深。士气低迷自不必说，抱怨、指责的情绪日益高涨，指挥官一筹莫展。 一天，他们发现山脚下有一座房子。但士兵们走进屋子时却大失所望——这是一间早就无人居住的房子，除了一些破旧的家具，一点食物也找不到。突然，一个士兵高兴地大叫起来，他在破柜子里发">
+<meta name="keywords" content="Design,设计,交互设计,服务设计,o2o,体验,场景">
+<meta property="og:type" content="article">
+<meta property="og:title" content="场景化设计系列之二：新战场，新地图">
+<meta property="og:url" content="http://uegeek.com/scenario-design-2.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="&amp;nbsp; 这是欧洲战争史上一个真实的故事。  一支几百人的小部队在瑞士与德国之间的崇山峻岭间迷路了。在盲目找路的过程中，给养越来越少，部队在深山里越陷越深。士气低迷自不必说，抱怨、指责的情绪日益高涨，指挥官一筹莫展。 一天，他们发现山脚下有一座房子。但士兵们走进屋子时却大失所望——这是一间早就无人居住的房子，除了一些破旧的家具，一点食物也找不到。突然，一个士兵高兴地大叫起来，他在破柜子里发">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/map&compass.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/1ship_dribble.jpg">
+<meta property="og:image" content="http://img1.iyiou.com/Editor/image/20150827/1440647571319716.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/2cjm.jpeg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/table2.png">
+<meta property="og:image" content="http://www.uegeek.com/wp-content/uploads/2015/06/table3.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/4newbattle.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/qrcode_for_gh_48d79033755a_258.jpg">
+<meta property="og:updated_time" content="2016-01-03T13:51:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="场景化设计系列之二：新战场，新地图">
+<meta name="twitter:description" content="&amp;nbsp; 这是欧洲战争史上一个真实的故事。  一支几百人的小部队在瑞士与德国之间的崇山峻岭间迷路了。在盲目找路的过程中，给养越来越少，部队在深山里越陷越深。士气低迷自不必说，抱怨、指责的情绪日益高涨，指挥官一筹莫展。 一天，他们发现山脚下有一座房子。但士兵们走进屋子时却大失所望——这是一间早就无人居住的房子，除了一些破旧的家具，一点食物也找不到。突然，一个士兵高兴地大叫起来，他在破柜子里发">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/map&compass.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/scenario-design-2.html"/>
+
+
+
+
+
+  <title>场景化设计系列之二：新战场，新地图 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/scenario-design-2.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">场景化设计系列之二：新战场，新地图</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-04T11:10:35+08:00">
+                2015-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计/" itemprop="url" rel="index">
+                    <span itemprop="name">设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/scenario-design-2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="scenario-design-2.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div class="image-package imagebubble"><img src="http://7xjpra.com1.z0.glb.clouddn.com/map&amp;compass.png" alt=""></div>
+
+<p>&nbsp;</p>
+<p>这是欧洲战争史上一个真实的故事。</p>
+<hr>
+<p>一支几百人的小部队在瑞士与德国之间的崇山峻岭间迷路了。在盲目找路的过程中，给养越来越少，部队在深山里越陷越深。士气低迷自不必说，抱怨、指责的情绪日益高涨，指挥官一筹莫展。</p>
+<p>一天，他们发现山脚下有一座房子。但士兵们走进屋子时却大失所望——这是一间早就无人居住的房子，除了一些破旧的家具，一点食物也找不到。突然，一个士兵高兴地大叫起来，他在破柜子里发现了一张发黄的手绘地图。地图上画着一座座山峰，并用拉丁文标了山峰的名称。只可惜队伍里没人懂拉丁文。军官们传看了这张地图之后，一致认定这就是这个地区的地形图。所有的人都看到了希望，各种纷争顿时平息，士气为之一振。</p>
+<p>指挥官拿着这张地图想带领部队走出死亡之谷。但让他苦恼的是，这张地图太过简略，比例尺很不精确，有时沿着地图指引的方向行军，发现前面无路可走。但毕竟有胜于无。他们一边看地形，一边猜地图，两天之后，部队发现眼前是一大片平原，远处隐约可见几座村庄。</p>
+<p>指挥官一直珍藏着这张救了他一命的地图。几年以后，他拿出地图，向一个懂拉丁文的朋友讲述那段经历。这位朋友认真看完地图后摇摇头，意味深长地笑了笑，指着地图上方的那行字告诉指挥官，这是一张奥地利南部山区的地图。指挥官先是愕然，随后恍然大悟。两个朋友相视而笑。</p>
+<hr>
+<div class="image-package imagebubble"><img src="http://7xjpra.com1.z0.glb.clouddn.com/1ship_dribble.jpg" alt=""></div><br>&nbsp;<br><br><a id="more"></a><br><br>拿着错误的地图找路，是我们常犯的毛病。在撒哈拉拿着威尼斯的地图，会奇怪“怎么找不到水？”…… 当然，故事还说明，比一张错误的地图糟糕得多的，是没有地图。<br><br>不管愿不愿意承认，我们都已经随潮流进入了一片全新的“战场”。设计的对象、环境、需求来源、实施、决策、资源等等，都与以往不一样。<br><br>进入陌生的战场，第一件应该做的事情，是去更新地图。<br><br>界面设计有界面设计的地图，人机交互有人机交互的地图。为不同的生活场景设计“智慧”的解决方案，我们需要怎样的地图？<br><br><strong>是 “O2O设计”地图吗？</strong><br><br>这里引用一下西贝的O2O 关系模型：<br><br><div class="image-package imagebubble"><img src="http://img1.iyiou.com/Editor/image/20150827/1440647571319716.jpg" alt=""><br><div class="image-caption"></div><br></div>
+
+
+<p>很清晰的总结。对于大 O2O 平台的设计，是一幅好地图。可惜，并非所有情况下，都存在一个“O2O 应用”。而且这个中间件，95%可能远没有大众点评 APP 那么强大，又或者，它必需由多个小中间件相互配合，它们之间的关系错综复杂。</p>
+<p>于是，再次自问：我们做的是 O2O 设计吗？设计师能设计“O2O”吗？这个问题跟“体验设计”简直是一样一样的。现实中，“设计”产品和体验的，根本就不是只有设计师，很可能（99%+）是老板，很可能是店长，很可能是一个系统长期形成的体系化做法，比如医院提供的服务。</p>
+<p>O2O 设计的是 Online 到 Offline 还是从 Offline 到 Online？这是个无聊该死的被概念局限的伪命题。只有当数字化渠道和工具不成熟、连接和切换效率低下、对实体世界影响很小的时候，或者更直白一些：两者没有整合成一个协作体系时，才会有 online 和 offline 如此泾渭分明的划分。</p>
+<p>当 online 部分已经成为常规的服务渠道和手段，它与 offline 的转化会变得更频繁、更自然。比如，现在我们去看电影，在查影讯、选影院、选位、支付、问询、取票、观影、评论、返券等等过程中，数次在手机、电影院、信息屏、工作人员等“界面”中来回切换，有人会刻意想起“哦我现在是在 offline 取票，现在 online 发表评论”吗？</p>
+<p>行业的发展速度让我们感到害怕。</p>
+<p>而我们仍然时常沉浸在 online 的界面设计中，对 offline 的问题要么视而不见，要么束手无策。当然，我们也可以争辩说，职责的划分已经决定了我们要干的事情。没错，可是该发生的改变还是会发生的。</p>
+<p><strong>如果我们需要的不是“O2O设计”地图，那么，是“服务设计”地图吗？</strong></p>
+<p>在没有接触过线下设计时，容易对服务设计有不切实际的“幻想”。尤其当我们对着漂亮的 Customer Journey Map，一种 God’s view 的虚假快感油然而生：一切尽在掌握嘛，你看，痛点辣么多，我们大有可为呀。</p>
+<div class="image-package imagebubble"><img src="http://7xjpra.com1.z0.glb.clouddn.com/2cjm.jpeg" alt=""></div>
+
+<p>&nbsp;<br>但现实是，设计师往往对服务全过程没有全面的理解，更别说有足够的影响力，同时也缺乏对改造服务的投入产出分析，往往难以打动制定服务的决策者。尤其，<strong><em>如果设计师不在提供服务的组织中，而只是一个第三方（甚至不是提供咨询服务的第三方），对服务的改造力会非常有限。</em></strong></p>
+<hr>
+<p>作为一个还在探索边界的设计师，我更愿意把我们正在做的事情定义为“场景化设计” —— 既不是掌控全局、无所不能的服务设计，也尽量不把 online 和 offline 简单割裂开来。</p>
+<p>这也许是一个不负责任、极不准确的定义，但是相比“体验设计”、“服务设计”、“交互设计”如此自大的词汇，“场景化设计”至少能提醒我，该聚焦什么，能影响什么。</p>
+<p>&nbsp;</p>
+<p>为什么“场景”会是一个更合适的单位？真实世界中，服务和用户的行为都发生在具体而真实的一个或多个场景中。想要达到一定目的，需要在场景中通过各种办法与用户沟通，引导和影响用户做出我们期望的行为。</p>
+<blockquote>
+<p>场景化设计的本质：通过服务流程、行为过程中的场景设计，影响人们的认知和行为，达到预期目的。</p>
+</blockquote>
+<p><span style="color: #999999">（再次强调，这一系列文章中提到的设计师，既不是真正的服务提供方，也不是受雇于甲方、提供解决方案的咨询顾问，这是最大的前提）</span></p>
+<p>在这样一个新战场中，加入了很多新角色：商家，服务员，第三方，监管单位，有关部门……</p>
+<p>我们的战斗目标，从原来的提高转化率、提高用户满意度等等的明确指标，变成如何在商家为用户创造价值的过程中，帮助用户提升体验，帮助商家创造价值，等等。</p>
+<p>从前，线上场景的典型设计问题包括：</p>
+<ul>
+<li>如何让任务效率更高？</li>
+<li>如何让操作体验更佳？</li>
+<li>如何让情感更愉悦？</li>
+</ul>
+<p>如今，线下设计的三座大山变成了：</p>
+<ul>
+<li>为什么没看到？</li>
+<li>为什么不使用？</li>
+<li>为什么不持续使用？</li>
+</ul>
+<p>而这三座（用户侧的）大山背后，反应了更深层的问题：</p>
+<ul>
+<li>核心商业诉求如何满足？</li>
+<li>用户体验和成本、效率如何平衡？</li>
+<li>现有商业模式的缺点是什么，是否到了改变的时机？</li>
+</ul>
+<p>必须找到新的地图，才能看清战场，知道新的敌人、隐藏 boss 到底是谁：</p>
+<div class="image-package imagebubble"><img src="http://7xjpra.com1.z0.glb.clouddn.com/table2.png" alt=""></div><br><div class="image-package imagebubble"></div>
+
+
+<ol>
+<li><p>诉求是多方滴，目标是动态滴</p>
+<ul>
+<li>用户想要爽，优惠，快捷方便；</li>
+<li>商家想要成交，利润，客流，低成本，高效率，口碑；</li>
+<li>服务员想要效率，解决问题，奖金；</li>
+<li>有关部门想要合规、安定团结；</li>
+<li>我们的团队想要市场占有率，交易量</li>
+<li>……</li>
+</ul>
+</li>
+<li><p>信息环境复杂，任务流非线性</p>
+<ul>
+<li>真实环境中，也许同时存在数十、上百个有内容的平面/界面/人员</li>
+<li>很少有第一步、第二步、确定、发送的流程，行为都是非线性的</li>
+</ul>
+</li>
+<li><p>改造环境而不仅仅创造界面</p>
+<ul>
+<li>界面只是众多触点之一，需要改造环境才能最大限度影响行为</li>
+<li>需要全局考虑交互媒介和方式，现有的界面体验设计方法不足以支撑</li>
+</ul>
+</li>
+<li><p>投入产出和可实施性从前，要实现复杂功能或炫酷页面效果，缠着哆啦a梦般的开发 GG 就可以了。这导致两个结果：</p>
+<ul>
+<li>设计师对成本和投入产出完全无感，根据ROI进行决策的能力≈0</li>
+<li>没有不加班的攻城狮而现在，我们的哆啦a梦不再是一个人，决定方案能</li>
+</ul>
+<p>不能实现的因素可能包括：</p>
+<ul>
+<li>接口人的 KPI</li>
+<li>决策人的目标及喜好</li>
+<li>接口人和决策人的沟通</li>
+<li>钱钱钱</li>
+<li>场地场地场地</li>
+<li>人员人员人员</li>
+<li>若干第三方的能力<br>……</li>
+</ul>
+</li>
+</ol>
+<h3 id="不是总结的总结"><a href="#不是总结的总结" class="headerlink" title="不是总结的总结"></a>不是总结的总结</h3><p>虽然粗糙、模糊、不易读，还是尝试先勾勒一幅标出东南西北的地图：</p>
+<div class="image-package imagebubble"><img src="http://www.uegeek.com/wp-content/uploads/2015/06/table3.png" alt=""></div>
+
+<p>&nbsp;<br>全新战场，面对新的 boss，是时候配备新的武器了。</p>
+<div class="image-package imagebubble"><img src="http://7xjpra.com1.z0.glb.clouddn.com/4newbattle.jpg" alt=""></div>
+
+<p>&nbsp;</p>
+<p>敬请期待后续“场景化设计工具箱”。希望与更多同行、同学们一起探讨，往工具箱里增加更多好用的工具。</p>
+<hr>
+<div class="image-package imagebubble"><br><img src="http://7xjpra.com1.z0.glb.clouddn.com/qrcode_for_gh_48d79033755a_258.jpg" alt=""><br><div class="image-caption" style="text-align: center">00的公众号，更多分享酝酿中……</div><br></div>
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Design/" rel="tag"># Design</a>
+          
+            <a href="/tags/设计/" rel="tag"># 设计</a>
+          
+            <a href="/tags/交互设计/" rel="tag"># 交互设计</a>
+          
+            <a href="/tags/服务设计/" rel="tag"># 服务设计</a>
+          
+            <a href="/tags/o2o/" rel="tag"># o2o</a>
+          
+            <a href="/tags/体验/" rel="tag"># 体验</a>
+          
+            <a href="/tags/场景/" rel="tag"># 场景</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/scenario-design-1.html" rel="next" title="场景化设计系列之一：转型之痛">
+                <i class="fa fa-chevron-left"></i> 场景化设计系列之一：转型之痛
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/scenario-design-3.html" rel="prev" title="场景化设计系列之三：动机分析">
+                场景化设计系列之三：动机分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#不是总结的总结"><span class="nav-number">1.</span> <span class="nav-text">不是总结的总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/scenario-design-2.html';
+          this.page.identifier = 'scenario-design-2.html';
+          this.page.title = '场景化设计系列之二：新战场，新地图';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

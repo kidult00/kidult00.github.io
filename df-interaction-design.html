@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Design,IxD,交互设计," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="“咬文嚼字”系列的目的，是为了记录对一些基本概念或常见词语的理解。概念其实比我们想象中要重要，因为无效的沟通往往有一个特点：双方对基本概念的理解根本就不同。 虽然冒着成为书呆子和学究的风险，但还是有必要想一想什么叫做“交互设计”（百度百科上的词条实在不太好理解&amp;gt;&amp;lt;），毕竟每天都要听/说上个十几回。下面是一些不成熟的想法，欢迎拍打~ 让我们先来对这个词做一下拆解：神马是设计？神马是交互？">
+<meta name="keywords" content="Design,IxD,交互设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="咬文嚼字之 什么是交互设计">
+<meta property="og:url" content="http://uegeek.com/df-interaction-design.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="“咬文嚼字”系列的目的，是为了记录对一些基本概念或常见词语的理解。概念其实比我们想象中要重要，因为无效的沟通往往有一个特点：双方对基本概念的理解根本就不同。 虽然冒着成为书呆子和学究的风险，但还是有必要想一想什么叫做“交互设计”（百度百科上的词条实在不太好理解&amp;gt;&amp;lt;），毕竟每天都要听/说上个十几回。下面是一些不成熟的想法，欢迎拍打~ 让我们先来对这个词做一下拆解：神马是设计？神马是交互？">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-08-06T02:53:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="咬文嚼字之 什么是交互设计">
+<meta name="twitter:description" content="“咬文嚼字”系列的目的，是为了记录对一些基本概念或常见词语的理解。概念其实比我们想象中要重要，因为无效的沟通往往有一个特点：双方对基本概念的理解根本就不同。 虽然冒着成为书呆子和学究的风险，但还是有必要想一想什么叫做“交互设计”（百度百科上的词条实在不太好理解&amp;gt;&amp;lt;），毕竟每天都要听/说上个十几回。下面是一些不成熟的想法，欢迎拍打~ 让我们先来对这个词做一下拆解：神马是设计？神马是交互？">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/df-interaction-design.html"/>
+
+
+
+
+
+  <title>咬文嚼字之 什么是交互设计 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/df-interaction-design.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">咬文嚼字之 什么是交互设计</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-02-19T19:20:15+08:00">
+                2011-02-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计/" itemprop="url" rel="index">
+                    <span itemprop="name">设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/df-interaction-design.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="df-interaction-design.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>“咬文嚼字”系列的目的，是为了记录对一些基本概念或常见词语的理解。概念其实比我们想象中要重要，因为无效的沟通往往有一个特点：双方对基本概念的理解根本就不同。</p>
+<p>虽然冒着成为书呆子和学究的风险，但还是有必要想一想什么叫做“交互设计”（<a href="http://baike.baidu.com/view/426920.htm" target="_blank" rel="noopener">百度百科上的词条</a>实在不太好理解&gt;&lt;），毕竟每天都要听/说上个十几回。下面是一些不成熟的想法，欢迎拍打~</p>
+<p>让我们先来对这个词做一下拆解：神马是设计？神马是交互？神马是人机交互？神马是交互设计？神马是好的交互设计？<br><a id="more"></a></p>
+<h3 id="什么是设计？"><a href="#什么是设计？" class="headerlink" title="什么是设计？"></a>什么是设计？</h3><h4 id="00的理解：设计是为更好地处理关系而提出完整的解决方案"><a href="#00的理解：设计是为更好地处理关系而提出完整的解决方案" class="headerlink" title="00的理解：设计是为更好地处理关系而提出完整的解决方案"></a><a href="http://www.uegeek.com/" target="_blank" rel="noopener">00</a>的理解：<span style="color: #993300;">设计是为更好地处理关系而提出完整的解决方案</span></h4><p>设计和艺术（art）最显著的区别在于目的不同</p>
+<ul>
+<li>设计：为了解决问题、传递信息、促进沟通</li>
+<li>艺术：为了自我表达、激发灵感、引起情感共鸣</li>
+</ul>
+<p>两者还有其他方面的差异</p>
+<ul>
+<li>设计：表达的是对问题和服务对象的理解</li>
+<li>艺术：表达的是对艺术家自己、对外在世界的理解</li>
+<li>设计：更多是将已经存在的东西更好地联系起来、表现出来</li>
+<li>艺术：更多是从无到有的创造</li>
+</ul>
+<p>与其将设计与艺术做比较，不如类比设计与规划（plan）：两者都是基于问题的解决方案，以及解决方案的实施。设计侧重于可视化，规划侧重于系统化和操作性。</p>
+<h3 id="什么是交互？"><a href="#什么是交互？" class="headerlink" title="什么是交互？"></a>什么是交互？</h3><p><a href="http://www.uegeek.com/" target="_blank" rel="noopener">00</a>的理解</p>
+<blockquote>
+<p>交互是两个实体之间的关系（relation）、行为（behavior）和响应（action &amp; reaction）</p>
+</blockquote>
+<ul>
+<li>这两个实体的特征分别是什么？</li>
+<li>它们的关系是什么？</li>
+<li>它们的关系是否会变化及如何变化？</li>
+<li>它们会有哪些独立行为及相互行为？</li>
+<li>这些行为之间如何响应？</li>
+<li>相互行为对它们分别有怎样的影响？</li>
+<li>……</li>
+</ul>
+<h3 id="什么是人机交互？"><a href="#什么是人机交互？" class="headerlink" title="什么是人机交互？"></a>什么是人机交互？</h3><p>人机交互指系统和使用者之间的互动关系（<a href="http://zh.wikipedia.org/zh/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92" target="_blank" rel="noopener">wiki</a>）</p>
+<h3 id="什么是交互设计？"><a href="#什么是交互设计？" class="headerlink" title="什么是交互设计？"></a>什么是交互设计？</h3><p>我们来看看一些交互设计的定义吧~</p>
+<blockquote>
+<p>Interaction design (IxD) defines the structure and behavior of interactive systems. (<a href="http://en.wikipedia.org/wiki/Interaction_design" target="_blank" rel="noopener">wiki</a>)</p>
+<p>交互设计，又称互动設計，(Interaction Design, 缩写 IxD 或者 IaD),是定义、设计人造系统的行为的设计领域。人造物，即人工制成物品，例如，软件、移动设备、人造环境、服务、可佩带装置以及系统的组织结构。交互设计在于定义人造物的行为方式,即人工制品在特定场景下的反应方式)相关的界面。（<a href="http://zh.wikipedia.org/wiki/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener">wiki</a>）</p>
+<p>Interaction designers strive to create useful and usable products and services. Following the fundamental tenets of user-centered design, the practice of interaction design is grounded in an understanding of real users—their goals, tasks, experiences, needs, and wants. Approaching design from a user-centered perspective, while endeavoring to balance users’ needs with business goals and technological capabilities, interaction designers provide solutions to complex design challenges, and define new and evolving interactive products and services.<br>(<a href="http://www.uxbooth.com/blog/complete-beginners-guide-to-interaction-design/" target="_blank" rel="noopener">The Interaction Design Association (IxDA) </a>)</p>
+<p>IxD is about shaping our everyday life through digital artifacts.  We not only design what it looks like, but also how it behaves, and we’re designing the quality of the way we interact with the system.(Gillian Crampton Smith)</p>
+<p>技术为中心的观点：将原材料塑造出人们喜欢使用的产品；<br>行为学派观点：定义人造物、环境和系统的行为；<br>社会交往设计的观点：利用产品来促进人与人之间的沟通<br>(<a href="http://book.douban.com/subject/4881989/" target="_blank" rel="noopener">Dan Saffer</a>)</p>
+<p>交互设计是指设计人和产品或服务互动的一种机制<br>（<a href="http://www.slideshare.net/ixdlab/ss-5451190" target="_blank" rel="noopener">via</a>）</p>
+</blockquote>
+<p>还是挺晕吧？从这些定义我们大致可以了解，交互设计是关于系统、人的行为、互动、产品的机制定义。</p>
+<ul>
+<li>因为IxD是设计的一种，so，它的目标是要<strong>解决问题</strong>，利用提供的材料在特定的环境下解决特定的问题。</li>
+<li>因为设计有目的有对象（人/受众），so，设计要基于对人的理解，而对IxD而言，更重要是要<strong>基于对人的目标和行为模式的理解</strong>。</li>
+<li>因为IxD是为实体间的互动进行设计，so，它天生具有场景性，人与系统是在一定的环境、条件下发生关系、进行互动。</li>
+</ul>
+<p><a href="http://www.uegeek.com/" target="_blank" rel="noopener">00</a>对交互设计的理解：</p>
+<blockquote>
+<p><span style="color: #993300;">根据用户的目标和期望，对用户与系统交互过程中的行为方式和所感知、接触的元素进行定义、规划和设计，以平衡用户与系统利益的方式，引导交互行为容易、有效、愉悦地完成</span>。</p>
+</blockquote>
+<p>上面提及的都是广义的交互设计，我们平时谈论更多的交互设计是人机界面交互设计（HCIID：Human-Computer Interface Interaction Design），而我们的工作领域主要是<strong>互联网用户界面交互设计</strong>（Internet User Interface Interaction Design），这里的界面主要包括web界面、移动设备界面、客户端界面。</p>
+<p>还需要说明的是，正如体验实际上是不能被“设计”（只能为更佳的体验进行设计）的，<strong>行为也是不能被“设计”的</strong>，但是我们可以设计交互方式（怎样的交互行为可行？），以引导行为的发生，进而达到目的。</p>
+<h3 id="什么是好的交互设计？"><a href="#什么是好的交互设计？" class="headerlink" title="什么是好的交互设计？"></a>什么是好的交互设计？</h3><p><a href="http://www.uegeek.com/" target="_blank" rel="noopener">00</a>的理解：</p>
+<blockquote>
+<p>好的交互设计提供有用（useful）和可用（usable）的解决方案，能最有效地传达信息，激发、帮助用户高效地完成某个任务，并且在这个过程中感觉满意、愉悦。</p>
+</blockquote>
+<h3 id="简而言之"><a href="#简而言之" class="headerlink" title="简而言之"></a>简而言之</h3><p>嚼了半天，我们是不是可以这样理解：</p>
+<blockquote>
+<p>交互设计本质上是为使用者提供贴心、周全的服务而做的设计方面的所有努力</p>
+</blockquote>
+<p>by <strong><a href="http://www.uegeek.com/" target="_blank" rel="noopener">00</a></strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Design/" rel="tag"># Design</a>
+          
+            <a href="/tags/IxD/" rel="tag"># IxD</a>
+          
+            <a href="/tags/交互设计/" rel="tag"># 交互设计</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/rd-designing-interface.html" rel="next" title="Designing Interfaces中文版摘要">
+                <i class="fa fa-chevron-left"></i> Designing Interfaces中文版摘要
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/rd-aboutface-1.html" rel="prev" title="读书笔记-交互设计精髓">
+                读书笔记-交互设计精髓 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是设计？"><span class="nav-number">1.</span> <span class="nav-text">什么是设计？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#00的理解：设计是为更好地处理关系而提出完整的解决方案"><span class="nav-number">1.1.</span> <span class="nav-text">00的理解：设计是为更好地处理关系而提出完整的解决方案</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是交互？"><span class="nav-number">2.</span> <span class="nav-text">什么是交互？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是人机交互？"><span class="nav-number">3.</span> <span class="nav-text">什么是人机交互？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是交互设计？"><span class="nav-number">4.</span> <span class="nav-text">什么是交互设计？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是好的交互设计？"><span class="nav-number">5.</span> <span class="nav-text">什么是好的交互设计？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简而言之"><span class="nav-number">6.</span> <span class="nav-text">简而言之</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/df-interaction-design.html';
+          this.page.identifier = 'df-interaction-design.html';
+          this.page.title = '咬文嚼字之 什么是交互设计';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

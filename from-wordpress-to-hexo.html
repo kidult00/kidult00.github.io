@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Blog,Hexo,Github," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="拖延了整整两年，今天终于把博客用 Hexo 托管到了 Github 上。(以下记录，仅适用于 Mac 系统) Hexo是啥Hexo 是由 Node.js 驱动的一款快速、简单且功能强大的博客框架。可以快速将 Markdown 格式的文档生成静态页面。是越来越笨重的 Wordpress 和麻烦的空间管理的替代方案。">
+<meta name="keywords" content="Blog,Hexo,Github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客搬家记：从 Wordpress 到 Hexo+Github">
+<meta property="og:url" content="http://uegeek.com/from-wordpress-to-hexo.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:description" content="拖延了整整两年，今天终于把博客用 Hexo 托管到了 Github 上。(以下记录，仅适用于 Mac 系统) Hexo是啥Hexo 是由 Node.js 驱动的一款快速、简单且功能强大的博客框架。可以快速将 Markdown 格式的文档生成静态页面。是越来越笨重的 Wordpress 和麻烦的空间管理的替代方案。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/github&hexo.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/godaddy.png">
+<meta property="og:updated_time" content="2016-01-11T00:51:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="博客搬家记：从 Wordpress 到 Hexo+Github">
+<meta name="twitter:description" content="拖延了整整两年，今天终于把博客用 Hexo 托管到了 Github 上。(以下记录，仅适用于 Mac 系统) Hexo是啥Hexo 是由 Node.js 驱动的一款快速、简单且功能强大的博客框架。可以快速将 Markdown 格式的文档生成静态页面。是越来越笨重的 Wordpress 和麻烦的空间管理的替代方案。">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/github&hexo.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/from-wordpress-to-hexo.html"/>
+
+
+
+
+
+  <title>博客搬家记：从 Wordpress 到 Hexo+Github | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/from-wordpress-to-hexo.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">博客搬家记：从 Wordpress 到 Hexo+Github</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-10T22:41:12+08:00">
+                2016-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/动手/" itemprop="url" rel="index">
+                    <span itemprop="name">动手</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/from-wordpress-to-hexo.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="from-wordpress-to-hexo.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/github&amp;hexo.png" alt=""></p>
+<p>拖延了整整两年，今天终于把博客用 Hexo 托管到了 Github 上。(以下记录，仅适用于 Mac 系统)</p>
+<h2 id="Hexo是啥"><a href="#Hexo是啥" class="headerlink" title="Hexo是啥"></a>Hexo是啥</h2><p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 是由 Node.js 驱动的一款快速、简单且功能强大的博客框架。可以快速将 Markdown 格式的文档生成静态页面。是越来越笨重的 Wordpress 和麻烦的空间管理的替代方案。<br><a id="more"></a></p>
+<h2 id="一-安装-Hexo"><a href="#一-安装-Hexo" class="headerlink" title="一. 安装 Hexo"></a>一. 安装 Hexo</h2><p>首先翻看一遍 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo 官方文档</a></p>
+<h3 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h3><h4 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h4><p>推荐方法是用<a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a>安装 Node.js 。</p>
+<p>cURL:</p>
+<p><code>$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</code></p>
+<p>Wget:</p>
+<p><code>$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</code></p>
+<p>nvm 装好后，重启 terminal，然后安装 Node.js：</p>
+<p><code>$ nvm install 4</code></p>
+<p>当然，也可以直接到 <a href="http://nodejs.org/" target="_blank" rel="noopener">Node.js</a> 官网下载<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">最新版本</a>安装。</p>
+<h4 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h4><p>按照Github提示，创建SSH秘钥：</p>
+<p><code>$ mkdir ~/.ssh</code> #创建ssh命令</p>
+<p><code>$ cd ~/.ssh</code></p>
+<p><code>$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code> #注意更改Email地址</p>
+<p><code>$ pbcopy &lt; ~/.ssh/id_rsa.pub</code></p>
+<p>此时，pdcopy命令已经将id_rsa.pub内容复制到剪切板。</p>
+<p>登录 github：<a href="https://github.com/settings/ssh" target="_blank" rel="noopener">https://github.com/settings/ssh</a>  点击Add an SSH Key，Title 部分填写一个所用电脑的名称，然后在Key部分填写之前通过pdcopy命令复制的内容。生成 key  <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="noopener">https://help.github.com/articles/generating-ssh-keys/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;yourusername</span><br><span class="line">$ git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="2-安装-Hexo"><a href="#2-安装-Hexo" class="headerlink" title="2.安装 Hexo"></a>2.安装 Hexo</h3><p><code>$ npm install -g hexo-cli</code></p>
+<p>好了，这个时候如果报错，记得加 sudo</p>
+<p><code>$ sudo npm install -g hexo-cli</code></p>
+<h2 id="二-配置-Hexo"><a href="#二-配置-Hexo" class="headerlink" title="二. 配置 Hexo"></a>二. 配置 Hexo</h2><p>进入想要存放博客的文件夹，初始化设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>初始化成功后，文件夹里会有这些东西：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml		#配置文件</span><br><span class="line">├── package.json	#应用程序数据</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source			#网站内容</span><br><span class="line">|   ├── _drafts		#草稿</span><br><span class="line">|   └── _posts		#文章</span><br><span class="line">└── themes			#主题</span><br></pre></td></tr></table></figure>
+<p>配置文件的详细说明请查看<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">官方文档</a>。</p>
+<h2 id="三-从-Wordpress-迁移"><a href="#三-从-Wordpress-迁移" class="headerlink" title="三. 从 Wordpress 迁移"></a>三. 从 Wordpress 迁移</h2><p>首先安装 hexo-migrator-wordpress 插件：</p>
+<p><code>$ npm install hexo-migrator-wordpress --save</code></p>
+<p>登录 Wordpress 后台，在“工具”-“导出”中导出所有记录。</p>
+<p><code>$ hexo migrate wordpress &lt;source&gt;</code></p>
+<p>source 是 Wordpress 导出文件的存放目录。</p>
+<p>Duang！妥妥地导入到 _posts 目录中了！</p>
+<h2 id="四-本地访问博客"><a href="#四-本地访问博客" class="headerlink" title="四. 本地访问博客"></a>四. 本地访问博客</h2><p>生成静态文件：<br><code>$ hexo generate</code></p>
+<p>启动本地服务：<br><code>$ hexo server</code></p>
+<p>这时提示<br><code>Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</code></p>
+<p>然后在浏览器打开 <a href="http://0.0.0.0:4000/，就可以看到迁移好的博客啦！" target="_blank" rel="noopener">http://0.0.0.0:4000/，就可以看到迁移好的博客啦！</a></p>
+<h2 id="五-挑选主题"><a href="#五-挑选主题" class="headerlink" title="五. 挑选主题"></a>五. 挑选主题</h2><p>可参考 <a href="https://www.zhihu.com/question/24422335" target="_blank" rel="noopener">有那些好看的 Hexo 主题？</a></p>
+<p>下载主题：<code>git clone https://github.com/xxxx themes/xxx</code></p>
+<p>启用主题：克隆/下载 完成后，打开 站点配置文件 “_config.yml”，找到 theme 字段，并将其值更改为下载的主题名字。</p>
+<p>剩下的就根据主题使用文档，按照自己的喜好修改了。</p>
+<p>我选的 <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">NEXT主题</a> 胜在 <a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">说明文档</a> 超详细的~</p>
+<p>挑选好主题后还做了以下修改：</p>
+<ul>
+<li>增加了侧栏头像</li>
+<li>增加了社交网站链接</li>
+<li>增加了 RSS 链接</li>
+<li>重新整理了分类</li>
+<li>更新了建站时间</li>
+<li>增加了 DISUQS 评论模块</li>
+<li>增加了标签页页面</li>
+<li>增加了 JiaThis 分享</li>
+<li>增加了 PDF 文档展示</li>
+<li>增加了公益404页面</li>
+</ul>
+<p>待解决问题：</p>
+<ul>
+<li>增加 Google 分析</li>
+<li>站内搜索前端如何展现    </li>
+</ul>
+<h2 id="六-安装插件"><a href="#六-安装插件" class="headerlink" title="六. 安装插件"></a>六. 安装插件</h2><h3 id="站内搜索"><a href="#站内搜索" class="headerlink" title="站内搜索"></a>站内搜索</h3><p><a href="https://github.com/PaicHyperionDev/hexo-generator-search" target="_blank" rel="noopener">hexo-generator-search</a>插件为 Hexo3 提供搜索功能。</p>
+<p>安装：</p>
+<p><code>$ npm install hexo-generator-search --save</code></p>
+<h3 id="Feed"><a href="#Feed" class="headerlink" title="Feed"></a>Feed</h3><p><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">hexo-generator-feed</a> 可以生成Atom 1.0 或 RSS 2.0 feed。</p>
+<p>安装：</p>
+<p><code>$ npm install hexo-generator-feed --save</code></p>
+<h3 id="Sitemap"><a href="#Sitemap" class="headerlink" title="Sitemap"></a>Sitemap</h3><p><a href="https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap" target="_blank" rel="noopener">说明</a></p>
+<p>安装：</p>
+<p><code>$ npm install hexo-generator-seo-friendly-sitemap --save</code></p>
+<h3 id="嵌入-PDF"><a href="#嵌入-PDF" class="headerlink" title="嵌入 PDF"></a>嵌入 PDF</h3><p><a href="https://github.com/superalsrk/hexo-pdf/" target="_blank" rel="noopener">hexo-pdf</a></p>
+<p>安装：</p>
+<p><code>$ npm install --save hexo-pdf</code></p>
+<p>添加：</p>
+<p><code>
+
+	<div class="row">
+    <embed src="http://7xov2f.com1.z0.glb.clouddn.com/bash_freshman.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</code></p>
+<h2 id="七-配置-Github-并上传"><a href="#七-配置-Github-并上传" class="headerlink" title="七. 配置 Github 并上传"></a>七. 配置 Github 并上传</h2><p>新建跟用户名同名的 repository，以“.github.io” 为后缀</p>
+<p>创建成功后，点击界面右侧的<code>Settings</code>，打开页面后找到<code>GitHub Pages</code>，点击<code>Launch automatic page generator</code>，生成 page。</p>
+<p>然后在网站配置文件 <code>_config.yml</code>文件中，找到<code>Deployment</code>，修改配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>如果使用 git 方式部署，执行 <code>npm install hexo-deployer-git --save</code>命令来安装插件。</p>
+<p>但是这时出现了错误提示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! Darwin 15.2.0</span><br><span class="line">npm ERR! argv &quot;/usr/local/bin/node&quot; &quot;/usr/local/bin/npm&quot; &quot;install&quot; &quot;hexo-deployer-git&quot; &quot;--save&quot;</span><br><span class="line">npm ERR! node v4.2.4</span><br><span class="line">npm ERR! npm  v2.14.12</span><br><span class="line"></span><br><span class="line">npm ERR! shasum check failed for /var/folders/n4/m1w5r2rj3y77vpn_s6g87s180000gn/T/npm-8320-c250e6be/registry.npmjs.org/moment/-/moment-2.11.0.tgz</span><br><span class="line">npm ERR! Expected: 584f5fb87c1f637f12937edce127dde2d206d705</span><br><span class="line">npm ERR! Actual:   f3f4cb5f46c790b29b9b7bdce8435fe70ad58dbd</span><br><span class="line">npm ERR! From:     https://registry.npmjs.org/moment/-/moment-2.11.0.tgz</span><br></pre></td></tr></table></figure>
+<p>尝试数次，最终先用 <code>npm install hexo-deployer-git</code> 安装，再执行<code>npm install hexo-deployer-git --save</code></p>
+<p>安装成功后，在当前目录进行 deploy 操作</p>
+<p><code>hexo d</code></p>
+<p>上传成功后，访问 yourname.github.io ，测试是否可以正常访问。</p>
+<h2 id="八-绑定域名"><a href="#八-绑定域名" class="headerlink" title="八. 绑定域名"></a>八. 绑定域名</h2><h3 id="在-Github-里生成-CNAME-文件"><a href="#在-Github-里生成-CNAME-文件" class="headerlink" title="在 Github 里生成 CNAME 文件"></a>在 Github 里生成 CNAME 文件</h3><p>为了绑定域名，首先在 Hexo 的 “source” 文件夹中新建一个CNAME文件（没有后缀），文件内容为你要设置的域名。目的是将你的域名（如 uegeek.com ）指向 Github 服务器。</p>
+<p>Deploy 到 Github上去后大概需要几分钟生效。</p>
+<h3 id="在-DNS-中添加解析"><a href="#在-DNS-中添加解析" class="headerlink" title="在 DNS 中添加解析"></a>在 DNS 中添加解析</h3><p>几年前坑爹地在 Godaddy 买的域名，难用得要死，还时不时被墙。于是把 DNS 换成 国内的服务 <a href="https://www.dnspod.cn/" target="_blank" rel="noopener">Dnspod</a>。参考<a href="https://support.dnspod.cn/Kb/showarticle/tsid/42/" target="_blank" rel="noopener">Godaddy注册商域名修改DNS地址</a>。请擦亮眼看清楚 DNS Setting 在哪里设置……</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/godaddy.png" alt=""></p>
+<p>(不知道为什么默认跳转的是 DNS ZONE FILE 页面，害我白等了两天……)</p>
+<p>然后到 <a href="https://www.dnspod.cn/" target="_blank" rel="noopener">DNSPod</a> 新建域名，并添加 CNAME 记录指向  kidult00.github.io 。</p>
+<p>当打开 <a href="uegeek.com">uegeek.com</a> 看到改头换面的博客后，持续一周的博客搬家活动终于告一段落，内心默默地原谅自己拖延了两年 T.T</p>
+<h2 id="九-常用命令"><a href="#九-常用命令" class="headerlink" title="九. 常用命令"></a>九. 常用命令</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>执行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hexo new [layout] &lt;title&gt;</code></td>
+<td>新建</td>
+</tr>
+<tr>
+<td><code>hexo publish [layout] &lt;filename&gt;</code></td>
+<td>发布草稿</td>
+</tr>
+<tr>
+<td><code>hexo g</code></td>
+<td>生成静态文件</td>
+</tr>
+<tr>
+<td><code>hexo d</code></td>
+<td>上传更新</td>
+</tr>
+<tr>
+<td><code>hexo publish [layout] &lt;filename&gt;</code></td>
+<td>清除缓存文件(db.json) 和 已生成的文件 (public).</td>
+</tr>
+<tr>
+<td><code>hexo s</code></td>
+<td>启动本地服务器</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，五毛钱不嫌少~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Blog/" rel="tag"># Blog</a>
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+            <a href="/tags/Github/" rel="tag"># Github</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/happynewyearhappynewmac.html" rel="next" title="Happy New Year, Happy New Mac">
+                <i class="fa fa-chevron-left"></i> Happy New Year, Happy New Mac
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/fabnotes001.html" rel="prev" title="FabAcademy 可以学什么？[FabNotes001]">
+                FabAcademy 可以学什么？[FabNotes001] <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xjpra.com1.z0.glb.clouddn.com/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">195</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">154</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo是啥"><span class="nav-number">1.</span> <span class="nav-text">Hexo是啥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-安装-Hexo"><span class="nav-number">2.</span> <span class="nav-text">一. 安装 Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-环境准备"><span class="nav-number">2.1.</span> <span class="nav-text">1.环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Node-js"><span class="nav-number">2.1.1.</span> <span class="nav-text">安装 Node.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Git"><span class="nav-number">2.1.2.</span> <span class="nav-text">安装 Git</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装-Hexo"><span class="nav-number">2.2.</span> <span class="nav-text">2.安装 Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-配置-Hexo"><span class="nav-number">3.</span> <span class="nav-text">二. 配置 Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-从-Wordpress-迁移"><span class="nav-number">4.</span> <span class="nav-text">三. 从 Wordpress 迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-本地访问博客"><span class="nav-number">5.</span> <span class="nav-text">四. 本地访问博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-挑选主题"><span class="nav-number">6.</span> <span class="nav-text">五. 挑选主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-安装插件"><span class="nav-number">7.</span> <span class="nav-text">六. 安装插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#站内搜索"><span class="nav-number">7.1.</span> <span class="nav-text">站内搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feed"><span class="nav-number">7.2.</span> <span class="nav-text">Feed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sitemap"><span class="nav-number">7.3.</span> <span class="nav-text">Sitemap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌入-PDF"><span class="nav-number">7.4.</span> <span class="nav-text">嵌入 PDF</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七-配置-Github-并上传"><span class="nav-number">8.</span> <span class="nav-text">七. 配置 Github 并上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八-绑定域名"><span class="nav-number">9.</span> <span class="nav-text">八. 绑定域名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-Github-里生成-CNAME-文件"><span class="nav-number">9.1.</span> <span class="nav-text">在 Github 里生成 CNAME 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-DNS-中添加解析"><span class="nav-number">9.2.</span> <span class="nav-text">在 DNS 中添加解析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#九-常用命令"><span class="nav-number">10.</span> <span class="nav-text">九. 常用命令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/from-wordpress-to-hexo.html';
+          this.page.identifier = 'from-wordpress-to-hexo.html';
+          this.page.title = '博客搬家记：从 Wordpress 到 Hexo+Github';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
