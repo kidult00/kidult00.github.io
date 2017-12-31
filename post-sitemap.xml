@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/171226MyYear2017.html</loc>
+        <lastmod>2017-12-31T09:30:20.150Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/171222DLN6-GradientDescent.html</loc>
+        <lastmod>2017-12-31T09:09:06.079Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://uegeek.com/questions-as-map.html</loc>
         <lastmod>2017-12-31T09:03:51.444Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -15,24 +31,8 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/hello-world.html</loc>
-        <lastmod>2017-12-31T08:17:42.192Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://uegeek.com/171226DLN7-GradientDescentinPython.html</loc>
         <lastmod>2017-12-27T01:40:49.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/171222DLN6-GradientDescent.html</loc>
-        <lastmod>2017-12-27T01:39:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

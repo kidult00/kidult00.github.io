@@ -3,19 +3,64 @@
   
     
     <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>/hello-world.html</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+      <title><![CDATA[小哉问：年终总结写什么？]]></title>
+      <url>/171226MyYear2017.html</url>
+      <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/2017sumTitle.jpg" alt=""></p>
+<a id="more"></a> 
+<p>马上要跨入本世纪第 19 个年头了（可怕不可怕……），大家都在忙着写总结和计划。</p>
+<p>年终总结写什么，取决于想得到什么。</p>
+<p>如果想记录一年都做了什么，那很简单，按时间记账就行。如果想盘点一年的得失，就需要费一点心力，思考哪些事情比较重要，自己从中获得了什么、失去了什么。</p>
+<p>如果想给自己一个交代，总结过去就好。</p>
+<p>如果想许自己一个未来，那值得再琢磨琢磨。</p>
+<p>一天有一天的所得，一辈子有一辈子的教训。越是大时间周期的回顾，提取的信息应该越凝练。人能清醒地写年终总结的机会真的不多（也就二三十来次？）年末提供了一个强制的时间点去做盘点，以便搞清楚这一年有哪些新收获，最希望在来年谨记？有哪些切肤之痛，希望未来不要再经历？有哪b些或主动或被动的改变，希望来年继续？</p>
+<p>一年一次的总结，也可以看成是一次内存整理：<strong>「卸载」那些无用、低效的想法和习惯，「加载」来年需要的认知和能力</strong>。</p>
+<p>今年是出乎意料的一年，以没有料想过的方式，学习到一些被忽视已久的知识。虽然作品寥寥，倒是更懂自己了。</p>
+<p>来到 2018 的门口，先放下背包，倒出这一年中收集的种种，仔细考虑哪些要丢弃，哪些需要重视起来，哪些要且行且珍惜。</p>
+<h3 id="需要卸载"><a href="#需要卸载" class="headerlink" title="需要卸载"></a>需要卸载</h3><ul>
+<li>会带来巨大认知失调的惯性</li>
+<li>让别人的目标凌驾于自己的目标之上</li>
+<li>自我剥夺价值感</li>
+<li>陈旧的人设</li>
+</ul>
+<h3 id="需要保持"><a href="#需要保持" class="headerlink" title="需要保持"></a>需要保持</h3><ul>
+<li>简单的生活方式</li>
+<li>反碎片化</li>
+<li>从知识源头获取信息（比如，跟踪人而不是五手信息）</li>
+<li>以问题驱动思路，以试验驱动行动</li>
+</ul>
+<h3 id="需要加载"><a href="#需要加载" class="headerlink" title="需要加载"></a>需要加载</h3><p><strong>1. 进入新环境、新领域、新角色时，需要清内存，重建数据库</strong></p>
+<p><strong>2. 正确看待人性的复杂</strong></p>
+<ul>
+<li>尤其不要低估人与人之间的差异</li>
+<li>提升快速识别人的判断力，以及其他直觉</li>
+<li>观察互动模式如何形成</li>
+<li>设定关系的止损点</li>
+</ul>
+<p><strong>3. 爱自己</strong></p>
+<ul>
+<li>通过情绪快速识别问题</li>
+<li>划定灵活而坚定的个人边界</li>
+<li>优先处理自己的核心矛盾，保护内在动机</li>
+</ul>
+<p><strong>4. 建立「初心」的快捷方式，多拷问目标</strong></p>
+<p><strong>5. 减少 90% 主流信息输入方式，在最优信息上增加十倍投入</strong></p>
+<p><strong>6. 以身份和项目为导向，聚焦和持续输出</strong></p>
+<hr>
+<p>祝大家新年快乐！每天都有新收获</p>
 ]]></content>
       
+        <categories>
+            
+            <category> 叽歪 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 2017 </tag>
+            
+        </tags>
         
     </entry>
     
@@ -100,7 +145,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[梯度下降 Gradient Descent]]></title>
+      <title><![CDATA[DL笔记：梯度下降 Gradient Descent]]></title>
       <url>/171222DLN6-GradientDescent.html</url>
       <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p>
 <a id="more"></a> 
@@ -2400,9 +2445,9 @@
             
             <tag> Design </tag>
             
-            <tag> 设计师 </tag>
-            
             <tag> Reading </tag>
+            
+            <tag> 设计师 </tag>
             
         </tags>
         
@@ -2508,9 +2553,9 @@
             
             <tag> Design </tag>
             
-            <tag> 设计师 </tag>
-            
             <tag> Reading </tag>
+            
+            <tag> 设计师 </tag>
             
         </tags>
         
@@ -2607,9 +2652,9 @@
             
             <tag> Design </tag>
             
-            <tag> 设计师 </tag>
-            
             <tag> Reading </tag>
+            
+            <tag> 设计师 </tag>
             
         </tags>
         
@@ -2707,9 +2752,9 @@
             
             <tag> Design </tag>
             
-            <tag> 设计师 </tag>
-            
             <tag> Reading </tag>
+            
+            <tag> 设计师 </tag>
             
         </tags>
         
@@ -10893,11 +10938,11 @@ SONET optical fiber
             
             <tag> Note </tag>
             
+            <tag> Travel </tag>
+            
             <tag> 历史 </tag>
             
             <tag> 中欧 </tag>
-            
-            <tag> Travel </tag>
             
             <tag> 哥特式 </tag>
             
@@ -10968,11 +11013,11 @@ SONET optical fiber
             
             <tag> Note </tag>
             
+            <tag> Travel </tag>
+            
             <tag> 历史 </tag>
             
             <tag> 中欧 </tag>
-            
-            <tag> Travel </tag>
             
             <tag> 东正教 </tag>
             
@@ -11028,13 +11073,13 @@ SONET optical fiber
             
             <tag> Note </tag>
             
+            <tag> Travel </tag>
+            
             <tag> 历史 </tag>
             
             <tag> 中欧 </tag>
             
             <tag> 捷克 </tag>
-            
-            <tag> Travel </tag>
             
         </tags>
         
@@ -11074,13 +11119,13 @@ SONET optical fiber
             
             <tag> Note </tag>
             
+            <tag> Travel </tag>
+            
             <tag> 历史 </tag>
             
             <tag> 中欧 </tag>
             
             <tag> 奥地利 </tag>
-            
-            <tag> Travel </tag>
             
             <tag> 哈布斯堡王朝 </tag>
             
@@ -11110,13 +11155,13 @@ SONET optical fiber
             
             <tag> Note </tag>
             
+            <tag> Travel </tag>
+            
             <tag> 历史 </tag>
             
             <tag> 中欧 </tag>
             
             <tag> 捷克 </tag>
-            
-            <tag> Travel </tag>
             
         </tags>
         
@@ -11151,6 +11196,8 @@ SONET optical fiber
         
         <tags>
             
+            <tag> Travel </tag>
+            
             <tag> 历史 </tag>
             
             <tag> 中欧 </tag>
@@ -11162,8 +11209,6 @@ SONET optical fiber
             <tag> 捷克 </tag>
             
             <tag> 斯洛伐克 </tag>
-            
-            <tag> Travel </tag>
             
         </tags>
         
@@ -14035,9 +14080,9 @@ SONET optical fiber
             
             <tag> IxD </tag>
             
-            <tag> Note </tag>
-            
             <tag> 交互设计 </tag>
+            
+            <tag> Note </tag>
             
         </tags>
         
@@ -15510,9 +15555,9 @@ SONET optical fiber
             
             <tag> IxD </tag>
             
-            <tag> Note </tag>
-            
             <tag> 交互设计 </tag>
+            
+            <tag> Note </tag>
             
         </tags>
         
@@ -15897,9 +15942,9 @@ SONET optical fiber
             
             <tag> Design </tag>
             
-            <tag> Note </tag>
-            
             <tag> 交互设计 </tag>
+            
+            <tag> Note </tag>
             
             <tag> Interface </tag>
             
@@ -16454,9 +16499,9 @@ SONET optical fiber
         
         <tags>
             
-            <tag> Note </tag>
-            
             <tag> Reading </tag>
+            
+            <tag> Note </tag>
             
         </tags>
         
