@@ -3,30 +3,9 @@
 
 
     
-    
-  <url>
-    <loc>http://uegeek.com/171226MyYear2017.html</loc>
-    <lastmod>2017-12-31T09:30:20.150Z</lastmod>
-    <data>
-        <display>
-        <title>小哉问：年终总结写什么？</title>
-        <pubTime>2017-12-29T11:28:42.000Z</pubTime>
-        
-        <tag>2017</tag>
-         
-         
-           
-             
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
   <url>
     <loc>http://uegeek.com/171222DLN6-GradientDescent.html</loc>
-    <lastmod>2017-12-31T09:09:06.079Z</lastmod>
+    <lastmod>2017-12-31T12:15:33.049Z</lastmod>
     <data>
         <display>
         <title>DL笔记：梯度下降 Gradient Descent</title>
@@ -48,6 +27,27 @@
            
              
               <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://uegeek.com/171226MyYear2017.html</loc>
+    <lastmod>2017-12-31T09:30:20.150Z</lastmod>
+    <data>
+        <display>
+        <title>小哉问：年终总结写什么？</title>
+        <pubTime>2017-12-29T11:28:42.000Z</pubTime>
+        
+        <tag>2017</tag>
+         
+         
+           
+             
+              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
           
         </display>
     </data>
@@ -1819,9 +1819,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -3129,9 +3129,9 @@
         <title>读书笔记-如何阅读一本书</title>
         <pubTime>2010-08-07T16:20:35.000Z</pubTime>
         
-        <tag>Note</tag>
-         
         <tag>Reading</tag>
+         
+        <tag>Note</tag>
          
          
            
@@ -3197,9 +3197,9 @@
         <title>读书笔记-信息设计</title>
         <pubTime>2010-12-26T15:10:45.000Z</pubTime>
         
-        <tag>可视化</tag>
-         
         <tag>Note</tag>
+         
+        <tag>可视化</tag>
          
         <tag>Information design</tag>
          
@@ -3249,9 +3249,9 @@
         
         <tag>Design</tag>
          
-        <tag>Note</tag>
-         
         <tag>交互设计</tag>
+         
+        <tag>Note</tag>
          
         <tag>Interface</tag>
          
@@ -3277,9 +3277,9 @@
         
         <tag>IxD</tag>
          
-        <tag>Note</tag>
-         
         <tag>交互设计</tag>
+         
+        <tag>Note</tag>
          
          
            
@@ -3759,9 +3759,9 @@
         
         <tag>IxD</tag>
          
-        <tag>Note</tag>
-         
         <tag>交互设计</tag>
+         
+        <tag>Note</tag>
          
          
            
@@ -4349,9 +4349,9 @@
         <title>中欧四国扫(ba)盲(gua)帖之一：“中欧”还是“东欧”？</title>
         <pubTime>2015-09-18T13:37:38.000Z</pubTime>
         
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -4383,9 +4383,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -4411,9 +4411,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -4439,9 +4439,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -4471,9 +4471,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -4624,7 +4624,6 @@
     </data>
     </url>
 
-    
     
     
   <url>

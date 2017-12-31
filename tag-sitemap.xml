@@ -632,14 +632,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
+        <loc>http://uegeek.com/tags/Travel/</loc>
         <lastmod>2016-08-06T02:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Travel/</loc>
+        <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
         <lastmod>2016-08-06T02:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1038,50 +1038,50 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/tags/2017/</loc>
+        <lastmod>2017-12-31T09:30:20.150Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://uegeek.com/tags/Python/</loc>
-        <lastmod>2017-12-31T09:09:06.079Z</lastmod>
+        <lastmod>2017-12-31T12:15:33.049Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-        <lastmod>2017-12-31T09:09:06.079Z</lastmod>
+        <lastmod>2017-12-31T12:15:33.049Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/AI/</loc>
-        <lastmod>2017-12-31T09:09:06.079Z</lastmod>
+        <lastmod>2017-12-31T12:15:33.049Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/ArtxCode/</loc>
-        <lastmod>2017-12-31T09:09:06.079Z</lastmod>
+        <lastmod>2017-12-31T12:15:33.049Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/DeepLearning/</loc>
-        <lastmod>2017-12-31T09:09:06.079Z</lastmod>
+        <lastmod>2017-12-31T12:15:33.049Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/Coding/</loc>
-        <lastmod>2017-12-31T09:09:06.079Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/2017/</loc>
-        <lastmod>2017-12-31T09:30:20.150Z</lastmod>
+        <lastmod>2017-12-31T12:15:33.049Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -7,7 +7,7 @@
 
 <html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -112,7 +112,7 @@
 <meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/simpleNN.png">
 <meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Gradient%20Descent-i3.png">
 <meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/WX20171127-154242@2x.png">
-<meta property="og:updated_time" content="2017-12-31T09:09:06.079Z">
+<meta property="og:updated_time" content="2017-12-31T12:15:33.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DL笔记：梯度下降 Gradient Descent">
 <meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
@@ -174,7 +174,7 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script>
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -194,7 +194,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -280,22 +280,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
+        <li class="menu-item menu-item-search">
+          <a href="/search.xml" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            站点地图
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
+            搜索
           </a>
         </li>
       
@@ -480,8 +470,8 @@
 <p>为了求出 $\Delta w$，我们引入「误差项」$\delta$ ，它表示 <code>误差 * 激活函数的导数</code>。然后用「误差项」$\delta$ 乘上学习率 $\eta$ （用来调整梯度的大小），再乘上 x，就是每次应该调整的权重值 $\Delta w_{ij}$</p>
 <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/WX20171127-154242@2x.png" alt=""></p>
 <p><code>阿扣</code>：比如说，如果激活函数是 Sigmoid 函数。</p>
-<p>$$ f(h)=\frac {1}{1 + e^{−h}}<br>\<br>f’(h)=f(h)(1−f(h))<br>\<br>\Delta w_{ij}=\eta<em>(y_j-\hat y_j)</em>f(h)<em>(1−f(h))</em>x_i $$</p>
-<p>**<br>…… 咦？人呢？</p>
+<p>$$<br>f(h)=\frac {1}{1 + e^{−h}}<br>\<br>f’(h)=f(h)(1−f(h))<br>\<br>\Delta w_{ij}=\eta<em>(y_j-\hat y_j)</em>f(h)<em>(1−f(h))</em>x_i<br>$$</p>
+<p>…… 咦？人呢？</p>
 <p>喂！别跑，还有好几个知识点没讲呢！……</p>
 <h3 id="补充：求多个变量的偏导数"><a href="#补充：求多个变量的偏导数" class="headerlink" title="补充：求多个变量的偏导数"></a>补充：求多个变量的偏导数</h3><p>如果只有一个未知数，求梯度只需要计算导数。如果有多个变量，求梯度就需要计算偏导数。偏导数其实并不复杂，只需要掌握链式求导法则，就能进行大部分的计算。</p>
 <p>$$ \frac{\partial}{\partial w} p(q(w)) = \frac{\partial p}{\partial q}\frac{\partial q}{\partial w} $$</p>
@@ -1055,7 +1045,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
