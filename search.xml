@@ -195,7 +195,9 @@
 <p>为了求出 $\Delta w$，我们引入「误差项」$\delta$ ，它表示 <code>误差 * 激活函数的导数</code>。然后用「误差项」$\delta$ 乘上学习率 $\eta$ （用来调整梯度的大小），再乘上 x，就是每次应该调整的权重值 $\Delta w_{ij}$</p>
 <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/WX20171127-154242@2x.png" alt=""></p>
 <p><code>阿扣</code>：比如说，如果激活函数是 Sigmoid 函数。</p>
-<p>$$<br>f(h)=\frac {1}{1 + e^{−h}}<br>\<br>f’(h)=f(h)(1−f(h))<br>\<br>\Delta w_{ij}=\eta<em>(y_j-\hat y_j)</em>f(h)<em>(1−f(h))</em>x_i<br>$$</p>
+<p>$$ f(h)=\frac {1}{1 + e^{−h}} $$ </p>
+<p>$$ f’(h)=f(h)(1−f(h))$$ </p>
+<p>$$ \Delta w_{ij}=\eta<em>(y_j-\hat y_j)</em>f(h)<em>(1−f(h))</em>x_i $$</p>
 <p>…… 咦？人呢？</p>
 <p>喂！别跑，还有好几个知识点没讲呢！……</p>
 <h3 id="补充：求多个变量的偏导数"><a href="#补充：求多个变量的偏导数" class="headerlink" title="补充：求多个变量的偏导数"></a>补充：求多个变量的偏导数</h3><p>如果只有一个未知数，求梯度只需要计算导数。如果有多个变量，求梯度就需要计算偏导数。偏导数其实并不复杂，只需要掌握链式求导法则，就能进行大部分的计算。</p>
@@ -10938,11 +10940,11 @@ SONET optical fiber
             
             <tag> Note </tag>
             
-            <tag> Travel </tag>
-            
             <tag> 历史 </tag>
             
             <tag> 中欧 </tag>
+            
+            <tag> Travel </tag>
             
             <tag> 哥特式 </tag>
             
@@ -11013,11 +11015,11 @@ SONET optical fiber
             
             <tag> Note </tag>
             
-            <tag> Travel </tag>
-            
             <tag> 历史 </tag>
             
             <tag> 中欧 </tag>
+            
+            <tag> Travel </tag>
             
             <tag> 东正教 </tag>
             
@@ -11073,13 +11075,13 @@ SONET optical fiber
             
             <tag> Note </tag>
             
-            <tag> Travel </tag>
-            
             <tag> 历史 </tag>
             
             <tag> 中欧 </tag>
             
             <tag> 捷克 </tag>
+            
+            <tag> Travel </tag>
             
         </tags>
         
@@ -11119,13 +11121,13 @@ SONET optical fiber
             
             <tag> Note </tag>
             
-            <tag> Travel </tag>
-            
             <tag> 历史 </tag>
             
             <tag> 中欧 </tag>
             
             <tag> 奥地利 </tag>
+            
+            <tag> Travel </tag>
             
             <tag> 哈布斯堡王朝 </tag>
             
@@ -11155,13 +11157,13 @@ SONET optical fiber
             
             <tag> Note </tag>
             
-            <tag> Travel </tag>
-            
             <tag> 历史 </tag>
             
             <tag> 中欧 </tag>
             
             <tag> 捷克 </tag>
+            
+            <tag> Travel </tag>
             
         </tags>
         
@@ -11196,8 +11198,6 @@ SONET optical fiber
         
         <tags>
             
-            <tag> Travel </tag>
-            
             <tag> 历史 </tag>
             
             <tag> 中欧 </tag>
@@ -11209,6 +11209,8 @@ SONET optical fiber
             <tag> 捷克 </tag>
             
             <tag> 斯洛伐克 </tag>
+            
+            <tag> Travel </tag>
             
         </tags>
         
@@ -14080,9 +14082,9 @@ SONET optical fiber
             
             <tag> IxD </tag>
             
-            <tag> 交互设计 </tag>
-            
             <tag> Note </tag>
+            
+            <tag> 交互设计 </tag>
             
         </tags>
         
@@ -15555,9 +15557,9 @@ SONET optical fiber
             
             <tag> IxD </tag>
             
-            <tag> 交互设计 </tag>
-            
             <tag> Note </tag>
+            
+            <tag> 交互设计 </tag>
             
         </tags>
         
@@ -15942,9 +15944,9 @@ SONET optical fiber
             
             <tag> Design </tag>
             
-            <tag> 交互设计 </tag>
-            
             <tag> Note </tag>
+            
+            <tag> 交互设计 </tag>
             
             <tag> Interface </tag>
             
@@ -16499,9 +16501,9 @@ SONET optical fiber
         
         <tags>
             
-            <tag> Reading </tag>
-            
             <tag> Note </tag>
+            
+            <tag> Reading </tag>
             
         </tags>
         
