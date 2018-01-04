@@ -4,6 +4,70 @@
 
     
   <url>
+    <loc>http://uegeek.com/180104DeepLearning8-MultiLayer-Perceptrons.html</loc>
+    <lastmod>2018-01-04T09:46:48.893Z</lastmod>
+    <data>
+        <display>
+        <title>DeepLearning笔记：多节点神经网络</title>
+        <pubTime>2018-01-04T09:03:50.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>深度学习</tag>
+         
+        <tag>AI</tag>
+         
+        <tag>ArtxCode</tag>
+         
+        <tag>DeepLearning</tag>
+         
+        <tag>Coding</tag>
+         
+        <tag>神经网络</tag>
+         
+        <tag>线性代数</tag>
+         
+         
+           
+             
+              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/171226DLN7-GradientDescentinPython.html</loc>
+    <lastmod>2018-01-04T09:46:06.361Z</lastmod>
+    <data>
+        <display>
+        <title>DL笔记：用 python 实现梯度下降的算法</title>
+        <pubTime>2017-12-26T01:28:42.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>深度学习</tag>
+         
+        <tag>AI</tag>
+         
+        <tag>ArtxCode</tag>
+         
+        <tag>DeepLearning</tag>
+         
+        <tag>Coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/171222DLN6-GradientDescent.html</loc>
     <lastmod>2017-12-31T12:25:56.385Z</lastmod>
     <data>
@@ -68,36 +132,6 @@
            
              
               <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/171226DLN7-GradientDescentinPython.html</loc>
-    <lastmod>2017-12-27T01:40:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>DL笔记：用 python 实现梯度下降的算法</title>
-        <pubTime>2017-12-26T01:28:42.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>深度学习</tag>
-         
-        <tag>AI</tag>
-         
-        <tag>ArtxCode</tag>
-         
-        <tag>DeepLearning</tag>
-         
-        <tag>Coding</tag>
-         
-         
-           
-             
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
           
         </display>
     </data>
