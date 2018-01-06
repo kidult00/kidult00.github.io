@@ -4,6 +4,58 @@
 
     
   <url>
+    <loc>http://uegeek.com/180106-the-learning-myth.html</loc>
+    <lastmod>2018-01-06T08:55:50.908Z</lastmod>
+    <data>
+        <display>
+        <title>大哉问05 - 什么是学习中最大的误区？</title>
+        <pubTime>2018-01-06T08:50:08.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+        <tag>大哉问</tag>
+         
+        <tag>学习</tag>
+         
+        <tag>方法</tag>
+         
+         
+           
+             
+              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/171223-Why-Learn-Programming.html</loc>
+    <lastmod>2018-01-06T08:54:20.279Z</lastmod>
+    <data>
+        <display>
+        <title>大哉问04 - 为什么要学编程？</title>
+        <pubTime>2017-12-23T07:56:13.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+        <tag>大哉问</tag>
+         
+        <tag>Coding</tag>
+         
+        <tag>编程</tag>
+         
+         
+           
+             
+              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/180104DeepLearning8-MultiLayer-Perceptrons.html</loc>
     <lastmod>2018-01-04T09:46:48.893Z</lastmod>
     <data>
@@ -3233,9 +3285,9 @@
         
         <tag>Note</tag>
          
-        <tag>可视化</tag>
-         
         <tag>Information design</tag>
+         
+        <tag>可视化</tag>
          
          
            
@@ -4129,9 +4181,9 @@
         
         <tag>Note</tag>
          
-        <tag>learning</tag>
-         
         <tag>学习</tag>
+         
+        <tag>learning</tag>
          
          
            
