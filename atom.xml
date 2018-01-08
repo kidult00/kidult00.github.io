@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-01-06T08:55:50.908Z</updated>
+  <updated>2018-01-08T09:30:46.507Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>码以致用01 - Scrapy 爬虫框架简介</title>
+    <link href="http://uegeek.com/180108python-scrapy-introduction.html"/>
+    <id>http://uegeek.com/180108python-scrapy-introduction.html</id>
+    <published>2018-01-08T09:26:12.000Z</published>
+    <updated>2018-01-08T09:30:46.507Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/robot_rock_dribbble.jpg" alt=""></p><a id="more"></a> <h2 id="Scrapy-是什么"><a href="#Scrapy-是什么" class="headerlink" title="Scrapy 是什么"></a>Scrapy 是什么</h2><p><img src="https://scrapy.org/img/scrapylogo.png" alt=""></p><p>Scrapy 是一个为了爬取网站数据，提取结构性数据而编写的应用框架。可以应用在包括数据挖掘，信息处理或存储历史数据等程序中。</p><h2 id="Scrapy-的结构"><a href="#Scrapy-的结构" class="headerlink" title="Scrapy 的结构"></a>Scrapy 的结构</h2><p>Scrapy 的结构如下：</p><p><img src="https://doc.scrapy.org/en/latest/_images/scrapy_architecture_02.png" alt=""><br>via <a href="https://docs.scrapy.org/en/latest/topics/architecture.html" target="_blank" rel="noopener">Architecture Overview - Scrapy 1.5.0</a></p><p>在 Scrapy 中数据流是这样的：</p><ol><li>引擎从爬虫(Spider)获得初始抓取请求</li><li>引擎在 Scheduler 中安排好请求，获取下一个抓取请求</li><li>Scheduler 返回下一个抓取请求</li><li>引擎通过 Downloader 的 Middlewares 发送请求到 Downloader</li><li>完成页面下载后，Downloader 生成请求并通过 Middlewares 发送给引擎的</li><li>引擎接收来自 Downloader 的响应，通过 Spider Middlewares 发送给 Spider 处理</li><li>Spider 处理请求并返回爬取内容，向引擎提交下一个请求</li><li>引擎发送爬取内容到 Item Pipelines，然后发送处理请求到 Scheduler，获取下一个爬取请求</li><li>重复 1-8 步，直到没有新的请求</li></ol><h2 id="安装-Scrapy"><a href="#安装-Scrapy" class="headerlink" title="安装 Scrapy"></a>安装 Scrapy</h2><h3 id="新建-Python-虚拟环境"><a href="#新建-Python-虚拟环境" class="headerlink" title="新建 Python 虚拟环境"></a>新建 Python 虚拟环境</h3><p>比如用 <code>conda</code>，也可以用 <code>virtualenv</code> （参考：<a href="https://virtualenv.pypa.io/en/stable/installation/" target="_blank" rel="noopener">virtualenv installation instructions</a>)</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n &#123;env_name&#125; &#123;list of packages&#125;</span><br></pre></td></tr></table></figure><p>上面的命令中，<code>env_name</code> 是用来折腾爬虫的项目环境名称，<code>list of package</code>是要一起安装的包，如 <code>scrapy</code>，<code>pandas</code>。</p><p>我新建了一个叫 <code>pyp</code> 的环境，打开这 Python 环境的命令是：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> activate pyp</span><br></pre></td></tr></table></figure><p>如果你使用 <code>zsh</code>，可以在 <code>zshrc</code> 文件里面新建 alias，并 <code>source ~/.zshrc</code> 保存生效，下次就可以用别名快捷打开这个环境了。</p><h3 id="安装-Scrapy-1"><a href="#安装-Scrapy-1" class="headerlink" title="安装 Scrapy"></a>安装 Scrapy</h3><p>通过 <code>pip</code> 安装很方便</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Scrapy</span><br></pre></td></tr></table></figure><h3 id="新建-scrapy-项目"><a href="#新建-scrapy-项目" class="headerlink" title="新建 scrapy 项目"></a>新建 scrapy 项目</h3><p>进入存放项目的目录，用命令新建一个爬虫项目：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject &#123;name&#125;</span><br></pre></td></tr></table></figure><p>新建好以后，可以看到起名为 lyrics 的爬虫项目，生成了以下目录和文件：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">├── lyrics</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── __pycache__</span><br><span class="line">│   ├── items.py</span><br><span class="line">│   ├── middlewares.py</span><br><span class="line">│   ├── pipelines.py</span><br><span class="line">│   ├── settings.py</span><br><span class="line">│   └── spiders</span><br><span class="line">│       ├── __init__.py</span><br><span class="line">│       └── __pycache__</span><br><span class="line">└── scrapy.cfg</span><br><span class="line"></span><br><span class="line">4 directories, 7 files</span><br></pre></td></tr></table></figure><p>对照上面介绍的 Scrapy 引擎的结构，可以大概知道每个文件的作用。</p><p>下一篇我们尝试用 Scrapy 抓取一些简单的网页内容。</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li><a href="https://docs.scrapy.org/en/latest/index.html" target="_blank" rel="noopener">Scrapy 1.5 documentation</a></li><li><a href="https://zhuanlan.zhihu.com/p/24669128" target="_blank" rel="noopener">Scrapy爬虫框架教程（一）– Scrapy入门</a></li><li><a href="https://virtualenv.pypa.io/en/stable/installation/" target="_blank" rel="noopener">virtualenv installation instructions</a></li></ul><h3 id="你可能会感兴趣"><a href="#你可能会感兴趣" class="headerlink" title="你可能会感兴趣"></a>你可能会感兴趣</h3><ul><li><a href="http://www.uegeek.com/171226DLN7-GradientDescentinPython.html" target="_blank" rel="noopener">DL笔记：用 python 实现梯度下降的算法</a></li><li><a href="http://www.uegeek.com/170929-DSNote3-NumPy-basic.html" target="_blank" rel="noopener">菜鸟数据科学入门03 - NumPy 数组基础和基本操作</a></li><li><a href="http://www.uegeek.com/coding-concepts.html" target="_blank" rel="noopener">设计师学编程 - 那些绕不过的概念</a></li><li><a href="http://www.uegeek.com/learngit.html" target="_blank" rel="noopener">多用Git少交税</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/robot_rock_dribbble.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+    
+    
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
+    
+      <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
+    
+      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="爬虫" scheme="http://uegeek.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="Scrapy" scheme="http://uegeek.com/tags/Scrapy/"/>
+    
+  </entry>
   
   <entry>
     <title>大哉问05 - 什么是学习中最大的误区？</title>
@@ -570,34 +600,6 @@
       <category term="HackYourself" scheme="http://uegeek.com/tags/HackYourself/"/>
     
       <category term="创业" scheme="http://uegeek.com/tags/%E5%88%9B%E4%B8%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法作曲历险记01-简史</title>
-    <link href="http://uegeek.com/170713-algorithmic-composition-1.html"/>
-    <id>http://uegeek.com/170713-algorithmic-composition-1.html</id>
-    <published>2017-07-13T01:03:19.000Z</published>
-    <updated>2017-07-15T01:25:43.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/technocombat_ilu_800x600.jpg" alt=""></p><a id="more"></a> <h3 id="AC-和-AC"><a href="#AC-和-AC" class="headerlink" title="AC 和 AC"></a>AC 和 AC</h3><p>Art &amp; Code （AC）是 00 新开的坑，记录对一个陌生但好玩的领域的学习历程。算法作曲(Algorithmic Composition) 是 AC 中的 1 号 AC 坑……欢迎围观我在大雾中摸索、游荡。也欢迎老司机帮我带带路~</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/ACACAC-illustrate.jpg" alt=""></p><p>算法作曲 顾名思义，不是由人来作曲，而是经由设定好的算法，通过机器自动生成乐曲。</p><p>先别震惊，也别反感。我并不觉得机器会威胁人在音乐、艺术创造领域的优势。之所以研究算法作曲，纯粹出于对这两个领域的兴趣 —— 尤其是两个看似矛盾、对立的领域，碰撞在一起，一定有很嗨的火花吧！</p><blockquote><p>音乐虽然在表象上是流动音响的时间艺术，然而，从其基础理论设计与数学逻辑同构并进行符号化组织的角度来看，似乎没有任何一门艺术，天生能比音乐拥有更强的可计算性。 ​​​​<br>——黄雷基 <a href="https://mp.weixin.qq.com/s?__biz=MzA3Mjk0MTcyNg==&amp;mid=2649683495&amp;idx=1&amp;sn=18d9af0062b25b6f090bd291d2b4ffc7&amp;mpshare=1&amp;scene=1&amp;srcid=0624qKxE2leEZXU59q4k3vku&amp;key=51ed750aa8560dbf88c430bde4d013799282dbe39aca0f765f6ea94e75f43f04e7f3d2939f531de5d7e753b15c619173871930a2d3ce47bcf41660187643f6b1fe9b8aff79371fd8a771f3d1fa3693dd&amp;ascene=0&amp;uin=MTMyNjgw&amp;devicetype=iMac+MacBook8%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="noopener">算法作曲的前世、今生和未来——回溯</a>)</p></blockquote><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/robot_rock_dribbble.jpg" alt=""></p><p>站在坑口大概往里看了一眼，真是深不见底啊！基础乐理得学吧，作曲知识得学吧， DSP 得略懂一些吧，算法大概得了解吧，机器学习/深度学习得看看吧，工具和软件得试着用吧，前沿的项目得研究下吧……</p><p>一把年纪了怎么这么想不开？大概是年纪大了，更加觉得应该多花些时间在（起码看起来）好玩的事情上面呢！</p><p>系列第一篇，一起来回顾一下算法作曲并不长的历史。</p><h3 id="算法作曲简史"><a href="#算法作曲简史" class="headerlink" title="算法作曲简史"></a>算法作曲简史</h3><p>1952 年，28 岁的列哈伦•希勒（Lejaren Hiller􏶃）告别了杜邦公司，怀揣一大笔奖金重返校园。在美国伊利诺伊大学，这位 23 岁就拿到博士学位的化学家，开始了对合成橡胶的研究。</p><p><img src="http://www.musicainformatica.it/wp-content/uploads/2013/06/Lejaren_Arthur_Hiller_composer_holding_score.jpg" alt=""></p><p>也正是在同一年，第一台完全由美国大学研发的冯•诺伊曼式计算机 Illiac 正式亮相伊利诺伊大学。</p><p><img src="http://2.bp.blogspot.com/-a8PLqfvNuLQ/UKHtOgivzRI/AAAAAAAAAE4/PYUGVS7mV68/s1600/illiac1.png" alt=""></p><p>得天独厚的希勒得以接触到电子计算机，并用它来计算统计意义上理想聚合分子的大小。他无意中发现，如果将控制变量由几何数变为音符，同样的计算机代码可以用于对位法谱曲。一向对音乐颇有兴趣的希勒开始不务正业，试着利用计算机来谱曲，他不仅在闲暇时间开始攻读音乐硕士学位，还把自己的助手——化学师里奥纳德•艾撒克逊（􏹴􏹵􏰉􏻺􏹛Leonard Isaacson）一同拉下了水。</p><p><img src="http://s7.computerhistory.org/is/image/CHM/500004127-03-01?$re-medium$" alt=""></p><p>1956年，在美国计算机协会（ACM）的一次会议上，希勒做了一场关于计算机创作音乐的报告。听众的反应不一，有趣的是，计算机专家们大多对此持非常开放的态度，音乐家们则显得更为谨慎，而很多其他领域的学者们却认为他完全是在胡说八道。</p><p>不管怎样，希勒的第一个作品在 1957 年诞生。</p><p>为了纪念用来作曲的计算机 Illiac，他为这支弦乐四重奏取名「依利亚克组曲」（Illiac Suite），这也是历史上第一支完全由计算机生成的音乐作品。他们基于产生——测试的方法创作，首先使用 Markov 链模型来产生有限控制的随机音符，之后利用和声与复调的规则测试这些音符，最后选择符合规则的材料，修改、组合成传统音乐记谱的弦乐四重奏。</p><p><img src="http://blogs.diariovasco.com/bigbang/files/IlliacSuiteexperimento1br.jpg" alt=""></p><p>【找乐曲】</p><p><a href="http://www.musicainformatica.org/topics/illiac-suite.php" target="_blank" rel="noopener">该作品分为四个乐章</a>：</p><ul><li>第一乐章：计算机生成的不同长度的固定主题旋律</li><li>第二乐章：使用变奏的规则生成的四声部音乐</li><li>第三乐章：通过计算机对节奏、动态和演奏法的不同处理生成的音乐</li><li>第四乐章：通过衍生算法和马尔科夫链的不同模型及概率生成的音乐</li></ul><p>希勒从此彻底投入计算机音乐创作的怀抱，他转入音乐系任教，成立实验性的音乐工作室。</p><p>随后希勒又开拓了他的很多个「第一次」，如最先进行乐谱打印，最早使用物理模型合成技术等，创作了「算法」系列，「计算机康塔塔」，「HPSCHD」等一系列计算机作曲的音乐作品。</p><p>从此之后，在计算机快速发展的黄金年代，算法作曲也在世界各地的领域先驱们推动下快速发展。</p><p>1960 年，俄罗斯研究者 R.Kh.Zaripov 发行了全世界第一篇关于用「Ural-1」计算机进行算法音乐作曲的论文 <a href="http://adsabs.harvard.edu/abs/1960SPhD....5..479Z" target="_blank" rel="noopener">An Algorithmic Description of a Process of Musical Composition</a>。</p><p>1960 年，法国工程师、作曲家 Pierre Barbaud 成为欧洲第一个使用计算机作曲的作曲家。</p><p><img src="http://www.associationpierrebarbaud.fr/barbaud_portrait_AClaass.jpg" alt=""></p><p>他创作了「7!」，在有限状态机 (Finite State Automata) 和随机矩阵 (Stochastic Matrices) 的帮助下，将一系列规则运用到 12 音体系中，以此为调性和序列音乐风格建模。</p><p>1965年，发明家 Ray Kurzweil 首次公演了一首用计算机来创作的钢琴作品，这台计算机能够对各种不同的乐曲进行模式识别，并且可以分析和使用这些模式去创造新的旋律。</p><p>1974年，第一次国际计算机音乐会议召开（ICMC）。</p><p>随着计算机相关技术的发展和普及，越来越多的人关注到这个科技与艺术奇妙结合的领域，于是在那个新生流派争奇斗艳的先锋实验年代，各式各样的作曲算法涌现出来。</p><p>然而直到美国作曲家大卫·科普(David  Cope) 开发的「音乐智能实验」系统(Experiments in Musical Intelligence，简称 EMI，1981 年开始研究) ，1987 年在国际计算机音乐年会上第一次公开展示初期成果那时起，计算机音乐与传统音乐之间的桥梁才逐渐架设起来。</p><p><img src="http://50years.ucsc.edu/css/assets/images/posts/fourth-decade/1995-david-cope.jpg" alt=""></p><p><img src="http://www.computerhistory.org/atchm/wp-content/uploads/2015/04/MI0000985908-BachByDesign.jpg" alt=""></p><p>Cope 最初只想编写一个能够描述自己作曲风格的计算机程序，并用来记录自己作品的发展轨迹，不过很快他将目标转向了那些已故大师们，希望能用软件创造出带有不同大师风格的音乐作品。该系统所采取的方法涉及音乐文法和建立风格数据库等， Cope 将这样的工作称为 recombinancy —— 在现存的音乐上加入新的、符合原有逻辑的演绎，从而创造出新的作品。</p><p>比如 David Cope 用 EMI 创作的维瓦尔第风格的十二首管弦乐作品：「星座」。下面将要听到的这首是 「金牛座」（视频也是用算法自动生成的）</p><div class="video-container"><iframe src="//www.youtube.com/embed/2kuY3BrmTfQ" frameborder="0" allowfullscreen></iframe></div><p>1993年，美国科学家 John Al Biles 运用交互式遗传算法，设计了名为 GenJam 的交互式创作演奏系统。该系统能在现场演奏者的 4 或 8 小节演奏后单独生成一个类似风格的新旋律，也能与演奏者进行合奏，在演奏者演奏的同时生成并演奏一个新旋律。</p><p><img src="http://2.bp.blogspot.com/-naDY6-Sc_hU/Upgx1HgAJMI/AAAAAAAAAHg/ihtsVmHgkp0/s1600/genjam.png" alt=""></p><p>随着计算机制谱、乐器数字接口、信号处理、声音分析等技术的研究和应用逐渐兴起和深入，计算机音乐已经成为一个跨学科、跨媒介、跨文化的艺术形式和科学领域。</p><p>这么好玩的坑，要入吗？</p><h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul><li>倪朝晖. (2015). 算法作曲理论与实践. 西南师范大学出版社</li><li><a href="https://mp.weixin.qq.com/s?__biz=MzA3Mjk0MTcyNg==&amp;mid=2649683495&amp;idx=1&amp;sn=18d9af0062b25b6f090bd291d2b4ffc7&amp;mpshare=1&amp;scene=1&amp;srcid=0624qKxE2leEZXU59q4k3vku&amp;key=51ed750aa8560dbf88c430bde4d013799282dbe39aca0f765f6ea94e75f43f04e7f3d2939f531de5d7e753b15c619173871930a2d3ce47bcf41660187643f6b1fe9b8aff79371fd8a771f3d1fa3693dd&amp;ascene=0&amp;uin=MTMyNjgw&amp;devicetype=iMac+MacBook8%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="noopener">算法作曲的前世、今生和未来——回溯</a>)</li><li><a href="http://www.musicainformatica.org/topics/illiac-suite.php" target="_blank" rel="noopener">Illiac Suite | musicainformatica.org</a></li><li>Hoffmann, P. (2009). Music Out of Nothing? A Rigorous Approach to Algorithmic Composition by Iannis Xenakis. <a href="https://doi.org/http://dx.doi.org/10.14279/depositonce-2292" target="_blank" rel="noopener">https://doi.org/http://dx.doi.org/10.14279/depositonce-2292</a></li><li><a href="https://ccrma.stanford.edu/~blackrse/algorithm.html" target="_blank" rel="noopener">The History of Algorithmic Composition</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/technocombat_ilu_800x600.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-    
-    
-      <category term="AlgorithmicComposition" scheme="http://uegeek.com/tags/AlgorithmicComposition/"/>
-    
-      <category term="算法作曲" scheme="http://uegeek.com/tags/%E7%AE%97%E6%B3%95%E4%BD%9C%E6%9B%B2/"/>
-    
-      <category term="Art" scheme="http://uegeek.com/tags/Art/"/>
-    
-      <category term="Code" scheme="http://uegeek.com/tags/Code/"/>
     
   </entry>
   

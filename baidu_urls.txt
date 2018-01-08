@@ -1,1 +1,1 @@
-http://uegeek.com/180106-the-learning-myth.html
+http://uegeek.com/180108python-scrapy-introduction.html
