@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/180112python-scrapy-jdxl.html</loc>
+        <lastmod>2018-01-12T11:36:54.071Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://uegeek.com/180108python-scrapy-introduction.html</loc>
         <lastmod>2018-01-08T09:30:46.507Z</lastmod>
         <changefreq>weekly</changefreq>
