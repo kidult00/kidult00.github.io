@@ -632,14 +632,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E4%B8%AD%E6%AC%A7/</loc>
+        <loc>http://uegeek.com/tags/Travel/</loc>
         <lastmod>2016-08-06T02:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Travel/</loc>
+        <loc>http://uegeek.com/tags/%E4%B8%AD%E6%AC%A7/</loc>
         <lastmod>2016-08-06T02:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1095,35 +1095,35 @@
 
     <url>
         <loc>http://uegeek.com/tags/Python/</loc>
-        <lastmod>2018-01-12T11:36:54.071Z</lastmod>
+        <lastmod>2018-01-12T11:41:02.009Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/Coding/</loc>
-        <lastmod>2018-01-12T11:36:54.071Z</lastmod>
+        <lastmod>2018-01-12T11:41:02.009Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/</loc>
-        <lastmod>2018-01-12T11:36:54.071Z</lastmod>
+        <lastmod>2018-01-12T11:41:02.009Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E7%88%AC%E8%99%AB/</loc>
-        <lastmod>2018-01-12T11:36:54.071Z</lastmod>
+        <lastmod>2018-01-12T11:41:02.009Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/Scrapy/</loc>
-        <lastmod>2018-01-12T11:36:54.071Z</lastmod>
+        <lastmod>2018-01-12T11:41:02.009Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
