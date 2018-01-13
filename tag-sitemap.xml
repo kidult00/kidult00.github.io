@@ -765,13 +765,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Learning/</loc>
-        <lastmod>2016-09-25T23:56:46.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/tags/%E6%8B%96%E5%BB%B6/</loc>
         <lastmod>2016-10-24T00:58:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1066,34 +1059,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/HackYourself/</loc>
-        <lastmod>2018-01-06T08:55:50.908Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E5%A4%A7%E5%93%89%E9%97%AE/</loc>
-        <lastmod>2018-01-06T08:55:50.908Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E5%AD%A6%E4%B9%A0/</loc>
-        <lastmod>2018-01-06T08:55:50.908Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E6%96%B9%E6%B3%95/</loc>
-        <lastmod>2018-01-06T08:55:50.908Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/tags/Python/</loc>
         <lastmod>2018-01-12T11:41:02.009Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1124,6 +1089,41 @@
     <url>
         <loc>http://uegeek.com/tags/Scrapy/</loc>
         <lastmod>2018-01-12T11:41:02.009Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Learning/</loc>
+        <lastmod>2018-01-13T11:39:40.390Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/HackYourself/</loc>
+        <lastmod>2018-01-13T11:40:33.860Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E5%A4%A7%E5%93%89%E9%97%AE/</loc>
+        <lastmod>2018-01-13T11:40:33.860Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-01-13T11:40:33.860Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E6%96%B9%E6%B3%95/</loc>
+        <lastmod>2018-01-13T11:40:33.860Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

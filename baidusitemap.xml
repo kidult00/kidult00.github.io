@@ -4,6 +4,80 @@
 
     
   <url>
+    <loc>http://uegeek.com/180113-first-principle-of-learning.html</loc>
+    <lastmod>2018-01-13T11:40:33.860Z</lastmod>
+    <data>
+        <display>
+        <title>大哉问06 - 学习中最应该养成什么习惯？</title>
+        <pubTime>2018-01-13T11:35:45.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+        <tag>大哉问</tag>
+         
+        <tag>学习</tag>
+         
+        <tag>方法</tag>
+         
+         
+           
+             
+              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/learning-guide-v1.html</loc>
+    <lastmod>2018-01-13T11:39:40.390Z</lastmod>
+    <data>
+        <display>
+        <title>知识炼金术士行动指南 1.0</title>
+        <pubTime>2016-09-25T23:30:24.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+        <tag>学习</tag>
+         
+        <tag>Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/learning-about-learn.html</loc>
+    <lastmod>2018-01-13T11:39:28.704Z</lastmod>
+    <data>
+        <display>
+        <title>重启学习系统，做个知识炼金术士</title>
+        <pubTime>2016-09-21T23:30:02.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+        <tag>学习</tag>
+         
+        <tag>Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/180112python-scrapy-jdxl.html</loc>
     <lastmod>2018-01-12T11:41:02.009Z</lastmod>
     <data>
@@ -1384,28 +1458,6 @@
 
     
   <url>
-    <loc>http://uegeek.com/learning-about-learn.html</loc>
-    <lastmod>2016-09-25T23:56:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>重启学习系统，做个知识炼金术士</title>
-        <pubTime>2016-09-21T23:30:02.000Z</pubTime>
-        
-        <tag>HackYourself</tag>
-         
-        <tag>Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://uegeek.com/ux-in-vr.html</loc>
     <lastmod>2016-09-25T23:53:02.000Z</lastmod>
     <data>
@@ -1419,28 +1471,6 @@
            
              
               <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/learning-guide-v1.html</loc>
-    <lastmod>2016-09-25T23:40:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>知识炼金术士行动指南 1.0</title>
-        <pubTime>2016-09-25T23:30:24.000Z</pubTime>
-        
-        <tag>HackYourself</tag>
-         
-        <tag>Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
           
         </display>
     </data>
@@ -4093,9 +4123,9 @@
          
         <tag>设计</tag>
          
-        <tag>服务设计</tag>
-         
         <tag>service design</tag>
+         
+        <tag>服务设计</tag>
          
          
            

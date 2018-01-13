@@ -7,6 +7,30 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/180113-first-principle-of-learning.html</loc>
+        <lastmod>2018-01-13T11:40:33.860Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/learning-guide-v1.html</loc>
+        <lastmod>2018-01-13T11:39:40.390Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/learning-about-learn.html</loc>
+        <lastmod>2018-01-13T11:39:28.704Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://uegeek.com/180112python-scrapy-jdxl.html</loc>
         <lastmod>2018-01-12T11:41:02.009Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -447,24 +471,8 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/learning-about-learn.html</loc>
-        <lastmod>2016-09-25T23:56:46.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://uegeek.com/ux-in-vr.html</loc>
         <lastmod>2016-09-25T23:53:02.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/learning-guide-v1.html</loc>
-        <lastmod>2016-09-25T23:40:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

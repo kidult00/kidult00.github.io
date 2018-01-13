@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[大哉问06 - 学习中最应该养成什么习惯？]]></title>
+    <url>%2F180113-first-principle-of-learning.html</url>
+    <content type="text"><![CDATA[上一篇大哉问我们讨论了这个问题：什么是学习中最大的误区？ 以为学习的行动，就是学习本身 学习是以改变为目的的一系列探索活动。如果改变没有发生，没有形成新的视角或行动或规则，那么学习基本上可以说无效。 明确了应该避开「不改变」这个误区，那么下一个大问题来了： 什么是学习中最应该养成的习惯？ 00 思考了很久，目前的回答是： 学习是一种训练学习不是看书、做实验这些行为本身，学习是围绕目标和薄弱点的「训练」，它们指向思想或行动的改变。 学习不是孤立的阅读、孤立的理解、孤立的运用，一个学习的「迭代」包括： 设定目标 - 模块拆解 - 刻意练习 - 评估调整 完整的学习由很多个迭代循环构成，迭代的结果是行为改变。 向机器学习「学习」最近在学习机器学习和深度学习。机器如何学习给我非常多启发。 机器的学习为什么高效？除了它计算能力超强、根本不会疲劳以外，它们学习的方法——所谓算法——都是最聪明的人类精心设计的。 深度学习的基本思路是： 设定目标 Y 找到真实数据集（包含自变量 x 和输出值 y） 给出初始模型，喂入真实数据集 观察模型输出的损失（目标 Y 和实际值 y 的差值） 调整模型参数，使损失函数最小 （重复循环） 达到目标 Y ，停止训练 再打开「刻意练习」这本书复习一下。 刻意练习聚焦于提高绩效和表现，它的特点： 有定义明确的特定目标 专注的 包含反馈 需要走出舒适区 产生有效的心理表征 构建或修改那些过去已经获得的技能 See? 机器学习完全遵守了这些规则，能不高效吗？！ GEXTE ：学习循环的模板事不宜迟，在我们下一个学习计划，启用 00 为你准备的「GEXTE 学习循环模板」吧！ 在定义一个学习项目时，我们需要把学习的循环拆分成几个部分： 目标是什么？怎么评估做到了？可以拆分为哪些训练模块？模仿什么？训练步骤是？ 代号 循环项 定义 每次循环时 G 目标 / Goal 明确可描述的目标，从现状 A 到终点 B 回顾目标 E 评估方法 / Error 如何评估是否达成目标 获得反馈 X 技能模块 / X 影响 Error 的模块、技能点 检查是否有遗漏 T 模仿对象 / Target 具体的模仿对象和结果 比较的结果差别 E 单次训练 / Epoch 每一次训练要做什么 调整行动或目标 可打印的模板也做好了。HackYourself 公众号回复 「学习模板」即可获得： 看吧，学习是远比我们想象要复杂但也更有趣的挑战。不妨在每个循环后面，增加一些奖励来激励自己。 虽然正儿八经地学个什么颇费力，但总比数十年喊着口号却原地打转强得多，是不是？ 下面来看两个例子：编程学习和产品决策能力训练。 栗子1：学习用 Processing 模拟自然现象Processing 是基于 Java 的一套编程语言和环境，有很强的图形、动画生成能力，被称为「设计师的编程语言」。现在我们就来尝试用 GEXTE 模板定义完整的学习循环。 G 目标 目标1：学习如何用代码可视化表达随机性、力与运动、震荡、粒子、分形等自然现象 现状 A 不了解模拟自然现象的算法 不知道如何用 Processing 实现 终点 B 能用基础的公式表示自然现象背后的数学和物理原理 用 Processing 实现动画程序 目标2：练习巩固 Python 语法 现状 A 会基本的 Python 语法 能看懂简单的 Java 程序 终点 B：用 Python 实现 Processing 动画程序 E 评估用 processing.py 实现模拟自然现象的动画程序 程序运行结果是否如预期 抄程序：Java 没问题但 Python 有问题的地方，是需要加强的薄弱点 重写程序 是否理解原理 是否理解 Processing 如何实现 是否理清实现的思路 X 模块 自然现象的原理 Processing 语法和模块 Python 语法 debug 方法 T 对象「The Nature of Code」配套视频和例子 E 训练 看 youtube 视频和书，学习自然现象的原理 看 Java 代码 用 Python 抄一遍 用 Python 自己写一遍 填写训练反馈 完成 9 个单元，把所有例子翻译成 python 版本 Bonus 上传 NOC python version 到 Github 每一章实现一个有意思的小动画 上面这个例子可能比较特殊，因为学习对象是界定非常明确的编程练习，学习产出也容易评估。 下面再举一个不太容易定义的例子。 栗子2：产品决策能力训练G 目标提升决策的质量并优化决策的流程 E 评估决策是否达到预期目标 X 模块 逻辑思维、抽象、演绎、分析、综合等能力 决策信息的收集 提炼、表达和沟通能力 决策落地 评估标准制定和信息收集 T 对象 自己的决策：拥有最全面的信息，方便评估 上级/团队的决策：观察、评估上级或团队的决策，也是绝佳的练习机会 E 训练 决策问题产生和定义 情报收集和分析 决策制定和描述 推进和项目组织 结果评估 决策方法总结 每一步可能还有很多细分的练习模块，这里就不具体展开，产品同学们开启脑洞吧。 最后 打造有效的学习循环很难，几乎就像是打造一个产品循环。 这也就是为什么学习容易成为西西弗斯式壮（xiao）举（hua）的原因。因为富有成效的学习，太不符合大脑喜欢最短路径的构造，所以我们总是自欺自人。 但总有一些奖赏，要在经历之后才深明其义。 One of the first rules of science is if somebody delivers a secret weapon to you, you better use it. — Herbert Simon HackYourself 学习专题： 大哉问05 - 什么是学习中最大的误区？ 重启学习系统，做个知识炼金术士 知识炼金术士行动指南 1.0 心智乐高01 - 寻找智慧组块 别傻了，傲娇大脑爱学习？]]></content>
+      <categories>
+        <category>叽歪</category>
+      </categories>
+      <tags>
+        <tag>HackYourself</tag>
+        <tag>大哉问</tag>
+        <tag>学习</tag>
+        <tag>方法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[码以致用02 - 用 Scrapy 爬虫抓取简单心理咨询师资料]]></title>
     <url>%2F180112python-scrapy-jdxl.html</url>
     <content type="text"><![CDATA[目标和步骤爬虫目标：从简单心理网站上抓取心理咨询师列表和信息。 学习目标： 熟悉 Scrapy 框架，理解如何使用 初步掌握 xpath 语法 导出爬取信息为 csv 用 Pandas 查看和清理数据 简单心理网站上有「咨询咨询」和「精神科顾问」两类专家，这里先尝试抓取咨询师资料。 咨询师展示列表比较简单，一共有 49 页，每页有 10 或 11 个咨询师（真是有点坑……）。抓取每页上的信息即可。 步骤分解： 抓取每一页上面所有咨询师的信息，包括姓名、简介、地点、咨询方式、地点、价格等 按页面顺序抓取全部咨询师资料 导出信息为 csv 用 pandas 查看信息 新建项目和爬虫上一篇已经介绍过 Scrapy 爬虫框架和如何新建 Python 虚拟环境。现在来新建一个 Scrapy 爬虫项目： 1scrapy startproject jdxl Scrapy 生成了以下文件 123456789├── jdxl│ ├── __init__.py│ ├── items.py│ ├── middlewares.py│ ├── pipelines.py│ ├── settings.py│ └── spiders│ └── __init__.py└── scrapy.cfg 我们在 spiders 文件夹里新建爬虫文件 counselor.py。 然后在 items.py 里面定义要抓取的项目： 123456789class JdxlItem(scrapy.Item): # define the fields for your item here like: # name = scrapy.Field() name = scrapy.Field() #姓名 url = scrapy.Field() #链接 info = scrapy.Field() #简介 zx_type = scrapy.Field() #咨询类型 location = scrapy.Field() #地点 price = scrapy.Field() #价格 抓取页面信息打开爬虫 counselor.py，开始写爬取的程序。 不要忘记先 import 上面定义好对象： 1from jdxl.items import JdxlItem 问题1：如何设置起始 URL？打开心理咨询师列表页面，然后翻到第二页，发现 url 是很长的一串： 1https://www.jiandanxinli.com/experts?filter%5Bcity_id%5D=&amp;filter%5Bfield_id%5D=&amp;filter%5Bgender%5D=&amp;filter%5Bonly_available%5D=&amp;filter%5Bonly_junior%5D=&amp;filter%5Bonly_online%5D=&amp;filter%5Bprice%5D=&amp;filter%5Bq%5D=&amp;filter%5Bsect_id%5D=&amp;filter%5Btarget_id%5D=&amp;filter%5Btime%5D=&amp;filter%5Btype_id%5D=&amp;page=2 中间都是传递的筛选参数，只有最后 &amp;page=2 才是关键。也就是说抓取的页面URL是这样的： 1234https://www.jiandanxinli.com/experts?&amp;page=1https://www.jiandanxinli.com/experts?&amp;page=2...https://www.jiandanxinli.com/experts?&amp;page=49 在 class JdxlSpider(scrapy.Spider): 下面开始定义起始 URL： 12345678allowed_domains = ["jiandanxinli.com"] start_urls = ['http://jiandanxinli.com/experts'] start_url_list = [] for i in range(1,50): start_url_list.extend(['http://jiandanxinli.com/experts?&amp;page=' + str(i)]) start_urls = start_url_list 问题2：如何抓取一个节点的信息在 def parse(self, response): 函数中定义要抓取内容，用 XPath 语法告诉爬虫要抓取的节点位置。 什么是「叉怕死」呢？ XPath (XML Path Language) is a query language for selecting nodes from an XML document. In addition, XPath may be used to compute values (e.g., strings, numbers, or Boolean values) from the content of an XML document. —— Wiki 那怎么写 XPath 呢？ 感谢 Chrome，直接提供了 XPath 选取功能。对需要抓取的位置单击右键，点击 Inspect，打开 chrome-devtools 面板： 对准要抓取的节点，再次右键，点击 Copy XPath，XPath 路径就复制好了。 别高兴得太早，在调试坑里跌倒无数次的 00 颤抖地告诉你：直接复制的 XPath 往往不能直接用…… 比如上面的咨询师姓名这里，chrome 提供的路径是： 1//*[@id="content_wrapper"]/div[2]/div[2]/a[5]/div[1]/strong/text() 但更准确的路径是： 1/div[@class="summary"]/strong/text() . 对初学者来说，如果之前没有太多写 html 和 css 的经验，每一个 xpath 都需要摸索好半天。不过这也是必经之路吧。折腾多了，就学会老老实实去看 XPath 的文档了。 问题3：内容没有节点怎么办？抓到咨询师的咨询方式、地点、价格等信息的时候，坑爹的事情来了。 这一坨的结构是： 文字竟然没有包括在标签之内！前后都是个 i 标签！要怎么抓！ 然后开始了漫漫 Google 之路。最后终于找到了这篇：如何用scrapy提取不在标签内的文字？ 用 following::text() 的方式抓取了几个信息： 123zx_type = response.xpath('./div[@class="info"]/i/following::text()').extract()[1]location = response.xpath('./div[@class="info"]/i/following::text()').extract()[2]price = response.xpath('./div[@class="info"]/i/following::text()').extract()[3] 这样必需是每一栏信息都没有缺少，否则抓取就会错位……暂时这么处理吧 &gt;.&lt; 问题4：如何抓取多个专家信息抓取好一个专家的信息后，要怎么把每个页面 10~11 个专家的信息都抓下来呢？看了页面的 html，每个专家都在 &lt;a class=&quot;expert&quot; ...&gt; 标签下面。于是用循环获取所有带有这个特征的标签。 为了缩小范围，在 response.xpath(&#39;//a[@class=&quot;expert&quot;]&#39;) 就传入了父节点的路径。 123456789101112131415for each in response.xpath('//a[@class="expert"]'): print(each) item = JdxlItem() # 抓取姓名 item['name'] = each.xpath('./div[@class="summary"]/strong/text()').extract() # 抓取 url item['url'] = each.xpath('./@href').extract() # 抓取简介 item['info'] = each.xpath('./div[@class="summary"]//div[@class="content"]/text()').extract() # 抓取咨询方式、地点、价格等 item['zx_type'] = each.xpath('./div[@class="info"]/i/following::text()').extract()[1] item['location'] = each.xpath('./div[@class="info"]/i/following::text()').extract()[2] item['price'] = each.xpath('./div[@class="info"]/i/following::text()').extract()[3] yield item 其他配置在 settings.py 文件里添加模拟 user_agent 的模块（需要先 pip 安装 faker 包）、设置爬取间隔、头信息等： 1234567891011121314151617from faker import Factoryf = Factory.create()USER_AGENT = f.user_agent()# Obey robots.txt rulesROBOTSTXT_OBEY = TrueDOWNLOAD_DELAY = 1DEFAULT_REQUEST_HEADERS = &#123; 'Host': 'www.jiandanxinli.com', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Cache-Control': 'no-cache', 'Connection': 'Keep-Alive',&#125; 测试和抓取开始抓取的命令是： 1scrapy crawl counselor crawl 后面跟的是在 class JdxlSpider(scrapy.Spider): 中定义的爬虫名字。 先抓取 2 页试试： 12for i in range(1,3): start_url_list.extend(['http://jiandanxinli.com/experts?&amp;page=' + str(i)]) 调试过程主要问题是节点的 xpath 提供得不准确，没有抓取到内容。另外就是可能忘记在 items.py 里面设置 item。一般来说，根据报错慢慢找，总能找出问题，耐心一些就是了。 输出 csv查看了官方文档里面有关输出的部分 Feed exports — Scrapy 1.4.0 documentation 和 Item Exporters — Scrapy 1.4.0 documentation，试了一下写 pipelines，有点复杂，没有成功。 然后搜到 Scrapy爬虫框架教程（二）– 爬取豆瓣电影TOP250，只需要在执行爬虫时设置输出参数就可以了： 1scrapy crawl counselor -o output_file.csv 查看、清理数据新建 Jupyter Notebook，import pandas 包，用 pd.read_csv 命令查看文件： 抓取的链接不完整，补全并输出： 12df['url'] = 'http://jiandanxinli.com'+df['url']df.to_csv('counselor.csv', index=False) 下一篇继续介绍用 Pandas 和 Bokeh 做简单的数据统计和可视化。 项目源码请查看 00 的 github repo： Ref Scrapy 1.5 documentation XPath - Wikiwand XPath Tutorial 如何用scrapy提取不在标签内的文字？ Scrapy爬虫框架教程（二）– 爬取豆瓣电影TOP250]]></content>
@@ -707,6 +721,7 @@
       </categories>
       <tags>
         <tag>HackYourself</tag>
+        <tag>学习</tag>
         <tag>Learning</tag>
       </tags>
   </entry>
@@ -719,6 +734,7 @@
       </categories>
       <tags>
         <tag>HackYourself</tag>
+        <tag>学习</tag>
         <tag>Learning</tag>
       </tags>
   </entry>
@@ -1746,8 +1762,8 @@
       <tags>
         <tag>Design</tag>
         <tag>设计</tag>
-        <tag>服务设计</tag>
         <tag>service design</tag>
+        <tag>服务设计</tag>
       </tags>
   </entry>
   <entry>
