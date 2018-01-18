@@ -4,6 +4,38 @@
 
     
   <url>
+    <loc>http://uegeek.com/180118-python-pandas-data-analysis.html</loc>
+    <lastmod>2018-01-18T09:06:33.291Z</lastmod>
+    <data>
+        <display>
+        <title>码以致用03 - 用 Pandas 分析爬虫抓取的数据</title>
+        <pubTime>2018-01-18T09:04:46.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Coding</tag>
+         
+        <tag>编程</tag>
+         
+        <tag>爬虫</tag>
+         
+        <tag>Scrapy</tag>
+         
+        <tag>Pandas</tag>
+         
+        <tag>数据分析</tag>
+         
+         
+           
+             
+              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/180113-first-principle-of-learning.html</loc>
     <lastmod>2018-01-13T11:43:49.424Z</lastmod>
     <data>
@@ -1993,9 +2025,9 @@
          
         <tag>历史</tag>
          
-        <tag>中欧</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>中欧</tag>
          
         <tag>哥特式</tag>
          
@@ -3369,9 +3401,9 @@
         <title>读书笔记-信息设计</title>
         <pubTime>2010-12-26T15:10:45.000Z</pubTime>
         
-        <tag>可视化</tag>
-         
         <tag>Note</tag>
+         
+        <tag>可视化</tag>
          
         <tag>Information design</tag>
          
@@ -4523,15 +4555,15 @@
         
         <tag>历史</tag>
          
-        <tag>中欧</tag>
-         
-        <tag>捷克</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>中欧</tag>
          
         <tag>匈牙利</tag>
          
         <tag>奥地利</tag>
+         
+        <tag>捷克</tag>
          
         <tag>斯洛伐克</tag>
          
@@ -4557,11 +4589,11 @@
          
         <tag>历史</tag>
          
+        <tag>Travel</tag>
+         
         <tag>中欧</tag>
          
         <tag>捷克</tag>
-         
-        <tag>Travel</tag>
          
          
            
@@ -4585,11 +4617,11 @@
          
         <tag>历史</tag>
          
+        <tag>Travel</tag>
+         
         <tag>中欧</tag>
          
         <tag>捷克</tag>
-         
-        <tag>Travel</tag>
          
          
            
@@ -4613,9 +4645,9 @@
          
         <tag>历史</tag>
          
-        <tag>中欧</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>中欧</tag>
          
         <tag>奥地利</tag>
          
@@ -4645,9 +4677,9 @@
          
         <tag>历史</tag>
          
-        <tag>中欧</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>中欧</tag>
          
         <tag>东正教</tag>
          

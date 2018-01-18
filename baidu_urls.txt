@@ -1,1 +1,1 @@
-http://uegeek.com/180113-first-principle-of-learning.html
+http://uegeek.com/180118-python-pandas-data-analysis.html
