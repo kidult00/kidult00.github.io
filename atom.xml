@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-01-18T09:10:00.561Z</updated>
+  <updated>2018-01-25T08:10:30.322Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DeepLearning笔记：Backpropagation 反向传播算法</title>
+    <link href="http://uegeek.com/180125-DeepLearning9-backpropagation.html"/>
+    <id>http://uegeek.com/180125-DeepLearning9-backpropagation.html</id>
+    <published>2018-01-25T08:00:02.000Z</published>
+    <updated>2018-01-25T08:10:30.322Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p><a id="more"></a> <p><code>阿扣</code>：今天我们来学习反向传播算法。</p><p><code>阿特</code>：为什么你一脸严肃哦？</p><p><code>阿扣</code>：咳咳，有吗……可能因为当初被 Backpropagation 这个词吓得不轻吧…… 反向传播算法是深度学习的核心之一，不过也没有很难，放轻松~</p><p><code>阿特</code>：你是说你还是说我 😄</p><p><code>阿扣</code>：来，我们先回忆一下，对多层神经网络，我们用梯度下降法去训练。之前已经学过如何计算输出节点的误差项 $\delta =(y-\hat y)f’(h)$，借助梯度下降算法，用误差项训练<strong>隐层到输出层的权重</strong>。</p><p><code>阿特</code>：隐层到输出层。我记得最简单的神经网络应该有 3 层——是不是还有输入层到隐层？</p><p><code>阿扣</code>：没错。</p><p><code>阿特</code>：那该怎么求隐层节点对应的误差项呢？</p><p><code>阿扣</code>：在神经网络里，输出节点的误差项，跟隐层的权重是成比例的。</p><p><code>阿特</code>：意思是误差项越大，隐层节点的权重也越大？</p><p><code>阿扣</code>：可以这么理解。既然我们知道输出的误差项，就可以用它来「反向传播」，求出隐层的误差项，再用于求输入节点的权重。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/vlcsnap-2017-12-19-15h02m16s033.png" alt=""></p><p><code>阿特</code>：咦，那不是反过来了？先知道输出结果，再反推输入权重？</p><p><code>阿扣</code>：对的，所以叫做「反向」呀。</p><p>比如，输出层 k 个节点对应的误差项是 $\delta^o_k$ 。隐层有 j 个节点，那么隐层节点到输出节点的 j 个误差项是：</p><p>$\delta^h<em>j=\sum W</em>{jk} \delta^o_k f’(h_j)$</p><p><code>阿特</code>：等等！先让我复习一下误差项是什么……</p><p><code>阿扣</code>：嗯！误差项 δ 表示 <code>误差 * 激活函数的导数</code>，$\delta_j=(y-\hat y)f’(h_j)$。对比一下 $\delta^h<em>j=\sum W</em>{jk} \delta^o_k f’(h_j)$，看看有什么不同？</p><p><code>阿特</code>：隐层到输出层的误差 (y-y^) 变成了 $\sum W_{jk} \delta^o_k$</p><p><code>阿扣</code>：很棒！你发现了吧，$\delta_k$ 成为了 wx + b 中的变量 x：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/vlcsnap-2017-12-19-15h06m32s756.png" alt=""></p><p><code>阿特</code>：啊，又要来算这个了……</p><p><code>阿扣</code>：没关系，虽然看上去麻烦一些，但是跟正向传播的做法很类似，权重的更新为 $\Delta w_{ij}=\eta \delta^h_jx_i$ 。</p><p><code>阿特</code>：每次都要来一遍，要死不少脑细胞啊……</p><p><code>阿扣</code>：那我给你列个清单吧，每次照着做就好。</p><p>假设我们考虑最简单的神经网络：只有一个隐层节点，只有一个输出节点。用反向传播算法更新权重的算法如下：</p><ul><li>给每一层的权重赋值为 0<ul><li>输入层→隐层的权重 $\Delta w_{ij}=0$</li><li>隐层→输出层的权重 $\Delta W_j=0$<br>​</li></ul></li><li>对训练集里的每一个数据：<ul><li>使用 forward pass，计算输出节点的值 $\hat y$</li><li>计算输出节点的误差梯度 $\delta^o=(y-\hat y)f’(z)$，  这里的 $z=\sum_jW_ja_j$</li><li>将误差反向传递到隐层 $\delta^h_j=\delta^oW_jf’(h_j)$</li><li>更新权重步长<ul><li>$\Delta W_j = \Delta W_j + \delta^oa_j$</li><li>$\Delta w<em>{ij} = \Delta w</em>{ij} + \delta^h_ja_i$</li></ul></li></ul></li><li>更新权重（η 为学习率，m 为输入节点的个数):<ul><li>$W_j = W_j + \eta \Delta W_j /m$</li><li>$w<em>{ij} = w</em>{ij} + \eta \Delta w_{ij} /m$</li></ul></li><li>重复 e 次训练步骤 (epochs)</li></ul><p><code>阿特</code>：天！看上去好复杂。</p><p><code>阿扣</code>：练习两次就能熟悉起来了，别担心。下一次我带你用 Python 实现反向传播算法。</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li><a href="https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101" target="_blank" rel="noopener">Deep Learning Nanodegree | Udacity</a></li><li><a href="https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b" target="_blank" rel="noopener">Yes you should understand backprop – Medium</a></li><li><a href="https://www.youtube.com/watch?v=59Hbtz7XgjM" target="_blank" rel="noopener">CS231n Winter 2016 Lecture 4 Backpropagation, Neural Networks 1-Q_UWHTY_TEQ.mp4 - YouTube</a></li></ul><h3 id="00-的-DeepLearning-笔记"><a href="#00-的-DeepLearning-笔记" class="headerlink" title="00 的 DeepLearning 笔记"></a>00 的 DeepLearning 笔记</h3><ul><li><a href="http://www.uegeek.com/171206DLNote1-ML-DL-Basic.html" target="_blank" rel="noopener">DeepLearning笔记：机器学习和深度学习的区别</a></li><li><a href="http://www.uegeek.com/171209DLN2-NeuralNetworks.html" target="_blank" rel="noopener">DeepLearning笔记：Neural Networks 神经网络</a></li><li><a href="http://www.uegeek.com/171213DLN3-LinearRegression.html" target="_blank" rel="noopener">DeepLearning笔记：Linear regression 线性回归</a></li><li><a href="http://www.uegeek.com/171218DLN4-ActivationFunction.html" target="_blank" rel="noopener">DeepLearning笔记：Activation Function 激活函数</a></li><li><a href="http://www.uegeek.com/171220DLN5-CostFunction.html" target="_blank" rel="noopener">DeepLearning笔记：Cost function 损失函数</a></li><li><a href="http://www.uegeek.com/171222DLN6-GradientDescent.html" target="_blank" rel="noopener">DeepLearning笔记：梯度下降 Gradient Descent</a></li><li><a href="http://www.uegeek.com/171226DLN7-GradientDescentinPython.html" target="_blank" rel="noopener">DeepLearning笔记：用 python 实现梯度下降的算法</a></li><li><a href="http://www.uegeek.com/180104DeepLearning8-MultiLayer-Perceptrons.html" target="_blank" rel="noopener">DeepLearning笔记：多节点神经网络</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+    
+    
+      <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="DeepLearning" scheme="http://uegeek.com/tags/DeepLearning/"/>
+    
+      <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
+    
+      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="Backpro" scheme="http://uegeek.com/tags/Backpro/"/>
+    
+      <category term="反向传播" scheme="http://uegeek.com/tags/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/"/>
+    
+  </entry>
   
   <entry>
     <title>码以致用03 - 用 Pandas 分析爬虫抓取的数据</title>
@@ -596,34 +632,6 @@
       <category term="CriticalThinking" scheme="http://uegeek.com/tags/CriticalThinking/"/>
     
       <category term="大哉问" scheme="http://uegeek.com/tags/%E5%A4%A7%E5%93%89%E9%97%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DeepLearning-3：如何在 Docker 里切换 Python 版本</title>
-    <link href="http://uegeek.com/171021-DL3-How2UsePy3InDocker.html"/>
-    <id>http://uegeek.com/171021-DL3-How2UsePy3InDocker.html</id>
-    <published>2017-10-21T02:48:57.000Z</published>
-    <updated>2017-11-14T02:51:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/dl-week0-title.png" alt=""></p><a id="more"></a> <p>​在 <a href="http://www.uegeek.com/170304-deeplearning-week0.html" target="_blank" rel="noopener">DeepLearning-1：神经网络和 Docker 入门</a> 一文中，我们介绍了 Docker 环境的安装和使用。</p><p>然后，00 遇到了 Python 的经典问题：Python 2 还是 Python 3？TensorFlow image 默认安装的是 Python2，如果想在 Jupyter Notebook 里使用 Python3，怎么办呢？</p><p>在 <a href="https://github.com/tensorflow/tensorflow/issues/10179" target="_blank" rel="noopener">TensorFlow 的 这个 Issue</a> 可以看到，2017年5月已经支持<a href="https://hub.docker.com/r/tensorflow/tensorflow/tags/" target="_blank" rel="noopener">用 tag 提供不同的 image</a>。比如 <code>tensorflow/tensorflow:latest-py3</code> 就可以（安装并）打开 Python3 环境。</p><p>结合目录映射的需要，输入命令完成映射并在 python3 环境下打开：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 8888:8888 -v ~/WorkStation/DeepLearning101-002/:/WorkStation/DeepLearning101-002 -w /WorkStation/DeepLearning101-002 tensorflow/tensorflow:latest-py3</span><br></pre></td></tr></table></figure><p>然后用<code>docker ps -a</code>查看所有 image，然后使用命令 <code>docker rename CONTAINER ID XXX</code>，将默认的 Python2 的 image 重命名为 dl，将 Python3 的 image 重命名为 dlpy3：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CONTAINER ID        IMAGE                              COMMAND                  CREATED             STATUS                      PORTS               NAMES</span><br><span class="line">f46533729239        tensorflow/tensorflow:latest-py3   <span class="string">"/run_jupyter.sh -..."</span>   11 minutes ago      Exited (0) 6 minutes ago                        dlpy3</span><br><span class="line">f7178713446b        tensorflow/tensorflow              <span class="string">"/run_jupyter.sh -..."</span>   42 minutes ago      Exited (0) 15 minutes ago                       dl</span><br></pre></td></tr></table></figure><p>以后就可以根据需要，打开不同 Python 环境的 image。</p><p><code>docker start -i dl</code> 打开 Python2 环境：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/docker_py2.png" alt=""></p><p><code>docker start -i dlpy3</code> 打开 Python3 环境：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/docker_py3.png" alt=""></p><p>参考</p><ul><li><a href="https://github.com/tensorflow/tensorflow/issues/3467" target="_blank" rel="noopener">Docker Image with Python 3? · Issue #3467 · tensorflow/tensorflow</a></li><li><a href="https://github.com/tensorflow/tensorflow/issues/10179" target="_blank" rel="noopener">Support python3 on Docker image tensorflow/tensorflow:latest · Issue #10179 · tensorflow/tensorflow</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/dl-week0-title.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-    
-    
-      <category term="Deep learning" scheme="http://uegeek.com/tags/Deep-learning/"/>
-    
-      <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="Docker" scheme="http://uegeek.com/tags/Docker/"/>
     
   </entry>
   

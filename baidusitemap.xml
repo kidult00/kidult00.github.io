@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>http://uegeek.com/180125-DeepLearning9-backpropagation.html</loc>
+    <lastmod>2018-01-25T08:10:30.322Z</lastmod>
+    <data>
+        <display>
+        <title>DeepLearning笔记：Backpropagation 反向传播算法</title>
+        <pubTime>2018-01-25T08:00:02.000Z</pubTime>
+        
+        <tag>深度学习</tag>
+         
+        <tag>AI</tag>
+         
+        <tag>ArtxCode</tag>
+         
+        <tag>DeepLearning</tag>
+         
+        <tag>Coding</tag>
+         
+        <tag>神经网络</tag>
+         
+        <tag>Backpro</tag>
+         
+        <tag>反向传播</tag>
+         
+         
+           
+             
+              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/180118-python-pandas-data-analysis.html</loc>
     <lastmod>2018-01-18T09:10:00.561Z</lastmod>
     <data>
@@ -4155,9 +4189,9 @@
          
         <tag>设计</tag>
          
-        <tag>service design</tag>
-         
         <tag>服务设计</tag>
+         
+        <tag>service design</tag>
          
          
            
