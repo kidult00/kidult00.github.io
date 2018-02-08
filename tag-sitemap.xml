@@ -625,14 +625,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
+        <loc>http://uegeek.com/tags/Travel/</loc>
         <lastmod>2016-08-06T02:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Travel/</loc>
+        <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
         <lastmod>2016-08-06T02:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1059,20 +1059,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Python/</loc>
-        <lastmod>2018-01-18T09:10:00.561Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/</loc>
-        <lastmod>2018-01-18T09:10:00.561Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/tags/%E7%88%AC%E8%99%AB/</loc>
         <lastmod>2018-01-18T09:10:00.561Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1101,57 +1087,78 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/tags/Python/</loc>
+        <lastmod>2018-02-08T16:41:10.339Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-        <lastmod>2018-01-25T08:10:30.322Z</lastmod>
+        <lastmod>2018-02-08T16:41:10.339Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/AI/</loc>
-        <lastmod>2018-01-25T08:10:30.322Z</lastmod>
+        <lastmod>2018-02-08T16:41:10.339Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/ArtxCode/</loc>
-        <lastmod>2018-01-25T08:10:30.322Z</lastmod>
+        <lastmod>2018-02-08T16:41:10.339Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/DeepLearning/</loc>
-        <lastmod>2018-01-25T08:10:30.322Z</lastmod>
+        <lastmod>2018-02-08T16:41:10.339Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/Coding/</loc>
-        <lastmod>2018-01-25T08:10:30.322Z</lastmod>
+        <lastmod>2018-02-08T16:41:10.339Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/</loc>
+        <lastmod>2018-02-08T16:41:10.339Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
-        <lastmod>2018-01-25T08:10:30.322Z</lastmod>
+        <lastmod>2018-02-08T16:41:10.339Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/Backpro/</loc>
-        <lastmod>2018-01-25T08:10:30.322Z</lastmod>
+        <lastmod>2018-02-08T16:41:10.339Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/</loc>
-        <lastmod>2018-01-25T08:10:30.322Z</lastmod>
+        <lastmod>2018-02-08T16:41:10.339Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Programming/</loc>
+        <lastmod>2018-02-08T16:41:10.339Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

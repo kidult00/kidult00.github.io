@@ -1,1 +1,1 @@
-http://uegeek.com/180125-DeepLearning9-backpropagation.html
+http://uegeek.com/180208-DeepLearning10-backpropagation-python.html
