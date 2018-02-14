@@ -3,490 +3,476 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Only CSS: Love</title>
-
-
-  <!-- <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Dosis:800'> -->
+  <title>Simple visualizer</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=IndieFlower:800'>
-
-      <!-- <link rel="stylesheet" href="css/style.css"> -->
-      <link rel="stylesheet" href="http://7xjpra.com1.z0.glb.clouddn.com/2018_214_style.css">
-
-
-
+  <link rel="stylesheet" href="http://7xjpra.com1.z0.glb.clouddn.com/2018_214_style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 
 <body>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/p5.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/addons/p5.sound.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/addons/p5.dom.js'></script>
+  <script src='https://www.uegeek.com/js/src/2018_214_sketch.js'></script>
+  <!-- <script language="javascript" type="text/javascript" src="sketch.js"></script> -->
 
+  <div id="ui">
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">愛</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Amour</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Fan²</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">🤗</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Liebe</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Amore</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Amor</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Любовь</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">الحب</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">प्यार</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Cinta</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Αγάπη</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">사랑</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Liefde</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Dashuri</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Каханне</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Любов</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Ljubav</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Láska</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Armastus</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Mahal</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">אהבה</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Szerelem</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Grá</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">❤️</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Mīlestība</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Meilė</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Cinta</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">عشق</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Dragoste</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Láska</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Renmen</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">ፍቅር</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">munaña</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Sevgi</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Љубав</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">karout</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">amà</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">amôr</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">kærleiki</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">mborayhu</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Upendo</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">sòòyayyàà</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">ljubav</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Սեր</div>
+        </div>
+      </div>
+    </div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">сүю</div>
+        </div>
+      </div>
+    </div>
 
-<div id="ui">
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">愛</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">сүйүү</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Amour</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Fan²</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">🤗</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Liebe</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Amore</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Amor</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Любовь</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">الحب</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">प्यार</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Cinta</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Αγάπη</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">사랑</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Liefde</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Dashuri</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Каханне</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Любов</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Ljubav</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Láska</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Armastus</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Mahal</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">אהבה</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Szerelem</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Grá</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">爱</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Mīlestība</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Meilė</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Љубовта</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">tia</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Cinta</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">عشق</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Dragoste</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Láska</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Renmen</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">ፍቅር</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">munaña</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Sevgi</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Љубав</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">karout</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">amà</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">amôr</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">kærleiki</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">mborayhu</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">aroha</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Upendo</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">sòòyayyàà</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">ljubav</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Սեր</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">сүю</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">сүйүү</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">tia</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">aroha</div>
-      </div>
-    </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">KHAIR</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">KHAIR</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">प्रेम</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">प्रेम</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">kjærlighet</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">kjærlighet</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">munay</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">munay</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">jecel</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">jecel</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Kärlek</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Kärlek</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">soymek</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">soymek</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Mahal</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Mahal</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">ярату</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">ярату</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">محبت</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">محبت</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">sopp</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">sopp</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">uthando</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">uthando</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Aşk</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Aşk</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Tình yêu</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Tình yêu</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">ליבע</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">ליבע</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="love">
-    <div class="love_horizontal">
-      <div class="love_vertical">
-        <div class="love_word">Love</div>
+    <div class="love">
+      <div class="love_horizontal">
+        <div class="love_vertical">
+          <div class="love_word">Love</div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
 </body>
-
-</html>
