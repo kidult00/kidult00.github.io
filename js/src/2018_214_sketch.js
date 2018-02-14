@@ -10,7 +10,7 @@ function draw() {
   smooth();
   textSize(24);
   fill(254, 223, 145);
-  text('Tap to pause / play.', width-50, height-50);
+  text('Tap to pause / play.', width/2-50, 50);
 
   if (typeof song != 'undefined' // There's a song
       && song.isLoaded()         // The song is loaded
