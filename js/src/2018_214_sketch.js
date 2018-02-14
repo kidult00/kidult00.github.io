@@ -8,7 +8,9 @@ function setup() {
 function draw() {
   background(246, 88, 104);
   smooth();
-  // text('Click to pause / play.', 50, 10);
+  textSize(24);
+  fill(254, 223, 145);
+  text('Tap to pause / play.', width/2, 50);
 
   if (typeof song != 'undefined' // There's a song
       && song.isLoaded()         // The song is loaded
@@ -38,7 +40,7 @@ function draw() {
     for(let i = 0; i < numBars; i++) {
       let x = map(i, 0, numBars, 0, width*2); // where bar starts
       let h = map(spectrum[i], 0, 255, 0, height); // y = height means the bottom of canvas
-      rect(x, height, width/numBars*1.8, -h/2);
+      rect(x, height, width/numBars*2, -h/3);
     }
   }
 }
