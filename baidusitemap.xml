@@ -4,6 +4,37 @@
 
     
   <url>
+    <loc>http://uegeek.com/180221-learning-log.html</loc>
+    <lastmod>2018-02-21T13:18:14.604Z</lastmod>
+    <data>
+        <display>
+        <title>00's Learning Log 180221</title>
+        <pubTime>2018-02-21T13:02:31.000Z</pubTime>
+        
+        <tag>Note</tag>
+         
+        <tag>Coding</tag>
+         
+        <tag>编程</tag>
+         
+        <tag>Learning</tag>
+         
+        <tag>Music</tag>
+         
+         
+           
+             
+              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+          
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/180208-DeepLearning10-backpropagation-python.html</loc>
     <lastmod>2018-02-08T16:41:10.339Z</lastmod>
     <data>
@@ -23,9 +54,9 @@
          
         <tag>Coding</tag>
          
-        <tag>编程</tag>
-         
         <tag>神经网络</tag>
+         
+        <tag>编程</tag>
          
         <tag>Backpro</tag>
          
@@ -4633,11 +4664,11 @@
          
         <tag>中欧</tag>
          
+        <tag>捷克</tag>
+         
         <tag>匈牙利</tag>
          
         <tag>奥地利</tag>
-         
-        <tag>捷克</tag>
          
         <tag>斯洛伐克</tag>
          

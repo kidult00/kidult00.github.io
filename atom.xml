@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-02-08T16:41:10.339Z</updated>
+  <updated>2018-02-21T13:18:14.604Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>00&#39;s Learning Log 180221</title>
+    <link href="http://uegeek.com/180221-learning-log.html"/>
+    <id>http://uegeek.com/180221-learning-log.html</id>
+    <published>2018-02-21T13:02:31.000Z</published>
+    <updated>2018-02-21T13:18:14.604Z</updated>
+    
+    <content type="html"><![CDATA[<p>Summary</p><ul><li>基于例子学习 p5.sound 库的几类对象和方法</li><li>开始 Bass clef 低音谱号识谱练习(工具 Music Tutor App)</li><li>Music Theory 101 的 <a href="https://prod-edxapp.edx-cdn.org/assets/courseware/v1/063c6ec50fc9d2b0f6c8624843bfaf24/asset-v1:JuilliardX+JX001x+3T2017+type@asset+block/Mod3_PS.pdf" target="_blank" rel="noopener">Module 3 练习</a></li><li>开始使用 workflowy 写学习 log (工具 <a href="https://chrome.google.com/webstore/detail/workflowy-panel/nhmckiepjgggfmmdlklgalgphjaopidk" target="_blank" rel="noopener">WorkFlowy Panel</a>)</li><li>知识大融通 ch11</li></ul><a id="more"></a> <h2 id="p5-sound-对象和方法学习"><a href="#p5-sound-对象和方法学习" class="headerlink" title="p5.sound 对象和方法学习"></a>p5.sound 对象和方法学习</h2><h3 id="fft"><a href="#fft" class="headerlink" title="fft"></a>fft</h3><p>FFT (Fast Fourier Transform 快速傅里叶变换) 是一种分离声音频率波形的分析算法。p5 里面的 FFP 对象可以分析声音的频率，返回两种数组：</p><ul><li><p><code>FFT.waveform()</code> : 计算时间振幅。数组内每一个值代表取样时间内的波形振幅。返回值在 -1 到 1 之间。<strong>可用来绘制声音的波形</strong>。</p></li><li><p><code>FFT.analyze()</code> : 计算频率振幅。数组内每一个值代表频谱(frequency spectrum, i.e. pitches)振幅。用 <code>getEnergy()</code> 方法可以获取某个范围内的频率。</p></li></ul><h3 id="noise"><a href="#noise" class="headerlink" title="noise"></a>noise</h3><p>Noise 对象是生成随机 buffer 的振荡器(oscillator)。</p><figure class="highlight plain"><figcaption><span>p5.Noise(type)</span><a href="//String:">Type of noise can be 'white' (default), 'brown' or 'pink'.```</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### delay</span><br><span class="line">Delay 生成回声效果. 参数包括 delay time, feedback, filter, and type. </span><br><span class="line"></span><br><span class="line">### env</span><br><span class="line">Envelopes (中文术语是什么？)是预先定义时间内的振幅分布，常用于控制输出音量和 a series of fades referred to as Attack, Decay, Sustain and Release (ADSR).</span><br><span class="line">![ADSR](https://upload.wikimedia.org/wikipedia/commons/e/ea/ADSR_parameter.svg)  </span><br><span class="line"></span><br><span class="line">### SawOsc/TriOsc</span><br><span class="line">创建 SawTooth Wave Oscillator / Triangle Wave Oscillator (相当于 ``new p5.Oscillator(&apos;sawtooth&apos;)``/ ``p5.Oscillator(&apos;triangle&apos;)`` 或者创建 ``p5.Oscillator`` 然后调用 ``setType(&apos;sawtooth&apos;)`` / ``setType(&apos;triangle&apos;)`` )</span><br><span class="line"></span><br><span class="line">### distortion</span><br><span class="line">生成 Waveshaper Node，是 p5.Effect 的子类。</span><br><span class="line"></span><br><span class="line">```new p5.Distortion([amount=0.25],[oversample=&apos;none&apos;])</span><br></pre></td></tr></table></figure><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li><a href="https://p5js.org/reference/#/p5.FFT" target="_blank" rel="noopener">p5.js | FFT</a></li><li><a href="https://p5js.org/reference/#/p5.Noise" target="_blank" rel="noopener">p5.js | Noise</a></li><li><a href="https://p5js.org/reference/#/p5.Delay" target="_blank" rel="noopener">p5.js | Delay</a></li><li><a href="https://p5js.org/reference/#/p5.Env" target="_blank" rel="noopener">p5.js | Env</a></li><li><a href="https://p5js.org/reference/#/p5.Oscillator" target="_blank" rel="noopener">p5.js | Oscillator</a></li><li><a href="https://p5js.org/reference/#/p5.SawOsc" target="_blank" rel="noopener">p5.js | SawOsc</a></li><li><a href="https://p5js.org/reference/#/p5.TriOsc" target="_blank" rel="noopener">p5.js | TriOsc</a></li><li><a href="https://p5js.org/reference/#/p5.Distortion" target="_blank" rel="noopener">p5.js | Distortion</a></li></ul><h2 id="Bass-clef-识谱练习"><a href="#Bass-clef-识谱练习" class="headerlink" title="Bass clef 识谱练习"></a>Bass clef 识谱练习</h2><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bass_and_Treble_clef.svg/400px-Bass_and_Treble_clef.svg.png" alt=""></p><p>经过一周练习，Treble clef 高音谱号的识谱练习准确率可达 95% 以上。熟练掌握 Treble clef 后，Bass clef 整体下移三度，另外加上快捷位置记忆：</p><ul><li>下加二线：C</li><li>0-3间：FACE 🙂</li><li>5线：A</li><li>上加一线：C</li></ul><p>继续用 Music Tutor 练习，吸取 Treble clef 的经验，开始时的练习可以设置为：</p><ul><li>练习时长 1 分钟（便于总结规律）</li><li>识别区间B1-E4 (强化记忆中间区域的 notes)</li><li>去掉升降号识别</li><li>熟悉自己的 base notes 以后，增加练习时长，并且加入升降号识别</li></ul><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/IMG_9C409B101E19-1.jpeg" alt=""></p><h2 id="Music-Theory-101-的-Module-3-练习"><a href="#Music-Theory-101-的-Module-3-练习" class="headerlink" title="Music Theory 101 的 Module 3 练习"></a>Music Theory 101 的 Module 3 练习</h2><p>Juilliard 的这门课 <a href="https://courses.edx.org/courses/course-v1:JuilliardX+JX001x+3T2017/course/" target="_blank" rel="noopener">Music Theory 101</a> 的练习都很走心。今天做到 <a href="https://prod-edxapp.edx-cdn.org/assets/courseware/v1/063c6ec50fc9d2b0f6c8624843bfaf24/asset-v1:JuilliardX+JX001x+3T2017+type@asset+block/Mod3_PS.pdf" target="_blank" rel="noopener">Module 3 练习</a>，主要针对音符/休止符和拍子。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Mod3_AK_page_1.png" alt=""></p><p>为了在电脑上写作业，找了一款音乐符号的字体：<a href="http://www.fontspace.com/robert-allgeyer/musisync" target="_blank" rel="noopener">MusiSync font - FontSpace</a></p><p>Meter 的遗留问题：如何确定以什么音符为一拍？</p><h2 id="明日-To-do"><a href="#明日-To-do" class="headerlink" title="明日 To do"></a>明日 To do</h2><ul><li>p5.sound 的例子</li><li>Treble + Bass clef 组合练习</li><li>Music Theory 101 Module 4</li><li>知识大融通 ch12</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Summary&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;基于例子学习 p5.sound 库的几类对象和方法&lt;/li&gt;
+&lt;li&gt;开始 Bass clef 低音谱号识谱练习(工具 Music Tutor App)&lt;/li&gt;
+&lt;li&gt;Music Theory 101 的 &lt;a href=&quot;https://prod-edxapp.edx-cdn.org/assets/courseware/v1/063c6ec50fc9d2b0f6c8624843bfaf24/asset-v1:JuilliardX+JX001x+3T2017+type@asset+block/Mod3_PS.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Module 3 练习&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;开始使用 workflowy 写学习 log (工具 &lt;a href=&quot;https://chrome.google.com/webstore/detail/workflowy-panel/nhmckiepjgggfmmdlklgalgphjaopidk&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;WorkFlowy Panel&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;知识大融通 ch11&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+    
+      <category term="读书" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+      <category term="Note" scheme="http://uegeek.com/tags/Note/"/>
+    
+      <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
+    
+      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="Learning" scheme="http://uegeek.com/tags/Learning/"/>
+    
+      <category term="Music" scheme="http://uegeek.com/tags/Music/"/>
+    
+  </entry>
   
   <entry>
     <title>DeepLearning 笔记：用 Python 实现反向传播算法</title>
@@ -46,9 +85,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="Backpro" scheme="http://uegeek.com/tags/Backpro/"/>
     
@@ -620,34 +659,6 @@
       <category term="大哉问" scheme="http://uegeek.com/tags/%E5%A4%A7%E5%93%89%E9%97%AE/"/>
     
       <category term="Love" scheme="http://uegeek.com/tags/Love/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>大哉问01 - 什么样的时间观值得拥有？</title>
-    <link href="http://uegeek.com/171126TimePerspective.html"/>
-    <id>http://uegeek.com/171126TimePerspective.html</id>
-    <published>2017-11-26T01:12:43.000Z</published>
-    <updated>2017-12-09T01:14:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/dbproductivity.jpg" alt=""></p><a id="more"></a>  <blockquote><p>我们自己虚构了一些问题,然后又炮制了一些答案。        </p><p>——西蒙娜·德·波伏娃</p></blockquote><p><a href="http://www.uegeek.com/171112-HowToAskGoodQuestion.html" target="_blank" rel="noopener">HackYourself 大哉问系列</a>第一篇，我们来讨论「时间」。</p><p>为什么要选择这么虚无的话题呢？我在想，人大概有三大限制：时间，空间，认知资源。从这三个角度重新思考我们这种脆弱又作死的物种，大概会挺有意思。</p><p>虽然一直身处于奔流的时间长河中，但是我们对时间的汹涌却（常常）浑然不觉。面对时间这种无人可以掌控的东西，不禁想问：</p><blockquote><p>我们应该持有什么样的时间观？</p></blockquote><p>时间观是关于时间的观念，关于时间和自己的关系，如何理解时间，如果依据时间做出种种决策，如何对待时间…… 这里讨论的不是时间管理。毕竟，如果对时间本身都还没有自己的理解，凭什么说人家已经是「朋友」，又怎么去管理它呢？</p><p>心理学家津巴多对「时间」做了三十多年的研究，他呼吁我们认真对待自己所持有的时间观念：</p><blockquote><p>一个健康的时间观，能让你以人生的长度来决定如何做最优化的决策。一个平衡的时间观，是高度的积极的过去观，中等偏高的积极的未来观，以及温和的选择性地享乐但不冲动反应的现在观。换言之，拥有一个平衡的时间观，就是为自己的过去骄傲，有自信；对未来有高期望但并不好高骛远，对于当下的自己，适当地享受生活，但既不冲动也不是随叫随到的无计划性。 ——津巴多</p></blockquote><p><img src="https://cdn.dribbble.com/users/89889/screenshots/3658659/toolittletime-dribbble.gif" alt=""></p><h2 id="给时间重新找一个比喻"><a href="#给时间重新找一个比喻" class="headerlink" title="给时间重新找一个比喻"></a>给时间重新找一个比喻</h2><p>对我而言，时间是什么？</p><p>除了从小被教育的「时间就是金钱」，除了日渐步入「Time famine」的深渊，我对时间最大的印象大概就是「无情」了，像器物一般的无情。</p><h3 id="意义-行动标尺"><a href="#意义-行动标尺" class="headerlink" title="意义/行动标尺"></a>意义/行动标尺</h3><p>与无限的时间相比，人太弱小太可怜，不得不沿着单向、不可逆的时间轴往前奔走。如果不是因为生命的时间有限，谁会在意生存、变化、权力、美、爱、有没有后代？印刻在出厂设置中的生命长度，让（有自我意识的）生命体开始珍视自己，有了尽力让生命存在、焕发的意念，也就滋长了种种欲望。<strong>所有的欲望，都是「生命有限」这个事实的形容词。</strong></p><p>因为生命短促，人才会孜孜不倦地追求目标和意义，好让这短暂的时间之旅的残存能够消散得慢一点。</p><p>看起来好像是时间定义了生命，其实，是生命所的持续时间让人有必要以人的尺度来定义时间：一万年对人来说不重要，一豪秒对人来说也不重要。</p><p>我们太习惯以人活着能够经常体验到的时间单位去观察万事万物，也太习惯以满足当下的需要为理由来消耗时间。这同时也提醒我们，只需要稍微转动一下时间标尺的角度，我们观察世界的框架可能就会大有不同：</p><blockquote><p>如果有一辈子的时间来做某件事会怎样？</p><p>如果某件事只会持续 1 秒，我对它的态度会有什么不同？</p><p>如果我与某个人共有 +∞ 的时间（一直相处）会怎样？如果共有时间为 0 （没有交集）会怎样？</p></blockquote><h3 id="可能性的培养皿"><a href="#可能性的培养皿" class="headerlink" title="可能性的培养皿"></a>可能性的培养皿</h3><p>时间可能是全能的神 最大/唯一武器。</p><p>因为无限，所以造物主根本不需要呕心沥血去「设计」生命的所有细节，而是将一切都交给时间，给定初始值，无限演化下去。不论过程中出现了什么，生命轮回也好，沧海桑田也罢，生机勃勃也好，万籁俱寂也罢，都没有所谓，都只是演化过程的一个片段。</p><p>没有秘诀。</p><p>上帝甚至不需要全知全能——只要交给无限的时间就好。只要时间足够长，可能性就不会穷尽。</p><p>我们常常说：「我没有时间了」、「时间不够」、「你有空吗？」……</p><p>有趣的是，<strong>时间本身不包含任何东西</strong>。时间只是度量单位，只是「容器」。我们问「你有时间吗？」，是不是好像在问：「你有厘米吗？」、「你有分贝吗？」。里面什么都没有。</p><p>真正的内容，是时间单位内我们投入的注意力、能量、情感、行动等等。我们不拥有时间，我们只拥有注意力、能量、情感……时间只是培养皿，想要培养出有机体，需要加培养液，不是吗？</p><h2 id="有意义的时间观"><a href="#有意义的时间观" class="headerlink" title="有意义的时间观"></a>有意义的时间观</h2><blockquote><p>什么样的时间观能带来更大收益？</p></blockquote><p>这是一个倾向性很明显的问题。我们似乎得先考虑：</p><ul><li>什么是「收益」？它一定是「结果」吗？（结果可能只是资源，不是目标本身）</li><li>要在多大时间尺度/周期内考虑？</li></ul><p>时间被如此定义，是因为生命体的有限。那生命又是个什么东西？</p><blockquote><p>生命似乎是物质的有序和有规律的行为，它不是完全基于从有序走向无序的倾向，而是部分基于得到保持的现存秩序。……生命有机体如何避免衰退为惰性「平衡」状态呢？通过新陈代谢。……新陈代谢的本质是使有机体成功消除了它活着时不得不产生的所有熵。 —— 薛定谔，「生命是什么」</p></blockquote><p>生命体的伟大之处，在于（一定时间内）抵御了混沌无序的倾向，制造出（或者说吸收了）「负熵」。</p><p>如果回归到这一层含义，对人有意义的「收益」，是不是也可以理解为「有意义的秩序」？</p><p>暂时抛开时间周期的问题，来想想那些时间感消散的时刻。比如说，专注地处于心流状态的时候，在类似做梦这种意识混沌的时候，我们感受不到时间的流逝。身处这些时刻，是不是反而能更真实、直接地触摸到生命本身？</p><p>回到上面的问题：怎样才算最理想的时间收益？对我而言大概是：</p><blockquote><p>在有意识的所有时刻里，都生机勃勃：投入、沉浸、痛并快乐、见过去所未见，体验一个生命可能抵达的深度。更重要的是——最终塑造出自己，并且留下能延续一段时间、传递某种深度的载体。</p></blockquote><p>那么，可以如何去调控时间以及对时间的感觉？如何放大时间的价值？</p><p>似乎有两种办法：<strong>融于当下，或者穿越时间</strong>。</p><p><strong>融于当下</strong>，是指让时间感消失——沉浸到时间里面，<strong>让更多的时间处于聚焦/有序而不是耗散状态</strong>。也就是说，吃饭时就心无旁骛，与伴侣共处时就交心会意，思考时就清理杂乱的欲望，悲伤时就不要阻止眼泪……努力让真正重要的事情的「过程价值」大于「结果价值」。毕竟，我们全身心经历的是每一分每一秒，应该更多地为全程的福祉考虑，而不只是获得结果的那一刹那的高峰体验。</p><p><strong>穿越时间</strong>，是指留下能够抵御时间侵袭的「晶体」，可以是文字、记录、作品、人生信条等等，它是你拼尽全力，从混沌无序中凝练出来的「恰好」和「最好」，它们是（哪怕只有一丢丢）有意义的秩序，可以穿越（哪怕只有一丢丢）时间长河而不被冲刷得面目全非。</p><h2 id="修炼生命力"><a href="#修炼生命力" class="headerlink" title="修炼生命力"></a>修炼生命力</h2><p>于是，时间似乎是焕发生命力的养料和工具套件。</p><p><strong>让我们把时间当做意义过滤器</strong>。哪些事情哪怕只有 1 秒，我们也会珍惜？哪些信息，出现在时间的源头？哪些内容，能真正穿越时间的洗礼？什么目标，值得用大时间周期去追逐？</p><p><strong>让我们把时间当做培养皿</strong>。在时间这个容器中，我们到底需要倾注些什么？希望锻造出什么？投入产出是否匹配？怎样把其他资源转化为时间资源？如果花的每一分钱，都值时间价值；如果花的每一分钟，都超出经济价值，那大概就是世界上最好的投资。</p><p><strong>让我们把时间当做生命过程本身</strong>。在时间流逝中，尽可能去抵御熵增，提炼有意义的秩序，印证我们的存在和延续——不只是基因和生命体的延续，还是探索精神、思考深度的延续，是对自然和美的敬畏的延续。</p><p>这么看来，其实重要的不是时间能送我们到达哪里，真正应该珍惜的，是时间给了我们修炼的机会——<strong>修炼一种在任何情境下都让自己避免熵增、有所获益的能力</strong>，这种神奇能力，大概就是生命力。</p><p>生命那只随机的大手会把我们降落在哪里，没有人知晓。但不论跌落在哪里，都要生生不息，甚至能留下穿越时间的智慧晶体。</p><p>这是生命的责任。</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li><a href="https://book.douban.com/subject/5246820/" target="_blank" rel="noopener">津巴多时间心理学</a></li><li><a href="https://book.douban.com/subject/26309060/" target="_blank" rel="noopener">生命是什么</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/dbproductivity.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="叽歪" scheme="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-    
-    
-      <category term="HackYourself" scheme="http://uegeek.com/tags/HackYourself/"/>
-    
-      <category term="CriticalThinking" scheme="http://uegeek.com/tags/CriticalThinking/"/>
-    
-      <category term="大哉问" scheme="http://uegeek.com/tags/%E5%A4%A7%E5%93%89%E9%97%AE/"/>
-    
-      <category term="时间" scheme="http://uegeek.com/tags/%E6%97%B6%E9%97%B4/"/>
     
   </entry>
   

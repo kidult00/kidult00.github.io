@@ -103,7 +103,7 @@
 <meta name="description" content="New Media Artist / Designer / Maker">
 <meta property="og:type" content="website">
 <meta property="og:title" content="00&#39;s Adventure">
-<meta property="og:url" content="http://uegeek.com/tags/Learning/index.html">
+<meta property="og:url" content="http://uegeek.com/tags/learning/index.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:description" content="New Media Artist / Designer / Maker">
 <meta property="og:locale" content="zh-Hans">
@@ -138,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://uegeek.com/tags/Learning/"/>
+  <link rel="canonical" href="http://uegeek.com/tags/learning/"/>
 
 
 
 
 
-  <title>标签: Learning | 00's Adventure</title>
+  <title>标签: learning | 00's Adventure</title>
   
 
 
@@ -333,7 +333,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Learning<small>标签</small>
+        <h1>learning<small>标签</small>
         </h1>
       </div>
 
@@ -345,37 +345,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/learning-guide-v1.html" itemprop="url">
+            <a class="post-title-link" href="/effective-learning.html" itemprop="url">
               
-                <span itemprop="name">知识炼金术士行动指南 1.0</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-26T07:30:24+08:00"
-              content="2016-09-26" >
-          09-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/learning-about-learn.html" itemprop="url">
-              
-                <span itemprop="name">重启学习系统，做个知识炼金术士</span>
+                <span itemprop="name">别傻了，傲娇大脑爱学习？</span>
               
             </a>
         
@@ -383,9 +355,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-22T07:30:02+08:00"
-              content="2016-09-22" >
-          09-22
+              datetime="2015-02-14T23:16:16+08:00"
+              content="2015-02-14" >
+          02-14
         </time>
       </div>
 
@@ -445,7 +417,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">204</span>
+                <span class="site-state-item-count">205</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -456,7 +428,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -467,7 +439,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">166</span>
+                <span class="site-state-item-count">167</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1046,6 +1018,69 @@
     });
     $(document).on('keyup', function (event) {
       var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
+pup = event.which === 27 &&
         $('.search-popup').is(':visible');
       if (shouldDismissSearchPopup) {
         onPopupClose();
