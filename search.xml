@@ -21,6 +21,7 @@
 <li><p><code>FFT.analyze()</code> : 计算频率振幅。数组内每一个值代表频谱(frequency spectrum, i.e. pitches)振幅。用 <code>getEnergy()</code> 方法可以获取某个范围内的频率。</p>
 </li>
 </ul>
+<p><a href="https://www.youtube.com/watch?v=2O3nm0Nvbi4&amp;list=PLRqwX-V7Uu6aFcVjlDAkkGIixw70s7jpW&amp;index=11" target="_blank" rel="noopener">17.11: Sound Visualization: Frequency Analysis with FFT - p5.js Sound Tutorial</a></p>
 <h3 id="noise"><a href="#noise" class="headerlink" title="noise"></a>noise</h3><p>Noise 对象是生成随机 buffer 的振荡器(oscillator)。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> p5.Noise(type) <span class="comment">//String: Type of noise can be 'white' (default), 'brown' or 'pink'.</span></span><br></pre></td></tr></table></figure>
 <h3 id="delay"><a href="#delay" class="headerlink" title="delay"></a>delay</h3><p>Delay 生成回声效果. 参数包括 delay time, feedback, filter, and type. </p>
@@ -12082,9 +12083,9 @@ SONET optical fiber
             
             <tag> Travel </tag>
             
-            <tag> 中欧 </tag>
-            
             <tag> 历史 </tag>
+            
+            <tag> 中欧 </tag>
             
             <tag> 哥特式 </tag>
             
@@ -12157,9 +12158,9 @@ SONET optical fiber
             
             <tag> Travel </tag>
             
-            <tag> 中欧 </tag>
-            
             <tag> 历史 </tag>
+            
+            <tag> 中欧 </tag>
             
             <tag> 东正教 </tag>
             
@@ -12217,9 +12218,9 @@ SONET optical fiber
             
             <tag> Travel </tag>
             
-            <tag> 中欧 </tag>
-            
             <tag> 历史 </tag>
+            
+            <tag> 中欧 </tag>
             
             <tag> 捷克 </tag>
             
@@ -12263,9 +12264,9 @@ SONET optical fiber
             
             <tag> Travel </tag>
             
-            <tag> 中欧 </tag>
-            
             <tag> 历史 </tag>
+            
+            <tag> 中欧 </tag>
             
             <tag> 奥地利 </tag>
             
@@ -12299,9 +12300,9 @@ SONET optical fiber
             
             <tag> Travel </tag>
             
-            <tag> 中欧 </tag>
-            
             <tag> 历史 </tag>
+            
+            <tag> 中欧 </tag>
             
             <tag> 捷克 </tag>
             
@@ -12340,11 +12341,11 @@ SONET optical fiber
             
             <tag> Travel </tag>
             
+            <tag> 历史 </tag>
+            
             <tag> 中欧 </tag>
             
             <tag> 匈牙利 </tag>
-            
-            <tag> 历史 </tag>
             
             <tag> 奥地利 </tag>
             
@@ -12421,9 +12422,9 @@ SONET optical fiber
             
             <tag> Note </tag>
             
-            <tag> 历史 </tag>
-            
             <tag> 人类简史 </tag>
+            
+            <tag> 历史 </tag>
             
         </tags>
         
