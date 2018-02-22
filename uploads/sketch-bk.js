@@ -11,8 +11,8 @@ function setup() {
   colorMode(HSB);//hue, saturation, brightness
 
   button = createButton('Play:  Manchmal.m4a');
-  button.addClass('btn btn-warning btn-lg btn-block');
-  button.position(width/2, 50);
+  button.addClass('btn btn-outline-warning');
+  button.position(20, 20);
 	button.mousePressed(togglePlaying);
 
   song.setVolume(0.5);
