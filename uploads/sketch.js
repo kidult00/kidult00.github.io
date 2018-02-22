@@ -12,7 +12,7 @@ function setup() {
 
   button = createButton('Play:  Manchmal.m4a');
   button.addClass('btn btn-warning btn-lg');
-  button.position(windowWidth-50, windowHeight-50);
+  button.position(width-300, height-200);
 	button.mousePressed(togglePlaying);
 
   song.setVolume(0.5);
