@@ -417,7 +417,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">206</span>
+                <span class="site-state-item-count">207</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1080,7 +1080,27 @@
 
 </body>
 </html>
-      // remove loading animation
+ = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
           $(".local-search-pop-overlay").remove();
           $('body').css('overflow', '');
 

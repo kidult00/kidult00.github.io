@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[180222-learning-log]]></title>
+    <title><![CDATA[00's Learning Log 180223]]></title>
+    <url>%2F180223-learning-log.html</url>
+    <content type="text"><![CDATA[Summary 整理文档系统结构，参考 构建优雅的知识创造系统 - 阳志平的网志 采用域名方式命名。 整理 gitbook 文档理出 sound visualization 的思路 p5.sound 的 envelope 和 FFT 例子 Music Theory 101 的 Model 4 练习 「乐理自学指南」第1-10课 p5.soundphrase乐句是一段时间内 musical events 的模式，比如一系列的音符和休止。Phrases 必需添加到 p5.Part 播放。 1new p5.Phrase(name,callback,sequence) p5.Part 播放一个或多个 p5.Phrases. 用 steps and tatums(Divisions of a beat) 初始化. 每个 step 默认为 1/16 音符。 1new p5.Part([steps],[tatums]) 例子中用函数控制声音播放/暂停时的显示，可以参考 12345678910111213141516171819202122function updateDescription() &#123; if (!soundFile.isPlaying()) &#123; description = 'Paused...'; p.html(description); &#125; else if (soundFile.isPlaying())&#123; description = 'Playing!'; p.html(description); &#125; else &#123; for (var i = 0; i &lt; frameCount%3; i++ ) &#123; // add periods to loading to create a fun loading bar effect if (frameCount%4 == 0)&#123; description += '.'; &#125; if (frameCount%25 == 0) &#123; description = 'loading'; &#125; &#125; p.html(description); &#125;&#125; sampleRate返回每一秒所有声音对象总体采样率数值。It is often 44100, or twice the range of human hearing. p5.js | Phrase p5.js | Part p5.js | sampleRate Music Theory 101 Model 4 练习在识别音级的这个练习中： 在给定曲调的下方的音符，音程为 (8+1-间隔音程)]]></content>
+      <categories>
+        <category>动手</category>
+        <category>读书</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Coding</tag>
+        <tag>编程</tag>
+        <tag>Learning</tag>
+        <tag>Music</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[00's Learning Log 180222]]></title>
     <url>%2F180222-learning-log.html</url>
     <content type="text"><![CDATA[Summary p5.sound 的例子 优化了情人节小动画 Treble + Bass clef 组合练习 Music Theory 101 Model 4 知识大融通 ch12 p5.sound 对象和方法学习补充昨天 SawOsc/TriOsc 的波形图像 昨天看了半天文档和例子，发现效率还是比较低。今早搜了一下 youtube，发现丹叔也有讲 p5.sound！17.1: Loading and Playing - p5.js Sound Tutorial 开心地刷完了 11 个视频。 Loading and Playing17.1: Loading and Playing - p5.js Sound Tutorial 加载声音：loadSound()，必需在 setup() 或 draw() 函数内使用。在 p5.js 里一般会用两种方式加载声音文件： preload() : 用于在 setup() 之前加载文件，加载成功才开始运行其他部分 callback() ：如果不想完全加载才运行程序，可以用 123456789101112131415161718192021222324252627282930var song, slider, button;function setup() &#123; createCanvas(200, 200); background(127); song = loadSound('song.mp3', loaded); button = createButton('play'); button.mousePressed(togglePlaying); slider = createSlider(0, 1, 0.5, 0.01);&#125;function loaded() &#123; console.log('loaded');&#125;function draw() &#123; song.setVolume(slider.value()); // song.pan(slider.value()); //set right or left channel, -1~1 // song.rate(slider.value()); //set play speed&#125;function togglePlaying() &#123; if (!song.isPlaying()) &#123; song.play(); // or song.loop(); button.html('pause'); &#125; else &#123; song.pause(); button.html('play'); &#125;&#125; Add cueaddCue(time,callback,[value]) ：在设定的时间点(a playback cue point)触发事件。 p5.js | addCue 比如可以在游戏中加载音效：17.5: Adding Sound Effects - p5.js Sound Tutorial Sound Synthesis17.6: Sound Synthesis - p5.js Sound Tutorial 123456wave = new p5.Oscillator();wave.setType('sine');wave.start();wave.amp(0.5);wave.freq(440); ADSR Envelope补充昨天的 env 对象。17.7: ADSR Envelope - p5.js Sound Tutorial A-AttackD-DecayS-SustainR-Release 优化情人节小动画查看 裁剪音频 用 preload 函数预先加载音频 增加 play/pause 按钮控制播放 调整频谱视觉效果，尝试渐变 拾遗 sindresorhus/awesome: Curated list of awesome lists：Github 超全索引！ Basic Electronics Tutorials and Revision：电路电子教材 Free SFX：免费音效]]></content>
       <categories>
@@ -46,8 +62,8 @@
         <tag>ArtxCode</tag>
         <tag>DeepLearning</tag>
         <tag>Coding</tag>
-        <tag>编程</tag>
         <tag>神经网络</tag>
+        <tag>编程</tag>
         <tag>Backpro</tag>
         <tag>反向传播</tag>
         <tag>Programming</tag>
@@ -1584,9 +1600,9 @@
         <tag>Travel</tag>
         <tag>历史</tag>
         <tag>中欧</tag>
-        <tag>捷克</tag>
         <tag>匈牙利</tag>
         <tag>奥地利</tag>
+        <tag>捷克</tag>
         <tag>斯洛伐克</tag>
       </tags>
   </entry>
@@ -1976,8 +1992,8 @@
       </categories>
       <tags>
         <tag>IxD</tag>
-        <tag>Note</tag>
         <tag>交互设计</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -2286,8 +2302,8 @@
       </categories>
       <tags>
         <tag>IxD</tag>
-        <tag>Note</tag>
         <tag>交互设计</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -2312,8 +2328,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Note</tag>
         <tag>交互设计</tag>
+        <tag>Note</tag>
         <tag>Interface</tag>
         <tag>Pattern</tag>
       </tags>
@@ -2378,8 +2394,8 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>Reading</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>

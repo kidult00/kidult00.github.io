@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-02-22T12:38:06.711Z</updated>
+  <updated>2018-02-23T14:41:07.794Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -17,11 +17,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>180222-learning-log</title>
+    <title>00&#39;s Learning Log 180223</title>
+    <link href="http://uegeek.com/180223-learning-log.html"/>
+    <id>http://uegeek.com/180223-learning-log.html</id>
+    <published>2018-02-23T14:38:28.000Z</published>
+    <updated>2018-02-23T14:41:07.794Z</updated>
+    
+    <content type="html"><![CDATA[<p>Summary</p><ul><li>整理文档系统结构，参考 <a href="http://www.yangzhiping.com/psy/yang-KnowledgeSystem.html" target="_blank" rel="noopener">构建优雅的知识创造系统 - 阳志平的网志</a> 采用域名方式命名。</li><li>整理 gitbook 文档理出 sound visualization 的思路</li><li>p5.sound 的 envelope 和 FFT 例子</li><li>Music Theory 101 的 <a href="https://prod-edxapp.edx-cdn.org/assets/courseware/v1/063c6ec50fc9d2b0f6c8624843bfaf24/asset-v1:JuilliardX+JX001x+3T2017+type@asset+block/Mod4_PS.pdf" target="_blank" rel="noopener">Model 4 练习</a></li><li>「乐理自学指南」第1-10课</li></ul><a id="more"></a> <h2 id="p5-sound"><a href="#p5-sound" class="headerlink" title="p5.sound"></a>p5.sound</h2><h3 id="phrase"><a href="#phrase" class="headerlink" title="phrase"></a>phrase</h3><p>乐句是一段时间内 musical events 的模式，比如一系列的音符和休止。Phrases 必需添加到 <code>p5.Part</code> 播放。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> p5.Phrase(name,callback,sequence)</span><br></pre></td></tr></table></figure><p><code>p5.Part</code> 播放一个或多个 <code>p5.Phrases</code>. 用 steps and tatums(Divisions of a beat) 初始化. 每个 step 默认为 1/16 音符。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> p5.Part([steps],[tatums])</span><br></pre></td></tr></table></figure><p>例子中用函数控制声音播放/暂停时的显示，可以参考</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateDescription</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!soundFile.isPlaying()) &#123;</span><br><span class="line">    description = <span class="string">'Paused...'</span>;</span><br><span class="line">    p.html(description);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (soundFile.isPlaying())&#123;</span><br><span class="line">    description = <span class="string">'Playing!'</span>;</span><br><span class="line">    p.html(description);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; frameCount%<span class="number">3</span>; i++ ) &#123;</span><br><span class="line">      <span class="comment">// add periods to loading to create a fun loading bar effect</span></span><br><span class="line">      <span class="keyword">if</span> (frameCount%<span class="number">4</span> == <span class="number">0</span>)&#123;</span><br><span class="line">        description += <span class="string">'.'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (frameCount%<span class="number">25</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        description = <span class="string">'loading'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    p.html(description);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="sampleRate"><a href="#sampleRate" class="headerlink" title="sampleRate"></a>sampleRate</h3><p>返回每一秒所有声音对象总体采样率数值。It is often 44100, or twice the range of human hearing.</p><ul><li><a href="https://p5js.org/reference/#/p5.Phrase" target="_blank" rel="noopener">p5.js | Phrase</a></li><li><a href="https://p5js.org/reference/#/p5.Part" target="_blank" rel="noopener">p5.js | Part</a></li><li><a href="https://p5js.org/reference/#/p5/sampleRate" target="_blank" rel="noopener">p5.js | sampleRate</a></li></ul><h2 id="Music-Theory-101-Model-4-练习"><a href="#Music-Theory-101-Model-4-练习" class="headerlink" title="Music Theory 101 Model 4 练习"></a>Music Theory 101 Model 4 练习</h2><p>在识别音级的这个练习中：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-02-23%20at%205.34.34%20PM.png" alt=""></p><p>在给定曲调的下方的音符，音程为 (8+1-间隔音程)</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Summary&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;整理文档系统结构，参考 &lt;a href=&quot;http://www.yangzhiping.com/psy/yang-KnowledgeSystem.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;构建优雅的知识创造系统 - 阳志平的网志&lt;/a&gt; 采用域名方式命名。&lt;/li&gt;
+&lt;li&gt;整理 gitbook 文档理出 sound visualization 的思路&lt;/li&gt;
+&lt;li&gt;p5.sound 的 envelope 和 FFT 例子&lt;/li&gt;
+&lt;li&gt;Music Theory 101 的 &lt;a href=&quot;https://prod-edxapp.edx-cdn.org/assets/courseware/v1/063c6ec50fc9d2b0f6c8624843bfaf24/asset-v1:JuilliardX+JX001x+3T2017+type@asset+block/Mod4_PS.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Model 4 练习&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;「乐理自学指南」第1-10课&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+    
+      <category term="读书" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+      <category term="Note" scheme="http://uegeek.com/tags/Note/"/>
+    
+      <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
+    
+      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="Learning" scheme="http://uegeek.com/tags/Learning/"/>
+    
+      <category term="Music" scheme="http://uegeek.com/tags/Music/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>00&#39;s Learning Log 180222</title>
     <link href="http://uegeek.com/180222-learning-log.html"/>
     <id>http://uegeek.com/180222-learning-log.html</id>
     <published>2018-02-22T12:35:53.000Z</published>
-    <updated>2018-02-22T12:38:06.711Z</updated>
+    <updated>2018-02-23T14:39:41.988Z</updated>
     
     <content type="html"><![CDATA[<p>Summary</p><ul><li>p5.sound 的例子</li><li>优化了情人节小动画</li><li>Treble + Bass clef 组合练习</li><li>Music Theory 101 Model 4</li><li>知识大融通 ch12</li></ul><a id="more"></a> <h2 id="p5-sound-对象和方法学习"><a href="#p5-sound-对象和方法学习" class="headerlink" title="p5.sound 对象和方法学习"></a>p5.sound 对象和方法学习</h2><p>补充昨天 SawOsc/TriOsc 的波形图像<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Waveforms.svg/400px-Waveforms.svg.png" alt=""></p><p>昨天看了半天文档和例子，发现效率还是比较低。今早搜了一下 youtube，发现丹叔也有讲 p5.sound！<a href="https://www.youtube.com/watch?v=Pn1g1wjxl_0&amp;list=PLRqwX-V7Uu6aFcVjlDAkkGIixw70s7jpW" target="_blank" rel="noopener">17.1: Loading and Playing - p5.js Sound Tutorial</a> 开心地刷完了 11 个视频。</p><h3 id="Loading-and-Playing"><a href="#Loading-and-Playing" class="headerlink" title="Loading and Playing"></a>Loading and Playing</h3><p><a href="https://www.youtube.com/watch?v=Pn1g1wjxl_0&amp;list=PLRqwX-V7Uu6aFcVjlDAkkGIixw70s7jpW" target="_blank" rel="noopener">17.1: Loading and Playing - p5.js Sound Tutorial</a></p><p>加载声音：<code>loadSound()</code>，必需在 setup() 或 draw() 函数内使用。在 p5.js 里一般会用两种方式加载声音文件：</p><ul><li><code>preload()</code> : 用于在 <code>setup()</code> 之前加载文件，加载成功才开始运行其他部分</li><li><code>callback()</code> ：如果不想完全加载才运行程序，可以用</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> song, slider, button;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setup</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">createCanvas(<span class="number">200</span>, <span class="number">200</span>);</span><br><span class="line">background(<span class="number">127</span>);</span><br><span class="line">  song = loadSound(<span class="string">'song.mp3'</span>, loaded);</span><br><span class="line">button = createButton(<span class="string">'play'</span>);</span><br><span class="line">button.mousePressed(togglePlaying);</span><br><span class="line">  slider = createSlider(<span class="number">0</span>, <span class="number">1</span>, <span class="number">0.5</span>, <span class="number">0.01</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loaded</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'loaded'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  song.setVolume(slider.value());</span><br><span class="line">  <span class="comment">// song.pan(slider.value()); //set right or left channel, -1~1</span></span><br><span class="line">  <span class="comment">// song.rate(slider.value()); //set play speed</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">togglePlaying</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (!song.isPlaying()) &#123;</span><br><span class="line">song.play(); <span class="comment">// or song.loop();</span></span><br><span class="line">button.html(<span class="string">'pause'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">song.pause();</span><br><span class="line">button.html(<span class="string">'play'</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Add-cue"><a href="#Add-cue" class="headerlink" title="Add cue"></a>Add cue</h3><p><code>addCue(time,callback,[value])</code> ：在设定的时间点(a playback cue point)触发事件。 <a href="https://p5js.org/reference/#/p5.SoundFile/addCue" target="_blank" rel="noopener">p5.js | addCue</a></p><p>比如可以在游戏中加载音效：<a href="https://www.youtube.com/watch?v=40Me1-yAtTc&amp;index=5&amp;list=PLRqwX-V7Uu6aFcVjlDAkkGIixw70s7jpW" target="_blank" rel="noopener">17.5: Adding Sound Effects - p5.js Sound Tutorial</a></p><h3 id="Sound-Synthesis"><a href="#Sound-Synthesis" class="headerlink" title="Sound Synthesis"></a>Sound Synthesis</h3><p><a href="https://www.youtube.com/watch?v=Bk8rLzzSink&amp;index=6&amp;list=PLRqwX-V7Uu6aFcVjlDAkkGIixw70s7jpW" target="_blank" rel="noopener">17.6: Sound Synthesis - p5.js Sound Tutorial</a></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wave = <span class="keyword">new</span> p5.Oscillator();</span><br><span class="line"></span><br><span class="line">wave.setType(<span class="string">'sine'</span>);</span><br><span class="line">wave.start();</span><br><span class="line">wave.amp(<span class="number">0.5</span>);</span><br><span class="line">wave.freq(<span class="number">440</span>);</span><br></pre></td></tr></table></figure><h3 id="ADSR-Envelope"><a href="#ADSR-Envelope" class="headerlink" title="ADSR Envelope"></a>ADSR Envelope</h3><p>补充昨天的 env 对象。<a href="https://www.youtube.com/watch?v=wUSva_BnedA&amp;list=PLRqwX-V7Uu6aFcVjlDAkkGIixw70s7jpW&amp;index=7" target="_blank" rel="noopener">17.7: ADSR Envelope - p5.js Sound Tutorial</a></p><p><img src="https://blog.landr.com/wp-content/uploads/2016/10/ASDR-01.jpg" alt=""></p><p>A-Attack<br>D-Decay<br>S-Sustain<br>R-Release</p><h2 id="优化情人节小动画"><a href="#优化情人节小动画" class="headerlink" title="优化情人节小动画"></a>优化情人节小动画</h2><p><a href="http://www.uegeek.com/20180214.html" target="_blank" rel="noopener">查看</a></p><ul><li>裁剪音频</li><li>用 preload 函数预先加载音频</li><li>增加 play/pause 按钮控制播放</li><li>调整频谱视觉效果，尝试渐变</li></ul><h2 id="拾遗"><a href="#拾遗" class="headerlink" title="拾遗"></a>拾遗</h2><ul><li><a href="https://github.com/sindresorhus/awesome" target="_blank" rel="noopener">sindresorhus/awesome: Curated list of awesome lists</a>：Github 超全索引！</li><li><a href="https://www.electronics-tutorials.ws/" target="_blank" rel="noopener">Basic Electronics Tutorials and Revision</a>：电路电子教材</li><li><a href="https://arnofaure.github.io/free-sfx/" target="_blank" rel="noopener">Free SFX</a>：免费音效</li></ul>]]></content>
     
@@ -124,9 +163,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="Backpro" scheme="http://uegeek.com/tags/Backpro/"/>
     
@@ -621,38 +660,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-    
-    
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
-    
-      <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="DeepLearning" scheme="http://uegeek.com/tags/DeepLearning/"/>
-    
-      <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DL笔记：机器学习和深度学习的区别</title>
-    <link href="http://uegeek.com/171206DLNote1-ML-DL-Basic.html"/>
-    <id>http://uegeek.com/171206DLNote1-ML-DL-Basic.html</id>
-    <published>2017-12-06T01:24:46.000Z</published>
-    <updated>2017-12-09T01:27:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://blogs.nvidia.com/wp-content/uploads/2016/07/Deep_Learning_Icons_R5_PNG.jpg.png" alt=""><br>via <a href="https://blogs.nvidia.com/blog/2016/07/29/whats-difference-artificial-intelligence-machine-learning-deep-learning-ai/" target="_blank" rel="noopener">The Difference Between AI, Machine Learning, and Deep Learning? | NVIDIA Blog</a></p><a id="more"></a> <p>Nvidia 博客上的这张图很好表示了 AI, Machine Learning, Deep Learning 三者的关系。人工智能是一类非常广泛的问题，机器学习是其中一个重要领域和手段，<strong>深度学习则是机器学习的一个分支</strong>。在很多人工智能问题上，深度学习的方法突破了传统机器学习的瓶颈，因而影响力迅速扩大。</p><h3 id="什么是机器学习？"><a href="#什么是机器学习？" class="headerlink" title="什么是机器学习？"></a>什么是机器学习？</h3><p><img src="https://uploads.toptal.io/blog/image/443/toptal-blog-image-1407508081138.png" alt=""></p><p>00 试着翻出一些机器学习相对权威的定义，看看它们有什么共同点：</p><table><thead><tr><th>Definition</th><th>Translation</th><th>Source</th><th>Key words</th></tr></thead><tbody><tr><td>The field of machine learning is concerned with the question of how to construct computer programs that automatically improve with experience.</td><td>机器学习聚焦于一个问题：如何构建随着经验而自动改进的计算机程序。</td><td>Tom Mitchell in  <a href="http://www.amazon.com/dp/0070428077?tag=inspiredalgor-20" target="_blank" rel="noopener">Machine Learning</a></td><td>会自我改进的程序</td></tr><tr><td>Vast amounts of data are being generated in many fields, and the statisticians’s job is to make sense of it all: to extract important patterns and trends, and to understand “what the data says”. We call this learning from data.</td><td>从数据中提取重要的模式和规律/趋势</td><td><a href="http://www.amazon.com/dp/0387848576?tag=inspiredalgor-20" target="_blank" rel="noopener">The Elements of Statistical Learning: Data Mining, Inference, and Prediction</a></td><td>模式提取</td></tr><tr><td>Pattern recognition has its origins in engineering, whereas machine learning grew out of computer science. However, these activities can be viewed as two facets of the same field…</td><td>模式识别和机器学习是一体两面</td><td>Bishop in <a href="http://www.amazon.com/dp/0387310738?tag=inspiredalgor-20" target="_blank" rel="noopener">Pattern Recognition and Machine Learning</a></td><td>模式识别</td></tr><tr><td>Machine Learning is the training of a model from data that generalizes a decision against a performance measure.</td><td>机器学习是通过用于决策的数据去训练模型，并达到某些运行标准</td><td><a href="http://machinelearningmastery.com/author/jasonb/" target="_blank" rel="noopener">Jason Brownlee</a> in <a href="http://machinelearningmastery.com/what-is-machine-learning/" target="_blank" rel="noopener">What is Machine Learning: A Tour of Authoritative Definitions and a Handy One-Liner You Can Use</a></td><td>通过数据训练模型</td></tr></tbody></table><p>简单来说，就是机器通过一系列「任务」从「经验」（数据）中学习，并且评估「效果」如何：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Col.DL.ETP.png" alt=""></p><p>为什么叫做「学习」呢？一般编程语言的做法，是定义每一步指令，逐一执行并最终达到目标。而机器学习则相反，先定义好输出，然后程序自动「学习」出达到目标的「步骤」。</p><p>机器学习可以分为：</p><ul><li>监督学习：给出定义好的标签，程序「学习」标签和数据之间的映射关系</li><li>非监督学习：没有标签的数据集</li><li>强化学习：达到目标会有正向反馈</li></ul><p><img src="https://i1.wp.com/cybrml.com/wp-content/uploads/2017/01/MachineLearningDiagram.png?resize=770%2C551" alt=""></p><h3 id="机器学习擅长做什么？"><a href="#机器学习擅长做什么？" class="headerlink" title="机器学习擅长做什么？"></a>机器学习擅长做什么？</h3><p>当然是替代重复的人工劳动，用机器自动从大量数据中识别模式——也就是「套路」啦。知道「套路」后，我们可以干嘛呢？</p><ul><li>Classification 分类，如垃圾邮件识别(detection, ranking)</li><li>Regression 回归，例如股市预测</li><li>Clustering 聚类，如 iPhoto 按人分组</li><li>Rule Extraction 规则提取，如数据挖掘</li></ul><p>比如垃圾邮件识别的问题，做法是先从每一封邮件中抽取出对识别结果可能有影响的因素（称为特征 feature），比如发件地址、邮件标题、收件人数量等等。然后使用算法去训练数据中每个特征和预测结果的相关度，最终得到可以预测结果的特征。</p><p>算法再强大，如果无法从数据中「学习到」更好的特征表达，也是徒劳。同样的数据，使用不同的表达方法，可能会极大影响问题的难度。一旦解决了数据表达和特征提取问题，很多人工智能任务也就迎刃而解。</p><h3 id="为什么需要深度学习？"><a href="#为什么需要深度学习？" class="headerlink" title="为什么需要深度学习？"></a>为什么需要深度学习？</h3><p>但是对机器学习来说，特征提取并不简单。特征工程往往需要人工投入大量时间去研究和调整，就好像原本应该机器解决的问题，却需要人一直在旁边搀扶。</p><p>深度学习便是解决特征提取问题的一个机器学习分支。它可以自动学习特征和任务之间的关联，还能从简单特征中提取复杂的特征。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Col.DL.ML_vs_DL.png" alt=""></p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li><a href="http://machinelearningmastery.com/what-is-machine-learning/" target="_blank" rel="noopener">What is Machine Learning: A Tour of Authoritative Definitions and a Handy One-Liner You Can Use - Machine Learning Mastery</a></li><li><a href="https://book.douban.com/subject/26708119/" target="_blank" rel="noopener">机器学习 (豆瓣)</a></li><li><a href="https://book.douban.com/subject/26976457/" target="_blank" rel="noopener">Tensorflow：实战Google深度学习框架 (豆瓣)</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://blogs.nvidia.com/wp-content/uploads/2016/07/Deep_Learning_Icons_R5_PNG.jpg.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;via &lt;a href=&quot;https://blogs.nvidia.com/blog/2016/07/29/whats-difference-artificial-intelligence-machine-learning-deep-learning-ai/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;The Difference Between AI, Machine Learning, and Deep Learning? | NVIDIA Blog&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
