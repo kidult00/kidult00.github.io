@@ -22,28 +22,28 @@
 
     <url>
         <loc>http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/</loc>
-        <lastmod>2018-01-13T11:39:40.390Z</lastmod>
+        <lastmod>2018-01-13T11:39:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/</loc>
-        <lastmod>2018-01-13T11:43:49.424Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/</loc>
-        <lastmod>2018-02-23T14:41:07.794Z</lastmod>
+        <lastmod>2018-01-13T11:43:49.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/%E8%AF%BB%E4%B9%A6/</loc>
-        <lastmod>2018-02-23T14:41:07.794Z</lastmod>
+        <lastmod>2018-02-23T14:41:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/</loc>
+        <lastmod>2018-03-22T14:22:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
