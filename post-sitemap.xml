@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/180327-DeepLearning12-model-evaluation.html</loc>
+        <lastmod>2018-03-27T16:34:41.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://uegeek.com/180322-DeepLearning11-aws-gpu-training.html</loc>
         <lastmod>2018-03-22T14:30:53.000Z</lastmod>
         <changefreq>weekly</changefreq>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-03-22T14:30:53.000Z</updated>
+  <updated>2018-03-27T16:34:41.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DeepLearning 笔记：如何评估神经网络的训练效果</title>
+    <link href="http://uegeek.com/180327-DeepLearning12-model-evaluation.html"/>
+    <id>http://uegeek.com/180327-DeepLearning12-model-evaluation.html</id>
+    <published>2018-03-27T14:33:10.000Z</published>
+    <updated>2018-03-27T16:34:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p><a id="more"></a> <p><code>阿扣</code>：阿特，我们已经学过怎样构建神经网络，得到预测结果了。不过到这里还没有完，还有重要的步骤。</p><p><code>阿特</code>：是什么呢？</p><p><code>阿扣</code>：检验效果，来判断模型是否靠谱。</p><p><code>阿特</code>：是不是根据错误率呀？错误率低就说明更靠谱。</p><p><code>阿扣</code>：没错，是这个思路。不过要怎样计算错误率呢？想想看，我们的模型是根据训练数据「拟合」出来的，也就是说，模型在这些数据中「学习」到了规律。但是这不代表模型在其他数据中也能预测得很好哦。</p><p><code>阿特</code>：是不是像有的专家，在某些领域有经验，但是换一个领域可能跟普通人没什么区别。</p><p><code>阿扣</code>：说得对。我们的训练模型也是这样，它有可能对给出的数据了如指掌，就像谈恋爱一样，成为某个姑娘的「专家」。但是换一个姑娘，人家喜欢吃什么、爱豆是谁、是不是颜控，它可能就抓瞎了。很多时候，不是模型复杂效果就好，因为那样可能是「过拟合」（over-fitting）了：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/DL-overfit.png" alt=""></p><h3 id="Cross-validation"><a href="#Cross-validation" class="headerlink" title="Cross validation"></a>Cross validation</h3><p>K-flld cross validation</p><p><code>阿特</code>：那怎么防止过拟合呢？</p><p><code>阿扣</code>：要学会评估训练效果。当模型遇到新的数据，看看这些数据它预测得咋样。一般的做法是，把训练数据分成 3 部分：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/crossValidation.png" alt=""></p><table><thead><tr><th>数据集</th><th>作用</th><th>参考比例</th></tr></thead><tbody><tr><td>训练集 Training Set</td><td>训练模型</td><td>70</td></tr><tr><td>验证集 Validation Set</td><td>调整模型</td><td>10</td></tr><tr><td>测试集 Testing Set</td><td>测试模型效果</td><td>20</td></tr></tbody></table><p><code>阿特</code>：就是把拿到的数据分三份，有一份要存起来，最后才拿出来用。</p><p><code>阿扣</code>：奏四这个节奏。记住啊，千万不要用测试数据来训练模型！不然就「监守自盗」了啊！切记切记！</p><h3 id="Confusion-matrices-混淆矩阵"><a href="#Confusion-matrices-混淆矩阵" class="headerlink" title="Confusion matrices 混淆矩阵"></a>Confusion matrices 混淆矩阵</h3><p><code>阿扣</code>：模型在做预测的时候，通常会犯两种错误。我们举个例子——要诊断某个人是不是得病。那么错误会有两种：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/confusionMatrix1.png" alt=""></p><ul><li>实际上得病，但是判断为没病 (False Negative)</li><li>实际上没病，但是判断为得病 (False Positive)</li></ul><p><code>阿特</code>：好惨哦……这种错范不得……</p><h3 id="Accuracy-准确率"><a href="#Accuracy-准确率" class="headerlink" title="Accuracy 准确率"></a>Accuracy 准确率</h3><p><code>阿扣</code>：有了混淆矩阵，我们就容易计算出模型的<strong>准确率</strong>：</p><p>Accuracy = (True positives + True Negatives) / Total</p><p><code>阿特</code>：把对的加起来，除以总数。</p><p><code>阿扣</code>：对呀对呀，来，给你留个小测试，看看是不是掌握了：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/DL-confusionMatrixTest1.png" alt=""></p><h3 id="补充：如何评估线性模型"><a href="#补充：如何评估线性模型" class="headerlink" title="补充：如何评估线性模型"></a>补充：如何评估线性模型</h3><p>Mean Absolute Error ：把每个数据点的误差 $(y-\hat y)$ 加起来</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/DL-meanAbsoluteError.png" alt=""></p><p>Mean Squared Error ：把每个数据点误差的平方项加起来</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/DL-meanSquaredError.png" alt=""></p><p>R2 Score ：比较训练模型和最简单的模型。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/DL-R2Score.png" alt=""></p><p>Model complexity graph</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/DL-modelComplexityGraph.png" alt=""></p><p>下图虚线表示验证集数据，实线表示训练数据。好的模型，在训练集和验证集上的准确率都比较高。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/modelComplexityGraph.png" alt=""></p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li><a href="https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101" target="_blank" rel="noopener">Deep Learning Nanodegree | Udacity</a></li><li><a href="https://www.wikiwand.com/en/Confusion_matrix" target="_blank" rel="noopener">Confusion matrix - Wikiwand</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+    
+    
+      <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
+    
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="DeepLearning" scheme="http://uegeek.com/tags/DeepLearning/"/>
+    
+      <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
+    
+      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
+    
+  </entry>
   
   <entry>
     <title>DeepLearning笔记：如何用亚马逊云服务 GPU 训练神经网络</title>
@@ -35,11 +73,11 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
-    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
+    
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
@@ -194,11 +232,11 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
-    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
+    
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
@@ -435,11 +473,11 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
-    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
+    
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
@@ -493,11 +531,11 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
-    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
+    
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
@@ -553,11 +591,11 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
-    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
+    
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
@@ -585,11 +623,11 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
-    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
+    
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
@@ -617,11 +655,11 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
-    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
+    
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
@@ -656,38 +694,6 @@
       <category term="大哉问" scheme="http://uegeek.com/tags/%E5%A4%A7%E5%93%89%E9%97%AE/"/>
     
       <category term="Love" scheme="http://uegeek.com/tags/Love/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DL笔记：Linear regression 线性回归</title>
-    <link href="http://uegeek.com/171213DLN3-LinearRegression.html"/>
-    <id>http://uegeek.com/171213DLN3-LinearRegression.html</id>
-    <published>2017-12-13T11:02:19.000Z</published>
-    <updated>2017-12-18T11:20:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p><a id="more"></a> <p><code>阿扣</code>：今天带你了解一下线性回归。</p><p><code>阿特</code>：🙄 听起来就不是什么容易懂的东西……为什么要了解线……什么，线性回归呢？</p><p><code>阿扣</code>：什么<a href="http://www.uegeek.com/171206DLNote1-ML-DL-Basic.html" target="_blank" rel="noopener">机器学习啊深度学习啊</a>，最终目的之一不就是<strong>根据已有数据做出预测</strong>，回归和分类都是「做预测」的主要手段。在下面这张图中找找看，线性回归在机器学习中的位置：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/LinearRegressionInML.png" alt=""></p><p><code>阿特</code>：如果说目的都是做「预测」，回归分析和分类有什么不同呢?</p><p><code>阿扣</code>：<strong>回归得到预测的具体数值</strong>，比如股市的行情、未来的气温值。<strong>而分类得到一个「声明」，或者说对数据打上的标签</strong>。</p><p><code>阿特</code>：那什么是线性回归呢？</p><p><code>阿扣</code>：线性回归是最基础的回归类型，它的定义是这样：</p><blockquote><p>在统计学中，线性回归（Linear regression）是利用线性回归方程的最小平方函数，对一个或多个自变量和因变量之间关系建模的一种回归分析。这种函数是一个或多个回归系数的模型参数的线性组合。</p></blockquote><p><code>阿特</code>：好吧，看不懂……不过我主要不明白的是「回归」的意思，要回哪里哦……</p><p><code>阿扣</code>：初中时学的解方程还记得吧？方程左边有 X，求方程右边的 Y： ax + b =y 。</p><p><code>阿特</code>：这个还是记得的。</p><p><code>阿扣</code>：回归分析假设 X 和 Y 之间是有奸情哦不对是有关系的，用于了解只有一个自变量 X 时，因变量 Y 的变化。</p><ul><li>鬼话版：回归分析用来估计模型的参数，以便最好地拟合数据</li><li>人话版：「回归」的目的呢，就是<strong>找出一个最能够代表所有观测数据的函数，来表示 X 和 Y 的关系</strong>。这个函数只有一个变量，所以是类似这样的一条直线：</li></ul><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Linear_regression.svg/640px-Linear_regression.svg.png?1512632790654" alt=""></p><p><code>阿特</code>：好像我记得那种方程在坐标轴上就是用一条直线来表示。不过怎么基于这条直线做预测呢？</p><p><code>阿扣</code>：其实不是基于这条线，而是 <strong>「找出」这条最符合 X 和 Y 的关系的线 (line of best fit)，认定这就是它们之间的「关系」，然后去做预测</strong>。</p><p>我们先来用符号把这个 X 和 Y 的关系表达式写出来。A 表示我们手上有的数据集，比如你每天的能量摄入和体重值，哈哈哈，然后可以用它来预测你什么时候会变成个胖纸~</p><p><code>阿特</code>：紧脏……</p><p><code>阿扣</code>：来看看这张图，我告诉你每个字母代表什么：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/linearClassifier1.png" alt=""></p><p><code>X</code> 是每天的能量摄入，<code>y</code> 是体重。我们想预测你的未来体重 $\hat y$ (给字母加个帽子一般表示它的预测值)，于是用 能量输入 乘以一个权重(weight) <code>W</code>，加上一个偏置项(bias) <code>b</code>，就是计算体重的函数了。</p><p>$$WX + b = y$$</p><p><code>阿特</code>：好像蛮简单的。</p><p><code>阿扣</code>：是啊。这个式子以后我们还会无数次看到，是老朋友来的。</p><p>关于回归分析，再多说两句。</p><p><code>阿特</code>：我有预感不止 20 句……</p><p><code>阿扣</code>：它有三个主要用途：</p><ul><li>因果分析：确定<strong>自变量对因变量的影响的强度</strong>。比如计算剂量和效应，销售和营销支出，年龄和收入之间的关系。</li><li>预测影响：预测影响或变化的影响，即<strong>因变量随着一个或多个自变量的变化而变化多少</strong>。典型的问题是，「增加一个单位 X， Y 能增加多少？」</li><li>趋势预测：<strong>预测趋势和未来价值</strong>。比如，「从现在起6个月，黄金的价格是多少？」，「任务 X 的总体成本是多少？」</li></ul><p><code>阿特</code>：好像很强大，那它有什么缺点呢？</p><p><code>阿扣</code>：有两个主要的缺点：</p><ul><li>只适用于本身是线性关系的数据</li><li>对 outliner 敏感</li></ul><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/lin-reg-w-outliers.png" alt=""></p><p>比如上图右上角的几个点，偏离平局值比较多，我们叫 outliner。出现这种情况，我们可以试试其他的回归分析类型，或者放弃回归分析，用其他的算法了。</p><table><thead><tr><th>Name</th><th>名称</th><th>因变量个数</th><th>自变量个数</th></tr></thead><tbody><tr><td>Simple linear regression</td><td>简单线性回归</td><td>1</td><td>1</td></tr><tr><td>Multiple linear regression</td><td>多元线性回归</td><td>1</td><td>2+</td></tr><tr><td>Logistic regression</td><td>逻辑回归</td><td>1</td><td>2+</td></tr><tr><td>Ordinal regression</td><td>序数回归</td><td>1</td><td>1+</td></tr><tr><td>Multinominal regression</td><td>多项式回归</td><td>1</td><td>1+</td></tr><tr><td>Discriminant analysis</td><td>判别分析</td><td>1</td><td>1+</td></tr></tbody></table><p>如果需要预测的结果依赖于多个变量，可以用多元线性回归，比如：</p><p>$$y = m_1x_1 + m_2x_2 + b$$</p><p>我们用一个三维平面来表示这个二元线性回归：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/just-a-2d-reg.png" alt=""></p><p><code>阿特</code>：那么多回归类型，不会都要掌握吧？</p><p><code>阿扣</code>：嗯，我们接触比较多的是逻辑回归(Logistic regression)。下回给你讲讲逻辑回归要用到的激活函数吧。</p><p><code>阿特</code>：🐵 </p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li><a href="https://www.wikiwand.com/zh/%E8%BF%B4%E6%AD%B8%E5%88%86%E6%9E%90" target="_blank" rel="noopener">迴歸分析 - Wikiwand</a></li><li><a href="https://www.wikiwand.com/zh/%E7%B7%9A%E6%80%A7%E5%9B%9E%E6%AD%B8" target="_blank" rel="noopener">線性回歸 - Wikiwand</a></li><li><a href="http://www.statisticssolutions.com/what-is-linear-regression/" target="_blank" rel="noopener">What is Linear Regression? - Statistics Solutions</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-    
-    
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
-    
-      <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="DeepLearning" scheme="http://uegeek.com/tags/DeepLearning/"/>
-    
-      <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
   </entry>
   
