@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>http://uegeek.com/180402-happy-new-mac-ii.html</loc>
+    <lastmod>2018-04-02T10:39:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>Happy New Mac II - Mac 私人调教手册</title>
+        <pubTime>2018-04-02T10:38:08.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/180327-DeepLearning12-model-evaluation.html</loc>
     <lastmod>2018-03-27T16:34:41.000Z</lastmod>
     <data>
@@ -11,11 +29,11 @@
         <title>DeepLearning 笔记：如何评估神经网络的训练效果</title>
         <pubTime>2018-03-27T14:33:10.000Z</pubTime>
         
+        <tag>Python</tag>
+         
         <tag>深度学习</tag>
          
         <tag>AI</tag>
-         
-        <tag>Python</tag>
          
         <tag>ArtxCode</tag>
          
@@ -47,11 +65,11 @@
         <title>DeepLearning笔记：如何用亚马逊云服务 GPU 训练神经网络</title>
         <pubTime>2018-03-22T14:05:27.000Z</pubTime>
         
+        <tag>Python</tag>
+         
         <tag>深度学习</tag>
          
         <tag>AI</tag>
-         
-        <tag>Python</tag>
          
         <tag>ArtxCode</tag>
          
@@ -182,11 +200,11 @@
         <title>DeepLearning 笔记：用 Python 实现反向传播算法</title>
         <pubTime>2018-02-08T14:37:55.000Z</pubTime>
         
+        <tag>Python</tag>
+         
         <tag>深度学习</tag>
          
         <tag>AI</tag>
-         
-        <tag>Python</tag>
          
         <tag>ArtxCode</tag>
          
@@ -198,11 +216,11 @@
          
         <tag>编程</tag>
          
+        <tag>Programming</tag>
+         
         <tag>Backpro</tag>
          
         <tag>反向传播</tag>
-         
-        <tag>Programming</tag>
          
          
            
@@ -473,11 +491,11 @@
         <title>DeepLearning笔记：多节点神经网络</title>
         <pubTime>2018-01-04T09:03:50.000Z</pubTime>
         
+        <tag>Python</tag>
+         
         <tag>深度学习</tag>
          
         <tag>AI</tag>
-         
-        <tag>Python</tag>
          
         <tag>ArtxCode</tag>
          
@@ -507,11 +525,11 @@
         <title>DL笔记：用 python 实现梯度下降的算法</title>
         <pubTime>2017-12-26T01:28:42.000Z</pubTime>
         
+        <tag>Python</tag>
+         
         <tag>深度学习</tag>
          
         <tag>AI</tag>
-         
-        <tag>Python</tag>
          
         <tag>ArtxCode</tag>
          
@@ -537,11 +555,11 @@
         <title>DL笔记：梯度下降 Gradient Descent</title>
         <pubTime>2017-12-22T01:28:24.000Z</pubTime>
         
+        <tag>Python</tag>
+         
         <tag>深度学习</tag>
          
         <tag>AI</tag>
-         
-        <tag>Python</tag>
          
         <tag>ArtxCode</tag>
          
@@ -607,11 +625,11 @@
         <title>DL笔记：Cost function 损失函数</title>
         <pubTime>2017-12-20T01:31:16.000Z</pubTime>
         
+        <tag>Python</tag>
+         
         <tag>深度学习</tag>
          
         <tag>AI</tag>
-         
-        <tag>Python</tag>
          
         <tag>ArtxCode</tag>
          
@@ -637,11 +655,11 @@
         <title>DL笔记：Activation Function 激活函数</title>
         <pubTime>2017-12-18T11:20:51.000Z</pubTime>
         
+        <tag>Python</tag>
+         
         <tag>深度学习</tag>
          
         <tag>AI</tag>
-         
-        <tag>Python</tag>
          
         <tag>ArtxCode</tag>
          
@@ -693,11 +711,11 @@
         <title>DL笔记：Linear regression 线性回归</title>
         <pubTime>2017-12-13T11:02:19.000Z</pubTime>
         
+        <tag>Python</tag>
+         
         <tag>深度学习</tag>
          
         <tag>AI</tag>
-         
-        <tag>Python</tag>
          
         <tag>ArtxCode</tag>
          
@@ -723,11 +741,11 @@
         <title>DL笔记：Neural Networks 神经网络</title>
         <pubTime>2017-12-09T11:01:34.000Z</pubTime>
         
+        <tag>Python</tag>
+         
         <tag>深度学习</tag>
          
         <tag>AI</tag>
-         
-        <tag>Python</tag>
          
         <tag>ArtxCode</tag>
          
@@ -753,11 +771,11 @@
         <title>DL笔记：机器学习和深度学习的区别</title>
         <pubTime>2017-12-06T01:24:46.000Z</pubTime>
         
+        <tag>Python</tag>
+         
         <tag>深度学习</tag>
          
         <tag>AI</tag>
-         
-        <tag>Python</tag>
          
         <tag>ArtxCode</tag>
          
@@ -2270,11 +2288,11 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
-        <tag>历史</tag>
+        <tag>Travel</tag>
          
         <tag>哥特式</tag>
          
@@ -4778,9 +4796,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>人类简史</tag>
+         
+        <tag>历史</tag>
          
          
            
@@ -4800,15 +4818,15 @@
         <title>中欧四国扫(ba)盲(gua)帖之一：“中欧”还是“东欧”？</title>
         <pubTime>2015-09-18T13:37:38.000Z</pubTime>
         
-        <tag>Travel</tag>
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
-        <tag>历史</tag>
+        <tag>捷克</tag>
+         
+        <tag>Travel</tag>
          
         <tag>奥地利</tag>
-         
-        <tag>捷克</tag>
          
         <tag>匈牙利</tag>
          
@@ -4834,13 +4852,13 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
-        <tag>历史</tag>
-         
         <tag>捷克</tag>
+         
+        <tag>Travel</tag>
          
          
            
@@ -4862,13 +4880,13 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
-        <tag>历史</tag>
-         
         <tag>捷克</tag>
+         
+        <tag>Travel</tag>
          
          
            
@@ -4890,11 +4908,11 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
-        <tag>历史</tag>
+        <tag>Travel</tag>
          
         <tag>哈布斯堡王朝</tag>
          
@@ -4922,11 +4940,11 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
-        <tag>历史</tag>
+        <tag>Travel</tag>
          
         <tag>东正教</tag>
          

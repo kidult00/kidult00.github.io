@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-03-27T16:34:41.000Z</updated>
+  <updated>2018-04-02T10:39:39.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Happy New Mac II - Mac 私人调教手册</title>
+    <link href="http://uegeek.com/180402-happy-new-mac-ii.html"/>
+    <id>http://uegeek.com/180402-happy-new-mac-ii.html</id>
+    <published>2018-04-02T10:38:08.000Z</published>
+    <updated>2018-04-02T10:39:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ma/imac/215/imac-215-retina-selection-hero-201706?wid=904&amp;hei=840&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1495846295922" alt=""></p><p>元宵节这天，迎娶了属于自己的第一台 iMac。</p><p>3 年前写了一篇 Happy New Year Happy New Mac，是时候更新一版，跟大家分享如何用最合理的顺序、最快的速度、最轻松的姿势，调教出一台高大威猛动静皆宜无所不能所向披靡的 Mac……</p><p>（如果你不是工程师，但是有一定的编程需要，比较经常使用命令行，是 Alfred 粉丝，那么本文就最适合你了~）</p><a id="more"></a> <h2 id="0-开箱"><a href="#0-开箱" class="headerlink" title="0.开箱"></a>0.开箱</h2><p>负责任地说一句：体积越大的苹果产品，开箱体验就越享受。</p><p>键盘和 Magic Mouse 都从以前的电池换成了充电式—— Magic Mouse 终于变轻了，好评！比较遗憾的是京东买的这款 21.5 高配还是没有配触控板 😔</p><p>拍照就不用说了，开箱后记得拍一张序列号备用。</p><h2 id="1-基本设置"><a href="#1-基本设置" class="headerlink" title="1.基本设置"></a>1.基本设置</h2><ul><li>开机后打开设置，到「Trackpad」里面设置习惯的触控板手势</li><li>更新系统至最新版本</li><li>有必要的话，在 App Store 里下载最新版本的 Xcode</li></ul><h2 id="2-Terminal"><a href="#2-Terminal" class="headerlink" title="2.Terminal"></a>2.Terminal</h2><h3 id="2-1-iTerm"><a href="#2-1-iTerm" class="headerlink" title="2.1 iTerm"></a>2.1 iTerm</h3><p>原配 terminal 比较简陋，先升级一下。用 safari 下载 <a href="http://www.iterm2.com/downloads.html" target="_blank" rel="noopener">iTerm2</a> 并安装。</p><h3 id="2-2-Homebrew"><a href="#2-2-Homebrew" class="headerlink" title="2.2 Homebrew"></a>2.2 Homebrew</h3><p>在新电脑上一个一个下载各软件最新版本很麻烦吧？Homebrew 帮你搞定！用 safari 打开 <a href="http://brew.sh" target="_blank" rel="noopener">http://brew.sh</a>，按说明在 terminal 里安装 Homebrew：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure><p>安装 brew-cask：<code>brew tap phinze/homebrew-cask</code> 或者 <code>brew install brew-cask</code>。以后更新只需要：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update &amp;&amp; brew upgrade</span><br></pre></td></tr></table></figure><p>按需安装各种包，比如 <code>brew install wget</code>。</p><h3 id="2-3-安装-oh-my-zsh"><a href="#2-3-安装-oh-my-zsh" class="headerlink" title="2.3 安装 oh-my-zsh"></a>2.3 安装 oh-my-zsh</h3><p>iTerm 虽好，还是缺了一些补全、alias、快速跳转等神奇功能，所以再套上 oh-my-zsh。GitHub 地址：<a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="noopener">robbyrussell/oh-my-zsh</a>. <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH" target="_blank" rel="noopener">安装说明</a></p><p>如果已经安装 wget，执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure><h3 id="2-4-Github-配置"><a href="#2-4-Github-配置" class="headerlink" title="2.4 Github 配置"></a>2.4 Github 配置</h3><p>按照 Github <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="noopener">Generating a new SSH key and adding it to the ssh-agent</a> 说明，创建 SSH 秘钥：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.ssh</span><br><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></span><br><span class="line">pbcopy &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure><p>此时，pdcopy 命令已经将 id_rsa.pub 内容复制到剪切板。</p><p>登录并进入 <a href="https://github.com/settings/ssh" target="_blank" rel="noopener">Github SSH and GPG keys 设置页面</a>，点击 <code>New SSH key</code>。Title 部分填写一个所用电脑的名称，然后在 Key 部分填写之前通过 pdcopy 命令复制的内容。<a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="noopener">生成 ssh key 的说明</a>。然后在全局设置中设置用户名和邮箱。</p><p><code>git config --global user.name &quot;yourusername</code><br><code>git config --global user.email &quot;youremail&quot;</code></p><p>如果有项目需要推送到 coding.net，也需要去 <a href="https://coding.net/user/account/setting/keys" target="_blank" rel="noopener">SSH公钥 - 设置</a> 做类似的设置。</p><h2 id="3-刚需：VPN、浏览器和输入法"><a href="#3-刚需：VPN、浏览器和输入法" class="headerlink" title="3.刚需：VPN、浏览器和输入法"></a>3.刚需：VPN、浏览器和输入法</h2><ul><li>安装 VPN 工具（<a href="http://twelveweb.com" target="_blank" rel="noopener">12vpn</a>已经用了五年，推荐）。需要先做好这一步，不然 Chrome 的帐户设置没法同步</li><li>安装浏览器 <figure class="highlight plain"><figcaption><span>cask install google-chrome```（可能需要开 vpn，如果不成功，需要手动下载安装），安装成功后，选择要同步的设置项</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">- 下载安装输入法</span><br><span class="line"></span><br><span class="line">## 4.效率神器</span><br><span class="line"></span><br><span class="line">安装大管家 Alfred: ```brew cask install alfred```，导入之前备份好的 workflows。严重推荐以下 workflow：</span><br><span class="line"></span><br><span class="line">+ Douban：直接搜索豆瓣书、影、音，方便得不像话</span><br><span class="line">+ Youdao-Translate：快捷查词和翻译，学渣和学霸都必备</span><br><span class="line">+ chrome-bookmarks：chrome 书签搜索并打开，简直救了收藏夹整理无能者一命</span><br><span class="line">+ Copy-Path：快捷键复制当前文件夹路径，跟命令行绝配，尤其是 Git 重度患者</span><br><span class="line">+ 其余：百度云盘搜索、淘宝搜索、日历、下载链接分析、自定义搜索、生成短链接和二维码等等，绝对能让 mac 效率提升至少 200%</span><br><span class="line"></span><br><span class="line">如果购买了 Power Pack，可以在 ``Preference - Advanced - Syncing`` 里设置配置文件同步，快速导入常用配置。</span><br><span class="line"></span><br><span class="line">## 5.基础应用</span><br><span class="line">- 安装文档同步工具，用 Airdrop 把原有文件传送到新电脑上（新开机有整体 transfer 的选项，但是试了一下要十几小时，太慢了，就放弃）</span><br><span class="line">- 安装 Markdown 编辑器 ``brew cask install macdown``</span><br><span class="line">- 安装笔记应用 ``brew cask install evernote``</span><br><span class="line">- 安装文献管理工具 Zotero ``brew cask install zotero``，然后设置已经从之前电脑传过来的库</span><br><span class="line">- 安装视频播放器 ``brew cask install vlc``</span><br><span class="line">- 如果有需要，装个虚拟机吧！</span><br><span class="line"></span><br><span class="line">## 6.编程环境</span><br><span class="line"></span><br><span class="line">### 6.1 Python 环境</span><br><span class="line"></span><br><span class="line">安装 [Miniconda](https://conda.io/miniconda.html)：</span><br><span class="line"></span><br><span class="line">1. [下载 sh 文件](https://conda.io/miniconda.html) 或者 ``wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh``</span><br><span class="line"></span><br><span class="line">2. 命令行进入下载的文件夹 ``bash Miniconda3-latest-Linux-x86_64.sh``，按照提示操作。</span><br><span class="line"></span><br><span class="line">新建环境</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">conda create -n pyp python=3 numpy pandas matplotlib jupyter</span><br></pre></td></tr></table></figure></li></ul><p>激活环境</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> activate pyp</span><br></pre></td></tr></table></figure><h3 id="6-2-Node-js-和-npm"><a href="#6-2-Node-js-和-npm" class="headerlink" title="6.2 Node.js 和 npm"></a>6.2 Node.js 和 npm</h3><p>因为要用 hexo 更新博客，以及方便以后安装各种基于 js 的应用，下载 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a> 并安装。</p><p>然后用 npm 安装 hexo：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure><h3 id="6-3-编辑器和-Dash"><a href="#6-3-编辑器和-Dash" class="headerlink" title="6.3 编辑器和 Dash"></a>6.3 编辑器和 Dash</h3><p>安装代码编辑器 <code>brew cask install atom</code>。然后是编程语言和各种库的文档大管家 Dash，具体操作略。</p><h2 id="7-创作者套件"><a href="#7-创作者套件" class="headerlink" title="7.创作者套件"></a>7.创作者套件</h2><ul><li>Sketch</li><li>Mindnode</li><li>图床 dropzone3 + qiniu bundle（最新版的 bundle 有 bug，需要用回 1.2 或更低版本）</li><li>图标库 Icons8，图片管理应用如 Inboard</li><li>3D 工具如 SketchUp/Fusion 360</li><li>Logic X pro</li></ul><hr><p>清单暂时更新到这里。欢迎亲们推荐相见恨晚的应用和奇技淫巧~</p><p>Happy New Year &amp; Happy New Macbook!</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ma/imac/215/imac-215-retina-selection-hero-201706?wid=904&amp;amp;hei=840&amp;amp;fmt=jpeg&amp;amp;qlt=80&amp;amp;op_usm=0.5,0.5&amp;amp;.v=1495846295922&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;元宵节这天，迎娶了属于自己的第一台 iMac。&lt;/p&gt;
+&lt;p&gt;3 年前写了一篇 Happy New Year Happy New Mac，是时候更新一版，跟大家分享如何用最合理的顺序、最快的速度、最轻松的姿势，调教出一台高大威猛动静皆宜无所不能所向披靡的 Mac……&lt;/p&gt;
+&lt;p&gt;（如果你不是工程师，但是有一定的编程需要，比较经常使用命令行，是 Alfred 粉丝，那么本文就最适合你了~）&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>DeepLearning 笔记：如何评估神经网络的训练效果</title>
@@ -34,11 +57,11 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
+    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
@@ -73,11 +96,11 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
+    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
@@ -232,11 +255,11 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
+    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
@@ -248,11 +271,11 @@
     
       <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
     
+      <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
+    
       <category term="Backpro" scheme="http://uegeek.com/tags/Backpro/"/>
     
       <category term="反向传播" scheme="http://uegeek.com/tags/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/"/>
-    
-      <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
     
   </entry>
   
@@ -473,11 +496,11 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
+    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
@@ -531,11 +554,11 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
+    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
@@ -591,11 +614,11 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
+    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
@@ -623,11 +646,11 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
+    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
@@ -655,45 +678,17 @@
       <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
     
     
+      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
+    
       <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
       <category term="DeepLearning" scheme="http://uegeek.com/tags/DeepLearning/"/>
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>大哉问03 - 什么是赚钱之道？更新你的个人商业模式</title>
-    <link href="http://uegeek.com/171216HowToMakeMoney.html"/>
-    <id>http://uegeek.com/171216HowToMakeMoney.html</id>
-    <published>2017-12-16T11:03:13.000Z</published>
-    <updated>2017-12-18T11:44:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/dzw03-title.png" alt=""></p><a id="more"></a> <p><a href="http://www.uegeek.com/171112-HowToAskGoodQuestion.html" target="_blank" rel="noopener">大哉问系列</a>讨论完<a href="http://www.uegeek.com/171126TimePerspective.html" target="_blank" rel="noopener">时间</a>和<a href="http://www.uegeek.com/171204HowToLoveYourself.html" target="_blank" rel="noopener">爱</a>，是时候来想想这个重大课题了。</p><p>这篇文章不是经验之谈，而是迟来的反省，也是下一步的行动大纲。</p><h2 id="财富迷思"><a href="#财富迷思" class="headerlink" title="财富迷思"></a>财富迷思</h2><h3 id="为什么要积累财富？"><a href="#为什么要积累财富？" class="headerlink" title="为什么要积累财富？"></a>为什么要积累财富？</h3><p>为了避免话题泛化，这里的「财富」，主要指物质财富、个人的资产。</p><p>有钱当然好。可是到底为什么好？这个问题我们真的有想过吗？到底是什么让我们有持续的动力去追求财富？这是破除迷思的第一个问题。因为赚钱的前提不是方法，而是<strong>欲望</strong>。</p><p>财富可能至少有三方面重要作用：</p><ul><li>提高生活质量：让自己和家人更自如地生活</li><li>缩短成长周期：换取时间，用于自我成长</li><li>获得更多可能性和选择权：贫穷真的真的会限制想象力</li></ul><p>钱越多越好，这毋庸置疑。但是赚钱的目标应该定在哪里合适呢？毕竟人生有限，只花在挣钱上也太枯燥了。大多数人的财务目标大概都会是：实现财务自由。</p><h3 id="什么是财务自由？"><a href="#什么是财务自由？" class="headerlink" title="什么是财务自由？"></a>什么是财务自由？</h3><p>财务自由有客观标准吗？500w？1000w？众说纷纭啊……</p><p>财务自由应该由具体的数值定义吗？我觉得很难。需要找一个定性但可操作的定义。</p><p>这个问题已经有非常多人思考和讨论过了，我比较认同这个目标：</p><blockquote><p>不需要被动出售自己的时间。</p></blockquote><p>换个说法，大概意思是时间都只花在完全由自己选择的事情上面。</p><h3 id="赚钱的瓶颈？"><a href="#赚钱的瓶颈？" class="headerlink" title="赚钱的瓶颈？"></a>赚钱的瓶颈？</h3><p>大部分人（包括我自己）是如何挣钱呢？——批量出售自己的时间（一般是以月为单位）给雇主，然后换取基本固定的薪水——无论干得怎样，薪水的浮动都不大。</p><p>这下子赚钱的天花板就出现了，因为每个人的时间都<strong>极其有限</strong>。</p><p>怎么突破瓶颈呢？一个方法是做薪酬更高的工作。于是我们去增强职场技能、提高工作效率、跳槽到更好的岗位等等，都是在想办法提升单位时间的报酬。</p><p>不过这样也容易掉入时空限制中的「空间」陷阱——「空间」局限意味着影响范围是有限的。一个人的劳动实际上只卖给了一个「空间」：就是这个公司、这个老板。无法 scalable，自然就会遇到瓶颈。（管理很多人是一种 scalable 的办法）</p><h3 id="思考财富的单位？"><a href="#思考财富的单位？" class="headerlink" title="思考财富的单位？"></a>思考财富的单位？</h3><p>想最大限度地保留自己的时间自主权和使用权，该怎么办？</p><p>可以考虑用空间换时间，而不是用时间换金钱。</p><p>怎样用空间换时间呢？——把每单位时间的产出，卖给更多人。</p><p>这里有两个变量：单位时间的产出，和更多人。</p><ul><li>增加单位时间的产出，可以让 1 小时可以写更多好文章、生产更好的产品、打造更完善的系统；也可以尽可能延长产出的寿命，畅销多年而不需要大规模维护。</li><li>同时出售给更多愿意购买的人</li></ul><p>这样，我们思考获得财富的单位，应该是<strong>有价值的结果</strong>，而不再是「月薪」，不再是一去不复返的时间。</p><h2 id="赚钱的三大途径"><a href="#赚钱的三大途径" class="headerlink" title="赚钱的三大途径"></a>赚钱的三大途径</h2><p>赚钱的方法何止千千万，但是<strong>从本质上讲，大概有三类：生产，服务和交易</strong>。</p><p>比如，制造可售卖的商品属于生产，搭建一个付费 APP 是生产；提供专属的理财咨询属于服务；炒币和投资房产属于交易。</p><p>那么上班属于哪一类？其实属于<strong>服务</strong>，因为肉身必需出现，而且离实际购买的消费者比较远，工作报酬受契约约束，而不是实际产出的市场价值本身的体现。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/wealth-title.jpg" alt=""></p><p>再深入一步，让我们想想这三大途径的特点：</p><table><thead><tr><th>方式</th><th>投入</th><th>产出</th><th>买单</th><th>瓶颈</th></tr></thead><tbody><tr><td>生产</td><td>原料，生产设备/技术/流程，销售</td><td>产品</td><td>顾客</td><td>生产率，获客成本</td></tr><tr><td>交易</td><td>资金/成本，决策信息，时间差</td><td>价格差</td><td>需方</td><td>时机，关键信息，资本</td></tr><tr><td>服务</td><td>时间，技能</td><td>交付物</td><td>雇主</td><td>时间，技能，消费频次</td></tr></tbody></table><p>我们的目标是提高赚钱能力，一个思路是从单一途径到覆盖三种途径，另外一个思路是想办法突破每个方式的瓶颈。</p><h3 id="一、优化生产"><a href="#一、优化生产" class="headerlink" title="一、优化生产"></a>一、优化生产</h3><p>什么是生产？有完整、有价值、可购买的产出。</p><p>我们大多数人有可能从来没有从事过正经的「生产」工作，因为我们可能没有想过，或者无法独立提供完整的产出。是的，从来！……细思极恐啊！</p><p>但其实绝大多数人都有个人生产的能力。</p><p>比如，门槛较低的内容生产——以文字、语言、视频等方式产出内容。内容生产的「原料」是什么？是经验，是思考，是感受，是对他人有帮助的对话。生产设备/技术/流程包括什么？构思，收集，整理，编写，修改，设计，发表，互动……瓶颈是什么？没有擅长/有积累的可持续创作的话题，拖延，没有读者……</p><p>这些问题很难解决吗？似乎不是，都有很多办法，而且身边容易找到有经验的人。最大的瓶颈大概是一没有开始，二没有持续，三没有改进。</p><p>尽早尝试适合自己的个人生产方式吧，早积累，早收获。</p><h4 id="升级1：产品化"><a href="#升级1：产品化" class="headerlink" title="升级1：产品化"></a>升级1：产品化</h4><p>产出可以分为两种：需要值守的，无需值守的。</p><p>如果每次生产都需要自己在一旁守着，时间还是被占用了啊。所以生产的第一个升级目标是：产品化。<strong>产品化意味着有明确的人群和需求定义，让生产流程和产出都遵循一定标准，以保证产出的稳定，成为可出售的「产品」</strong>。比如把零散的知识和文章整理成一门课程，录制一次，后期就不需要投入太多精力维护。</p><p>想办法让生产过程自动化，构建属于自己的生产系统，这大概就是个人商业模式的核心。</p><h4 id="升级2：关注生产效率"><a href="#升级2：关注生产效率" class="headerlink" title="升级2：关注生产效率"></a>升级2：关注生产效率</h4><p>生产的第一大指标（或者说瓶颈）就是生产效率。认真思考影响生产效率都有哪些因素。有没有可能通过购买的方式提高生产率？另外要注意，所谓效率，一定与时间周期有关，是否给自己设定了合理、可产生回报的生产周期?</p><h4 id="升级3：选择人群和经营渠道"><a href="#升级3：选择人群和经营渠道" class="headerlink" title="升级3：选择人群和经营渠道"></a>升级3：选择人群和经营渠道</h4><p>谁会购买你的产品？他们在哪里聚集？你在那里是否有影响力？如何获取信任？如何与他们互动？</p><h4 id="升级4：企业化"><a href="#升级4：企业化" class="headerlink" title="升级4：企业化"></a>升级4：企业化</h4><p>一个人再怎么提高效率也是有限的。下一步升级就要靠更多人参与了。以公司经营的方式维持产品的生产、运营和增长，将个人商业模式往公司商业模式迁移。所谓企业家，就是找到资源的更优组织方式，为大家的利益解决问题的人。</p><h3 id="二、优化交易"><a href="#二、优化交易" class="headerlink" title="二、优化交易"></a>二、优化交易</h3><p>成功的交易，大概是提前锚定价格差，寻找价值洼地并持有，并在合适时间出售。</p><p>从今天开始，经常问自己一个问题：</p><blockquote><p>什么会在未来很值钱？</p></blockquote><p><img src="https://cdn.dribbble.com/users/828451/screenshots/3088929/hf001_vestly-05.jpg" alt=""></p><p>投资那些未来很可能增值的资产，可能是公司股票，可能是房产，可能是古董，可能是火星矿产，也可能是——人，尤其是，自己。</p><p>好的交易，关乎资本大小，但更重要的是决策信息，而最最关键的是，时机。</p><p>好的决策来自思考质量和经验。建立起自己的思考模型，积累特定领域的知识和投资经验，这些都需要时间投入。选择合适的交易时机，更是需要了解人性的弱点和各种认知偏差，因为投资本来是件由概率这只大手所操控的事件，而概率实在太反直觉了。</p><p>想要获得更高收益，原理其实并不复杂：</p><p>$收益 = 本金 * (1+复合年化收益率)^{年数}$</p><p><strong>所以，要学好概率，练好头脑，控制风险，培养耐心。</strong></p><p>好吧，如何开始，交易的本金从哪里来？没有太多选择的话，只能从生产来。而且最好保证有持续的生产收益，作为交易的本金，而不是只依靠交易作为唯一的赚钱途径——因为那样太容易影响交易的心态和判断。</p><h3 id="三、优化服务"><a href="#三、优化服务" class="headerlink" title="三、优化服务"></a>三、优化服务</h3><p>服务其实是最特殊的挣钱方式，必需通过本人和服务过程去完成。因为在三种途径里面，这是最消耗时间的，所以更加应该找到优化的方式。</p><p>提高服务的收益的一个可能是，组织一个服务平台，聚集服务供需双方，把服务转化成生产。不过这又属于生产的话题了。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/illustration-04.jpg" alt=""></p><p>既然时间无法复制，那就只能打提高单位时间的服务收益的主意了。影响收益的，似乎最终可以归结为一个因素：稀缺性。</p><p>而稀缺性又由两方面影响：</p><ul><li>需求有多迫切，是不是高频、刚需。这就需要研究雇主/买主的需求了。比如招聘的公司处在什么阶段？最需要什么样的人才？</li><li>独特的核心竞争力组合。找单一领域的专家总是相对容易的，找到复合型大咖难度就高很多，同时横跨多个高速发展的领域，只能是炙手可热了。</li></ul><p>所以，尽早投资在需求会持续增长的服务领域，并且培养自己的独特竞争力、跨界能力，其他就交给时间吧！</p><h2 id="财富积累的放大器"><a href="#财富积累的放大器" class="headerlink" title="财富积累的放大器"></a>财富积累的放大器</h2><p>善用一些已经被反复验证过的原则，能够帮助我们放大为获取财富所付出的努力。</p><h3 id="铁律：生产率-gt-收入-gt-负债"><a href="#铁律：生产率-gt-收入-gt-负债" class="headerlink" title="铁律：生产率 &gt; 收入 &gt; 负债"></a>铁律：生产率 &gt; 收入 &gt; 负债</h3><p><strong>尽可能让个人生产率提升的速度，超过收入增长，远远超过负债的增加。</strong></p><p>这几乎就是个人积累财富的全部秘密了。这个不等式出自下面这个视频：</p><p><a href="https://v.qq.com/x/page/z01685nf12f.html" target="_blank" rel="noopener">三十分钟说清经济机器是怎样运行的</a></p><p>出自 Ray Dalio 大佬的视频把经济的底层规律总结得深入浅出。也许很多大学四年的经济学教育，还没有这十分钟的视频内容深刻且有效。墙裂推荐，值得每半年复习一次。</p><h3 id="善用过去的积累"><a href="#善用过去的积累" class="headerlink" title="善用过去的积累"></a>善用过去的积累</h3><p>不要觉得自己是从零开始。</p><p>如果你在职场有几年经验，不要忽视得到过的职业锻炼：自律，沟通和表达能力，学习能力，合作能力，自我/上下/平级的管理能力，等等。把它们通通用在生产和交易上，并且持续打磨这些技能。能服务好别人的人，更懂得如何生产出好的产品。一直练习交易的人，更容易发现应该在哪些领域持续打造自己的核心竞争力。</p><p>去发现那些在某些领域遍地都是、但是在另一个领域稀缺的东西，从中套利。</p><h3 id="尊重时间的复利"><a href="#尊重时间的复利" class="headerlink" title="尊重时间的复利"></a>尊重时间的复利</h3><p>经常回顾指数增长的曲线吧，那是我们的目标曲线——无论是财富增长也好，个人成长也好。</p><p><img src="https://dare2.dk/demo/wp-content/uploads/2015/09/Exponential-curve.png" alt=""><br>via <a href="https://dare2.dk/top-3-steps-for-becoming-an-exponential-organization/" target="_blank" rel="noopener">Top 3 Steps for Becoming an Exponential Organization | DARE2</a></p><p>不要忽视、低估积累期、平台期的长度和难度，但要想办法加快增长速度，尽快到达「奇点」。</p><h3 id="用财富换幸福"><a href="#用财富换幸福" class="headerlink" title="用财富换幸福"></a>用财富换幸福</h3><p>在积累财富的跑道上，不要忘记我们的目标和初心。赚钱可能没有你想象那么难，它可能没有你想象那么重要。（前提是你已经得到了它）</p><p><strong>实现财务自由是为了什么？获得自由的时间要用来做什么？</strong>这才是真正重要的问题。</p><p>努力赚钱之余，<strong>千万不要忘了发现和保护内在动机，去坚持做那些（现在）不但不能帮你赚钱，还需要你补贴钱或时间去做的事情</strong>，因为那些才是你的心头所好啊！我们这么努力，还不是为了能跟那些事情长相厮守在一起？</p><p>最终的最终，我们换取的可能都是用于创造心流的环境。如果现在就有这样的条件，保留一部分时间去体验创作的心流，还有什么理由不开始呢？</p><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>总结下来，道理其实都十分简单明了，不过 7 个要点：</p><ul><li>财务自由指不需要被动出售自己的时间，这是赚钱的阶段性目标</li><li>思考财富的单位应该是有价值的结果，而不是时间周期</li><li>生产、交易、服务是挣钱的三大途径</li><li>生产优化：让生产过程自动化，构建属于自己的生产系统</li><li>交易优化：形成有预见性的预判，寻找价值洼地并持有，并在合适时间出售</li><li>服务优化：满足高频、刚需的需求，不断积累出独特的核心竞争力组合</li><li>利用四大财富放大器：财富不等式，过去的积累，时间的复利，财富换幸福</li></ul><p>以及需要经常复习：</p><ul><li>一个问题：什么会在未来很值钱？</li><li>一个图表：指数增长</li><li>一个视频：经济是如何运行的</li></ul><p>好了，我想到的是这些了。</p><p>最后，对自己说：想明白了就去践行吧。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/dzw03-title.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="叽歪" scheme="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-    
-    
-      <category term="HackYourself" scheme="http://uegeek.com/tags/HackYourself/"/>
-    
-      <category term="CriticalThinking" scheme="http://uegeek.com/tags/CriticalThinking/"/>
-    
-      <category term="大哉问" scheme="http://uegeek.com/tags/%E5%A4%A7%E5%93%89%E9%97%AE/"/>
-    
-      <category term="Love" scheme="http://uegeek.com/tags/Love/"/>
     
   </entry>
   
