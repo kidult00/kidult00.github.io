@@ -69,9 +69,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
     
@@ -108,9 +108,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
     
@@ -267,15 +267,15 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
-      <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
+      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="Backpro" scheme="http://uegeek.com/tags/Backpro/"/>
     
       <category term="反向传播" scheme="http://uegeek.com/tags/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/"/>
+    
+      <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
     
   </entry>
   
