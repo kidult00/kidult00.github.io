@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-06-21T11:34:58.000Z</updated>
+  <updated>2018-06-21T11:48:34.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://uegeek.com/180621-make-noise-01.html"/>
     <id>http://uegeek.com/180621-make-noise-01.html</id>
     <published>2018-06-21T11:14:43.000Z</published>
-    <updated>2018-06-21T11:34:58.000Z</updated>
+    <updated>2018-06-21T11:48:34.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png" alt=""></p><a id="more"></a> <p>这是个新开的系列，关于声音和制造声音，大概会持续更新（吧）：</p><ul><li>声音的一些物理原理</li><li>声音的属性</li><li>如何用 Max/MSP 构造和设计声音</li><li>如何用 Ableton Live 制作音效</li><li>声音可视化</li></ul><p>第一篇是绕不开的概念和原理。</p><p>为什么绕不开呢？（因为我尝试过……┓( ´o` )┏）如果不从波动的角度开始理解声音，在 Max 等工具里制造和修改声音真是抓瞎，更不要提有数量巨多的音效和合成器等着我们去调戏了。</p><p>声音无处不在，但是因为看不见摸不着，所以它是一种大部分时间存在感很弱的现象。</p><blockquote><p>声音的本质是波动，是在介质（如空气）中的一种震动传播现象。</p></blockquote><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/vlcsnap-2018-06-18-11h26m00s141.png" alt=""></p><p>震动方向和传播方向垂直的波，叫 Transverse wave；方向相同的波叫 Longitudinal wave。声波属于 longitudinal wave。</p><p><img src="http://users.sch.gr/mpolykarp/newsite/images/G_lyk_Kat/springwaves.gif" alt=""></p><p>声音是相当「物理」的一门学科，它属于动力学的一个分支。</p><p>声波在运动中传递能量，它全都是关于「变化」的——声音的波形、位置、能量等等随着时间而变化。</p><p>声源震动引起空气分子往复运动，不断挤压周围的空气而产生声波。我们熟悉的声音：音乐，人说话，猫叫，敲击键盘的声音，噪声……都由震动引起。</p><p>比如话筒，持续接收声源震动，转换为连续变化的电压，再转换为数字信号：<br>￼<br>￼<img src="http://7xjpra.com1.z0.glb.clouddn.com/Pasted%20Graphic%201.png" alt=""></p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-06-18%20at%2011.27.52%20AM.png" alt=""></p><p>耳朵也是这么接收声音哒！（鼓膜的英文 eardrum 是不是很形象？）<br>￼<br><img src="http://7xjpra.com1.z0.glb.clouddn.com/Pasted%20Graphic%202.tiff" alt=""></p><p>更多关于声音的原理，推荐这个视频：</p><div class="video-container"><iframe src="//www.youtube.com/embed/qV4lR9EWGlY" frameborder="0" allowfullscreen></iframe></div><p>下一篇关于声音最重要的属性——频率。</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li>Audio Engineering 101 - A Beginner’s Guide to Music Production</li><li><a href="https://www.youtube.com/watch?v=qV4lR9EWGlY" target="_blank" rel="noopener">Sound: Crash Course Physics #18 - YouTube</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png" alt=""></p><a id="more"></a> <p>这是个新开的系列，关于声音和制造声音，大概会持续更新（吧）：</p><ul><li>声音的一些物理原理</li><li>声音的属性</li><li>如何用 Max/MSP 构造和设计声音</li><li>如何用 Ableton Live 制作音效</li><li>声音可视化</li></ul><p>第一篇是绕不开的概念和原理。</p><p>为什么绕不开呢？（因为我尝试过……┓( ´o` )┏）如果不从波动的角度开始理解声音，在 Max 等工具里制造和修改声音真是抓瞎，更不要提有数量巨多的音效和合成器等着我们去调戏了。</p><p>声音无处不在，但是因为看不见摸不着，所以它是一种大部分时间存在感很弱的现象。</p><blockquote><p>声音的本质是波动，是在介质（如空气）中的一种震动传播现象。</p></blockquote><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/vlcsnap-2018-06-18-11h26m00s141.png" alt=""></p><p>震动方向和传播方向垂直的波，叫 Transverse wave；方向相同的波叫 Longitudinal wave。声波属于 longitudinal wave。</p><p><img src="http://users.sch.gr/mpolykarp/newsite/images/G_lyk_Kat/springwaves.gif" alt=""></p><p>声音是相当「物理」的一门学科，它属于动力学的一个分支。</p><p>声波在运动中传递能量，它全都是关于「变化」的——声音的波形、位置、能量等等随着时间而变化。</p><p>声源震动引起空气分子往复运动，不断挤压周围的空气而产生声波。我们熟悉的声音：音乐，人说话，猫叫，敲击键盘的声音，噪声……都由震动引起。</p><p>比如话筒，持续接收声源震动，转换为连续变化的电压，再转换为数字信号：<br>￼<br>￼<img src="http://7xjpra.com1.z0.glb.clouddn.com/Pasted%20Graphic%201.png" alt=""></p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-06-18%20at%2011.27.52%20AM.png" alt=""></p><p>耳朵也是这么接收声音哒！（鼓膜的英文 eardrum 是不是很形象？）<br>￼<br><img src="http://7xjpra.com1.z0.glb.clouddn.com/eardrum.png" alt=""></p><p>更多关于声音的原理，推荐这个视频：</p><div class="video-container"><iframe src="//www.youtube.com/embed/qV4lR9EWGlY" frameborder="0" allowfullscreen></iframe></div><p>下一篇关于声音最重要的属性——频率。</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li>Audio Engineering 101 - A Beginner’s Guide to Music Production</li><li><a href="https://www.youtube.com/watch?v=qV4lR9EWGlY" target="_blank" rel="noopener">Sound: Crash Course Physics #18 - YouTube</a></li></ul>]]></content>
     
     <summary type="html">
     
@@ -95,9 +95,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
     
@@ -134,9 +134,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
     
@@ -293,9 +293,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="Backpro" scheme="http://uegeek.com/tags/Backpro/"/>
     
