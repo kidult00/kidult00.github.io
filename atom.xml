@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-04-02T12:19:29.000Z</updated>
+  <updated>2018-06-21T11:21:37.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MakeNoise01 - 声音是什么？</title>
+    <link href="http://uegeek.com/180621-make-noise-01.html"/>
+    <id>http://uegeek.com/180621-make-noise-01.html</id>
+    <published>2018-06-21T11:14:43.000Z</published>
+    <updated>2018-06-21T11:21:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png" alt=""></p><a id="more"></a> <p>这是个新开的系列，大概会持续更新（吧）。关于声音和制造声音：</p><ul><li>声音的一些物理原理</li><li>声音的属性</li><li>如何用 Max/MSP 构造和设计声音</li><li>如何用 Ableton Live 制作音效</li><li>声音可视化</li></ul><p>第一篇是绕不开的概念和原理。</p><p>为什么绕不开呢？（因为我尝试过……┓( ´o` )┏）如果不从波动的角度开始理解声音，在 Max 等工具里制造和修改声音真是抓瞎，更不要提有数量巨多的音效和合成器等着我们去调戏了。</p><p>声音无处不在，但是因为看不见摸不着，所以它是一种大部分时间存在感很弱的现象。</p><blockquote><p>声音的本质是波动，是在介质（如空气）中的一种震动传播现象。</p></blockquote><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/vlcsnap-2018-06-18-11h26m00s141.png" alt=""></p><p>震动方向和传播方向垂直的波，叫 Transverse wave；方向相同的波叫 Longitudinal wave。声波属于 longitudinal wave。</p><p><img src="http://users.sch.gr/mpolykarp/newsite/images/G_lyk_Kat/springwaves.gif" alt=""></p><p>声音是相当「物理」的一门学科，它属于动力学的一个分支。</p><p>声波在运动中传递能量，它全都是关于「变化」的——声音的波形、位置、能量等等随着时间而变化。</p><p>声源震动引起空气分子往复运动，不断挤压周围的空气而产生声波。我们熟悉的声音：音乐，人说话，猫叫，敲击键盘的声音，噪声……都由震动引起。</p><p>比如话筒，持续接收声源震动，转换为连续变化的电压，再转换为数字信号：<br>￼<br>￼<img src="http://7xjpra.com1.z0.glb.clouddn.com/Pasted%20Graphic%201.png" alt=""></p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-06-18%20at%2011.27.52%20AM.png" alt=""></p><p>耳朵也是这么接收声音哒！（鼓膜的英文 eardrum 是不是很形象？）<br>￼<br><img src="http://7xjpra.com1.z0.glb.clouddn.com/Pasted%20Graphic%202.tiff" alt=""></p><p>更多关于声音的原理，推荐这个视频：</p><div class="video-container"><iframe src="//www.youtube.com/embed/qV4lR9EWGlY" frameborder="0" allowfullscreen></iframe></div><p>下一篇关于声音最重要的属性——频率。</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li>Audio Engineering 101 - A Beginner’s Guide to Music Production</li><li><a href="https://www.youtube.com/watch?v=qV4lR9EWGlY" target="_blank" rel="noopener">Sound: Crash Course Physics #18 - YouTube</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Sound" scheme="http://uegeek.com/tags/Sound/"/>
+    
+      <category term="声音" scheme="http://uegeek.com/tags/%E5%A3%B0%E9%9F%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>Happy New Mac II - Mac 私人调教手册</title>
@@ -69,9 +95,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
       <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
       <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
     
@@ -108,9 +134,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
       <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
       <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
     
@@ -267,9 +293,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
       <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
       <category term="Backpro" scheme="http://uegeek.com/tags/Backpro/"/>
     
@@ -636,38 +662,6 @@
     <updated>2017-12-27T01:38:19.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p><a id="more"></a> <p><code>阿扣</code>：阿特，还记得训练神经网络的目标其实是什么吗？</p><p><code>阿特</code>：我记得好像是要找出最合适的权重(weights)，使得输出结果尽可能接近真实值。</p><p><code>阿扣</code>：Hin 棒！你说的没错。说回到训练神经网络，我们需要在训练中及时了解训练效果如何，是不是朝着训练目标在一点点靠近。如果偏离目标，就说明训练模型可能在「犯错」，就要纠正过来。</p><p><code>阿特</code>：那怎么知道模型是不是在「犯错」呢？</p><p><code>阿扣</code>：我们会找一个度量标准。一个常见的度量方法是计算误差的平方和（SSE, sum of the squared errors）：</p><p>$$ E=\frac{1}{2}\sum_\mu\sum_j[y^\mu_j - f(\sum<em>i w</em>{ij}x^\mu_i)]^2 $$</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/latex_9521ee448af952b9e073b5d31974241c.png" alt=""></p><p><code>阿特</code>：你……欺负人 &gt;.&lt;</p><p><code>阿扣</code>：别着急，我们来拆解这一坨是个什么东西。先看看各个字母的含义：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/il_for_SSE-1.png" alt=""></p><p>这个等式里面，有三个求和项（就是这个翻转了 90° 的 M： $\sum$ ）。</p><p>最右边的求和项 $\sum<em>i w</em>{ij}x^\mu_i$ ，表示我们训练出来的权重 w 乘上输入值 x 得出的目标值 $\hat y$（也就是我们给数据打算的标签），然后用这些结果跟实际的数据中的 y 值做比较，看看偏差有多大。</p><p>现在你理解了最右边的求和项了吗？</p><p><code>阿特</code>：大概意思是我们从数据中预测出来的 y ？</p><p><code>阿扣</code>：没错，我们先把这一坨替换成 $\hat y$，简化一下公式：</p><p>$$<br>E=\frac{1}{2}\sum_\mu\sum_j[y^\mu_j - f(\sum<em>i w</em>{ij}x^\mu<em>i)]^2<br>\<br>\downarrow<br>\<br>E=\frac{1}{2}\sum</em>\mu\sum_j[y^\mu_j - \hat y_j]^2<br>$$</p><p><code>阿特</code>：世界清静多了~</p><p><code>阿扣</code>：我们再来看右边这个求和项。j 表示有 j 个隐层节点，把每个节点的误差平方 $[y^\mu_j - \hat y_j]$ 计算出来。现在只剩下最后一个求和项了，它表示把 u 个输出节点的误差加起来。这样就得到了总体误差。</p><h3 id="00-的-DeepLearning-笔记"><a href="#00-的-DeepLearning-笔记" class="headerlink" title="00 的 DeepLearning 笔记"></a>00 的 DeepLearning 笔记</h3><ul><li><a href="http://www.uegeek.com/171206DLNote1-ML-DL-Basic.html" target="_blank" rel="noopener">DL笔记：机器学习和深度学习的区别</a></li><li><a href="http://www.uegeek.com/171209DLN2-NeuralNetworks.html" target="_blank" rel="noopener">DL笔记：Neural Networks 神经网络</a></li><li><a href="http://www.uegeek.com/171213DLN3-LinearRegression.html" target="_blank" rel="noopener">DL笔记：Linear regression 线性回归</a></li><li><a href="http://www.uegeek.com/171218DLN4-ActivationFunction.html" target="_blank" rel="noopener">DL笔记：Activation Function 激活函数</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-    
-    
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
-    
-      <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="DeepLearning" scheme="http://uegeek.com/tags/DeepLearning/"/>
-    
-      <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DL笔记：Activation Function 激活函数</title>
-    <link href="http://uegeek.com/171218DLN4-ActivationFunction.html"/>
-    <id>http://uegeek.com/171218DLN4-ActivationFunction.html</id>
-    <published>2017-12-18T11:20:51.000Z</published>
-    <updated>2017-12-18T11:59:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p><a id="more"></a> <p>回顾:</p><ul><li><a href="http://www.uegeek.com/171206DLNote1-ML-DL-Basic.html" target="_blank" rel="noopener">DL笔记：机器学习和深度学习的区别</a></li><li><a href="http://www.uegeek.com/171209DLN2-NeuralNetworks.html" target="_blank" rel="noopener">DL笔记：Neural Networks 神经网络</a></li><li><a href="http://www.uegeek.com/171213DLN3-LinearRegression.html" target="_blank" rel="noopener">DL笔记：Linear regression 线性回归</a></li></ul><p><code>阿扣</code>：阿特，今天我们来了解一下深度学习中的激活函数(Activation functions)。</p><p><code>阿特</code>：又是函数……为什么要了解这个哦……</p><p><code>阿扣</code>：在机器学习中，我们经常需要对输出结果打上「是」或「否」标签。比如对一张输入的图片，模型要判断图片里面有没有包含汪星人。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Col.DL.dog_detect.png" alt=""></p><p><a href="http://www.uegeek.com/171213DLN3-LinearRegression.html" target="_blank" rel="noopener">上一回我们提到的逻辑回归</a>，可以用来减少预测值和真实值之间的误差。</p><p><code>阿特</code>：那要怎么做呢？</p><p><code>阿扣</code>：我们来用符号描述一下问题：</p><ul><li>x：训练数据中的 input</li><li>y：训练数据中已经做好标记的 output</li><li>w：逻辑回归的 weights</li><li>b：逻辑回归的 bias</li><li>模型的输出：$\hat y = \sigma (wx + b)$</li></ul><p><code>阿特</code>：老朋友 wx + b</p><p><code>阿扣</code>：好眼力。它就是一个线性模型。别忘了，我们想让输出只包含两个值：是，否。一般我们会用 1 表示「是」，用 0 表示「否」。</p><p><code>阿特</code>：就是我给模型图片 A，它说「0」；给图片 B，它说「1」；……这样？</p><p><code>阿扣</code>：没错~ 所以我们把结果的输出全部转换成或 0 或 1 的值。激活函数就是用来帮助我们实现这种转化的。</p><p><img src="https://ml4a.github.io/images/figures/sigmoid.png" alt=""></p><p>上面我们用到的激活函数叫做 Sigmoid 函数。它帮我们做到了：</p><ul><li>如果输入值 z 是一个大的正数，函数的输出值为 1；</li><li>如果输入值 z 是一个大的负数，函数的输出值为 0；</li><li>如果输入值 z = 0，那么输出值是 0.5</li></ul><p><code>阿特</code>：也就是说，不论我给什么样的整数，最后都会返回 0 或 1 的结果？</p><p><code>阿扣</code>：没错！这样我们得到分类的结果，或 0 或 1。在深度学习中，这种<strong>把输出转化为我们想要的形式的函数</strong>，我们叫它「激活函数」：</p><blockquote><p>激活函数的主要作用是提供网络的非线性建模能力。如果没有激活函数，即便有再多的隐藏层，其整个网络跟单层神经网络也是等价的。加入激活函数之后，深度神经网络才具备了分层的非线性映射学习能力。</p></blockquote><p>上图就是其中的一种激活函数：sigmoid 函数。</p><p><code>阿特</code>：这么说，激活函数不止一种？</p><p><code>阿扣</code>：对呀。下面我列了一些常用的激活函数，作为今天的补充资料吧。现在可能还看不到，先混个脸熟就好。</p><p><code>阿特</code>：好的先刷脸。</p><h3 id="Sigmoid"><a href="#Sigmoid" class="headerlink" title="Sigmoid"></a>Sigmoid</h3><p>$$ sigmoid(z)= \frac{1}{(1+e​^{−z})} $$</p><p>Sigmoid 函数取值范围为(0,1)，将一个实数映射到(0,1)的区间，可以用来做二分类。</p><p><img src="https://ml4a.github.io/images/figures/sigmoid.png" alt=""></p><p>Sigmoid 在特征相差比较复杂或是相差不是特别大时效果比较好。Sigmoid 的导数最大值为0.25。这意味着用来进行反向传播时，返回网络的 error 将会在每一层收缩至少75％（梯度消失问题）。对于接近输入层的层，如果有很多层， weights 更新会很小。</p><h3 id="Tanh"><a href="#Tanh" class="headerlink" title="Tanh"></a>Tanh</h3><p>$$tanh(z)=\frac{e^z-e^{-z}}{e^z+e^{-z}} $$</p><p>也称为双切正切函数，取值范围为[-1,1]。tanh 在特征相差明显时的效果会很好，在循环过程中会不断扩大特征效果。</p><p><img src="http://mathworld.wolfram.com/images/interactive/TanhReal.gif" alt=""></p><h3 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h3><p>$$ReLU(z) = max(z,0)$$</p><p>ReLU (rectified linear units) 是现在较常用的激活函数。如果输入 &lt; 0，ReLU 输出 0；如果输入 &gt;0，输出等于输入值。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/relu.png" alt=""></p><p>ReLU 计算量小（不涉及除法），一部分神经元的输出为 0 造成了网络的稀疏性，并且减少了参数的相互依存关系，缓解了过拟合问题的发生。</p><p>ReLU 的缺点是，梯度较大时，ReLU 单元可能大都是 0，产生大量无效的计算（特征屏蔽太多，导致模型无法学习到有效特征）。</p><h3 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h3><p>$$ softmax(z) = \frac{e^z{<em>j}}{\sum^K</em>{k=1}e^z{_k}}$$</p><p>Softmax 函数将 K 维的实数向量压缩（映射）成另一个 K 维的实数向量，其中向量中的每个元素取值都介于(0，1)之间。<strong>常用于多分类问题</strong>。Softmax 把分数转换为概率分布，让正确的分类的概率接近 1，其他结果接近 0。相比 Sigmoid，它做了归一化处理。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/N_softmax.png" alt=""></p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li><a href="https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101" target="_blank" rel="noopener">Deep Learning Nanodegree | Udacity</a></li><li><a href="https://www.coursera.org/learn/neural-networks-deep-learning" target="_blank" rel="noopener">Neural Networks and Deep Learning | Coursera</a></li><li><a href="http://neuralnetworksanddeeplearning.com/" target="_blank" rel="noopener">Neural networks and deep learning</a></li><li><a href="http://cs231n.github.io/neural-networks-1/#nn" target="_blank" rel="noopener">Andrej Karpathy’s CS231n course</a></li><li><a href="http://blog.csdn.net/u014595019/article/details/52562159" target="_blank" rel="noopener">深度学习笔记(三)：激活函数和损失函数 - CSDN博客</a></li></ul>]]></content>
     
     <summary type="html">
     

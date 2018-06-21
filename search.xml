@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MakeNoise01 - 声音是什么？]]></title>
+    <url>%2F180621-make-noise-01.html</url>
+    <content type="text"><![CDATA[这是个新开的系列，大概会持续更新（吧）。关于声音和制造声音： 声音的一些物理原理 声音的属性 如何用 Max/MSP 构造和设计声音 如何用 Ableton Live 制作音效 声音可视化 第一篇是绕不开的概念和原理。 为什么绕不开呢？（因为我尝试过……┓( ´o` )┏）如果不从波动的角度开始理解声音，在 Max 等工具里制造和修改声音真是抓瞎，更不要提有数量巨多的音效和合成器等着我们去调戏了。 声音无处不在，但是因为看不见摸不着，所以它是一种大部分时间存在感很弱的现象。 声音的本质是波动，是在介质（如空气）中的一种震动传播现象。 震动方向和传播方向垂直的波，叫 Transverse wave；方向相同的波叫 Longitudinal wave。声波属于 longitudinal wave。 声音是相当「物理」的一门学科，它属于动力学的一个分支。 声波在运动中传递能量，它全都是关于「变化」的——声音的波形、位置、能量等等随着时间而变化。 声源震动引起空气分子往复运动，不断挤压周围的空气而产生声波。我们熟悉的声音：音乐，人说话，猫叫，敲击键盘的声音，噪声……都由震动引起。 比如话筒，持续接收声源震动，转换为连续变化的电压，再转换为数字信号：￼￼ 耳朵也是这么接收声音哒！（鼓膜的英文 eardrum 是不是很形象？）￼ 更多关于声音的原理，推荐这个视频： 下一篇关于声音最重要的属性——频率。 Ref Audio Engineering 101 - A Beginner’s Guide to Music Production Sound: Crash Course Physics #18 - YouTube]]></content>
+      <categories>
+        <category>动手</category>
+      </categories>
+      <tags>
+        <tag>ArtxCode</tag>
+        <tag>Sound</tag>
+        <tag>声音</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Happy New Mac II - Mac 私人调教手册]]></title>
     <url>%2F180402-happy-new-mac-ii.html</url>
     <content type="text"><![CDATA[元宵节这天，迎娶了属于自己的第一台 iMac。 3 年前写了一篇 Happy New Year Happy New Mac，是时候更新一版，跟大家分享如何用最合理的顺序、最快的速度、最轻松的姿势，调教出一台高大威猛动静皆宜无所不能所向披靡的 Mac…… （如果你不是工程师，但是有一定的编程需要，比较经常使用命令行，是 Alfred 粉丝，那么本文就最适合你了~） 一、开箱负责任地说一句：体积越大的苹果产品，开箱体验就越享受。 键盘和 Magic Mouse 都从以前的电池换成了充电式—— Magic Mouse 终于变轻了，好评！比较遗憾的是京东买的这款 21.5 高配还是没有配触控板 😔 拍照就不用说了，开箱后记得拍一张序列号备用。 二、基本设置 开机后打开设置，到「Trackpad」里面设置习惯的触控板手势 更新系统至最新版本 有必要的话，在 App Store 里下载最新版本的 Xcode 三、TerminaliTerm原配 terminal 比较简陋，先升级一下。用 safari 下载 iTerm2 并安装。 Homebrew在新电脑上一个一个下载各软件最新版本很麻烦吧？Homebrew 帮你搞定！用 safari 打开 http://brew.sh，按说明在 terminal 里安装 Homebrew： 1/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 安装 brew-cask：brew tap phinze/homebrew-cask 或者 brew install brew-cask。以后更新只需要： 1brew update &amp;&amp; brew upgrade 按需安装各种包，比如 brew install wget。 安装 oh-my-zshiTerm 虽好，还是缺了一些补全、alias、快速跳转等神奇功能，所以再套上 oh-my-zsh。GitHub 地址：robbyrussell/oh-my-zsh. 安装说明 如果已经安装 wget，执行命令： 1sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" Github 配置按照 Github Generating a new SSH key and adding it to the ssh-agent 说明，创建 SSH 秘钥： 1234mkdir ~/.sshcd ~/.sshssh-keygen -t rsa -b 4096 -C "your_email@example.com"pbcopy &lt; ~/.ssh/id_rsa.pub 此时，pdcopy 命令已经将 id_rsa.pub 内容复制到剪切板。 登录并进入 Github SSH and GPG keys 设置页面，点击 New SSH key。Title 部分填写一个所用电脑的名称，然后在 Key 部分填写之前通过 pdcopy 命令复制的内容。生成 ssh key 的说明。然后在全局设置中设置用户名和邮箱。 git config --global user.name &quot;yourusernamegit config --global user.email &quot;youremail&quot; 如果有项目需要推送到 coding.net，也需要去 SSH公钥 - 设置 做类似的设置。 四、刚需：VPN、浏览器和输入法 安装 VPN 工具（12vpn已经用了五年，推荐）。需要先做好这一步，不然 Chrome 的帐户设置没法同步 安装浏览器 brew cask install google-chrome（可能需要开 vpn，如果不成功，需要手动下载安装），安装成功后，选择要同步的设置项 下载安装输入法 五、效率神器安装大管家 Alfred: brew cask install alfred，导入之前备份好的 workflows。严重推荐以下 workflow： Douban：直接搜索豆瓣书、影、音，方便得不像话 Youdao-Translate：快捷查词和翻译，学渣和学霸都必备 chrome-bookmarks：chrome 书签搜索并打开，简直救了收藏夹整理无能者一命 Copy-Path：快捷键复制当前文件夹路径，跟命令行绝配，尤其是 Git 重度患者 其余：百度云盘搜索、淘宝搜索、日历、下载链接分析、自定义搜索、生成短链接和二维码等等，绝对能让 mac 效率提升至少 200% 如果购买了 Power Pack，可以在 Preference - Advanced - Syncing 里设置配置文件同步，快速导入常用配置。 六、基础应用 安装文档同步工具，用 Airdrop 把原有文件传送到新电脑上（新开机有整体 transfer 的选项，但是试了一下要十几小时，太慢了，就放弃） 安装 Markdown 编辑器 brew cask install macdown 安装笔记应用 brew cask install evernote 安装文献管理工具 Zotero brew cask install zotero，然后设置已经从之前电脑传过来的库 安装视频播放器 brew cask install vlc 如果有需要，装个虚拟机吧！ 七、编程环境Python 环境安装 Miniconda： 下载 sh 文件 或者 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh 命令行进入下载的文件夹 bash Miniconda3-latest-Linux-x86_64.sh，按照提示操作。 新建环境 1conda create -n pyp python=3 numpy pandas matplotlib jupyter 激活环境 1source activate pyp Node.js 和 npm因为要用 hexo 更新博客，以及方便以后安装各种基于 js 的应用，下载 Node.js 并安装。 然后用 npm 安装 hexo： 1sudo npm install hexo-cli -g 编辑器和 Dash安装代码编辑器 brew cask install atom。然后是编程语言和各种库的文档大管家 Dash，具体操作略。 八、创作者套件 Sketch Mindnode 图床 dropzone3 + qiniu bundle（最新版的 bundle 有 bug，需要用回 1.2 或更低版本） 图标库 Icons8，图片管理应用如 Inboard 3D 工具如 SketchUp/Fusion 360 Logic X pro 清单暂时更新到这里。欢迎亲们推荐相见恨晚的应用和奇技淫巧~ Happy New Year &amp; Happy New Macbook!]]></content>
@@ -22,8 +35,8 @@
         <tag>ArtxCode</tag>
         <tag>DeepLearning</tag>
         <tag>Coding</tag>
-        <tag>神经网络</tag>
         <tag>编程</tag>
+        <tag>神经网络</tag>
         <tag>Programming</tag>
       </tags>
   </entry>
@@ -41,8 +54,8 @@
         <tag>ArtxCode</tag>
         <tag>DeepLearning</tag>
         <tag>Coding</tag>
-        <tag>神经网络</tag>
         <tag>编程</tag>
+        <tag>神经网络</tag>
         <tag>Programming</tag>
         <tag>AWS</tag>
         <tag>GPU</tag>
@@ -110,8 +123,8 @@
         <tag>ArtxCode</tag>
         <tag>DeepLearning</tag>
         <tag>Coding</tag>
-        <tag>神经网络</tag>
         <tag>编程</tag>
+        <tag>神经网络</tag>
         <tag>Backpro</tag>
         <tag>反向传播</tag>
         <tag>Programming</tag>
@@ -509,8 +522,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计</tag>
         <tag>Note</tag>
+        <tag>设计</tag>
       </tags>
   </entry>
   <entry>
@@ -550,8 +563,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -563,8 +576,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -576,8 +589,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -589,8 +602,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -1616,8 +1629,8 @@
         <tag>Note</tag>
         <tag>中欧</tag>
         <tag>历史</tag>
-        <tag>奥地利</tag>
         <tag>Travel</tag>
+        <tag>奥地利</tag>
         <tag>哈布斯堡王朝</tag>
         <tag>维也纳</tag>
       </tags>
@@ -1646,12 +1659,12 @@
       </categories>
       <tags>
         <tag>中欧</tag>
-        <tag>匈牙利</tag>
         <tag>历史</tag>
-        <tag>奥地利</tag>
         <tag>捷克</tag>
-        <tag>斯洛伐克</tag>
         <tag>Travel</tag>
+        <tag>匈牙利</tag>
+        <tag>奥地利</tag>
+        <tag>斯洛伐克</tag>
       </tags>
   </entry>
   <entry>
@@ -1914,8 +1927,8 @@
       <tags>
         <tag>Design</tag>
         <tag>设计</tag>
-        <tag>service design</tag>
         <tag>服务设计</tag>
+        <tag>service design</tag>
       </tags>
   </entry>
   <entry>
@@ -2039,8 +2052,8 @@
         <category>设计</category>
       </categories>
       <tags>
-        <tag>IxD</tag>
         <tag>Note</tag>
+        <tag>IxD</tag>
         <tag>交互设计</tag>
       </tags>
   </entry>
@@ -2218,8 +2231,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计</tag>
         <tag>Note</tag>
+        <tag>设计</tag>
         <tag>Layout</tag>
       </tags>
   </entry>
@@ -2349,8 +2362,8 @@
         <category>设计</category>
       </categories>
       <tags>
-        <tag>IxD</tag>
         <tag>Note</tag>
+        <tag>IxD</tag>
         <tag>交互设计</tag>
       </tags>
   </entry>
