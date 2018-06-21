@@ -86,13 +86,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E6%8D%B7%E5%85%8B/</loc>
-        <lastmod>2016-01-03T14:48:14.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/tags/%E5%8C%88%E7%89%99%E5%88%A9/</loc>
         <lastmod>2016-01-03T14:48:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -101,6 +94,13 @@
 
     <url>
         <loc>http://uegeek.com/tags/%E5%A5%A5%E5%9C%B0%E5%88%A9/</loc>
+        <lastmod>2016-01-03T14:48:14.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E6%8D%B7%E5%85%8B/</loc>
         <lastmod>2016-01-03T14:48:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -625,14 +625,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E4%B8%AD%E6%AC%A7/</loc>
+        <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
         <lastmod>2016-08-06T02:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
+        <loc>http://uegeek.com/tags/%E4%B8%AD%E6%AC%A7/</loc>
         <lastmod>2016-08-06T02:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -856,14 +856,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Reading/</loc>
+        <loc>http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1%E5%B8%88/</loc>
         <lastmod>2017-03-04T13:57:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1%E5%B8%88/</loc>
+        <loc>http://uegeek.com/tags/Reading/</loc>
         <lastmod>2017-03-04T13:57:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1179,21 +1179,21 @@
 
     <url>
         <loc>http://uegeek.com/tags/ArtxCode/</loc>
-        <lastmod>2018-06-21T11:21:37.000Z</lastmod>
+        <lastmod>2018-06-21T11:34:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/Sound/</loc>
-        <lastmod>2018-06-21T11:21:37.000Z</lastmod>
+        <lastmod>2018-06-21T11:34:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E5%A3%B0%E9%9F%B3/</loc>
-        <lastmod>2018-06-21T11:21:37.000Z</lastmod>
+        <lastmod>2018-06-21T11:34:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

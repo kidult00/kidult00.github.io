@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[MakeNoise01 - 声音是什么？]]></title>
     <url>%2F180621-make-noise-01.html</url>
-    <content type="text"><![CDATA[这是个新开的系列，大概会持续更新（吧）。关于声音和制造声音： 声音的一些物理原理 声音的属性 如何用 Max/MSP 构造和设计声音 如何用 Ableton Live 制作音效 声音可视化 第一篇是绕不开的概念和原理。 为什么绕不开呢？（因为我尝试过……┓( ´o` )┏）如果不从波动的角度开始理解声音，在 Max 等工具里制造和修改声音真是抓瞎，更不要提有数量巨多的音效和合成器等着我们去调戏了。 声音无处不在，但是因为看不见摸不着，所以它是一种大部分时间存在感很弱的现象。 声音的本质是波动，是在介质（如空气）中的一种震动传播现象。 震动方向和传播方向垂直的波，叫 Transverse wave；方向相同的波叫 Longitudinal wave。声波属于 longitudinal wave。 声音是相当「物理」的一门学科，它属于动力学的一个分支。 声波在运动中传递能量，它全都是关于「变化」的——声音的波形、位置、能量等等随着时间而变化。 声源震动引起空气分子往复运动，不断挤压周围的空气而产生声波。我们熟悉的声音：音乐，人说话，猫叫，敲击键盘的声音，噪声……都由震动引起。 比如话筒，持续接收声源震动，转换为连续变化的电压，再转换为数字信号：￼￼ 耳朵也是这么接收声音哒！（鼓膜的英文 eardrum 是不是很形象？）￼ 更多关于声音的原理，推荐这个视频： 下一篇关于声音最重要的属性——频率。 Ref Audio Engineering 101 - A Beginner’s Guide to Music Production Sound: Crash Course Physics #18 - YouTube]]></content>
+    <content type="text"><![CDATA[这是个新开的系列，关于声音和制造声音，大概会持续更新（吧）： 声音的一些物理原理 声音的属性 如何用 Max/MSP 构造和设计声音 如何用 Ableton Live 制作音效 声音可视化 第一篇是绕不开的概念和原理。 为什么绕不开呢？（因为我尝试过……┓( ´o` )┏）如果不从波动的角度开始理解声音，在 Max 等工具里制造和修改声音真是抓瞎，更不要提有数量巨多的音效和合成器等着我们去调戏了。 声音无处不在，但是因为看不见摸不着，所以它是一种大部分时间存在感很弱的现象。 声音的本质是波动，是在介质（如空气）中的一种震动传播现象。 震动方向和传播方向垂直的波，叫 Transverse wave；方向相同的波叫 Longitudinal wave。声波属于 longitudinal wave。 声音是相当「物理」的一门学科，它属于动力学的一个分支。 声波在运动中传递能量，它全都是关于「变化」的——声音的波形、位置、能量等等随着时间而变化。 声源震动引起空气分子往复运动，不断挤压周围的空气而产生声波。我们熟悉的声音：音乐，人说话，猫叫，敲击键盘的声音，噪声……都由震动引起。 比如话筒，持续接收声源震动，转换为连续变化的电压，再转换为数字信号：￼￼ 耳朵也是这么接收声音哒！（鼓膜的英文 eardrum 是不是很形象？）￼ 更多关于声音的原理，推荐这个视频： 下一篇关于声音最重要的属性——频率。 Ref Audio Engineering 101 - A Beginner’s Guide to Music Production Sound: Crash Course Physics #18 - YouTube]]></content>
       <categories>
         <category>动手</category>
       </categories>
@@ -522,8 +522,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Note</tag>
         <tag>设计</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -563,8 +563,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -576,8 +576,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -589,8 +589,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -602,8 +602,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -1573,8 +1573,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>Travel</tag>
         <tag>哥特式</tag>
         <tag>巴洛克</tag>
@@ -1593,8 +1593,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>Travel</tag>
         <tag>东正教</tag>
         <tag>基督教</tag>
@@ -1612,8 +1612,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>捷克</tag>
         <tag>Travel</tag>
       </tags>
@@ -1627,10 +1627,10 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
-        <tag>Travel</tag>
+        <tag>中欧</tag>
         <tag>奥地利</tag>
+        <tag>Travel</tag>
         <tag>哈布斯堡王朝</tag>
         <tag>维也纳</tag>
       </tags>
@@ -1644,8 +1644,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>捷克</tag>
         <tag>Travel</tag>
       </tags>
@@ -1658,13 +1658,13 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>中欧</tag>
         <tag>历史</tag>
-        <tag>捷克</tag>
-        <tag>Travel</tag>
+        <tag>中欧</tag>
         <tag>匈牙利</tag>
         <tag>奥地利</tag>
+        <tag>捷克</tag>
         <tag>斯洛伐克</tag>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -1676,8 +1676,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>历史</tag>
         <tag>人类简史</tag>
+        <tag>历史</tag>
       </tags>
   </entry>
   <entry>
@@ -1927,8 +1927,8 @@
       <tags>
         <tag>Design</tag>
         <tag>设计</tag>
-        <tag>服务设计</tag>
         <tag>service design</tag>
+        <tag>服务设计</tag>
       </tags>
   </entry>
   <entry>
@@ -2052,8 +2052,8 @@
         <category>设计</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>IxD</tag>
+        <tag>Note</tag>
         <tag>交互设计</tag>
       </tags>
   </entry>
@@ -2231,8 +2231,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Note</tag>
         <tag>设计</tag>
+        <tag>Note</tag>
         <tag>Layout</tag>
       </tags>
   </entry>
@@ -2362,8 +2362,8 @@
         <category>设计</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>IxD</tag>
+        <tag>Note</tag>
         <tag>交互设计</tag>
       </tags>
   </entry>
