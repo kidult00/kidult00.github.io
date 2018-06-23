@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MakeNoise02 - 频率和音高]]></title>
+    <url>%2F180623-make-noise-02.html</url>
+    <content type="text"><![CDATA[MakeNoise01 - 声音是什么？ 频率 Frequency 是周期运动在一秒内重复的次数。比如一根琴弦在一秒内震动 440 次（cycles per second - cps），它发出的就是 440 Hz 频率的声音。 频率是绝对量，在心理声学上对应的感知量是音高 Pitch。 一个声音听起来什么样，频率是最基本的决定要素之一。声源在每秒内振动次数的越多，频率就越大，产生的音高也就越高。 常见声音频率范围下图展示了人和一些动物的听觉范围。人的听觉范围在 20 ~ 20000 Hz。低于 20 Hz 的属于次声波 infrasounds，高于 20 kHz 的属于超声波 ultrasounds。 ￼ 所以市面上有一些号称 α、β 脑波的音乐，纯粹是耍流氓： 再来看看乐器的发声频率： 小提琴的频率是 200Hz~1.25kHz，中提琴是 125Hz~1kHz，大提琴是 60Hz~500Hz。频率越高，音高越高，所以小提琴的音高&gt;中提琴&gt;大提琴。男声的频率在 100Hz~800Hz，女声的频率在 250Hz~1kHz，所以大多数女声比男声听起来更「高」更「尖」。 可听的频率范围可以进一步划分为： 低音频率: 20~200 Hz 中音频率: 200~5k Hz, 在这个范围我们的听力最佳 Low-mids: 200~700 Hz， 常用 darker, hollow 来形容 Mid-mids: 700~2k Hz，more aggressive “live” tones High-mids: 2k~5kHz，常用 brighter, present 来形容 高音频率: 5k~20kHz 查看小提琴和大提琴的频谱接下来，我们到 Ableton Live 里试听小提琴和大提琴的声音和频率有什么不同。 在内容库里面找到 String1 Violin 和 Strings2 Cello，在 C3 拖出 2 个节拍。￼ 再加入内容库里面 Audio Effects 里的 EQ eight。播放音频时，可以看到小提琴的频率范围： ￼ 大提琴的频率范围，更多会在低频率的部分。 ￼ 用 Max 制作不同频率的声音接下来用 Max/MSP/Jitter （系列教程另外单开）来实现并聆听不同频率的正弦声波。 Max 内置了强大的声音和信号处理机制。这次我们用最简单的方式—— cycle~ 对象来生成持续的正弦波信号。 设定不同的频率 200Hz、440Hz、800Hz、1200Hz，切换频率，就能听到不同频率产生的音高不同。 ￼ 声音和频谱可以查看下面的视频： MakeNoise02-frequency_in_max 谐波频率振动物体可以产生一个谐波频率（每个频率都与基频呈简单的整倍数关系），也可以产生非谐波频率。 谐波是一个数学或物理学概念，是指周期函数或周期性的波形中能用常数、与原函数的最小正周期相同的正弦函数和余弦函数的线性组合表达的部分。 一个纯净音色并不需要各个谐波都完美的排列在完全整数值上，它需要这些谐波形成一个稳定的级数。例如，100Hz、199Hz、396.01Hz。每个泛音几乎都是一个频倍，是前一个频率的 1.99 倍。 除了正弦/余弦波以外，所有声音都由多个频率构成，形成一个频谱（在上面 Max 里面展示频率的图就是一种频谱）。 Ref MakeNoise01 - 声音是什么？ Audio Engineering 101 - A Beginner’s Guide to Music Production Sound: Crash Course Physics #18 - YouTube Balance is key – EQ’s magic frequencies | Heavyweightbass.net Harmonic series (music) - Wikiwand) 谐波 - Wikiwand 腦波 - Wikiwand ￼]]></content>
+      <categories>
+        <category>动手</category>
+      </categories>
+      <tags>
+        <tag>ArtxCode</tag>
+        <tag>Music</tag>
+        <tag>Sound</tag>
+        <tag>声音</tag>
+        <tag>Ableton Live</tag>
+        <tag>Max/MSP</tag>
+        <tag>Frequency</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MakeNoise01 - 声音是什么？]]></title>
     <url>%2F180621-make-noise-01.html</url>
     <content type="text"><![CDATA[这是个新开的系列，关于声音和制造声音，大概会持续更新（吧）： 声音的一些物理原理 声音的属性 如何用 Max/MSP 构造和设计声音 如何用 Ableton Live 制作音效 声音可视化 第一篇是绕不开的概念和原理。 为什么绕不开呢？（因为我尝试过……┓( ´o` )┏）如果不从波动的角度开始理解声音，在 Max 等工具里制造和修改声音真是抓瞎，更不要提有数量巨多的音效和合成器等着我们去调戏了。 声音无处不在，但是因为看不见摸不着，所以它是一种大部分时间存在感很弱的现象。 声音的本质是波动，是在介质（如空气）中的一种震动传播现象。 震动方向和传播方向垂直的波，叫 Transverse wave；方向相同的波叫 Longitudinal wave。声波属于 longitudinal wave。 声音是相当「物理」的一门学科，它属于动力学的一个分支。 声波在运动中传递能量，它全都是关于「变化」的——声音的波形、位置、能量等等随着时间而变化。 声源震动引起空气分子往复运动，不断挤压周围的空气而产生声波。我们熟悉的声音：音乐，人说话，猫叫，敲击键盘的声音，噪声……都由震动引起。 比如话筒，持续接收声源震动，转换为连续变化的电压，再转换为数字信号：￼￼ 耳朵也是这么接收声音哒！（鼓膜的英文 eardrum 是不是很形象？）￼ 更多关于声音的原理，推荐这个视频： 下一篇关于声音最重要的属性——频率。 Ref Audio Engineering 101 - A Beginner’s Guide to Music Production Sound: Crash Course Physics #18 - YouTube]]></content>
@@ -563,8 +580,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -576,8 +593,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -589,8 +606,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -602,8 +619,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -1573,8 +1590,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>Travel</tag>
         <tag>哥特式</tag>
         <tag>巴洛克</tag>
@@ -1593,8 +1610,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>Travel</tag>
         <tag>东正教</tag>
         <tag>基督教</tag>
@@ -1612,8 +1629,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
         <tag>Travel</tag>
       </tags>
@@ -1627,8 +1644,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>奥地利</tag>
         <tag>Travel</tag>
         <tag>哈布斯堡王朝</tag>
@@ -1644,8 +1661,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
         <tag>Travel</tag>
       </tags>
@@ -1658,9 +1675,9 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>历史</tag>
         <tag>中欧</tag>
         <tag>匈牙利</tag>
+        <tag>历史</tag>
         <tag>奥地利</tag>
         <tag>捷克</tag>
         <tag>斯洛伐克</tag>
@@ -1676,8 +1693,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>人类简史</tag>
         <tag>历史</tag>
+        <tag>人类简史</tag>
       </tags>
   </entry>
   <entry>

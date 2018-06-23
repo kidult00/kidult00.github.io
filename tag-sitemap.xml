@@ -625,14 +625,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
+        <loc>http://uegeek.com/tags/%E4%B8%AD%E6%AC%A7/</loc>
         <lastmod>2016-08-06T02:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E4%B8%AD%E6%AC%A7/</loc>
+        <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
         <lastmod>2016-08-06T02:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -856,14 +856,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1%E5%B8%88/</loc>
+        <loc>http://uegeek.com/tags/Reading/</loc>
         <lastmod>2017-03-04T13:57:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Reading/</loc>
+        <loc>http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1%E5%B8%88/</loc>
         <lastmod>2017-03-04T13:57:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1101,13 +1101,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Music/</loc>
-        <lastmod>2018-02-23T14:41:07.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/tags/AWS/</loc>
         <lastmod>2018-03-22T14:30:53.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1179,21 +1172,49 @@
 
     <url>
         <loc>http://uegeek.com/tags/ArtxCode/</loc>
-        <lastmod>2018-06-21T11:48:34.000Z</lastmod>
+        <lastmod>2018-06-23T09:49:53.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Music/</loc>
+        <lastmod>2018-06-23T09:49:53.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/Sound/</loc>
-        <lastmod>2018-06-21T11:48:34.000Z</lastmod>
+        <lastmod>2018-06-23T09:49:53.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E5%A3%B0%E9%9F%B3/</loc>
-        <lastmod>2018-06-21T11:48:34.000Z</lastmod>
+        <lastmod>2018-06-23T09:49:53.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Ableton-Live/</loc>
+        <lastmod>2018-06-23T09:49:53.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Max-MSP/</loc>
+        <lastmod>2018-06-23T09:49:53.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Frequency/</loc>
+        <lastmod>2018-06-23T09:49:53.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
