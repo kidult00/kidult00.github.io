@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MakeNoise03 - 振幅/响度/音量/增益 大乱斗]]></title>
+    <url>%2F180624-make-noise-03.html</url>
+    <content type="text"><![CDATA[MakeNoise01 - 声音是什么？ MakeNoise02 - 频率和音高 振幅/响度/音量/增益，这大概是 Sound engineering 入门的第一捆容易混淆的概念们。(¦3」∠) 振幅 Amplitude振幅 Amplitude 是在波动或振动中，距离平衡位置或静止位置的最大位移。￼ 最大正位移与最大负位移之差，称为值域（range）或峰-峰幅度，是常规振幅的两倍。 音源的振幅（物理量）与频率、频谱包络以及时域包络等其他因素一起，影响声音的响度（感知量）。顺便复习一下，频率是声源每分钟震动次数的物理量，音高是感知量。 响度 Loudness我们常用 Sound pressure level (SPL) 值来测量声音的响度，单位为 dB。 不过 dB 并不是可以测量的物理量，它只是一个单位。来看看以下几个概念，有助于我们理解响度到底是什么： 声压/声强（acoustic pressure）：是指声波通过媒质时，由振动所产生的压强改变量。声压的数值很大，不便于计算和描述，于是人们取了一个人耳刚刚能听到 1kHz 声音时候的声压值作为标准。 声压等级（SPL）：是描述声音大小的物理量，用声压值除以上面提到的标准声压值，取了对数再乘以10，就得到 SPL，公式见下图。 分贝（decibels/dB）：是描述物理量比值的单位（分贝不仅用于声学，多用于衡量各种信号的强度、增益等）。 ￼ 从以上公式容易看到，响度和声压并不是线性关系。一个声波大概需要 10 倍的压强，才能让我们在听觉上感受到 2 倍的响度。 Fletcher-Munson 曲线总结了人耳对响度的敏感性。人耳对 3kHz~4kHz的声音最敏感，其他频率区域的声音往往都需要经过放大才能被听清。￼ 常见的响度范围大多数人能识别 3dB 的声音幅度变化。下图给出了常见的声音场景的响度： 0 dB: 几乎安静无声 40-50 dB: 室内环境音 50-60 dB: 低语声 60-75 dB: 谈话声 80-85 dB: 最佳声音响度区域，在混音时最高不应超过 85 dB 90 dB: 工厂噪声，长时间暴露在这种环境中会损伤听力 100 dB: 婴儿哭声 110 dB: 汽车喇叭 120 dB: 会引起疼痛和听觉损伤的响度阈值 140 dB: 相当于连续猛烈敲击军鼓1分钟 150-160 dB: 飞机引擎声 不同枪支发射时的 SPL： ￼ Sound engineering 里的音量 Volume 和 增益 Gain 的区别Volume 和 Gain 是初学者常常容易混淆的两个概念（就像我现在……☁️☁️☁️），在各种教程和工具界面里会频繁出现这两个词，它们似乎都可以翻译为「音量」。但它们是两个不同的概念。 GainGain 用来表示信号的强度，是音频输入信号和输出信号差异的幅度。 Gain is the parameter for the amount that some sort of amplifier circuit is going to increase the amplitude of an input signal. via Gain vs Volume - Production Concepts 可以说，gain 控制的是「进入」声音设备的信号。 在数字音频中，Gain 常用的单位是 dBFS。0 dBFS 是数字音频中的最大值，正常值都为负数。如果大于 0 呢？音频就会出现削波和失真。 VolumeVolume 是声音大小（响度）的值，单位是 dBSPL(dB Sound Pressure Level)，测量的是声波在环境中的压强值。可以说，volume 控制的是从声音设备「输出」的声响大小。 在混音时，volume 值保持在 80 dB 左右最佳。增大响度叫 boost，减小响度叫 cut。 在软件中的使用场景现在，我们知道可以将 Gain 理解为对信号的调整，将 Volume 理解为处理完成后声音响度的听觉感受。 这正好可以对应到 Max/MSP 和 Ableton Live 的实现中。 Max/MSP 很擅长数字信号处理，主要在信号层面做底层的调控。所以在 Max/MSP 中只有控制 gain 的对象，而没有调控 volume 的对象。 ￼ 而 Ableton Live 善于处理音频，叠加各种音效和编排音轨。控制每一个音轨的音量是最基本的功能之一。在界面功能中，它会把信号的 level 描述为 volume： Volume in ableton live 从上面的视频中可以看到，这个音轨的 peak level 是 -14.9，不会超过 0 ，实际上它控制的还是信号的 gain。 小结 振幅：波动的最大位置，并不是响度的唯一影响因素 响度：用物理量声压级 SPL 来测量，一般用简化的单位 dB 来表示响度这一感知量 音量：在音频处理时表示响度的概念，更多是指音频输出时听觉感受到的声音大小 增益：在音频处理时表示信号强度的概念，更多是指音频输入与输出时信号强度的差别 它们都是对声音「大小」的不同描述，现在是不是更清晰一些了？ Ref Audio Engineering 101 - A Beginner’s Guide to Music Production Sound: Crash Course Physics #18 - YouTube Sound pressure - Wikiwand 响度与振幅与分贝的关系是什么？ - 知乎 Fletcher–Munson curves - Wikiwand Tips from a Recording Engineer: The Critical Difference Between Gain and Volume Gain vs Volume - Production Concepts - YouTube]]></content>
+      <categories>
+        <category>动手</category>
+      </categories>
+      <tags>
+        <tag>ArtxCode</tag>
+        <tag>Music</tag>
+        <tag>Sound</tag>
+        <tag>声音</tag>
+        <tag>Ableton Live</tag>
+        <tag>Max/MSP</tag>
+        <tag>Gain</tag>
+        <tag>Volume</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MakeNoise02 - 频率和音高]]></title>
     <url>%2F180623-make-noise-02.html</url>
     <content type="text"><![CDATA[MakeNoise01 - 声音是什么？ 频率 Frequency 是周期运动在一秒内重复的次数。比如一根琴弦在一秒内震动 440 次（cycles per second - cps），它发出的就是 440 Hz 频率的声音。 频率是绝对量，在心理声学上对应的感知量是音高 Pitch。 一个声音听起来什么样，频率是最基本的决定要素之一。声源在每秒内振动次数的越多，频率就越大，产生的音高也就越高。 常见声音频率范围下图展示了人和一些动物的听觉范围。人的听觉范围在 20 ~ 20000 Hz。低于 20 Hz 的属于次声波 infrasounds，高于 20 kHz 的属于超声波 ultrasounds。 ￼ 所以市面上有一些号称 α、β 脑波的音乐，纯粹是耍流氓： 再来看看乐器的发声频率： 小提琴的频率是 200Hz~1.25kHz，中提琴是 125Hz~1kHz，大提琴是 60Hz~500Hz。频率越高，音高越高，所以小提琴的音高&gt;中提琴&gt;大提琴。男声的频率在 100Hz~800Hz，女声的频率在 250Hz~1kHz，所以大多数女声比男声听起来更「高」更「尖」。 可听的频率范围可以进一步划分为： 低音频率: 20~200 Hz 中音频率: 200~5k Hz, 在这个范围我们的听力最佳 Low-mids: 200~700 Hz， 常用 darker, hollow 来形容 Mid-mids: 700~2k Hz，more aggressive “live” tones High-mids: 2k~5kHz，常用 brighter, present 来形容 高音频率: 5k~20kHz 查看小提琴和大提琴的频谱接下来，我们到 Ableton Live 里试听小提琴和大提琴的声音和频率有什么不同。 在内容库里面找到 String1 Violin 和 Strings2 Cello，在 C3 拖出 2 个节拍。￼ 再加入内容库里面 Audio Effects 里的 EQ eight。播放音频时，可以看到小提琴的频率范围： ￼ 大提琴的频率范围，更多会在低频率的部分。 ￼ 用 Max 制作不同频率的声音接下来用 Max/MSP/Jitter （系列教程另外单开）来实现并聆听不同频率的正弦声波。 Max 内置了强大的声音和信号处理机制。这次我们用最简单的方式—— cycle~ 对象来生成持续的正弦波信号。 设定不同的频率 200Hz、440Hz、800Hz、1200Hz，切换频率，就能听到不同频率产生的音高不同。 ￼ 声音和频谱可以查看下面的视频： MakeNoise02-frequency_in_max 谐波频率振动物体可以产生一个谐波频率（每个频率都与基频呈简单的整倍数关系），也可以产生非谐波频率。 谐波是一个数学或物理学概念，是指周期函数或周期性的波形中能用常数、与原函数的最小正周期相同的正弦函数和余弦函数的线性组合表达的部分。 一个纯净音色并不需要各个谐波都完美的排列在完全整数值上，它需要这些谐波形成一个稳定的级数。例如，100Hz、199Hz、396.01Hz。每个泛音几乎都是一个频倍，是前一个频率的 1.99 倍。 除了正弦/余弦波以外，所有声音都由多个频率构成，形成一个频谱（在上面 Max 里面展示频率的图就是一种频谱）。 Ref MakeNoise01 - 声音是什么？ Audio Engineering 101 - A Beginner’s Guide to Music Production Sound: Crash Course Physics #18 - YouTube Balance is key – EQ’s magic frequencies | Heavyweightbass.net Harmonic series (music) - Wikiwand) 谐波 - Wikiwand 腦波 - Wikiwand ￼]]></content>
@@ -539,8 +557,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Note</tag>
         <tag>设计</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -580,8 +598,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -593,8 +611,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -606,8 +624,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -619,8 +637,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -2069,8 +2087,8 @@
         <category>设计</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>IxD</tag>
+        <tag>Note</tag>
         <tag>交互设计</tag>
       </tags>
   </entry>
@@ -2248,8 +2266,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Note</tag>
         <tag>设计</tag>
+        <tag>Note</tag>
         <tag>Layout</tag>
       </tags>
   </entry>
@@ -2379,8 +2397,8 @@
         <category>设计</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>IxD</tag>
+        <tag>Note</tag>
         <tag>交互设计</tag>
       </tags>
   </entry>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-06-23T09:49:53.000Z</updated>
+  <updated>2018-06-24T10:05:49.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MakeNoise03 - 振幅/响度/音量/增益 大乱斗</title>
+    <link href="http://uegeek.com/180624-make-noise-03.html"/>
+    <id>http://uegeek.com/180624-make-noise-03.html</id>
+    <published>2018-06-24T10:02:47.000Z</published>
+    <updated>2018-06-24T10:05:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png" alt=""></p><a id="more"></a> <ul><li><a href="https://www.uegeek.com/180621-make-noise-01.html" target="_blank" rel="noopener">MakeNoise01 - 声音是什么？</a></li><li><a href="https://www.uegeek.com/180623-make-noise-02.html" target="_blank" rel="noopener">MakeNoise02 - 频率和音高</a></li></ul><p>振幅/响度/音量/增益，这大概是 Sound engineering 入门的第一捆容易混淆的概念们。<em>(¦3」∠)</em></p><h2 id="振幅-Amplitude"><a href="#振幅-Amplitude" class="headerlink" title="振幅 Amplitude"></a>振幅 Amplitude</h2><p>振幅 Amplitude 是在波动或振动中，距离平衡位置或静止位置的最大位移。<br>￼<br><img src="http://mathworld.wolfram.com/images/eps-gif/Amplitude_1000.gif" alt=""></p><p>最大正位移与最大负位移之差，称为值域（range）或峰-峰幅度，是常规振幅的两倍。</p><p><strong>音源的振幅（物理量）</strong>与频率、频谱包络以及时域包络等其他因素一起，<strong>影响声音的响度（感知量）</strong>。顺便复习一下，频率是声源每分钟震动次数的物理量，音高是感知量。</p><h2 id="响度-Loudness"><a href="#响度-Loudness" class="headerlink" title="响度 Loudness"></a>响度 Loudness</h2><p>我们常用 Sound pressure level (SPL) 值来测量声音的响度，单位为 dB。</p><p>不过 dB 并不是可以测量的物理量，它只是一个单位。来看看以下几个概念，有助于我们理解响度到底是什么：</p><ul><li>声压/声强（acoustic pressure）：是指声波通过媒质时，由振动所产生的<strong>压强改变量</strong>。声压的数值很大，不便于计算和描述，于是人们取了一个人耳刚刚能听到 1kHz 声音时候的声压值作为标准。</li><li>声压等级（SPL）：是<strong>描述声音大小的物理量</strong>，用声压值除以上面提到的标准声压值，取了对数再乘以10，就得到 SPL，公式见下图。</li><li>分贝（decibels/dB）：是<strong>描述物理量比值的单位</strong>（分贝不仅用于声学，多用于衡量各种信号的强度、增益等）。</li></ul><p>￼<img src="http://7xjpra.com1.z0.glb.clouddn.com/SPL2dB.png" alt=""></p><p>从以上公式容易看到，<strong>响度和声压并不是线性关系</strong>。一个声波大概需要 10 倍的压强，才能让我们在听觉上感受到 2 倍的响度。</p><p>Fletcher-Munson 曲线总结了人耳对响度的敏感性。人耳对 3kHz~4kHz的声音最敏感，其他频率区域的声音往往都需要经过放大才能被听清。<br>￼<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Lindos4.svg/800px-Lindos4.svg.png" alt=""></p><h2 id="常见的响度范围"><a href="#常见的响度范围" class="headerlink" title="常见的响度范围"></a>常见的响度范围</h2><p>大多数人能识别 3dB 的声音幅度变化。下图给出了常见的声音场景的响度：</p><p><img src="https://images-na.ssl-images-amazon.com/images/I/71Z0oKDowKL._SL1500_.jpg" alt=""></p><ul><li>0 dB: 几乎安静无声</li><li>40-50 dB: 室内环境音</li><li>50-60 dB: 低语声</li><li>60-75 dB: 谈话声</li><li>80-85 dB: 最佳声音响度区域，在混音时最高不应超过 85 dB</li><li>90 dB: 工厂噪声，长时间暴露在这种环境中会损伤听力</li><li>100 dB: 婴儿哭声 </li><li>110 dB: 汽车喇叭</li><li>120 dB: 会引起疼痛和听觉损伤的响度阈值</li><li>140 dB: 相当于连续猛烈敲击军鼓1分钟</li><li>150-160 dB: 飞机引擎声</li></ul><p>不同枪支发射时的 SPL：</p><p>￼<img src="https://cdn.shopify.com/s/files/1/1696/0313/files/SoundComparison-Silencer-Supressor.jpg?v=1500407959" alt=""></p><h2 id="Sound-engineering-里的音量-Volume-和-增益-Gain-的区别"><a href="#Sound-engineering-里的音量-Volume-和-增益-Gain-的区别" class="headerlink" title="Sound engineering 里的音量 Volume 和 增益 Gain 的区别"></a>Sound engineering 里的音量 Volume 和 增益 Gain 的区别</h2><p>Volume 和 Gain 是初学者常常容易混淆的两个概念（就像我现在……☁️☁️☁️），在各种教程和工具界面里会频繁出现这两个词，它们似乎都可以翻译为「音量」。但它们是两个不同的概念。</p><h3 id="Gain"><a href="#Gain" class="headerlink" title="Gain"></a>Gain</h3><p>Gain 用来表示信号的强度，是<strong>音频输入信号和输出信号差异的幅度</strong>。</p><blockquote><p>Gain is the parameter for the amount that some sort of amplifier circuit is going to increase the amplitude of an input signal. </p><p>via <a href="https://www.youtube.com/watch?v=33u60cYDZTM" target="_blank" rel="noopener">Gain vs Volume - Production Concepts</a></p></blockquote><p>可以说，gain 控制的是「进入」声音设备的信号。</p><p>在数字音频中，Gain 常用的单位是 dBFS。0 dBFS 是数字音频中的最大值，正常值都为负数。如果大于 0 呢？音频就会出现削波和失真。</p><h3 id="Volume"><a href="#Volume" class="headerlink" title="Volume"></a>Volume</h3><p>Volume 是声音大小（响度）的值，单位是 dBSPL(dB Sound Pressure Level)，测量的是声波在环境中的压强值。可以说，volume 控制的是从声音设备「输出」的声响大小。</p><p>在混音时，volume 值保持在 80 dB 左右最佳。增大响度叫 boost，减小响度叫 cut。</p><h3 id="在软件中的使用场景"><a href="#在软件中的使用场景" class="headerlink" title="在软件中的使用场景"></a>在软件中的使用场景</h3><p>现在，我们知道可以<strong>将 Gain 理解为对信号的调整，将 Volume 理解为处理完成后声音响度的听觉感受</strong>。</p><p>这正好可以对应到 Max/MSP 和 Ableton Live 的实现中。</p><p>Max/MSP 很擅长数字信号处理，主要在信号层面做底层的调控。所以在 Max/MSP 中只有控制 gain 的对象，而没有调控 volume 的对象。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/gain&amp;meter.png" alt=""><br>￼</p><p>而 Ableton Live 善于处理音频，叠加各种音效和编排音轨。控制每一个音轨的音量是最基本的功能之一。在界面功能中，它会把信号的 level 描述为 volume：</p><p><a href="http://v.qq.com/x/page/r0700unhufv.html" target="_blank" rel="noopener">Volume in ableton live</a></p><p>从上面的视频中可以看到，这个音轨的 peak level 是 -14.9，不会超过 0 ，实际上它控制的还是信号的 gain。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li>振幅：波动的最大位置，并不是响度的唯一影响因素</li><li>响度：用物理量声压级 SPL 来测量，一般用简化的单位 dB 来表示响度这一感知量</li><li>音量：在音频处理时表示响度的概念，更多是指音频输出时听觉感受到的声音大小</li><li>增益：在音频处理时表示信号强度的概念，更多是指音频输入与输出时信号强度的差别</li></ul><p>它们都是对声音「大小」的不同描述，现在是不是更清晰一些了？</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li>Audio Engineering 101 - A Beginner’s Guide to Music Production</li><li><a href="https://www.youtube.com/watch?v=qV4lR9EWGlY" target="_blank" rel="noopener">Sound: Crash Course Physics #18 - YouTube</a></li><li><a href="https://www.wikiwand.com/en/Sound_pressure" target="_blank" rel="noopener">Sound pressure - Wikiwand</a></li><li><a href="https://www.zhihu.com/question/23047125" target="_blank" rel="noopener">响度与振幅与分贝的关系是什么？ - 知乎</a></li><li><a href="https://www.wikiwand.com/en/Fletcher%E2%80%93Munson_curves" target="_blank" rel="noopener">Fletcher–Munson curves - Wikiwand</a></li><li><a href="http://www.prsguitars.com/index.php/blog/post/tips_from_a_recording_engineerthe_critical_difference_between_gain_and_volu" target="_blank" rel="noopener">Tips from a Recording Engineer: The Critical Difference Between Gain and Volume</a></li><li><a href="https://www.youtube.com/watch?v=33u60cYDZTM" target="_blank" rel="noopener">Gain vs Volume - Production Concepts - YouTube</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Music" scheme="http://uegeek.com/tags/Music/"/>
+    
+      <category term="Sound" scheme="http://uegeek.com/tags/Sound/"/>
+    
+      <category term="声音" scheme="http://uegeek.com/tags/%E5%A3%B0%E9%9F%B3/"/>
+    
+      <category term="Ableton Live" scheme="http://uegeek.com/tags/Ableton-Live/"/>
+    
+      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
+    
+      <category term="Gain" scheme="http://uegeek.com/tags/Gain/"/>
+    
+      <category term="Volume" scheme="http://uegeek.com/tags/Volume/"/>
+    
+  </entry>
   
   <entry>
     <title>MakeNoise02 - 频率和音高</title>
@@ -653,38 +689,6 @@
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
       <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DL笔记：梯度下降 Gradient Descent</title>
-    <link href="http://uegeek.com/171222DLN6-GradientDescent.html"/>
-    <id>http://uegeek.com/171222DLN6-GradientDescent.html</id>
-    <published>2017-12-22T01:28:24.000Z</published>
-    <updated>2017-12-31T12:25:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p><a id="more"></a> <p><code>阿扣</code>：上一次我们了解了<a href="http://www.uegeek.com/171220DLN5-CostFunction.html" target="_blank" rel="noopener">损失函数</a>。为了找到使损失函数（比如用 SSE 计算）最小的 w (权重) 和 b (偏置项)，我们需要先了解一个重要的方法：梯度下降。</p><p><code>阿特</code>：听起来像坐滑滑梯~</p><p><code>阿扣</code>：是有那么点意思。</p><p><code>阿扣</code>：想象一下，我们对网络中的一些权重做了很小的改变，这些变化会让输出也有相应很小的变化：</p><p><img src="http://neuralnetworksanddeeplearning.com/images/tikz8.png" alt=""></p><p>via <a href="http://neuralnetworksanddeeplearning.com/chap1.html" target="_blank" rel="noopener">Neural networks and deep learning - chapter 1</a></p><p>然后拿这些微小的变化，跟目标值对比，看看误差是变大还是变小了，然后不断调整权重值，最终找到最合适的 w 和 b。</p><p><code>阿特</code>：那要怎么找到这些值呢？</p><p><code>阿扣</code>：下面有请「梯度下降」 Gradient Descent。</p><p><code>阿特</code>：终于能坐滑滑梯了……</p><p><code>阿扣</code>：坐这个滑滑梯可能有点晕 😄 。我先给你打个比方。想象一下，你在一个山峰的山顶，想用最快的速度到达山脚。</p><p><code>阿特</code>：坐缆车可以吗？</p><p><code>阿扣</code>：缆车，不存在的……只能靠走的。要往哪边下山呢？我们会选一个看起来「下降」最快的路径：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Gradient%20Descent-i1.png" alt=""></p><p>朝这个方向走一段后，我们再看下一步往哪个方向走，「下降」最快。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Gradient%20Descent-i2.png" alt=""></p><p>一直重复这个过程，就能最快的速度下到山脚。</p><p><code>阿特</code>：是这么个道理。</p><p><code>阿扣</code>：这个方法，就是「梯度下降」，在机器学习中很常见。所谓「梯度」，其实是指「变化率」或者「坡度 slope」，就是多变量函数的导数。</p><p><code>阿特</code>：导数？！你说的是微积分里面那个导数吗？ …… 瑟瑟发抖.gif</p><p><code>阿扣</code>：别紧张，先听我讲，回忆回忆。</p><p><code>阿特</code>：好吧。</p><p><code>阿扣</code>：你还记得怎么表示函数 f(x) 的导数吧？很简单，就是 f’(x) 。</p><p><code>阿特</code>：嗯嗯，记得。</p><p><code>阿扣</code>：所谓「梯度」，其实就是函数在某一点上的变化率，根据微分的知识，变化率可以通过这一点的切线求得，而切线其实就是函数的导数：f’(x)。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/derivative-example.png" alt=""></p><p>来，跟我念一遍：求梯度 = 求变化率 = 求导数</p><p><code>阿特</code>：求梯度 = 求变化率 = 求导数 （假装自己听懂了）</p><p><code>阿扣</code>：了解了「梯度」，然后我们来看看「下降」又是怎么回事。</p><p>切线代表函数在某个点的变化率。在上面这个图中，x = 2 位置上的切线，斜率是 &gt; 1 的。说明如果继续往 x = 2 的右边滑去，在曲线上的值就会变大。比如当 x = 3 时，y = 9。</p><p>但是我们想要到曲线最低的地方去，因为那里可以让误差（也就是 cost ）最小。所以，应该沿着梯度「相反」的方向滑动，也就朝着是 x = 2 的左边滑去。这就是「下降」的含义。</p><p><code>阿特</code>：沿着「上山」最快的反方向走，就能最快「下山」。啊原来这么直白……</p><p><code>阿扣</code>：对呀，原理并不复杂的。</p><p>这个视频讲解了线性回归和梯度下降的关系，来看看吧！</p><div class="video-container"><iframe src="//www.youtube.com/embed/L5QBqYDNJn0" frameborder="0" allowfullscreen></iframe></div><p><a href="https://www.youtube.com/watch?time_continue=194&amp;v=L5QBqYDNJn0" target="_blank" rel="noopener">Linear Regression Answer - YouTube</a></p><p><code>阿特</code>：这个视频不错，讲得挺清楚的~</p><p><code>阿扣</code>：我们来复习一下。用一个函数 f(h) 表示 x 和 y 的关系。x 和 y 其实是已知的，它们来自真实的数据集。我们的目标是求出 w 和 b，使得计算出来的 $\hat y$ 最接近实际的 y 值。为了得到某种类型的 y 值（比如只有 0 和 1 两种输出），我们会使用类似 Sigmoid 这样的激活函数，对 f(h) 做一下转换。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/simpleNN.png" alt=""></p><p><code>阿特</code>：哦，我说怎么有点难理解呢。因为以前碰到 x 和 y，它们都是未知数，现在它们变成了已知数，真正的目标其实是求 w 和 b！</p><p><code>阿扣</code>：没错！这是深度学习算法中一个需要调整的认知。</p><p>怎么得到 w 和 b 呢？用损失函数。如果损失函数的值大，说明模型预测得不准。我们要找到让损失函数的值最小的 w 和 b。更具体说，我们要找到 w 的变化幅度 $\Delta w$，每次调整一小步，看看误差 E 是不是变小了。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Gradient%20Descent-i3.png" alt=""></p><p>为了求出 $\Delta w$，我们引入「误差项」$\delta$ ，它表示 <code>误差 * 激活函数的导数</code>。然后用「误差项」$\delta$ 乘上学习率 $\eta$ （用来调整梯度的大小），再乘上 x，就是每次应该调整的权重值 $\Delta w_{ij}$</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/WX20171127-154242@2x.png" alt=""></p><p><code>阿扣</code>：比如说，如果激活函数是 Sigmoid 函数。</p><p>$$ f(h)=\frac {1}{1 + e^{−h}} $$ </p><p>$$ f’(h)=f(h)(1−f(h))$$ </p><p>$$ \Delta w_{ij}=\eta<em>(y_j-\hat y_j)</em>f(h)<em>(1−f(h))</em>x_i $$</p><p>…… 咦？人呢？</p><p>喂！别跑，还有好几个知识点没讲呢！……</p><h3 id="补充：求多个变量的偏导数"><a href="#补充：求多个变量的偏导数" class="headerlink" title="补充：求多个变量的偏导数"></a>补充：求多个变量的偏导数</h3><p>如果只有一个未知数，求梯度只需要计算导数。如果有多个变量，求梯度就需要计算偏导数。偏导数其实并不复杂，只需要掌握链式求导法则，就能进行大部分的计算。</p><p>$$ \frac{\partial}{\partial w} p(q(w)) = \frac{\partial p}{\partial q}\frac{\partial q}{\partial w} $$</p><p>比如，损失函数 C</p><p>$$ C = \sum(wx + b - y)^2 = \sum((wx + b)^2 + y^2 - 2y(wx + b)) = \sum(x^2w^2 + b^2 + 2xwb + y^2 - 2xyw - 2yb) $$</p><p>对 w 求偏导</p><p>$$ \frac{\partial C}{\partial w} = \frac{1}{N} \sum(wx + b - y)x $$</p><p>对 b 求偏导</p><p>$$ \frac{\partial C}{\partial b} = \frac{1}{N} \sum(wx + b - y) $$</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li><a href="https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101" target="_blank" rel="noopener">Deep Learning Nanodegree | Udacity</a></li><li><a href="https://www.coursera.org/learn/neural-networks-deep-learning" target="_blank" rel="noopener">Neural Networks and Deep Learning | Coursera</a></li><li><a href="https://classroom.udacity.com/nanodegrees/nd101-cn/parts/ba124b66-b7f7-43ab-bc89-a390adb57f92/modules/2afd43e6-f4ce-4849-bde6-49d7164da71b/lessons/dc37fa92-75fd-4d41-b23e-9659dde80866/concepts/7d480208-0453-4457-97c3-56c720c23a89" target="_blank" rel="noopener">Gradient Descent with Squared Errors</a></li><li><a href="https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/gradient" target="_blank" rel="noopener">Gradient (video) | Khan Academy</a></li><li><a href="http://ruder.io/optimizing-gradient-descent/index.html#momentum" target="_blank" rel="noopener">An overview of gradient descent optimization algorithms</a></li></ul><h3 id="00-的-DeepLearning-笔记"><a href="#00-的-DeepLearning-笔记" class="headerlink" title="00 的 DeepLearning 笔记"></a>00 的 DeepLearning 笔记</h3><ul><li><a href="http://www.uegeek.com/171206DLNote1-ML-DL-Basic.html" target="_blank" rel="noopener">DL笔记：机器学习和深度学习的区别</a></li><li><a href="http://www.uegeek.com/171209DLN2-NeuralNetworks.html" target="_blank" rel="noopener">DL笔记：Neural Networks 神经网络</a></li><li><a href="http://www.uegeek.com/171213DLN3-LinearRegression.html" target="_blank" rel="noopener">DL笔记：Linear regression 线性回归</a></li><li><a href="http://www.uegeek.com/171218DLN4-ActivationFunction.html" target="_blank" rel="noopener">DL笔记：Activation Function 激活函数</a></li><li><a href="http://www.uegeek.com/171220DLN5-CostFunction.html" target="_blank" rel="noopener">DL笔记：Cost Function 损失函数</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-    
-    
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
-    
-      <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="DeepLearning" scheme="http://uegeek.com/tags/DeepLearning/"/>
-    
-      <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
   </entry>
   
