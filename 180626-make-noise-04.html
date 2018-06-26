@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="t1oNPvdeea" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ArtxCode,Music,Sound,声音,Ableton Live,Max/MSP,Phase,相位," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="ArtxCode,Music,Sound,声音,Ableton Live,Max&#x2F;MSP,Phase,相位">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MakeNoise04 - 波形和相位">
+<meta property="og:url" content="http://uegeek.com/180626-make-noise-04.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/wavespeed_fomular.png">
+<meta property="og:image" content="http://sci.esa.int/science-e-media/img/cb/Figure_4_spectrum_High-energy_highlight.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Waveforms.svg/700px-Waveforms.svg.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Doscillators%20in%20max.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Ddifferent_waveform.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/wave&phase.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/phase_fomular-s.png">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Sine_waves_same_phase.svg/440px-Sine_waves_same_phase.svg.png">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Sine_waves_different_phase.svg/440px-Sine_waves_different_phase.svg.png">
+<meta property="og:image" content="https://www.mediacollege.com/audio/images/wave-interaction.gif">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Ddifferent_waveform.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dmodify_wave.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5D180_out_of_phase.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5Doperator_waveform.png">
+<meta property="og:updated_time" content="2018-06-26T12:06:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MakeNoise04 - 波形和相位">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/180626-make-noise-04.html"/>
+
+
+
+
+
+  <title>MakeNoise04 - 波形和相位 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/180626-make-noise-04.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MakeNoise04 - 波形和相位</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-26T20:01:34+08:00">
+                2018-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/动手/" itemprop="url" rel="index">
+                    <span itemprop="name">动手</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/180626-make-noise-04.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="180626-make-noise-04.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png" alt=""></p>
+<a id="more"></a> 
+<ul>
+<li><a href="https://www.uegeek.com/180621-make-noise-01.html" target="_blank" rel="noopener">MakeNoise01 - 声音是什么？</a></li>
+<li><a href="https://www.uegeek.com/180623-make-noise-02.html" target="_blank" rel="noopener">MakeNoise02 - 频率和音高</a></li>
+<li><a href="https://www.uegeek.com/180624-make-noise-03.html" target="_blank" rel="noopener">MakeNoise03 - 振幅/响度/音量/增益 大乱斗</a></li>
+</ul>
+<h2 id="声音的速度和波长"><a href="#声音的速度和波长" class="headerlink" title="声音的速度和波长"></a>声音的速度和波长</h2><p>对于在同一种材质中出现的一个声音事件，波的速度通常是恒定的（主要取决于温度）。在 20°C 的空气中，声波的传播速度大概是 1130 ft/s  或 344 m/s 。</p>
+<p>￼<img src="http://7xjpra.com1.z0.glb.clouddn.com/wavespeed_fomular.png" alt=""></p>
+<p>通过测量具有相同位移、且运动方向一致的距离最近的两个质点的距离，就可以确定波长 wavelength。</p>
+<p>因为声音在介质中的传播速度相对固定，所以频率低的声音，波长更长。</p>
+<p>跟声音类似，光也是一种波动，是能量的一种形式。而波动传递的能量跟波长密切相关。下面是不同波长的波动类型（包括可见光在内）：</p>
+<p>￼<img src="http://sci.esa.int/science-e-media/img/cb/Figure_4_spectrum_High-energy_highlight.jpg" alt=""></p>
+<h2 id="波形"><a href="#波形" class="headerlink" title="波形"></a>波形</h2><p>波形（waveform）表示信号的形状、形式。波形可以千变万化，常见的基础波形包括正弦波，方波，三角波，锯齿波等：<br>￼<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Waveforms.svg/700px-Waveforms.svg.png" alt=""></p>
+<p>在 Max/MSP 中，有一系列与之对应的生成周期信号的信号源对象：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Doscillators%20in%20max.png" alt=""></p>
+<p>最常用的生成器对应的波形如下：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Ddifferent_waveform.png" alt=""><br>￼</p>
+<p>其中 <code>cycle~</code> 生成正/余弦波，<code>phasor~</code> 和 <code>saw~</code> 生成锯齿波（两者的取值范围不同，<code>saw~</code>生成的波形更平滑一些），<code>rect~</code> 生成方波。</p>
+<p>然后我们来听听看不同波形发出 440Hz 声音：</p>
+<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=p070303e85g&tiny=0&auto=0" allowfullscreen></iframe>
+
+<p><a href="http://v.qq.com/x/page/p070303e85g.html" target="_blank" rel="noopener">Different Waveform in Max/MSP</a></p>
+<h2 id="相位"><a href="#相位" class="headerlink" title="相位"></a>相位</h2><p>了解过频率、波长、波形等概念，下面来啃一个相对复杂的概念——相位 Phase。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/wave&amp;phase.png" alt=""></p>
+<p>相位是波形中一个参考点在某个时间点所处的位置，用来描述信号的波形变化（单位： degree）。</p>
+<blockquote>
+<p>Phase is the degree of progression in a cycle</p>
+</blockquote>
+<p>参考点的位置公式如下：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/phase_fomular-s.png" alt=""></p>
+<p>不同相位的波形会相互干涉。当两个声波 in phase（相位相同），会增强振幅；</p>
+<p>￼<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Sine_waves_same_phase.svg/440px-Sine_waves_same_phase.svg.png" alt=""></p>
+<p>当两个声波相位不同，会形成干涉。<br>￼<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Sine_waves_different_phase.svg/440px-Sine_waves_different_phase.svg.png" alt=""></p>
+<p>当两个声波 180° out of phase（相位相反），会完全抵消。这一原理常运用在降噪耳机、消音器上。<br>￼<br><img src="https://www.mediacollege.com/audio/images/wave-interaction.gif" alt=""></p>
+<h2 id="在-Max-MSP-中生成和改变波形"><a href="#在-Max-MSP-中生成和改变波形" class="headerlink" title="在 Max/MSP 中生成和改变波形"></a>在 Max/MSP 中生成和改变波形</h2><p>在前面我们已经用几个信号对象生成对应的波形：</p>
+<p>￼<img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Ddifferent_waveform.png" alt=""></p>
+<p>周期性信号从 0 开始上升，每一步递增的量就是这个信号的斜率，它决定了这个周期会持续多长时间(控制着频率)。其中 phasor~ 相位器是非对称的，取值不会低于 0.0，而是在 0.0~1.0 之间移动。通常使用相位器作为所有周期波形的时间基准或输入（基础源）。</p>
+<p>在实现相位干涉之前，我们先试着修改波形：给波形做乘法会缩放，做加法会在 y 轴产生位移：</p>
+<p>￼<img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dmodify_wave.png" alt=""></p>
+<p>然后，我们用 <code>cycle~</code> 生成两个频率为 4 的正弦波。将其中一个乘以 -1 得到相反相位的波形。然后把两个波叠加起来，会看到结果是波形完全消失：</p>
+<p>￼<img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5D180_out_of_phase.png" alt=""></p>
+<h2 id="在-Ableton-Live-中实验相位干涉"><a href="#在-Ableton-Live-中实验相位干涉" class="headerlink" title="在 Ableton Live 中实验相位干涉"></a>在 Ableton Live 中实验相位干涉</h2><p>在 Ableton Live 中，波形的调制随处可见。比如 Operator 里面可选多种波形去调制声音：</p>
+<p>￼<img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5Doperator_waveform.png" alt=""></p>
+<p>我们首先来实验两个相同的音频，同时播放时的增强效果。</p>
+<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=o0703smlru3&tiny=0&auto=0" allowfullscreen></iframe>
+
+<p><a href="http://v.qq.com/x/page/o0703smlru3.html" target="_blank" rel="noopener">In_phase</a></p>
+<p>然后再来尝试将两个音频消音。</p>
+<p>添加 Utility 音效器，在第二个音轨播放时，打开左右声道的相反相位开关。然后同时播放两个音频，会发现声音消失了，因为两个音频的相位正好相反，产生了完全抵消的效果。</p>
+<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=t07031wi6nr&tiny=0&auto=0" allowfullscreen></iframe>
+
+<p><a href="http://v.qq.com/x/page/t07031wi6nr.html" target="_blank" rel="noopener">Phase Interference in Ableton</a><br>￼  </p>
+<h3 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h3><p>现在让我们回头看看在 Max/MSP 里听不同波形的这个视频：</p>
+<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=p070303e85g&tiny=0&auto=0" allowfullscreen></iframe>
+
+<p><a href="http://v.qq.com/x/page/p070303e85g.html" target="_blank" rel="noopener">Different Waveform in Max/MSP</a></p>
+<p>有什么新发现吗? 😁</p>
+<h3 id="￼Ref"><a href="#￼Ref" class="headerlink" title="￼Ref"></a>￼Ref</h3><ul>
+<li>Audio Engineering 101 - A Beginner’s Guide to Music Production</li>
+<li><a href="https://www.wikiwand.com/en/Waveform" target="_blank" rel="noopener">Waveform - Wikiwand</a></li>
+<li><a href="https://www.youtube.com/watch?v=jjy-eqWM38g" target="_blank" rel="noopener">Light: Crash Course Astronomy #24 - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=TfYCnOvNnFU" target="_blank" rel="noopener">Traveling Waves: Crash Course Physics #17 - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=jxstE6A_CYQ" target="_blank" rel="noopener">Simple Harmonic Motion: Crash Course Physics #16 - YouTube</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果文章帮您节省时间或者解答疑问，不妨打个赏 :)</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    kidult00
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://uegeek.com/180626-make-noise-04.html" title="MakeNoise04 - 波形和相位">http://uegeek.com/180626-make-noise-04.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArtxCode/" rel="tag"># ArtxCode</a>
+          
+            <a href="/tags/Music/" rel="tag"># Music</a>
+          
+            <a href="/tags/Sound/" rel="tag"># Sound</a>
+          
+            <a href="/tags/声音/" rel="tag"># 声音</a>
+          
+            <a href="/tags/Ableton-Live/" rel="tag"># Ableton Live</a>
+          
+            <a href="/tags/Max-MSP/" rel="tag"># Max/MSP</a>
+          
+            <a href="/tags/Phase/" rel="tag"># Phase</a>
+          
+            <a href="/tags/相位/" rel="tag"># 相位</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/180624-make-noise-03.html" rel="next" title="MakeNoise03 - 振幅/响度/音量/增益 大乱斗">
+                <i class="fa fa-chevron-left"></i> MakeNoise03 - 振幅/响度/音量/增益 大乱斗
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">214</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">178</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://steemit.com/@kidult00/" target="_blank" title="Steemit">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Steemit
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#声音的速度和波长"><span class="nav-number">1.</span> <span class="nav-text">声音的速度和波长</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#波形"><span class="nav-number">2.</span> <span class="nav-text">波形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相位"><span class="nav-number">3.</span> <span class="nav-text">相位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Max-MSP-中生成和改变波形"><span class="nav-number">4.</span> <span class="nav-text">在 Max/MSP 中生成和改变波形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Ableton-Live-中实验相位干涉"><span class="nav-number">5.</span> <span class="nav-text">在 Ableton Live 中实验相位干涉</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#彩蛋"><span class="nav-number">5.1.</span> <span class="nav-text">彩蛋</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#￼Ref"><span class="nav-number">5.2.</span> <span class="nav-text">￼Ref</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/180626-make-noise-04.html';
+          this.page.identifier = '180626-make-noise-04.html';
+          this.page.title = 'MakeNoise04 - 波形和相位';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

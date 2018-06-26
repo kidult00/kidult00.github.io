@@ -4,8 +4,42 @@
 
     
   <url>
+    <loc>http://uegeek.com/180626-make-noise-04.html</loc>
+    <lastmod>2018-06-26T12:06:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>MakeNoise04 - 波形和相位</title>
+        <pubTime>2018-06-26T12:01:34.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Music</tag>
+         
+        <tag>Sound</tag>
+         
+        <tag>声音</tag>
+         
+        <tag>Ableton Live</tag>
+         
+        <tag>Max/MSP</tag>
+         
+        <tag>Phase</tag>
+         
+        <tag>相位</tag>
+         
+         
+           
+             
+              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/180624-make-noise-03.html</loc>
-    <lastmod>2018-06-24T10:05:49.000Z</lastmod>
+    <lastmod>2018-06-26T12:05:53.000Z</lastmod>
     <data>
         <display>
         <title>MakeNoise03 - 振幅/响度/音量/增益 大乱斗</title>
@@ -39,7 +73,7 @@
     
   <url>
     <loc>http://uegeek.com/180623-make-noise-02.html</loc>
-    <lastmod>2018-06-23T09:49:53.000Z</lastmod>
+    <lastmod>2018-06-26T12:05:18.000Z</lastmod>
     <data>
         <display>
         <title>MakeNoise02 - 频率和音高</title>
@@ -71,7 +105,7 @@
     
   <url>
     <loc>http://uegeek.com/180621-make-noise-01.html</loc>
-    <lastmod>2018-06-21T11:48:34.000Z</lastmod>
+    <lastmod>2018-06-26T12:04:42.000Z</lastmod>
     <data>
         <display>
         <title>MakeNoise01 - 声音是什么？</title>
@@ -132,9 +166,9 @@
          
         <tag>Coding</tag>
          
-        <tag>神经网络</tag>
-         
         <tag>编程</tag>
+         
+        <tag>神经网络</tag>
          
         <tag>Programming</tag>
          
@@ -168,9 +202,9 @@
          
         <tag>Coding</tag>
          
-        <tag>神经网络</tag>
-         
         <tag>编程</tag>
+         
+        <tag>神经网络</tag>
          
         <tag>Programming</tag>
          
@@ -303,9 +337,9 @@
          
         <tag>Coding</tag>
          
-        <tag>神经网络</tag>
-         
         <tag>编程</tag>
+         
+        <tag>神经网络</tag>
          
         <tag>Backpro</tag>
          
@@ -1258,9 +1292,9 @@
         
         <tag>Design</tag>
          
-        <tag>设计师</tag>
-         
         <tag>Reading</tag>
+         
+        <tag>设计师</tag>
          
          
            
@@ -1282,9 +1316,9 @@
         
         <tag>Design</tag>
          
-        <tag>设计师</tag>
-         
         <tag>Reading</tag>
+         
+        <tag>设计师</tag>
          
          
            
@@ -1330,9 +1364,9 @@
         
         <tag>Design</tag>
          
-        <tag>设计师</tag>
-         
         <tag>Reading</tag>
+         
+        <tag>设计师</tag>
          
          
            
@@ -1406,9 +1440,9 @@
         
         <tag>Design</tag>
          
-        <tag>设计师</tag>
-         
         <tag>Reading</tag>
+         
+        <tag>设计师</tag>
          
          
            
@@ -2378,11 +2412,11 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>历史</tag>
          
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>哥特式</tag>
          
@@ -4886,9 +4920,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>人类简史</tag>
+         
+        <tag>历史</tag>
          
          
            
@@ -4908,19 +4942,19 @@
         <title>中欧四国扫(ba)盲(gua)帖之一：“中欧”还是“东欧”？</title>
         <pubTime>2015-09-18T13:37:38.000Z</pubTime>
         
+        <tag>Travel</tag>
+         
+        <tag>历史</tag>
+         
         <tag>中欧</tag>
          
         <tag>匈牙利</tag>
-         
-        <tag>历史</tag>
          
         <tag>奥地利</tag>
          
         <tag>捷克</tag>
          
         <tag>斯洛伐克</tag>
-         
-        <tag>Travel</tag>
          
          
            
@@ -4942,13 +4976,13 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>历史</tag>
          
-        <tag>捷克</tag>
+        <tag>中欧</tag>
          
-        <tag>Travel</tag>
+        <tag>捷克</tag>
          
          
            
@@ -4970,13 +5004,13 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>历史</tag>
          
-        <tag>捷克</tag>
+        <tag>中欧</tag>
          
-        <tag>Travel</tag>
+        <tag>捷克</tag>
          
          
            
@@ -4998,13 +5032,13 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>历史</tag>
          
-        <tag>奥地利</tag>
+        <tag>中欧</tag>
          
-        <tag>Travel</tag>
+        <tag>奥地利</tag>
          
         <tag>哈布斯堡王朝</tag>
          
@@ -5030,11 +5064,11 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>历史</tag>
          
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>东正教</tag>
          
