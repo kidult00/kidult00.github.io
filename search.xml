@@ -3,112 +3,6 @@
   
     
     <entry>
-      <title><![CDATA[MakeNoise05 - Envelope 包络（ADSR）]]></title>
-      <url>/180628-make-noise-05.html</url>
-      <content type="html"><![CDATA[<p><img src="https://image.freepik.com/free-vector/set-of-vinyl-record-and-envelope-for-plate-retro-sound-carrier-mock-up-isometric-view-vector-illustration_7714-316.jpg" alt=""><br><a id="more"></a> </p>
-<ul>
-<li><a href="https://www.uegeek.com/180621-make-noise-01.html" target="_blank" rel="noopener">MakeNoise01 - 声音是什么？</a></li>
-<li><a href="https://www.uegeek.com/180623-make-noise-02.html" target="_blank" rel="noopener">MakeNoise02 - 频率和音高</a></li>
-<li><a href="https://www.uegeek.com/180624-make-noise-03.html" target="_blank" rel="noopener">MakeNoise03 - 振幅/响度/音量/增益 大乱斗</a></li>
-<li><a href="https://www.uegeek.com/180626-make-noise-04.html" target="_blank" rel="noopener">MakeNoise04 - 波形和相位</a><br>￼</li>
-</ul>
-<p>Envelope 是什么？信封吗？</p>
-<p>🤷‍♀️</p>
-<blockquote>
-<p>Envelope of an oscillating signal is a smooth curve outlining its extremes.<br>Via <a href="https://www.wikiwand.com/en/Envelope_(waves" target="_blank" rel="noopener">Envelope (waves) - Wikiwand</a>)</p>
-<p>The envelope of a sound describes the way it’s amplitude varies over time.<br>Via <a href="https://www.youtube.com/watch?v=Q-ot9AaJx-Y" target="_blank" rel="noopener">What is the envelope of a sound? (ADSR explained) - YouTube</a></p>
-</blockquote>
-<p>在声学中，envelope 是非常重要的概念，它描述声音振幅（能量）的变化。一波一波的声音，就像互联网上面根据网络协议传送的数据包一样，不断被发送出去，用 envelope 来形容倒是很形象。</p>
-<h2 id="ADSR"><a href="#ADSR" class="headerlink" title="ADSR"></a>ADSR</h2><p>在声音设计中通常用四个词来描述一个声音的 envlope (包络)：ADSR - Attack, Decay, Sustain, Release。</p>
-<p><img src="https://blog.landr.com/wp-content/uploads/2016/10/ASDR-01.jpg" alt=""><br>￼</p>
-<h3 id="Attack-起音"><a href="#Attack-起音" class="headerlink" title="Attack 起音"></a>Attack 起音</h3><blockquote>
-<p>The area that rises from silence to its peak volume。</p>
-</blockquote>
-<p>声音从零开始上升到最大能量处，也可以理解为从产生这个声音开始到最响时，需要的时间。</p>
-<p>敲击型声音的起音段非常短，比如钢琴（见下图）。而一根被温和拉响的琴弦，来自琴弦的恢复力和施加到琴弓上的立达到受摩擦限制是的最大动态平衡，这个过程可以长达几秒。另外，物体越小，初始能量就会被吸收的越快。</p>
-<p>不同乐器的 ADSR 曲线大致可以简化如下：<br>￼<br><img src="http://www.muzines.co.uk/images_mag/articles/EMM_apr_1985_back_to_basi_6_large.jpg" alt=""></p>
-<h3 id="Decay-衰减"><a href="#Decay-衰减" class="headerlink" title="Decay 衰减"></a>Decay 衰减</h3><blockquote>
-<p>The area goes from the peak to a medium level of decline。</p>
-</blockquote>
-<p>衰减出现在那些瞬变阶段（transient）以后有能量持续供应的系统中，系统初始的输入能量超过后续延音阶段的电平。也就是说，在起音阶段后，音源还持续产生能量一段时间。</p>
-<p>Decay 就是音量下降到稳定时需要的时间，对于钢琴而言，整个音符都处在 Decay 阶段。</p>
-<h3 id="Sustain-延音"><a href="#Sustain-延音" class="headerlink" title="Sustain 延音"></a>Sustain 延音</h3><blockquote>
-<p>The portion of the envelope that is constant in the declining stage。</p>
-</blockquote>
-<p>这个阶段，系统的输入能量等于输出能量，达到某种类型的稳定动态平衡，所以产生声音的这部分能量也维持稳定，结果通常是有一个稳定的声音输出。</p>
-<p>Sustain 一般对于管乐器和弦乐器适用。钢琴没有稳定的 Sustain 阶段，因为按下琴键之后就没有更多机械能了，音量持续减小，可以说 decay 和 sustain 没有明显的区分。</p>
-<h3 id="Release-释音"><a href="#Release-释音" class="headerlink" title="Release 释音"></a>Release 释音</h3><blockquote>
-<p>Last point in the envelope where the sound returns back to silence</p>
-</blockquote>
-<p>当停止为系统提供能量，被保存的能量以一个恒定的速率被释放，继续产生一段时间的声音，这就进入释音阶段。</p>
-<p>Release 是音源停止震动后仍然发声的阶段，钢琴在不踩踏板的时候 Release 非常短，踩踏板的时候 Release 非常长。释音始终趋向于 0，这是一个声音的最后阶段。</p>
-<h3 id="ADSR-的作用"><a href="#ADSR-的作用" class="headerlink" title="ADSR 的作用"></a>ADSR 的作用</h3><p>ADSR 也可以叫做「声音的生老停死」…………<br>￼<br><img src="https://libremusicproduction.com/sites/default/files/answers/adsrenvelope.png" alt=""></p>
-<p>再来感受一下不同乐器的 ADSR 形状：<br>￼<br><img src="http://7xjpra.com1.z0.glb.clouddn.com/different_adsr.png" alt=""></p>
-<ul>
-<li>Fast Attack + Fast Release = 吉他Pick、木琴、木鱼</li>
-<li>Fast Attack + Slow Release = 钢琴、扬琴、竖琴</li>
-<li>Slow Attack + Slow Release = 提琴、胡琴、Pad Synth</li>
-</ul>
-<p>为什么 ADSR 如此重要？<strong>因为影响声音的包络可以大大的改变声音特性</strong>。</p>
-<p>当通过合成器来创作一个新的声音时，合成器需要控制 ADSR 的形状。组合包络形状比较类似的声音，可以优化混音效果。当 ADSR 差异非常大的声音结合在一起时，可以创作出结构非常丰富的音效。<br>￼<br><img src="https://c1.staticflickr.com/5/4524/24904416418_586ab94683_c.jpg" alt=""></p>
-<h2 id="在-Ableton-Live-中调整-ADSR"><a href="#在-Ableton-Live-中调整-ADSR" class="headerlink" title="在 Ableton Live 中调整 ADSR"></a>在 Ableton Live 中调整 ADSR</h2><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5Dwavetable.png" alt=""></p>
-<p>在 Ableton Live 里，很多音效都提供 ADSR 的控制，比如最常见的 operator。</p>
-<p>下面的视频中，我们尝试调整各个参数，看看声音产生了怎样的变化。</p>
-<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=b0705yxvme9&tiny=0&auto=0" allowfullscreen></iframe>
-
-<p><a href="https://v.qq.com/x/page/b0705yxvme9.html" target="_blank" rel="noopener">Envelop &amp; ADSR in Ableton Live_腾讯视频</a></p>
-<h2 id="Max-MSP-中-调整-ADSR"><a href="#Max-MSP-中-调整-ADSR" class="headerlink" title="Max/MSP 中 调整 ADSR"></a>Max/MSP 中 调整 ADSR</h2><p>Max 里面提供了专门的 ADSR 对象，于是对声音参数的调控灵活度很大。</p>
-<p>我们先来生成周期波形，观察不同 ADSR 参数状况下声音波形的变化：</p>
-<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=t0705h80ktu&tiny=0&auto=0" allowfullscreen></iframe>
-
-<p><a href="https://v.qq.com/x/page/t0705h80ktu.html" target="_blank" rel="noopener">ADSR in Max/MSP_腾讯视频</a></p>
-<p>在生成一个声音包络时，可以调整不同的参数改变声音的属性：</p>
-<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=f0705uxmou1&tiny=0&auto=0" allowfullscreen></iframe>
-
-<p><a href="https://v.qq.com/x/page/f0705uxmou1.html" target="_blank" rel="noopener">ADSR Noise in Max/MSP_腾讯视频</a></p>
-<h3 id="￼Ref"><a href="#￼Ref" class="headerlink" title="￼Ref"></a>￼Ref</h3><ul>
-<li><a href="https://book.douban.com/subject/7069885/" target="_blank" rel="noopener">Audio Engineering 101 - A Beginner’s Guide to Music Production</a></li>
-<li><a href="https://book.douban.com/subject/27057297/" target="_blank" rel="noopener">设计声音</a></li>
-<li><a href="https://www.wikiwand.com/en/Envelope_(waves" target="_blank" rel="noopener">Envelope (waves) - Wikiwand</a>)</li>
-<li><a href="https://www.wikiwand.com/en/Synthesizer#/Attack_Decay_Sustain_Release_(ADSR" target="_blank" rel="noopener">Synthesizer - Wikiwand</a>_envelope)</li>
-<li><a href="https://www.youtube.com/watch?v=Q-ot9AaJx-Y" target="_blank" rel="noopener">What is the envelope of a sound? (ADSR explained) - YouTube</a></li>
-<li><a href="https://blog.landr.com/adsr-envelopes-infographic/" target="_blank" rel="noopener">ADSR Envelopes: How to Build The Perfect Sound [Infographic] | LANDR Blog</a></li>
-<li><a href="http://www.muzines.co.uk/articles/back-to-basics/1882" target="_blank" rel="noopener">Back to Basics (EMM Apr 85)</a></li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 动手 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> ArtxCode </tag>
-            
-            <tag> Music </tag>
-            
-            <tag> Sound </tag>
-            
-            <tag> 声音 </tag>
-            
-            <tag> Ableton Live </tag>
-            
-            <tag> Max/MSP </tag>
-            
-            <tag> Envelope </tag>
-            
-            <tag> ADSR </tag>
-            
-            <tag> 包络 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[MakeNoise06 - 音色和均衡器(EQ)]]></title>
       <url>/180629-make-noise-06.html</url>
       <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png" alt=""></p>
@@ -168,10 +62,8 @@
 <li><a href="https://www.wikiwand.com/zh/%E8%B0%90%E6%B3%A2" target="_blank" rel="noopener">谐波 - Wikiwand</a></li>
 <li><a href="https://www.kadenze.com/courses/sound-production-in-ableton-live-for-musicians-and-artists-v/sessions/sculpting-frequencies-equalization" target="_blank" rel="noopener">Session 4: Sculpting Frequencies: Equalization</a></li>
 <li><a href="https://www.wikiwand.com/en/Harmonic" target="_blank" rel="noopener">Harmonic - Wikiwand</a></li>
-<li><p><a href="https://www.youtube.com/watch?v=2oH4YcpyWSs" target="_blank" rel="noopener">EQ Tutorial: The Basics of How to EQ Properly - YouTube</a></p>
-</li>
-<li><p><a href="https://www.youtube.com/watch?v=LRQQxoG6rDY" target="_blank" rel="noopener">What Are Harmonics? I Full Spectrum Science I Exploratorium - YouTube</a></p>
-</li>
+<li><a href="https://www.youtube.com/watch?v=2oH4YcpyWSs" target="_blank" rel="noopener">EQ Tutorial: The Basics of How to EQ Properly - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=LRQQxoG6rDY" target="_blank" rel="noopener">What Are Harmonics? I Full Spectrum Science I Exploratorium - YouTube</a></li>
 </ul>
 <h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="EQ-points-of-interest"><a href="#EQ-points-of-interest" class="headerlink" title="EQ points of interest"></a>EQ points of interest</h3><ul>
 <li>Subs (&lt; 80 Hz), low freq</li>
@@ -330,7 +222,6 @@
 <td>60Hz~1KHz</td>
 <td></td>
 <td>2.5KHz 是拨弦声频</td>
-<td></td>
 </tr>
 <tr>
 <td>电吉它</td>
@@ -467,6 +358,112 @@
             <tag> EQ </tag>
             
             <tag> 均衡器 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MakeNoise05 - Envelope 包络（ADSR）]]></title>
+      <url>/180628-make-noise-05.html</url>
+      <content type="html"><![CDATA[<p><img src="https://image.freepik.com/free-vector/set-of-vinyl-record-and-envelope-for-plate-retro-sound-carrier-mock-up-isometric-view-vector-illustration_7714-316.jpg" alt=""><br><a id="more"></a> </p>
+<ul>
+<li><a href="https://www.uegeek.com/180621-make-noise-01.html" target="_blank" rel="noopener">MakeNoise01 - 声音是什么？</a></li>
+<li><a href="https://www.uegeek.com/180623-make-noise-02.html" target="_blank" rel="noopener">MakeNoise02 - 频率和音高</a></li>
+<li><a href="https://www.uegeek.com/180624-make-noise-03.html" target="_blank" rel="noopener">MakeNoise03 - 振幅/响度/音量/增益 大乱斗</a></li>
+<li><a href="https://www.uegeek.com/180626-make-noise-04.html" target="_blank" rel="noopener">MakeNoise04 - 波形和相位</a><br>￼</li>
+</ul>
+<p>Envelope 是什么？信封吗？</p>
+<p>🤷‍♀️</p>
+<blockquote>
+<p>Envelope of an oscillating signal is a smooth curve outlining its extremes.<br>Via <a href="https://www.wikiwand.com/en/Envelope_(waves" target="_blank" rel="noopener">Envelope (waves) - Wikiwand</a>)</p>
+<p>The envelope of a sound describes the way it’s amplitude varies over time.<br>Via <a href="https://www.youtube.com/watch?v=Q-ot9AaJx-Y" target="_blank" rel="noopener">What is the envelope of a sound? (ADSR explained) - YouTube</a></p>
+</blockquote>
+<p>在声学中，envelope 是非常重要的概念，它描述声音振幅（能量）的变化。一波一波的声音，就像互联网上面根据网络协议传送的数据包一样，不断被发送出去，用 envelope 来形容倒是很形象。</p>
+<h2 id="ADSR"><a href="#ADSR" class="headerlink" title="ADSR"></a>ADSR</h2><p>在声音设计中通常用四个词来描述一个声音的 envlope (包络)：ADSR - Attack, Decay, Sustain, Release。</p>
+<p><img src="https://blog.landr.com/wp-content/uploads/2016/10/ASDR-01.jpg" alt=""><br>￼</p>
+<h3 id="Attack-起音"><a href="#Attack-起音" class="headerlink" title="Attack 起音"></a>Attack 起音</h3><blockquote>
+<p>The area that rises from silence to its peak volume。</p>
+</blockquote>
+<p>声音从零开始上升到最大能量处，也可以理解为从产生这个声音开始到最响时，需要的时间。</p>
+<p>敲击型声音的起音段非常短，比如钢琴（见下图）。而一根被温和拉响的琴弦，来自琴弦的恢复力和施加到琴弓上的立达到受摩擦限制是的最大动态平衡，这个过程可以长达几秒。另外，物体越小，初始能量就会被吸收的越快。</p>
+<p>不同乐器的 ADSR 曲线大致可以简化如下：<br>￼<br><img src="http://www.muzines.co.uk/images_mag/articles/EMM_apr_1985_back_to_basi_6_large.jpg" alt=""></p>
+<h3 id="Decay-衰减"><a href="#Decay-衰减" class="headerlink" title="Decay 衰减"></a>Decay 衰减</h3><blockquote>
+<p>The area goes from the peak to a medium level of decline。</p>
+</blockquote>
+<p>衰减出现在那些瞬变阶段（transient）以后有能量持续供应的系统中，系统初始的输入能量超过后续延音阶段的电平。也就是说，在起音阶段后，音源还持续产生能量一段时间。</p>
+<p>Decay 就是音量下降到稳定时需要的时间，对于钢琴而言，整个音符都处在 Decay 阶段。</p>
+<h3 id="Sustain-延音"><a href="#Sustain-延音" class="headerlink" title="Sustain 延音"></a>Sustain 延音</h3><blockquote>
+<p>The portion of the envelope that is constant in the declining stage。</p>
+</blockquote>
+<p>这个阶段，系统的输入能量等于输出能量，达到某种类型的稳定动态平衡，所以产生声音的这部分能量也维持稳定，结果通常是有一个稳定的声音输出。</p>
+<p>Sustain 一般对于管乐器和弦乐器适用。钢琴没有稳定的 Sustain 阶段，因为按下琴键之后就没有更多机械能了，音量持续减小，可以说 decay 和 sustain 没有明显的区分。</p>
+<h3 id="Release-释音"><a href="#Release-释音" class="headerlink" title="Release 释音"></a>Release 释音</h3><blockquote>
+<p>Last point in the envelope where the sound returns back to silence</p>
+</blockquote>
+<p>当停止为系统提供能量，被保存的能量以一个恒定的速率被释放，继续产生一段时间的声音，这就进入释音阶段。</p>
+<p>Release 是音源停止震动后仍然发声的阶段，钢琴在不踩踏板的时候 Release 非常短，踩踏板的时候 Release 非常长。释音始终趋向于 0，这是一个声音的最后阶段。</p>
+<h3 id="ADSR-的作用"><a href="#ADSR-的作用" class="headerlink" title="ADSR 的作用"></a>ADSR 的作用</h3><p>ADSR 也可以叫做「声音的生老停死」…………<br>￼<br><img src="https://libremusicproduction.com/sites/default/files/answers/adsrenvelope.png" alt=""></p>
+<p>再来感受一下不同乐器的 ADSR 形状：<br>￼<br><img src="http://7xjpra.com1.z0.glb.clouddn.com/different_adsr.png" alt=""></p>
+<ul>
+<li>Fast Attack + Fast Release = 吉他Pick、木琴、木鱼</li>
+<li>Fast Attack + Slow Release = 钢琴、扬琴、竖琴</li>
+<li>Slow Attack + Slow Release = 提琴、胡琴、Pad Synth</li>
+</ul>
+<p>为什么 ADSR 如此重要？<strong>因为影响声音的包络可以大大的改变声音特性</strong>。</p>
+<p>当通过合成器来创作一个新的声音时，合成器需要控制 ADSR 的形状。组合包络形状比较类似的声音，可以优化混音效果。当 ADSR 差异非常大的声音结合在一起时，可以创作出结构非常丰富的音效。<br>￼<br><img src="https://c1.staticflickr.com/5/4524/24904416418_586ab94683_c.jpg" alt=""></p>
+<h2 id="在-Ableton-Live-中调整-ADSR"><a href="#在-Ableton-Live-中调整-ADSR" class="headerlink" title="在 Ableton Live 中调整 ADSR"></a>在 Ableton Live 中调整 ADSR</h2><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5Dwavetable.png" alt=""></p>
+<p>在 Ableton Live 里，很多音效都提供 ADSR 的控制，比如最常见的 operator。</p>
+<p>下面的视频中，我们尝试调整各个参数，看看声音产生了怎样的变化。</p>
+<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=b0705yxvme9&tiny=0&auto=0" allowfullscreen></iframe>
+
+<p><a href="https://v.qq.com/x/page/b0705yxvme9.html" target="_blank" rel="noopener">Envelop &amp; ADSR in Ableton Live_腾讯视频</a></p>
+<h2 id="Max-MSP-中-调整-ADSR"><a href="#Max-MSP-中-调整-ADSR" class="headerlink" title="Max/MSP 中 调整 ADSR"></a>Max/MSP 中 调整 ADSR</h2><p>Max 里面提供了专门的 ADSR 对象，于是对声音参数的调控灵活度很大。</p>
+<p>我们先来生成周期波形，观察不同 ADSR 参数状况下声音波形的变化：</p>
+<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=t0705h80ktu&tiny=0&auto=0" allowfullscreen></iframe>
+
+<p><a href="https://v.qq.com/x/page/t0705h80ktu.html" target="_blank" rel="noopener">ADSR in Max/MSP_腾讯视频</a></p>
+<p>在生成一个声音包络时，可以调整不同的参数改变声音的属性：</p>
+<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=f0705uxmou1&tiny=0&auto=0" allowfullscreen></iframe>
+
+<p><a href="https://v.qq.com/x/page/f0705uxmou1.html" target="_blank" rel="noopener">ADSR Noise in Max/MSP_腾讯视频</a></p>
+<h3 id="￼Ref"><a href="#￼Ref" class="headerlink" title="￼Ref"></a>￼Ref</h3><ul>
+<li><a href="https://book.douban.com/subject/7069885/" target="_blank" rel="noopener">Audio Engineering 101 - A Beginner’s Guide to Music Production</a></li>
+<li><a href="https://book.douban.com/subject/27057297/" target="_blank" rel="noopener">设计声音</a></li>
+<li><a href="https://www.wikiwand.com/en/Envelope_(waves" target="_blank" rel="noopener">Envelope (waves) - Wikiwand</a>)</li>
+<li><a href="https://www.wikiwand.com/en/Synthesizer#/Attack_Decay_Sustain_Release_(ADSR" target="_blank" rel="noopener">Synthesizer - Wikiwand</a>_envelope)</li>
+<li><a href="https://www.youtube.com/watch?v=Q-ot9AaJx-Y" target="_blank" rel="noopener">What is the envelope of a sound? (ADSR explained) - YouTube</a></li>
+<li><a href="https://blog.landr.com/adsr-envelopes-infographic/" target="_blank" rel="noopener">ADSR Envelopes: How to Build The Perfect Sound [Infographic] | LANDR Blog</a></li>
+<li><a href="http://www.muzines.co.uk/articles/back-to-basics/1882" target="_blank" rel="noopener">Back to Basics (EMM Apr 85)</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 动手 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ArtxCode </tag>
+            
+            <tag> Music </tag>
+            
+            <tag> Sound </tag>
+            
+            <tag> 声音 </tag>
+            
+            <tag> Ableton Live </tag>
+            
+            <tag> Max/MSP </tag>
+            
+            <tag> Envelope </tag>
+            
+            <tag> ADSR </tag>
+            
+            <tag> 包络 </tag>
             
         </tags>
         
@@ -13364,9 +13361,9 @@ SONET optical fiber
             
             <tag> Travel </tag>
             
-            <tag> 历史 </tag>
-            
             <tag> 中欧 </tag>
+            
+            <tag> 历史 </tag>
             
             <tag> 哥特式 </tag>
             
@@ -13439,9 +13436,9 @@ SONET optical fiber
             
             <tag> Travel </tag>
             
-            <tag> 历史 </tag>
-            
             <tag> 中欧 </tag>
+            
+            <tag> 历史 </tag>
             
             <tag> 东正教 </tag>
             
@@ -13499,9 +13496,9 @@ SONET optical fiber
             
             <tag> Travel </tag>
             
-            <tag> 历史 </tag>
-            
             <tag> 中欧 </tag>
+            
+            <tag> 历史 </tag>
             
             <tag> 捷克 </tag>
             
@@ -13545,9 +13542,9 @@ SONET optical fiber
             
             <tag> Travel </tag>
             
-            <tag> 历史 </tag>
-            
             <tag> 中欧 </tag>
+            
+            <tag> 历史 </tag>
             
             <tag> 奥地利 </tag>
             
@@ -13581,9 +13578,9 @@ SONET optical fiber
             
             <tag> Travel </tag>
             
-            <tag> 历史 </tag>
-            
             <tag> 中欧 </tag>
+            
+            <tag> 历史 </tag>
             
             <tag> 捷克 </tag>
             
@@ -13622,11 +13619,11 @@ SONET optical fiber
             
             <tag> Travel </tag>
             
-            <tag> 历史 </tag>
-            
             <tag> 中欧 </tag>
             
             <tag> 匈牙利 </tag>
+            
+            <tag> 历史 </tag>
             
             <tag> 奥地利 </tag>
             
@@ -13703,9 +13700,9 @@ SONET optical fiber
             
             <tag> Note </tag>
             
-            <tag> 人类简史 </tag>
-            
             <tag> 历史 </tag>
+            
+            <tag> 人类简史 </tag>
             
         </tags>
         
