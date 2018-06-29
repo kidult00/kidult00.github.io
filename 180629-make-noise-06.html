@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="t1oNPvdeea" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ArtxCode,Music,Sound,声音,Ableton Live,Max/MSP,EQ,均衡器," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="ArtxCode,Music,Sound,声音,Ableton Live,Max&#x2F;MSP,EQ,均衡器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MakeNoise06 - 音色和均衡器(EQ)">
+<meta property="og:url" content="http://uegeek.com/180629-make-noise-06.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Moodswingerscale.svg/500px-Moodswingerscale.svg.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Describing%20sound.png">
+<meta property="og:image" content="https://1mc51l3v9iyu3otpsg36nnvf-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/fabfilter-pro-q_1.jpg">
+<meta property="og:image" content="https://s3.amazonaws.com/izotopedownloads/docs/neutron2/images/equalizer/eq-softsaturation-module.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/iTunes-eq-electronic.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Slope-Q.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5DEQ3.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5DEQ8.png">
+<meta property="og:updated_time" content="2018-06-29T11:11:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MakeNoise06 - 音色和均衡器(EQ)">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/180629-make-noise-06.html"/>
+
+
+
+
+
+  <title>MakeNoise06 - 音色和均衡器(EQ) | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/180629-make-noise-06.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MakeNoise06 - 音色和均衡器(EQ)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T19:39:41+08:00">
+                2018-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/动手/" itemprop="url" rel="index">
+                    <span itemprop="name">动手</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/180629-make-noise-06.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="180629-make-noise-06.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png" alt=""></p>
+<a id="more"></a> 
+<ul>
+<li><a href="https://www.uegeek.com/180621-make-noise-01.html" target="_blank" rel="noopener">MakeNoise01 - 声音是什么？</a></li>
+<li><a href="https://www.uegeek.com/180623-make-noise-02.html" target="_blank" rel="noopener">MakeNoise02 - 频率和音高</a></li>
+<li><a href="https://www.uegeek.com/180624-make-noise-03.html" target="_blank" rel="noopener">MakeNoise03 - 振幅/响度/音量/增益 大乱斗</a></li>
+<li><a href="https://www.uegeek.com/180626-make-noise-04.html" target="_blank" rel="noopener">MakeNoise04 - 波形和相位</a></li>
+<li><a href="https://www.uegeek.com/180628-make-noise-05.html" target="_blank" rel="noopener">MakeNoise05 - Envelope 包络（ADSR）</a></li>
+</ul>
+<h2 id="音色-timbre-tone"><a href="#音色-timbre-tone" class="headerlink" title="音色 timbre/tone"></a>音色 timbre/tone</h2><blockquote>
+<p>The character or quality (like attack, spectrum, spectral evolution) of a musical sound or voice as distinct from its pitch and intensity.</p>
+</blockquote>
+<p>音色对应一个静态的频谱，它带有基频和一系列泛音。</p>
+<p>泛音其实就是物理学上的谐波，但次数的定义稍有不同，基波频率 2 倍的音频称为一次泛音，基波频率 3 倍的音频称为二次泛音，以此类推。谐波是指周期函数或周期性的波形中能用常数、与原函数的最小正周期相同的正弦函数和余弦函数的线性组合表达的部分。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Moodswingerscale.svg/500px-Moodswingerscale.svg.png" alt=""></p>
+<p>音色跟<a href="https://www.uegeek.com/180626-make-noise-04.html" target="_blank" rel="noopener">频谱（spectrum）和波形（waveform）相关</a>。</p>
+<p>明亮的声音比暗淡的声音包含更多的高频泛音。最好的度量是找到它的频谱重心或频谱质心（spectral centroid）。灰暗的音色频谱质心较低，或是在语音范围内没有确定的谐波结构。</p>
+<p>一些对音色的「形容词」：<br>￼<br><img src="http://7xjpra.com1.z0.glb.clouddn.com/Describing%20sound.png" alt=""></p>
+<h2 id="均衡器-EQ"><a href="#均衡器-EQ" class="headerlink" title="均衡器 EQ"></a>均衡器 EQ</h2><p>调整（Boost/cut/flat）EQ，即通过增高或降低<a href="https://www.uegeek.com/180623-make-noise-02.html" target="_blank" rel="noopener">声音在某个频率范围的频率，来影响整体的音色</a>。</p>
+<p>现在不妨回到信号处理领域，从物理背景来理解 Equalizer。由于信号在传送路径到接收器接收的过程中，会受到多路径干扰、路径中遮蔽物阻挡造成遮蔽效应，这些码间干扰会导致接收讯号错误率上升。为了降低通讯系统传输的错误率，要作通道估测，根据结果对通道响应做补偿而降低传送错误率。</p>
+<p>对声音处理而言，EQ 是一种可以<strong>分别调节各种频率成分电信号放大量</strong>的电子设备，通过调节不同频率的电信号，来补偿扬声器和声场的缺陷，补偿和修饰各种声源及其它特殊作用。</p>
+<p>在各种软硬件和 DAW 里面，EQ 简直可以说是千人千面了。</p>
+<p><img src="https://1mc51l3v9iyu3otpsg36nnvf-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/fabfilter-pro-q_1.jpg" alt=""></p>
+<p><img src="https://s3.amazonaws.com/izotopedownloads/docs/neutron2/images/equalizer/eq-softsaturation-module.png" alt=""></p>
+<p>iTunes 里的 EQ：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/iTunes-eq-electronic.png" alt=""></p>
+<p>调整声音的 EQ 可以：</p>
+<ul>
+<li>平衡混音中的各种声音</li>
+<li>让声音分布在特定的频段</li>
+<li>调出想要的音色</li>
+<li>提升整体的听觉效果</li>
+<li>补偿环境声场</li>
+<li>减少回响</li>
+<li>制作音效</li>
+</ul>
+<p>当我们调节 EQ 时，经常需要控制调节点所影响的频率范围，它可以由 Q（Slop / Bandwidth / Resonance）来控制。<br>￼<br><img src="http://7xjpra.com1.z0.glb.clouddn.com/Slope-Q.jpg" alt=""></p>
+<h2 id="用-Max-MSP-制作-EQ"><a href="#用-Max-MSP-制作-EQ" class="headerlink" title="用 Max/MSP 制作 EQ"></a>用 Max/MSP 制作 EQ</h2><p>调整声音的均衡效果，实际上就是调整不同频段频率的高低。所以理论上可以用 Max/MSP 实现任意的 EQ 效果。</p>
+<p>下面来看看 Max/MSP 里自带的 <code>buffir-eq</code> 的例子，实现了简单的高-中-低均衡器效果：</p>
+<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=u070585zk2x&tiny=0&auto=0" allowfullscreen></iframe>
+
+<p><a href="https://v.qq.com/x/page/u070585zk2x.html" target="_blank" rel="noopener">EQ in Max/MSP_腾讯视频</a></p>
+<h2 id="在-Ableton-Live-里用-EQ-修饰声音"><a href="#在-Ableton-Live-里用-EQ-修饰声音" class="headerlink" title="在 Ableton Live 里用 EQ 修饰声音"></a>在 Ableton Live 里用 EQ 修饰声音</h2><p>Ableton Live 里面最常用的 EQ 是 EQ Three 和 EQ Eight。</p>
+<p>Three 和 Eight 分别表示有 3 个和 8 个调节点。EQ Three 只能分成高、中、低频三个范围进行调节：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5DEQ3.png" alt=""></p>
+<p>EQ Eight 则可以添加多达 8 个控制点，更为灵活：</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5DEQ8.png" alt=""></p>
+<p>在下面的视频中，尝试调节每一个控制点的滤波方式，并且移动到不同频率的位置，查看调节频段产生的均衡效果：</p>
+<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=v0706uf6mil&tiny=0&auto=0" allowfullscreen></iframe>
+
+<p><a href="https://v.qq.com/x/page/v0706uf6mil.html" target="_blank" rel="noopener">EQ Eight in Ableton Live_腾讯视频</a></p>
+<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul>
+<li><a href="https://book.douban.com/subject/7069885/" target="_blank" rel="noopener">Audio Engineering 101 - A Beginner’s Guide to Music Production</a></li>
+<li><a href="https://www.wikiwand.com/zh-hans/%E7%AD%89%E5%8C%96%E5%99%A8" target="_blank" rel="noopener">均衡器 - Wikiwand</a></li>
+<li><a href="https://www.wikiwand.com/zh/%E8%B0%90%E6%B3%A2" target="_blank" rel="noopener">谐波 - Wikiwand</a></li>
+<li><a href="https://www.kadenze.com/courses/sound-production-in-ableton-live-for-musicians-and-artists-v/sessions/sculpting-frequencies-equalization" target="_blank" rel="noopener">Session 4: Sculpting Frequencies: Equalization</a></li>
+<li><a href="https://www.wikiwand.com/en/Harmonic" target="_blank" rel="noopener">Harmonic - Wikiwand</a></li>
+<li><p><a href="https://www.youtube.com/watch?v=2oH4YcpyWSs" target="_blank" rel="noopener">EQ Tutorial: The Basics of How to EQ Properly - YouTube</a></p>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=LRQQxoG6rDY" target="_blank" rel="noopener">What Are Harmonics? I Full Spectrum Science I Exploratorium - YouTube</a></p>
+</li>
+</ul>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="EQ-points-of-interest"><a href="#EQ-points-of-interest" class="headerlink" title="EQ points of interest"></a>EQ points of interest</h3><ul>
+<li>Subs (&lt; 80 Hz), low freq</li>
+<li>Big/fat(20~100 Hz), low freq</li>
+<li>Muddy(100~300 Hz), low-low-mid freq: if a sound isn’t very clear, or muddy, try subtracting between 100 and 300 Hz.</li>
+<li>Boxy/hollow(300~700 Hz), low-mid freq</li>
+<li>In your face(1.5~4 kHz), Mid-mid-upper-mid freq: punk rock music accentuates this freq, too much here can cause ear fatigue, whereas not enough here can make a mix or sound appear dark and distant</li>
+<li>Presence and clarity(4~10 kHz), upper-mid-high freq</li>
+<li>Airy(&gt; 10 kHz), high freq</li>
+</ul>
+<p>via <a href="https://book.douban.com/subject/7069885/" target="_blank" rel="noopener">Audio Engineering 101 - A Beginner’s Guide to Music Production</a></p>
+<h3 id="一些常用频点"><a href="#一些常用频点" class="headerlink" title="一些常用频点"></a>一些常用频点</h3><ul>
+<li>50hz，常用的最低频段，是强劲的地鼓声的频段，也是能够让人为之起舞的频段。通过适当提升将得到令人振奋的地鼓声音。但是，一定要将人声里面所有的 50hz 左右的声音都切掉，那一定是喷麦的声音。 </li>
+<li>70～100hz，获得浑厚有力的BASS的必要频点，也是需要将人声切除的频点。BASS和地鼓不要提升相同的频点，否则地鼓会被掩没掉的。 </li>
+<li>200～400hz，主要用途，首先是军鼓的木质感声音频段；其次是消除人声脏的感觉的频段；第三，对于吉它，提升这个频段将会使声音变的温暖；第四，对于镲和 PERCUSSION，衰减这个频段可以增加清脆感。其中，在 250hz 这个频点，对地鼓作适当的增益，可以使地鼓听起来不那么沉重，很多清流行音乐中这样使用。 </li>
+<li>400～800hz，获得更加清晰的BASS，并且可以使通鼓变得更加温暖。另外，通过增益或衰减这个频段内的某些频点，可以调整吉它音色的薄厚程度。</li>
+<li>800～1khz，这个频段可以调整人声的“结实”程度，或者用于增强地鼓的敲击感，比较适用与舞曲的地鼓。 </li>
+<li>1k～3khz，这是一个“坚硬”的频段。其中，1.5k~2.5k的提升可以增加吉它或BASS的“锋利”的感觉；在2～3k略作衰减，将会使人声变得更加平滑、流畅，否则，有些人的声音听起来唱歌象打架。反过来，在这个频段进行提升也会增加人声或者钢琴的锋利程度。总的来说，这个频段通常被成为噪声频段，太多的话，会使整个音乐乱成一团，但在某种乐器上适当的使用，会使这种乐器脱颖而出。 </li>
+<li>3k～6khz，声音在3k的时候，还是坚硬的。至于6k，提升这个频点可以提升人声的清晰度，或者让吉它的声音更华丽。</li>
+<li>6k～10khz，这个频段可以增加声音的“甜美”感觉。并且增加声音的空气感，呼吸感。并可增加吉它的清脆声音。PERCUSSION、军鼓和大镲都可以在这个频段里美化。并且，弦乐和某些的合成器综合音色，可以在这个频段得到声音的“刀刃”的感觉。</li>
+<li>10k～16khz，提升这个频段会使人声更加华丽，并且能够提升大镲和PERCUSSION 的最尖的那个部分。但是，一定要首先确认这个频段内是有声音存在的，否则所增加的肯定是噪声。</li>
+</ul>
+<h3 id="各音源的频率范围"><a href="#各音源的频率范围" class="headerlink" title="各音源的频率范围"></a>各音源的频率范围</h3><table>
+<thead>
+<tr>
+<th>乐器</th>
+<th>音色丰满度</th>
+<th>音色明亮度</th>
+<th>音色力度</th>
+<th>音色表现力</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小提琴</td>
+<td>200Hz~400Hz</td>
+<td>6~10KHz</td>
+<td></td>
+<td></td>
+<td>1~2KHz 是拨弦声频带 </td>
+</tr>
+<tr>
+<td>中提琴</td>
+<td></td>
+<td></td>
+<td>150Hz~300Hz</td>
+<td>3~6KHz</td>
+<td></td>
+</tr>
+<tr>
+<td>大提琴</td>
+<td>100Hz~250Hz</td>
+<td>3KHz</td>
+<td></td>
+</tr>
+<tr>
+<td>贝斯提琴</td>
+<td>50Hz~150Hz</td>
+<td>1~2KHz</td>
+<td></td>
+</tr>
+<tr>
+<td>长笛</td>
+<td>250Hz~1KHz</td>
+<td>5~6KHz</td>
+<td></td>
+</tr>
+<tr>
+<td>黑管</td>
+<td>150Hz~600Hz</td>
+<td>3KHz</td>
+<td></td>
+</tr>
+<tr>
+<td>双簧管</td>
+<td>300Hz~1KHz</td>
+<td>5~6KHz</td>
+<td></td>
+<td></td>
+<td>1~5KHz 提升使音色明亮华丽</td>
+</tr>
+<tr>
+<td>大管</td>
+<td>100Hz~200Hz 深沉感强</td>
+<td>2~5KHz</td>
+<td></td>
+</tr>
+<tr>
+<td>小号</td>
+<td>150Hz~250Hz</td>
+<td></td>
+<td></td>
+<td>5~7.5KHz</td>
+<td>是明亮清脆感频带</td>
+</tr>
+<tr>
+<td>圆号</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>60Hz~600Hz 提升会使音色和谐自然；强吹音色光辉，1~2KHz 明显增强</td>
+</tr>
+<tr>
+<td>长号</td>
+<td>100Hz~240Hz</td>
+<td></td>
+<td></td>
+<td></td>
+<td>500Hz~2KHz 提升使音色变辉煌</td>
+</tr>
+<tr>
+<td>大号</td>
+<td>30Hz~200Hz</td>
+<td></td>
+<td></td>
+<td></td>
+<td>100Hz~500Hz 提升使音色深沉、厚实。</td>
+</tr>
+<tr>
+<td>钢琴</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>27.5~4.86KHz 是音域频段。音色随频率增加而变的单薄；20Hz~50Hz 是共振峰频率。</td>
+</tr>
+<tr>
+<td>竖琴</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>32.7Hz~3.136KHz 是音域频率。小力度拨弹音色柔和；大力度拨弹音色丰满。 </td>
+</tr>
+<tr>
+<td>萨克斯管</td>
+<td></td>
+<td>600Hz~2KHz 提升此频率可使音色华彩清透</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>吉它</td>
+<td>100Hz~300Hz</td>
+<td></td>
+<td></td>
+<td>2~5KHz</td>
+<td></td>
+</tr>
+<tr>
+<td>低音吉它</td>
+<td>60Hz~100Hz 低音丰满</td>
+<td></td>
+<td>60Hz~1KHz</td>
+<td></td>
+<td>2.5KHz 是拨弦声频</td>
+<td></td>
+</tr>
+<tr>
+<td>电吉它</td>
+<td>240Hz</td>
+<td>2.5KHz</td>
+<td></td>
+<td></td>
+<td>3~4KHz 拨弹乐器的性格表现的更充分</td>
+</tr>
+<tr>
+<td>电贝司</td>
+<td>80Hz~240Hz</td>
+<td></td>
+<td>600Hz~1KHz</td>
+<td></td>
+<td>2.5KHz 是拨弦声频</td>
+</tr>
+<tr>
+<td>手鼓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>200Hz~240Hz 共鸣声频；5KHz 影响临场感</td>
+</tr>
+<tr>
+<td>小军鼓</td>
+<td>240Hz</td>
+<td></td>
+<td>2KHz</td>
+<td></td>
+<td>5KHz 是响弦音频（泛音区） </td>
+</tr>
+<tr>
+<td>通通鼓</td>
+<td>360Hz</td>
+<td></td>
+<td></td>
+<td></td>
+<td>8KHz 为硬度频率；泛音可达 10~15KHz </td>
+</tr>
+<tr>
+<td>低音鼓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>60Hz~100Hz 为低音力度频率；2.5KHz 是敲击声频率；8KHz 是鼓皮泛音声频。 </td>
+</tr>
+<tr>
+<td>地鼓</td>
+<td>60Hz~150Hz 是力度音频</td>
+<td></td>
+<td></td>
+<td></td>
+<td>5~6KHz 是泛音声频</td>
+</tr>
+<tr>
+<td>镲</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>250Hz 强劲、坚韧、锐利；7.5~10KHz 音色尖利；1.2~15KHz 镲边泛音“金光四溅”。 </td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>人声</th>
+<th>频段效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>歌声（男）</td>
+<td>150Hz~600Hz 影响歌声力度，提升此频段可以使歌声共鸣感强，增强力度。</td>
+</tr>
+<tr>
+<td>歌声（女）</td>
+<td>1.6~3.6KHz 影响音色的明亮度，提升此段频率可以使音色鲜明通透。</td>
+</tr>
+<tr>
+<td>语音</td>
+<td>800Hz 是“危险”频率，过于提升会使音色发“硬”、发“楞” </td>
+</tr>
+<tr>
+<td>沙哑声</td>
+<td>提升 64Hz~261Hz 会使音色得到改善</td>
+</tr>
+<tr>
+<td>喉音重</td>
+<td>衰减 600Hz~800Hz 会使音色得到改善 </td>
+</tr>
+<tr>
+<td>鼻音重</td>
+<td>衰减60Hz~260Hz，提升 1~2.4KHz 可以改善音色。</td>
+</tr>
+<tr>
+<td>齿音重</td>
+<td>6KHz 过高会产生严重齿音。 </td>
+</tr>
+<tr>
+<td>咳音重</td>
+<td>4KHz 过高会产生咳音严重现象</td>
+</tr>
+</tbody>
+</table>
+<p>via <a href="http://www.360doc.com/content/09/1109/13/421497_8668986.shtml" target="_blank" rel="noopener">均衡器的各个频段所增益的乐器和人声效果调节对照表</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果文章帮您节省时间或者解答疑问，不妨打个赏 :)</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    kidult00
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://uegeek.com/180629-make-noise-06.html" title="MakeNoise06 - 音色和均衡器(EQ)">http://uegeek.com/180629-make-noise-06.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArtxCode/" rel="tag"># ArtxCode</a>
+          
+            <a href="/tags/Music/" rel="tag"># Music</a>
+          
+            <a href="/tags/Sound/" rel="tag"># Sound</a>
+          
+            <a href="/tags/声音/" rel="tag"># 声音</a>
+          
+            <a href="/tags/Ableton-Live/" rel="tag"># Ableton Live</a>
+          
+            <a href="/tags/Max-MSP/" rel="tag"># Max/MSP</a>
+          
+            <a href="/tags/EQ/" rel="tag"># EQ</a>
+          
+            <a href="/tags/均衡器/" rel="tag"># 均衡器</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/180626-make-noise-04.html" rel="next" title="MakeNoise04 - 波形和相位">
+                <i class="fa fa-chevron-left"></i> MakeNoise04 - 波形和相位
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/180628-make-noise-05.html" rel="prev" title="MakeNoise05 - Envelope 包络（ADSR）">
+                MakeNoise05 - Envelope 包络（ADSR） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">New Media Artist / Designer / Maker</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">216</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">183</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://steemit.com/@kidult00/" target="_blank" title="Steemit">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Steemit
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#音色-timbre-tone"><span class="nav-number">1.</span> <span class="nav-text">音色 timbre/tone</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#均衡器-EQ"><span class="nav-number">2.</span> <span class="nav-text">均衡器 EQ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-Max-MSP-制作-EQ"><span class="nav-number">3.</span> <span class="nav-text">用 Max/MSP 制作 EQ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Ableton-Live-里用-EQ-修饰声音"><span class="nav-number">4.</span> <span class="nav-text">在 Ableton Live 里用 EQ 修饰声音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ref"><span class="nav-number">5.</span> <span class="nav-text">Ref</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录"><span class="nav-number">6.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#EQ-points-of-interest"><span class="nav-number">6.1.</span> <span class="nav-text">EQ points of interest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些常用频点"><span class="nav-number">6.2.</span> <span class="nav-text">一些常用频点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各音源的频率范围"><span class="nav-number">6.3.</span> <span class="nav-text">各音源的频率范围</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/180629-make-noise-06.html';
+          this.page.identifier = '180629-make-noise-06.html';
+          this.page.title = 'MakeNoise06 - 音色和均衡器(EQ)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
