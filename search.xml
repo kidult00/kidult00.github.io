@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MakeNoise07 - 音频的分辨率 Sample rate/Bit depth]]></title>
+    <url>%2F180701-make-noise-07.html</url>
+    <content type="text"><![CDATA[MakeNoise01 - 声音是什么？ MakeNoise02 - 频率和音高 MakeNoise03 - 振幅/响度/音量/增益 大乱斗 MakeNoise04 - 波形和相位 MakeNoise05 - Envelope 包络（ADSR） MakeNoise06 - 音色和均衡器(EQ) 在 MakeNoise03 中，我们区分了第一捆容易混淆的概念：振幅/响度/音量/增益。 今天来捋一捋第二捆概念们——Sample rate / Bit depth / Dynamic range / Bit rate，它们影响了声音的分辨率。 图像的分辨率是大家比较熟悉的概念。在一个固定尺寸的图像里包含多少像素，决定了图像的分辨率。 由此可以类比声音的「分辨率」。 一个声音信号的质量由两个变量决定：采样速率 Sample rate 和 比特深度（位深度）Bit depth。 图像分辨率由横纵坐标的像素数量所决定。对应到声音，Sample rate 设定了能够捕捉音频信号的最高频率，可以看做横坐标；Bit depth 决定了每一个 sample 的精度，可以看做纵坐标。两者在两个维度上共同决定了音频的分辨率。 ￼ 采样率 Sample rate The sampling frequency or sampling rate, fs, is the average number of samples obtained in one second (samples per second) — wiki 采样率决定了每一秒内会从音频信号中采集多少样本。 在现实世界中的音频采样，是不连续或离散的信号，每个梯级值都是一个数值，表示一个单一时间点上的幅度。 多少采样点算是足够多，能够精确编码一个声音信号呢？这就要提到 The Nyquist Theorem （尼奎斯特定理）了： States that the signal’s sample rate must be at least two times greater than the highest desired frequency. 采样率/2是一个特殊数字，被称为奈奎斯特点 Nyquist point，它是在任何声音中能够被一个给定采样率所编码的最高频率。 也就是说，每秒的采样至少是信号中的最高频率的 2 倍，就可以完美地还原声音信号。 所以，为了覆盖人类的听觉范围（20Hz~20kHz），每秒需要 40000 个采样点。 那么问题来了，既然 40 kHz 就够了，为什么现在音频 CD 的标准采样率是 44.1 kHz 呢？ 一方面原因是工程的需要。 现实中，麦克风所能接收、采集到的空气振动的频率范围非常大，远远超过人耳听力。如果直接采样会出现混叠。所以要先使用一个低通滤波器，把高于阈值的信号过滤掉。超过 40 kHz 的频段，给低通滤波器留出空间，使得那一段不怎么完美的下降曲线落在 20KHz 之外，不影响音频效果。 另一方面是技术历史问题。 在数字存储媒介被发明之前，早期的数字音频录制在模拟录像带上。当时世界上的录像机主要有二大制式：欧洲的 PAL 和美国日本的 NTSC。当时的 CD 是 SONY（美日制式）与 PHILIPS（欧洲制式）合作的。适用于 PAL 制式录像机的编码器采样频率是 44.1kHz。适用于 NTSC 制式录像机的编码器采样频率是 44.056。 那么 44.1 和 44.056kHz 这两个数字是怎么来的呢？ 44,100=294 x 50 x 3 44,056=245 x 59.94 x 3 50Hz 和 59.94Hz 分别是 PAL 和 NTSC 的场频， PAL 制式下可用扫描线数是 294 线，而 NTSC 则是 245 线。至于x3，则是在一条视频扫描线的磁迹中，纪录三个数码音频数据块。44.056KHz 标准并不能很好地被 NTSC 系统兼容，有一定的误差，所以没有被市场接受。索尼提出了以 44.1KHz/16bit 的方式录制，在数字信号和模拟信号的过渡期，大获全胜。哪怕最后出现了数字CD，也没有敌得过用户的使用惯性。 更多这个话题的讨论，可以参考知乎问题：人耳 20kHz 封顶，为什么数字音频都要记录和解析到更高的频率上去？ 那该用什么样的采样率呢？ The Audio Engineering Society recommends 48 kHz sampling rate for most applications but gives recognition to 44.1 kHz for CD and other consumer uses, 32 kHz for transmission-related applications, and 96 kHz for higher bandwidth or relaxed anti-aliasing filtering. — wiki 比特深度 Bit Depth In digital audio using pulse-code modulation (PCM), bit depth is the number of bits of information in each sample, and it directly corresponds to the resolution of each sample. — Wiki 在 CD 的采样标准中，44.1 kHz 的 Sample Rate 我们有所了解了。那么 16 Bit Depth 又是什么意思呢？ 在音频采样中，每个采样的 amplitude 用二进制数字编码。这个编码的分辨率就是比特深度。 把数据存储成二进制，意味着如果用 n 个二进制位来存储每个幅度值，总共可以表示的数值数量为 2 的 n 次方-1。1 bit 代表采样的值: 0 或 1。如果是 2 bit，采样值范围就是 0, 1, 2, 3。2 的 16 次方是 65536，所以 16 bit 的采样深度分辨率是 -32768~32768。 Bit depth 实际上决定的是 dynamic range 的分辨率。 动态范围 Dynamic Range Dynamic range is the ratio between the largest and smallest values that a certain quantity can assume. It is measured either as a ratio or as a base-10 (decibel) or base-2 (doublings, bits or stops) logarithmic value of the difference between the smallest and largest signal values. 声音的 dynamic range 由信号的最大值和最小值所决定。 在音频处理中，dynamic range 与最大振幅和 noise floor 的比值有关： ￼ 假设 1 bit 表示听觉的门限，16 位 bit depth 可以给出 98 dB 的 dynamic range，32 位为 192 dB，64 位为 385 dB。现在很多数字音频系统都用 64 位。 比特率 Bit Rate还有一个容易与采样率、比特深度混淆的概念，叫比特币，哦不对，比特率。 在数字多媒体领域，比特率是单位时间播放连续的媒体(如压缩后的音频或视频)的比特数量，常用码流或码率表示，单位是kbps（千位每秒）。——wiki 高音质 MP3 的 Bit rate 可达 256-320 kbps ，低音质的 MP3 大概在 100 kbps 。 音频数据的比特率文件大小计算公式如下： Bit rate = sample rate bit depth channels Size in bits = sample rate bit depth channels * length of time 所以，Sample rate 和 Bit depth 会影响 Bit rate 和文件大小。 一般原始的多媒体文件都比较大，为了便于使用需要对其进行压缩，而码流就对应了压缩时的取样率。单位时间内取样率越大，精度就越高，处理出来的文件就越接近原始文件，但是文件也会越大。 小结今天我们又梳理了一捆容易混淆的概念们： Sample rate：每秒采集的音频信号样本 Bit depth：每个信号样本的幅度范围分辨率 Dynamic range：信号的范围极限值区间 Bit rate：单位时间传送的媒体信号量 以后，看见 DAW 里面相关的选项，就心里有数啦： 附录在数字音频领域，常用的采样率有： Sample Rate Use 8,000 Hz 电话所用采样率，对于人的说话已经足够 22,050 Hz 无线电广播所用采样率 32,000 Hz miniDV数码视频camcorder、DAT（LP mode）所用采样率 44,100 Hz 音频CD,也常用于MPEG-1音频（VCD, SVCD, MP3）所用采样率 47,250 Hz Nippon Columbia（Denon）开发的世界上第一个商用PCM录音机所用采样率 48,000 Hz miniDV、数字电视、DVD、DAT、电影和专业音频所用的数字声音所用采样率 50,000 Hz 二十世纪七十年代后期出现的3M和Soundstream开发的第一款商用数字录音机所用采样率 50,400 Hz 三菱X-80数字录音机所用所用采样率 96,000或者192,000 Hz DVD-Audio、一些LPCM DVD音轨、Blu-ray Disc（蓝光碟）音轨、和HD-DVD（高清晰度DVD）音轨所用所用采样率 2.8224 MHz SACD、索尼和飞利浦联合开发的称为Direct Stream Digital的1位sigma-delta modulation过程所用采样率。 Ref Audio Engineering 101 - A Beginner’s Guide to Music Production 设计声音 Max_MSPJitter for music a practical guide to developing interactive music systems for education and more Sampling (signal processing) - Wikiwand#/Sampling_rate) Audio bit depth - Wikiwand Dynamic range - Wikiwand Bit rate - Wikiwand Nyquist rate - Wikiwand 采样率 - Wikiwand 人耳 20kHz 封顶，为什么数字音频都要记录和解析到更高的频率上去？- 知乎 CD为什么采用44.1kHz采样频率? - 知乎]]></content>
+      <categories>
+        <category>动手</category>
+      </categories>
+      <tags>
+        <tag>ArtxCode</tag>
+        <tag>Music</tag>
+        <tag>Sound</tag>
+        <tag>声音</tag>
+        <tag>Ableton Live</tag>
+        <tag>Max/MSP</tag>
+        <tag>Sample rate</tag>
+        <tag>采样率</tag>
+        <tag>Bit rate</tag>
+        <tag>Bit depth</tag>
+        <tag>Dynamic range</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MakeNoise06 - 音色和均衡器(EQ)]]></title>
     <url>%2F180629-make-noise-06.html</url>
     <content type="text"><![CDATA[MakeNoise01 - 声音是什么？ MakeNoise02 - 频率和音高 MakeNoise03 - 振幅/响度/音量/增益 大乱斗 MakeNoise04 - 波形和相位 MakeNoise05 - Envelope 包络（ADSR） 音色 timbre/tone The character or quality (like attack, spectrum, spectral evolution) of a musical sound or voice as distinct from its pitch and intensity. 音色对应一个静态的频谱，它带有基频和一系列泛音。 泛音其实就是物理学上的谐波，但次数的定义稍有不同，基波频率 2 倍的音频称为一次泛音，基波频率 3 倍的音频称为二次泛音，以此类推。谐波是指周期函数或周期性的波形中能用常数、与原函数的最小正周期相同的正弦函数和余弦函数的线性组合表达的部分。 音色跟频谱（spectrum）和波形（waveform）相关。 明亮的声音比暗淡的声音包含更多的高频泛音。最好的度量是找到它的频谱重心或频谱质心（spectral centroid）。灰暗的音色频谱质心较低，或是在语音范围内没有确定的谐波结构。 一些对音色的「形容词」：￼ 均衡器 EQ调整（Boost/cut/flat）EQ，即通过增高或降低声音在某个频率范围的频率，来影响整体的音色。 现在不妨回到信号处理领域，从物理背景来理解 Equalizer。由于信号在传送路径到接收器接收的过程中，会受到多路径干扰、路径中遮蔽物阻挡造成遮蔽效应，这些码间干扰会导致接收讯号错误率上升。为了降低通讯系统传输的错误率，要作通道估测，根据结果对通道响应做补偿而降低传送错误率。 对声音处理而言，EQ 是一种可以分别调节各种频率成分电信号放大量的电子设备，通过调节不同频率的电信号，来补偿扬声器和声场的缺陷，补偿和修饰各种声源及其它特殊作用。 在各种软硬件和 DAW 里面，EQ 简直可以说是千人千面了。 iTunes 里的 EQ： 调整声音的 EQ 可以： 平衡混音中的各种声音 让声音分布在特定的频段 调出想要的音色 提升整体的听觉效果 补偿环境声场 减少回响 制作音效 当我们调节 EQ 时，经常需要控制调节点所影响的频率范围，它可以由 Q（Slop / Bandwidth / Resonance）来控制。￼ 用 Max/MSP 制作 EQ调整声音的均衡效果，实际上就是调整不同频段频率的高低。所以理论上可以用 Max/MSP 实现任意的 EQ 效果。 下面来看看 Max/MSP 里自带的 buffir-eq 的例子，实现了简单的高-中-低均衡器效果： EQ in Max/MSP_腾讯视频 在 Ableton Live 里用 EQ 修饰声音Ableton Live 里面最常用的 EQ 是 EQ Three 和 EQ Eight。 Three 和 Eight 分别表示有 3 个和 8 个调节点。EQ Three 只能分成高、中、低频三个范围进行调节： EQ Eight 则可以添加多达 8 个控制点，更为灵活： 在下面的视频中，尝试调节每一个控制点的滤波方式，并且移动到不同频率的位置，查看调节频段产生的均衡效果： EQ Eight in Ableton Live_腾讯视频 Ref Audio Engineering 101 - A Beginner’s Guide to Music Production 均衡器 - Wikiwand 谐波 - Wikiwand Session 4: Sculpting Frequencies: Equalization Harmonic - Wikiwand EQ Tutorial: The Basics of How to EQ Properly - YouTube What Are Harmonics? I Full Spectrum Science I Exploratorium - YouTube 附录EQ points of interest Subs (&lt; 80 Hz), low freq Big/fat(20~100 Hz), low freq Muddy(100~300 Hz), low-low-mid freq: if a sound isn’t very clear, or muddy, try subtracting between 100 and 300 Hz. Boxy/hollow(300~700 Hz), low-mid freq In your face(1.5~4 kHz), Mid-mid-upper-mid freq: punk rock music accentuates this freq, too much here can cause ear fatigue, whereas not enough here can make a mix or sound appear dark and distant Presence and clarity(4~10 kHz), upper-mid-high freq Airy(&gt; 10 kHz), high freq via Audio Engineering 101 - A Beginner’s Guide to Music Production 一些常用频点 50hz，常用的最低频段，是强劲的地鼓声的频段，也是能够让人为之起舞的频段。通过适当提升将得到令人振奋的地鼓声音。但是，一定要将人声里面所有的 50hz 左右的声音都切掉，那一定是喷麦的声音。 70～100hz，获得浑厚有力的BASS的必要频点，也是需要将人声切除的频点。BASS和地鼓不要提升相同的频点，否则地鼓会被掩没掉的。 200～400hz，主要用途，首先是军鼓的木质感声音频段；其次是消除人声脏的感觉的频段；第三，对于吉它，提升这个频段将会使声音变的温暖；第四，对于镲和 PERCUSSION，衰减这个频段可以增加清脆感。其中，在 250hz 这个频点，对地鼓作适当的增益，可以使地鼓听起来不那么沉重，很多清流行音乐中这样使用。 400～800hz，获得更加清晰的BASS，并且可以使通鼓变得更加温暖。另外，通过增益或衰减这个频段内的某些频点，可以调整吉它音色的薄厚程度。 800～1khz，这个频段可以调整人声的“结实”程度，或者用于增强地鼓的敲击感，比较适用与舞曲的地鼓。 1k～3khz，这是一个“坚硬”的频段。其中，1.5k~2.5k的提升可以增加吉它或BASS的“锋利”的感觉；在2～3k略作衰减，将会使人声变得更加平滑、流畅，否则，有些人的声音听起来唱歌象打架。反过来，在这个频段进行提升也会增加人声或者钢琴的锋利程度。总的来说，这个频段通常被成为噪声频段，太多的话，会使整个音乐乱成一团，但在某种乐器上适当的使用，会使这种乐器脱颖而出。 3k～6khz，声音在3k的时候，还是坚硬的。至于6k，提升这个频点可以提升人声的清晰度，或者让吉它的声音更华丽。 6k～10khz，这个频段可以增加声音的“甜美”感觉。并且增加声音的空气感，呼吸感。并可增加吉它的清脆声音。PERCUSSION、军鼓和大镲都可以在这个频段里美化。并且，弦乐和某些的合成器综合音色，可以在这个频段得到声音的“刀刃”的感觉。 10k～16khz，提升这个频段会使人声更加华丽，并且能够提升大镲和PERCUSSION 的最尖的那个部分。但是，一定要首先确认这个频段内是有声音存在的，否则所增加的肯定是噪声。 各音源的频率范围 乐器 音色丰满度 音色明亮度 音色力度 音色表现力 其他 小提琴 200Hz~400Hz 6~10KHz 1~2KHz 是拨弦声频带 中提琴 150Hz~300Hz 3~6KHz 大提琴 100Hz~250Hz 3KHz 贝斯提琴 50Hz~150Hz 1~2KHz 长笛 250Hz~1KHz 5~6KHz 黑管 150Hz~600Hz 3KHz 双簧管 300Hz~1KHz 5~6KHz 1~5KHz 提升使音色明亮华丽 大管 100Hz~200Hz 深沉感强 2~5KHz 小号 150Hz~250Hz 5~7.5KHz 是明亮清脆感频带 圆号 60Hz~600Hz 提升会使音色和谐自然；强吹音色光辉，1~2KHz 明显增强 长号 100Hz~240Hz 500Hz~2KHz 提升使音色变辉煌 大号 30Hz~200Hz 100Hz~500Hz 提升使音色深沉、厚实。 钢琴 27.5~4.86KHz 是音域频段。音色随频率增加而变的单薄；20Hz~50Hz 是共振峰频率。 竖琴 32.7Hz~3.136KHz 是音域频率。小力度拨弹音色柔和；大力度拨弹音色丰满。 萨克斯管 600Hz~2KHz 提升此频率可使音色华彩清透 吉它 100Hz~300Hz 2~5KHz 低音吉它 60Hz~100Hz 低音丰满 60Hz~1KHz 2.5KHz 是拨弦声频 电吉它 240Hz 2.5KHz 3~4KHz 拨弹乐器的性格表现的更充分 电贝司 80Hz~240Hz 600Hz~1KHz 2.5KHz 是拨弦声频 手鼓 200Hz~240Hz 共鸣声频；5KHz 影响临场感 小军鼓 240Hz 2KHz 5KHz 是响弦音频（泛音区） 通通鼓 360Hz 8KHz 为硬度频率；泛音可达 10~15KHz 低音鼓 60Hz~100Hz 为低音力度频率；2.5KHz 是敲击声频率；8KHz 是鼓皮泛音声频。 地鼓 60Hz~150Hz 是力度音频 5~6KHz 是泛音声频 镲 250Hz 强劲、坚韧、锐利；7.5~10KHz 音色尖利；1.2~15KHz 镲边泛音“金光四溅”。 人声 频段效果 歌声（男） 150Hz~600Hz 影响歌声力度，提升此频段可以使歌声共鸣感强，增强力度。 歌声（女） 1.6~3.6KHz 影响音色的明亮度，提升此段频率可以使音色鲜明通透。 语音 800Hz 是“危险”频率，过于提升会使音色发“硬”、发“楞” 沙哑声 提升 64Hz~261Hz 会使音色得到改善 喉音重 衰减 600Hz~800Hz 会使音色得到改善 鼻音重 衰减60Hz~260Hz，提升 1~2.4KHz 可以改善音色。 齿音重 6KHz 过高会产生严重齿音。 咳音重 4KHz 过高会产生咳音严重现象 via 均衡器的各个频段所增益的乐器和人声效果调节对照表]]></content>
@@ -125,8 +146,8 @@
         <tag>ArtxCode</tag>
         <tag>DeepLearning</tag>
         <tag>Coding</tag>
-        <tag>编程</tag>
         <tag>神经网络</tag>
+        <tag>编程</tag>
         <tag>Programming</tag>
       </tags>
   </entry>
@@ -144,8 +165,8 @@
         <tag>ArtxCode</tag>
         <tag>DeepLearning</tag>
         <tag>Coding</tag>
-        <tag>编程</tag>
         <tag>神经网络</tag>
+        <tag>编程</tag>
         <tag>Programming</tag>
         <tag>AWS</tag>
         <tag>GPU</tag>
@@ -213,8 +234,8 @@
         <tag>ArtxCode</tag>
         <tag>DeepLearning</tag>
         <tag>Coding</tag>
-        <tag>编程</tag>
         <tag>神经网络</tag>
+        <tag>编程</tag>
         <tag>Backpro</tag>
         <tag>反向传播</tag>
         <tag>Programming</tag>
@@ -653,8 +674,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -666,8 +687,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -679,8 +700,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -692,8 +713,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
