@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-07-01T10:22:08.000Z</updated>
+  <updated>2018-07-03T10:37:49.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MakeNoise08 - 振荡器和滤波器</title>
+    <link href="http://uegeek.com/180703-make-noise-08.html"/>
+    <id>http://uegeek.com/180703-make-noise-08.html</id>
+    <published>2018-07-03T10:35:56.000Z</published>
+    <updated>2018-07-03T10:37:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png" alt=""></p><a id="more"></a> <ul><li><a href="https://www.uegeek.com/180621-make-noise-01.html" target="_blank" rel="noopener">MakeNoise01 - 声音是什么？</a></li><li><a href="https://www.uegeek.com/180623-make-noise-02.html" target="_blank" rel="noopener">MakeNoise02 - 频率和音高</a></li><li><a href="https://www.uegeek.com/180624-make-noise-03.html" target="_blank" rel="noopener">MakeNoise03 - 振幅/响度/音量/增益 大乱斗</a></li><li><a href="https://www.uegeek.com/180626-make-noise-04.html" target="_blank" rel="noopener">MakeNoise04 - 波形和相位</a></li><li><a href="https://www.uegeek.com/180628-make-noise-05.html" target="_blank" rel="noopener">MakeNoise05 - Envelope 包络（ADSR）</a></li><li><a href="https://www.uegeek.com/180629-make-noise-06.html" target="_blank" rel="noopener">MakeNoise06 - 音色和均衡器(EQ)</a></li><li><a href="https://www.uegeek.com/180701-make-noise-07.html" target="_blank" rel="noopener">MakeNoise07 - 音频的分辨率 Sample rate/Bit depth</a></li></ul><p>制造声音，总的来说有两种思路：加性和减性。加性的方法逐步叠加多个声源，减性的方法逐步剔除声音中不想要的部分。</p><p>所以，<strong>声音设计的过程，无外乎是发出声音，修剪、调整为想要的效果</strong>。</p><p>对应的，振荡器是最主要的发声对象，而滤波器是最主要的过滤修整对象。所以这一篇的内容比较多，也会需要回顾之前所讲的一些概念。</p><p><img src="https://is3-ssl.mzstatic.com/image/thumb/Purple5/v4/ce/b8/62/ceb862e4-b96e-912a-cca2-c4169002a0f7/pr_source.png/643x0w.jpg" alt=""></p><h2 id="振荡器和谐振器"><a href="#振荡器和谐振器" class="headerlink" title="振荡器和谐振器"></a>振荡器和谐振器</h2><p>在所有能够产生声音的东西（包括所有乐器）中，绝大部分都是振荡器 (Oscillators)、共振器 (Resonators) 或是两者的组合。</p><h3 id="OSC-振荡器"><a href="#OSC-振荡器" class="headerlink" title="OSC 振荡器"></a>OSC 振荡器</h3><p>电子振荡器是用来产生具有周期性的模拟信号（通常是正弦波或方波）的电子电路。音频振荡器产生频率约为 16 Hz~20 kHz。</p><p>振荡器（OSC）产生原始波形与音高，是所有合成器发声的源头。合成器一般由多个 OSC 或 Wavetable 的声音叠合而成一个音色。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/OSC_2.jpg" alt=""></p><p>如果没有 OSC 振动发出原始音高，其他元件也就没有存在的意义了。（还记得大明湖畔 440 Hz 的中央 A 音高吗？）</p><iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=l0699omxbcq&tiny=0&auto=0" allowfullscreen></iframe><p><a href="http://v.qq.com/x/page/l0699omxbcq.html" target="_blank" rel="noopener">MakeNoise02-frequency_in_max</a></p><p>在 <a href="https://www.uegeek.com/180626-make-noise-04.html" target="_blank" rel="noopener">MakeNoise04 - 波形和相位</a> 中介绍过基础的波形，它们都产生于基础的振荡器：<br>￼<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Waveforms.svg/700px-Waveforms.svg.png" alt=""></p><h3 id="Resonator-共振器-谐振器"><a href="#Resonator-共振器-谐振器" class="headerlink" title="Resonator 共振器/谐振器"></a>Resonator 共振器/谐振器</h3><blockquote><p>In physics, resonance is a phenomenon in which a vibrating system or external force drives another system to oscillate with greater amplitude at specific frequencies. —Wiki</p></blockquote><p>振荡器和共振器的区别在于，它们出现在能量流动链的什么位置，<strong>是作为原初的波源还是作为被振动源驱动（受力）的系统</strong>。 </p><p>如果两个点有相同的固有频率，则相互冲突的力就变为零。即，由一个点提供给对方的阻抗变为 0 ，这被称为共振/谐振 (resonance)。共振通过在特定频率上施力，来增加震动的幅度 。</p><p>这么说真的好抽象哦……还是直接到 Ableton Live 里面体验一下吧。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5DResonators.png" alt=""></p><p>拖进一段 beats，然后对比开启和关闭 Resonators 的效果：</p><iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=j0710ontjtv&tiny=0&auto=0" allowfullscreen></iframe><p><a href="https://v.qq.com/x/page/j0710ontjtv.html" target="_blank" rel="noopener">Resonator in Ableton Live_腾讯视频</a></p><h3 id="低频振荡器-LFO"><a href="#低频振荡器-LFO" class="headerlink" title="低频振荡器 LFO"></a>低频振荡器 LFO</h3><blockquote><p>Low-frequency oscillation (LFO) is an electronic signal which is usually below 20 Hz and creates a rhythmic pulse or sweep. – Wiki</p></blockquote><p>低频振荡器发出低于 20Hz 的信号，主要用来<strong>驱动其他参数、调制合成器/延迟等形成周期性响应</strong>，以此来制造出特定的音效，而不是作为主频发声振荡器。</p><p><img src="https://impmoocmath.files.wordpress.com/2013/04/lfo.png" alt=""></p><p>LFO 的主要参数：</p><ul><li>Shape：Sine、Square、Pulse、Triangle、Sawtooth 等波形</li><li>Rate：控制振动時間的快慢，可以调为预设的 BPM</li><li>Amount/Depth：控制振动的强度</li><li>Phase/Offset：波形起始位置</li></ul><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5DAuto_filter.png" alt=""></p><p>LFO的使用范围很广泛，当需要<strong>制造往复变化的周期性效果</strong>，如音高一高一低的 Vibrato，相位一左一右的 AutoPan，音量一强一弱的 Tremolo…等等，都可以利用 LFO 来生成。在一部强大的合成器上，方便且多功能的 LFO 是不可或缺的。</p><h2 id="滤波器-Filter"><a href="#滤波器-Filter" class="headerlink" title="滤波器 Filter"></a>滤波器 Filter</h2><p>声音由振荡器/谐振器产生以后，<strong>声音塑形的第二个关键，就是调整其频率分布</strong>。Filter 起到限制信号的频率范围的作用，它其实就是<a href="https://www.uegeek.com/180629-make-noise-06.html" target="_blank" rel="noopener">最简单的 EQ</a>。</p><p><img src="https://static.kvraudio.com/i/b/sanfordsuperfilter.jpg" alt=""></p><p>按过滤的频率来区分，滤波器可分为以下几类：</p><ul><li>Low Pass Filter 低通滤波（LP）：允许低于其中心频率的信号更多的通过（过滤掉高频信号）</li><li>High Pass Filter 高通滤波（HP）：允许高于其中心频率的信号更多的通过（过滤掉低频信号）</li><li>Band Pass Filter 带通滤波（BP）：允许指定频段的频率通过，过滤掉两侧的频率</li><li>Band Reject 带阻（陷波）（BR）：在频谱中过滤掉一部分频率，保留其他频段</li></ul><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/basic%20filters.jpg" alt=""></p><p>在 Ableton Live 的 EQ Eight 中，八个调节点都可以选择采用哪种滤波形式：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5DEQ8.png" alt=""></p><p>按响应方式来区分，滤波器有两类：</p><ul><li>FIR：输出仅取决于输入的过往数值，称为有限冲激响应 Finite Impulse Respons</li><li>IIR：输出取决于过往的输入值和过往的输出值，围绕延时元件有一个反馈环路，称为循环（recursive）或无限冲激响应（Infinite Impulse Response）滤波器。可用作累加器，如果反馈很高，当前输入会被加到所有先前输入值上。</li></ul><p>Filter 的主要参数包括 Cutoff / Freq 和 Resonance / Res。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5DAuto_filter.png" alt=""></p><p>选定 Filter 波形后，需要指定过滤的频率界点(Cutoff)。比如选择低通滤波，将 Cutoff freq 指定为 800Hz，那么高于 800Hz 的频率将被滤除。通过指定 Cutoff 的落点，达到调整音色的目的。Res 的作用则主要是为了凸显 Cutoff 所在的频率位置（放大 db）。</p><h2 id="Max-MSP-里的滤波器"><a href="#Max-MSP-里的滤波器" class="headerlink" title="Max/MSP 里的滤波器"></a>Max/MSP 里的滤波器</h2><p>Max/MSP 提供了一系列滤波器任君选择。</p><p><code>Onepole~</code>: 单系数滤波器，也是最简单的 IIR(Infinite Impulse Response) 低通滤波器，常用来减少刺耳的高频信号，或者用来平滑信号。</p><p>虽然<code>onepole~</code>的基础用法是低通滤波，不过只要做一个简单的信号减法操作，就可以起到高通滤波的效果：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Donepole.png" alt=""></p><p>单系数不够？那么 <code>Biquad~</code> 双系数过滤器 了解一下~</p><p>为什么叫双系数呢？因为滤波公式为：</p><blockquote><p>y[n] = a0 <em> x[n] + a1 </em> x[n-1] + a2 <em> x[n-2] - b1 </em> y[n-1] - b2 * y[n-2]</p></blockquote><p>其中 a0, a1, a2, b1, b2 都是可调参数。</p><p>双系数不够？那么了解一下：<code>cascade~</code> 级联滤波器（多个<code>biquad~</code>）</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dcascade~.png" alt=""></p><p>级联可调性较差？那么 <code>filtergraph~</code> 了解一下：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dfiltergraph~2.png" alt=""></p><p>如果还是无法满足需求，请尽情折腾更为灵活的<code>filterdesign</code>……</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dfilterdesign.png" alt=""></p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://book.douban.com/subject/27057297/" target="_blank" rel="noopener">设计声音</a></li><li><a href="https://www.wikiwand.com/en/Resonance" target="_blank" rel="noopener">Resonance - Wikiwand</a></li><li><a href="https://www.coursera.org/lecture/technology-of-music-production/lfo-low-frequency-oscillator-zBCiz" target="_blank" rel="noopener">LFO (Low Frequency Oscillator) - Synthesis | Coursera</a></li><li><a href="https://www.zuirens.com/%E6%8E%A2%E7%B4%A2%E5%90%88%E6%88%90%E5%99%A8%E7%9A%84%E5%A5%A7%E5%A6%99/" target="_blank" rel="noopener">探索合成器的奧妙 | Zuirens 燧人氏</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Music" scheme="http://uegeek.com/tags/Music/"/>
+    
+      <category term="Sound" scheme="http://uegeek.com/tags/Sound/"/>
+    
+      <category term="声音" scheme="http://uegeek.com/tags/%E5%A3%B0%E9%9F%B3/"/>
+    
+      <category term="Ableton Live" scheme="http://uegeek.com/tags/Ableton-Live/"/>
+    
+      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
+    
+      <category term="EQ" scheme="http://uegeek.com/tags/EQ/"/>
+    
+      <category term="Oscilator" scheme="http://uegeek.com/tags/Oscilator/"/>
+    
+      <category term="Filter" scheme="http://uegeek.com/tags/Filter/"/>
+    
+      <category term="LFO" scheme="http://uegeek.com/tags/LFO/"/>
+    
+      <category term="过滤器" scheme="http://uegeek.com/tags/%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>MakeNoise07 - 音频的分辨率 Sample rate/Bit depth</title>
@@ -317,9 +359,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
       <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
       <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
     
@@ -356,9 +398,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
       <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
       <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
     
@@ -515,9 +557,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
       <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
       <category term="Backpro" scheme="http://uegeek.com/tags/Backpro/"/>
     
@@ -692,37 +734,6 @@
       <category term="爬虫" scheme="http://uegeek.com/tags/%E7%88%AC%E8%99%AB/"/>
     
       <category term="Scrapy" scheme="http://uegeek.com/tags/Scrapy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>大哉问05 - 什么是学习中最大的误区？</title>
-    <link href="http://uegeek.com/180106-the-learning-myth.html"/>
-    <id>http://uegeek.com/180106-the-learning-myth.html</id>
-    <published>2018-01-06T08:50:08.000Z</published>
-    <updated>2018-01-06T08:55:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/HY_drawing.png" alt=""></p><blockquote><p>我只想知道我将来会死在什么地方，这样我就可以永远不去那里啦。——查理·芒格</p></blockquote><a id="more"></a> <p>如果说学习是 hack yourself 的主要方式，那么时刻反思「学习」本身就极其重要。</p><p>芒格曾经这样总结他的成功经验：</p><blockquote><p>迅速歼灭不该做的事情，接着对该做的事情发起熟练的、跨学科的攻击，然后，当合适的机会来临——只有当合适的机会来临——就采取果断的行动。</p></blockquote><p>今天，我们一起来聊聊学习中应该「迅速歼灭」的事情。</p><h2 id="误区千千万，这个特别坑"><a href="#误区千千万，这个特别坑" class="headerlink" title="误区千千万，这个特别坑"></a>误区千千万，这个特别坑</h2><p>学习中可能的误区有哪些？这个列表会很长：</p><ul><li>没有开始去做</li><li>没有集中精力</li><li>学习材料不对</li><li>学习方法不对</li><li>缺少目标</li><li>缺少练习</li><li>缺少反馈</li><li>遗忘</li><li>……</li></ul><p>被大家戏称「学习机器」的 00 曾经有过很多无效的学（zhe）习（teng）经历，这些坑我都踩过。再次反思，发现其中最巨大的一个，我今天仍然会反复地跌进去。</p><p>这个误区就是：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/mythOfStudy.png" alt=""></p><p>我们以为，一本书接一本书地看，就是学习了；我们以为，买了各种各样的课程（甚至能坚持听完），就是学习了；我们以为，有人手把手地教，就是学习了……</p><p>买课、看书、做计划，甚至开始动手尝试、反复练习，都只是学习的「动作」，而不是学习本身。</p><p>这些都是我们为学习所缴纳的巨额税款，而且可能会一直这么交下去。</p><h2 id="反思「学习」这个概念"><a href="#反思「学习」这个概念" class="headerlink" title="反思「学习」这个概念"></a>反思「学习」这个概念</h2><p>在<a href="http://www.uegeek.com/learning-about-learn.html" target="_blank" rel="noopener">重启学习系统，做个知识炼金术士</a>一文中，00 曾经整理过学习的一些概念。一年多以后再次翻出来，发现自己虽然理解，但是并没有内化，也没有持续践行。</p><p>快速找出权威教材和一些大师对学习的定义，其中共同出现频率最高的词是：<strong>改变</strong>。</p><blockquote><p>学习是通过经历或练习所带来的行为上相对持久的改变。——「心理学最佳入门」</p><p>学习意味着从一种知识状态进入另一种知识状态，学习要使学习者的知识结构发生改变。——「变构模型—学习研究的新路径」</p><p>学习是在观察行动与结果联系的基础上，改变行动或行动规则。——马奇「经验的疆界」</p></blockquote><p>00 再做了一点简化：</p><blockquote><p>学习是一系列以改变为目的的探索活动</p></blockquote><p><strong>所以，学习的目的，甚至学习的本身，就是：改变。</strong></p><p>以这个标准衡量，80% 以上的学习都是徒劳。因为我们根本没有花哪怕 1 分钟去仔细想过：</p><ul><li>我现在处于什么状态（起点 A）？</li><li>想达到什么状态（终点 B）？</li><li>如何衡量这一改变？</li><li>为了达成这一改变，需要做哪些改变？</li></ul><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/rethinkingLearning.png" alt=""></p><p>于是我们在自己那模糊而远大的雄心之下，开始了漫长的西西弗斯式的「壮举」：开始学习，然后无疾而终。</p><h2 id="学习的陷阱"><a href="#学习的陷阱" class="headerlink" title="学习的陷阱"></a>学习的陷阱</h2><p>如同「不是所有的感情都能够被命名」，也不是所有的学习都能被描述和评估，尤其当我们没有去主动思考内隐学习的时候。内隐学习(implicit learning)，指人们对复杂规则知识的无意识获取。</p><p>包括内隐学习在内的许多学习主题，都很容易偏离目标，以致于无法形成最终的改变，因为它们：</p><ul><li>影响范围很模糊</li><li>结果无法标准化/描述</li><li>检验周期很长</li><li>层级模糊</li></ul><h3 id="目标层面的「内隐」"><a href="#目标层面的「内隐」" class="headerlink" title="目标层面的「内隐」"></a>目标层面的「内隐」</h3><p>从现状 A 到目标 B，B 永远都像梦境中的理想伴侣——面目模糊。</p><p>我说我要学日语。但我不去问，「学会」的标准，是在旅行时能流利交流呢，还是能听懂 80% 日剧的对话呢，还是能通过考试呢，还是能熟练对照五十音图发音……我也没有问，这一改变需要通过哪些以往没有做过的事情来达成。我甚至没有问，为什么学这个的优先级比 xx 高，为什么是现在？</p><p>我说我要学编程。但我不去问，「学会」的标准，是能写出简单的脚本处理一些任务呢，还是跟程序员更顺畅地沟通呢，还是找到一份编程的工作呢……我也没有问，这一改变需要通过哪些以往没有做过的事情来达成。我甚至没有问，为什么学这个的优先级比 xx 高，为什么是现在？</p><p>我说我要学如何做决策。但我不去问，「学会」的标准，是工作中做出更有理据的决策呢，是提高个人投资的回报率呢，还是了解决策的过程……我也没有问，这一改变需要通过哪些以往没有做过的事情来达成。我甚至没有问，为什么学这个的优先级比 xx 高，为什么是现在？</p><p>以上都还只是目标容易识别和描述的学习。如果涉及到关系处理、自我觉察、个人成长、构建知识体系等等话题，提炼目标会更加困难。</p><h3 id="行为层面的内隐"><a href="#行为层面的内隐" class="headerlink" title="行为层面的内隐"></a>行为层面的内隐</h3><p>假如目标能够清晰描述，接下来有更多难题等着我们：</p><ul><li>从 A 到 B，存在哪些路径，是否存在最优路径？</li><li>路径可以拆分吗？由哪些部分组成？</li><li>每一步拆分的 B 又是什么？</li><li>共性/规则/规律是什么？如何描述？</li><li>如果难以描述，又怎么判断学习效果和改进步骤呢？</li></ul><h3 id="等级层面的内隐"><a href="#等级层面的内隐" class="headerlink" title="等级层面的内隐"></a>等级层面的内隐</h3><p>如果本身就在三界和五行中，要怎么跳出三界外，不在五行中呢？？</p><p>比如，德雷弗斯模型划分了新手到专家的五个阶段。当我们还处于新手阶段，怎么能想象出成为专家需要具备哪些条件，如何做到呢？</p><table><thead><tr><th>阶段</th><th>特点</th><th>概述</th></tr></thead><tbody><tr><td>新手</td><td>没有经验或很少经验（通过实施技术促进了思维改变）。不知道自己的行为是对是错。新手不是特别想要学习，只是想实现一个立竿见影的目标。不知道如何应付错误。新手需要一份指令清单。</td><td>Novices need recipes</td></tr><tr><td>高阶新手</td><td>可以独自尝试任务，但仍难以解决问题。想要快速获取信息，不想在此刻寻根究底，或者重新温习一遍基础知识。能够开始形成一些总体原则，但不是全貌。情境理解有限。</td><td>Advanced beginners don’t want the big picture.</td></tr><tr><td>胜任者</td><td>能够建立问题域的概念模型，并有效使用它们，可以独立解决自己遇到的问题，并开始考虑如何解决新的问题。开始寻求和运用专家的意见并有效利用。如果没有更多经验，在解决问题时，他们难以确定关注哪些细节。</td><td>Competents can troubleshoot.</td></tr><tr><td>精通者</td><td>需要全局思维，寻找并想了解更大的概念框架。会自我改进，反思以前是如何做的，并修改做法期望下一次表现得更好。会学习他人的经验，如案例研究、观察、从故事中学习。可以在不同情境中理解和运用格言经验之谈。可以充分利用思考和反馈。</td><td>Proficient practitioners can self-correct.</td></tr><tr><td>专家</td><td>专家是各个领域知识和信息的主要来源。他们总是不断的寻找更好的方法和方式去做事。他们有丰富的经验，可以在恰当的情境中选取和应用这些经验。他们著书、写文章、做巡回演讲。专家根据直觉工作，而不需要理由。专家知道哪些是无关紧要的细节，哪些是非常重要的细节，非常擅长做有针对性的特征匹配。</td><td>Experts work from intuition.</td></tr></tbody></table><p>因为这种种的「不可描述」，学习其实是一件不确定性蛮高的事情。如果没有充分启动元认知去理解和反思我们的学习行动，就容易用行动替代实质。</p><p>所以，学习的尝试和学习是两回事。</p><p>所以，看书和学习是两回事。</p><p>如果把看书的目的分为：<strong>参考资料、获得体验、启发思路、重塑三观/知识体系</strong>，我们惯常的读书习惯，其实都是以获得体验为主，尤其是虚构类的书籍。当然，获得体验本身就是非常有价值的目标，只不过这非常奢侈。</p><p>如果以学习为侧重而去读书，可能可以这样分配比例：</p><table><thead><tr><th>目的</th><th>书籍比例</th><th>精力投入</th></tr></thead><tbody><tr><td>重塑三观</td><td>0.1%</td><td>70%</td></tr><tr><td>参考资料</td><td>10%</td><td>15%</td></tr><tr><td>获得体验</td><td>8%</td><td>10%</td></tr><tr><td>启发思考</td><td>1.9%</td><td>5%</td></tr><tr><td>没有营养</td><td>80%</td><td>0%</td></tr></tbody></table><h2 id="更新「学习」这个概念"><a href="#更新「学习」这个概念" class="headerlink" title="更新「学习」这个概念"></a>更新「学习」这个概念</h2><p>从今天开始，往头脑的概念库中重新写入「学习」这个概念吧！</p><p>马奇在「经验的疆界」中提出，学习会在三个层面同时发生：</p><ol><li>学习做什么：例如寻找好的技术、战略或合作伙伴</li><li>学习如何做：例如精炼并改进在某技术、战略或合作伙伴上的胜任力</li><li>学习期盼什么：例如调整绩效目标（经常出问题，开始设定太高或太低后续没有调整）</li></ol><p>所以，学习并不是「做了哪些代表学习的举动」，而是在清醒知道<strong>为什么学、如何学、如何评估</strong>的前提下，从 A 到 B 的过程。<strong>如果没有（一定程度上可描述的）改变，学习相当于没有发生。</strong></p><p>这么看来，学习真是一件远比我们想象要深刻且有用的事情。低效的学习，大都来自于对「学习」概念本身的误解。</p><p>既然找出了大坑，下一篇我们来详细讨论，学习中最应该养成的习惯是什么。</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li><a href="https://book.douban.com/subject/25858893/" target="_blank" rel="noopener">心理学最佳入门（原书第2版）</a></li><li><a href="http://book.douban.com/subject/6687032/" target="_blank" rel="noopener">经验的疆界</a></li><li><a href="https://book.douban.com/subject/5346110/" target="_blank" rel="noopener">穷查理宝典</a></li><li><a href="https://book.douban.com/subject/26268555/" target="_blank" rel="noopener">程序员思维修炼</a></li><li><a href="https://book.douban.com/subject/5388442/" target="_blank" rel="noopener">变构模型-学习研究的新路径</a></li></ul><h3 id="HackYourself-大哉问系列"><a href="#HackYourself-大哉问系列" class="headerlink" title="HackYourself 大哉问系列"></a>HackYourself 大哉问系列</h3><ul><li><a href="http://www.uegeek.com/171226MyYear2017.html" target="_blank" rel="noopener">小哉问：年终总结写什么？ | 00’s Adventure</a></li><li><a href="http://www.uegeek.com/171223-Why-Learn-Programming.html" target="_blank" rel="noopener">大哉问04 - 为什么要学编程 | 00’s Adventure</a></li><li><a href="http://www.uegeek.com/171216HowToMakeMoney.html" target="_blank" rel="noopener">大哉问03 - 什么是赚钱之道？更新你的个人商业模式 | 00’s Adventure</a></li><li><a href="http://www.uegeek.com/171204HowToLoveYourself.html" target="_blank" rel="noopener">大哉问02 - 如何爱自己？拟一份爱的宣言 | 00’s Adventure</a></li><li><a href="http://www.uegeek.com/171126TimePerspective.html" target="_blank" rel="noopener">大哉问01 - 什么样的时间观值得拥有？ | 00’s Adventure</a></li><li><a href="http://www.uegeek.com/171112-HowToAskGoodQuestion.html" target="_blank" rel="noopener">用问题对话虚无 —— HackYourself 大哉问系列 | 00’s Adventure</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/HY_drawing.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我只想知道我将来会死在什么地方，这样我就可以永远不去那里啦。——查理·芒格&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="叽歪" scheme="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-    
-    
-      <category term="HackYourself" scheme="http://uegeek.com/tags/HackYourself/"/>
-    
-      <category term="大哉问" scheme="http://uegeek.com/tags/%E5%A4%A7%E5%93%89%E9%97%AE/"/>
-    
-      <category term="学习" scheme="http://uegeek.com/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="方法" scheme="http://uegeek.com/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
