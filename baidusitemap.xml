@@ -4,6 +4,42 @@
 
     
   <url>
+    <loc>http://uegeek.com/180706-make-noise-09.html</loc>
+    <lastmod>2018-07-06T03:33:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>MakeNoise09 - 压缩 Compression</title>
+        <pubTime>2018-07-06T03:31:22.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Music</tag>
+         
+        <tag>Sound</tag>
+         
+        <tag>声音</tag>
+         
+        <tag>Ableton Live</tag>
+         
+        <tag>Max/MSP</tag>
+         
+        <tag>EQ</tag>
+         
+        <tag>Compressor</tag>
+         
+        <tag>动态压缩</tag>
+         
+         
+           
+             
+              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/180703-make-noise-08.html</loc>
     <lastmod>2018-07-03T10:37:49.000Z</lastmod>
     <data>
@@ -1638,9 +1674,9 @@
         <title>Hack myself @ 2016</title>
         <pubTime>2016-12-31T02:50:04.000Z</pubTime>
         
-        <tag>2016</tag>
-         
         <tag>总结</tag>
+         
+        <tag>2016</tag>
          
          
            
