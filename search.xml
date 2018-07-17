@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[破解 AI 时代的焦虑 —— 从人机交互到人机协同创作]]></title>
+    <url>%2F180717-human-computer-symbiosis.html</url>
+    <content type="text"><![CDATA[这是 4 月做的一次分享。大概是我做过的分享中，现场讨论气氛最热烈的一次了。 最近抽空整理成文章，希望大家可以继续讨论这个有趣、有争议的话题。 为什么分享这个话题呢？ 我做了好多年交互设计的工作，所以学习和工作一直有一个离不开的主题——人机交互（Human-Computer Interaction）。 人机关系的演进什么是人机交互？我把它简单理解为： 人如何与机器或是某个复杂系统的沟通和互动过程。 更为完整的版本，请看我在知乎上的回答 什么是交互设计？ 比如，鼠标就是一个解决人和机器互动问题的经典产品。 现在大家都觉得鼠标再平常不过了，但是在当年，Douglas Engelbart 的这一项发明，极好地解决了人们在图形化计算机界面操纵屏幕元素的问题。为了表彰这项发明以及在人机交互领域的开拓式贡献，Douglas Engelbart 在 1997 年获得了「计算机界的诺贝尔奖」——图灵奖。 For an inspiring vision of the future of interactive computing and the invention of key technologies to help realize this vision. – Turing Award Citation 人和机器的对话、交互一直在演进。这也从一个侧面反映了人创造工具的历史： 人创造的工具越来越多样、复杂、强大。想想看，今天我们在手机上能完成多少事情。 于是，有人慢慢感到这种发展速度似乎不大对劲……奇点要来了，AlphaGo 也出现了。 随着深度学习热潮的演进，大家发现，以前为了让机器智能化而不得不做的很多工作，比如，符号化、标准化、模块化、输入大量专家知识、需要庞大的训练数据集、要做苦脏累的特征工程等等，现在都简化了。基本上，只要目标足够清晰、可操作，训练数据和计算资源足够，机器学习产生的结果就可以满足要求。 我个人也经历了一次切身的体验。 今年年初在上 Udacity 的 Deep Learning Nano Degree 课程的时候，最后一个实践项目，是基于人脸图像库，用生成对抗网络（GAN）算法自动生成人脸。 虽然在学习过程中，早已对算法能实现的结果有所预期。但是当我把程序放到 AWS 的 GPU 上面跑了不到二十分钟，看到结果时还是忍不住隐隐感到机器的强大和压迫。 这是最开始几个训练迭代生成的模糊不清的轮廓： 这是十几分钟训练结束后生成的人脸： 说一点儿都不焦虑是假的。 何况各种媒体还铺天盖地强化这种焦虑，今天是一百零八种会被机器取代的工作，明天是哪个比赛机器又战胜了人…… 于是大家经不住会问： 似乎只有像诗词、小说、爵士乐、即兴表演这些领域，机器看起来就是不太擅长。 但，也不好说。 Paul 是一个专门给人画肖像画的机器。从 2011 年至今已经创做了非常多的作品。看起来非常有艺术感，不是吗？ 有时候在焦虑之余，又忍不住会想：这种焦虑到底从何而来？ 如果看过莱考夫「我们赖以生存的隐喻」的同学都知道，隐喻 Metaphor 对我们的影响有多么大。仔细想想，感到机器的威胁，是不是也源于人机关系的一些基本隐喻？ 我们基本上都是以一种对立或一分为二的方式来看待这些基本词汇： 看到这些词汇，我们会下意识地觉得它们是对立关系。逻辑、精确、冰冷的工程思维，怎么跟想象、感性、个性、创作融为一炉呢？ 这大概就是问题所在了。 隐喻和可能语言有边界。这是语言能高效传递信息的代价之一。 所以，打破语言或者说概念的界限，也许就是找到新出路的起点。 （PS. 在心理咨询中，咨询师很重要的一部分工作，是帮助来访者呈现问题、reframe 问题，而不是直接插手去替他解决问题。） 其实早在 50 多年前，就有人探讨过人机关系的「未来简史」。 美国心理学家和计算机科学家 Licklider 在 Man-Computer Symbiosis 这篇论文中，讨论人跟机器的关系存在什么样的可能性，提出「人机共生」的概念。 快 60 年过去了，技术的发展让「蠢机器」第一次有可能成为人类的「好基友」，我们为什么首先感到的是焦虑而不是兴奋呢？ 还记得 2016 年，在 AlphaGo 战胜李世石后，跟安猪老师在大理有过一次讨论。当时我的感慨是，为 AlphaGo 的胜利感到挺开心的，但并不是因为我是技术的脑残粉，而是因为我觉得到了这个时候，人不得不去面对这样一个问题： 人到底擅长什么？ 也就是说，当接受生物智能无法跟上非生物智能的发展时： 人到底有哪些可以让机器「羡慕」（当然，机器不会有这种情绪）的天赋呢？ 至今我还没有答案，但我想，大概会包括：直觉、洞察力、探索和意外的创造。人欣赏「意外」的审美、运用「意外」的创造力，应该会长期秒杀机器。 人跟机器最大的区别到底是什么？ 我一直在问自己这个问题。 意图，可能是现阶段人跟机器最大的差别。 人因为时间、空间、认知方面的三大局限，因为生命时长极其有限、可触达的空间极其有限、工作记忆（内存）极其有限，决定了人类的一些基本 drive 和价值观。人的美妙与荒谬，可能都来自于两行二选一的核心代码： Be numb/sober and Duplicate Be insane/self-distroying and Love 所以我（naive地）认为，突破时间、空间、认知限制，渴望无限，是人类物种永恒的追求，换一个词来概括，那就是——意图。 我们在基本意图上发展出复杂的能力，会体会微妙的情感，会追求意义，会审美、表达、共情，会讲故事和构建社会关系…… 而机器，无所不能，但就是没有意图！ 这样看来，现在难道不是人类最好的时代吗？有一个毫无私心、任劳任怨、潜力无限的助手，为什么我们担心的是被助手取代，而不是兴高采烈地放开手脚去创造呢？ 人机关系的新阶段无论技术如何发展，人类从来没有停止过创造。 这是用 Google DeepDream 算法生成的作品： DeepDream 网站的首页，已经为人机关系的新时代做了注脚： 艺术家们一直在尝试探索人机关系，可能是这样的： 也可能是这样的： 上图是一位叫做 Dragan iLiC 艺术家的项目，人充当机器的笔刷，由机械臂控制着人去作画。 在分享的现场，这张图引发了热烈的讨论。有的小伙伴表示，这样做的目的到底是什么，她看不出任何意义。有的小伙伴认为这是对人机关系一种悲观的表达。有的小伙伴的态度则更为中立而开放…… 我想，这恰恰就是艺术家的目的吧：激发人们的反思与讨论。并不存在对与错，只是 raise questions，这也许就是最大的善意。 音乐，人机协同即将爆发的领域？最近关注音乐和技术结合的领域比较多，越来越觉得音乐也许会迎来人机共创的繁荣时期。 音乐本身是符号化、形式化非常强的「语言」。音乐的规律经过数百年的研究和沉淀，几乎已经没有太多规律上的「未知和秘密」，更多的变化会来自文化思潮影响下的风格探索。 算法作曲早已不是什么新鲜事，基于 AI 自动生成音乐已经有很多成熟的应用。甚至是在对即兴表演要求相当高的爵士乐，也已经有人机共同即兴表演的尝试。比如 Al Biles 教授的 GenJam 项目，从 2005 年至今，已经演出过数十场。 GenJam’s Journey_腾讯视频 而去年的 Qosmo AI DJ 项目也展示了人类 DJ 和 AI DJ 一起 Jam 的效果~ AI DJ Project 人工智能 DJ 与人类合作打碟_腾讯视频 何以解忧？ 这是最坏的时代 也是最好的时代 这取决于我们现在每做的一个决定、每投入的分分秒秒。 回到主题，如何破解 AI 时代的焦虑呢？ 以下是 00 给（自己）的解药： 回归创造者的使命，装备上创造所需要的心、眼、脑、手，去看去爱去体验。知识可以学习，但智慧更多是一种体验。把技术当成伙伴和切磋的对手，去行动，去试验，去创造。 最后 Ref Doug Engelbart 1968 Demo PATRICK TRESSET | Licklider - Man-Computer Symbiosis.pdf www.draganilic.org GenJam]]></content>
+      <categories>
+        <category>动手</category>
+      </categories>
+      <tags>
+        <tag>交互设计</tag>
+        <tag>AI</tag>
+        <tag>ArtxCode</tag>
+        <tag>Deisgn</tag>
+        <tag>人工智能</tag>
+        <tag>HCI</tag>
+        <tag>人机交互</tag>
+        <tag>人机共生</tag>
+        <tag>艺术</tag>
+        <tag>跨界</tag>
+        <tag>创新</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MakeNoise10 - 延时和混响 Delay & Reverb]]></title>
     <url>%2F180708-make-noise-10.html</url>
     <content type="text"><![CDATA[MakeNoise01 - 声音是什么？ MakeNoise02 - 频率和音高 MakeNoise03 - 振幅/响度/音量/增益 大乱斗 MakeNoise04 - 波形和相位 MakeNoise05 - Envelope 包络（ADSR） MakeNoise06 - 音色和均衡器(EQ) MakeNoise07 - 音频的分辨率 Sample rate/Bit depth MakeNoise08 - 振荡器和滤波器 MakeNoise09 - 压缩 Compression 音乐是时间的艺术。 时间也是信号的天然属性。而声音设计，同时还是空间的艺术。 声音必定产生在某个空间当中，人对声音的印象和记忆，多少都包含了对空间线索的直觉和感受。比如，密友之间的低语声，比较可能发生在一个小房间里；而轮船驶过的汽笛声，大概是在一个临海、开阔的码头，夹杂着繁忙的机械马达声和喧闹的人声。如果是清晨的港湾，大概又是不同的景象了。 调整声音信号的方式有很多，延迟（delay）是必不可少的一种。混响（reverb）是塑造声音的空间感的秘密。今天我们就来一探究竟吧。 Delay 延时 Delay is an audio effect and an effects unit which records an input signal to an audio storage medium, and then plays it back after a period of time. — Wiki￼ 延时可以在时间上平移一个信号。延迟效果器储存并保留音频信号一段时间后再将其释放。 延时是很多音效的核心，比如混响 Reverb、滤波 Filters 、和唱 Chorusing、Flanger（镶边，利用原音叠上稍微延迟的音，产生出金属感的回旋声）。 通过控制多条延迟的声音，可以产生回声效果。以一定顺序衰减并释放每条延迟声音，可以模拟出真实的回声效果。 延迟效果有很多种形式。比如在 Pink Floyd 的 Comfortably Numb 里面，第一句歌词「Hello…Hello…Hello」是一个长延迟的效果。 Delay 的参数： Time/tap: the amount of time between the dry, unprocessed signal and the wet, processed signal. Repeat/feedback: controls how many repeats of a delayed sound Reverb 混响混响可以帮助我们营造合适的空间「场所感」。 混响(reverberation)是声源发音停止后，声音继续存在的声学现象。—wiki 声音在空间中传播，会遇到不同的物体，发生反射（reflection）、吸收（absorption）和扩散（diffusion）。混响产生于声波的传播被墙壁或周围障碍物反射而滞后于发声。￼ 不同的材料对声音的吸收效果不同，常常需要精密的计算和搭配，才能营造出理想的声音效果。 混响时间是指从其最初的反射声强度衰落 60 dB (降低到 -60dB)所花费的时间。￼ 延时时间的最小值，应该至少为混响时间的四分之一，而且延时的长度应为质数（或各延时时长是互质的）。合理的混响效果建议每秒有 1000 个回声。 室内环境的声学效果涉及非常复杂的声学知识，尤其是录音棚和音乐厅。 下图是 00 所拍摄的上海交响乐团音乐厅的一角，舞台上方使用了很多木质材料，来获得最佳的混响和其他声音效果。 在 Ableton Live 里处理混响下面来看看 Ableton Live 里面是如何调整音频的混响的。 混响的参数： Dry/Wet: 没有混响/最大混响 Input: 控制对多少原始信号做混响处理 Reflect: 混响初期（early reflection），对混响感知影响更大 Diffuse: 混响末期（late reflection） Size: 模拟不同大小的空间的混响 (对 Reflect 的影响大于 Diffuse) Decay time: 混响消失所需时间 Predelay: 原始信号做混响处理之前的等待时间 以下视频详细讲解了 Reverb 效果器的使用： Reverb in Ableton Live_腾讯视频 Max/MSP 里的延时和混响Max/MSP 有丰富的控制延时的方法和对象。 delay~ tapin/tapout teeth~ 还有处理非信号的延时器：pipe 如果对如何从信号层面实现混响有兴趣，可以到 Max/MSP 里面拆开 BEAP 组件里面的 Reverb2，看看到底是怎么实现的。 (小编 0 已晕…… 后会有期) Ref Audio Engineering 101 - A Beginner’s Guide to Music Production Reverberation - Wikiwand Acoustic Sound Absorption - Acoustic Panels Review Delay (audio effect) - Wikiwand) Comb filter - Wikiwand 混音指南（2016） | À quoi bon]]></content>
@@ -1746,8 +1767,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>哥特式</tag>
         <tag>巴洛克</tag>
         <tag>布拉格</tag>
@@ -1766,8 +1787,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>东正教</tag>
         <tag>基督教</tag>
         <tag>天主教</tag>
@@ -1785,8 +1806,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>捷克</tag>
       </tags>
   </entry>
@@ -1800,8 +1821,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>奥地利</tag>
         <tag>哈布斯堡王朝</tag>
         <tag>维也纳</tag>
@@ -1817,8 +1838,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>捷克</tag>
       </tags>
   </entry>
@@ -1831,9 +1852,9 @@
       </categories>
       <tags>
         <tag>Travel</tag>
+        <tag>历史</tag>
         <tag>中欧</tag>
         <tag>匈牙利</tag>
-        <tag>历史</tag>
         <tag>奥地利</tag>
         <tag>捷克</tag>
         <tag>斯洛伐克</tag>
@@ -1848,8 +1869,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>历史</tag>
         <tag>人类简史</tag>
+        <tag>历史</tag>
       </tags>
   </entry>
   <entry>
