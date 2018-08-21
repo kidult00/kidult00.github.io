@@ -113,7 +113,8 @@
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jittermatrix_d.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jittermatrix_e.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jittermatrix_f.png">
-<meta property="og:updated_time" content="2018-08-21T15:58:47.000Z">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/main-qimg-0c6f60196dbaaaa7a2f9178fff29d64d-c.jpg">
+<meta property="og:updated_time" content="2018-08-21T16:13:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Max&#x2F;MSP&#x2F;Jitter 教程 - 什么是矩阵？">
 <meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Max-title1.jpg">
@@ -449,7 +450,7 @@
       
         <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title1.jpg" alt=""></p>
 <a id="more"></a>
-<p>00 翻译自 <a href="https://docs.cycling74.com/max7/tutorials/jitterchapter00a_whatisamatrix" target="_blank" rel="noopener">What is a Matrix?</a></p>
+<p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档： <a href="https://docs.cycling74.com/max7/tutorials/jitterchapter00a_whatisamatrix" target="_blank" rel="noopener">What is a Matrix?</a></p>
 <p>矩阵即网格，网格的每个格子都包含一些信息。例如，棋盘是一个矩阵，每个方格包含特定的信息：有某个棋子，或没有棋子。</p>
 <p><img src="https://docs.cycling74.com/max7/tutorials/images/jittermatrix_a.png" alt=""></p>
 <p>方便起见，假设矩阵中每个格子的「信息」都是数字。</p>
@@ -474,6 +475,7 @@
 <p>使用这个概念框架，我们可以在需要时单独处理每个平面（以及颜色信息的每个通道）。例如，想要增加图像的红色，只需增加矩阵红色平面中的所有值，保持其他值不变。</p>
 <p>一般在 Jitter 中用四个矩阵的数据-α/红/绿/蓝的 表示视频。这些平面的编号从 0 到 3，因此 Alpha 通道位于平面 0 中，RGB 通道位于平面 1,2 和 3 中。</p>
 <h3 id="矩阵中的数据"><a href="#矩阵中的数据" class="headerlink" title="矩阵中的数据"></a>矩阵中的数据</h3><p>计算机用不同格式来存储数字。如果知道想要存储的数字类型，就可以仅为每个数字分配真正需要的空间来节省内存。例如，用 ASCII 0~255 存储字母字符，只需要 8 位（2 的 8 次方）的空间来存储每个字符。如果想要存储更大范围的数字，可能会使用 32 位（包含的整数范围从 -2,147,483,648 到 2,147,483,647）。为了表示带小数部分的数字，例如 3.1416，我们使用浮点数二进制系统，32 位或 64 位数字的某些位表示值的尾数，其他位表示指数。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/main-qimg-0c6f60196dbaaaa7a2f9178fff29d64d-c.jpg" alt=""></p>
 <p>用 Max 编程的大多数情况下，不需要知道 Max 如何存储数字。但是用 MSP 处理数字音频时，最好了解 MSP 什么情况下使用浮点数（如果不小心用整数替代了浮点数，程序可能会报错）。在 Jitter 中，了解计算机的存储类型非常有帮助。</p>
 <p>Jitter 矩阵可以将数字存储为 64 位浮点（也称为双精度浮点或双精度），32 位浮点（简称浮点数），32 位整数（称为long int，或者只是int）和 8 位字符（称为char）。某些 Jitter 对象仅以一种格式存储，因此不必指定存储类型。但是其他 Jitter 对象允许多种方式存储，因此必须指定数据类型为 char / long / float32 / float64 等。</p>
 <blockquote>
