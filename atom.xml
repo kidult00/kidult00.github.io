@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-07-17T15:14:11.000Z</updated>
+  <updated>2018-08-21T15:58:47.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Max/MSP/Jitter 教程 - 什么是矩阵？</title>
+    <link href="http://uegeek.com/180821-jitter-01.html"/>
+    <id>http://uegeek.com/180821-jitter-01.html</id>
+    <published>2018-08-21T15:57:01.000Z</published>
+    <updated>2018-08-21T15:58:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title1.jpg" alt=""></p><a id="more"></a><p>00 翻译自 <a href="https://docs.cycling74.com/max7/tutorials/jitterchapter00a_whatisamatrix" target="_blank" rel="noopener">What is a Matrix?</a></p><p>矩阵即网格，网格的每个格子都包含一些信息。例如，棋盘是一个矩阵，每个方格包含特定的信息：有某个棋子，或没有棋子。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jittermatrix_a.png" alt=""></p><p>方便起见，假设矩阵中每个格子的「信息」都是数字。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jittermatrix_b.png" alt=""><br>电子表格是二维矩阵</p><p>水平的数据组称为<code>行</code>，垂直的数据组称为<code>列</code>。在路线图、棋盘或电子表格中，通常会使用字母和数字标记行和列，这样就可以表示任意一个单元格的位置。在上面例子中，单元格 C3 的数值为 0.319。</p><p>上面的矩阵例子是二维的——宽度和高度。在 Jitter 中，矩阵维度范围在 1~32 维之间。（一维矩阵对应编程中的数组 array。Max 中有一些对象用于存储数组，例如 <code>table</code> 和 <code>multislider</code>。不过有时候 Jitter 中的一维矩阵更适用）虽然在纸上描绘起来有点困难，但我们仍然可以想象一个有宽度/高度/深度的立方体三维矩阵。（例如，矩阵宽/高/深 分别有 3 个单元，总共 3x3x3 = 27个单元）</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jittermatrix_c.png" alt=""></p><p>一个 3x3x3 维矩阵共有 27 个单元</p><p>四维或更高维度的矩阵，相当挑战我们的视觉想象力和描述能力，但它们确实存在。</p><h3 id="视频屏幕作为矩阵"><a href="#视频屏幕作为矩阵" class="headerlink" title="视频屏幕作为矩阵"></a>视频屏幕作为矩阵</h3><p>视频屏幕由微小的单个像素组成，每个像素都显示特定的颜色。在计算机显示器上，屏幕的分辨率通常是 1024 像素宽，768 像素高，也可能是800x600 或 640x480。在电视监视器中，分辨率大约为 640×480。上述屏幕的宽高比为 4:3。</p><p>在较宽的 DV 格式中，宽高比为3:2，图像通常为 720x480 像素。高清晰度电视（HDTV）指定了另一种宽高比 16:9。在教程中通常使用 4:3 的宽高比，最常见的尺寸小于 320x240 甚至 160x120，这样可以节省 Max patch 的大小。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jittermatrix_d.png" alt=""></p><p>常见的像素尺寸</p><p>单帧标准视频由 640×480 = 307,200 个像素组成。每个像素显示一种颜色。为了用数字表示眼睛可分辨的像素的颜色，我们需要范围非常大的颜色值。</p><p>用数字表示颜色值有许多方式。描述计算机中每个像素颜色的标准方法，是将颜色分解为红色、绿色和蓝色（也称为RGB），以及透明度（称为Alpha通道）。因此，大多数计算机程序将单个像素的颜色，存储为四个单独的数字，分别表示 α，红色，绿色和蓝色。这种四通道颜色表示方案通常称为 ARGB 或 RGBA。</p><p>Jitter 也遵循这个惯例。为了使矩阵的每个单元表示一个颜色像素，每个单元都包含四个数值（α/红/绿/蓝）。因此存储视频帧数据的矩阵，实际上在每个单元格中包含四个数值。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jittermatrix_e.png" alt=""><br>矩阵的每个单元格包含多个数字</p><p>因此，视频帧在 Jitter 中是二维矩阵，每个单元表示帧的像素，并且每个单元包含 α/红/绿/蓝 四个值，范围从 0 到 255。为了区分多单元格与矩阵维度的概念，Jitter 引入了平面(plane)的概念。</p><h3 id="什么是-plane？"><a href="#什么是-plane？" class="headerlink" title="什么是 plane？"></a>什么是 plane？</h3><p>为矩阵中的数字分配内存时，Jitter 需要知道每个维度的范围 - 例如，320x240 - 以及每个单元格中要保存的值的数量。为了跟踪单元格中的不同值，Jitter 把<strong>单元格看做位于某个单独平面上，因此我们将视频帧视为四个数据平面的二维矩阵</strong>。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jittermatrix_f.png" alt=""></p><p>矩阵每个单元中的值存在于四个虚拟平面上</p><p>使用这个概念框架，我们可以在需要时单独处理每个平面（以及颜色信息的每个通道）。例如，想要增加图像的红色，只需增加矩阵红色平面中的所有值，保持其他值不变。</p><p>一般在 Jitter 中用四个矩阵的数据-α/红/绿/蓝的 表示视频。这些平面的编号从 0 到 3，因此 Alpha 通道位于平面 0 中，RGB 通道位于平面 1,2 和 3 中。</p><h3 id="矩阵中的数据"><a href="#矩阵中的数据" class="headerlink" title="矩阵中的数据"></a>矩阵中的数据</h3><p>计算机用不同格式来存储数字。如果知道想要存储的数字类型，就可以仅为每个数字分配真正需要的空间来节省内存。例如，用 ASCII 0~255 存储字母字符，只需要 8 位（2 的 8 次方）的空间来存储每个字符。如果想要存储更大范围的数字，可能会使用 32 位（包含的整数范围从 -2,147,483,648 到 2,147,483,647）。为了表示带小数部分的数字，例如 3.1416，我们使用浮点数二进制系统，32 位或 64 位数字的某些位表示值的尾数，其他位表示指数。</p><p>用 Max 编程的大多数情况下，不需要知道 Max 如何存储数字。但是用 MSP 处理数字音频时，最好了解 MSP 什么情况下使用浮点数（如果不小心用整数替代了浮点数，程序可能会报错）。在 Jitter 中，了解计算机的存储类型非常有帮助。</p><p>Jitter 矩阵可以将数字存储为 64 位浮点（也称为双精度浮点或双精度），32 位浮点（简称浮点数），32 位整数（称为long int，或者只是int）和 8 位字符（称为char）。某些 Jitter 对象仅以一种格式存储，因此不必指定存储类型。但是其他 Jitter 对象允许多种方式存储，因此必须指定数据类型为 char / long / float32 / float64 等。</p><blockquote><p>重要概念：在使用 Jitter 操作视频时，需要了解矩阵中数据存储的知识。矩阵默认以 ARGB 格式保存视频数据，每个单元的数值范围是 0~255 （一般在四个平面中）。最常见的数据存储类型是 char，并不是因为存储的是字符。最常存储的值通常是数字，只需要 256 个不同的可能值来表示，因此 8 位的 char 就足够了。视频数据量一般较大，所以 Jitter 中大多数矩阵对象默认使用 char 存储类型，以减少存储空间。对于单色（灰度）图像或视频，单个 char 数据平面就足够了。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Max-title1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
+    
+      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
+    
+      <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
+    
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>破解 AI 时代的焦虑 —— 从人机交互到人机协同创作</title>
@@ -40,9 +70,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Deisgn" scheme="http://uegeek.com/tags/Deisgn/"/>
-    
       <category term="人工智能" scheme="http://uegeek.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+      <category term="Deisgn" scheme="http://uegeek.com/tags/Deisgn/"/>
     
       <category term="HCI" scheme="http://uegeek.com/tags/HCI/"/>
     
@@ -724,40 +754,6 @@
       <category term="Backpro" scheme="http://uegeek.com/tags/Backpro/"/>
     
       <category term="反向传播" scheme="http://uegeek.com/tags/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>码以致用03 - 用 Pandas 分析爬虫抓取的数据</title>
-    <link href="http://uegeek.com/180118-python-pandas-data-analysis.html"/>
-    <id>http://uegeek.com/180118-python-pandas-data-analysis.html</id>
-    <published>2018-01-18T09:04:46.000Z</published>
-    <updated>2018-01-18T09:10:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/robot_rock_dribbble.jpg" alt=""></p><a id="more"></a> <p>上一篇，我们<a href="http://www.uegeek.com/180112python-scrapy-jdxl.html" target="_blank" rel="noopener">用 Scrapy 从简单心理网站上抓取了心理咨询师的信息</a>。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/jdxlScrapyOutput.png" alt=""></p><p>接下来试着分析一下咨询师的价格。</p><h3 id="如何去掉某一列中不需要的字符？"><a href="#如何去掉某一列中不需要的字符？" class="headerlink" title="如何去掉某一列中不需要的字符？"></a>如何去掉某一列中不需要的字符？</h3><p>在 <code>price</code> 列中，数据格式是 <code>600 元/次</code>。很明显，中文字符会给统计价格带来不便，需要想办法去掉。</p><ul><li>取 <code>price</code> 列：<code>df[&#39;name&#39;]</code></li><li>去掉<code>元/次</code> 字符：<code>str.rstrip()</code></li><li>把剩下字符转换成数字：<code>pd.to_numeric</code></li></ul><p>Pandas 语句可以这样写：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'price'</span>].str.rstrip(<span class="string">'元/次'</span>).apply(pd.to_numeric)</span><br></pre></td></tr></table></figure><p>结果：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-01-18%20at%203.53.32%20PM.png" alt=""></p><h3 id="如何统计价格？"><a href="#如何统计价格？" class="headerlink" title="如何统计价格？"></a>如何统计价格？</h3><p>用 Pandas 做基本的数据统计如均值、最大值、最小值等，非常方便，分别用 <code>mean()</code>, <code>max()</code>, <code>min()</code>就可以：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"平均价格：&#123;:.1f&#125;元 \n最高价格：&#123;&#125;元 \n最低价格：&#123;&#125;元"</span>.format(df[<span class="string">'price'</span>].mean(),df[<span class="string">'price'</span>].max(),df[<span class="string">'price'</span>].min()))</span><br></pre></td></tr></table></figure><ul><li>平均价格：570.9元 </li><li>最高价格：3000元 </li><li>最低价格：100元</li></ul><p>另外，Pandas 还提供了 <code>describe()</code> 函数，快速给出概要统计值：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-01-18%20at%203.57.36%20PM.png" alt=""></p><p>然后单独取出收费最高和最低的咨询师资料：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df.loc[df[<span class="string">'price'</span>].idxmax()]</span><br><span class="line">df.loc[df[<span class="string">'price'</span>].idxmin()]</span><br></pre></td></tr></table></figure><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-01-18%20at%203.58.52%20PM.png" alt=""></p><h3 id="如何统计咨询师介绍里的词频？"><a href="#如何统计咨询师介绍里的词频？" class="headerlink" title="如何统计咨询师介绍里的词频？"></a>如何统计咨询师介绍里的词频？</h3><p><strong>方法 1 ：用 jieba 分词，用 Counter 统计</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line"><span class="comment"># 单独导出咨询师介绍列</span></span><br><span class="line">df[<span class="string">'info'</span>].to_csv(<span class="string">'info.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'info.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    text = f.read()</span><br><span class="line"></span><br><span class="line">wordlist = Counter()</span><br><span class="line">words = jieba.cut(text)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">    <span class="keyword">if</span> len(word) &gt; <span class="number">1</span>: </span><br><span class="line">        wordlist[word] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen_cloud_word</span><span class="params">()</span>:</span></span><br><span class="line">    words = []</span><br><span class="line">    <span class="keyword">for</span> word,cnt <span class="keyword">in</span> wordlist.most_common(<span class="number">30</span>):</span><br><span class="line">        words.append(word)</span><br><span class="line">    <span class="keyword">return</span> words</span><br></pre></td></tr></table></figure><p>列出前 30 个高频词：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-01-18%20at%204.10.14%20PM.png" alt=""></p><p><strong>方法 2 ：用 wordcloud 直接制作标签云</strong></p><p>word cloud 是一个 python 的标签云生成库，可以直接输入文本，得到标签云图片，还可以定制图片形状和颜色，小巧好用。(<a href="https://github.com/amueller/word_cloud" target="_blank" rel="noopener">https://github.com/amueller/word_cloud</a>)</p><p>结合 matplotlib，很快就可以画出高频词的标签云：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line">%config InlineBackend.figure_format=<span class="string">'retina'</span></span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud, ImageColorGenerator</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">d = path.dirname(<span class="string">'info.txt'</span>)</span><br><span class="line"><span class="comment"># 设置字体</span></span><br><span class="line">font = <span class="string">r'/Users/kidult/Library/Fonts/MFKeSong_Noncommercial-Regular.TTF'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Read the whole text</span></span><br><span class="line">text = open(path.join(d, <span class="string">'info.txt'</span>)).read()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 排除词</span></span><br><span class="line">stopwords=(<span class="string">'Dr'</span>,<span class="string">'of'</span>,<span class="string">'to'</span>,<span class="string">'and'</span>,<span class="string">'The'</span>,<span class="string">'in'</span>,<span class="string">'zx'</span>,<span class="string">'至今'</span>,<span class="string">'中国'</span>,<span class="string">'同时'</span>,<span class="string">'当然'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用图片截取并取色</span></span><br><span class="line">heart_coloring = np.array(Image.open(path.join(d, <span class="string">"heart.png"</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Generate a word cloud image</span></span><br><span class="line">wordcloud = WordCloud(max_words=<span class="number">80</span>, background_color=<span class="string">'white'</span>, mask=heart_coloring,</span><br><span class="line">                      max_font_size=<span class="number">60</span>, relative_scaling=<span class="number">0.4</span>, font_path=font,stopwords=stopwords, random_state=<span class="number">42</span>)</span><br><span class="line">wordcloud.generate(text)</span><br><span class="line"></span><br><span class="line">image_colors = ImageColorGenerator(heart_coloring)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">8</span>))</span><br><span class="line">plt.axis(<span class="string">"off"</span>)</span><br><span class="line">plt.imshow(wordcloud.recolor(color_func=image_colors), interpolation=<span class="string">"bilinear"</span>);</span><br></pre></td></tr></table></figure><p>结果如下：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/jdxl-wordcloud.png" alt=""></p><p>完整的 Jupyter Notebook，请查看 <a href="https://github.com/kidult00/scrapy-jdxl/blob/master/jdxl/output/jdxl_experts_analysis.ipynb" target="_blank" rel="noopener">00 的 Github</a>。</p><iframe src="http://nbviewer.jupyter.org/github/kidult00/scrapy-jdxl/blob/master/jdxl/output/jdxl_experts_analysis.ipynb" width="780" height="500"></iframe><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li><a href="http://blog.csdn.net/weixin_37226516/article/details/64134643" target="_blank" rel="noopener">PANDAS 数据合并与重塑（concat篇） - CSDN博客</a></li><li><a href="http://blog.csdn.net/u010770993/article/details/70312506" target="_blank" rel="noopener">初学pandas（八）条件选取行的便捷… - CSDN博客</a></li><li><a href="http://blog.csdn.net/zhili8866/article/details/68134481" target="_blank" rel="noopener">pandas数据清洗，排序，索引设置，数据选取 - CSDN博客</a></li><li><a href="https://github.com/amueller/word_cloud" target="_blank" rel="noopener">amueller/word_cloud: A little word cloud generator in Python</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/robot_rock_dribbble.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-    
-    
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
-    
-      <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
-    
-      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="爬虫" scheme="http://uegeek.com/tags/%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="Scrapy" scheme="http://uegeek.com/tags/Scrapy/"/>
-    
-      <category term="Pandas" scheme="http://uegeek.com/tags/Pandas/"/>
-    
-      <category term="数据分析" scheme="http://uegeek.com/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
   </entry>
   

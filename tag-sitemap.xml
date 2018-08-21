@@ -1325,13 +1325,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Max-MSP/</loc>
-        <lastmod>2018-07-08T05:04:41.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/tags/Delay/</loc>
         <lastmod>2018-07-08T05:04:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1381,7 +1374,7 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/ArtxCode/</loc>
+        <loc>http://uegeek.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
         <lastmod>2018-07-17T15:14:11.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1389,13 +1382,6 @@
 
     <url>
         <loc>http://uegeek.com/tags/Deisgn/</loc>
-        <lastmod>2018-07-17T15:14:11.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
         <lastmod>2018-07-17T15:14:11.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1439,6 +1425,41 @@
     <url>
         <loc>http://uegeek.com/tags/%E5%88%9B%E6%96%B0/</loc>
         <lastmod>2018-07-17T15:14:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/ArtxCode/</loc>
+        <lastmod>2018-08-21T15:58:47.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Max-MSP/</loc>
+        <lastmod>2018-08-21T15:58:47.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Jitter/</loc>
+        <lastmod>2018-08-21T15:58:47.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E8%A7%86%E9%A2%91/</loc>
+        <lastmod>2018-08-21T15:58:47.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/</loc>
+        <lastmod>2018-08-21T15:58:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
