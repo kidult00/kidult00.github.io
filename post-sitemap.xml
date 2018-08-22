@@ -8,7 +8,15 @@
 
     <url>
         <loc>http://uegeek.com/180821-jitter-01.html</loc>
-        <lastmod>2018-08-21T16:13:58.000Z</lastmod>
+        <lastmod>2018-08-22T09:24:56.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/180822-jitter-02.html</loc>
+        <lastmod>2018-08-22T09:24:21.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

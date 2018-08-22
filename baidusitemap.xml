@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://uegeek.com/180821-jitter-01.html</loc>
-    <lastmod>2018-08-21T16:13:58.000Z</lastmod>
+    <lastmod>2018-08-22T09:24:56.000Z</lastmod>
     <data>
         <display>
-        <title>Max/MSP/Jitter 教程 - 什么是矩阵？</title>
+        <title>Max/MSP/Jitter 教程 01 - 什么是矩阵？</title>
         <pubTime>2018-08-21T15:57:01.000Z</pubTime>
         
         <tag>ArtxCode</tag>
@@ -20,6 +20,40 @@
         <tag>视频</tag>
          
         <tag>矩阵</tag>
+         
+        <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/180822-jitter-02.html</loc>
+    <lastmod>2018-08-22T09:24:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>Jitter 教程 02 - Jitter 对象的属性(attributes)</title>
+        <pubTime>2018-08-22T09:20:13.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Max/MSP</tag>
+         
+        <tag>Jitter</tag>
+         
+        <tag>视频</tag>
+         
+        <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
          
          
            
@@ -2706,9 +2740,9 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>历史</tag>
+         
+        <tag>Travel</tag>
          
         <tag>中欧</tag>
          
@@ -4084,9 +4118,9 @@
         <title>读书笔记-信息设计</title>
         <pubTime>2010-12-26T15:10:45.000Z</pubTime>
         
-        <tag>可视化</tag>
-         
         <tag>Note</tag>
+         
+        <tag>可视化</tag>
          
         <tag>Information design</tag>
          
@@ -5236,9 +5270,9 @@
         <title>中欧四国扫(ba)盲(gua)帖之一：“中欧”还是“东欧”？</title>
         <pubTime>2015-09-18T13:37:38.000Z</pubTime>
         
-        <tag>Travel</tag>
-         
         <tag>历史</tag>
+         
+        <tag>Travel</tag>
          
         <tag>中欧</tag>
          
@@ -5270,9 +5304,9 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>历史</tag>
+         
+        <tag>Travel</tag>
          
         <tag>中欧</tag>
          
@@ -5298,9 +5332,9 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>历史</tag>
+         
+        <tag>Travel</tag>
          
         <tag>中欧</tag>
          
@@ -5326,9 +5360,9 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>历史</tag>
+         
+        <tag>Travel</tag>
          
         <tag>中欧</tag>
          
@@ -5358,9 +5392,9 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>历史</tag>
+         
+        <tag>Travel</tag>
          
         <tag>中欧</tag>
          

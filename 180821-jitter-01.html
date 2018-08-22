@@ -82,7 +82,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ArtxCode,Max/MSP,Jitter,视频,矩阵," />
+  <meta name="keywords" content="ArtxCode,Max/MSP,Jitter,视频,矩阵,教程,Creative Coding," />
 
 
 
@@ -100,9 +100,9 @@
 
 
 
-<meta name="keywords" content="ArtxCode,Max&#x2F;MSP,Jitter,视频,矩阵">
+<meta name="keywords" content="ArtxCode,Max&#x2F;MSP,Jitter,视频,矩阵,教程,Creative Coding">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Max&#x2F;MSP&#x2F;Jitter 教程 - 什么是矩阵？">
+<meta property="og:title" content="Max&#x2F;MSP&#x2F;Jitter 教程 01 - 什么是矩阵？">
 <meta property="og:url" content="http://uegeek.com/180821-jitter-01.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
@@ -114,9 +114,9 @@
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jittermatrix_e.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jittermatrix_f.png">
 <meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/main-qimg-0c6f60196dbaaaa7a2f9178fff29d64d-c.jpg">
-<meta property="og:updated_time" content="2018-08-21T16:13:58.000Z">
+<meta property="og:updated_time" content="2018-08-22T09:24:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Max&#x2F;MSP&#x2F;Jitter 教程 - 什么是矩阵？">
+<meta name="twitter:title" content="Max&#x2F;MSP&#x2F;Jitter 教程 01 - 什么是矩阵？">
 <meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Max-title1.jpg">
 
 
@@ -152,7 +152,7 @@
 
 
 
-  <title>Max/MSP/Jitter 教程 - 什么是矩阵？ | 00's Adventure</title>
+  <title>Max/MSP/Jitter 教程 01 - 什么是矩阵？ | 00's Adventure</title>
   
 
 
@@ -365,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Max/MSP/Jitter 教程 - 什么是矩阵？</h1>
+          <h1 class="post-title" itemprop="name headline">Max/MSP/Jitter 教程 01 - 什么是矩阵？</h1>
         
 
         <div class="post-meta">
@@ -450,7 +450,9 @@
       
         <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title1.jpg" alt=""></p>
 <a id="more"></a>
+<blockquote>
 <p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档： <a href="https://docs.cycling74.com/max7/tutorials/jitterchapter00a_whatisamatrix" target="_blank" rel="noopener">What is a Matrix?</a></p>
+</blockquote>
 <p>矩阵即网格，网格的每个格子都包含一些信息。例如，棋盘是一个矩阵，每个方格包含特定的信息：有某个棋子，或没有棋子。</p>
 <p><img src="https://docs.cycling74.com/max7/tutorials/images/jittermatrix_a.png" alt=""></p>
 <p>方便起见，假设矩阵中每个格子的「信息」都是数字。</p>
@@ -481,6 +483,20 @@
 <blockquote>
 <p>重要概念：在使用 Jitter 操作视频时，需要了解矩阵中数据存储的知识。矩阵默认以 ARGB 格式保存视频数据，每个单元的数值范围是 0~255 （一般在四个平面中）。最常见的数据存储类型是 char，并不是因为存储的是字符。最常存储的值通常是数字，只需要 256 个不同的可能值来表示，因此 8 位的 char 就足够了。视频数据量一般较大，所以 Jitter 中大多数矩阵对象默认使用 char 存储类型，以减少存储空间。对于单色（灰度）图像或视频，单个 char 数据平面就足够了。</p>
 </blockquote>
+<hr>
+<p>MakeNoise 系列</p>
+<ul>
+<li><a href="https://www.uegeek.com/180621-make-noise-01.html" target="_blank" rel="noopener">MakeNoise01 - 声音是什么？</a></li>
+<li><a href="https://www.uegeek.com/180623-make-noise-02.html" target="_blank" rel="noopener">MakeNoise02 - 频率和音高</a></li>
+<li><a href="https://www.uegeek.com/180624-make-noise-03.html" target="_blank" rel="noopener">MakeNoise03 - 振幅/响度/音量/增益 大乱斗</a></li>
+<li><a href="https://www.uegeek.com/180626-make-noise-04.html" target="_blank" rel="noopener">MakeNoise04 - 波形和相位</a></li>
+<li><a href="https://www.uegeek.com/180628-make-noise-05.html" target="_blank" rel="noopener">MakeNoise05 - Envelope 包络（ADSR）</a></li>
+<li><a href="https://www.uegeek.com/180629-make-noise-06.html" target="_blank" rel="noopener">MakeNoise06 - 音色和均衡器(EQ)</a></li>
+<li><a href="https://www.uegeek.com/180701-make-noise-07.html" target="_blank" rel="noopener">MakeNoise07 - 音频的分辨率 Sample rate/Bit depth</a></li>
+<li><a href="https://www.uegeek.com/180703-make-noise-08.html" target="_blank" rel="noopener">MakeNoise08 - 振荡器和滤波器</a></li>
+<li><a href="https://www.uegeek.com/180706-make-noise-09.html" target="_blank" rel="noopener">MakeNoise09 - 压缩 Compression</a></li>
+<li><a href="https://www.uegeek.com/180708-make-noise-10.html" target="_blank" rel="noopener">MakeNoise10 - 延时和混响 Delay &amp; Reverb</a></li>
+</ul>
 
       
     </div>
@@ -533,7 +549,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://uegeek.com/180821-jitter-01.html" title="Max/MSP/Jitter 教程 - 什么是矩阵？">http://uegeek.com/180821-jitter-01.html</a>
+    <a href="http://uegeek.com/180821-jitter-01.html" title="Max/MSP/Jitter 教程 01 - 什么是矩阵？">http://uegeek.com/180821-jitter-01.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -558,6 +574,10 @@
           
             <a href="/tags/矩阵/" rel="tag"># 矩阵</a>
           
+            <a href="/tags/教程/" rel="tag"># 教程</a>
+          
+            <a href="/tags/Creative-Coding/" rel="tag"># Creative Coding</a>
+          
         </div>
       
 
@@ -578,6 +598,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/180822-jitter-02.html" rel="prev" title="Jitter 教程 02 - Jitter 对象的属性(attributes)">
+                Jitter 教程 02 - Jitter 对象的属性(attributes) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -661,7 +685,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">222</span>
+                <span class="site-state-item-count">223</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -683,7 +707,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">209</span>
+                <span class="site-state-item-count">211</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -949,7 +973,7 @@
         var disqus_config = function () {
           this.page.url = 'http://uegeek.com/180821-jitter-01.html';
           this.page.identifier = '180821-jitter-01.html';
-          this.page.title = 'Max/MSP/Jitter 教程 - 什么是矩阵？';
+          this.page.title = 'Max/MSP/Jitter 教程 01 - 什么是矩阵？';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://uegeek.disqus.com/embed.js';
