@@ -4,31 +4,21 @@
 
     
   <url>
-    <loc>http://uegeek.com/180821-jitter-01.html</loc>
-    <lastmod>2018-08-22T09:24:56.000Z</lastmod>
+    <loc>http://uegeek.com/writing-for-better-thinking.html</loc>
+    <lastmod>2018-08-22T09:47:34.000Z</lastmod>
     <data>
         <display>
-        <title>Max/MSP/Jitter 教程 01 - 什么是矩阵？</title>
-        <pubTime>2018-08-21T15:57:01.000Z</pubTime>
+        <title>书写是为了更好地思考</title>
+        <pubTime>2012-07-11T15:55:02.000Z</pubTime>
         
-        <tag>ArtxCode</tag>
+        <tag>Note</tag>
          
-        <tag>Max/MSP</tag>
-         
-        <tag>Jitter</tag>
-         
-        <tag>视频</tag>
-         
-        <tag>矩阵</tag>
-         
-        <tag>教程</tag>
-         
-        <tag>Creative Coding</tag>
+        <tag>自我管理</tag>
          
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
           
         </display>
     </data>
@@ -36,29 +26,673 @@
 
     
   <url>
-    <loc>http://uegeek.com/180822-jitter-02.html</loc>
-    <lastmod>2018-08-22T09:24:21.000Z</lastmod>
+    <loc>http://uegeek.com/woop-for-procrastination.html</loc>
+    <lastmod>2018-08-22T09:47:20.000Z</lastmod>
     <data>
         <display>
-        <title>Jitter 教程 02 - Jitter 对象的属性(attributes)</title>
-        <pubTime>2018-08-22T09:20:13.000Z</pubTime>
+        <title>拖延这件小事，讨论一次就够了</title>
+        <pubTime>2016-10-22T00:43:58.000Z</pubTime>
         
-        <tag>ArtxCode</tag>
+        <tag>HackYourself</tag>
          
-        <tag>Max/MSP</tag>
-         
-        <tag>Jitter</tag>
-         
-        <tag>视频</tag>
-         
-        <tag>教程</tag>
-         
-        <tag>Creative Coding</tag>
+        <tag>拖延</tag>
          
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/web-ia-note.html</loc>
+    <lastmod>2018-08-22T09:47:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>没事别随便提信息架构——读Web信息架构</title>
+        <pubTime>2012-09-10T15:36:44.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>Note</tag>
+         
+        <tag>Navigation</tag>
+         
+        <tag>IA</tag>
+         
+        <tag>信息架构</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/vr-index.html</loc>
+    <lastmod>2018-08-22T09:47:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>VR 学习图谱</title>
+        <pubTime>2016-09-04T10:46:04.000Z</pubTime>
+        
+        <tag>交互设计</tag>
+         
+        <tag>VR</tag>
+         
+        <tag>Interaction Design</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/ux-in-vr.html</loc>
+    <lastmod>2018-08-22T09:46:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>VR 中的体验要素</title>
+        <pubTime>2016-09-08T23:24:11.000Z</pubTime>
+        
+        <tag>交互设计</tag>
+         
+        <tag>VR</tag>
+         
+        <tag>Interaction Design</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/service-design-note1.html</loc>
+    <lastmod>2018-08-22T09:46:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>服务设计小笔记</title>
+        <pubTime>2011-06-09T06:05:58.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>服务设计</tag>
+         
+        <tag>Service design</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/self-as-company.html</loc>
+    <lastmod>2018-08-22T09:45:55.000Z</lastmod>
+    <data>
+        <display>
+        <title>把一个人活成一个公司，你可能就不会那么迷茫了</title>
+        <pubTime>2016-09-03T10:53:53.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+        <tag>个人成长</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/rn-emotional-design-2.html</loc>
+    <lastmod>2018-08-22T09:45:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>读书笔记-情感化设计[2]</title>
+        <pubTime>2009-10-29T13:15:59.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>Note</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/rn-emotional-design-1.html</loc>
+    <lastmod>2018-08-22T09:45:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>读书笔记-情感化设计[1]</title>
+        <pubTime>2009-10-28T02:57:02.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>Note</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/rd-thoughts-on-ixd.html</loc>
+    <lastmod>2018-08-22T09:45:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>科技，美学，人性——交互设计的十字路口</title>
+        <pubTime>2013-05-20T15:42:18.000Z</pubTime>
+        
+        <tag>IxD</tag>
+         
+        <tag>Note</tag>
+         
+        <tag>交互设计</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/rd-information-design.html</loc>
+    <lastmod>2018-08-22T09:45:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>读书笔记-信息设计</title>
+        <pubTime>2010-12-26T15:10:45.000Z</pubTime>
+        
+        <tag>Note</tag>
+         
+        <tag>可视化</tag>
+         
+        <tag>Information design</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/rd-designing-interface.html</loc>
+    <lastmod>2018-08-22T09:44:55.000Z</lastmod>
+    <data>
+        <display>
+        <title>Designing Interfaces中文版摘要</title>
+        <pubTime>2011-02-19T02:37:16.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>Note</tag>
+         
+        <tag>交互设计</tag>
+         
+        <tag>Interface</tag>
+         
+        <tag>Pattern</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/rd-aboutface-1.html</loc>
+    <lastmod>2018-08-22T09:44:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>读书笔记-交互设计精髓</title>
+        <pubTime>2011-03-02T14:39:46.000Z</pubTime>
+        
+        <tag>IxD</tag>
+         
+        <tag>Note</tag>
+         
+        <tag>交互设计</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/openid-intro.html</loc>
+    <lastmod>2018-08-22T09:44:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>什么是OpenID？OpenID概念、原理和案例</title>
+        <pubTime>2009-12-12T13:25:20.000Z</pubTime>
+        
+        <tag>OpenID</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/note-what-is-persona.html</loc>
+    <lastmod>2018-08-22T09:44:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>读书笔记-赢在用户[1]：什么是人物角色？为什么要创建人物角色？</title>
+        <pubTime>2010-01-30T05:32:44.000Z</pubTime>
+        
+        <tag>Note</tag>
+         
+        <tag>Persona</tag>
+         
+        <tag>User research</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/note-how-to-use-persona.html</loc>
+    <lastmod>2018-08-22T09:44:04.000Z</lastmod>
+    <data>
+        <display>
+        <title>读书笔记-赢在用户[3]：如何使用人物角色</title>
+        <pubTime>2010-02-08T14:45:14.000Z</pubTime>
+        
+        <tag>Note</tag>
+         
+        <tag>Persona</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/note-how-to-create-persona.html</loc>
+    <lastmod>2018-08-22T09:43:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>读书笔记-赢在用户[2]：如何创建人物角色</title>
+        <pubTime>2010-02-05T13:56:25.000Z</pubTime>
+        
+        <tag>Note</tag>
+         
+        <tag>Persona</tag>
+         
+        <tag>User research</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/my2015update.html</loc>
+    <lastmod>2018-08-22T09:43:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>00牌机器人2015版本更新记录</title>
+        <pubTime>2015-12-25T13:20:13.000Z</pubTime>
+        
+        <tag>总结</tag>
+         
+        <tag>2015</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/mindlego5-doubleblind.html</loc>
+    <lastmod>2018-08-22T09:43:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>心智乐高 05 - 科学星球的入场券：双盲实验</title>
+        <pubTime>2016-11-16T13:26:11.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+        <tag>心智</tag>
+         
+        <tag>科学</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/mindlego4-bayes.html</loc>
+    <lastmod>2018-08-22T09:43:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>心智乐高04 很傻很天真的贝叶斯定理</title>
+        <pubTime>2016-10-30T13:25:57.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+        <tag>心智</tag>
+         
+        <tag>统计</tag>
+         
+        <tag>贝叶斯</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/mindlego3-baseratefallcy.html</loc>
+    <lastmod>2018-08-22T09:43:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>心智乐高03 - 基本比率谬误</title>
+        <pubTime>2016-10-13T00:42:36.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+        <tag>心智</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/mindlego2-availability.html</loc>
+    <lastmod>2018-08-22T09:43:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>心智乐高02 - 可得性偏差</title>
+        <pubTime>2016-10-11T00:42:04.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+        <tag>心智</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/mindlego1.html</loc>
+    <lastmod>2018-08-22T09:43:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>心智乐高01 - 寻找智慧组块</title>
+        <pubTime>2016-10-04T00:41:35.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+        <tag>心智</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/learning-guide-v1.html</loc>
+    <lastmod>2018-08-22T09:43:01.000Z</lastmod>
+    <data>
+        <display>
+        <title>知识炼金术士行动指南 1.0</title>
+        <pubTime>2016-09-25T23:30:24.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+        <tag>Learning</tag>
+         
+        <tag>学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/learning-about-learn.html</loc>
+    <lastmod>2018-08-22T09:42:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>重启学习系统，做个知识炼金术士</title>
+        <pubTime>2016-09-21T23:30:02.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+        <tag>Learning</tag>
+         
+        <tag>学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/learngit.html</loc>
+    <lastmod>2018-08-22T09:42:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>多用Git少交税</title>
+        <pubTime>2015-03-18T13:23:15.000Z</pubTime>
+        
+        <tag>Coding</tag>
+         
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/happynewyearhappynewmac.html</loc>
+    <lastmod>2018-08-22T09:42:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>Happy New Year, Happy New Mac</title>
+        <pubTime>2016-01-08T07:03:38.000Z</pubTime>
+        
+        <tag>Mac</tag>
+         
+        <tag>Tips</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/hackyourself.html</loc>
+    <lastmod>2018-08-22T09:42:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hack Yourself - 我是自黑党</title>
+        <pubTime>2016-09-02T10:45:49.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/from-wordpress-to-hexo.html</loc>
+    <lastmod>2018-08-22T09:41:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>博客搬家记：从 Wordpress 到 Hexo+Github</title>
+        <pubTime>2016-01-10T14:41:12.000Z</pubTime>
+        
+        <tag>Blog</tag>
+         
+        <tag>Hexo</tag>
+         
+        <tag>Github</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/coding-concepts.html</loc>
+    <lastmod>2018-08-22T09:41:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>[设计师学编程]那些绕不过的概念</title>
+        <pubTime>2015-04-18T07:16:02.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -67,7 +701,7 @@
     
   <url>
     <loc>http://uegeek.com/180717-human-computer-symbiosis.html</loc>
-    <lastmod>2018-07-17T15:14:11.000Z</lastmod>
+    <lastmod>2018-08-22T09:40:14.000Z</lastmod>
     <data>
         <display>
         <title>破解 AI 时代的焦虑 —— 从人机交互到人机协同创作</title>
@@ -79,9 +713,9 @@
          
         <tag>ArtxCode</tag>
          
-        <tag>人工智能</tag>
-         
         <tag>Deisgn</tag>
+         
+        <tag>人工智能</tag>
          
         <tag>HCI</tag>
          
@@ -98,7 +732,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
           
         </display>
     </data>
@@ -107,7 +741,7 @@
     
   <url>
     <loc>http://uegeek.com/180708-make-noise-10.html</loc>
-    <lastmod>2018-07-08T05:04:41.000Z</lastmod>
+    <lastmod>2018-08-22T09:40:05.000Z</lastmod>
     <data>
         <display>
         <title>MakeNoise10 - 延时和混响 Delay & Reverb</title>
@@ -138,7 +772,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -147,7 +781,7 @@
     
   <url>
     <loc>http://uegeek.com/180706-make-noise-09.html</loc>
-    <lastmod>2018-07-06T03:33:20.000Z</lastmod>
+    <lastmod>2018-08-22T09:40:00.000Z</lastmod>
     <data>
         <display>
         <title>MakeNoise09 - 压缩 Compression</title>
@@ -165,16 +799,16 @@
          
         <tag>Max/MSP</tag>
          
-        <tag>EQ</tag>
-         
         <tag>Compressor</tag>
          
         <tag>动态压缩</tag>
          
+        <tag>EQ</tag>
+         
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -183,7 +817,7 @@
     
   <url>
     <loc>http://uegeek.com/180703-make-noise-08.html</loc>
-    <lastmod>2018-07-03T10:37:49.000Z</lastmod>
+    <lastmod>2018-08-22T09:39:55.000Z</lastmod>
     <data>
         <display>
         <title>MakeNoise08 - 振荡器和滤波器</title>
@@ -214,7 +848,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -223,7 +857,7 @@
     
   <url>
     <loc>http://uegeek.com/180701-make-noise-07.html</loc>
-    <lastmod>2018-07-01T10:22:08.000Z</lastmod>
+    <lastmod>2018-08-22T09:39:50.000Z</lastmod>
     <data>
         <display>
         <title>MakeNoise07 - 音频的分辨率 Sample rate/Bit depth</title>
@@ -254,7 +888,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -263,7 +897,7 @@
     
   <url>
     <loc>http://uegeek.com/180629-make-noise-06.html</loc>
-    <lastmod>2018-06-29T11:19:47.000Z</lastmod>
+    <lastmod>2018-08-22T09:39:43.000Z</lastmod>
     <data>
         <display>
         <title>MakeNoise06 - 音色和均衡器(EQ)</title>
@@ -288,7 +922,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -297,7 +931,7 @@
     
   <url>
     <loc>http://uegeek.com/180628-make-noise-05.html</loc>
-    <lastmod>2018-06-28T11:43:18.000Z</lastmod>
+    <lastmod>2018-08-22T09:39:35.000Z</lastmod>
     <data>
         <display>
         <title>MakeNoise05 - Envelope 包络（ADSR）</title>
@@ -324,7 +958,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -333,7 +967,7 @@
     
   <url>
     <loc>http://uegeek.com/180626-make-noise-04.html</loc>
-    <lastmod>2018-06-26T12:06:12.000Z</lastmod>
+    <lastmod>2018-08-22T09:39:23.000Z</lastmod>
     <data>
         <display>
         <title>MakeNoise04 - 波形和相位</title>
@@ -358,7 +992,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -367,7 +1001,7 @@
     
   <url>
     <loc>http://uegeek.com/180624-make-noise-03.html</loc>
-    <lastmod>2018-06-26T12:05:53.000Z</lastmod>
+    <lastmod>2018-08-22T09:39:18.000Z</lastmod>
     <data>
         <display>
         <title>MakeNoise03 - 振幅/响度/音量/增益 大乱斗</title>
@@ -392,7 +1026,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -401,7 +1035,7 @@
     
   <url>
     <loc>http://uegeek.com/180623-make-noise-02.html</loc>
-    <lastmod>2018-06-26T12:05:18.000Z</lastmod>
+    <lastmod>2018-08-22T09:39:13.000Z</lastmod>
     <data>
         <display>
         <title>MakeNoise02 - 频率和音高</title>
@@ -424,7 +1058,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -433,7 +1067,7 @@
     
   <url>
     <loc>http://uegeek.com/180621-make-noise-01.html</loc>
-    <lastmod>2018-06-26T12:04:42.000Z</lastmod>
+    <lastmod>2018-08-22T09:39:07.000Z</lastmod>
     <data>
         <display>
         <title>MakeNoise01 - 声音是什么？</title>
@@ -448,17 +1082,16 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
     </url>
 
     
-    
   <url>
     <loc>http://uegeek.com/180402-happy-new-mac-ii.html</loc>
-    <lastmod>2018-04-02T12:19:29.000Z</lastmod>
+    <lastmod>2018-08-22T09:39:01.000Z</lastmod>
     <data>
         <display>
         <title>Happy New Mac II - Mac 私人调教手册</title>
@@ -467,7 +1100,37 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/180822-jitter-02.html</loc>
+    <lastmod>2018-08-22T09:38:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Jitter 教程 02 - Jitter 对象的属性(attributes)</title>
+        <pubTime>2018-08-22T09:20:13.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Max/MSP</tag>
+         
+        <tag>Jitter</tag>
+         
+        <tag>视频</tag>
+         
+        <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -476,7 +1139,7 @@
     
   <url>
     <loc>http://uegeek.com/180327-DeepLearning12-model-evaluation.html</loc>
-    <lastmod>2018-03-27T16:34:41.000Z</lastmod>
+    <lastmod>2018-08-22T09:38:02.000Z</lastmod>
     <data>
         <display>
         <title>DeepLearning 笔记：如何评估神经网络的训练效果</title>
@@ -494,16 +1157,16 @@
          
         <tag>Coding</tag>
          
-        <tag>编程</tag>
-         
         <tag>神经网络</tag>
+         
+        <tag>编程</tag>
          
         <tag>Programming</tag>
          
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -512,7 +1175,7 @@
     
   <url>
     <loc>http://uegeek.com/180322-DeepLearning11-aws-gpu-training.html</loc>
-    <lastmod>2018-03-22T14:30:53.000Z</lastmod>
+    <lastmod>2018-08-22T09:37:55.000Z</lastmod>
     <data>
         <display>
         <title>DeepLearning笔记：如何用亚马逊云服务 GPU 训练神经网络</title>
@@ -530,9 +1193,9 @@
          
         <tag>Coding</tag>
          
-        <tag>编程</tag>
-         
         <tag>神经网络</tag>
+         
+        <tag>编程</tag>
          
         <tag>Programming</tag>
          
@@ -543,7 +1206,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -552,7 +1215,7 @@
     
   <url>
     <loc>http://uegeek.com/180223-learning-log.html</loc>
-    <lastmod>2018-02-23T14:41:07.000Z</lastmod>
+    <lastmod>2018-08-22T09:37:49.000Z</lastmod>
     <data>
         <display>
         <title>00's Learning Log 180223</title>
@@ -573,9 +1236,6 @@
              
               <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
           
-             
-              <breadCrumb title="读书" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/%E8%AF%BB%E4%B9%A6/"/>
-          
         </display>
     </data>
     </url>
@@ -583,7 +1243,7 @@
     
   <url>
     <loc>http://uegeek.com/180222-learning-log.html</loc>
-    <lastmod>2018-02-23T14:39:41.000Z</lastmod>
+    <lastmod>2018-08-22T09:37:43.000Z</lastmod>
     <data>
         <display>
         <title>00's Learning Log 180222</title>
@@ -604,18 +1264,14 @@
              
               <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
           
-             
-              <breadCrumb title="读书" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/%E8%AF%BB%E4%B9%A6/"/>
-          
         </display>
     </data>
     </url>
 
     
-    
   <url>
     <loc>http://uegeek.com/180221-learning-log.html</loc>
-    <lastmod>2018-02-22T08:58:44.000Z</lastmod>
+    <lastmod>2018-08-22T09:37:34.000Z</lastmod>
     <data>
         <display>
         <title>00's Learning Log 180221</title>
@@ -636,18 +1292,14 @@
              
               <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
           
-             
-              <breadCrumb title="读书" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/%E8%AF%BB%E4%B9%A6/"/>
-          
         </display>
     </data>
     </url>
 
     
-    
   <url>
     <loc>http://uegeek.com/180208-DeepLearning10-backpropagation-python.html</loc>
-    <lastmod>2018-02-08T16:41:10.000Z</lastmod>
+    <lastmod>2018-08-22T09:37:06.000Z</lastmod>
     <data>
         <display>
         <title>DeepLearning 笔记：用 Python 实现反向传播算法</title>
@@ -665,9 +1317,9 @@
          
         <tag>Coding</tag>
          
-        <tag>编程</tag>
-         
         <tag>神经网络</tag>
+         
+        <tag>编程</tag>
          
         <tag>Backpro</tag>
          
@@ -678,7 +1330,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -687,7 +1339,7 @@
     
   <url>
     <loc>http://uegeek.com/180125-DeepLearning9-backpropagation.html</loc>
-    <lastmod>2018-01-25T08:10:30.000Z</lastmod>
+    <lastmod>2018-08-22T09:37:00.000Z</lastmod>
     <data>
         <display>
         <title>DeepLearning笔记：Backpropagation 反向传播算法</title>
@@ -712,19 +1364,16 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
     </url>
 
     
-    
-    
-    
   <url>
     <loc>http://uegeek.com/180118-python-pandas-data-analysis.html</loc>
-    <lastmod>2018-01-18T09:10:00.000Z</lastmod>
+    <lastmod>2018-08-22T09:36:52.000Z</lastmod>
     <data>
         <display>
         <title>码以致用03 - 用 Pandas 分析爬虫抓取的数据</title>
@@ -747,7 +1396,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -756,7 +1405,7 @@
     
   <url>
     <loc>http://uegeek.com/180113-first-principle-of-learning.html</loc>
-    <lastmod>2018-01-13T11:43:49.000Z</lastmod>
+    <lastmod>2018-08-22T09:36:44.000Z</lastmod>
     <data>
         <display>
         <title>大哉问06 - 学习中最应该养成什么习惯？</title>
@@ -773,55 +1422,7 @@
          
            
              
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/learning-guide-v1.html</loc>
-    <lastmod>2018-01-13T11:39:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>知识炼金术士行动指南 1.0</title>
-        <pubTime>2016-09-25T23:30:24.000Z</pubTime>
-        
-        <tag>HackYourself</tag>
-         
-        <tag>学习</tag>
-         
-        <tag>Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/learning-about-learn.html</loc>
-    <lastmod>2018-01-13T11:39:28.000Z</lastmod>
-    <data>
-        <display>
-        <title>重启学习系统，做个知识炼金术士</title>
-        <pubTime>2016-09-21T23:30:02.000Z</pubTime>
-        
-        <tag>HackYourself</tag>
-         
-        <tag>学习</tag>
-         
-        <tag>Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
           
         </display>
     </data>
@@ -830,7 +1431,7 @@
     
   <url>
     <loc>http://uegeek.com/180112python-scrapy-jdxl.html</loc>
-    <lastmod>2018-01-12T11:41:02.000Z</lastmod>
+    <lastmod>2018-08-22T09:36:39.000Z</lastmod>
     <data>
         <display>
         <title>码以致用02 - 用 Scrapy 爬虫抓取简单心理咨询师资料</title>
@@ -849,7 +1450,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -858,7 +1459,7 @@
     
   <url>
     <loc>http://uegeek.com/180108python-scrapy-introduction.html</loc>
-    <lastmod>2018-01-08T09:30:46.000Z</lastmod>
+    <lastmod>2018-08-22T09:36:35.000Z</lastmod>
     <data>
         <display>
         <title>码以致用01 - Scrapy 爬虫框架简介</title>
@@ -877,7 +1478,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -886,7 +1487,7 @@
     
   <url>
     <loc>http://uegeek.com/180106-the-learning-myth.html</loc>
-    <lastmod>2018-01-06T08:55:50.000Z</lastmod>
+    <lastmod>2018-08-22T09:36:30.000Z</lastmod>
     <data>
         <display>
         <title>大哉问05 - 什么是学习中最大的误区？</title>
@@ -903,33 +1504,7 @@
          
            
              
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/171223-Why-Learn-Programming.html</loc>
-    <lastmod>2018-01-06T08:54:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>大哉问04 - 为什么要学编程？</title>
-        <pubTime>2017-12-23T07:56:13.000Z</pubTime>
-        
-        <tag>HackYourself</tag>
-         
-        <tag>大哉问</tag>
-         
-        <tag>Coding</tag>
-         
-        <tag>编程</tag>
-         
-         
-           
-             
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
           
         </display>
     </data>
@@ -938,7 +1513,7 @@
     
   <url>
     <loc>http://uegeek.com/180104DeepLearning8-MultiLayer-Perceptrons.html</loc>
-    <lastmod>2018-01-04T09:46:48.000Z</lastmod>
+    <lastmod>2018-08-22T09:36:21.000Z</lastmod>
     <data>
         <display>
         <title>DeepLearning笔记：多节点神经网络</title>
@@ -963,7 +1538,27 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/171226MyYear2017.html</loc>
+    <lastmod>2018-08-22T09:36:15.000Z</lastmod>
+    <data>
+        <display>
+        <title>小哉问：年终总结写什么？</title>
+        <pubTime>2017-12-29T11:28:42.000Z</pubTime>
+        
+        <tag>2017</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
           
         </display>
     </data>
@@ -972,7 +1567,7 @@
     
   <url>
     <loc>http://uegeek.com/171226DLN7-GradientDescentinPython.html</loc>
-    <lastmod>2018-01-04T09:46:06.000Z</lastmod>
+    <lastmod>2018-08-22T09:36:09.000Z</lastmod>
     <data>
         <display>
         <title>DL笔记：用 python 实现梯度下降的算法</title>
@@ -993,7 +1588,33 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/171223-Why-Learn-Programming.html</loc>
+    <lastmod>2018-08-22T09:36:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>大哉问04 - 为什么要学编程？</title>
+        <pubTime>2017-12-23T07:56:13.000Z</pubTime>
+        
+        <tag>HackYourself</tag>
+         
+        <tag>大哉问</tag>
+         
+        <tag>Coding</tag>
+         
+        <tag>编程</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
           
         </display>
     </data>
@@ -1002,7 +1623,7 @@
     
   <url>
     <loc>http://uegeek.com/171222DLN6-GradientDescent.html</loc>
-    <lastmod>2017-12-31T12:25:56.000Z</lastmod>
+    <lastmod>2018-08-22T09:35:57.000Z</lastmod>
     <data>
         <display>
         <title>DL笔记：梯度下降 Gradient Descent</title>
@@ -1023,47 +1644,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/171226MyYear2017.html</loc>
-    <lastmod>2017-12-31T09:30:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>小哉问：年终总结写什么？</title>
-        <pubTime>2017-12-29T11:28:42.000Z</pubTime>
-        
-        <tag>2017</tag>
-         
-         
-           
-             
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/questions-as-map.html</loc>
-    <lastmod>2017-12-31T09:03:51.000Z</lastmod>
-    <data>
-        <display>
-        <title>送给自己的人生地图</title>
-        <pubTime>2015-04-21T16:53:26.000Z</pubTime>
-        
-        <tag>Map</tag>
-         
-         
-           
-             
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -1072,7 +1653,7 @@
     
   <url>
     <loc>http://uegeek.com/171220DLN5-CostFunction.html</loc>
-    <lastmod>2017-12-27T01:38:19.000Z</lastmod>
+    <lastmod>2018-08-22T09:35:53.000Z</lastmod>
     <data>
         <display>
         <title>DL笔记：Cost function 损失函数</title>
@@ -1093,7 +1674,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -1102,7 +1683,7 @@
     
   <url>
     <loc>http://uegeek.com/171218DLN4-ActivationFunction.html</loc>
-    <lastmod>2017-12-18T11:59:31.000Z</lastmod>
+    <lastmod>2018-08-22T09:35:47.000Z</lastmod>
     <data>
         <display>
         <title>DL笔记：Activation Function 激活函数</title>
@@ -1123,7 +1704,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -1132,7 +1713,7 @@
     
   <url>
     <loc>http://uegeek.com/171216HowToMakeMoney.html</loc>
-    <lastmod>2017-12-18T11:44:58.000Z</lastmod>
+    <lastmod>2018-08-22T09:35:40.000Z</lastmod>
     <data>
         <display>
         <title>大哉问03 - 什么是赚钱之道？更新你的个人商业模式</title>
@@ -1149,7 +1730,7 @@
          
            
              
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
           
         </display>
     </data>
@@ -1158,7 +1739,7 @@
     
   <url>
     <loc>http://uegeek.com/171213DLN3-LinearRegression.html</loc>
-    <lastmod>2017-12-18T11:20:12.000Z</lastmod>
+    <lastmod>2018-08-22T09:35:35.000Z</lastmod>
     <data>
         <display>
         <title>DL笔记：Linear regression 线性回归</title>
@@ -1179,7 +1760,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -1188,7 +1769,7 @@
     
   <url>
     <loc>http://uegeek.com/171209DLN2-NeuralNetworks.html</loc>
-    <lastmod>2017-12-18T11:17:20.000Z</lastmod>
+    <lastmod>2018-08-22T09:35:30.000Z</lastmod>
     <data>
         <display>
         <title>DL笔记：Neural Networks 神经网络</title>
@@ -1209,7 +1790,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -1218,7 +1799,7 @@
     
   <url>
     <loc>http://uegeek.com/171206DLNote1-ML-DL-Basic.html</loc>
-    <lastmod>2017-12-09T01:27:46.000Z</lastmod>
+    <lastmod>2018-08-22T09:35:26.000Z</lastmod>
     <data>
         <display>
         <title>DL笔记：机器学习和深度学习的区别</title>
@@ -1239,7 +1820,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -1248,7 +1829,7 @@
     
   <url>
     <loc>http://uegeek.com/171204HowToLoveYourself.html</loc>
-    <lastmod>2017-12-09T01:23:32.000Z</lastmod>
+    <lastmod>2018-08-22T09:35:19.000Z</lastmod>
     <data>
         <display>
         <title>大哉问02 - 如何爱自己？拟一份爱的宣言</title>
@@ -1265,7 +1846,7 @@
          
            
              
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
           
         </display>
     </data>
@@ -1274,7 +1855,7 @@
     
   <url>
     <loc>http://uegeek.com/171126TimePerspective.html</loc>
-    <lastmod>2017-12-09T01:14:57.000Z</lastmod>
+    <lastmod>2018-08-22T09:35:14.000Z</lastmod>
     <data>
         <display>
         <title>大哉问01 - 什么样的时间观值得拥有？</title>
@@ -1291,7 +1872,7 @@
          
            
              
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
           
         </display>
     </data>
@@ -1300,7 +1881,7 @@
     
   <url>
     <loc>http://uegeek.com/171112-HowToAskGoodQuestion.html</loc>
-    <lastmod>2017-11-14T02:56:15.000Z</lastmod>
+    <lastmod>2018-08-22T09:35:08.000Z</lastmod>
     <data>
         <display>
         <title>用问题对话虚无 —— HackYourself 大哉问系列</title>
@@ -1315,7 +1896,7 @@
          
            
              
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
           
         </display>
     </data>
@@ -1324,7 +1905,7 @@
     
   <url>
     <loc>http://uegeek.com/171021-DL3-How2UsePy3InDocker.html</loc>
-    <lastmod>2017-11-14T02:51:30.000Z</lastmod>
+    <lastmod>2018-08-22T09:35:02.000Z</lastmod>
     <data>
         <display>
         <title>DeepLearning-3：如何在 Docker 里切换 Python 版本</title>
@@ -1341,7 +1922,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -1350,7 +1931,7 @@
     
   <url>
     <loc>http://uegeek.com/170929-DSNote3-NumPy-basic.html</loc>
-    <lastmod>2017-11-14T02:44:37.000Z</lastmod>
+    <lastmod>2018-08-22T09:34:56.000Z</lastmod>
     <data>
         <display>
         <title>菜鸟数据科学入门03 - NumPy 数组基础和基本操作</title>
@@ -1365,7 +1946,7 @@
          
            
              
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -1374,7 +1955,7 @@
     
   <url>
     <loc>http://uegeek.com/170910-hackyourself-cbt2.html</loc>
-    <lastmod>2017-09-10T09:51:01.000Z</lastmod>
+    <lastmod>2018-08-22T09:34:47.000Z</lastmod>
     <data>
         <display>
         <title>识别自动思维 —— HackYourself 避税手册之二</title>
@@ -1389,7 +1970,7 @@
          
            
              
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
           
         </display>
     </data>
@@ -1398,7 +1979,7 @@
     
   <url>
     <loc>http://uegeek.com/170723-time-will-tell-md.html</loc>
-    <lastmod>2017-09-10T09:48:44.000Z</lastmod>
+    <lastmod>2018-08-22T09:34:32.000Z</lastmod>
     <data>
         <display>
         <title>Time will tell</title>
@@ -1413,7 +1994,29 @@
          
            
              
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/2016summary.html</loc>
+    <lastmod>2018-08-22T09:34:04.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hack myself @ 2016</title>
+        <pubTime>2016-12-31T02:50:04.000Z</pubTime>
+        
+        <tag>总结</tag>
+         
+        <tag>2016</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
           
         </display>
     </data>
@@ -1422,13 +2025,199 @@
     
   <url>
     <loc>http://uegeek.com/10year-check.html</loc>
-    <lastmod>2017-07-15T02:15:06.000Z</lastmod>
+    <lastmod>2018-08-22T09:33:50.000Z</lastmod>
     <data>
         <display>
         <title>给自己开一张十年的支票</title>
         <pubTime>2015-09-14T07:51:06.000Z</pubTime>
         
         <tag>00</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/170624-hackyourself-cbt1.html</loc>
+    <lastmod>2018-08-22T09:33:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>警惕信念的苛捐杂税 —— HackYourself 避税指南之一</title>
+        <pubTime>2017-06-24T01:03:19.000Z</pubTime>
+        
+        <tag>Psychology</tag>
+         
+        <tag>HackYourself</tag>
+         
+        <tag>Mind</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/170312-deeplearning-week1.html</loc>
+    <lastmod>2018-08-22T09:33:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>DeepLearning-2 语言模型和 N-gram</title>
+        <pubTime>2017-03-12T13:58:23.000Z</pubTime>
+        
+        <tag>Deep learning</tag>
+         
+        <tag>深度学习</tag>
+         
+        <tag>AI</tag>
+         
+        <tag>Docker</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/170304-deeplearning-week0.html</loc>
+    <lastmod>2018-08-22T09:33:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>DeepLearning-1：神经网络和 Docker 入门</title>
+        <pubTime>2017-03-04T13:58:23.000Z</pubTime>
+        
+        <tag>Deep learning</tag>
+         
+        <tag>深度学习</tag>
+         
+        <tag>AI</tag>
+         
+        <tag>Docker</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/170103-ipython-basic.html</loc>
+    <lastmod>2018-08-22T09:32:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>菜鸟数据科学入门02 - IPython 基础</title>
+        <pubTime>2017-01-03T10:07:48.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Data Science</tag>
+         
+        <tag>IPython</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/170101-data-science-toolkit.html</loc>
+    <lastmod>2018-08-22T09:32:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>菜鸟数据科学入门01 - 工具包概略</title>
+        <pubTime>2017-01-01T02:32:44.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>Python</tag>
+         
+        <tag>Data Science</tag>
+         
+        <tag>可视化</tag>
+         
+        <tag>Visualization</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/180821-jitter-01.html</loc>
+    <lastmod>2018-08-22T09:30:36.000Z</lastmod>
+    <data>
+        <display>
+        <title>Max/MSP/Jitter 教程 01 - 什么是矩阵？</title>
+        <pubTime>2018-08-21T15:57:01.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Max/MSP</tag>
+         
+        <tag>Jitter</tag>
+         
+        <tag>视频</tag>
+         
+        <tag>矩阵</tag>
+         
+        <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
+    
+    
+  <url>
+    <loc>http://uegeek.com/questions-as-map.html</loc>
+    <lastmod>2017-12-31T09:03:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>送给自己的人生地图</title>
+        <pubTime>2015-04-21T16:53:26.000Z</pubTime>
+        
+        <tag>Map</tag>
          
          
            
@@ -1511,56 +2300,6 @@
 
     
   <url>
-    <loc>http://uegeek.com/170312-deeplearning-week1.html</loc>
-    <lastmod>2017-07-15T01:21:09.000Z</lastmod>
-    <data>
-        <display>
-        <title>DeepLearning-2 语言模型和 N-gram</title>
-        <pubTime>2017-03-12T13:58:23.000Z</pubTime>
-        
-        <tag>Deep learning</tag>
-         
-        <tag>深度学习</tag>
-         
-        <tag>AI</tag>
-         
-        <tag>Docker</tag>
-         
-         
-           
-             
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/170624-hackyourself-cbt1.html</loc>
-    <lastmod>2017-07-15T01:15:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>警惕信念的苛捐杂税 —— HackYourself 避税指南之一</title>
-        <pubTime>2017-06-24T01:03:19.000Z</pubTime>
-        
-        <tag>Psychology</tag>
-         
-        <tag>HackYourself</tag>
-         
-        <tag>Mind</tag>
-         
-         
-           
-             
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://uegeek.com/170415-design-principle.html</loc>
     <lastmod>2017-07-15T01:06:36.000Z</lastmod>
     <data>
@@ -1578,32 +2317,6 @@
            
              
               <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/170304-deeplearning-week0.html</loc>
-    <lastmod>2017-03-04T14:04:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>DeepLearning-1：神经网络和 Docker 入门</title>
-        <pubTime>2017-03-04T13:58:23.000Z</pubTime>
-        
-        <tag>Deep learning</tag>
-         
-        <tag>深度学习</tag>
-         
-        <tag>AI</tag>
-         
-        <tag>Docker</tag>
-         
-         
-           
-             
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
           
         </display>
     </data>
@@ -1707,58 +2420,6 @@
 
     
   <url>
-    <loc>http://uegeek.com/170103-ipython-basic.html</loc>
-    <lastmod>2017-01-07T09:41:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>菜鸟数据科学入门02 - IPython 基础</title>
-        <pubTime>2017-01-03T10:07:48.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>Data Science</tag>
-         
-        <tag>IPython</tag>
-         
-         
-           
-             
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/170101-data-science-toolkit.html</loc>
-    <lastmod>2017-01-07T09:40:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>菜鸟数据科学入门01 - 工具包概略</title>
-        <pubTime>2017-01-01T02:32:44.000Z</pubTime>
-        
-        <tag>Design</tag>
-         
-        <tag>Python</tag>
-         
-        <tag>Data Science</tag>
-         
-        <tag>可视化</tag>
-         
-        <tag>Visualization</tag>
-         
-         
-           
-             
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://uegeek.com/170105-read-what-is-design.html</loc>
     <lastmod>2017-01-05T02:48:26.000Z</lastmod>
     <data>
@@ -1802,28 +2463,6 @@
            
              
               <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/2016summary.html</loc>
-    <lastmod>2016-12-31T02:57:21.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hack myself @ 2016</title>
-        <pubTime>2016-12-31T02:50:04.000Z</pubTime>
-        
-        <tag>总结</tag>
-         
-        <tag>2016</tag>
-         
-         
-           
-             
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
           
         </display>
     </data>
@@ -2064,222 +2703,6 @@
            
              
               <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/mindlego4-bayes.html</loc>
-    <lastmod>2016-11-16T13:36:51.000Z</lastmod>
-    <data>
-        <display>
-        <title>心智乐高04 很傻很天真的贝叶斯定理</title>
-        <pubTime>2016-10-30T13:25:57.000Z</pubTime>
-        
-        <tag>HackYourself</tag>
-         
-        <tag>心智</tag>
-         
-        <tag>统计</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/mindlego5-doubleblind.html</loc>
-    <lastmod>2016-11-16T13:29:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>心智乐高 05 - 科学星球的入场券：双盲实验</title>
-        <pubTime>2016-11-16T13:26:11.000Z</pubTime>
-        
-        <tag>HackYourself</tag>
-         
-        <tag>心智</tag>
-         
-        <tag>科学</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/woop-for-procrastination.html</loc>
-    <lastmod>2016-10-24T00:58:24.000Z</lastmod>
-    <data>
-        <display>
-        <title>拖延这件小事，讨论一次就够了</title>
-        <pubTime>2016-10-22T00:43:58.000Z</pubTime>
-        
-        <tag>HackYourself</tag>
-         
-        <tag>拖延</tag>
-         
-         
-           
-             
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/mindlego3-baseratefallcy.html</loc>
-    <lastmod>2016-10-24T00:55:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>心智乐高03 - 基本比率谬误</title>
-        <pubTime>2016-10-13T00:42:36.000Z</pubTime>
-        
-        <tag>HackYourself</tag>
-         
-        <tag>心智</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/mindlego2-availability.html</loc>
-    <lastmod>2016-10-24T00:55:43.000Z</lastmod>
-    <data>
-        <display>
-        <title>心智乐高02 - 可得性偏差</title>
-        <pubTime>2016-10-11T00:42:04.000Z</pubTime>
-        
-        <tag>HackYourself</tag>
-         
-        <tag>心智</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/mindlego1.html</loc>
-    <lastmod>2016-10-24T00:55:26.000Z</lastmod>
-    <data>
-        <display>
-        <title>心智乐高01 - 寻找智慧组块</title>
-        <pubTime>2016-10-04T00:41:35.000Z</pubTime>
-        
-        <tag>HackYourself</tag>
-         
-        <tag>心智</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/ux-in-vr.html</loc>
-    <lastmod>2016-09-25T23:53:02.000Z</lastmod>
-    <data>
-        <display>
-        <title>VR 中的体验要素</title>
-        <pubTime>2016-09-08T23:24:11.000Z</pubTime>
-        
-        <tag>VR</tag>
-         
-         
-           
-             
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/self-as-company.html</loc>
-    <lastmod>2016-09-25T23:23:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>把一个人活成一个公司，你可能就不会那么迷茫了</title>
-        <pubTime>2016-09-03T10:53:53.000Z</pubTime>
-        
-        <tag>Hack</tag>
-         
-         
-           
-             
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/hackyourself.html</loc>
-    <lastmod>2016-09-04T10:55:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hack Yourself - 我是自黑党</title>
-        <pubTime>2016-09-02T10:45:49.000Z</pubTime>
-        
-        <tag>Hack</tag>
-         
-         
-           
-             
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/vr-index.html</loc>
-    <lastmod>2016-09-04T10:53:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>VR 学习图谱</title>
-        <pubTime>2016-09-04T10:46:04.000Z</pubTime>
-        
-        <tag>VR</tag>
-         
-         
-           
-             
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
           
         </display>
     </data>
@@ -2740,9 +3163,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -3487,52 +3910,6 @@
     </url>
 
     
-  <url>
-    <loc>http://uegeek.com/from-wordpress-to-hexo.html</loc>
-    <lastmod>2016-01-11T00:51:54.000Z</lastmod>
-    <data>
-        <display>
-        <title>博客搬家记：从 Wordpress 到 Hexo+Github</title>
-        <pubTime>2016-01-10T14:41:12.000Z</pubTime>
-        
-        <tag>Blog</tag>
-         
-        <tag>Hexo</tag>
-         
-        <tag>Github</tag>
-         
-         
-           
-             
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/happynewyearhappynewmac.html</loc>
-    <lastmod>2016-01-08T07:27:12.000Z</lastmod>
-    <data>
-        <display>
-        <title>Happy New Year, Happy New Mac</title>
-        <pubTime>2016-01-08T07:03:38.000Z</pubTime>
-        
-        <tag>Mac</tag>
-         
-        <tag>Tips</tag>
-         
-         
-           
-             
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
   <url>
     <loc>http://uegeek.com/how-to-convert-word2007-to-pdf.html</loc>
@@ -3685,50 +4062,6 @@
 
     
   <url>
-    <loc>http://uegeek.com/rn-emotional-design-2.html</loc>
-    <lastmod>2016-01-06T00:38:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>读书笔记-情感化设计[2]</title>
-        <pubTime>2009-10-29T13:15:59.000Z</pubTime>
-        
-        <tag>Design</tag>
-         
-        <tag>Note</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/rn-emotional-design-1.html</loc>
-    <lastmod>2016-01-06T00:38:03.000Z</lastmod>
-    <data>
-        <display>
-        <title>读书笔记-情感化设计[1]</title>
-        <pubTime>2009-10-28T02:57:02.000Z</pubTime>
-        
-        <tag>Design</tag>
-         
-        <tag>Note</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://uegeek.com/think-about-product-strategy.html</loc>
     <lastmod>2016-01-06T00:33:33.000Z</lastmod>
     <data>
@@ -3763,96 +4096,6 @@
         <tag>用户</tag>
          
         <tag>UCD</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/openid-intro.html</loc>
-    <lastmod>2016-01-06T00:28:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>什么是OpenID？OpenID概念、原理和案例</title>
-        <pubTime>2009-12-12T13:25:20.000Z</pubTime>
-        
-        <tag>OpenID</tag>
-         
-         
-           
-             
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/note-what-is-persona.html</loc>
-    <lastmod>2016-01-06T00:19:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>读书笔记-赢在用户[1]：什么是人物角色？为什么要创建人物角色？</title>
-        <pubTime>2010-01-30T05:32:44.000Z</pubTime>
-        
-        <tag>Note</tag>
-         
-        <tag>Persona</tag>
-         
-        <tag>User research</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/note-how-to-create-persona.html</loc>
-    <lastmod>2016-01-06T00:17:33.000Z</lastmod>
-    <data>
-        <display>
-        <title>读书笔记-赢在用户[2]：如何创建人物角色</title>
-        <pubTime>2010-02-05T13:56:25.000Z</pubTime>
-        
-        <tag>Note</tag>
-         
-        <tag>Persona</tag>
-         
-        <tag>User research</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/note-how-to-use-persona.html</loc>
-    <lastmod>2016-01-06T00:14:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>读书笔记-赢在用户[3]：如何使用人物角色</title>
-        <pubTime>2010-02-08T14:45:14.000Z</pubTime>
-        
-        <tag>Note</tag>
-         
-        <tag>Persona</tag>
          
          
            
@@ -4111,30 +4354,6 @@
 
     
   <url>
-    <loc>http://uegeek.com/rd-information-design.html</loc>
-    <lastmod>2016-01-05T14:23:10.000Z</lastmod>
-    <data>
-        <display>
-        <title>读书笔记-信息设计</title>
-        <pubTime>2010-12-26T15:10:45.000Z</pubTime>
-        
-        <tag>Note</tag>
-         
-        <tag>可视化</tag>
-         
-        <tag>Information design</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://uegeek.com/ixd-quick-checklist.html</loc>
     <lastmod>2016-01-05T14:17:36.000Z</lastmod>
     <data>
@@ -4149,58 +4368,6 @@
         <tag>Interaction design</tag>
          
         <tag>Usability</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/rd-designing-interface.html</loc>
-    <lastmod>2016-01-05T13:59:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>Designing Interfaces中文版摘要</title>
-        <pubTime>2011-02-19T02:37:16.000Z</pubTime>
-        
-        <tag>Design</tag>
-         
-        <tag>Note</tag>
-         
-        <tag>交互设计</tag>
-         
-        <tag>Interface</tag>
-         
-        <tag>Pattern</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/rd-aboutface-1.html</loc>
-    <lastmod>2016-01-05T13:30:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>读书笔记-交互设计精髓</title>
-        <pubTime>2011-03-02T14:39:46.000Z</pubTime>
-        
-        <tag>IxD</tag>
-         
-        <tag>Note</tag>
-         
-        <tag>交互设计</tag>
          
          
            
@@ -4243,30 +4410,6 @@
         <tag>交互设计</tag>
          
         <tag>Navigation</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/service-design-note1.html</loc>
-    <lastmod>2016-01-05T13:24:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>服务设计小笔记</title>
-        <pubTime>2011-06-09T06:05:58.000Z</pubTime>
-        
-        <tag>Design</tag>
-         
-        <tag>服务设计</tag>
-         
-        <tag>Service design</tag>
          
          
            
@@ -4332,28 +4475,6 @@
            
              
               <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/writing-for-better-thinking.html</loc>
-    <lastmod>2016-01-05T13:01:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>书写是为了更好地思考</title>
-        <pubTime>2012-07-11T15:55:02.000Z</pubTime>
-        
-        <tag>Note</tag>
-         
-        <tag>自我管理</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
           
         </display>
     </data>
@@ -4463,34 +4584,6 @@
         <tag>交互设计</tag>
          
         <tag>控件</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/web-ia-note.html</loc>
-    <lastmod>2016-01-04T16:51:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>没事别随便提信息架构——读Web信息架构</title>
-        <pubTime>2012-09-10T15:36:44.000Z</pubTime>
-        
-        <tag>Design</tag>
-         
-        <tag>Note</tag>
-         
-        <tag>Navigation</tag>
-         
-        <tag>IA</tag>
-         
-        <tag>信息架构</tag>
          
          
            
@@ -4664,30 +4757,6 @@
            
              
               <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/rd-thoughts-on-ixd.html</loc>
-    <lastmod>2016-01-04T14:53:12.000Z</lastmod>
-    <data>
-        <display>
-        <title>科技，美学，人性——交互设计的十字路口</title>
-        <pubTime>2013-05-20T15:42:18.000Z</pubTime>
-        
-        <tag>IxD</tag>
-         
-        <tag>Note</tag>
-         
-        <tag>交互设计</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
           
         </display>
     </data>
@@ -5055,28 +5124,6 @@
 
     
   <url>
-    <loc>http://uegeek.com/learngit.html</loc>
-    <lastmod>2016-01-03T16:15:03.000Z</lastmod>
-    <data>
-        <display>
-        <title>多用Git少交税</title>
-        <pubTime>2015-03-18T13:23:15.000Z</pubTime>
-        
-        <tag>Coding</tag>
-         
-        <tag>Git</tag>
-         
-         
-           
-             
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://uegeek.com/the-ambiguities-of-experience.html</loc>
     <lastmod>2016-01-03T15:44:05.000Z</lastmod>
     <data>
@@ -5116,28 +5163,6 @@
            
              
               <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/coding-concepts.html</loc>
-    <lastmod>2016-01-03T15:34:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>[设计师学编程]那些绕不过的概念</title>
-        <pubTime>2015-04-18T07:16:02.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>Coding</tag>
-         
-         
-           
-             
-              <breadCrumb title="动手" url="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
           
         </display>
     </data>
@@ -5270,9 +5295,9 @@
         <title>中欧四国扫(ba)盲(gua)帖之一：“中欧”还是“东欧”？</title>
         <pubTime>2015-09-18T13:37:38.000Z</pubTime>
         
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -5304,9 +5329,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -5332,9 +5357,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -5360,9 +5385,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -5392,9 +5417,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -5546,28 +5571,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://uegeek.com/my2015update.html</loc>
-    <lastmod>2016-01-03T12:15:02.000Z</lastmod>
-    <data>
-        <display>
-        <title>00牌机器人2015版本更新记录</title>
-        <pubTime>2015-12-25T13:20:13.000Z</pubTime>
-        
-        <tag>总结</tag>
-         
-        <tag>2015</tag>
-         
-         
-           
-             
-              <breadCrumb title="叽歪" url="http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://uegeek.com/leapmotion-app.html</loc>
