@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/180822-jitter-02.html</loc>
+        <lastmod>2018-08-22T09:57:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://uegeek.com/writing-for-better-thinking.html</loc>
         <lastmod>2018-08-22T09:47:34.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -337,14 +345,6 @@
     <url>
         <loc>http://uegeek.com/180402-happy-new-mac-ii.html</loc>
         <lastmod>2018-08-22T09:39:01.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/180822-jitter-02.html</loc>
-        <lastmod>2018-08-22T09:38:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

@@ -891,14 +891,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
+        <loc>http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/</loc>
         <lastmod>2018-08-22T09:38:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/</loc>
+        <loc>http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
         <lastmod>2018-08-22T09:38:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -907,34 +907,6 @@
     <url>
         <loc>http://uegeek.com/tags/Programming/</loc>
         <lastmod>2018-08-22T09:38:02.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/Jitter/</loc>
-        <lastmod>2018-08-22T09:38:46.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E8%A7%86%E9%A2%91/</loc>
-        <lastmod>2018-08-22T09:38:46.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E6%95%99%E7%A8%8B/</loc>
-        <lastmod>2018-08-22T09:38:46.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/Creative-Coding/</loc>
-        <lastmod>2018-08-22T09:38:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -1066,6 +1038,13 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/tags/EQ/</loc>
+        <lastmod>2018-08-22T09:40:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://uegeek.com/tags/Compressor/</loc>
         <lastmod>2018-08-22T09:40:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1074,13 +1053,6 @@
 
     <url>
         <loc>http://uegeek.com/tags/%E5%8A%A8%E6%80%81%E5%8E%8B%E7%BC%A9/</loc>
-        <lastmod>2018-08-22T09:40:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/EQ/</loc>
         <lastmod>2018-08-22T09:40:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1109,13 +1081,6 @@
 
     <url>
         <loc>http://uegeek.com/tags/Ableton-Live/</loc>
-        <lastmod>2018-08-22T09:40:05.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/Max-MSP/</loc>
         <lastmod>2018-08-22T09:40:05.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1158,13 +1123,6 @@
 
     <url>
         <loc>http://uegeek.com/tags/AI/</loc>
-        <lastmod>2018-08-22T09:40:14.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/ArtxCode/</loc>
         <lastmod>2018-08-22T09:40:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1283,14 +1241,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Learning/</loc>
+        <loc>http://uegeek.com/tags/%E5%AD%A6%E4%B9%A0/</loc>
         <lastmod>2018-08-22T09:43:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E5%AD%A6%E4%B9%A0/</loc>
+        <loc>http://uegeek.com/tags/Learning/</loc>
         <lastmod>2018-08-22T09:43:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1488,6 +1446,48 @@
     <url>
         <loc>http://uegeek.com/tags/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/</loc>
         <lastmod>2018-08-22T09:47:34.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/ArtxCode/</loc>
+        <lastmod>2018-08-22T09:57:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Max-MSP/</loc>
+        <lastmod>2018-08-22T09:57:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Jitter/</loc>
+        <lastmod>2018-08-22T09:57:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E8%A7%86%E9%A2%91/</loc>
+        <lastmod>2018-08-22T09:57:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E6%95%99%E7%A8%8B/</loc>
+        <lastmod>2018-08-22T09:57:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Creative-Coding/</loc>
+        <lastmod>2018-08-22T09:57:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
