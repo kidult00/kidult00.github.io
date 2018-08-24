@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-08-22T09:57:32.000Z</updated>
+  <updated>2018-08-24T15:54:30.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</title>
+    <link href="http://uegeek.com/180825-jitter-03.html"/>
+    <id>http://uegeek.com/180825-jitter-03.html</id>
+    <published>2018-08-24T16:05:34.000Z</published>
+    <updated>2018-08-24T15:54:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-3.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter01" target="_blank" rel="noopener">Tutorial 1: Playing a QuickTime Movie</a></p></blockquote><p>这个教程教你使用 Jitter 执行最简单但最有用的任务之一：在窗口中播放 QuickTime 视频。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter01a.png" alt=""><br>打开 QuickTime 电影文件</p><p>这个 Patch 中有两个 Jitter 对象：<code>jit.movi​​e</code> 和 <code>jit.window</code>。<code>jit.window</code> 会自动打开电脑屏幕上的窗口。<code>jit.movi​​e</code> 则打开 QuickTime 视频并开始播放。</p><p>单击 <code>read countdown.mov</code> 的消息框，<code>jit.movi​​e</code> 就会打开 QuickTime 视频文件 countdown.mov 并开始读取。</p><p>默认情况下，<code>jit.movi​​e</code> 会在打开文件后立即播放。但是请注意，即使 <code>jit.movi​​e</code> 对象正在播放电影，窗口中却没有显示，因为：</p><p>Jitter 中的每个对象都执行特定任务——可能非常简单，也可能相当复杂。播放 QuickTime 视频实际上被分解为两个任务：</p><ol><li>从硬盘上的文件中将每帧视频数据读入 RAM</li><li>获取 RAM 中的数据，并将其显示为屏幕上的彩色像素</li></ol><p>第一个任务由 <code>jit.movi​​e</code> 执行，第二个任务由 <code>jit.window</code> 执行。为了让 <code>jit.window</code> 知道要显示什么，这两个对象需要进行通信。</p><h2 id="Jitter-对象如何通信"><a href="#Jitter-对象如何通信" class="headerlink" title="Jitter 对象如何通信"></a>Jitter 对象如何通信</h2><blockquote><p>重要概念：Jitter 对象相互通信的关键是<strong>矩阵的名称</strong> —— 它指定了数据在内存中的位置。Jitter 对象输出其他 Jitter 对象能理解的消息（<code>jit_matrix</code>，后跟空格和存储数据的矩阵名称）。此消息通过接线在对象之间传递。</p><p><strong>接收的对象从入口接收消息，从内存中的指定位置获取数据，以某种方式修改数据，并发送修改后的名称数据，输出到对象的左侧出口。</strong></p><p>这样每个对象查看内存中相应的位置来获取所需的数据，执行各自的任务，而不必知道其他对象正在做什么。大多数 Jitter 对象只有从另一个对象获取 jit_matrix 消息，得知该查看相应的矩阵，才会对那里的数据做一些事情。</p></blockquote><p>在多数情况下，Jitter 对象自己会生成唯一的名称。你也可以指定名称（最好是这样）。显式地命名矩阵，不同对象就可以使用相同的内存空间。</p><h2 id="由-Jitter-对象触发动作"><a href="#由-Jitter-对象触发动作" class="headerlink" title="由 Jitter 对象触发动作"></a>由 Jitter 对象触发动作</h2><p>是什么让一个 Jitter 对象将 <code>jit_matrix</code> 消息发送给另一个对象呢？大多数 Jitter 对象在收到消息 <code>outputmatrix</code> 或 <code>bang</code> 时，会发出 <code>jit_matrix</code> 消息。另外，一个对象收到消息并修改了数据后，它会自动发出一条 <code>jit_matrix</code> 消息，通知其他包含相同矩阵名称的对象。</p><p>也就是说，当一个对象收到 <code>jit_matrix</code> 消息时，它会做一些事情并发出自己的 <code>jit_matrix</code> 消息。当一个对象收到 <code>outputmatrix</code> 或 <code>bang</code> 时，它会发送一个 <code>jit_matrix</code> 消息，而不做任何其他事情。</p><p>因此在示例中，<code>jit.movi​​e</code> 对象正在播放 QuickTime 视频，不断存储当前的视频帧，但 <code>jit.window</code> 对象只会在从 <code>jit.movi​​e</code> 对象接收到 <code>jit_matrix</code> 消息时显示内容。只有当 <code>jit.movi​​e</code> 收到消息<code>bang</code>（或 outputmatrix）时才会发生这种情况。那时，<code>jit.window</code> 将显示当前正在电影中播放的任何视频帧。</p><p>为了使 <code>jit.window</code> 以一定速度更新并不断显示视频帧，就需要以同样的速度发送 <code>bang</code> 消息给 <code>jit.movi​​e</code>。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter01b.png" alt=""><br>视频在 jit.movi​​e 中播放，每当要显示一帧时都要发送 bang 消息</p><ul><li>单击标记了 play 的开关，<code>metro</code> 对象就会启动。这将以每秒 25 次（每 40 毫秒）的速度发出 <code>bang</code> 消息。这个速度足以显示该视频的每一帧。只要 <code>bang</code> 继续，我们就能看到窗口中显示的视频。</li></ul><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter01c.png" alt=""><br>jit.window 显示矩阵的内容</p><ul><li><p>点击开关停止 <code>metro</code>。<code>jit.window</code> 对象停止更新电影窗口，现在只会看到最后显示的静止图像。电影仍在播放 - <code>jit.movi​​e</code> 仍在逐帧更新内存 - 但 <code>jit.window</code> 会忽略这些更新，因为 <code>jit.movi​​e</code> 不再发送消息。</p></li><li><p>你可以单击 <code>metro</code> 下方的按钮，来验证电影是否仍在播放。这会让 <code>jit.movi​​e</code> 将 <code>jit_matrix</code> 消息发送到 <code>jit.window</code>，当前帧会更新 Movie 窗口。连续点几次，会看到电影在鼠标点击之间有变化。</p></li></ul><p>总而言之，<code>jit.movi​​e</code> 以视频正常速率逐帧读取 QuickTime 文件的一帧。当 <code>jit.movi​​e</code> 收到 <code>bang</code> 消息时，会将该数据的位置传达给 <code>jit.window</code>，然后 <code>jit.movi​​e</code> 收到 <code>bang</code> 时所包含的任何帧都由 <code>jit.window</code> 显示出来。</p><h2 id="对象中的参数"><a href="#对象中的参数" class="headerlink" title="对象中的参数"></a>对象中的参数</h2><p>本教程中的 <code>jit.movi​​e</code> 的两个参数 320 和 240，指定了对象在内存中保留单帧视频时的宽度和高度。它会声明足够的 RAM 来存储这些帧。因此，使用 read 消息输入希望读入的视频的尺寸是 ok 的。这样我们知道 QuickTime 视频的尺寸是 320x240。</p><p>如果输入的维度小于读入的视频的尺寸，<code>jit.movi​​e</code> 没法声明足够的存储空间，就不得不忽略每帧的一些像素。相反，如果输入的维度大于读入的视频尺寸，则每一帧中都没有足够的像素来填充已分配的内存空间，因此 <code>jit.movi​​e</code> 会平均分发数据，并用重复数据填充空余的内存。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter01b.png" alt="">    </p><p><code>jit.window</code> 对象有五个输入的参数：<code>Movie 5 41 325 281</code>。第一个参数是 <code>jit.window</code> 显示的矩阵的名称。它也会出现在视频窗口的标题栏中。它可以是任何单词（用引号括起来的话，可以是多个单词）。接下来的两个参数，表示视频窗口显示区域左上角的 x，y 屏幕坐标，后两个参数是显示区域右下角的坐标（左-上-右-下）。选择了这些数字是因为</p><ul><li>它们定义了一个 320x240 的显示区域，与视频尺寸相同</li><li>当考虑操作系统默认的窗口边框、标题栏和菜单栏的尺寸时，窗口刚好隐藏在桌面的左上角。（当然也可以设置标题栏不显示）</li></ul><p>输入 <code>metro</code> 的参数 40，使其每秒发出 25 次 <code>bang</code>消息。QuickTime 视频的帧速率是每秒24帧，因此这个 <code>metro</code> 持续触发 <code>jit.movi​​e</code> 对象，确保每帧都能显示。</p><p>要播放 QuickTime 视频，请使用 <code>jit.movi​​e</code> 打开文件并将视频的连续帧读入 RAM，然后使用 <code>jit.window</code> 在单独的窗口中显示视频。使用输入的参数指定视频的尺寸，以及屏幕上显示区域的精确坐标。</p><h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>Jitter 对象通过相互发送矩阵的名称，来传递特定视频帧的信息——该信息在内存中的位置。 Jitter 对象获得矩阵名称时，它使用该位置的数据执行指定的任务，然后将修改后的数据名称，发送给其他 Jitter 对象。几乎所有 Jitter 对象在收到<code>bang</code>消息 （或 outputmatrix）时都会发出一个名称（包含在<code>jit_matrix</code>消息中）。因此，为了显示视频的连续帧，以某个速率向 <code>jit.movie</code> 发送 <code>bang</code> 消息，然后​​连接到<code>jit.window</code>显示。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter01d.png" alt=""><br>跟踪每个对象的消息和角色</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Max-title-3.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
+    
+      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
+    
+      <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>Max/MSP/Jitter 教程 02 - Jitter 对象的属性(attributes)</title>
@@ -42,9 +74,9 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -74,11 +106,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -547,9 +579,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
     
@@ -586,9 +618,9 @@
     
       <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
     
-      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
     
@@ -706,48 +738,6 @@
       <category term="Learning" scheme="http://uegeek.com/tags/Learning/"/>
     
       <category term="Music" scheme="http://uegeek.com/tags/Music/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DeepLearning 笔记：用 Python 实现反向传播算法</title>
-    <link href="http://uegeek.com/180208-DeepLearning10-backpropagation-python.html"/>
-    <id>http://uegeek.com/180208-DeepLearning10-backpropagation-python.html</id>
-    <published>2018-02-08T14:37:55.000Z</published>
-    <updated>2018-08-22T09:37:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p><a id="more"></a> <p>用反向传播算法更新权重的算法如下：</p><ul><li>给每一层的权重赋值为 0<ul><li>输入层→隐层的权重 $\Delta w_{ij}=0$</li><li>隐层→输出层的权重 $\Delta W_j=0$<br>​</li></ul></li><li>对训练集里的每一个数据：<ul><li>使用 forward pass，计算输出节点的值 $\hat y$</li><li>计算输出节点的误差梯度 $\delta^o=(y-\hat y)f’(z)$，  这里的 $z=\sum_jW_ja_j$</li><li>将误差反向传递到隐层 $\delta^h_j=\delta^oW_jf’(h_j)$</li><li>更新权重步长<ul><li>$\Delta W_j = \Delta W_j + \delta^oa_j$</li><li>$\Delta w<em>{ij} = \Delta w</em>{ij} + \delta^h_ja_i$</li></ul></li></ul></li><li>更新权重（η 为学习率，m 为输入节点的个数):<ul><li>$W_j = W_j + \eta \Delta W_j /m$</li><li>$w<em>{ij} = w</em>{ij} + \eta \Delta w_{ij} /m$</li></ul></li><li>重复 e 次训练步骤 (epochs)</li></ul><p>在 python 中实现如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> data_prep <span class="keyword">import</span> features, targets, features_test, targets_test</span><br><span class="line"></span><br><span class="line">np.random.seed(<span class="number">21</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Calculate sigmoid</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> / (<span class="number">1</span> + np.exp(-x))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Hyperparameters</span></span><br><span class="line">n_hidden = <span class="number">2</span>  <span class="comment"># number of hidden units</span></span><br><span class="line">epochs = <span class="number">900</span></span><br><span class="line">learnrate = <span class="number">0.005</span></span><br><span class="line"></span><br><span class="line">n_records, n_features = features.shape</span><br><span class="line">last_loss = <span class="keyword">None</span></span><br><span class="line"><span class="comment"># Initialize weights</span></span><br><span class="line">weights_input_hidden = np.random.normal(scale=<span class="number">1</span> / n_features ** <span class="number">.5</span>,</span><br><span class="line">                                        size=(n_features, n_hidden))</span><br><span class="line">weights_hidden_output = np.random.normal(scale=<span class="number">1</span> / n_features ** <span class="number">.5</span>,</span><br><span class="line">                                         size=n_hidden)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> e <span class="keyword">in</span> range(epochs):</span><br><span class="line">    del_w_input_hidden = np.zeros(weights_input_hidden.shape)</span><br><span class="line">    del_w_hidden_output = np.zeros(weights_hidden_output.shape)</span><br><span class="line">    <span class="keyword">for</span> x, y <span class="keyword">in</span> zip(features.values, targets):</span><br><span class="line"></span><br><span class="line">      <span class="comment">## Forward pass ##</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Calculate the output</span></span><br><span class="line">        hidden_input = np.dot(x, weights_input_hidden) <span class="comment"># x·w</span></span><br><span class="line">        hidden_output = sigmoid(hidden_input)</span><br><span class="line">        output = sigmoid(np.dot(hidden_output, weights_hidden_output))</span><br><span class="line"></span><br><span class="line">      <span class="comment">## Backward pass ##</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Calculate the network's prediction error</span></span><br><span class="line">        error = y - output</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Calculate error term for the output unit</span></span><br><span class="line">        output_error_term = error * output * (<span class="number">1</span> - output)</span><br><span class="line"></span><br><span class="line">        <span class="comment">## propagate errors to hidden layer</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Calculate the hidden layer's contribution to the error</span></span><br><span class="line">        hidden_error = np.dot(output_error_term, weights_hidden_output)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Calculate the error term for the hidden layer</span></span><br><span class="line">        hidden_error_term = hidden_error * hidden_output * (<span class="number">1</span> - hidden_output)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Update the change in weights</span></span><br><span class="line">        del_w_hidden_output += output_error_term * hidden_output</span><br><span class="line">        del_w_input_hidden += hidden_error_term * x[:,<span class="keyword">None</span>] <span class="comment"># x.T</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Update weights</span></span><br><span class="line">    weights_input_hidden += learnrate * del_w_input_hidden / n_records</span><br><span class="line">    weights_hidden_output += learnrate * del_w_hidden_output / n_records</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Printing out the mean square error on the training set</span></span><br><span class="line">    <span class="keyword">if</span> e % (epochs / <span class="number">10</span>) == <span class="number">0</span>:</span><br><span class="line">        hidden_output = sigmoid(np.dot(x, weights_input_hidden))</span><br><span class="line">        out = sigmoid(np.dot(hidden_output,</span><br><span class="line">                             weights_hidden_output))</span><br><span class="line">        loss = np.mean((out - targets) ** <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> last_loss <span class="keyword">and</span> last_loss &lt; loss:</span><br><span class="line">            print(<span class="string">"Train loss: "</span>, loss, <span class="string">"  WARNING - Loss Increasing"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"Train loss: "</span>, loss)</span><br><span class="line">        last_loss = loss</span><br><span class="line"></span><br><span class="line"><span class="comment"># Calculate accuracy on test data</span></span><br><span class="line">hidden = sigmoid(np.dot(features_test, weights_input_hidden))</span><br><span class="line">out = sigmoid(np.dot(hidden, weights_hidden_output))</span><br><span class="line">predictions = out &gt; <span class="number">0.5</span></span><br><span class="line">accuracy = np.mean(predictions == targets_test)</span><br><span class="line">print(<span class="string">"Prediction accuracy: &#123;:.3f&#125;"</span>.format(accuracy))</span><br></pre></td></tr></table></figure><p>你可能会感兴趣：</p><ul><li><a href="http://www.uegeek.com/180125-DeepLearning9-backpropagation.html" target="_blank" rel="noopener">DeepLearning笔记：Backpropagation 反向传播算法</a></li><li><a href="http://www.uegeek.com/180104DeepLearning8-MultiLayer-Perceptrons.html" target="_blank" rel="noopener">DeepLearning笔记：多节点神经网络</a></li><li><a href="http://www.uegeek.com/171226DLN7-GradientDescentinPython.html" target="_blank" rel="noopener">DL笔记：用 python 实现梯度下降的算法</a></li><li><a href="http://www.uegeek.com/171222DLN6-GradientDescent.html" target="_blank" rel="noopener">DL笔记：梯度下降 Gradient Descent</a></li><li><a href="http://www.uegeek.com/171220DLN5-CostFunction.html" target="_blank" rel="noopener">DL笔记：Cost function 损失函数</a></li><li><a href="http://www.uegeek.com/171218DLN4-ActivationFunction.html" target="_blank" rel="noopener">DL笔记：Activation Function 激活函数</a></li><li><a href="http://www.uegeek.com/171213DLN3-LinearRegression.html" target="_blank" rel="noopener">DL笔记：Linear regression 线性回归</a></li><li><a href="http://www.uegeek.com/171209DLN2-NeuralNetworks.html" target="_blank" rel="noopener">DL笔记：Neural Networks 神经网络</a></li><li><a href="http://www.uegeek.com/171206DLNote1-ML-DL-Basic.html" target="_blank" rel="noopener">DL笔记：机器学习和深度学习的区别</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Python" scheme="http://uegeek.com/tags/Python/"/>
-    
-      <category term="深度学习" scheme="http://uegeek.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="DeepLearning" scheme="http://uegeek.com/tags/DeepLearning/"/>
-    
-      <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
-    
-      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="神经网络" scheme="http://uegeek.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="Backpro" scheme="http://uegeek.com/tags/Backpro/"/>
-    
-      <category term="反向传播" scheme="http://uegeek.com/tags/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/"/>
-    
-      <category term="Programming" scheme="http://uegeek.com/tags/Programming/"/>
     
   </entry>
   

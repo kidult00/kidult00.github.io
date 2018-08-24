@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频]]></title>
+    <url>%2F180825-jitter-03.html</url>
+    <content type="text"><![CDATA[Max/MSP/Jitter 教程 01 - 什么是矩阵？ Max/MSP/Jitter 教程 02 - Jitter 对象的属性 00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：Tutorial 1: Playing a QuickTime Movie 这个教程教你使用 Jitter 执行最简单但最有用的任务之一：在窗口中播放 QuickTime 视频。 打开 QuickTime 电影文件 这个 Patch 中有两个 Jitter 对象：jit.movi​​e 和 jit.window。jit.window 会自动打开电脑屏幕上的窗口。jit.movi​​e 则打开 QuickTime 视频并开始播放。 单击 read countdown.mov 的消息框，jit.movi​​e 就会打开 QuickTime 视频文件 countdown.mov 并开始读取。 默认情况下，jit.movi​​e 会在打开文件后立即播放。但是请注意，即使 jit.movi​​e 对象正在播放电影，窗口中却没有显示，因为： Jitter 中的每个对象都执行特定任务——可能非常简单，也可能相当复杂。播放 QuickTime 视频实际上被分解为两个任务： 从硬盘上的文件中将每帧视频数据读入 RAM 获取 RAM 中的数据，并将其显示为屏幕上的彩色像素 第一个任务由 jit.movi​​e 执行，第二个任务由 jit.window 执行。为了让 jit.window 知道要显示什么，这两个对象需要进行通信。 Jitter 对象如何通信 重要概念：Jitter 对象相互通信的关键是矩阵的名称 —— 它指定了数据在内存中的位置。Jitter 对象输出其他 Jitter 对象能理解的消息（jit_matrix，后跟空格和存储数据的矩阵名称）。此消息通过接线在对象之间传递。 接收的对象从入口接收消息，从内存中的指定位置获取数据，以某种方式修改数据，并发送修改后的名称数据，输出到对象的左侧出口。 这样每个对象查看内存中相应的位置来获取所需的数据，执行各自的任务，而不必知道其他对象正在做什么。大多数 Jitter 对象只有从另一个对象获取 jit_matrix 消息，得知该查看相应的矩阵，才会对那里的数据做一些事情。 在多数情况下，Jitter 对象自己会生成唯一的名称。你也可以指定名称（最好是这样）。显式地命名矩阵，不同对象就可以使用相同的内存空间。 由 Jitter 对象触发动作是什么让一个 Jitter 对象将 jit_matrix 消息发送给另一个对象呢？大多数 Jitter 对象在收到消息 outputmatrix 或 bang 时，会发出 jit_matrix 消息。另外，一个对象收到消息并修改了数据后，它会自动发出一条 jit_matrix 消息，通知其他包含相同矩阵名称的对象。 也就是说，当一个对象收到 jit_matrix 消息时，它会做一些事情并发出自己的 jit_matrix 消息。当一个对象收到 outputmatrix 或 bang 时，它会发送一个 jit_matrix 消息，而不做任何其他事情。 因此在示例中，jit.movi​​e 对象正在播放 QuickTime 视频，不断存储当前的视频帧，但 jit.window 对象只会在从 jit.movi​​e 对象接收到 jit_matrix 消息时显示内容。只有当 jit.movi​​e 收到消息bang（或 outputmatrix）时才会发生这种情况。那时，jit.window 将显示当前正在电影中播放的任何视频帧。 为了使 jit.window 以一定速度更新并不断显示视频帧，就需要以同样的速度发送 bang 消息给 jit.movi​​e。 视频在 jit.movi​​e 中播放，每当要显示一帧时都要发送 bang 消息 单击标记了 play 的开关，metro 对象就会启动。这将以每秒 25 次（每 40 毫秒）的速度发出 bang 消息。这个速度足以显示该视频的每一帧。只要 bang 继续，我们就能看到窗口中显示的视频。 jit.window 显示矩阵的内容 点击开关停止 metro。jit.window 对象停止更新电影窗口，现在只会看到最后显示的静止图像。电影仍在播放 - jit.movi​​e 仍在逐帧更新内存 - 但 jit.window 会忽略这些更新，因为 jit.movi​​e 不再发送消息。 你可以单击 metro 下方的按钮，来验证电影是否仍在播放。这会让 jit.movi​​e 将 jit_matrix 消息发送到 jit.window，当前帧会更新 Movie 窗口。连续点几次，会看到电影在鼠标点击之间有变化。 总而言之，jit.movi​​e 以视频正常速率逐帧读取 QuickTime 文件的一帧。当 jit.movi​​e 收到 bang 消息时，会将该数据的位置传达给 jit.window，然后 jit.movi​​e 收到 bang 时所包含的任何帧都由 jit.window 显示出来。 对象中的参数本教程中的 jit.movi​​e 的两个参数 320 和 240，指定了对象在内存中保留单帧视频时的宽度和高度。它会声明足够的 RAM 来存储这些帧。因此，使用 read 消息输入希望读入的视频的尺寸是 ok 的。这样我们知道 QuickTime 视频的尺寸是 320x240。 如果输入的维度小于读入的视频的尺寸，jit.movi​​e 没法声明足够的存储空间，就不得不忽略每帧的一些像素。相反，如果输入的维度大于读入的视频尺寸，则每一帧中都没有足够的像素来填充已分配的内存空间，因此 jit.movi​​e 会平均分发数据，并用重复数据填充空余的内存。 jit.window 对象有五个输入的参数：Movie 5 41 325 281。第一个参数是 jit.window 显示的矩阵的名称。它也会出现在视频窗口的标题栏中。它可以是任何单词（用引号括起来的话，可以是多个单词）。接下来的两个参数，表示视频窗口显示区域左上角的 x，y 屏幕坐标，后两个参数是显示区域右下角的坐标（左-上-右-下）。选择了这些数字是因为 它们定义了一个 320x240 的显示区域，与视频尺寸相同 当考虑操作系统默认的窗口边框、标题栏和菜单栏的尺寸时，窗口刚好隐藏在桌面的左上角。（当然也可以设置标题栏不显示） 输入 metro 的参数 40，使其每秒发出 25 次 bang消息。QuickTime 视频的帧速率是每秒24帧，因此这个 metro 持续触发 jit.movi​​e 对象，确保每帧都能显示。 要播放 QuickTime 视频，请使用 jit.movi​​e 打开文件并将视频的连续帧读入 RAM，然后使用 jit.window 在单独的窗口中显示视频。使用输入的参数指定视频的尺寸，以及屏幕上显示区域的精确坐标。 概要Jitter 对象通过相互发送矩阵的名称，来传递特定视频帧的信息——该信息在内存中的位置。 Jitter 对象获得矩阵名称时，它使用该位置的数据执行指定的任务，然后将修改后的数据名称，发送给其他 Jitter 对象。几乎所有 Jitter 对象在收到bang消息 （或 outputmatrix）时都会发出一个名称（包含在jit_matrix消息中）。因此，为了显示视频的连续帧，以某个速率向 jit.movie 发送 bang 消息，然后​​连接到jit.window显示。 跟踪每个对象的消息和角色]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>ArtxCode</tag>
+        <tag>Max/MSP</tag>
+        <tag>Jitter</tag>
+        <tag>视频</tag>
+        <tag>Creative Coding</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Max/MSP/Jitter 教程 02 - Jitter 对象的属性(attributes)]]></title>
     <url>%2F180822-jitter-02.html</url>
     <content type="text"><![CDATA[Max/MSP/Jitter 教程 01 - 什么是矩阵？ 00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：Attributes: Editing Jitter object parameters 属性是指定 Max 对象行为的方法。大多数 Jitter 对象使用属性来指定当前状态的变量。 许多 Max 对象使用多个参数来确定行为。对象名称后面的这些参数的顺序，决定了对象如何解析它们。在上面的例子中，counter 的第一个参数设置了计数的方向；第二个和第三个参数确定最小值和最大值。 这些值都是数字，参数个数可能会影响对象的行为，所以它们的顺序很重要。如果 counter 只有两个参数，它们会作为最小和最大值，而不是方向和最小值。参数的位置和数量最为关键，在 counter 的例子中，如果只有两个参数，就没办法创建能够指定方向和最大值的 counter 对象。 给定的对象参数，通常被视为初始值，可以从其他入口或发送特殊消息给对象来修改这些值。例如，分别发送整数到第 2 个和第 5 个入口，来更改 counter 对象的方向和最大值，它们会替代默认值。同样，你可以向左入口发送消息 min 后跟一个整数，来更改对象的最小值。 当 Max 对象只有两、三个参数时，天下太平。但是 Jitter 对象通常有很多很多变量（甚至几十个）。如果所有变量都依赖于入口和对象参数的顺序，那么光看文档就够你忙的…… 设置属性与 Max 对象不同，Jitter 对象可以用属性来设定行为。将属性与 Jitter 对象的名称一起输入对象框，或者在创建对象后用消息设置（和检索）属性： 具有对象名称后的属性的Jitter对象 上面是 jit.brcosa 的例子，它有三个属性。使用 @ 符号 + 属性名称 + 一个或多个参数（可以是任意数​​据类型：int，float，symbol 或 list），在对象框中设置属性。 可以在对象的名称之后，以任意顺序输入个数不限的属性。你可能不知道 jit.brcosa 对象的功能，但可以根据属性的名称以及数据类型来推断。 提示：@符号与属性名称之间没有空格 同样重要的是：Jitter 对象可以同时具有输入的属性和输入的参数。请参阅下面的 Jitter 对象参数 部分。 与 Max 对象一样，创建 Jitter 对象并设置初始值以后，可以向对象发送消息随时更改这些属性值： 使用 Max 消息更改属性 jit.brcosa 对象的亮度属性初始值为 0.5（在对象框中输入 @brightness 0.5），然后可以发送消息 brightness [float]到对象的左入口来更改。发送带有属性名称的消息（后跟相关参数）到 Jitter 对象的左入口，就可以更改几乎任何属性。 与 Max 对象一样，Jitter 对象有参数的默认值。上面的 jit.brcosa 对象只设置了亮度的初始值，其他属性都使用默认值。在上面的示例中，使用消息更改对象的对比度(contrast)和饱和度(saturation)属性的值，从而替换对象的默认值。 下面说明如何设置对象的属性值。 Jitter 对象参数大多数 Jitter 对象有四种输入属性或输入参数。实际上它们都是属性，只不过 Jitter 对象会自动判断应该用作属性还是参数。 Jitter 对象也可以有参数 上面 jit.rota 对象有两个初始化的属性：anchor_x 和 anchor_y。但其他数字是什么意思呢？ 如果 Jitter 对象处理的是矩阵数据，则参数将被理解为： 输出矩阵的 planecount 输出矩阵的类型 输出矩阵的大小或维度 现在我们知道，上面的 jit.rota 对象将输出一个由 4 个 char（8位整数）数据平面组成的矩阵，每个平面的维度是 320x240。 注意：如果要指定 Jitter 对象的参数，参数必须出现在任意属性之前。否则 Jitter 对象会将参数误解为属性的值，而不是对象的参数。 所有可以输出矩阵数据的 Jitter 对象，都有几个共同的属性，它们可以设置参数：planecount，type 和 dim。可以通过输入属性（不需要指定顺序），也可以用消息触发更改。例如，下面的三个对象是等价的： 参数或属性？你来定 第一个对象的输出矩阵，直接使用输入的参数来设置。 第二个对象使用输入的参数设置了 planecount 和 type，但使用了输入的属性设置了 dim 的数量。 第三个对象使用输入的属性来设置所有内容。 你也可以用 loadbang 对象触发的消息来初始化对象属性： 另一种初始化属性的方法 查询属性和对象状态查找对象属性设置的最快方法，是查看检查器（inspector）。选中对象，按 cmd/alt + i 或单击右侧工具栏上的 i 图标就可以打开。在窗口底部附近可以找到当前属性设置。 属性的另一个功能是显示 Jitter 对象属性的当前值。用一个 get 开头的消息，紧跟想要查询的属性名（与get之间没有空格）来触发。比如下图的 getdim 可以触发动作，获取 jit.grab 对象的 dim 当前参数。结果值由 Jitter 对象以消息形式从右输出口输出（以属性的名称 dim 开头）。 查询 Jitter 对象的属性 使用 get 可以查询出属性的当前值，即使之前从未设置过。例如，下面的 patch 获取了 jit.plur 对象的一些默认值。用 route 对象可以轻松分离每个属性的值。 获取属性的默认值 你可以发送给任何 Jitter 对象getattributes 和 getstate 消息，来获得对象的所有属性。 getAttributes 消息令 Jitter 对象输出它包含的所有属性列表。查看几个 Jitter 对象，很快就会发现几个频繁出现的属性（例如outputmode，type 和 dim）。其他（例如 jit.brass 对象中的 mask）则是某些对象独有的。 getstate 消息可以一次性输出 Jitter 对象所有属性的值： 查询对象的状态 这样我们就可以用 route，unpack和其他对象来按需查找属性值了。在后续的教程中会遇到几个 Jitter 对象，其属性基于输入矩阵（或被对象打开的文件）执行的计算而更改。想要找出对象计算结果，就需要查询相关属性值。 ATTR你还可以使用 attrui 对象读取属性值。这是一个 UI 控件，它与对象的入口是双向连接的。attrui 对象有两个部分，左边部分是所有可用的属性的下拉菜单。选择属性后，右侧会显示属性的当前值，并可编辑。 查找对象的状态 小结Jitter 对象的属性，让我们可以很好地管理复杂的对象参数。你可以使用属性来初始化、更改和查找存储在 Jitter 对象中的当前值。直接在属性名称后赋值，就免去了记忆参数功能和顺序的麻烦。 MakeNoise 系列 MakeNoise01 - 声音是什么？ MakeNoise02 - 频率和音高 MakeNoise03 - 振幅/响度/音量/增益 大乱斗 MakeNoise04 - 波形和相位 MakeNoise05 - Envelope 包络（ADSR） MakeNoise06 - 音色和均衡器(EQ) MakeNoise07 - 音频的分辨率 Sample rate/Bit depth MakeNoise08 - 振荡器和滤波器 MakeNoise09 - 压缩 Compression MakeNoise10 - 延时和混响 Delay &amp; Reverb]]></content>
@@ -12,8 +28,8 @@
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
         <tag>视频</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -28,9 +44,9 @@
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
         <tag>视频</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
       </tags>
   </entry>
   <entry>
@@ -261,8 +277,8 @@
         <tag>ArtxCode</tag>
         <tag>DeepLearning</tag>
         <tag>Coding</tag>
-        <tag>编程</tag>
         <tag>神经网络</tag>
+        <tag>编程</tag>
         <tag>Programming</tag>
       </tags>
   </entry>
@@ -280,8 +296,8 @@
         <tag>ArtxCode</tag>
         <tag>DeepLearning</tag>
         <tag>Coding</tag>
-        <tag>编程</tag>
         <tag>神经网络</tag>
+        <tag>编程</tag>
         <tag>Programming</tag>
         <tag>AWS</tag>
         <tag>GPU</tag>
@@ -346,8 +362,8 @@
         <tag>ArtxCode</tag>
         <tag>DeepLearning</tag>
         <tag>Coding</tag>
-        <tag>编程</tag>
         <tag>神经网络</tag>
+        <tag>编程</tag>
         <tag>Backpro</tag>
         <tag>反向传播</tag>
         <tag>Programming</tag>
