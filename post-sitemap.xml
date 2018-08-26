@@ -7,8 +7,24 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/180826-jitter-04.html</loc>
+        <lastmod>2018-08-26T11:01:33.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/180821-jitter-01.html</loc>
+        <lastmod>2018-08-25T07:19:10.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://uegeek.com/180825-jitter-03.html</loc>
-        <lastmod>2018-08-24T15:54:30.000Z</lastmod>
+        <lastmod>2018-08-25T07:18:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +32,7 @@
 
     <url>
         <loc>http://uegeek.com/180822-jitter-02.html</loc>
-        <lastmod>2018-08-22T09:57:32.000Z</lastmod>
+        <lastmod>2018-08-25T07:18:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -649,14 +665,6 @@
     <url>
         <loc>http://uegeek.com/170101-data-science-toolkit.html</loc>
         <lastmod>2018-08-22T09:32:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/180821-jitter-01.html</loc>
-        <lastmod>2018-08-22T09:30:36.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

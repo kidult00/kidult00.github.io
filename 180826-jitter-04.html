@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="t1oNPvdeea" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ArtxCode,Max/MSP,Jitter,矩阵,教程,Creative Coding," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="ArtxCode,Max&#x2F;MSP,Jitter,矩阵,教程,Creative Coding">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Max&#x2F;MSP&#x2F;Jitter教程 04 - 创建矩阵">
+<meta property="og:url" content="http://uegeek.com/180826-jitter-04.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-4.jpg">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/02patcher.png">
+<meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02a.png">
+<meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02a.png">
+<meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02b.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/max%20console.png">
+<meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02c.png">
+<meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02d.png">
+<meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02e.png">
+<meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02f.png">
+<meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02g.png">
+<meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02h.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/max%20console%20fill.png">
+<meta property="og:image" content="http://uegeek.com/Users/kidult00/OneDrive/1-Writing/Max%20tutorial/jitter04/output%20display.png">
+<meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02i.png">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png">
+<meta property="og:updated_time" content="2018-08-26T11:01:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Max&#x2F;MSP&#x2F;Jitter教程 04 - 创建矩阵">
+<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-4.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/180826-jitter-04.html"/>
+
+
+
+
+
+  <title>Max/MSP/Jitter教程 04 - 创建矩阵 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/180826-jitter-04.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Max/MSP/Jitter教程 04 - 创建矩阵</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-26T18:59:41+08:00">
+                2018-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/180826-jitter-04.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="180826-jitter-04.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-4.jpg" alt=""></p>
+<a id="more"></a>
+<ul>
+<li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li>
+<li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li>
+<li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li>
+</ul>
+<blockquote>
+<p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter02" target="_blank" rel="noopener">Tutorial 2: Create a Matrix</a></p>
+</blockquote>
+<h2 id="什么是矩阵？"><a href="#什么是矩阵？" class="headerlink" title="什么是矩阵？"></a>什么是矩阵？</h2><p>本教程讲解处理矩阵数据的方法。可以先回顾一下 <a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></p>
+<p>矩阵用虚拟的网格来存储和修改大批的数值数据。数据存储在矩阵中，就可以通过网格位置查找，并指定整个矩阵或部分矩阵来批量修改多个值。</p>
+<p>在<a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">上一篇教程</a>中，我们使用 <code>jit.window</code> 对象打开一个窗口，并将矩阵的内容显示为彩色像素。</p>
+<p>显示的矩阵来自 <code>jit.movi​​e</code> 对象，它用 QuickTime 视频的当前帧连续填充矩阵。<code>jit.window</code> 之所以能显示视频，只不过因为被告知要显示哪些矩阵的内容; 事实上，矩阵中的任何数值都可以显示。本教程通过一个更简单的例子帮助你理解矩阵，它是 Jitter 的核心思想。</p>
+<p>以下是本节完整的 patcher 截图</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/02patcher.png" alt=""></p>
+<h2 id="jit-matrix-对象"><a href="#jit-matrix-对象" class="headerlink" title="jit.matrix 对象"></a>jit.matrix 对象</h2><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02a.png" alt=""><br>为单个 8 位值创建 16x12 存储空间</p>
+<p><code>jit.matrix</code> 对象创建矩阵并在内存中声明存储空间，以便我们存储和检索数值，并打印或显示出来。 <code>jit.matrix</code> 的参数包括：</p>
+<ul>
+<li>[name]（可选，本例中未包含）</li>
+<li>[planecount]（在矩阵的每个单元格中存储多少个值）</li>
+<li>[type]（用多少个字节来表示每个数字）</li>
+<li>[dim]（维度，描述矩阵的大小）</li>
+</ul>
+<p>括号 [] 里面应填入实际的赋值。上面的例子创建了 1 个平面（每个矩阵单元包含 1 个数字）、尺寸为 16x12（共 192 个单元格）的 char 型（单字节值）矩阵。由此可以推断出矩阵能够保存 192 个单独的数值，每个值的范围是 0~255（单个字节的范围）。</p>
+<blockquote>
+<p>注意：在 Max 中用 x，y（宽度，高度）格式描述二维矩阵的维数，先给出水平维度的范围，然后是垂直维度。这跟视频和计算机屏幕坐标处理尺寸的方式一致（例如，640x480 视频图像）。即，先说明有多少列（宽），再说明有多少行（高）。需要注意，Jitter 描述行和列，与线性代数中描述矩阵的惯例（先表示行，然后是列）不同。</p>
+</blockquote>
+<p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02a.png" alt=""></p>
+<p>回到例子中，一个按钮连接到 <code>jit.matrix</code> 的入口。当 Jitter 对象在左入口接收到 <code>bang</code> 消息时会发送矩阵名称，这个按钮会触发 <code>jit.matrix</code> 发送它的矩阵名称（以 <code>jit_matrix</code> 消息的形式）。</p>
+<h2 id="jit-print对象"><a href="#jit-print对象" class="headerlink" title="jit.print对象"></a>jit.print对象</h2><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02b.png" alt=""><br>打印 <code>jit.matrix</code> 的内容</p>
+<p>在 <code>jit.matrix</code> 下面有一个新的 Jitter 对象：<code>jit.print</code>。它在入口处接收矩阵名称（<code>jit_matrix</code> 消息）并格式化矩阵的值，以便在 Max Console 中打印。它将格式化的值打印到 Max Console，就像 Max 的 <code>print</code> 对象一样，然后在 <code>jit_matrix</code> 消息中以矩阵名称的形式传递出来。</p>
+<p>单击标记为 “output” 的按钮，这会让 <code>jit.matrix</code> 传递矩阵名称给 <code>jit.print</code>，后者格式化值并在 Max Console 中显示：<code>jit_matrix [somename]</code>。左边的单词表示这是由 <code>jit.print</code>  对象打印的，这是 <code>jit.matrix</code> 出口的结果。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/max%20console.png" alt=""></p>
+<p>因为我们没有指定矩阵的名称（没有指定 <code>jit.matrix</code> 的第一个输入参数），所以 <code>jit.matrix</code> 自己会生成唯一名称（类似 “u330000007”）。这里我们并不关心名称是什么，但它能够告诉 <code>jit.print</code> 对象要显示哪个矩阵的数据。</p>
+<p>上图显示了来自 <code>jit.print</code> 矩阵中的所有值，按 16 列和 12 行整齐排列。它们现在都是 0，因为我们还没有在矩阵中填充任何内容。</p>
+<h2 id="在矩阵中设置和查询值"><a href="#在矩阵中设置和查询值" class="headerlink" title="在矩阵中设置和查询值"></a>在矩阵中设置和查询值</h2><p>在<a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">上一章</a>中，我们知道如何使用 QuickTime 视频中的彩色数据帧自动填充整个矩阵。还可以将数值放置在矩阵的特定单元格中，并从特定位置检索。</p>
+<p>在下面的例子中，<code>jit.matrix</code> 上方有一些消息框，可以设置和获取矩阵中的值。</p>
+<p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02c.png" alt=""><br>消息 setcell 和 getcell 可以访问矩阵中的特定值</p>
+<p>使用 <code>setcell</code> 消息可以在特定的矩阵位置中存储值。语法是： <code>setcell [cell coordinates] val [value（s）]</code>。</p>
+<p>例如， <code>jit.matrix</code> 消息 <code>setcell 0 0 val 127</code> 会将矩阵的第一个单元格（即左上角的单元格）的值设置为 127。每个维度中对单元格坐标的编号从 0 开始，最大值比维度小 1。在此矩阵中，x 维度中的位置编号为 0~15，y 维度中的位置编号为 0~11。因此右下角的单元格坐标是 15 11.</p>
+<p><code>pack 0 0 0</code> 对象组合多个数字提供给<code>setcell</code> 消息发送给 <code>jit.matrix</code>。首先设置想要存储值的 x 和 y 位置，然后指定要存储在那里的值。当 x 和 y 位置为 0 0 时，用标有“value” 的数字框发送 127 到 <code>pack 0 0 0</code> 的左侧入口。这将触发消息 <code>setcell 0 0 val 127</code> 发送给  <code>jit.matrix</code>。</p>
+<p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02d.png" alt=""><br>消息 <code>setcell 0 0 val 127</code> 设置单元位置 0,0 的值为 127</p>
+<p>（如果矩阵中有多个平面，可以在单元格的特定/所有平面中设置值）</p>
+<p>为了演示之前提过的单元格位置编号，现在尝试将消息 <code>setcell 15 11 val 255</code> 发送到 <code>jit.matrix</code>。在 “X position” 下面的数字框输入 15，在 “Y position” 下面的数字框输入 11 ，在 “value” 下面的数字框输入 255。然后点击 “output” 按钮查看矩阵的变化。<code>jit.print</code>在 Max 控制台中打印出整个矩阵。请注意，单元格位置 0,0 和 15,11 中的值已变为 127 和 255。</p>
+<p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02e.png" alt=""><br>消息 <code>setcell 15 11 val 255</code>将单元格位置 15,11 的值设置为 255</p>
+<p>在 Patch 窗口中，你可能已经注意到黑色矩形区域的变化。它的左上角和右下角已经改变了。</p>
+<p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02f.png" alt=""><br><code>jit.pwindow</code> 对象显示的数值为颜色（或灰度值）</p>
+<p>该区域是一个名为 <code>jit.pwindow</code> 的用户界面对象。在添加对象面板中可以找到它：</p>
+<p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02g.png" alt=""><br>对象选项板中的 <code>jit.pwindow</code> 图标</p>
+<p>在添加对象面板中单击或将其拖动到 patch 窗口时，它会创建一个小的矩形对象（可以拖动对象右下角调整尺寸）。它在功能上与 <code>jit.window</code> 非常相似，区别是它在 Patch 窗口中显示矩阵数据，而不是在一个单独的窗口。</p>
+<p>于是我们看到数值显示为颜色（char 数值范围是 0~255）。矩阵中只有一个平面，所以是单色（即灰度）。0 表示黑色，其他值是某种灰度，最大值255 是白色。因此，单元格 15,11 的 255 值显示为白色，0,0 的 127 值显示为黑色和白色之间的 50％ 灰色。</p>
+<p>你可能会觉得这样填充矩阵相当繁琐。没错。所以 Max 允许我们编写程序来自动填充。</p>
+<h2 id="以算法方式填充矩阵"><a href="#以算法方式填充矩阵" class="headerlink" title="以算法方式填充矩阵"></a>以算法方式填充矩阵</h2><p>双击 <code>patcher  fillmatrix</code> 对象打开子 patch。它将不同的数字传入数学表达式，生成 192 个不同的值到矩阵中的每个单元。</p>
+<p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02h.png" alt=""><br>通过算法生成值来填充矩阵的单元格</p>
+<p>当 <code>uzi 12</code> 对象收到 <code>bang</code>（点击主 Patch 窗口中标记为 “fill” 的按钮）时，它会快速从右侧出口进行 1 到 12 计数，并向左侧出口发送每个计数的 bang。</p>
+<p>那些 bang 触发了<code>uzi 16</code>对象，因此它每次都会发出 1~16 的数字。然后把这些数字减去 1，这样值的范围就限定在 0~11 和 0~15，输出的结果作为矩阵中的 y 和 x 位置。对于 12 个 y 位置中的每一个，<code>uzi 16</code>对象指定所有 x 位置，然后在数学表达式（expr）中使用这些数字来计算要存储在该位置的值。这些数字从 outlet 发送给主 patch 创建定义好的 <code>setcell</code> 消息，就像我们之前手动做的那样。</p>
+<p>这里不需要关注具体的数学表达式。它可以生成任何公式。刚才我们用一个公式在每列中产生亮度的正弦梯度，这将让列的整体亮度从左向右增加（即随 x 增加）。</p>
+<p>关闭 <code>patcher fillmatrix</code> ，然后单击标记为 “fill” 的按钮。矩阵在 Max 的 scheduler 的每个时钟节拍中填充值（由子 patch 中的 uzi 对象生成）。现在单击标有 “output” 的按钮查看矩阵的内容。数值将打印在 Max Console 中，并显示在 <code>jit.pwindow</code> 中。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/max%20console%20fill.png" alt=""></p>
+<p>即使对于像 16x12 这样的小型矩阵，仅仅查看 Max Console 中的数字打印输出，我们很难看到数值数据的趋势。而 <code>jit.pwindow</code> 中的显示能够清楚而直观地展示值在矩阵中的变化情况。这是数据可视化的好处。</p>
+<p><img src="/Users/kidult00/OneDrive/1-Writing/Max tutorial/jitter04/output display.png" alt=""></p>
+<p>你可以想象在 Max 中以算法方式填充矩阵的其他方法，我们将在后面的教程中演示。</p>
+<h2 id="jit-matrix-可以响应的其他消息"><a href="#jit-matrix-可以响应的其他消息" class="headerlink" title="jit.matrix 可以响应的其他消息"></a>jit.matrix 可以响应的其他消息</h2><p><code>jit.matrix</code> 还可以接收许多其他消息。例如可以使用相同的值填充所有 <code>jit.matrix</code>。发送给<code>jit.matrix</code> 的 <code>clear</code>消息将所有值设置为 0，<code>setall</code> 消息（setall 后跟一个值）将矩阵中的所有单元设置为同一个值。</p>
+<p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02i.png" alt=""><br>查询矩阵位置 8,6 处的值; 报告单元格 8 6 val [value(s)]</p>
+<p>还有 <code>getcell</code>消息。单词 <code>getcell</code> 后跟矩阵中的位置（x和y）会让 <code>jit.matrix</code> 将单元格坐标和该位置的值发送到右侧出口。</p>
+<p>在 <code>getcell $1 $2</code> 消息框上方的数字框中输入 y 值，然后输入 x 值，并观察 Max Console 中打印的内容。请注意，该矩阵位置的值在 <code>jit.matrix</code> 的右侧出口输出。</p>
+<p>在后面的教程中，你将看到从矩阵中检索值的各种方法。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><code>jit.matrix</code> 对象可以为任何尺寸、平面数和数据类型的矩阵数据创建存储空间。该矩阵可以填充来自另一个 Jitter 对象（例如 <code>jit.movi​​e</code> ）的数据，或者用 <code>setall [value]</code>之类的消息来设置所有单元格中的值，或者 <code>setcell [position] val [value（s）]</code>来设置特定单元。可以使用 patch 中其他位置的算法根据公式或一组规则来填充矩阵。</p>
+<p>要获取特定单元格中的数据，可以使用 <code>getcell [position]</code>消息。要查看在 Max Console 中打印的所有数值数据，请使用 <code>jit.print</code> 对象格式化矩阵数据并打印。要查看显示为颜色的矩阵数据，请使用 <code>jit.pwindow</code> 对象。这类似于<a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">教程1</a>中演示的 <code>jit.window</code> 对象。</p>
+<p>在本教程中，我们查看了自己生成的数据，而不是上一篇中的数字视频。两种情况下的存储原理是相同的。无论矩阵是存储来自数字视频帧的每个像素的颜色信息，还是表示颜色的数字，它们都存储在二维矩阵中，并且通过 <code>jit.window</code> 或 <code>jit.pwindow</code> 显示。</p>
+<hr>
+<blockquote>
+<p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p>
+</blockquote>
+<p>👇👇👇</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果文章帮您节省时间或者解答疑问，不妨打个赏 :)</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    kidult00
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://uegeek.com/180826-jitter-04.html" title="Max/MSP/Jitter教程 04 - 创建矩阵">http://uegeek.com/180826-jitter-04.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArtxCode/" rel="tag"># ArtxCode</a>
+          
+            <a href="/tags/Max-MSP/" rel="tag"># Max/MSP</a>
+          
+            <a href="/tags/Jitter/" rel="tag"># Jitter</a>
+          
+            <a href="/tags/矩阵/" rel="tag"># 矩阵</a>
+          
+            <a href="/tags/教程/" rel="tag"># 教程</a>
+          
+            <a href="/tags/Creative-Coding/" rel="tag"># Creative Coding</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/180825-jitter-03.html" rel="next" title="Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频">
+                <i class="fa fa-chevron-left"></i> Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">Designer / Maker / Learner</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">225</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">213</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://steemit.com/@kidult00/" target="_blank" title="Steemit">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Steemit
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是矩阵？"><span class="nav-number">1.</span> <span class="nav-text">什么是矩阵？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jit-matrix-对象"><span class="nav-number">2.</span> <span class="nav-text">jit.matrix 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jit-print对象"><span class="nav-number">3.</span> <span class="nav-text">jit.print对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在矩阵中设置和查询值"><span class="nav-number">4.</span> <span class="nav-text">在矩阵中设置和查询值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以算法方式填充矩阵"><span class="nav-number">5.</span> <span class="nav-text">以算法方式填充矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jit-matrix-可以响应的其他消息"><span class="nav-number">6.</span> <span class="nav-text">jit.matrix 可以响应的其他消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">7.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/180826-jitter-04.html';
+          this.page.identifier = '180826-jitter-04.html';
+          this.page.title = 'Max/MSP/Jitter教程 04 - 创建矩阵';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

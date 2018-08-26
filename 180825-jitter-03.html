@@ -82,7 +82,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ArtxCode,Max/MSP,Jitter,视频,Creative Coding,教程," />
+  <meta name="keywords" content="ArtxCode,Max/MSP,Jitter,视频,教程,Creative Coding," />
 
 
 
@@ -100,7 +100,7 @@
 
 
 
-<meta name="keywords" content="ArtxCode,Max&#x2F;MSP,Jitter,视频,Creative Coding,教程">
+<meta name="keywords" content="ArtxCode,Max&#x2F;MSP,Jitter,视频,教程,Creative Coding">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Max&#x2F;MSP&#x2F;Jitter 教程 03 - 播放 QuickTime 视频">
 <meta property="og:url" content="http://uegeek.com/180825-jitter-03.html">
@@ -112,7 +112,8 @@
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter01c.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter01b.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter01d.png">
-<meta property="og:updated_time" content="2018-08-24T15:54:30.000Z">
+<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png">
+<meta property="og:updated_time" content="2018-08-25T07:18:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Max&#x2F;MSP&#x2F;Jitter 教程 03 - 播放 QuickTime 视频">
 <meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-3.jpg">
@@ -498,8 +499,14 @@
 </ul>
 <p>输入 <code>metro</code> 的参数 40，使其每秒发出 25 次 <code>bang</code>消息。QuickTime 视频的帧速率是每秒24帧，因此这个 <code>metro</code> 持续触发 <code>jit.movi​​e</code> 对象，确保每帧都能显示。</p>
 <p>要播放 QuickTime 视频，请使用 <code>jit.movi​​e</code> 打开文件并将视频的连续帧读入 RAM，然后使用 <code>jit.window</code> 在单独的窗口中显示视频。使用输入的参数指定视频的尺寸，以及屏幕上显示区域的精确坐标。</p>
-<h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>Jitter 对象通过相互发送矩阵的名称，来传递特定视频帧的信息——该信息在内存中的位置。 Jitter 对象获得矩阵名称时，它使用该位置的数据执行指定的任务，然后将修改后的数据名称，发送给其他 Jitter 对象。几乎所有 Jitter 对象在收到<code>bang</code>消息 （或 outputmatrix）时都会发出一个名称（包含在<code>jit_matrix</code>消息中）。因此，为了显示视频的连续帧，以某个速率向 <code>jit.movie</code> 发送 <code>bang</code> 消息，然后​​连接到<code>jit.window</code>显示。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Jitter 对象通过相互发送矩阵的名称，来传递特定视频帧的信息——该信息在内存中的位置。 Jitter 对象获得矩阵名称时，它使用该位置的数据执行指定的任务，然后将修改后的数据名称，发送给其他 Jitter 对象。几乎所有 Jitter 对象在收到<code>bang</code>消息 （或 outputmatrix）时都会发出一个名称（包含在<code>jit_matrix</code>消息中）。因此，为了显示视频的连续帧，以某个速率向 <code>jit.movie</code> 发送 <code>bang</code> 消息，然后​​连接到<code>jit.window</code>显示。</p>
 <p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter01d.png" alt=""><br>跟踪每个对象的消息和角色</p>
+<hr>
+<blockquote>
+<p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p>
+</blockquote>
+<p>👇👇👇</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png" alt=""></p>
 
       
     </div>
@@ -575,9 +582,9 @@
           
             <a href="/tags/视频/" rel="tag"># 视频</a>
           
-            <a href="/tags/Creative-Coding/" rel="tag"># Creative Coding</a>
-          
             <a href="/tags/教程/" rel="tag"># 教程</a>
+          
+            <a href="/tags/Creative-Coding/" rel="tag"># Creative Coding</a>
           
         </div>
       
@@ -599,6 +606,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/180826-jitter-04.html" rel="prev" title="Max/MSP/Jitter教程 04 - 创建矩阵">
+                Max/MSP/Jitter教程 04 - 创建矩阵 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -682,7 +693,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">224</span>
+                <span class="site-state-item-count">225</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -825,7 +836,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jitter-对象如何通信"><span class="nav-number">1.</span> <span class="nav-text">Jitter 对象如何通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#由-Jitter-对象触发动作"><span class="nav-number">2.</span> <span class="nav-text">由 Jitter 对象触发动作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象中的参数"><span class="nav-number">3.</span> <span class="nav-text">对象中的参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概要"><span class="nav-number">4.</span> <span class="nav-text">概要</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jitter-对象如何通信"><span class="nav-number">1.</span> <span class="nav-text">Jitter 对象如何通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#由-Jitter-对象触发动作"><span class="nav-number">2.</span> <span class="nav-text">由 Jitter 对象触发动作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象中的参数"><span class="nav-number">3.</span> <span class="nav-text">对象中的参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
