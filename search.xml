@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title><![CDATA[Max/MSP/Jitter 教程06 - 控制视频播放]]></title>
+      <title><![CDATA[Max/MSP/Jitter 官方教程翻译06 - 控制视频播放]]></title>
       <url>/180829-jitter-06.html</url>
       <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-6.jpg" alt=""></p>
 <a id="more"></a>
@@ -83,7 +83,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Max/MSP/Jitter 教程05 - 矩阵的数学运算]]></title>
+      <title><![CDATA[Max/MSP/Jitter 官方教程翻译05 - 矩阵的数学运算]]></title>
       <url>/180828-jitter-05.html</url>
       <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-5.jpg" alt=""></p>
 <a id="more"></a>
@@ -184,7 +184,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Max/MSP/Jitter教程 04 - 创建矩阵]]></title>
+      <title><![CDATA[Max/MSP/Jitter 官方教程翻译04 - 创建矩阵]]></title>
       <url>/180826-jitter-04.html</url>
       <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-4.jpg" alt=""></p>
 <a id="more"></a>
@@ -291,7 +291,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频]]></title>
+      <title><![CDATA[Max/MSP/Jitter 官方教程翻译03 - 播放 QuickTime 视频]]></title>
       <url>/180825-jitter-03.html</url>
       <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-3.jpg" alt=""></p>
 <a id="more"></a>
@@ -381,7 +381,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Max/MSP/Jitter 教程 02 - Jitter 对象的属性(attributes)]]></title>
+      <title><![CDATA[Max/MSP/Jitter 官方教程翻译02 - Jitter 对象的属性(attributes)]]></title>
       <url>/180822-jitter-02.html</url>
       <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title2.jpg" alt=""></p>
 <a id="more"></a>
@@ -492,7 +492,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Max/MSP/Jitter 教程 01 - 什么是矩阵？]]></title>
+      <title><![CDATA[Max/MSP/Jitter 官方教程翻译01 - 什么是矩阵？]]></title>
       <url>/180821-jitter-01.html</url>
       <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title1.jpg" alt=""></p>
 <a id="more"></a>
@@ -17141,9 +17141,9 @@ SONET optical fiber
             
             <tag> 设计 </tag>
             
-            <tag> service design </tag>
-            
             <tag> 服务设计 </tag>
+            
+            <tag> service design </tag>
             
         </tags>
         

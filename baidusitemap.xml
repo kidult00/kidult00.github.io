@@ -4,11 +4,133 @@
 
     
   <url>
-    <loc>http://uegeek.com/180829-jitter-06.html</loc>
-    <lastmod>2018-08-29T13:16:34.000Z</lastmod>
+    <loc>http://uegeek.com/180826-jitter-04.html</loc>
+    <lastmod>2018-08-29T13:22:37.000Z</lastmod>
     <data>
         <display>
-        <title>Max/MSP/Jitter 教程06 - 控制视频播放</title>
+        <title>Max/MSP/Jitter 官方教程翻译04 - 创建矩阵</title>
+        <pubTime>2018-08-26T10:59:41.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Max/MSP</tag>
+         
+        <tag>Jitter</tag>
+         
+        <tag>矩阵</tag>
+         
+        <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/180825-jitter-03.html</loc>
+    <lastmod>2018-08-29T13:22:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>Max/MSP/Jitter 官方教程翻译03 - 播放 QuickTime 视频</title>
+        <pubTime>2018-08-24T16:05:34.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Max/MSP</tag>
+         
+        <tag>Jitter</tag>
+         
+        <tag>视频</tag>
+         
+        <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/180822-jitter-02.html</loc>
+    <lastmod>2018-08-29T13:22:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>Max/MSP/Jitter 官方教程翻译02 - Jitter 对象的属性(attributes)</title>
+        <pubTime>2018-08-22T09:20:13.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Max/MSP</tag>
+         
+        <tag>Jitter</tag>
+         
+        <tag>视频</tag>
+         
+        <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/180821-jitter-01.html</loc>
+    <lastmod>2018-08-29T13:22:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>Max/MSP/Jitter 官方教程翻译01 - 什么是矩阵？</title>
+        <pubTime>2018-08-21T15:57:01.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Max/MSP</tag>
+         
+        <tag>Jitter</tag>
+         
+        <tag>视频</tag>
+         
+        <tag>矩阵</tag>
+         
+        <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/180829-jitter-06.html</loc>
+    <lastmod>2018-08-29T13:22:15.000Z</lastmod>
+    <data>
+        <display>
+        <title>Max/MSP/Jitter 官方教程翻译06 - 控制视频播放</title>
         <pubTime>2018-08-29T13:15:21.000Z</pubTime>
         
         <tag>ArtxCode</tag>
@@ -37,10 +159,10 @@
     
   <url>
     <loc>http://uegeek.com/180828-jitter-05.html</loc>
-    <lastmod>2018-08-28T11:39:48.000Z</lastmod>
+    <lastmod>2018-08-29T13:22:09.000Z</lastmod>
     <data>
         <display>
-        <title>Max/MSP/Jitter 教程05 - 矩阵的数学运算</title>
+        <title>Max/MSP/Jitter 官方教程翻译05 - 矩阵的数学运算</title>
         <pubTime>2018-08-28T11:37:40.000Z</pubTime>
         
         <tag>ArtxCode</tag>
@@ -56,128 +178,6 @@
         <tag>Creative Coding</tag>
          
         <tag>数学</tag>
-         
-         
-           
-             
-              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/180826-jitter-04.html</loc>
-    <lastmod>2018-08-26T11:43:02.000Z</lastmod>
-    <data>
-        <display>
-        <title>Max/MSP/Jitter教程 04 - 创建矩阵</title>
-        <pubTime>2018-08-26T10:59:41.000Z</pubTime>
-        
-        <tag>ArtxCode</tag>
-         
-        <tag>Max/MSP</tag>
-         
-        <tag>Jitter</tag>
-         
-        <tag>矩阵</tag>
-         
-        <tag>教程</tag>
-         
-        <tag>Creative Coding</tag>
-         
-         
-           
-             
-              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/180821-jitter-01.html</loc>
-    <lastmod>2018-08-25T07:19:10.000Z</lastmod>
-    <data>
-        <display>
-        <title>Max/MSP/Jitter 教程 01 - 什么是矩阵？</title>
-        <pubTime>2018-08-21T15:57:01.000Z</pubTime>
-        
-        <tag>ArtxCode</tag>
-         
-        <tag>Max/MSP</tag>
-         
-        <tag>Jitter</tag>
-         
-        <tag>视频</tag>
-         
-        <tag>矩阵</tag>
-         
-        <tag>教程</tag>
-         
-        <tag>Creative Coding</tag>
-         
-         
-           
-             
-              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/180825-jitter-03.html</loc>
-    <lastmod>2018-08-25T07:18:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</title>
-        <pubTime>2018-08-24T16:05:34.000Z</pubTime>
-        
-        <tag>ArtxCode</tag>
-         
-        <tag>Max/MSP</tag>
-         
-        <tag>Jitter</tag>
-         
-        <tag>视频</tag>
-         
-        <tag>教程</tag>
-         
-        <tag>Creative Coding</tag>
-         
-         
-           
-             
-              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/180822-jitter-02.html</loc>
-    <lastmod>2018-08-25T07:18:30.000Z</lastmod>
-    <data>
-        <display>
-        <title>Max/MSP/Jitter 教程 02 - Jitter 对象的属性(attributes)</title>
-        <pubTime>2018-08-22T09:20:13.000Z</pubTime>
-        
-        <tag>ArtxCode</tag>
-         
-        <tag>Max/MSP</tag>
-         
-        <tag>Jitter</tag>
-         
-        <tag>视频</tag>
-         
-        <tag>教程</tag>
-         
-        <tag>Creative Coding</tag>
          
          
            
@@ -5065,9 +5065,9 @@
          
         <tag>设计</tag>
          
-        <tag>service design</tag>
-         
         <tag>服务设计</tag>
+         
+        <tag>service design</tag>
          
          
            

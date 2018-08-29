@@ -7,32 +7,8 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/180829-jitter-06.html</loc>
-        <lastmod>2018-08-29T13:16:34.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/180828-jitter-05.html</loc>
-        <lastmod>2018-08-28T11:39:48.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://uegeek.com/180826-jitter-04.html</loc>
-        <lastmod>2018-08-26T11:43:02.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/180821-jitter-01.html</loc>
-        <lastmod>2018-08-25T07:19:10.000Z</lastmod>
+        <lastmod>2018-08-29T13:22:37.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -40,7 +16,7 @@
 
     <url>
         <loc>http://uegeek.com/180825-jitter-03.html</loc>
-        <lastmod>2018-08-25T07:18:59.000Z</lastmod>
+        <lastmod>2018-08-29T13:22:33.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -48,7 +24,31 @@
 
     <url>
         <loc>http://uegeek.com/180822-jitter-02.html</loc>
-        <lastmod>2018-08-25T07:18:30.000Z</lastmod>
+        <lastmod>2018-08-29T13:22:28.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/180821-jitter-01.html</loc>
+        <lastmod>2018-08-29T13:22:24.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/180829-jitter-06.html</loc>
+        <lastmod>2018-08-29T13:22:15.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/180828-jitter-05.html</loc>
+        <lastmod>2018-08-29T13:22:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
