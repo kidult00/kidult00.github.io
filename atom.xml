@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-08-28T11:39:48.000Z</updated>
+  <updated>2018-08-29T13:16:34.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Max/MSP/Jitter 教程06 - 控制视频播放</title>
+    <link href="http://uegeek.com/180829-jitter-06.html"/>
+    <id>http://uegeek.com/180829-jitter-06.html</id>
+    <published>2018-08-29T13:15:21.000Z</published>
+    <updated>2018-08-29T13:16:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-6.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter04" target="_blank" rel="noopener">Tutorial 4: Controlling Movie Playback</a></p></blockquote><p>本教程讲解在 Jitter 中播放 QuickTime 视频的进阶知识。我们将学习如何获得正在播放的视频的信息，以及如何更改速度、音量和循环点来控制视频的播放。</p><p>你应该已经熟悉 patch 中的两个 Jitter 对象： <code>jit.movi​​e</code> 和 <code>jit.pwindow</code>。其余部分尝试改变已加载到 <code>jit.movi​​e</code> 对象中的视频的播放行为。</p><p>patch 的左边部分我们很熟悉了：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter04a.png" alt=""><br>打开并播放视频</p><p>点击消息框 <code>read crashtest.mov</code>，打开文件。</p><p><code>jit.movi​​e</code> 一读入视频就开始播放。这个视频有配乐，因此视频加载后会立即听到音乐。视频配乐由计算机内置音响而不是 MSP 播放。如果不希望听到声音，可以将消息框 <code>vol $</code> 的数字 1 改为 0。</p><p>即使视频正在播放，<code>jit.pwindow</code> 没有显示任何东西，因为 <code>jit.movi​​e</code> 需要 bang 消息才能发送矩阵到 <code>jit.pwindow</code>。单击连接到其入口的开关，启动 <code>metro</code> 对象。这时视频图像出现在 <code>jit.pwindow</code> 中。先忽略 <code>gettime</code> 消息，等会我们会提到。</p><h2 id="获取视频信息"><a href="#获取视频信息" class="headerlink" title="获取视频信息"></a>获取视频信息</h2><p><code>jit.movi​​e</code> 打开新的视频时，会读取视频的大量信息（包含在视频的标题中），包括视频的长度、有多少帧、播放速度等。我们用这些元数据来控制视频播放。</p><blockquote><p>要点：与许多可手动设置或由对象本身设置的 Jitter 属性不同， <code>jit.movi​​e</code> 的许多属性都依赖于当前的视频文件。不同视频生成不同的设置。</p></blockquote><p>要对 QuickTime 视频做的第一件事是读取元数据属性。可以向 <code>jit.movi​​e</code> 发送 <code>get</code> 消息来检索。然后解析对象最右输出口的响应消息。我们需要的信息是帧速率，时间单位(time scale)（一秒钟内 “QuickTime 时间单位” 的数量），持续时间（QuickTime 的单位），播放速率和音量。这些都通过带有 <code>getfps, gettimescale, getduration, getrate, getvol</code>的消息框获得。</p><p>让 <code>jit.movi​​e</code> 打开一个视频并播放时（发送<code>read</code>消息），它会向右输出口发送一条消息，告诉你它已找到视频并知道如何播放。如果要将打印对象连接到 <code>jit.movi​​e</code> 的右输出口并重新加载影片，会在 Max Console 中看到：<code>read crashtest.mov 1</code>。</p><p>在这个 patch 中，<code>jit.movi​​e</code> 的右输出口连接了一个 <code>route</code> 对象。加载成功后它收到 <code>read</code> 消息并传递给 <code>unpack</code> 和 <code>select</code>，再触发 <code>get</code>消息。如果无法找到 crashtest.mov 文件，会在文件名后看到 1 以外的数字，并且不会发出请求。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter04b.png" alt=""><br>自动查询 <code>jit.movi​​e</code> 对象</p><p>除了捕获 <code>read</code> 消息之外，<code>route</code> 对象在接收到视频信息后做分发。Jitter 属性一般都由在 patch 中设置为相同格式的对象输出：属性的名称，后跟需要设置的信息。<code>route</code> 出口连接了数字框，以显示分发的值。虽然还不知道那些值代表什么，但是每次 <code>jit.movi​​e</code> 成功加载新视频时都会显示属性。</p><h2 id="开始，停止和减速"><a href="#开始，停止和减速" class="headerlink" title="开始，停止和减速"></a>开始，停止和减速</h2><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter04c.png" alt=""><br>一些简单的视频播放控件</p><p>patch 的顶部有一些可以更改 <code>jit.movi​​e</code> 回放行为的控件。向 <code>jit.movi​​e</code> 发送 <code>stop</code>消息，将在视频当前帧停止播放。发送 <code>start</code> 消息将从上次停止的位置恢复播放。视频播放停止时，视频文件中的所有音轨也都将停止。停止和启动视频对 <code>jit.movi​​e</code> 对象的矩阵输出没有影响，该输出仍然由 <code>metro</code> 对象控制。如果在开启 <code>metro</code> 的情况下停止播放视频，仍将以 <code>metro</code> 的速度收到新的矩阵对象（这里是每秒 25 次），虽然所有矩阵都是相同的。</p><p>更改视频的速率将改变音视频内容的播放速度。正的速率值使视频向前播放，值为 1 表示正常播放速度。负值将使视频倒退，速率为 0 将停止播放。<code>jit.movi​​e</code> 的速度属性以浮点数为参数，因此值 0.5 会使视频播放速度减半，值 -2.3 以超过两倍的速度向后回放。调整这个值时，音轨会加速、减速、向后播放，跟视频保持同步。一旦视频到达其最后一帧（或回放时的第一帧），它将循环到文件的另一端。将 <code>jit.movi​​e</code> 的 loop 属性设置为 0（无循环），1（常规循环）或 2（回文循环），可以更改此行为。</p><p><code>vol</code> 属性控制视频音轨的音量（响度）。1 为全音量，0 将关闭声音。</p><p>加载视频时，速率和音量属性都由 pathc 中间的消息框初始化。它们会给出每个 QuickTime 影片中存储的值。</p><h2 id="时间属性"><a href="#时间属性" class="headerlink" title="时间属性"></a>时间属性</h2><p>之前查询了三个属性：duration，timescale 和 fps，告诉我们视频文件如何处理时间。Duration 说明了视频的总长度。这个值不以毫秒或帧表示，而是以 QuickTime 时间单位表示。每个时间单位的实际长度，取决于视频的时间单位。视频的 timescale 是每秒视频的分辨率。视频的duration / timescale 会得出视频的大致长度，以秒为单位。例如， crashtest.mov 文件有一个持续时间为 2836 个时间单位和 600 的 timescale。视频大约持续 4.73 秒。如果想要用 2 秒钟播放视频，可以将 <code>jit.movi​​e</code> 设置 <code>time 1200</code>（1200 时间单位除以 600 单位/秒的时间刻度得到 2 秒）。</p><p>视频中的 fps （或每秒帧数）说明每秒显示多少单独的视频图像。fps 越高，视频播放就越平滑（假设每帧都不一样）。常见的 fps 速率是15, 24, 29.97 和 30. 这个例子中的视频以每秒 15 帧的速度播放，也就是每 40 个时间单位，或大约每 66.7毫秒，会更新一个视频帧。如果用 crashtest.mov 的持续时间，除以视频中每帧的 time units，可以得到视频文件有 70 帧。如果需要，可以用 <code>getframecount</code> 消息查询 <code>jit.movi​​e</code> 视频中的总帧数。</p><h2 id="截取和循环"><a href="#截取和循环" class="headerlink" title="截取和循环"></a>截取和循环</h2><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter04d.png" alt=""><br>显示和设置当前播放帧</p><p>patch 底部区域包含两个进一步操作视频播放的控件。左侧的数字框显示视频当前正在播放的帧。该值由 patch 顶部的 <code>metro</code> 对象发送到 <code>jit.movi​​e</code> 的 <code>gettime</code> 消息更新; 每次输出新的一帧时，时间都会更新。如果停止视频传输（向 <code>jit.movi​​e</code> 发送 <code>stop</code>消息），可以拖动数字框来“截取”视频。视频会跳转到 <code>frame</code> 消息指定的参数那一帧。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter04e.png" alt=""><br>设置视频中的循环点</p><p>用两个整数参数设置 <code>looppoints</code>属性，可以将循环点（指定循环开始和结束的时间值）发送到 <code>jit.movi​​e</code>。教程 patch 中的 rslider 可以指定 <code>jit.movi​​e</code> 的循环区间。在加载视频时查询属性，将 rslider 的大小设置为视频的时长。可以发送不带参数的  <code>looppoints</code> 消息重置循环点。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><code>jit.movi​​e</code> 提供了一些简单的属性来改变 QuickTime 播放内容的方式。可以使用这些消息停止和开始播放视频。速度属性可以改变播放速度和视频播放的方向。使用 vol 属性控制视频音轨的音量。</p><p>查询 duration，time scale 和 fps 等属性可获取加载到 <code>jit.movi​​e</code> 中视频的属性。用 <code>frame</code> 消息可跳转到视频中的特定帧，并且可以设置和检索循环点。发送 <code>gettime</code> 消息可以查询视频的当前时间位置​​。</p><p>更多强大的功能（例如编辑和保存视频）将在后面的教程中讨论。</p><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Max-title-6.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
+    
+      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
+    
+      <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
+    
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+  </entry>
   
   <entry>
     <title>Max/MSP/Jitter 教程05 - 矩阵的数学运算</title>
@@ -693,43 +727,6 @@
       <category term="AWS" scheme="http://uegeek.com/tags/AWS/"/>
     
       <category term="GPU" scheme="http://uegeek.com/tags/GPU/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>00&#39;s Learning Log 180223</title>
-    <link href="http://uegeek.com/180223-learning-log.html"/>
-    <id>http://uegeek.com/180223-learning-log.html</id>
-    <published>2018-02-23T14:38:28.000Z</published>
-    <updated>2018-08-22T09:37:49.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Summary</p><ul><li>整理文档系统结构，参考 <a href="http://www.yangzhiping.com/psy/yang-KnowledgeSystem.html" target="_blank" rel="noopener">构建优雅的知识创造系统 - 阳志平的网志</a> 采用域名方式命名。</li><li>整理 gitbook 文档理出 sound visualization 的思路</li><li>p5.sound 的 envelope 和 FFT 例子</li><li>Music Theory 101 的 <a href="https://prod-edxapp.edx-cdn.org/assets/courseware/v1/063c6ec50fc9d2b0f6c8624843bfaf24/asset-v1:JuilliardX+JX001x+3T2017+type@asset+block/Mod4_PS.pdf" target="_blank" rel="noopener">Model 4 练习</a></li><li>「乐理自学指南」第1-10课</li></ul><a id="more"></a> <h2 id="p5-sound"><a href="#p5-sound" class="headerlink" title="p5.sound"></a>p5.sound</h2><h3 id="phrase"><a href="#phrase" class="headerlink" title="phrase"></a>phrase</h3><p>乐句是一段时间内 musical events 的模式，比如一系列的音符和休止。Phrases 必需添加到 <code>p5.Part</code> 播放。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> p5.Phrase(name,callback,sequence)</span><br></pre></td></tr></table></figure><p><code>p5.Part</code> 播放一个或多个 <code>p5.Phrases</code>. 用 steps and tatums(Divisions of a beat) 初始化. 每个 step 默认为 1/16 音符。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> p5.Part([steps],[tatums])</span><br></pre></td></tr></table></figure><p>例子中用函数控制声音播放/暂停时的显示，可以参考</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateDescription</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!soundFile.isPlaying()) &#123;</span><br><span class="line">    description = <span class="string">'Paused...'</span>;</span><br><span class="line">    p.html(description);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (soundFile.isPlaying())&#123;</span><br><span class="line">    description = <span class="string">'Playing!'</span>;</span><br><span class="line">    p.html(description);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; frameCount%<span class="number">3</span>; i++ ) &#123;</span><br><span class="line">      <span class="comment">// add periods to loading to create a fun loading bar effect</span></span><br><span class="line">      <span class="keyword">if</span> (frameCount%<span class="number">4</span> == <span class="number">0</span>)&#123;</span><br><span class="line">        description += <span class="string">'.'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (frameCount%<span class="number">25</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        description = <span class="string">'loading'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    p.html(description);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="sampleRate"><a href="#sampleRate" class="headerlink" title="sampleRate"></a>sampleRate</h3><p>返回每一秒所有声音对象总体采样率数值。It is often 44100, or twice the range of human hearing.</p><ul><li><a href="https://p5js.org/reference/#/p5.Phrase" target="_blank" rel="noopener">p5.js | Phrase</a></li><li><a href="https://p5js.org/reference/#/p5.Part" target="_blank" rel="noopener">p5.js | Part</a></li><li><a href="https://p5js.org/reference/#/p5/sampleRate" target="_blank" rel="noopener">p5.js | sampleRate</a></li></ul><h2 id="Music-Theory-101-Model-4-练习"><a href="#Music-Theory-101-Model-4-练习" class="headerlink" title="Music Theory 101 Model 4 练习"></a>Music Theory 101 Model 4 练习</h2><p>在识别音级的这个练习中：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-02-23%20at%205.34.34%20PM.png" alt=""></p><p>在给定曲调的下方的音符，音程为 (8+1-间隔音程)</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Summary&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;整理文档系统结构，参考 &lt;a href=&quot;http://www.yangzhiping.com/psy/yang-KnowledgeSystem.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;构建优雅的知识创造系统 - 阳志平的网志&lt;/a&gt; 采用域名方式命名。&lt;/li&gt;
-&lt;li&gt;整理 gitbook 文档理出 sound visualization 的思路&lt;/li&gt;
-&lt;li&gt;p5.sound 的 envelope 和 FFT 例子&lt;/li&gt;
-&lt;li&gt;Music Theory 101 的 &lt;a href=&quot;https://prod-edxapp.edx-cdn.org/assets/courseware/v1/063c6ec50fc9d2b0f6c8624843bfaf24/asset-v1:JuilliardX+JX001x+3T2017+type@asset+block/Mod4_PS.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Model 4 练习&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;「乐理自学指南」第1-10课&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
-    
-    
-      <category term="Note" scheme="http://uegeek.com/tags/Note/"/>
-    
-      <category term="Coding" scheme="http://uegeek.com/tags/Coding/"/>
-    
-      <category term="编程" scheme="http://uegeek.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="Learning" scheme="http://uegeek.com/tags/Learning/"/>
-    
-      <category term="Music" scheme="http://uegeek.com/tags/Music/"/>
     
   </entry>
   
