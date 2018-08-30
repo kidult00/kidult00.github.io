@@ -342,6 +342,208 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/180830-jitter-07.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/180830-jitter-07.html" itemprop="url">Max/MSP/Jitter 官方教程翻译07 - ARGB 颜色</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-30T18:00:18+08:00">
+                2018-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/180830-jitter-07.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="180830-jitter-07.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-7.jpg" alt=""></p>
+<ul>
+<li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li>
+<li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li>
+<li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li>
+<li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li>
+<li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li>
+<li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li>
+</ul>
+<blockquote>
+<p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter05" target="_blank" rel="noopener">Tutorial 5: ARGB Color</a></p>
+</blockquote>
+<h2 id="Jitter-中的颜色"><a href="#Jitter-中的颜色" class="headerlink" title="Jitter 中的颜色"></a>Jitter 中的颜色</h2><p>本节将讨论如何在 Jitter 中处理颜色，主要讲解用数字表示颜色，而不涉及把数字可视化为颜色。用数字表示颜色有许多方法，而关于色彩理论的全面讨论 - 光和物质如何产生色彩感觉 - 远远超出了本教程的范围。如果想了解颜色相关的理论和/或颜色数值表示的更多信息，可以查看参考书目。</p>
+<p>本节重点说明 Jitter 表示颜色的方法，以及如何在矩阵中实现。</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/tut5%20patch.png" alt=""></p>
+<h2 id="颜色组成：RGB"><a href="#颜色组成：RGB" class="headerlink" title="颜色组成：RGB"></a>颜色组成：RGB</h2><p>混合红色，绿色和蓝色可以产生任意颜色 - 每种颜色都有一定的亮度（intensity）。这是「加法合成（additive synthesis）」 - 添加一定量的三原色光来生成颜色（与此相反的是减法合成：混合有色颜料，如油漆，吸收某些颜色的光并反射其余部分）。这样就可以用红色，绿色和蓝色相对应的频率强度来描述任意颜色。</p>
+<p>在 Jitter 中一般用红色，绿色和蓝色的精确亮度组合来描述颜色。对于图像的每个像素 - 无论是视频，图片还是其他 2D 矩阵 - 至少需要三个值表示三原色。屏幕上的彩色图像一般使用至少 3 个平面的 2D 矩阵。</p>
+<h2 id="Alpha-通道"><a href="#Alpha-通道" class="headerlink" title="Alpha 通道"></a>Alpha 通道</h2><p>第 4 个平面一般是 alpha 通道 - 它存储像素的透明度信息。Jitter 矩阵中一般都会包含颜色透明度的 alpha 通道。多数情况下，<strong>alpha 通道存储在平面 0（矩阵平面从 0 开始编号），RGB 值存储在 1,2 和 3 平面中</strong>。</p>
+<h2 id="颜色数据：char，long-或-float"><a href="#颜色数据：char，long-或-float" class="headerlink" title="颜色数据：char，long 或 float"></a>颜色数据：char，long 或 float</h2><p>在计算机中用 8 位信息来表示每个基本颜色值。8 位能够表达 256（2 的 8 次幂）个不同值。如果分别用 8 位表示红色、绿色、蓝色，总共可以表示 16,777,216（2 的 24 次方）种不同颜色，足以覆盖人眼能够区分的所有颜色渐变。</p>
+<p>因为 8 位分辨率已经可以表示所有基本颜色值，所以颜色信息矩阵 4 个平面中的值用 8 位 char 类型就足够了。当然 Jitter 也允许用 long，float32 或 float64 类型，只不过这会浪费内存。全帧视频图像要处理大量的像素（640x480 图像有 307,200 像素），为了节省内存和加快处理速度，最好使用 char 数据类型。</p>
+<p>8 位 char 数据可以表示 0~255 之间的数字，或者 0~1 之间的灰度。包含 char 数据的 Jitter 对象，通常以 0~1 范围内浮点数的形式从其他 Max 对象接收数值。然后在内部计算时将浮点数转换为对应的 char 值（有一些例外，例如 <code>jit.op</code> 可以接收 0~1 的浮点数或右入口的 0~255 的整数）。关于在 Jitter 矩阵中使用 char 数据类型的更多内容，请参阅教程<a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">什么是矩阵？</a></p>
+<h2 id="分离矩阵的平面"><a href="#分离矩阵的平面" class="headerlink" title="分离矩阵的平面"></a>分离矩阵的平面</h2><p>在示例 patch 的顶部有两个视频。一个是街机游戏，另一个是视频校准的标准颜色条。打开 <code>metro</code>对象（用来反复触发矩阵对象）可以查看。</p>
+<p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter05a.png" alt=""><br>观看视频或静止图像</p>
+<p>单击 <code>metro 30</code>对象上方标有 “show movie” 的按钮查看视频</p>
+<p>示例 patch 用 <code>jit.unpack</code> 对象将颜色信息矩阵分解为 4 个平面，可以单独查看和修改每个平面。与 Max 对象 <code>unpack</code> 将列表拆开成单个数字类似，<code>jit.unpack</code> 将多平面矩阵分解为单平面矩阵。可以输入参数来指定矩阵中有多少个平面，默认是 4 个平面，这是颜色数据的标准。想看到红色，绿色和蓝色屏幕的内容，就将平面 1,2 和 3 发送到 <code>jit.pwindow</code>。因为这里不关心 alpha，所以不显示平面 0。</p>
+<p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter05b.png" alt=""><br>将多平面矩阵拆为单平面矩阵</p>
+<p>可以用三个单色图像查看每个颜色平面的内容。较亮的像素表示该颜色值较大。将每个矩阵发送到 <code>jit.op</code> 可以单独控制每种颜色的强度，并改变颜色平衡。然后将单个（改变后的）矩阵发送到 <code>jit.pack</code>，重新组合为 4 平面矩阵在 <code>jit.pwindow</code> 中显示。</p>
+<p>尝试将绿色和蓝色的强度降低到 0.12，生成更偏红色的图像：</p>
+<p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter05c.png" alt=""><br>降低某些颜色的亮度来改变颜色平衡</p>
+<h2 id="颜色交换"><a href="#颜色交换" class="headerlink" title="颜色交换"></a>颜色交换</h2><p>为了演示另一种技巧，将每个颜色平面发送到 <code>gate</code> 对象，这样每个矩阵都可以 <code>route</code> 到 <code>jit.pack</code> 的不同入口（颜色平面）。这样就重新定义了每个平面，并且从 patch 左侧的 <code>coll</code> 对象中选择选项来尝试所有可能的颜色组合。</p>
+<p>拖动标记为 “Rotate RGB planes” 的数字框，尝试重新分配三个颜色平面。（请注意，平面 0 直接从 <code>jit.unpack</code> 发送到 <code>jit.pack</code> ; 它是触发矩阵输出到 <code>jit.pwindow</code>的 <code>jit.pack</code>的左入口收到的 <code>jit_matrix</code> 消息）如果选择 coll 中的选项 3，会得到如下结果：</p>
+<p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter05d.png" alt=""><br>重新分配各个颜色平面; 红色和绿色平面相互交换</p>
+<p>上面的示例显示原始的绿色和蓝色平面减少为原来的 0.12，并在发送到 <code>jit.pack</code>之前，用 <code>gate</code> 调换红色和绿色平面，得到更偏绿色的图像。<code>coll</code> 对象包含 RGB 平面所有可能的排列组合。</p>
+<p>双击 <code>coll</code> 对象可以查看其内容：</p>
+<p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter05f.png" alt=""><br>RGB 平面分配的排列组合</p>
+<p>来自 <code>coll</code> 列表中的元素被 <code>unpack</code> 并发送给 3 个 <code>gate</code> 对象。发送到 <code>coll</code> 的数字也会发送给 umenu（标签模式）用单词显示颜色状态 - 现在显示为 “Green-Red-Blue”。</p>
+<h2 id="颜色自动变化"><a href="#颜色自动变化" class="headerlink" title="颜色自动变化"></a>颜色自动变化</h2><p>让我们再来做一个颜色修改练习：制作不断更改颜色的缩放和旋转的自动化流程。</p>
+<p>点击标记为 “Automate color changes” 的开关。三个颜色平面的缩放因子都在不断变化。双击 patch <code>colorgames</code> 对象查看子 patch 的内容。</p>
+<p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter05e.png" alt=""><br>[colorgames]子 patch</p>
+<p>子 patch 用 <code>line</code> 对象为每个颜色缩放因子发送 0.5~1 的值。红色系数每 3 秒变化一次，绿色每 4 秒变化一次，蓝色每 5 秒变化一次（这三个 line 对象每 60 秒同步一次）。每隔 60 秒，<code>metro</code> 计数器会选择一个新的颜色组合。</p>
+<p>你可以在不同的源图像上尝试所有颜色组合。回到主 patch，点击标记为 “Show movie” 的开关停止 <code>metro</code>。（也可以用这个开关来启动和停止 <code>jit.movi​​e</code> 播放视频。如果不需要观看，就没必要持续播放）现在点击标有 “Show colorbars ” 的开关来显示颜色栏。试着更改此图像上的 scale 和 rotation 系数。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>当 <code>jit.window</code> 或 <code>jit.pwindow</code> 接收<strong>单平面</strong> 2D 矩阵时，会显示为单色（灰度）图像。当接收到 <strong>4 平面</strong> 2D 矩阵时，会将平面解析为 alpha，red，green 和 blue 值并显示相应颜色。<strong>Jitter 最常用 ARGB 4 平面矩阵来表示颜色。</strong></p>
+<p>Jitter 颜色数据以 char 数据类型存储，因为所有基本颜色只需要 8 位精度就可以完全覆盖。大多数与 QuickTime 相关的对象（例如 <code>jit.movi​​e</code>）和许多专门用于操作颜色的对象（例如 <code>jit.brcosa</code> 和 <code>jit.colorspace</code>）都使用 4 平面 char 数据的 2D 矩阵。（许多对象会自适应其他数据类型。如有疑问请查看相应文档）。<strong>char 数据的范围是 0~255 的证书，或者 0~1 的浮点数</strong>。大多数情况下，包含 char 数据的对象从其他 Max 对象接收 0~1 的浮点数值。</p>
+<p><strong><code>jit.unpack</code> 可以拆分多平面矩阵为单平面矩阵。<code>jit.pack</code> 打包单平面矩阵成一个多平面矩阵。</strong>单独处理每个平面可以控制图像的色彩平衡，甚至可以重新定义各个平面。</p>
+<hr>
+<blockquote>
+<p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p>
+</blockquote>
+<p>👇👇👇</p>
+<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://uegeek.com/180829-jitter-06.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1742,163 +1944,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://uegeek.com/180703-make-noise-08.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kidult00">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="00's Adventure">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/180703-make-noise-08.html" itemprop="url">MakeNoise08 - 振荡器和滤波器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-03T18:35:56+08:00">
-                2018-07-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/教程/" itemprop="url" rel="index">
-                    <span itemprop="name">教程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/180703-make-noise-08.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="180703-make-noise-08.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png" alt=""></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/180703-make-noise-08.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1949,7 +1994,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">227</span>
+                <span class="site-state-item-count">228</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1971,7 +2016,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">214</span>
+                <span class="site-state-item-count">215</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
