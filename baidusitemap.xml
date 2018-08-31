@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://uegeek.com/180831-jitter-08.html</loc>
-    <lastmod>2018-08-31T11:06:28.000Z</lastmod>
+    <lastmod>2018-08-31T11:09:29.000Z</lastmod>
     <data>
         <display>
         <title>Max/MSP/Jitter 官方教程翻译08 - 调整颜色</title>
@@ -37,7 +37,7 @@
     
   <url>
     <loc>http://uegeek.com/180830-jitter-07.html</loc>
-    <lastmod>2018-08-30T10:26:40.000Z</lastmod>
+    <lastmod>2018-08-31T11:09:06.000Z</lastmod>
     <data>
         <display>
         <title>Max/MSP/Jitter 官方教程翻译07 - ARGB 颜色</title>
@@ -1049,11 +1049,11 @@
          
         <tag>Max/MSP</tag>
          
-        <tag>EQ</tag>
-         
         <tag>Compressor</tag>
          
         <tag>动态压缩</tag>
+         
+        <tag>EQ</tag>
          
          
            
@@ -1085,6 +1085,8 @@
          
         <tag>Max/MSP</tag>
          
+        <tag>EQ</tag>
+         
         <tag>Oscilator</tag>
          
         <tag>Filter</tag>
@@ -1092,8 +1094,6 @@
         <tag>LFO</tag>
          
         <tag>过滤器</tag>
-         
-        <tag>EQ</tag>
          
          
            
