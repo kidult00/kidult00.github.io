@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-08-31T11:09:29.000Z</updated>
+  <updated>2018-09-01T10:29:07.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Max/MSP/Jitter 官方教程翻译09 - 调整图像颜色</title>
+    <link href="http://uegeek.com/180901-jitter-09.html"/>
+    <id>http://uegeek.com/180901-jitter-09.html</id>
+    <published>2018-09-01T10:28:20.000Z</published>
+    <updated>2018-09-01T10:29:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-8.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter07" target="_blank" rel="noopener">Tutorial 7: Image Level Adjustment</a></p></blockquote><p>本教程介绍如何调整 Jitter 矩阵中图像数据的亮度、对比度和饱和度，以及色调和色调旋转(hue rotation)的概念。</p><p>教程 patch 中有两个新对象：<code>jit.brcosa</code> ，控制矩阵中图像数据的亮度（brightness）、对比度（contrast）和饱和度（saturation），以及 <code>jit.hue</code>，旋转图像的色调。</p><h2 id="亮度，对比度和饱和度"><a href="#亮度，对比度和饱和度" class="headerlink" title="亮度，对比度和饱和度"></a>亮度，对比度和饱和度</h2><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07a.png" alt=""><br>打开并查看图像</p><p>点击 <code>read colorwheel.pct</code> 消息框打开文件 colorwheel.pct。点击开关启动 <code>metro</code> 开始显示视频。</p><p>patch 底部 <code>jit.pwindow</code> 中会出现一个色轮：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07b.png" alt="">            </p><p><code>jit.pwindow</code> 展示了穿越过两个对象的图像。我们先谈谈 <code>jit.brcosa</code>，然后再到 <code>jit.hue</code>。</p><p><code>jit.brcosa</code> 对象将 4 平面 char 矩阵看作 ARGB 图像数据，可以调整矩阵数据的亮度、对比度、饱和度。三个属性的默认值是 1.0，这样矩阵保持不变：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07c.png" alt=""><br>使用 <code>jit.brcosa</code> 对象</p><p>更改 <code>jit.brcosa</code> 对象的属性并观察输出矩阵的变化。</p><p>与参考颜色（通常为黑色）相比，图像的亮度是指整体亮度/暗度。更改亮度属性相当于将矩阵中的值乘以该值。亮度值为 0 的图像是黑色；大于 1.0 的亮度值值将逐渐增加所有非 0 单元格直到白色（255）。值 0.5 使图像明显变暗，将值的范围从 0~255 降到 0~127。下面的色轮显示了一些亮度值：<br><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07d.png" alt=""><br>亮度值分别为 0.5，1.5 和 10 的色轮</p><p>用这种方式调整时，单元格的值会被裁剪为 0 和 255。这就是为什么亮度为 10 的那个图像基本上是白色，颜色只显示在原始矩阵中一/多个可见颜色平面（RGB 或平面 1,2 和 3）为 0 的区域。</p><p>图像对比度可以表示为<strong>图像中的颜色偏离整个原始图像的平均亮度的量</strong>（见下文）。当<code>jit.brcosa</code> 的对比度属性增加到 1.0 以上，高于整个矩阵平均亮度的单元变亮（增加），低于平均值的单元变暗（减少）。结果是矩阵图像 dynamic expansion，亮值更亮，暗值更暗。低于 1.0 的对比度设置则相反，较暗的色调变浅，较浅的色调变暗，直到对比度为 0.0，只保留整个图像的平均灰度。负值会以相同的总体对比度反转图像的颜色。</p><blockquote><p>技术细节：矩阵的平均亮度可以通过平均矩阵中所有单元格的值来计算，各平面互不干扰（获得 Alpha，red，green，blue 平面各自的平均值）。然后将三个平面乘以公式：</p><p><code>L = .299 * Red+ .587 * Green + .114 * Blue</code></p><p>L 值就是整个矩阵的平均亮度，<code>jit.brcosa</code> 用它来确定调整对比度时扩展的阈值。</p></blockquote><p>以下是一些对比度设置：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07e.png" alt=""><br>比度设定为 0.3，2，-1 和 100 的色轮</p><p>第一个例子中色轮的对比度急剧下降（单元格的值都接近矩阵的平均亮度）。第二个例子中对比度增加。请注意色轮中间较浅的色调开始接近白色。第三个示例显示了负值对比度。颜色与原始颜色相反，但矩阵的平均亮度与原始颜色相同。最后一个例子是大幅增强对比的结果。该示例中的单元值被极化为0 或 255。</p><p>图像饱和度反映了单元格中主要颜色与次要颜色的比率。随着饱和度值降至 1.0 以下，单元格中的所有颜色值将变得相似，变成去饱和的灰度。高于 1.0 的值将使颜色彼此远离，从而强化了主色。与对比度类似，饱和度属性的负值将反转颜色，但保留与原始颜色相同的亮度关系。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07f.png" alt=""><br>饱和度值为 0.2,2 和 -1 的色轮</p><p>第一个图像是去饱和的，矩阵中的每个单元格值都趋近于该单元格的亮度值。第二张图像过饱和，颜色比原始图像更亮（或更暗）。第三个图像保持色轮的原始亮度，但反转了颜色。</p><h2 id="Hue-and-Cry"><a href="#Hue-and-Cry" class="headerlink" title="Hue and Cry"></a>Hue and Cry</h2><p><code>jit.hue</code> 对象可以旋转输入矩阵的色调。设置 hue_angle 属性会将输入矩阵的色调旋转指定的度数（以度为单位）：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07g.png" alt=""><br>hue_angle 属性旋转输入矩阵的色调</p><p>矩阵单元的色调可以看作是其基本颜色（例如，品红色）。图像色调在色轮上从红色变为绿色、蓝色，再变为红色。用 0-360 度数指定的色调值，以及图像的饱和度和亮度，可用描述特定的颜色，这与 RGB 值描述唯一颜色的方式非常相似。向前旋转图像的色调，我们移动颜色光谱的红色部分，使其显示为绿色，光谱的绿色部分显示为蓝色，蓝色部分显示为红色。饱和度和亮度不会改变。负色调旋转会将红色变为蓝色。以 120 度为增量的色调旋转将使图像与原始色调精确地移位一个（或多个）色彩平面。</p><blockquote><p>技术细节：我们的眼睛通过视网膜锥体的感知器来感知颜色（还有一种被称为 rods 的感知器专门探测微弱的光，但是不识别颜色）。我们眼睛的锥体响应三种不同波长的光来区分：L-senstive receptors 感知长波长的光（红色），M-senstive receptors 感知中波长光（绿色），以及 S-senstive receptors 感知短波长的光（蓝色）。跟听觉系统被加权以更好地感知人类语音范围内的频率一样，为了感知环境最关键的中间波长，我们的视锥细胞的分布也经过了加权处理。于是我们眼睛中的绿色感知器大约是其他两种颜色的两倍。所以上面的亮度公式将几乎 60％ 的感知亮度分配给图像中的绿色值。</p></blockquote><p>单击开关以自动化色轮的 hue_angle。请注意，当 hue_angle 达到 360 度时，会恢复原始矩阵图像。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07h.png" alt=""><br>色轮在各种色调之间旋转（0~360 度）</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><code>jit.brcosa</code> 和 <code>jit.hue</code> 对象控制输入矩阵的亮度，对比度，饱和度和色调。你可以使用这两个对象调整动态水平（例如自动曝光），校正色彩或实现指定色调的位移。</p><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Max-title-8.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
+    
+      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
+    
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
+    
+  </entry>
   
   <entry>
     <title>Max/MSP/Jitter 官方教程翻译08 - 调整颜色</title>
@@ -396,11 +430,11 @@
     
       <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
     
+      <category term="EQ" scheme="http://uegeek.com/tags/EQ/"/>
+    
       <category term="Compressor" scheme="http://uegeek.com/tags/Compressor/"/>
     
       <category term="动态压缩" scheme="http://uegeek.com/tags/%E5%8A%A8%E6%80%81%E5%8E%8B%E7%BC%A9/"/>
-    
-      <category term="EQ" scheme="http://uegeek.com/tags/EQ/"/>
     
   </entry>
   
@@ -434,8 +468,6 @@
     
       <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
     
-      <category term="EQ" scheme="http://uegeek.com/tags/EQ/"/>
-    
       <category term="Oscilator" scheme="http://uegeek.com/tags/Oscilator/"/>
     
       <category term="Filter" scheme="http://uegeek.com/tags/Filter/"/>
@@ -443,6 +475,8 @@
       <category term="LFO" scheme="http://uegeek.com/tags/LFO/"/>
     
       <category term="过滤器" scheme="http://uegeek.com/tags/%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
+    
+      <category term="EQ" scheme="http://uegeek.com/tags/EQ/"/>
     
   </entry>
   
@@ -691,29 +725,6 @@
       <category term="Sound" scheme="http://uegeek.com/tags/Sound/"/>
     
       <category term="声音" scheme="http://uegeek.com/tags/%E5%A3%B0%E9%9F%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Happy New Mac II - Mac 私人调教手册</title>
-    <link href="http://uegeek.com/180402-happy-new-mac-ii.html"/>
-    <id>http://uegeek.com/180402-happy-new-mac-ii.html</id>
-    <published>2018-04-02T10:38:08.000Z</published>
-    <updated>2018-08-22T09:39:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ma/imac/215/imac-215-retina-selection-hero-201706?wid=904&amp;hei=840&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1495846295922" alt=""></p><p>元宵节这天，迎娶了属于自己的第一台 iMac。</p><p>3 年前写了一篇 Happy New Year Happy New Mac，是时候更新一版，跟大家分享如何用最合理的顺序、最快的速度、最轻松的姿势，调教出一台高大威猛动静皆宜无所不能所向披靡的 Mac……</p><p>（如果你不是工程师，但是有一定的编程需要，比较经常使用命令行，是 Alfred 粉丝，那么本文就最适合你了~）</p><a id="more"></a> <h2 id="一、开箱"><a href="#一、开箱" class="headerlink" title="一、开箱"></a>一、开箱</h2><p>负责任地说一句：体积越大的苹果产品，开箱体验就越享受。</p><p>键盘和 Magic Mouse 都从以前的电池换成了充电式—— Magic Mouse 终于变轻了，好评！比较遗憾的是京东买的这款 21.5 高配还是没有配触控板 😔</p><p>拍照就不用说了，开箱后记得拍一张序列号备用。</p><h2 id="二、基本设置"><a href="#二、基本设置" class="headerlink" title="二、基本设置"></a>二、基本设置</h2><ul><li>开机后打开设置，到「Trackpad」里面设置习惯的触控板手势</li><li>更新系统至最新版本</li><li>有必要的话，在 App Store 里下载最新版本的 Xcode</li></ul><h2 id="三、Terminal"><a href="#三、Terminal" class="headerlink" title="三、Terminal"></a>三、Terminal</h2><h3 id="iTerm"><a href="#iTerm" class="headerlink" title="iTerm"></a>iTerm</h3><p>原配 terminal 比较简陋，先升级一下。用 safari 下载 <a href="http://www.iterm2.com/downloads.html" target="_blank" rel="noopener">iTerm2</a> 并安装。</p><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h3><p>在新电脑上一个一个下载各软件最新版本很麻烦吧？Homebrew 帮你搞定！用 safari 打开 <a href="http://brew.sh" target="_blank" rel="noopener">http://brew.sh</a>，按说明在 terminal 里安装 Homebrew：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure><p>安装 brew-cask：<code>brew tap phinze/homebrew-cask</code> 或者 <code>brew install brew-cask</code>。以后更新只需要：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update &amp;&amp; brew upgrade</span><br></pre></td></tr></table></figure><p>按需安装各种包，比如 <code>brew install wget</code>。</p><h3 id="安装-oh-my-zsh"><a href="#安装-oh-my-zsh" class="headerlink" title="安装 oh-my-zsh"></a>安装 oh-my-zsh</h3><p>iTerm 虽好，还是缺了一些补全、alias、快速跳转等神奇功能，所以再套上 oh-my-zsh。GitHub 地址：<a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="noopener">robbyrussell/oh-my-zsh</a>. <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH" target="_blank" rel="noopener">安装说明</a></p><p>如果已经安装 wget，执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure><h3 id="Github-配置"><a href="#Github-配置" class="headerlink" title="Github 配置"></a>Github 配置</h3><p>按照 Github <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="noopener">Generating a new SSH key and adding it to the ssh-agent</a> 说明，创建 SSH 秘钥：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.ssh</span><br><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></span><br><span class="line">pbcopy &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure><p>此时，pdcopy 命令已经将 id_rsa.pub 内容复制到剪切板。</p><p>登录并进入 <a href="https://github.com/settings/ssh" target="_blank" rel="noopener">Github SSH and GPG keys 设置页面</a>，点击 <code>New SSH key</code>。Title 部分填写一个所用电脑的名称，然后在 Key 部分填写之前通过 pdcopy 命令复制的内容。<a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="noopener">生成 ssh key 的说明</a>。然后在全局设置中设置用户名和邮箱。</p><p><code>git config --global user.name &quot;yourusername</code><br><code>git config --global user.email &quot;youremail&quot;</code></p><p>如果有项目需要推送到 coding.net，也需要去 <a href="https://coding.net/user/account/setting/keys" target="_blank" rel="noopener">SSH公钥 - 设置</a> 做类似的设置。</p><h2 id="四、刚需：VPN、浏览器和输入法"><a href="#四、刚需：VPN、浏览器和输入法" class="headerlink" title="四、刚需：VPN、浏览器和输入法"></a>四、刚需：VPN、浏览器和输入法</h2><ul><li>安装 VPN 工具（<a href="http://twelveweb.com" target="_blank" rel="noopener">12vpn</a>已经用了五年，推荐）。需要先做好这一步，不然 Chrome 的帐户设置没法同步</li><li>安装浏览器 <code>brew cask install google-chrome</code>（可能需要开 vpn，如果不成功，需要手动下载安装），安装成功后，选择要同步的设置项</li><li>下载安装输入法</li></ul><h2 id="五、效率神器"><a href="#五、效率神器" class="headerlink" title="五、效率神器"></a>五、效率神器</h2><p>安装大管家 Alfred: <code>brew cask install alfred</code>，导入之前备份好的 workflows。严重推荐以下 workflow：</p><ul><li>Douban：直接搜索豆瓣书、影、音，方便得不像话</li><li>Youdao-Translate：快捷查词和翻译，学渣和学霸都必备</li><li>chrome-bookmarks：chrome 书签搜索并打开，简直救了收藏夹整理无能者一命</li><li>Copy-Path：快捷键复制当前文件夹路径，跟命令行绝配，尤其是 Git 重度患者</li><li>其余：百度云盘搜索、淘宝搜索、日历、下载链接分析、自定义搜索、生成短链接和二维码等等，绝对能让 mac 效率提升至少 200%</li></ul><p>如果购买了 Power Pack，可以在 <code>Preference - Advanced - Syncing</code> 里设置配置文件同步，快速导入常用配置。</p><h2 id="六、基础应用"><a href="#六、基础应用" class="headerlink" title="六、基础应用"></a>六、基础应用</h2><ul><li>安装文档同步工具，用 Airdrop 把原有文件传送到新电脑上（新开机有整体 transfer 的选项，但是试了一下要十几小时，太慢了，就放弃）</li><li>安装 Markdown 编辑器 <code>brew cask install macdown</code></li><li>安装笔记应用 <code>brew cask install evernote</code></li><li>安装文献管理工具 Zotero <code>brew cask install zotero</code>，然后设置已经从之前电脑传过来的库</li><li>安装视频播放器 <code>brew cask install vlc</code></li><li>如果有需要，装个虚拟机吧！</li></ul><h2 id="七、编程环境"><a href="#七、编程环境" class="headerlink" title="七、编程环境"></a>七、编程环境</h2><h3 id="Python-环境"><a href="#Python-环境" class="headerlink" title="Python 环境"></a>Python 环境</h3><p>安装 <a href="https://conda.io/miniconda.html" target="_blank" rel="noopener">Miniconda</a>：</p><ol><li><p><a href="https://conda.io/miniconda.html" target="_blank" rel="noopener">下载 sh 文件</a> 或者 <code>wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh</code></p></li><li><p>命令行进入下载的文件夹 <code>bash Miniconda3-latest-Linux-x86_64.sh</code>，按照提示操作。</p></li></ol><p>新建环境</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n pyp python=3 numpy pandas matplotlib jupyter</span><br></pre></td></tr></table></figure><p>激活环境</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> activate pyp</span><br></pre></td></tr></table></figure><h3 id="Node-js-和-npm"><a href="#Node-js-和-npm" class="headerlink" title="Node.js 和 npm"></a>Node.js 和 npm</h3><p>因为要用 hexo 更新博客，以及方便以后安装各种基于 js 的应用，下载 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a> 并安装。</p><p>然后用 npm 安装 hexo：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure><h3 id="编辑器和-Dash"><a href="#编辑器和-Dash" class="headerlink" title="编辑器和 Dash"></a>编辑器和 Dash</h3><p>安装代码编辑器 <code>brew cask install atom</code>。然后是编程语言和各种库的文档大管家 Dash，具体操作略。</p><h2 id="八、创作者套件"><a href="#八、创作者套件" class="headerlink" title="八、创作者套件"></a>八、创作者套件</h2><ul><li>Sketch</li><li>Mindnode</li><li>图床 dropzone3 + qiniu bundle（最新版的 bundle 有 bug，需要用回 1.2 或更低版本）</li><li>图标库 Icons8，图片管理应用如 Inboard</li><li>3D 工具如 SketchUp/Fusion 360</li><li>Logic X pro</li></ul><hr><p>清单暂时更新到这里。欢迎亲们推荐相见恨晚的应用和奇技淫巧~</p><p>Happy New Year &amp; Happy New Macbook!</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ma/imac/215/imac-215-retina-selection-hero-201706?wid=904&amp;amp;hei=840&amp;amp;fmt=jpeg&amp;amp;qlt=80&amp;amp;op_usm=0.5,0.5&amp;amp;.v=1495846295922&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;元宵节这天，迎娶了属于自己的第一台 iMac。&lt;/p&gt;
-&lt;p&gt;3 年前写了一篇 Happy New Year Happy New Mac，是时候更新一版，跟大家分享如何用最合理的顺序、最快的速度、最轻松的姿势，调教出一台高大威猛动静皆宜无所不能所向披靡的 Mac……&lt;/p&gt;
-&lt;p&gt;（如果你不是工程师，但是有一定的编程需要，比较经常使用命令行，是 Alfred 粉丝，那么本文就最适合你了~）&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
     
   </entry>
   

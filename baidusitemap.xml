@@ -4,6 +4,38 @@
 
     
   <url>
+    <loc>http://uegeek.com/180901-jitter-09.html</loc>
+    <lastmod>2018-09-01T10:29:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>Max/MSP/Jitter 官方教程翻译09 - 调整图像颜色</title>
+        <pubTime>2018-09-01T10:28:20.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Max/MSP</tag>
+         
+        <tag>Jitter</tag>
+         
+        <tag>矩阵</tag>
+         
+        <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
+         
+        <tag>颜色</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/180831-jitter-08.html</loc>
     <lastmod>2018-08-31T11:09:29.000Z</lastmod>
     <data>
@@ -1049,11 +1081,11 @@
          
         <tag>Max/MSP</tag>
          
+        <tag>EQ</tag>
+         
         <tag>Compressor</tag>
          
         <tag>动态压缩</tag>
-         
-        <tag>EQ</tag>
          
          
            
@@ -1085,8 +1117,6 @@
          
         <tag>Max/MSP</tag>
          
-        <tag>EQ</tag>
-         
         <tag>Oscilator</tag>
          
         <tag>Filter</tag>
@@ -1094,6 +1124,8 @@
         <tag>LFO</tag>
          
         <tag>过滤器</tag>
+         
+        <tag>EQ</tag>
          
          
            
@@ -3351,11 +3383,11 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>历史</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>哥特式</tag>
          
@@ -5461,9 +5493,9 @@
         
         <tag>Note</tag>
          
-        <tag>人类简史</tag>
-         
         <tag>历史</tag>
+         
+        <tag>人类简史</tag>
          
          
            
@@ -5483,19 +5515,19 @@
         <title>中欧四国扫(ba)盲(gua)帖之一：“中欧”还是“东欧”？</title>
         <pubTime>2015-09-18T13:37:38.000Z</pubTime>
         
-        <tag>Travel</tag>
-         
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
          
         <tag>匈牙利</tag>
+         
+        <tag>历史</tag>
          
         <tag>奥地利</tag>
          
         <tag>捷克</tag>
          
         <tag>斯洛伐克</tag>
+         
+        <tag>Travel</tag>
          
          
            
@@ -5517,13 +5549,13 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>历史</tag>
          
-        <tag>中欧</tag>
-         
         <tag>捷克</tag>
+         
+        <tag>Travel</tag>
          
          
            
@@ -5545,13 +5577,13 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>历史</tag>
          
-        <tag>中欧</tag>
-         
         <tag>捷克</tag>
+         
+        <tag>Travel</tag>
          
          
            
@@ -5573,13 +5605,13 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>历史</tag>
          
-        <tag>中欧</tag>
-         
         <tag>奥地利</tag>
+         
+        <tag>Travel</tag>
          
         <tag>哈布斯堡王朝</tag>
          
@@ -5605,11 +5637,11 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>历史</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>东正教</tag>
          
