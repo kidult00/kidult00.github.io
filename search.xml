@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Max/MSP/Jitter 官方教程翻译10 - 交叉渐变]]></title>
+    <url>%2F180902-jitter-10.html</url>
+    <content type="text"><![CDATA[Max/MSP/Jitter 教程 01 - 什么是矩阵？ Max/MSP/Jitter 教程 02 - Jitter 对象的属性 Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频 Max/MSP/Jitter 教程 04 - 创建矩阵 Max/MSP/Jitter 教程 05 - 矩阵的数学运算 Max/MSP/Jitter 教程 06 - 控制视频播放 Max/MSP/Jitter 教程 07 - ARGB 颜色 Max/MSP/Jitter 教程 08 - 调整颜色 Max/MSP/Jitter 教程 09 - 调整图像颜色 00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：Tutorial 8: Simple Mixing 本教程介绍如何使用 jit.xfade 对象混合和淡入淡出两个图像。 混合两个视频源混合两个图像是视频处理中最常见和最有用的技巧之一。 最简单的视频混合是将两个图像叠加起来，可以调整任一图像的强度。逐渐淡出一个图像，同时淡入另一个图像，可以创建图像之间的平滑过渡淡入淡出效果。 Jitter 处理混合和过渡渐变的对象是 jit.xfade。 技术细节：这种类型的混合，将一个矩阵中的每个值，加到另一个矩阵各单元和各平面的相应值上，并输出所有总和的矩阵。但这样让输出图像的值都大于任何一个输入图像，会比原始图像更亮（如果矩阵包含 char 数据，某些值甚至会在 255 处裁剪）。所以在它们相加之前应该减小一个或两个图像的强度。例如，为了按相同比例混合两个图像，在相加之前将它们缩小相等的量（例如，0.5 倍）。 jit.xfadejit.xfade 对象接收两个输入口的矩阵，缩放两个矩阵中的值，然后把两个矩阵相加并输出混合后的矩阵。两个输入矩阵缩放因子由 xfade 属性决定。xfade 是 1~0 之间单个（浮点） 数值，是右输入口矩阵的缩放因子。左输入口的矩阵按 1-xfade 的比例缩放。如果逐渐将 xfade 值从 0 增加到 1，输出矩阵将从左输入到右输入淡入淡出。 打开教程 patch。loadbang 对象自动读取两个源视频。开启metro。开始只会看到左侧视频。拖动滑块更改 xfade 值来控制左右矩阵的混合。 值为 0.5 时左右矩阵以相同比例混合 自动交叉渐变交叉渐变是最常见的图像转换方式之一。它可以非常缓慢 - 持续几秒 - 或者非常快速，只持续几分之一秒，只比突然跳帧略微平滑。 在 patch 左上角，有一个从视频 A 到 B （B 到 A）的自动渐变控制器。交叉渐变可以持续用数字框指定的任意过渡时间。 自动发送不断变化的 xfade 值 用数字框设置一个比较长的渐变时间（例如 5000 ms），可以看到交叉渐变器的效果。单击 Go To 右侧的开关淡入视频 B。 Go To 开关实际上是一个范围为 2 的 slider和一个 * 100乘法器，所以只会发送 0 和 100 两个值。单击开关右侧发出值 100，pack 发出消息 100 5000，line 对象在五秒内发出 0~100 的连续值（每 50 毫秒一个新值）。然后将这些值乘以 0.01，得到平滑变化的从 0~1 的 xfade 值。 小结叠加两个矩阵是最简单的混合视频图像的方法。想要控制两个图像的混合比例，首先要按某个因子缩放每个矩阵。想从一个图像渐变到另一个图像，将一个图像的缩放因子从 1 减小到 0，另一个从 0 增加到 1。 jit.xfade 对象专门混合和/或交叉渐变两个矩阵。xfade 属性指定两个矩阵之间的混合比例。将 xfade 值从 0 连续增大到 1 可实现平滑的交叉渐变。可以使用 line 或其他 Max 计时对象来自动化交叉渐变。 友情提示：独自折腾 Max 易患上癔症……不妨入群互助 👇👇👇]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>ArtxCode</tag>
+        <tag>Max/MSP</tag>
+        <tag>Jitter</tag>
+        <tag>视频</tag>
+        <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Max/MSP/Jitter 官方教程翻译09 - 调整图像颜色]]></title>
     <url>%2F180901-jitter-09.html</url>
     <content type="text"><![CDATA[Max/MSP/Jitter 教程 01 - 什么是矩阵？ Max/MSP/Jitter 教程 02 - Jitter 对象的属性 Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频 Max/MSP/Jitter 教程 04 - 创建矩阵 Max/MSP/Jitter 教程 05 - 矩阵的数学运算 Max/MSP/Jitter 教程 06 - 控制视频播放 Max/MSP/Jitter 教程 07 - ARGB 颜色 Max/MSP/Jitter 教程 08 - 调整颜色 00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：Tutorial 7: Image Level Adjustment 本教程介绍如何调整 Jitter 矩阵中图像数据的亮度、对比度和饱和度，以及色调和色调旋转(hue rotation)的概念。 教程 patch 中有两个新对象：jit.brcosa ，控制矩阵中图像数据的亮度（brightness）、对比度（contrast）和饱和度（saturation），以及 jit.hue，旋转图像的色调。 亮度，对比度和饱和度打开并查看图像 点击 read colorwheel.pct 消息框打开文件 colorwheel.pct。点击开关启动 metro 开始显示视频。 patch 底部 jit.pwindow 中会出现一个色轮： jit.pwindow 展示了穿越过两个对象的图像。我们先谈谈 jit.brcosa，然后再到 jit.hue。 jit.brcosa 对象将 4 平面 char 矩阵看作 ARGB 图像数据，可以调整矩阵数据的亮度、对比度、饱和度。三个属性的默认值是 1.0，这样矩阵保持不变： 使用 jit.brcosa 对象 更改 jit.brcosa 对象的属性并观察输出矩阵的变化。 与参考颜色（通常为黑色）相比，图像的亮度是指整体亮度/暗度。更改亮度属性相当于将矩阵中的值乘以该值。亮度值为 0 的图像是黑色；大于 1.0 的亮度值值将逐渐增加所有非 0 单元格直到白色（255）。值 0.5 使图像明显变暗，将值的范围从 0~255 降到 0~127。下面的色轮显示了一些亮度值：亮度值分别为 0.5，1.5 和 10 的色轮 用这种方式调整时，单元格的值会被裁剪为 0 和 255。这就是为什么亮度为 10 的那个图像基本上是白色，颜色只显示在原始矩阵中一/多个可见颜色平面（RGB 或平面 1,2 和 3）为 0 的区域。 图像对比度可以表示为图像中的颜色偏离整个原始图像的平均亮度的量（见下文）。当jit.brcosa 的对比度属性增加到 1.0 以上，高于整个矩阵平均亮度的单元变亮（增加），低于平均值的单元变暗（减少）。结果是矩阵图像 dynamic expansion，亮值更亮，暗值更暗。低于 1.0 的对比度设置则相反，较暗的色调变浅，较浅的色调变暗，直到对比度为 0.0，只保留整个图像的平均灰度。负值会以相同的总体对比度反转图像的颜色。 技术细节：矩阵的平均亮度可以通过平均矩阵中所有单元格的值来计算，各平面互不干扰（获得 Alpha，red，green，blue 平面各自的平均值）。然后将三个平面乘以公式： L = .299 * Red+ .587 * Green + .114 * Blue L 值就是整个矩阵的平均亮度，jit.brcosa 用它来确定调整对比度时扩展的阈值。 以下是一些对比度设置： 比度设定为 0.3，2，-1 和 100 的色轮 第一个例子中色轮的对比度急剧下降（单元格的值都接近矩阵的平均亮度）。第二个例子中对比度增加。请注意色轮中间较浅的色调开始接近白色。第三个示例显示了负值对比度。颜色与原始颜色相反，但矩阵的平均亮度与原始颜色相同。最后一个例子是大幅增强对比的结果。该示例中的单元值被极化为0 或 255。 图像饱和度反映了单元格中主要颜色与次要颜色的比率。随着饱和度值降至 1.0 以下，单元格中的所有颜色值将变得相似，变成去饱和的灰度。高于 1.0 的值将使颜色彼此远离，从而强化了主色。与对比度类似，饱和度属性的负值将反转颜色，但保留与原始颜色相同的亮度关系。 饱和度值为 0.2,2 和 -1 的色轮 第一个图像是去饱和的，矩阵中的每个单元格值都趋近于该单元格的亮度值。第二张图像过饱和，颜色比原始图像更亮（或更暗）。第三个图像保持色轮的原始亮度，但反转了颜色。 Hue and Cryjit.hue 对象可以旋转输入矩阵的色调。设置 hue_angle 属性会将输入矩阵的色调旋转指定的度数（以度为单位）： hue_angle 属性旋转输入矩阵的色调 矩阵单元的色调可以看作是其基本颜色（例如，品红色）。图像色调在色轮上从红色变为绿色、蓝色，再变为红色。用 0-360 度数指定的色调值，以及图像的饱和度和亮度，可用描述特定的颜色，这与 RGB 值描述唯一颜色的方式非常相似。向前旋转图像的色调，我们移动颜色光谱的红色部分，使其显示为绿色，光谱的绿色部分显示为蓝色，蓝色部分显示为红色。饱和度和亮度不会改变。负色调旋转会将红色变为蓝色。以 120 度为增量的色调旋转将使图像与原始色调精确地移位一个（或多个）色彩平面。 技术细节：我们的眼睛通过视网膜锥体的感知器来感知颜色（还有一种被称为 rods 的感知器专门探测微弱的光，但是不识别颜色）。我们眼睛的锥体响应三种不同波长的光来区分：L-senstive receptors 感知长波长的光（红色），M-senstive receptors 感知中波长光（绿色），以及 S-senstive receptors 感知短波长的光（蓝色）。跟听觉系统被加权以更好地感知人类语音范围内的频率一样，为了感知环境最关键的中间波长，我们的视锥细胞的分布也经过了加权处理。于是我们眼睛中的绿色感知器大约是其他两种颜色的两倍。所以上面的亮度公式将几乎 60％ 的感知亮度分配给图像中的绿色值。 单击开关以自动化色轮的 hue_angle。请注意，当 hue_angle 达到 360 度时，会恢复原始矩阵图像。 色轮在各种色调之间旋转（0~360 度） 小结jit.brcosa 和 jit.hue 对象控制输入矩阵的亮度，对比度，饱和度和色调。你可以使用这两个对象调整动态水平（例如自动曝光），校正色彩或实现指定色调的位移。 友情提示：独自折腾 Max 易患上癔症……不妨入群互助 👇👇👇]]></content>
@@ -225,11 +242,11 @@
         <tag>声音</tag>
         <tag>Ableton Live</tag>
         <tag>Max/MSP</tag>
+        <tag>EQ</tag>
         <tag>Oscilator</tag>
         <tag>Filter</tag>
         <tag>LFO</tag>
         <tag>过滤器</tag>
-        <tag>EQ</tag>
       </tags>
   </entry>
   <entry>
@@ -1919,9 +1936,9 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>中欧</tag>
-        <tag>历史</tag>
         <tag>Travel</tag>
+        <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>哥特式</tag>
         <tag>巴洛克</tag>
         <tag>布拉格</tag>
@@ -1939,9 +1956,9 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>中欧</tag>
-        <tag>历史</tag>
         <tag>Travel</tag>
+        <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>东正教</tag>
         <tag>基督教</tag>
         <tag>天主教</tag>
@@ -1958,10 +1975,10 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>中欧</tag>
-        <tag>历史</tag>
-        <tag>捷克</tag>
         <tag>Travel</tag>
+        <tag>历史</tag>
+        <tag>中欧</tag>
+        <tag>捷克</tag>
       </tags>
   </entry>
   <entry>
@@ -1973,10 +1990,10 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>中欧</tag>
-        <tag>历史</tag>
-        <tag>奥地利</tag>
         <tag>Travel</tag>
+        <tag>历史</tag>
+        <tag>中欧</tag>
+        <tag>奥地利</tag>
         <tag>哈布斯堡王朝</tag>
         <tag>维也纳</tag>
       </tags>
@@ -1990,10 +2007,10 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>中欧</tag>
-        <tag>历史</tag>
-        <tag>捷克</tag>
         <tag>Travel</tag>
+        <tag>历史</tag>
+        <tag>中欧</tag>
+        <tag>捷克</tag>
       </tags>
   </entry>
   <entry>
@@ -2004,13 +2021,13 @@
         <category>读书</category>
       </categories>
       <tags>
+        <tag>Travel</tag>
+        <tag>历史</tag>
         <tag>中欧</tag>
         <tag>匈牙利</tag>
-        <tag>历史</tag>
         <tag>奥地利</tag>
         <tag>捷克</tag>
         <tag>斯洛伐克</tag>
-        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -2022,8 +2039,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>历史</tag>
         <tag>人类简史</tag>
+        <tag>历史</tag>
       </tags>
   </entry>
   <entry>
