@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-09-04T10:24:37.000Z</updated>
+  <updated>2018-09-04T10:27:48.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -18,30 +18,35 @@
   
   <entry>
     <title>Max/MSP/Jitter 官方教程翻译11 - 矩阵混合</title>
-    <link href="http://uegeek.com/180904-jitter-11.html"/>
-    <id>http://uegeek.com/180904-jitter-11.html</id>
-    <published>2018-09-04T10:23:32.000Z</published>
-    <updated>2018-09-04T10:24:37.000Z</updated>
+    <link href="http://uegeek.com/180903-jitter-11.html"/>
+    <id>http://uegeek.com/180903-jitter-11.html</id>
+    <published>2018-09-03T10:23:32.000Z</published>
+    <updated>2018-09-04T10:27:48.000Z</updated>
     
-    <content type="html"><![CDATA[<ul><li>ArtxCode</li><li>Max/MSP</li><li>Jitter</li><li>矩阵</li><li>Creative Coding</li><li>教程</li><li>Math<br>categories:</li><li>教程</li></ul><hr><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-1.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter09" target="_blank" rel="noopener">Tutorial 9: More Mixing</a></p></blockquote><p>本教程探讨用 <code>jit.scalebias</code> 和 <code>jit.op</code> 实现交叉渐变的技巧。它比 <code>jit.xfade</code> 方法复杂一些，但更灵活。</p><h2 id="混合和交叉淡化"><a href="#混合和交叉淡化" class="headerlink" title="混合和交叉淡化"></a>混合和交叉淡化</h2><p><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">上一章</a>讲解了 <code>jit.xfade</code> 用缩放（乘法）和加法以不同的比例混合两个矩阵。本教程将使用 <code>jit.scalebias</code> 和 <code>jit.op</code> 对象来自动执行这些数学运算。</p><p>这样做有一些好处。首先能清楚地演示混合和交叉渐变的数学过程。其次能看到 <code>jit.op</code> 如何对两个输入矩阵做数学运算。（在<a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">教程 5 </a>中展示了 <code>jit.op</code> 和标量值如何作用于单个矩阵）。第三，它可以分别指定两个矩阵的缩放因子，比 <code>jit.xfade</code> 更灵活。最后，<code>jit.op</code> 可以实现许多不同类型的数学运算，我们可以尝试其他组合矩阵的方法来得到不同的视觉效果。</p><h2 id="再说-Mixing"><a href="#再说-Mixing" class="headerlink" title="再说 Mixing"></a>再说 Mixing</h2><p>打开教程 patch</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter09a.png" alt=""><br>用乘法和加法混合/交叉渐变矩阵</p><p>缩放因子设置为 0~1 之间的 <code>jit.scalebias</code> 将两个视频 scaled down（变暗）。下面会看到用 <code>jit.op</code> 的不同：两个入口的输入都是矩阵。这时 <code>jit.op</code> 分别对每个值执行指定的数学运算，<strong>将左矩阵中的每个值与右矩阵中的对应值配对</strong>。这样我们可以把两个矩阵的所有值相加来混合图像。</p><p>这些乘法和加法的结果与 <code>jit.xfade</code> 对象做内部运算的结果一样。可以试试用 patch 右上角的控件来交叉渐变视频（与上一章几乎完全相同）。</p><p>启动 <code>metro</code> 并使用 <code>Mixer slider</code> 执行从视频 A 到 B 的交叉渐变。</p><p>请注意，渐变值直接作为视频 B 的缩放因子，同时 <code>!- 1</code> 对象用 1 减去该值，得到视频 A 的缩放因子。这样，两个缩放因子的和总是等于 1，就像在 <code>jit.xfade</code> 中一样。</p><h2 id="使用其他运算符组合矩阵"><a href="#使用其他运算符组合矩阵" class="headerlink" title="使用其他运算符组合矩阵"></a>使用其他运算符组合矩阵</h2><p>加法是两个矩阵最常见的运算。更改 <code>jit.op</code> 的 op 属性，可以尝试许多其他运算并查看其视觉效果。</p><p>在 <code>Transition Time</code> 数字框中设置一个非常长的交叉渐变时间（例如 10000 ms）。在 <code>Operator</code> 弹出菜单中选择 + 以外的运算符。现在点击 <code>Go To switch</code> 开始渐变，可以看到两个视频矩阵的运算如何进行。</p><p>弹出菜单包含 <code>jit.op</code> 各种运算符中的一部分。以下是菜单中选项的简要说明。</p><ul><li><code>+</code> 把 B 值加到 A</li><li><code>-m</code> 从 A 中减去 B，然后取模将结果折算回所需的数值范围</li><li><code>max</code> 使用 A B 中较大的值</li><li><code>absdiff</code>从 A 中减去 B，然后取差值的绝对值</li><li><code>|</code> “按位或”; 二进制操作，A 或 B 为 1，结果为 1</li><li><code>^</code> “按位独占或”; 二进制操作，A 和 B 值不相同，结果为 1，否则为 0</li><li><code>&gt;</code> 如果 A 大于 B，结果为 1（或 char 255），否则为 0</li><li><code>&lt;</code> 如果 A 小于 B，结果为 1（或 char 255），否则为 0</li><li><code>&gt;p</code> 如果 A 大于 B，结果为 A，否则为 0</li><li><code>&lt;p</code> 如果 A 小于 B，结果为 A，否则为 0</li></ul><p>其他运算符请查看 <code>jit.op</code> 对象参考文档。</p><p>你也可以直接拖动 <code>jit.scalebias</code> 上方的数字框，单独设置混合比例。还可以尝试超过 0~1 范围的值。</p><h2 id="jit-scalebias-vs-jit-op-op"><a href="#jit-scalebias-vs-jit-op-op" class="headerlink" title="jit.scalebias vs. jit.op @op *"></a>jit.scalebias vs. jit.op @op *</h2><p>这个 patch 用 <code>jit.scalebias</code> 来做缩放乘法，而没有用 <code>jit.op</code> 与 * 运算符。为什么呢？</p><p>当 <code>jit.op</code> 操作 char 数据时，val 属性范围是 0.0~1.0（浮点数）或 0~255（整数）。如果想将 char 数据乘以 0~1 的某个值，用 <code>jit.op</code> 就可以。如果想乘以其他范围的值，就要用 <code>jit.scalebias</code>，它允许 scale 的值超过 0~1 范围。 <code>jit.scalebias</code> 仅用于处理 4 平面 char 矩阵，在这个例子中没问题。所以在这个 patch 中，因为是在 4 平面 char 矩阵上做运算，并且想使用超过 0~1 范围的缩放因子，所以使用了 <code>jit.scalebias</code>。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>你可以用 <code>jit.op</code> 对两个不同矩阵中的值执行各种数学运算。 <strong><code>jit.op</code> 对每个值执行指定的数学运算，将左矩阵中的每个值与右矩阵中的对应值配对。当两个矩阵的 dim，planecount 和 type 属性不同时，<code>jit.op</code> 使用左入口矩阵的属性</strong>。在混合两个视频图像时，不同的数学运算符可以生成各种视觉效果。</p><hr><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-2.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter09" target="_blank" rel="noopener">Tutorial 9: More Mixing</a></p></blockquote><p>本教程探讨用 <code>jit.scalebias</code> 和 <code>jit.op</code> 实现交叉渐变的技巧。它比 <code>jit.xfade</code> 方法复杂一些，但更灵活。</p><h2 id="混合和交叉淡化"><a href="#混合和交叉淡化" class="headerlink" title="混合和交叉淡化"></a>混合和交叉淡化</h2><p><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">上一章</a>讲解了 <code>jit.xfade</code> 用缩放（乘法）和加法以不同的比例混合两个矩阵。本教程将使用 <code>jit.scalebias</code> 和 <code>jit.op</code> 对象来自动执行这些数学运算。</p><p>这样做有一些好处。首先能清楚地演示混合和交叉渐变的数学过程。其次能看到 <code>jit.op</code> 如何对两个输入矩阵做数学运算。（在<a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">教程 5 </a>中展示了 <code>jit.op</code> 和标量值如何作用于单个矩阵）。第三，它可以分别指定两个矩阵的缩放因子，比 <code>jit.xfade</code> 更灵活。最后，<code>jit.op</code> 可以实现许多不同类型的数学运算，我们可以尝试其他组合矩阵的方法来得到不同的视觉效果。</p><h2 id="再说-Mixing"><a href="#再说-Mixing" class="headerlink" title="再说 Mixing"></a>再说 Mixing</h2><p>打开教程 patch</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter09a.png" alt=""><br>用乘法和加法混合/交叉渐变矩阵</p><p>缩放因子设置为 0~1 之间的 <code>jit.scalebias</code> 将两个视频 scaled down（变暗）。下面会看到用 <code>jit.op</code> 的不同：两个入口的输入都是矩阵。这时 <code>jit.op</code> 分别对每个值执行指定的数学运算，<strong>将左矩阵中的每个值与右矩阵中的对应值配对</strong>。这样我们可以把两个矩阵的所有值相加来混合图像。</p><p>这些乘法和加法的结果与 <code>jit.xfade</code> 对象做内部运算的结果一样。可以试试用 patch 右上角的控件来交叉渐变视频（与上一章几乎完全相同）。</p><p>启动 <code>metro</code> 并使用 <code>Mixer slider</code> 执行从视频 A 到 B 的交叉渐变。</p><p>请注意，渐变值直接作为视频 B 的缩放因子，同时 <code>!- 1</code> 对象用 1 减去该值，得到视频 A 的缩放因子。这样，两个缩放因子的和总是等于 1，就像在 <code>jit.xfade</code> 中一样。</p><h2 id="使用其他运算符组合矩阵"><a href="#使用其他运算符组合矩阵" class="headerlink" title="使用其他运算符组合矩阵"></a>使用其他运算符组合矩阵</h2><p>加法是两个矩阵最常见的运算。更改 <code>jit.op</code> 的 op 属性，可以尝试许多其他运算并查看其视觉效果。</p><p>在 <code>Transition Time</code> 数字框中设置一个非常长的交叉渐变时间（例如 10000 ms）。在 <code>Operator</code> 弹出菜单中选择 + 以外的运算符。现在点击 <code>Go To switch</code> 开始渐变，可以看到两个视频矩阵的运算如何进行。</p><p>弹出菜单包含 <code>jit.op</code> 各种运算符中的一部分。以下是菜单中选项的简要说明。</p><ul><li><code>+</code> 把 B 值加到 A</li><li><code>-m</code> 从 A 中减去 B，然后取模将结果折算回所需的数值范围</li><li><code>max</code> 使用 A B 中较大的值</li><li><code>absdiff</code>从 A 中减去 B，然后取差值的绝对值</li><li><code>|</code> “按位或”; 二进制操作，A 或 B 为 1，结果为 1</li><li><code>^</code> “按位独占或”; 二进制操作，A 和 B 值不相同，结果为 1，否则为 0</li><li><code>&gt;</code> 如果 A 大于 B，结果为 1（或 char 255），否则为 0</li><li><code>&lt;</code> 如果 A 小于 B，结果为 1（或 char 255），否则为 0</li><li><code>&gt;p</code> 如果 A 大于 B，结果为 A，否则为 0</li><li><code>&lt;p</code> 如果 A 小于 B，结果为 A，否则为 0</li></ul><p>其他运算符请查看 <code>jit.op</code> 对象参考文档。</p><p>你也可以直接拖动 <code>jit.scalebias</code> 上方的数字框，单独设置混合比例。还可以尝试超过 0~1 范围的值。</p><h2 id="jit-scalebias-vs-jit-op-op"><a href="#jit-scalebias-vs-jit-op-op" class="headerlink" title="jit.scalebias vs. jit.op @op *"></a>jit.scalebias vs. jit.op @op *</h2><p>这个 patch 用 <code>jit.scalebias</code> 来做缩放乘法，而没有用 <code>jit.op</code> 与 * 运算符。为什么呢？</p><p>当 <code>jit.op</code> 操作 char 数据时，val 属性范围是 0.0~1.0（浮点数）或 0~255（整数）。如果想将 char 数据乘以 0~1 的某个值，用 <code>jit.op</code> 就可以。如果想乘以其他范围的值，就要用 <code>jit.scalebias</code>，它允许 scale 的值超过 0~1 范围。 <code>jit.scalebias</code> 仅用于处理 4 平面 char 矩阵，在这个例子中没问题。所以在这个 patch 中，因为是在 4 平面 char 矩阵上做运算，并且想使用超过 0~1 范围的缩放因子，所以使用了 <code>jit.scalebias</code>。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>你可以用 <code>jit.op</code> 对两个不同矩阵中的值执行各种数学运算。 <strong><code>jit.op</code> 对每个值执行指定的数学运算，将左矩阵中的每个值与右矩阵中的对应值配对。当两个矩阵的 dim，planecount 和 type 属性不同时，<code>jit.op</code> 使用左入口矩阵的属性</strong>。在混合两个视频图像时，不同的数学运算符可以生成各种视觉效果。</p><hr><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png" alt=""></p>]]></content>
     
     <summary type="html">
     
-      &lt;ul&gt;
-&lt;li&gt;ArtxCode&lt;/li&gt;
-&lt;li&gt;Max/MSP&lt;/li&gt;
-&lt;li&gt;Jitter&lt;/li&gt;
-&lt;li&gt;矩阵&lt;/li&gt;
-&lt;li&gt;Creative Coding&lt;/li&gt;
-&lt;li&gt;教程&lt;/li&gt;
-&lt;li&gt;Math&lt;br&gt;categories:&lt;/li&gt;
-&lt;li&gt;教程&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Max-title-1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Max-title-2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
     
     </summary>
     
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
+    
+      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
+      <category term="Math" scheme="http://uegeek.com/tags/Math/"/>
     
   </entry>
   
@@ -71,11 +76,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -103,11 +108,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -137,11 +142,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -171,11 +176,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -207,11 +212,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -239,11 +244,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="数学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
@@ -273,11 +278,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -307,9 +312,9 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -339,9 +344,9 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -371,11 +376,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
