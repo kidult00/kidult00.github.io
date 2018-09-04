@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-09-04T10:27:48.000Z</updated>
+  <updated>2018-09-04T11:17:34.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Max/MSP/Jitter 官方教程翻译12 - Chromakeying</title>
+    <link href="http://uegeek.com/180904-jitter-12.html"/>
+    <id>http://uegeek.com/180904-jitter-12.html</id>
+    <published>2018-09-04T11:16:04.000Z</published>
+    <updated>2018-09-04T11:17:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-3.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180903-jitter-11.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 11 - 矩阵混合</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter10" target="_blank" rel="noopener">Tutorial 10: Chromakeying</a></p></blockquote><p>本教程介绍如何使用 <code>jit.chromakey</code> 对两个源视频Chromakeying（去背景合成，chroma-纯色，key-抽离颜色）。还将学习如何使用 <code>suckah</code> 对象获取屏幕上任意像素的颜色。</p><p>打开教程 patch，由 <code>loadbang</code> 发送 <code>read</code> 消息到两个 <code>jit.movi​​e</code> 对象，自动读取两个视频（oh.mov 和 traffic.mov）：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10a.png" alt=""><br>通过 <code>loadbang</code> 初始化 patch</p><p>其他参数也由连接到右侧消息框的 <code>loadbang</code> 初始化。消息框发送消息到 patch 中其他名为 <code>receive</code> 的对象完成初始化。（参见<a href="https://docs.cycling74.com/max7/tutorials/basicchapter16" target="_blank" rel="noopener">教程 18：Remote Messaging</a>）。</p><p>点击开关启动 <code>metro</code>。三个 <code>jit.pwindow</code> 对象中出现了图像。开关不仅可以启动和停止 <code>metro</code>，还可以启动和停止两个 <code>jit.movi​​e</code> 视频播放。</p><p>教程 patch 的下半部分（三个 <code>jit.pwindow</code> 中的两个）是这样的：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10b.png" alt=""><br><code>jit.chromakey</code> 对象</p><p>点击左侧 <code>jit.pwindow</code> 对象的蓝色区域（即视频中男性头部后面的区域）。</p><p>第三个 <code>jit.pwindow</code>（在 patch 右下角）将显示：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10c.png" alt="">            </p><blockquote><p>历史说明：蓝屏合成（在蓝色哑光背景下拍摄现场镜头的过程）在 20 世纪 30 年代就出现了，目的是为了后期用其他图像替换蓝色。蓝屏合成涉及平版印刷分色，起初是非常昂贵的电影工艺，它（现在更常见的是绿屏合成）已经演变成影视制作中最常见的特效。通过数字叠加完成 Chromakeying（蓝屏处理的术语）让它更普及。Chromakeying 在电视行业中常被称为 CSO（色彩分离叠加），由 1960 年代开发它的 BBC 团队命名。蓝屏发明者 Petro Vlahos 在 1994 年被授予了电影艺术与科学学院终身成就奖，以表彰这项无可替代的技术。</p></blockquote><h2 id="jit-chromakey-对象"><a href="#jit-chromakey-对象" class="headerlink" title="jit.chromakey 对象"></a>jit.chromakey 对象</h2><p>去背景合成 - 将一个图像叠加在另一个上面，选择性替换颜色的过程 - 由 <code>jit.chromakey</code> 对象实现。<strong>通过指定颜色和其他参数， <code>jit.chromakey</code> 在第一个（左侧）矩阵中检测包含该颜色的单元，并在生成输出矩阵时，用第二个（右侧）矩阵中的对应单元替换它们。</strong>这样，来自第一个矩阵的单元叠加到第二个矩阵上。</p><p>可以选择任何颜色为要去除的背景，请尝试点击左侧 <code>jit.pwindow</code> 中的其他区域。不同的颜色会从男人的脸上移除，而显示出第二个视频中的图像。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10d.png" alt=""><br>消失的面孔（第一部分）</p><p><code>jit.chromakey</code> 用 <code>color</code> 属性（称为参考颜色）来定义中心色。这个属性是一个值列表，应用于等待抠图的矩阵中的所有平面。<code>tol</code> 属性定义中心色的<strong>容差范围</strong>。此范围内的颜色也会被去除。</p><p>将 <code>jit.chromakey</code> 与 char 矩阵一起使用时，属性值的范围在 0.0~1.0，然后映射到 char 数据所需的 0~255。所以可以将属性设置为 <code>color 0 0 1.0 0</code>，而不是 <code>0 0 255 0</code>。<code>tol</code> 为 0.5 时会去除距离参考色一半色阶的所有颜色（key all values within half of the chromatic distance from the reference color）。<code>tol</code> 为 0 时只会用精确的参考色来完成抠图。</p><p>再次点击左侧视频中的蓝色区域，然后调整 <code>tol</code> 属性查看输出的变化。在低容差时，左图中的一些蓝屏将保留。容差值非常高时，男人脸部的部分可能会消失。</p><p>在教程 patch 中，我们通过点击不可见的对象来设置 <code>jit.chromakey</code> 的颜色属性。解锁 patch，会看到左侧 <code>jit.pwindow</code> 上面的同心红色方块区域：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10e.png" alt=""><br><code>suckah</code> 对象</p><p>该区域是名为 <code>suckah</code> 的 Max UI 对象，可以在 interface 工具栏找到它：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10f.png" alt=""><br>对象面板中的 suckah 对象</p><p><code>suckah</code> 对象获取它所覆盖的屏幕像素的 RGB 值。当单击对象时（patch 处于锁定状态），它会获取 0.0~1.0 范围内的浮点数值。例如，单击视频中的纯蓝色区域，<code>suckah</code> 会发送 <code>0 0 1.0</code> 列表（suckah 的初始版本使用 0~255 范围。如果需要，可以在 inspector 中选择这个设置）</p><p><code>suckah</code> 对象获取 RGB 颜色列表后，用 <code>prepend 0</code> 在前面加上 0（增加 alpha 值到列表最前面）来设置 <code>jit.chromakey</code> 的颜色属性。然后再 <code>prepend color</code> 并发送给 <code>jit.chromakey</code>。</p><h2 id="Chromakey-选项"><a href="#Chromakey-选项" class="headerlink" title="Chromakey 选项"></a>Chromakey 选项</h2><p><code>jit.chromakey</code> 对象有附加属性：minkey，maxkey 和 fade。当矩阵从左入口进入，<code>jit.chromakey</code> 基于该矩阵在内部创建一个灰度（单平面）遮罩。输入矩阵中，在容差（tol）范围内颜色值的单元格，将设置为遮罩中的 maxkey 属性值（默认为 1）。容差范围之外的区域乘以 minkey 属性（默认为 0）。如果 minkey 和 maxkey 为 0 和 1，生成的图像在去背景的位置应该看起来是白色，而在要保留原始图像的位置看起来是黑色。</p><p>将得到的遮罩及其负片，分别乘以右矩阵和左矩阵。然后添加乘法的结果以形成合成图像。下图说明了这个过程：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10g.png" alt=""><br>遮罩（minkey 为 0，maxkey 为 1）和合成效果</p><p>maxkey 属性设置右边输出矩阵的强度，minkey 属性设置左边矩阵的强度。如果要反转 minkey 和 maxkey 属性，chromakey 将被反转：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10h.png" alt=""><br>minkey 为 1，maxkey 为 0（反向色度键）的合成效果</p><p>fade 属性在被去除和保留的区域之间生成插值，可以生成柔化边缘。左边矩阵中的颜色略微超出了容差范围，但是在参考颜色的 tol + fade 的范围内，在原始颜色和右侧矩阵对应单元格中的颜色之间插值。插值取决于 fade 值的大小，以及颜色距离容差边界有多远。</p><p>尝试不同的 tol，fade，minkey，maxkey 和 color 值。观察五个属性如何影响不同的抠图效果，以及 minkey 和 maxkey 值如何相互补充。</p><p>完全去除背景很困难。选取合适的 tol 和 fade 属性值，才能确保第一个图像中的区域对第二个图像起作用。包含很多细节的图像，通常会在抠图和保留区域之间颜色变化的区域，出现轻微的斑点。此外，单一颜色（例如蓝色）基本上满足不了去背景的需要，必须使用一系列值。但是你会发现，希望去除的颜色会出现在想要保留的区域中！平衡所有因素以获得满意的效果，是使用 <code>jit.chromakey</code> 对象最困难的部分。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><code>jit.chromakey</code> 对象实现两个 Jitter 对象的 chromakeying。可以使用 color 和 tol 属性设置抠图的颜色范围，并用 fade，minkey 和 maxkey 值来定义两个矩阵在合成时的工作方式。<code>suckah</code> 对象放置在 <code>jit.pwindow</code> 上方，点击即可以获取所在位置的颜色。</p><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Max-title-3.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="抠图" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/%E6%8A%A0%E5%9B%BE/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
+    
+      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
+    
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="Chromakeying" scheme="http://uegeek.com/tags/Chromakeying/"/>
+    
+  </entry>
   
   <entry>
     <title>Max/MSP/Jitter 官方教程翻译11 - 矩阵混合</title>
@@ -40,11 +76,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Math" scheme="http://uegeek.com/tags/Math/"/>
     
@@ -76,11 +112,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -108,11 +144,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -142,11 +178,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -176,11 +212,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -212,11 +248,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -244,11 +280,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="数学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
@@ -278,11 +314,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -312,9 +348,9 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -344,9 +380,9 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -376,11 +412,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -697,42 +733,6 @@
       <category term="Phase" scheme="http://uegeek.com/tags/Phase/"/>
     
       <category term="相位" scheme="http://uegeek.com/tags/%E7%9B%B8%E4%BD%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MakeNoise03 - 振幅/响度/音量/增益 大乱斗</title>
-    <link href="http://uegeek.com/180624-make-noise-03.html"/>
-    <id>http://uegeek.com/180624-make-noise-03.html</id>
-    <published>2018-06-24T10:02:47.000Z</published>
-    <updated>2018-08-22T09:39:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png" alt=""></p><a id="more"></a> <ul><li><a href="https://www.uegeek.com/180621-make-noise-01.html" target="_blank" rel="noopener">MakeNoise01 - 声音是什么？</a></li><li><a href="https://www.uegeek.com/180623-make-noise-02.html" target="_blank" rel="noopener">MakeNoise02 - 频率和音高</a></li></ul><p>振幅/响度/音量/增益，这大概是 Sound engineering 入门的第一捆容易混淆的概念们。<em>(¦3」∠)</em></p><h2 id="振幅-Amplitude"><a href="#振幅-Amplitude" class="headerlink" title="振幅 Amplitude"></a>振幅 Amplitude</h2><p>振幅 Amplitude 是在波动或振动中，距离平衡位置或静止位置的最大位移。<br>￼<br><img src="http://mathworld.wolfram.com/images/eps-gif/Amplitude_1000.gif" alt=""></p><p>最大正位移与最大负位移之差，称为值域（range）或峰-峰幅度，是常规振幅的两倍。</p><p><strong>音源的振幅（物理量）</strong>与频率、频谱包络以及时域包络等其他因素一起，<strong>影响声音的响度（感知量）</strong>。顺便复习一下，频率是声源每分钟震动次数的物理量，音高是感知量。</p><h2 id="响度-Loudness"><a href="#响度-Loudness" class="headerlink" title="响度 Loudness"></a>响度 Loudness</h2><p>我们常用 Sound pressure level (SPL) 值来测量声音的响度，单位为 dB。</p><p>不过 dB 并不是可以测量的物理量，它只是一个单位。来看看以下几个概念，有助于我们理解响度到底是什么：</p><ul><li>声压/声强（acoustic pressure）：是指声波通过媒质时，由振动所产生的<strong>压强改变量</strong>。声压的数值很大，不便于计算和描述，于是人们取了一个人耳刚刚能听到 1kHz 声音时候的声压值作为标准。</li><li>声压等级（SPL）：是<strong>描述声音大小的物理量</strong>，用声压值除以上面提到的标准声压值，取了对数再乘以10，就得到 SPL，公式见下图。</li><li>分贝（decibels/dB）：是<strong>描述物理量比值的单位</strong>（分贝不仅用于声学，多用于衡量各种信号的强度、增益等）。</li></ul><p>￼<img src="http://7xjpra.com1.z0.glb.clouddn.com/SPL2dB.png" alt=""></p><p>从以上公式容易看到，<strong>响度和声压并不是线性关系</strong>。一个声波大概需要 10 倍的压强，才能让我们在听觉上感受到 2 倍的响度。</p><p>Fletcher-Munson 曲线总结了人耳对响度的敏感性。人耳对 3kHz~4kHz的声音最敏感，其他频率区域的声音往往都需要经过放大才能被听清。<br>￼<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Lindos4.svg/800px-Lindos4.svg.png" alt=""></p><h2 id="常见的响度范围"><a href="#常见的响度范围" class="headerlink" title="常见的响度范围"></a>常见的响度范围</h2><p>大多数人能识别 3dB 的声音幅度变化。下图给出了常见的声音场景的响度：</p><p><img src="https://images-na.ssl-images-amazon.com/images/I/71Z0oKDowKL._SL1500_.jpg" alt=""></p><ul><li>0 dB: 几乎安静无声</li><li>40-50 dB: 室内环境音</li><li>50-60 dB: 低语声</li><li>60-75 dB: 谈话声</li><li>80-85 dB: 最佳声音响度区域，在混音时最高不应超过 85 dB</li><li>90 dB: 工厂噪声，长时间暴露在这种环境中会损伤听力</li><li>100 dB: 婴儿哭声 </li><li>110 dB: 汽车喇叭</li><li>120 dB: 会引起疼痛和听觉损伤的响度阈值</li><li>140 dB: 相当于连续猛烈敲击军鼓1分钟</li><li>150-160 dB: 飞机引擎声</li></ul><p>不同枪支发射时的 SPL：</p><p>￼<img src="https://cdn.shopify.com/s/files/1/1696/0313/files/SoundComparison-Silencer-Supressor.jpg?v=1500407959" alt=""></p><h2 id="Sound-engineering-里的音量-Volume-和-增益-Gain-的区别"><a href="#Sound-engineering-里的音量-Volume-和-增益-Gain-的区别" class="headerlink" title="Sound engineering 里的音量 Volume 和 增益 Gain 的区别"></a>Sound engineering 里的音量 Volume 和 增益 Gain 的区别</h2><p>Volume 和 Gain 是初学者常常容易混淆的两个概念（就像我现在……☁️☁️☁️），在各种教程和工具界面里会频繁出现这两个词，它们似乎都可以翻译为「音量」。但它们是两个不同的概念。</p><h3 id="Gain"><a href="#Gain" class="headerlink" title="Gain"></a>Gain</h3><p>Gain 用来表示信号的强度，是<strong>音频输入信号和输出信号差异的幅度</strong>。</p><blockquote><p>Gain is the parameter for the amount that some sort of amplifier circuit is going to increase the amplitude of an input signal. </p><p>via <a href="https://www.youtube.com/watch?v=33u60cYDZTM" target="_blank" rel="noopener">Gain vs Volume - Production Concepts</a></p></blockquote><p>可以说，gain 控制的是「进入」声音设备的信号。</p><p>在数字音频中，Gain 常用的单位是 dBFS。0 dBFS 是数字音频中的最大值，正常值都为负数。如果大于 0 呢？音频就会出现削波和失真。</p><h3 id="Volume"><a href="#Volume" class="headerlink" title="Volume"></a>Volume</h3><p>Volume 是声音大小（响度）的值，单位是 dBSPL(dB Sound Pressure Level)，测量的是声波在环境中的压强值。可以说，volume 控制的是从声音设备「输出」的声响大小。</p><p>在混音时，volume 值保持在 80 dB 左右最佳。增大响度叫 boost，减小响度叫 cut。</p><h3 id="在软件中的使用场景"><a href="#在软件中的使用场景" class="headerlink" title="在软件中的使用场景"></a>在软件中的使用场景</h3><p>现在，我们知道可以<strong>将 Gain 理解为对信号的调整，将 Volume 理解为处理完成后声音响度的听觉感受</strong>。</p><p>这正好可以对应到 Max/MSP 和 Ableton Live 的实现中。</p><p>Max/MSP 很擅长数字信号处理，主要在信号层面做底层的调控。所以在 Max/MSP 中只有控制 gain 的对象，而没有调控 volume 的对象。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/gain&amp;meter.png" alt=""><br>￼</p><p>而 Ableton Live 善于处理音频，叠加各种音效和编排音轨。控制每一个音轨的音量是最基本的功能之一。在界面功能中，它会把信号的 level 描述为 volume：</p><iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=r0700unhufv&tiny=0&auto=0" allowfullscreen></iframe><p><a href="http://v.qq.com/x/page/r0700unhufv.html" target="_blank" rel="noopener">Volume in ableton live</a></p><p>从上面的视频中可以看到，这个音轨的 peak level 是 -14.9，不会超过 0 ，实际上它控制的还是信号的 gain。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li>振幅：波动的最大位置，并不是响度的唯一影响因素</li><li>响度：用物理量声压级 SPL 来测量，一般用简化的单位 dB 来表示响度这一感知量</li><li>音量：在音频处理时表示响度的概念，更多是指音频输出时听觉感受到的声音大小</li><li>增益：在音频处理时表示信号强度的概念，更多是指音频输入与输出时信号强度的差别</li></ul><p>它们都是对声音「大小」的不同描述，现在是不是更清晰一些了？</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li>Audio Engineering 101 - A Beginner’s Guide to Music Production</li><li><a href="https://www.youtube.com/watch?v=qV4lR9EWGlY" target="_blank" rel="noopener">Sound: Crash Course Physics #18 - YouTube</a></li><li><a href="https://www.wikiwand.com/en/Sound_pressure" target="_blank" rel="noopener">Sound pressure - Wikiwand</a></li><li><a href="https://www.zhihu.com/question/23047125" target="_blank" rel="noopener">响度与振幅与分贝的关系是什么？ - 知乎</a></li><li><a href="https://www.wikiwand.com/en/Fletcher%E2%80%93Munson_curves" target="_blank" rel="noopener">Fletcher–Munson curves - Wikiwand</a></li><li><a href="http://www.prsguitars.com/index.php/blog/post/tips_from_a_recording_engineerthe_critical_difference_between_gain_and_volu" target="_blank" rel="noopener">Tips from a Recording Engineer: The Critical Difference Between Gain and Volume</a></li><li><a href="https://www.youtube.com/watch?v=33u60cYDZTM" target="_blank" rel="noopener">Gain vs Volume - Production Concepts - YouTube</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Music" scheme="http://uegeek.com/tags/Music/"/>
-    
-      <category term="Sound" scheme="http://uegeek.com/tags/Sound/"/>
-    
-      <category term="声音" scheme="http://uegeek.com/tags/%E5%A3%B0%E9%9F%B3/"/>
-    
-      <category term="Ableton Live" scheme="http://uegeek.com/tags/Ableton-Live/"/>
-    
-      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
-    
-      <category term="Gain" scheme="http://uegeek.com/tags/Gain/"/>
-    
-      <category term="Volume" scheme="http://uegeek.com/tags/Volume/"/>
     
   </entry>
   

@@ -4,6 +4,41 @@
 
     
   <url>
+    <loc>http://uegeek.com/180904-jitter-12.html</loc>
+    <lastmod>2018-09-04T11:17:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>Max/MSP/Jitter 官方教程翻译12 - Chromakeying</title>
+        <pubTime>2018-09-04T11:16:04.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Max/MSP</tag>
+         
+        <tag>Jitter</tag>
+         
+        <tag>矩阵</tag>
+         
+        <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
+         
+        <tag>Chromakeying</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+             
+              <breadCrumb title="抠图" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/%E6%8A%A0%E5%9B%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/180903-jitter-11.html</loc>
     <lastmod>2018-09-04T10:27:48.000Z</lastmod>
     <data>
@@ -17,11 +52,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>Math</tag>
          
@@ -51,11 +86,11 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
          
            
@@ -81,11 +116,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>颜色</tag>
          
@@ -113,11 +148,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>颜色</tag>
          
@@ -145,11 +180,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>颜色</tag>
          
@@ -177,11 +212,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
          
            
@@ -209,9 +244,9 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
          
          
            
@@ -239,9 +274,9 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
          
          
            
@@ -269,11 +304,11 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
          
            
@@ -301,11 +336,11 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
          
            
@@ -331,11 +366,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>数学</tag>
          
@@ -3449,9 +3484,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>哥特式</tag>
          
@@ -5557,9 +5592,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>人类简史</tag>
+         
+        <tag>历史</tag>
          
          
            
@@ -5581,15 +5616,15 @@
         
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
          
-        <tag>捷克</tag>
+        <tag>中欧</tag>
          
         <tag>匈牙利</tag>
          
         <tag>奥地利</tag>
+         
+        <tag>捷克</tag>
          
         <tag>斯洛伐克</tag>
          
@@ -5615,9 +5650,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>捷克</tag>
          
@@ -5643,9 +5678,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>捷克</tag>
          
@@ -5671,9 +5706,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>奥地利</tag>
          
@@ -5703,9 +5738,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>东正教</tag>
          
