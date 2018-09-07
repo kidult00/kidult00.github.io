@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-09-06T10:55:59.000Z</updated>
+  <updated>2018-09-07T11:58:43.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Max/MSP/Jitter 官方教程翻译14 - 颜色查找表</title>
+    <link href="http://uegeek.com/180907-jitter-14.html"/>
+    <id>http://uegeek.com/180907-jitter-14.html</id>
+    <published>2018-09-07T11:57:41.000Z</published>
+    <updated>2018-09-07T11:58:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-5.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180903-jitter-11.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 11 - 矩阵混合</a></li><li><a href="https://www.uegeek.com/180904-jitter-12.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 12 - Chromakeying 视频去背景合成</a></li><li><a href="https://www.uegeek.com/180906-jitter-13.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 13 - 列表和矩阵</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter12" target="_blank" rel="noopener">Tutorial 12: Color Lookup Tables</a></p></blockquote><p>本教程将讲解如何使用颜色查找表（lookup tables）重新映射 Jitter 矩阵内的数据。<code>jit.charmap</code> 对象是为此而设计的。我们还将研究生成查找表矩阵的不同策略，包括 <code>jit.gradient</code> 对象。</p><h2 id="查找过程"><a href="#查找过程" class="headerlink" title="查找过程"></a>查找过程</h2><p>查找表（通常称为传递函数/transfer functions）是一个数组，以数字为表的索引。检索存储在该索引（地址或位置）的数字来替换原数字。任何函数 graph - 每个 x 值（地址）有相应的 y 值（输出）- 都可以用作查找表。Max 对象如 <code>funbuff</code>，<code>table</code> 和 MSP <code>buffer~</code> 对象是常用的查找表。本教程将以类似的方式使用 Jitter 矩阵。</p><p>打开教程 patch 读取图像</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12a.png" alt="">            </p><p>patch 左上角有一个 <code>jit.movi​​e</code> 对象，读取两个文件。初始化对象（通过 loadbang）并加载文件 colorwheel.pct。也可以点击 <code>rain.mov</code> 消息加载视频。可以随意切换两个图像源。</p><p>单击 patch 顶部的开关启动 <code>metro</code>。色轮同时出现在顶部和底部的 <code>jit.pwindow</code>。底部第三个（矩形）<code>jit.pwindow</code> 中出现渐变。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12b.png" alt=""><br><code>jit.charmap</code> 的输出和查找表矩阵</p><p>patch 底部有一个<code>jit.charmap</code> 对象，用它来重新映射图像中的单元格值。对象有两个入口，左入口连接到顶部的 <code>jit.movi​​e</code>。右入口连接到 <code>jit.matrix colortable</code>。名为 colortable 的矩阵只有一维共 256 个单元，有四个 char 型数据平面。这是<code>jit.charmap</code> 用来重新映射左边矩阵中单元格的颜色查找表。带有名字 ctable 的<code>receive</code>（一般缩写为 <code>r</code>）对象从 patch 的其他位置接收数据并发送到 <code>jit.matrix</code>。打开顶部的开关发送一个 bang 到 <code>jit.matrix colortable</code>，它将矩阵消息发送到<code>jit.pwindow</code> 和 <code>jit.charmap</code>。</p><p><code>jit.charmap</code> 用输入（左）矩阵中的值，指向（右）矩阵中对应的位置并复制那里的值，生成输出矩阵。如果发送给<code>jit.charmap</code> 的矩阵包含一个在四个平面中值为 <code>100 50 35 20</code> 的单元格。如果查找表在平面 1 第 100 个单元格的值是 73，平面 2 第 50 个单元格的值是 25 ，平面 3 的第 35 个单元格的值是 0，平面 4 第 20 个单元格的值是 203，输出单元的值是 <code>73 25 0 203</code>。</p><p><code>jit.charmap</code> 查找表是有 256 个单元格的一维矩阵，其平面数量与要重新映射的矩阵相同。因为 char 矩阵的值范围是 0~255，因此需要 256 个数字来覆盖查找表。</p><h2 id="生成查找表"><a href="#生成查找表" class="headerlink" title="生成查找表"></a>生成查找表</h2><p>patch 的右上侧包含三个 <code>multislider</code>，可以设计 colortable 查找表矩阵 1-3 平面的传递函数：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12c.png" alt=""><br>用 multislider 的值填充查找表矩阵</p><p><code>multislider</code>（有 256个 整数 slider，范围为 0~255）把列表发送到下面的 <code>jit.fill</code>对象。它用 <code>multislider</code> 的值替换 colortable 矩阵当前存储在平面1-3（即红，绿和蓝）的值。当矩阵采用新值时，<code>jit.fill</code>发出 bang 到 patch 左边连接到 <code>jit.charmap</code> 右入口的 <code>jit.matrix</code>。这里忽略了平面 0，因为只有将 4 平面矩阵视为视频时，它才包含 Alpha 值。</p><p>patch 中的 <code>jit.matrix</code> 和 <code>jit.fill</code> 的名称相同（colortable）。这样两个对象从同一矩阵读取和写入，一个对象（<code>jit.fill</code>）生成另一个对象（<code>jit.matrix</code>）可读取的数据，而不必在两个矩阵之间复制数据。这跟许多 MSP 对象（例如 <code>peek~</code>，<code>play~</code>，<code>groove~</code>）可以共享存储在单个 <code>buffer~</code> 中的样本数据类似。关于命名矩阵请参见<a href="https://www.uegeek.com/180905-jitter-13.html" target="_blank" rel="noopener">教程 13</a>，18 和 19。</p><p>在 <code>multislider</code> 中随意绘制一些形状，看它如何影响查找表（较小的<code>jit.pwindow</code>）和 <code>jit.movi​​e</code> 的输出图像。可以来回切换两个图像源。</p><p>如果想重置任一平面为 <code>y = “x”</code> 传递函数（使所有值保持不变的固定斜率直线），可以单击相应 multislider 上的按钮。名为 <code>p clear</code> 的子 patch 用 <code>uzi</code> 初始化了 <code>multislider</code>。</p><blockquote><p>要点：与许多 Max 对象一样，Jitter 对象会保留存储在一个入口中的矩阵，即使另一个入口接收到了新矩阵。所以这个 patch 的 <code>metro</code> 只需要触发 <code>jit.movi​​e</code>。包含查找表<code>jit.charmap</code> 的<code>jit.matrix</code> 只需要在所存储的数据发生变化时输出值。</p></blockquote><p>以下是一些查找表及其结果：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12d.png" alt=""><br>三组 <code>multislider</code>及其生成的颜色查找表和输出颜色轮</p><p>例 1 中，红色和蓝色查找表调换而绿色正常。结果是输入图像中较大的红色和蓝色值在输出时变小，反之亦然。所以色轮的白色背景现在看起来是绿色的（单元格值 0 255 255 255 映射为 0 0 255 0）。</p><p>例 2 设置绿色平面为 0（查找表在整个输入值范围内设置为 0）。红色和蓝色平面如果超过阈值也设置为 0，这时值会突然上升（红色比蓝色上升得更明显）。结果是色轮大部分都是黑色的（特别是在绿色区域）。红色平面仅在非常高的值（即色轮背景中的品红色）中可见。</p><p>例 3 正常映射红色平面。绿色平面是抛物线形状，极值映射为高，中间阴影映射为低。蓝色平面除了中间调中被归零的范围，其余正常。这种非线性表现为贯穿彩色轮顶部和右侧的红色“断层线”。</p><p>有无数组合可以重新映射矩阵单元格的值。接下来研究另一个以更精确方式重新映射颜色值的对象。</p><h2 id="jit-gradient-对象"><a href="#jit-gradient-对象" class="headerlink" title="jit.gradient 对象"></a>jit.gradient 对象</h2><p>打开 Duotone 子 patch，它显示了使用 <code>jit.gradient</code> 生成查找表的方法：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12e.png" alt=""><br>使用 <code>jit.gradient</code> 对象</p><p><code>jit.gradient</code> 生成两个单元格的值之间平滑渐变的单维 char 矩阵。<code>start</code> 和 <code>stop</code> 属性是指定这些单元格的值列表。例如，start 属性 <code>0 0 0 0</code> 和 end 属性 <code>0 0.5 1.0 0.5</code> 将生成从黑色（矩阵中的单元格 0）到浅绿色（矩阵中最后一个单元格）的渐变。</p><p>我们已经用参数指定 <code>jit.gradient</code> 为 256 单元宽，这样当它改变时可以存储在 <code>jit.matrix colortable</code> 中。请注意， <code>jit.gradient</code> 在属性列表中使用浮点数来指定 char 值（即属性中用值 1.0 指定 char 值为 255）。</p><p>用 <code>swatch</code> 对象输出的 RGB 列表转换为 ARGB 浮点数来获得格式化属性。将属性发送到 <code>jit.gradient</code> 对象后，它接收触发对象发出的 bang，将矩阵输出到 patch 左侧的<code>jit.matrix</code>。</p><p>尝试在 <code>swatch</code> 中选择颜色。start 和 end 属性指定查找表的边界，所以输入图像的值表现为在两种颜色之间变化的双色调外观。patch 顶部的 <code>multislider</code> 将反映 <code>jit.gradient</code> 所生成的查找表。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12f.png" alt=""><br>使用颜色渐变作为查找表</p><p>例 1 是翻转的图像。查找表的 start 是白色（<code>start 0 1.0 1.0 1.0</code>），end 是黑色（<code>end 0. 0. 0. 0</code>）。结果是输入值 0 映射到 255，反之亦然（<code>y = 255 - x</code>）。</p><p>例 2 和 3 是双色调渐变，将色轮的光谱重新映射到红色和橙色（例 2）以及橄榄色和青色（例 3）之间。请注意，根据色轮中不同点的原始颜色，渐变曲线变得更陡峭或更和缓。</p><p><code>jit.gradient</code> 的另一个属性是 cheby，它指定在矩阵开始和结束值之间的变形曲线。cheby 属性的参数列表是浮点数。这些参数是 Chebyshev polynomials（见下文的切比雪夫多项式）不同阶数的振幅。使用查找表时，这些特殊功能曲线会产生不同的效果。patch 中设置 cheby 属性的 <code>multislider</code>，可以指定前 8 个 Chebyshev polynomials 曲线的相对振幅，形状如下（如果将它们视为从黑色到白色的过渡）：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12g.png" alt=""><br>用 Chebyshev orders 1-4（顶行）和 5-8（底行）生成的梯度</p><blockquote><p>技术说明：切比雪夫多项式通常用作数字合成算法中波形整形音频信号的查找表（它们的特殊属性可以将正弦波形扭曲成等效于不同阶数幅度的谐波频谱）。MSP <code>lookup~</code> 对象可以与加载到 <code>buffer~</code> 中的函数一起来完成音频信号处理（跟本教程中的图像处理类似）。更多内容请参阅 MSP 手册中的教程 12：综合波形整形。</p></blockquote><p>复位 gradient 中开始和结束点（单击上面的消息框），缓慢调整 <code>multislider</code>控制的 cheby 属性。观察颜色轮在颜色消失并在不同区域重新出现时如何变化。</p><p>在 <code>jit.gradient</code> 中使用 cheby 属性时，即使将渐变起点和终点保留为黑色和白色，也可以得到一些非常有趣的颜色变形效果。以下是视频剪辑 rain.mov 的一些例子：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12h.png" alt=""><br>不同梯度曲线对雨水彩色频谱的影响</p><p>左边图像显示 rain.mov 中未处理的静止图像。中间图像显示了当使用二阶切比雪夫多项式（图像中最暗的区域现在位于色谱的中间）生成梯度时色谱的变化。右侧图像显示更复杂的梯度，色谱显示多个峰和谷。</p><p>patch 顶部的 <code>multislider</code>反映查找表的当前状态（由 <code>jit.gradient</code> 生成的矩阵被发送到 <code>p showit</code> 子 patch 中的 <code>jit.iter</code>，在那里数字被组合以设定 <code>multislider</code> 的状态）。尝试生成渐变，然后调整 multislider 手动修改查找表。这样 <code>jit.gradient</code> 就作为更复杂的查找表的起始点。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/jitterchapter12i.png" alt=""></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>使用 <code>jit.charmap</code> 映射 char 矩阵中单元格的值。<code>jit.charmap</code> 的右入口接收 256 单元矩阵来定义要用于输入矩阵数据的查找表（或传递函数）。可以使用多种方法定义查找表，包括<strong>使用 <code>jit.fill</code>从 Max 列表生成矩阵，或使用 <code>jit.gradient</code> 对象根据 cheby 指定的曲线形状，在开始和结束单元格值之间生成颜色渐变属性。</strong></p><hr><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Max-title-5.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
+    
+      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
+    
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
+    
+  </entry>
   
   <entry>
     <title>Max/MSP/Jitter 官方教程翻译13 - 列表和矩阵</title>
@@ -693,44 +727,6 @@
       <category term="EQ" scheme="http://uegeek.com/tags/EQ/"/>
     
       <category term="均衡器" scheme="http://uegeek.com/tags/%E5%9D%87%E8%A1%A1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MakeNoise05 - Envelope 包络（ADSR）</title>
-    <link href="http://uegeek.com/180628-make-noise-05.html"/>
-    <id>http://uegeek.com/180628-make-noise-05.html</id>
-    <published>2018-06-28T11:39:41.000Z</published>
-    <updated>2018-08-22T09:39:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://image.freepik.com/free-vector/set-of-vinyl-record-and-envelope-for-plate-retro-sound-carrier-mock-up-isometric-view-vector-illustration_7714-316.jpg" alt=""><br><a id="more"></a> </p><ul><li><a href="https://www.uegeek.com/180621-make-noise-01.html" target="_blank" rel="noopener">MakeNoise01 - 声音是什么？</a></li><li><a href="https://www.uegeek.com/180623-make-noise-02.html" target="_blank" rel="noopener">MakeNoise02 - 频率和音高</a></li><li><a href="https://www.uegeek.com/180624-make-noise-03.html" target="_blank" rel="noopener">MakeNoise03 - 振幅/响度/音量/增益 大乱斗</a></li><li><a href="https://www.uegeek.com/180626-make-noise-04.html" target="_blank" rel="noopener">MakeNoise04 - 波形和相位</a><br>￼</li></ul><p>Envelope 是什么？信封吗？</p><p>🤷‍♀️</p><blockquote><p>Envelope of an oscillating signal is a smooth curve outlining its extremes.<br>Via <a href="https://www.wikiwand.com/en/Envelope_(waves" target="_blank" rel="noopener">Envelope (waves) - Wikiwand</a>)</p><p>The envelope of a sound describes the way it’s amplitude varies over time.<br>Via <a href="https://www.youtube.com/watch?v=Q-ot9AaJx-Y" target="_blank" rel="noopener">What is the envelope of a sound? (ADSR explained) - YouTube</a></p></blockquote><p>在声学中，envelope 是非常重要的概念，它描述声音振幅（能量）的变化。一波一波的声音，就像互联网上面根据网络协议传送的数据包一样，不断被发送出去，用 envelope 来形容倒是很形象。</p><h2 id="ADSR"><a href="#ADSR" class="headerlink" title="ADSR"></a>ADSR</h2><p>在声音设计中通常用四个词来描述一个声音的 envlope (包络)：ADSR - Attack, Decay, Sustain, Release。</p><p><img src="https://blog.landr.com/wp-content/uploads/2016/10/ASDR-01.jpg" alt=""><br>￼</p><h3 id="Attack-起音"><a href="#Attack-起音" class="headerlink" title="Attack 起音"></a>Attack 起音</h3><blockquote><p>The area that rises from silence to its peak volume。</p></blockquote><p>声音从零开始上升到最大能量处，也可以理解为从产生这个声音开始到最响时，需要的时间。</p><p>敲击型声音的起音段非常短，比如钢琴（见下图）。而一根被温和拉响的琴弦，来自琴弦的恢复力和施加到琴弓上的立达到受摩擦限制是的最大动态平衡，这个过程可以长达几秒。另外，物体越小，初始能量就会被吸收的越快。</p><p>不同乐器的 ADSR 曲线大致可以简化如下：<br>￼<br><img src="http://www.muzines.co.uk/images_mag/articles/EMM_apr_1985_back_to_basi_6_large.jpg" alt=""></p><h3 id="Decay-衰减"><a href="#Decay-衰减" class="headerlink" title="Decay 衰减"></a>Decay 衰减</h3><blockquote><p>The area goes from the peak to a medium level of decline。</p></blockquote><p>衰减出现在那些瞬变阶段（transient）以后有能量持续供应的系统中，系统初始的输入能量超过后续延音阶段的电平。也就是说，在起音阶段后，音源还持续产生能量一段时间。</p><p>Decay 就是音量下降到稳定时需要的时间，对于钢琴而言，整个音符都处在 Decay 阶段。</p><h3 id="Sustain-延音"><a href="#Sustain-延音" class="headerlink" title="Sustain 延音"></a>Sustain 延音</h3><blockquote><p>The portion of the envelope that is constant in the declining stage。</p></blockquote><p>这个阶段，系统的输入能量等于输出能量，达到某种类型的稳定动态平衡，所以产生声音的这部分能量也维持稳定，结果通常是有一个稳定的声音输出。</p><p>Sustain 一般对于管乐器和弦乐器适用。钢琴没有稳定的 Sustain 阶段，因为按下琴键之后就没有更多机械能了，音量持续减小，可以说 decay 和 sustain 没有明显的区分。</p><h3 id="Release-释音"><a href="#Release-释音" class="headerlink" title="Release 释音"></a>Release 释音</h3><blockquote><p>Last point in the envelope where the sound returns back to silence</p></blockquote><p>当停止为系统提供能量，被保存的能量以一个恒定的速率被释放，继续产生一段时间的声音，这就进入释音阶段。</p><p>Release 是音源停止震动后仍然发声的阶段，钢琴在不踩踏板的时候 Release 非常短，踩踏板的时候 Release 非常长。释音始终趋向于 0，这是一个声音的最后阶段。</p><h3 id="ADSR-的作用"><a href="#ADSR-的作用" class="headerlink" title="ADSR 的作用"></a>ADSR 的作用</h3><p>ADSR 也可以叫做「声音的生老停死」…………<br>￼<br><img src="https://libremusicproduction.com/sites/default/files/answers/adsrenvelope.png" alt=""></p><p>再来感受一下不同乐器的 ADSR 形状：<br>￼<br><img src="http://7xjpra.com1.z0.glb.clouddn.com/different_adsr.png" alt=""></p><ul><li>Fast Attack + Fast Release = 吉他Pick、木琴、木鱼</li><li>Fast Attack + Slow Release = 钢琴、扬琴、竖琴</li><li>Slow Attack + Slow Release = 提琴、胡琴、Pad Synth</li></ul><p>为什么 ADSR 如此重要？<strong>因为影响声音的包络可以大大的改变声音特性</strong>。</p><p>当通过合成器来创作一个新的声音时，合成器需要控制 ADSR 的形状。组合包络形状比较类似的声音，可以优化混音效果。当 ADSR 差异非常大的声音结合在一起时，可以创作出结构非常丰富的音效。<br>￼<br><img src="https://c1.staticflickr.com/5/4524/24904416418_586ab94683_c.jpg" alt=""></p><h2 id="在-Ableton-Live-中调整-ADSR"><a href="#在-Ableton-Live-中调整-ADSR" class="headerlink" title="在 Ableton Live 中调整 ADSR"></a>在 Ableton Live 中调整 ADSR</h2><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5Dwavetable.png" alt=""></p><p>在 Ableton Live 里，很多音效都提供 ADSR 的控制，比如最常见的 operator。</p><p>下面的视频中，我们尝试调整各个参数，看看声音产生了怎样的变化。</p><iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=b0705yxvme9&tiny=0&auto=0" allowfullscreen></iframe><p><a href="https://v.qq.com/x/page/b0705yxvme9.html" target="_blank" rel="noopener">Envelop &amp; ADSR in Ableton Live_腾讯视频</a></p><h2 id="Max-MSP-中-调整-ADSR"><a href="#Max-MSP-中-调整-ADSR" class="headerlink" title="Max/MSP 中 调整 ADSR"></a>Max/MSP 中 调整 ADSR</h2><p>Max 里面提供了专门的 ADSR 对象，于是对声音参数的调控灵活度很大。</p><p>我们先来生成周期波形，观察不同 ADSR 参数状况下声音波形的变化：</p><iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=t0705h80ktu&tiny=0&auto=0" allowfullscreen></iframe><p><a href="https://v.qq.com/x/page/t0705h80ktu.html" target="_blank" rel="noopener">ADSR in Max/MSP_腾讯视频</a></p><p>在生成一个声音包络时，可以调整不同的参数改变声音的属性：</p><iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=f0705uxmou1&tiny=0&auto=0" allowfullscreen></iframe><p><a href="https://v.qq.com/x/page/f0705uxmou1.html" target="_blank" rel="noopener">ADSR Noise in Max/MSP_腾讯视频</a></p><h3 id="￼Ref"><a href="#￼Ref" class="headerlink" title="￼Ref"></a>￼Ref</h3><ul><li><a href="https://book.douban.com/subject/7069885/" target="_blank" rel="noopener">Audio Engineering 101 - A Beginner’s Guide to Music Production</a></li><li><a href="https://book.douban.com/subject/27057297/" target="_blank" rel="noopener">设计声音</a></li><li><a href="https://www.wikiwand.com/en/Envelope_(waves" target="_blank" rel="noopener">Envelope (waves) - Wikiwand</a>)</li><li><a href="https://www.wikiwand.com/en/Synthesizer#/Attack_Decay_Sustain_Release_(ADSR" target="_blank" rel="noopener">Synthesizer - Wikiwand</a>_envelope)</li><li><a href="https://www.youtube.com/watch?v=Q-ot9AaJx-Y" target="_blank" rel="noopener">What is the envelope of a sound? (ADSR explained) - YouTube</a></li><li><a href="https://blog.landr.com/adsr-envelopes-infographic/" target="_blank" rel="noopener">ADSR Envelopes: How to Build The Perfect Sound [Infographic] | LANDR Blog</a></li><li><a href="http://www.muzines.co.uk/articles/back-to-basics/1882" target="_blank" rel="noopener">Back to Basics (EMM Apr 85)</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://image.freepik.com/free-vector/set-of-vinyl-record-and-envelope-for-plate-retro-sound-carrier-mock-up-isometric-view-vector-illustration_7714-316.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Music" scheme="http://uegeek.com/tags/Music/"/>
-    
-      <category term="Sound" scheme="http://uegeek.com/tags/Sound/"/>
-    
-      <category term="声音" scheme="http://uegeek.com/tags/%E5%A3%B0%E9%9F%B3/"/>
-    
-      <category term="Ableton Live" scheme="http://uegeek.com/tags/Ableton-Live/"/>
-    
-      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
-    
-      <category term="Envelope" scheme="http://uegeek.com/tags/Envelope/"/>
-    
-      <category term="ADSR" scheme="http://uegeek.com/tags/ADSR/"/>
-    
-      <category term="包络" scheme="http://uegeek.com/tags/%E5%8C%85%E7%BB%9C/"/>
     
   </entry>
   
