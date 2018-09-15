@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-09-09T11:04:19.000Z</updated>
+  <updated>2018-09-15T12:10:52.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Max/MSP/Jitter 官方教程翻译17 - 图像旋转</title>
+    <link href="http://uegeek.com/180915-jitter-17.html"/>
+    <id>http://uegeek.com/180915-jitter-17.html</id>
+    <published>2018-09-15T12:09:37.000Z</published>
+    <updated>2018-09-15T12:10:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-8.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180903-jitter-11.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 11 - 矩阵混合</a></li><li><a href="https://www.uegeek.com/180904-jitter-12.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 12 - Chromakeying 视频去背景合成</a></li><li><a href="https://www.uegeek.com/180906-jitter-13.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 13 - 列表和矩阵</a></li><li><a href="https://www.uegeek.com/180907-jitter-14.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 14 - 颜色查找表</a></li><li><a href="https://www.uegeek.com/180908-jitter-15.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 15 - 剪刀和胶水</a></li><li><a href="https://www.uegeek.com/180909-jitter-16.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 16 - 矩阵定位</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter15" target="_blank" rel="noopener">Tutorial 15: Image Rotation</a></p></blockquote><h2 id="使用-jit-rota-旋转和缩放"><a href="#使用-jit-rota-旋转和缩放" class="headerlink" title="使用 jit.rota 旋转和缩放"></a>使用 jit.rota 旋转和缩放</h2><p>Jitter 提供 <code>jit.rota</code> 对象来旋转和/或缩放图像。旋转和缩放是常见的视频效果，以不同方式组合它们还可以实现万花筒效果。<code>jit.rota</code> 在入口处获取视频数据矩阵（或其他类型的图像），根据对象属性的设置发送已缩放、旋转和以其他方式失真的版本。</p><p>打开教程 patch 。loadbang 触发 QuickTime 视频 dishes.mov 读入 <code>jit.movi​​e</code>。单击 “Display” 开关启动 <code>metro</code> 开始播放视频。</p><p>视频是一个对着餐盘拍摄的三秒从左到右平移镜头。<code>jit.movi​​e</code> 的循环属性初始化为 2，因此视频来回循环产生了来回平移的效果。</p><blockquote><p>注意：Jitter 对象的许多属性使用参数 1 和 0 表示 “on” 和 “off”，因此可以合理地假设 <code>jit.movi​​e</code> 的 loop 属性也是这样。loop 0 关闭循环，loop 1 打开，loop 2 让视频向前播放，到达 loopend 点时向后播放，而不是跳回到视频起点。</p></blockquote><p><code>jit.rota</code> 的 theta 属性指定围绕中心锚点的旋转角度。</p><p>拖动 “Rotation Angle” 数字框旋转视频。正（或增加）值是逆时针旋转，负（或减小）值是顺时针旋转。旋转角度 - 也就是角度（θ） - 以弧度表示。0 或 2π 的任何倍数（如 6.283185）是正常的直立位置。π 值（3.141593）或 π 的任何奇数倍是颠倒的位置。随意尝试，直到了解 theta 值与 <code>jit.rota</code> 行为之间的关系。</p><blockquote><p>技术细节：<code>jit.rota</code> 用三角法进行大量内部计算，以确定如何旋转图像。如果不是三角学迷，你可能不习惯用弧度来思考角度。平时我们更常使用度数，即一个完整的旋转是 360°。在三角学中更常使用弧度，完整旋转是 2π 弧度。这是因为半径为 1 的圆的周长恰好为 2π，可以用与单位圆相交的点来表示角度。（例如，从单位圆上的一个点开始并绕圆周移动 π/2 的距离，会得到 90° 角度 - 即 π/2 弧度的角度 - 从开始的地方以圆心为中心）</p><p>另外，在三角学中，角度的正变化是围绕单位圆逆时针旋转，而在日常生活中，把顺时针运动看做 “正” 或 “增加” 更符合惯例（如钟表时针的转动）。</p><p>因此，如果把度为单位的顺时针旋转，转换为以弧度表示，需要将度角乘以 2π，然后除以 -360。</p></blockquote><h2 id="自动旋转"><a href="#自动旋转" class="headerlink" title="自动旋转"></a>自动旋转</h2><p>除了手动旋转图像外，还可以编写自动化程序提供不断变化的旋转角度。在<a href="https://www.uegeek.com/180909-jitter-16.html" target="_blank" rel="noopener">上一章</a>中，我们编写了一个名为 rotate 的子 patch，它使用 <code>line</code> 对象将色调旋转角度从 0° 增加到 360°。现在做类似的事情，但使用 bang 视频的 <code>metro</code> 来增加旋转角度。为了使用上的友好，用 ° 表示旋转角度，而不是弧度（在子 patch 中转换度弧度单位），另外也显示转速为 “每秒转数”。</p><p>在标有 Degrees per bang 的数字框中输入数字 6。这让旋转角度在 <code>metro</code> 每次 bang 时增加 6°。由于 <code>metro</code> 每秒发出 20 次 bang（每 50 毫秒一次），我们可以通过公式 <code>d * 20 / 360</code> 计算每秒的转数（即 d / 18，d 是每次 bang 增加的角度）。现在单击标记为 On / Off 的开关开始自动旋转。</p><p>双击 <code>rotate</code> 查看子 patch</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter15a.png" alt=""><br>[rotate]子 patch 中的自动旋转</p><p>用度数 * 2π / -360，将用户指定的每次旋转角度转换为弧度量。当一个 bang 进入左入口时，如果正在旋转，bang 让旋转角度增加并添加到 <code>accum</code> 对象中。请注意，每次增加负的角度也 ok，这让图像逆时针旋转。当总旋转角度超过 2π（或 -2π）时，<code>split</code> 将值发送到使用模运算的 <code>expr</code>，并在发送到出口前将其恢复到范围内（重置 <code>accum</code> 中的值）。如过旋转关闭，我们 用 <code>sel 0</code> 检测到该事件，将 theta 角度重置为 0。</p><p>关闭子 patch 窗口。单击 On/Off 开关停止自动旋转。</p><h2 id="放大或缩小"><a href="#放大或缩小" class="headerlink" title="放大或缩小"></a>放大或缩小</h2><p><code>jit.rota</code> 的另一个主要功能是缩放。缩放量由 <code>zoom_x</code> 和 <code>zoom_y</code> 属性决定。这样可以单独放大或缩小水平和垂直尺寸；或者一次更改两个属性来同时缩放。</p><p>拖动标有 <code>Zoom</code> 的数字框来放大和缩小。大于 1 的值会放大图像，小于 1 的值会缩小图像。直接在 x 和 y 数字框中输入值分别更改 x 和 y 的缩放尺寸（负缩放值会翻转图像并调整其大小）。</p><p>当放大图像（如值为 2）时，图像质量仍然不错，因为我们已经用 <code>interp 1</code> 消息打开 <code>jit.rota</code> 的插值属性。如果关闭 interp，会在放大时产生像素化。当缩小时 interp 没有明显的效果，它几乎浪费了计算资源。（有关像素化和插值，请参阅 <a href="https://www.uegeek.com/180909-jitter-16.html" target="_blank" rel="noopener">Jitter 教程16</a>）不过插值确实可以改善旋转图像的现实，即便图像缩小。</p><h2 id="超越边缘"><a href="#超越边缘" class="headerlink" title="超越边缘"></a>超越边缘</h2><p>将缩放的两个尺寸设置为较小的值例如 0.25。</p><p>当图像由于收缩或旋转而未填满整个显示区域时，<code>jit.rota</code> 必须决定如何处理位于图像区域外的矩阵的其余部分。现在 <code>jit.rota</code> 将图像区域外的所有单元格值设置为 0，使它们为黑色。<code>boundmode</code>属性决定 <code>jit.rota</code> 如何处理位于图像边界之外的单元格。不同的可用 <code>boundmode</code> 设置显示在 patch 右上角标记为 <code>Space outside the image</code> 的弹出菜单中。将 <code>boundmode</code> 的值初始化为 1，让 <code>jit.rota</code> 清除所有外围单元格。以下是每个 <code>boundmode</code>设置的含义：</p><blockquote><p>0 Ignor：保持所有外围单元格不变。</p><p>1 Clear：将所有外围单元格值设置为0。</p><p>2 Wrap：根据需要重复图像以填充矩阵。</p><p>3 Clip：对于所有外围单元格，继续使用图像边界单元格的值。</p><p>4 Fold：重复图像，向相反方向翻转。</p></blockquote><ul><li>对于缩小图像时的特殊效果，尝试将 <code>boundmode</code> 属性设置为 2（Wrap）以获得 “Warhol” 复制图像效果，或设置为 4（Fold）得到万花筒效果。</li><li>现在试着重新打开自动旋转，组合旋转和缩放，并修改参数（每次 bang 的度数、缩放、Space outside the image）。</li><li>尝试完以后，关闭自动旋转并将缩放属性（ <code>zoom_x</code>和 <code>zoom_y</code>）调整回 1。</li></ul><h2 id="调整锚点和偏移"><a href="#调整锚点和偏移" class="headerlink" title="调整锚点和偏移"></a>调整锚点和偏移</h2><p>目前为止，我们一直使用图像的中心作为旋转锚点。其实可以选择任意一点。用 <code>anchor_x</code> 和 <code>anchor_y</code> 属性设置旋转中心。现在是 160 和 120（图像尺寸的一半），可以在标记为 Anchor 的数字框中更改。</p><p>尝试不同的锚点，然后在 Rotation Angle 数字框上拖动查看效果。可以尝试 0,0 或 40,30 或 160，-120 或 320,240。将 <code>boundmode</code>属性设置为 1 可以更清楚地看到不同旋转的效果。请注意，<code>anchor_x</code> 和 <code>anchor_y</code> 值是相对于矩阵的左上角指定的，但它们可以超出矩阵维度的边界。</p><p>此外可以用 <code>offset_x</code> 和 <code>offset_y</code> 属性在缩放和旋转后，将图像移动到输出矩阵中的其他位置。</p><p>要最有效地查看此内容，请先单击 patch 右下角的 <code>pvar</code> 对象上方的消息框。这会将旋转角度/边界模式/缩放/锚点恢复到本章开头的设置。（已经为相关的 UI 指定了名称，以便通过 <code>pvar</code> 与它们通信）现在将缩放数字框设置为 0~1 的某个值来缩小图像。</p><p>使用 Location offset 数字框，更改 <code>offset_x</code>和 <code>offset_y</code> 值来移动图像。同时设置 <code>boundmode 4</code>，在 “kaleidoscope” 模式下查看效果。</p><p>完成后，将位置偏移值重置为 0。</p><h2 id="鼠标控制旋转"><a href="#鼠标控制旋转" class="headerlink" title="鼠标控制旋转"></a>鼠标控制旋转</h2><p>我们为你设计了另一种旋转图像的方法。</p><p>单击 <code>jit.pwindow</code> 显示对象，按住鼠标，围绕对象中心以小圆周运动拖动。</p><p><code>jit.pwindow</code> 跟踪鼠标移动，当鼠标按下时，它会以鼠标消息的形式将坐标信息（和其他鼠标信息）发送到右输出口。鼠标消息的前两个参数是相对于 <code>jit.pwindow</code> 左上角的 x 和 y 坐标。使用这些坐标来计算鼠标相对于 <code>jit.pwindow</code> 中心的角度并发送到 <code>jit.rota</code> 作为theta 属性的参数。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter15b.png" alt=""><br>用 <code>jit.pwindow</code> 中的鼠标位置作为控制信息</p><h3 id="技术细节"><a href="#技术细节" class="headerlink" title="技术细节"></a>技术细节</h3><p>想知道这是如何计算的吗？</p><p>如果将 <code>jit.pwindow</code> 的中心点视为原点 0,0，把当前鼠标位置看做是位于该点圆周上的点，那么可以基于这两点得到一个直角三角形。获取鼠标坐标 y / x 的反正切值，得到鼠标相对于 <code>jit.pwindow</code> 中心的角度。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter15c.png" alt=""></p><p>接收到传入的 x 和 y 坐标要做的第一件事是做转换，使它们以 <code>jit.pwindow</code> 为中心。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expr<span class="number">-1.0</span>*atan(($i1<span class="number">-160.</span>)/(<span class="number">-1.</span>*$i2+<span class="number">119.5</span>))+($i2&gt;=<span class="number">120</span>)*<span class="number">-3.141593</span></span><br></pre></td></tr></table></figure><p>用 x 坐标减去 160 （x 值现在在 -160~160）并将 y 坐标乘以 -1（这样上移时值正向增大）然后加上 119.5。（如果正好添加120，那么每次从 <code>jit.pwindow</code> 得到 120 的 y 坐标时都会尝试在 expr 中除以0，这是一个未定义的数学运算）转换了 x 和 y 坐标，用 <code>atan(y / x)</code> 来获得弧度，然后乘以 -1 使鼠标顺时针旋转，从而使图像顺时针旋转。</p><p>此方法仅在 180° 范围内有效，因为反正切函数无法区分鼠标位置与圆上相对点之间的差异（这两个点 y / x 的值相同）。因此每当鼠标的 y 坐标进入 <code>jit.pwindow</code> 的下半部分时，我们在 θ 角度上添加 -π 的偏移量来区分那些来自另外一边的位置。（表达式中的最后一部分）</p><p>请注意，此表达式仅适用于 <code>jit.pwindow</code> 中的点 160,120。如果想创建一个适用于任何大小 <code>jit.pwindow</code> 中心点的表达式，要使用 <code>getsize</code> 消息获取 <code>jit.pwindow</code> 的维度，并用 size 值作为表达式中的变量。正如书上所说，“我们把这个练习留给读者”。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><code>jit.rota</code> 对象用 theta 属性指定旋转角度，以弧度表示旋转图像。它还提供了使用 <code>zoom_x</code>和 <code>zoom_y</code> 属性放大和缩小图像的简便方法。用 <code>anchor_x</code>和 <code>anchor_y</code> 属性更改旋转的中心点，用 <code>offset_x</code> 和 <code>offset_y</code> 属性在输出矩阵中移动生成的图像。可以用 <code>boundmode</code> 属性更改 <code>jit.rota</code> 处理位于结果图像之外的矩阵单元格的方式。结合这些功能，除了缩放和旋转之外，你还可以获得重复图像和万花筒效果。</p><p>缩放和旋转涉及 <code>jit.rota</code> 相当密集的内部计算，这些操作对计算机的处理器提出了很高的要求。本教程中未提及的其他属性，可以调整旋转公式中的几乎每个系数，提供更多扭曲和旋转图像的可能性。请查看 <code>jit.rota</code> 文档说明。</p><p>要同时管理对如此多属性，可以设计自动流程以生成属性值，和/或交互式控件来更改值。</p><hr><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Max-title-8.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
+    
+      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
+      <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Max/MSP/Jitter 官方教程翻译16 - 矩阵定位</title>
@@ -40,11 +74,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -74,11 +108,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -106,11 +140,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -140,11 +174,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="列表" scheme="http://uegeek.com/tags/%E5%88%97%E8%A1%A8/"/>
     
@@ -174,11 +208,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="Chromakeying" scheme="http://uegeek.com/tags/Chromakeying/"/>
     
@@ -210,11 +244,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="Math" scheme="http://uegeek.com/tags/Math/"/>
     
@@ -246,11 +280,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -278,11 +312,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -312,11 +346,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -346,11 +380,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -382,11 +416,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -414,11 +448,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="数学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
@@ -448,11 +482,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -482,9 +516,9 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -514,9 +548,9 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -546,11 +580,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -668,53 +702,11 @@
     
       <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
     
-      <category term="EQ" scheme="http://uegeek.com/tags/EQ/"/>
-    
       <category term="Compressor" scheme="http://uegeek.com/tags/Compressor/"/>
     
       <category term="动态压缩" scheme="http://uegeek.com/tags/%E5%8A%A8%E6%80%81%E5%8E%8B%E7%BC%A9/"/>
     
-  </entry>
-  
-  <entry>
-    <title>MakeNoise08 - 振荡器和滤波器</title>
-    <link href="http://uegeek.com/180703-make-noise-08.html"/>
-    <id>http://uegeek.com/180703-make-noise-08.html</id>
-    <published>2018-07-03T10:35:56.000Z</published>
-    <updated>2018-08-22T09:39:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png" alt=""></p><a id="more"></a> <ul><li><a href="https://www.uegeek.com/180621-make-noise-01.html" target="_blank" rel="noopener">MakeNoise01 - 声音是什么？</a></li><li><a href="https://www.uegeek.com/180623-make-noise-02.html" target="_blank" rel="noopener">MakeNoise02 - 频率和音高</a></li><li><a href="https://www.uegeek.com/180624-make-noise-03.html" target="_blank" rel="noopener">MakeNoise03 - 振幅/响度/音量/增益 大乱斗</a></li><li><a href="https://www.uegeek.com/180626-make-noise-04.html" target="_blank" rel="noopener">MakeNoise04 - 波形和相位</a></li><li><a href="https://www.uegeek.com/180628-make-noise-05.html" target="_blank" rel="noopener">MakeNoise05 - Envelope 包络（ADSR）</a></li><li><a href="https://www.uegeek.com/180629-make-noise-06.html" target="_blank" rel="noopener">MakeNoise06 - 音色和均衡器(EQ)</a></li><li><a href="https://www.uegeek.com/180701-make-noise-07.html" target="_blank" rel="noopener">MakeNoise07 - 音频的分辨率 Sample rate/Bit depth</a></li></ul><p>制造声音，总的来说有两种思路：加性和减性。加性的方法逐步叠加多个声源，减性的方法逐步剔除声音中不想要的部分。</p><p>所以，<strong>声音设计的过程，无外乎是发出声音，修剪、调整为想要的效果</strong>。</p><p>对应的，振荡器是最主要的发声对象，而滤波器是最主要的过滤修整对象。所以这一篇的内容比较多，也会需要回顾之前所讲的一些概念。</p><p><img src="https://is3-ssl.mzstatic.com/image/thumb/Purple5/v4/ce/b8/62/ceb862e4-b96e-912a-cca2-c4169002a0f7/pr_source.png/643x0w.jpg" alt=""></p><h2 id="振荡器和谐振器"><a href="#振荡器和谐振器" class="headerlink" title="振荡器和谐振器"></a>振荡器和谐振器</h2><p>在所有能够产生声音的东西（包括所有乐器）中，绝大部分都是振荡器 (Oscillators)、共振器 (Resonators) 或是两者的组合。</p><h3 id="OSC-振荡器"><a href="#OSC-振荡器" class="headerlink" title="OSC 振荡器"></a>OSC 振荡器</h3><p>电子振荡器是用来产生具有周期性的模拟信号（通常是正弦波或方波）的电子电路。音频振荡器产生频率约为 16 Hz~20 kHz。</p><p>振荡器（OSC）产生原始波形与音高，是所有合成器发声的源头。合成器一般由多个 OSC 或 Wavetable 的声音叠合而成一个音色。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/OSC_2.jpg" alt=""></p><p>如果没有 OSC 振动发出原始音高，其他元件也就没有存在的意义了。（还记得大明湖畔 440 Hz 的中央 A 音高吗？）</p><iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=l0699omxbcq&tiny=0&auto=0" allowfullscreen></iframe><p><a href="http://v.qq.com/x/page/l0699omxbcq.html" target="_blank" rel="noopener">MakeNoise02-frequency_in_max</a></p><p>在 <a href="https://www.uegeek.com/180626-make-noise-04.html" target="_blank" rel="noopener">MakeNoise04 - 波形和相位</a> 中介绍过基础的波形，它们都产生于基础的振荡器：<br>￼<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Waveforms.svg/700px-Waveforms.svg.png" alt=""></p><h3 id="Resonator-共振器-谐振器"><a href="#Resonator-共振器-谐振器" class="headerlink" title="Resonator 共振器/谐振器"></a>Resonator 共振器/谐振器</h3><blockquote><p>In physics, resonance is a phenomenon in which a vibrating system or external force drives another system to oscillate with greater amplitude at specific frequencies. —Wiki</p></blockquote><p>振荡器和共振器的区别在于，它们出现在能量流动链的什么位置，<strong>是作为原初的波源还是作为被振动源驱动（受力）的系统</strong>。 </p><p>如果两个点有相同的固有频率，则相互冲突的力就变为零。即，由一个点提供给对方的阻抗变为 0 ，这被称为共振/谐振 (resonance)。共振通过在特定频率上施力，来增加震动的幅度 。</p><p>这么说真的好抽象哦……还是直接到 Ableton Live 里面体验一下吧。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5DResonators.png" alt=""></p><p>拖进一段 beats，然后对比开启和关闭 Resonators 的效果：</p><iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=j0710ontjtv&tiny=0&auto=0" allowfullscreen></iframe><p><a href="https://v.qq.com/x/page/j0710ontjtv.html" target="_blank" rel="noopener">Resonator in Ableton Live_腾讯视频</a></p><h3 id="低频振荡器-LFO"><a href="#低频振荡器-LFO" class="headerlink" title="低频振荡器 LFO"></a>低频振荡器 LFO</h3><blockquote><p>Low-frequency oscillation (LFO) is an electronic signal which is usually below 20 Hz and creates a rhythmic pulse or sweep. – Wiki</p></blockquote><p>低频振荡器发出低于 20Hz 的信号，主要用来<strong>驱动其他参数、调制合成器/延迟等形成周期性响应</strong>，以此来制造出特定的音效，而不是作为主频发声振荡器。</p><p><img src="https://impmoocmath.files.wordpress.com/2013/04/lfo.png" alt=""></p><p>LFO 的主要参数：</p><ul><li>Shape：Sine、Square、Pulse、Triangle、Sawtooth 等波形</li><li>Rate：控制振动時間的快慢，可以调为预设的 BPM</li><li>Amount/Depth：控制振动的强度</li><li>Phase/Offset：波形起始位置</li></ul><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5DAuto_filter.png" alt=""></p><p>LFO的使用范围很广泛，当需要<strong>制造往复变化的周期性效果</strong>，如音高一高一低的 Vibrato，相位一左一右的 AutoPan，音量一强一弱的 Tremolo…等等，都可以利用 LFO 来生成。在一部强大的合成器上，方便且多功能的 LFO 是不可或缺的。</p><h2 id="滤波器-Filter"><a href="#滤波器-Filter" class="headerlink" title="滤波器 Filter"></a>滤波器 Filter</h2><p>声音由振荡器/谐振器产生以后，<strong>声音塑形的第二个关键，就是调整其频率分布</strong>。Filter 起到限制信号的频率范围的作用，它其实就是<a href="https://www.uegeek.com/180629-make-noise-06.html" target="_blank" rel="noopener">最简单的 EQ</a>。</p><p><img src="https://static.kvraudio.com/i/b/sanfordsuperfilter.jpg" alt=""></p><p>按过滤的频率来区分，滤波器可分为以下几类：</p><ul><li>Low Pass Filter 低通滤波（LP）：允许低于其中心频率的信号更多的通过（过滤掉高频信号）</li><li>High Pass Filter 高通滤波（HP）：允许高于其中心频率的信号更多的通过（过滤掉低频信号）</li><li>Band Pass Filter 带通滤波（BP）：允许指定频段的频率通过，过滤掉两侧的频率</li><li>Band Reject 带阻（陷波）（BR）：在频谱中过滤掉一部分频率，保留其他频段</li></ul><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/basic%20filters.jpg" alt=""></p><p>在 Ableton Live 的 EQ Eight 中，八个调节点都可以选择采用哪种滤波形式：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5DEQ8.png" alt=""></p><p>按响应方式来区分，滤波器有两类：</p><ul><li>FIR：输出仅取决于输入的过往数值，称为有限冲激响应 Finite Impulse Respons</li><li>IIR：输出取决于过往的输入值和过往的输出值，围绕延时元件有一个反馈环路，称为循环（recursive）或无限冲激响应（Infinite Impulse Response）滤波器。可用作累加器，如果反馈很高，当前输入会被加到所有先前输入值上。</li></ul><p>Filter 的主要参数包括 Cutoff / Freq 和 Resonance / Res。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5DAuto_filter.png" alt=""></p><p>选定 Filter 波形后，需要指定过滤的频率界点(Cutoff)。比如选择低通滤波，将 Cutoff freq 指定为 800Hz，那么高于 800Hz 的频率将被滤除。通过指定 Cutoff 的落点，达到调整音色的目的。Res 的作用则主要是为了凸显 Cutoff 所在的频率位置（放大 db）。</p><h2 id="Max-MSP-里的滤波器"><a href="#Max-MSP-里的滤波器" class="headerlink" title="Max/MSP 里的滤波器"></a>Max/MSP 里的滤波器</h2><p>Max/MSP 提供了一系列滤波器任君选择。</p><p><code>Onepole~</code>: 单系数滤波器，也是最简单的 IIR(Infinite Impulse Response) 低通滤波器，常用来减少刺耳的高频信号，或者用来平滑信号。</p><p>虽然<code>onepole~</code>的基础用法是低通滤波，不过只要做一个简单的信号减法操作，就可以起到高通滤波的效果：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Donepole.png" alt=""></p><p>单系数不够？那么 <code>Biquad~</code> 双系数过滤器 了解一下~</p><p>为什么叫双系数呢？因为滤波公式为：</p><blockquote><p>y[n] = a0 <em> x[n] + a1 </em> x[n-1] + a2 <em> x[n-2] - b1 </em> y[n-1] - b2 * y[n-2]</p></blockquote><p>其中 a0, a1, a2, b1, b2 都是可调参数。</p><p>双系数不够？那么了解一下：<code>cascade~</code> 级联滤波器（多个<code>biquad~</code>）</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dcascade~.png" alt=""></p><p>级联可调性较差？那么 <code>filtergraph~</code> 了解一下：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dfiltergraph~2.png" alt=""></p><p>如果还是无法满足需求，请尽情折腾更为灵活的<code>filterdesign</code>……</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dfilterdesign.png" alt=""></p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://book.douban.com/subject/27057297/" target="_blank" rel="noopener">设计声音</a></li><li><a href="https://www.wikiwand.com/en/Resonance" target="_blank" rel="noopener">Resonance - Wikiwand</a></li><li><a href="https://www.coursera.org/lecture/technology-of-music-production/lfo-low-frequency-oscillator-zBCiz" target="_blank" rel="noopener">LFO (Low Frequency Oscillator) - Synthesis | Coursera</a></li><li><a href="https://www.zuirens.com/%E6%8E%A2%E7%B4%A2%E5%90%88%E6%88%90%E5%99%A8%E7%9A%84%E5%A5%A7%E5%A6%99/" target="_blank" rel="noopener">探索合成器的奧妙 | Zuirens 燧人氏</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Music" scheme="http://uegeek.com/tags/Music/"/>
-    
-      <category term="Sound" scheme="http://uegeek.com/tags/Sound/"/>
-    
-      <category term="声音" scheme="http://uegeek.com/tags/%E5%A3%B0%E9%9F%B3/"/>
-    
-      <category term="Ableton Live" scheme="http://uegeek.com/tags/Ableton-Live/"/>
-    
-      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
-    
       <category term="EQ" scheme="http://uegeek.com/tags/EQ/"/>
-    
-      <category term="Oscilator" scheme="http://uegeek.com/tags/Oscilator/"/>
-    
-      <category term="Filter" scheme="http://uegeek.com/tags/Filter/"/>
-    
-      <category term="LFO" scheme="http://uegeek.com/tags/LFO/"/>
-    
-      <category term="过滤器" scheme="http://uegeek.com/tags/%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
     
   </entry>
   
