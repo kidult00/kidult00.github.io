@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-09-15T12:10:52.000Z</updated>
+  <updated>2018-09-17T10:24:14.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Max/MSP/Jitter 官方教程翻译18 - 使用已命名的矩阵</title>
+    <link href="http://uegeek.com/180917-jitter-18.html"/>
+    <id>http://uegeek.com/180917-jitter-18.html</id>
+    <published>2018-09-17T10:21:32.000Z</published>
+    <updated>2018-09-17T10:24:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-9.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180903-jitter-11.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 11 - 矩阵混合</a></li><li><a href="https://www.uegeek.com/180904-jitter-12.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 12 - Chromakeying 视频去背景合成</a></li><li><a href="https://www.uegeek.com/180906-jitter-13.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 13 - 列表和矩阵</a></li><li><a href="https://www.uegeek.com/180907-jitter-14.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 14 - 颜色查找表</a></li><li><a href="https://www.uegeek.com/180908-jitter-15.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 15 - 剪刀和胶水</a></li><li><a href="https://www.uegeek.com/180909-jitter-16.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 16 - 矩阵定位</a></li><li><a href="https://www.uegeek.com/180915-jitter-17.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 17 - 图像旋转</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter16" target="_blank" rel="noopener">Tutorial 16: Using Named Jitter Matrices</a></p></blockquote><p>本教程将学习如何使用 <code>jit.matrix</code> 的 name 属性将来自多个源的矩阵数据写入同一矩阵。我们还将研究如何在复制时缩放矩阵的大小，以及如何用 Max 低优先级队列来降低事件的优先级，以支持更耗时的任务。</p><p>教程 patch 分为五个彩色区域。中间（浅蓝色）区域包含两个 <code>jit.movi​e</code> 对象。<code>loadbang</code> 对象在 patch 打开时读取两个视频（rain.mov 和 traffic.mov）到 <code>jit.movi​e</code>：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter16a.png" alt=""></p><p>与之前的教程不同，这里的 <code>jit.movi​e</code> 使用 <code>send</code> 和 <code>receive</code> 对象与 patch 的其余部分通信。名为 m1 和 m2 的 <code>receive</code> 对象将消息转发给两个 <code>jit.movi​e</code>  对象。然后发送它们的输出矩阵（使用 <code>send</code>）到 patch 其他位置名为 movie1 和 movie2 的 <code>receive</code> 对象。</p><p> patch 顶部的黄色区域包含驱动 patch 中 Jitter 进程的 <code>metro​</code>：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter16b.png" alt=""></p><center><code>metro</code> 驱动两个消息框中的一个</center><p>点击开关启动 <code>metro</code> 。 patch 中的三个 <code>jit.pwindow</code> 开始显示图像。</p><h2 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h2><p><code>metro</code> 经过 <code>Ggate</code> 和 <code>jit.qball</code> 到达 <code>gate</code>。 <code>metro</code> 发送的 bang 由 <code>gate</code> 分流到两个消息框之一。最终输出矩阵（在 patch 底部的 <code>jit.pwindow</code> 中）将根据哪个消息框被触发而改变。</p><p>单击连接到 <code>gate</code> 左入口的两个消息框（1 和 2）。注意底部的 <code>jit.pwindow</code> 如何变化：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter16c.png" alt=""></p><center>最终输出矩阵根据 patch 的消息顺序而变化</center><p>两个消息框都将 bang 发送到三个命名相同的 <code>receive</code> 对象（m1，m2 和 output）。两者的区别在于发送消息的顺序。左侧消息框（由 <code>metro</code> 驱动，当 <code>gate</code> 设置为 1 时）将第一个 bang 发送到 <code>jit.movie</code> （rain movie）。最后，patch 底部的 <code>jit.matrix</code> 收到 bang，最终矩阵被发送出去。右侧消息框（由 <code>metro</code> 驱动，当 <code>gate</code> 被设置为 2 时）调换驱动 <code>jit.movie</code> 的两个 bang 的顺序（左 <code>jit.movie</code> 先输出矩阵，然后是右边的 <code>jit.movie</code>）。</p><p>当查看两个 <code>jit.movie</code> 和最终的 <code>jit.pwindow</code> 之间发生了什么时，这些消息发送的顺序才有意义。</p><blockquote><p>要点：如果不确定 Max patch 中发生事件的顺序，可以查看 patch 的 trace 的执行方式。在接线中设置断点就可以使用 “Auto Step” 命令逐步执行 patch ，查看它如何运行。但是这对于 <code>metro</code> 效果不好，因为 bang 将持续重启。先在  <code>metro</code> 位置添加按钮用于调试。</p></blockquote><h2 id="名字里面有什么？"><a href="#名字里面有什么？" class="headerlink" title="名字里面有什么？"></a>名字里面有什么？</h2><p>一旦 <code>jit.movie</code> 接收到 bang，就会向下面的 <code>send</code> 对象输出一个矩阵，然后传递给名为 movie1 和 movie2 的 <code>receive</code> 对象。<code>receive</code>（在 patch 右侧两个相同的区域）连接到 <code>jit.pwindow</code> 以及两个已命名的 <code>jit.matrix</code> 对象：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter16d.png" alt=""></p><center>已命名的 <code>jit.matrix</code> </center><p> patch 右侧的两个 <code>jit.matrix</code>（以及 patch 底部 <code>jit.pwindow</code> 上方的 <code>jit.matrix</code>）都有名称。这三个对象的名称是 composite。它们共享包含在名为 composite 的矩阵中的数据。</p><p>理解了两个 <code>jit.movie</code> 将数据写入相同的矩阵（名称相同的两个独立的 <code>jit.matrix</code>），就明白为什么 bang 的顺序很重要。如果左边的 <code>jit.movi​e</code> 首先发出矩阵，它会将数据写入 composite 矩阵，然后是右边的 <code>jit.movi​e</code>，它将数据写入同一个矩阵。如果两个矩阵写入任何共同的单元格（见下文），那么最后到达的矩阵将覆盖之前单元格中的数据。</p><h2 id="目的地维度"><a href="#目的地维度" class="headerlink" title="目的地维度"></a>目的地维度</h2><p>教程 patch 右侧的两个 <code>jit.matrix</code> 对象将 <code>usedstdim</code> 属性设置为 1。这样可以缩放由 <code>jit.movie</code> 发送的矩阵，以便它们只写入 composite 矩阵的某个区域。</p><p>调整标记为 <code>x origin</code> <code>y origin</code> 的数字框，缩放它所连接的两个子 patch <code>p coords</code>。请注意 composite 矩阵如何移动和调整 <code>jit.movie</code> 中两个图像的大小。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter16e.png" alt=""></p><center>图片内的图片</center><p><code>p coords</code> 包含相同的辅助 patch ，用于格式化 <code>jit.matrix</code> 对象的 <code>dstdimstart</code> 和 <code>dstdimend</code> 属性。这些属性分别指定将数据复制到 composite 矩阵时的左上角和右下角坐标。<code>usedstdim</code> 属性告诉 <code>jit.matrix</code> 复制数据时使用这些属性。当 <code>usedstdim</code> 为 0 时，缩放输入矩阵以填充 <code>jit.matrix</code> 引用的整个矩阵。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter16f.png" alt=""></p><center>写入共享矩阵之前先缩放输入矩阵</center><p>发送到子 patch 的三个数字由内部对象格式化，生成要填充的输出矩阵的左上和右下区域坐标列表。消息在输出前，用 $ 暂时替代列表中对应的数字参数。</p><p>在两个矩阵写入 composite 矩阵之后，最后一件事是发送 bang 到名为output 的 <code>receive</code> 对象：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter16g.png" alt=""></p><center>最后的结果</center><p>教程 patch 底部的区域是第三个名为 <code>jit.matrix</code> 的对象。由 <code>metro</code> 发送的 bang 经过一个 <code>trigger</code> 对象发送 bang 到 <code>jit.matrix</code>（让它输出矩阵到 <code>jit.pwindow</code>），紧接一个 <code>clear</code> 消息（0），清除所有名为 composite 矩阵中的单元格。如果不清空矩阵，改变任何<code>jit.matrix</code> 的 <code>dstdimstart</code> 和<code>dstdimend</code> 属性，可能导致残留之前输出位置的图像。</p><h2 id="队列优先级"><a href="#队列优先级" class="headerlink" title="队列优先级"></a>队列优先级</h2><p>当 Max 运算跟不上速度时， patch 顶部的 <code>jit.qball</code> 对象就有了用武之地。<code>metro​</code> （每隔 50 毫秒发出 bang）正在触发三个独立的操作（从 <code>jit.movi​e</code> 对象写入数据到两个已命名的矩阵，显示数据，清空矩阵以便重新开始）。<code>jit.matrix</code> 写入数据到内部矩阵（这个例子中是 composite 矩阵）并允许后续消息来插队。运行任务时，它允许其他优先级更高的 Max 事件发生。这样可以在前一操作完成之前显示矩阵（或将更多数据写入），从而引起闪烁和其他意外结果。</p><p><code>jit.qball</code> 对象把消息放到 Max 低优先级队列的最后， 在那里其他消息可以被优先处理。如果 <code>jit.qball</code> 在所有当前任务完成之前从 <code>metro​</code> 得到 bang，它将等到队列中其他所有任务都完成后，再发出 bang。同样，如果另一个 bang 在发出第一个 bang 之前就出现了（即如果 patch 的剩余时间需要超过 50 毫秒才能完成所有事情），第一个 bang 将被抢先（抛弃）而只发出第二个 bang。这让我们可以放心地在 Max patch 中设置极值，而不必担心事件累积过快 Max 处理不过来。</p><p>单击标记为 <code>jit.qball bypass switch</code> 的 <code>Ggate</code> 对象，让 <code>metro​</code> 的输出绕过 <code>jit.qball</code> 。底部 <code>jit.pwindow</code> 中的合成图像开始闪烁，表示消息乱序到达。</p><p>通常，发送 bang 到 Jitter 对象将插到已经挂起的事件（例如已经到达但尚未被处理的 bang）前面。不过 <code>jit.qball</code> 提供了对多个 Jitter 对象链的控制，自动调度事件（dropframing）保证消息以正确的顺序到达。</p><blockquote><p>注：在大多数应用中 <code>Qball</code>已被 <code>qmetro​​</code> 取代。 <code>qmetro​​</code> 是内置 <code>qball</code> 机制的 <code>metro​​</code> 对象。</p></blockquote><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>命名多个 <code>jit.matrix</code> 为同一个名称，可以在 patch 的不同部分中写入和读取矩阵数据。使用 dstdimstart 和 dstdimend 属性，或者设定 usedstdim 属性为 1，可以在将其复制到 <code>jit.matrix</code> 内部时缩放矩阵。<code>jit.qball</code> 对象把 Max 事件放到低优先队列中来降低优先级，如果没有足够资源来执行，则优先处理其他事件。</p><hr><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p><center>👇👇👇</center></p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Max-title-9.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
+    
+      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
+    
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Max/MSP/Jitter 官方教程翻译17 - 图像旋转</title>
@@ -40,11 +74,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -74,11 +108,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -108,11 +142,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -140,11 +174,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -174,11 +208,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="列表" scheme="http://uegeek.com/tags/%E5%88%97%E8%A1%A8/"/>
     
@@ -208,11 +242,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Chromakeying" scheme="http://uegeek.com/tags/Chromakeying/"/>
     
@@ -244,11 +278,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Math" scheme="http://uegeek.com/tags/Math/"/>
     
@@ -280,11 +314,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -312,11 +346,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -346,11 +380,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -380,11 +414,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -416,11 +450,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -448,11 +482,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="数学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
@@ -482,11 +516,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -516,9 +550,9 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -548,9 +582,9 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -580,11 +614,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -669,44 +703,6 @@
       <category term="延迟" scheme="http://uegeek.com/tags/%E5%BB%B6%E8%BF%9F/"/>
     
       <category term="音效" scheme="http://uegeek.com/tags/%E9%9F%B3%E6%95%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MakeNoise09 - 压缩 Compression</title>
-    <link href="http://uegeek.com/180706-make-noise-09.html"/>
-    <id>http://uegeek.com/180706-make-noise-09.html</id>
-    <published>2018-07-06T03:31:22.000Z</published>
-    <updated>2018-08-22T09:40:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png" alt=""></p><a id="more"></a> <ul><li><a href="https://www.uegeek.com/180621-make-noise-01.html" target="_blank" rel="noopener">MakeNoise01 - 声音是什么？</a></li><li><a href="https://www.uegeek.com/180623-make-noise-02.html" target="_blank" rel="noopener">MakeNoise02 - 频率和音高</a></li><li><a href="https://www.uegeek.com/180624-make-noise-03.html" target="_blank" rel="noopener">MakeNoise03 - 振幅/响度/音量/增益 大乱斗</a></li><li><a href="https://www.uegeek.com/180626-make-noise-04.html" target="_blank" rel="noopener">MakeNoise04 - 波形和相位</a></li><li><a href="https://www.uegeek.com/180628-make-noise-05.html" target="_blank" rel="noopener">MakeNoise05 - Envelope 包络（ADSR）</a></li><li><a href="https://www.uegeek.com/180629-make-noise-06.html" target="_blank" rel="noopener">MakeNoise06 - 音色和均衡器(EQ)</a></li><li><a href="https://www.uegeek.com/180701-make-noise-07.html" target="_blank" rel="noopener">MakeNoise07 - 音频的分辨率 Sample rate/Bit depth</a></li><li><a href="https://www.uegeek.com/180703-make-noise-08.html" target="_blank" rel="noopener">MakeNoise08 - 振荡器和滤波器</a></li></ul><p>在音频处理中，压缩可以指数据压缩格式（如 mp3 格式），如何压缩可以减少文件大小。本文学习的则是动态范围（Dynamic range）的压缩。<br>￼<br><img src="http://artsites.ucsc.edu/ems/music/equipment/signal_processors/processors_intro/comp.gif" alt=""></p><p>EQ（均衡器） 和 Compressor（压缩器）是 Sound engineering 里面最基础最常用的效果器。压缩器是动态处理器的一种。动态处理器最简单的形式就像一个<strong>自动的音量控制器</strong>（gain control），当音量太大时减低音量，当音量太小时调高音量。</p><p>想象一下，你家的电视有两个不同的频道。一个频道总是很小声，需要用遥控器调整到 20 才听得清楚。另外一个频道却很大声，必需用遥控器调到 12 才不会吵到邻居。</p><p>Compressor 的作用，就相当于每次切换这两个频道的时候，自动帮你调整声音大小，使之保持在合适的范围。<br>￼<br><img src="http://www.yamahaproaudio.com/global/en/Images/pa_beginners_comp12_2.jpg" alt=""></p><p>在音频处理中，<strong>压缩的目的是让乐器、人声或录音的动态范围保持在我们想要的范围</strong>：</p><ul><li>控制动态性能</li><li>填补漏洞</li><li>声音包络控制/塑形</li><li>调控音色</li><li>调整峰值和失真</li><li>Sidechain compression(ducking/dipping/pumping)</li></ul><p>￼<img src="https://www.howtogeek.com/wp-content/uploads/2011/04/clipping_compared_to_limiting.png" alt=""></p><p>更直观来说，压缩处理可以：</p><ul><li>使音频的动态范围更平整（even out）</li><li>融合两种乐器的声音（如bass 和底鼓），听起来更为整体</li><li>提亮音量比较小的声音</li><li>控制太响的声音</li><li>使声音获得特定的音色效果</li><li>创造特别的声音</li></ul><p>所有的动态处理器基本上都是指定一个开始工作的信号电平，然后对信号做出某种形式动态变化。</p><p><img src="https://www.residentadvisor.net/images/features/2012/tech-compress-dynamic-range.jpg" alt=""></p><p>不同压缩方法对 dynamic range 的影响：<br>￼<br><img src="https://dt7v1i9vyp3mf.cloudfront.net/styles/header/s3/imagelibrary/P/Pcomp-02-scales-5vGDFjBDltP2gtc.qx_VD3N2xWxwZHMy.jpg" alt=""></p><p>在 <a href="https://www.uegeek.com/180629-make-noise-06.html" target="_blank" rel="noopener">MakeNoise 06 中我们学习了均衡器(EQ)</a>。那么在处理音频时，应该是先调 EQ 还是先调 Compressor 呢？</p><blockquote><p>Placing an EQ before a compressor can have the effect of  exaggerating the applied EQ. Placing an EQ after a compressor you can often attain more audible results with less EQ, producing results that often do not “sound EQ’s EQ” – Chuck Zwicky</p></blockquote><p>一般来说，EQ 在 Compressor 之前，主要为了调整 Compressor 的反应；EQ 在 Compressor 之后，是为了调整波形达到更好的混音效果。当然也要<a href="http://a85115230.pixnet.net/blog/post/313698829-%E5%85%88eq%EF%BC%9F%E9%82%84%E6%98%AF%E5%85%88compressor%EF%BC%9F" target="_blank" rel="noopener">取决于声音素材和想要的效果</a>。</p><h2 id="在-Ableton-Live-里压缩不同的音轨"><a href="#在-Ableton-Live-里压缩不同的音轨" class="headerlink" title="在 Ableton Live 里压缩不同的音轨"></a>在 Ableton Live 里压缩不同的音轨</h2><p>进入 Ableton Live，在效果库里面找到 Compressor，拖到音轨上，就看到 Compressor 面板中调整压缩的参数：</p><p>￼<img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5Dcompressor.jpg" alt=""></p><ul><li>Threshold/Input：控制何时触发压缩</li><li>Gain reduction (GR)：有多少 dynamic range 被去掉</li><li>Output/Makeup gain：补偿因压缩导致的音量减小，设定输出的最高电平</li><li>Attack：当信号达到阈值时，压缩器在多少时间内开始处理。Fast attcak 0.01~10 ms, slow attack &gt; 50 ms</li><li>Release：当压缩时，原始信号被保留多久。通常以音频的 tempo 为基准</li><li>Ratio：以输入为基础，按比例设定输出值</li><li>Link：连接双声道/单声道压缩器到另外一个单声道，形成立体效果</li><li>Side chain：使用信号而不是主输入来控制压缩</li><li>Bypass：压缩过滤</li></ul><p>如何调整不同乐器音轨的压缩器，请看下面视频里的详细讲解：</p><iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=d0711gj2yf2&tiny=0&auto=0" allowfullscreen></iframe><p><a href="https://v.qq.com/x/page/d0711gj2yf2.html" target="_blank" rel="noopener">Compressor in Ableton Live_腾讯视频</a></p><h2 id="用-Max-MSP-实现-Compressor"><a href="#用-Max-MSP-实现-Compressor" class="headerlink" title="用 Max/MSP 实现 Compressor"></a>用 Max/MSP 实现 Compressor</h2><p>更进一步，我们到 MSP 里拆解 Compressor 是如何实现的。</p><p>官方文档里提供了详细的说明和例子。00 调整和补充了一些注释：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dcompression.png" alt=""></p><p>压缩器主要有三部分构成：参数、压缩流程和处理算法。下面分别看看每一部分的实现。</p><p>可控制的参数主要有 Input gain, Threshold, Ratio, Attack time, Release time，之前我们在 Ableton Live 的 Compressor 面板里都看到了：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dcompression-para.png" alt=""></p><p>压缩处理的主流程：先实时监测 input level，把信号从 amplitude 转换为 dB，然后跟阈值参数比较，判断是否进行压缩：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dcompression-compressor.png" alt=""></p><p>如果达到阈值后开始压缩，需要降低的 gain 由以下部分计算。公式是 <code>(Threshold - Level) * (1 -  1/ratio)</code>：</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dcompression-math.png" alt=""></p><p>然后将计算值再换算为 amplitude，输出到 compression 的主流程中，最后再加一道 <code>rampsmooth~</code> 来平滑 gain 的变化。</p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://book.douban.com/subject/7069885/" target="_blank" rel="noopener">Audio Engineering 101 - A Beginner’s Guide to Music Production</a></li><li><a href="https://zhuanlan.zhihu.com/p/32562033" target="_blank" rel="noopener">什么是动态处理器？</a></li><li><a href="https://docs.cycling74.com/max7/tutorials/17_msp_compress_00" target="_blank" rel="noopener">MSP Compression Introduction: What is Compression?</a></li><li><a href="https://www.soundonsound.com/techniques/parallel-compression" target="_blank" rel="noopener">Parallel Compression |</a></li><li><a href="https://www.residentadvisor.net/features/1595" target="_blank" rel="noopener">RA: Understanding compression</a></li><li><a href="http://a85115230.pixnet.net/blog/post/313698829-%E5%85%88eq%EF%BC%9F%E9%82%84%E6%98%AF%E5%85%88compressor%EF%BC%9F" target="_blank" rel="noopener">先EQ？還是先Compressor？ @ Balanced Audio Lab 平衡音訊實驗室 :: 痞客邦 ::</a></li><li><a href="https://www.kadenze.com/courses/sound-production-in-ableton-live-for-musicians-and-artists-v/sessions/compression-and-dynamics" target="_blank" rel="noopener">Session 6: Compression and Dynamics</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Music" scheme="http://uegeek.com/tags/Music/"/>
-    
-      <category term="Sound" scheme="http://uegeek.com/tags/Sound/"/>
-    
-      <category term="声音" scheme="http://uegeek.com/tags/%E5%A3%B0%E9%9F%B3/"/>
-    
-      <category term="Ableton Live" scheme="http://uegeek.com/tags/Ableton-Live/"/>
-    
-      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
-    
-      <category term="Compressor" scheme="http://uegeek.com/tags/Compressor/"/>
-    
-      <category term="动态压缩" scheme="http://uegeek.com/tags/%E5%8A%A8%E6%80%81%E5%8E%8B%E7%BC%A9/"/>
-    
-      <category term="EQ" scheme="http://uegeek.com/tags/EQ/"/>
     
   </entry>
   
