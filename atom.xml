@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-09-17T10:24:14.000Z</updated>
+  <updated>2018-09-24T04:00:29.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Max/MSP/Jitter 官方教程翻译19 - 使用已命名矩阵的反馈</title>
+    <link href="http://uegeek.com/180924-jitter-19.html"/>
+    <id>http://uegeek.com/180924-jitter-19.html</id>
+    <published>2018-09-24T03:58:55.000Z</published>
+    <updated>2018-09-24T04:00:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-1.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180903-jitter-11.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 11 - 矩阵混合</a></li><li><a href="https://www.uegeek.com/180904-jitter-12.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 12 - Chromakeying 视频去背景合成</a></li><li><a href="https://www.uegeek.com/180906-jitter-13.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 13 - 列表和矩阵</a></li><li><a href="https://www.uegeek.com/180907-jitter-14.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 14 - 颜色查找表</a></li><li><a href="https://www.uegeek.com/180908-jitter-15.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 15 - 剪刀和胶水</a></li><li><a href="https://www.uegeek.com/180909-jitter-16.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 16 - 矩阵定位</a></li><li><a href="https://www.uegeek.com/180915-jitter-17.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 17 - 图像旋转</a></li><li><a href="https://www.uegeek.com/180917-jitter-18.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 18 - 使用已命名的矩阵</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter17" target="_blank" rel="noopener">Max 7 - Tutorial 16: Using Named Jitter Matrices</a></p></blockquote><p>本教程讲解在反馈循环（feedback loop）中使用命名的 <code>jit.matrix</code> 。我们将使用随机值矩阵来构建迭代过程（Conway’s Game of Life）。</p><p>教程 patch 用 <code>jit.noise</code> 生成随机值的初始矩阵：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter17a.png" alt=""><br><code>jit.noise</code> 对象</p><p><code>jit.noise</code> 生成由随机值填充的矩阵。dim，planecount 和 type 属性确定输出矩阵（需要一个 80 x 60 单平面 char 数据矩阵）。<code>jit.op</code> 将随机单元格的值（初始为 0~255）设置为 false（0）或 true（255）。<code>jit.op</code> 的 &gt; 运算符从右入口数字框中获取值并用于比较运算。如果单元格值小于该值，单元格的值将设置为 0，否则设置为 255。发送到 <code>jit.noise</code> 的 bang 将生成新的随机矩阵。</p><p>更改附加到 <code>jit.op</code> 的数字框。单击连接到 <code>jit.noise</code> 的按钮，每次都生成一个新矩阵。注意更大的比较值产生更少的白色（255）单元格。<code>jit.op</code> 下面的小 <code>jit.pwindow</code> 显示随机矩阵。单平面矩阵数据由 <code>jit.pwindow</code> 解析为灰度视频。</p><h2 id="矩阵反馈"><a href="#矩阵反馈" class="headerlink" title="矩阵反馈"></a>矩阵反馈</h2><p>patch 顶部的量化（quantized）噪声从 <code>jit.op</code> 传到名为 cellular 的 <code>jit.matrix</code>：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter17b.png" alt=""><br>在反馈循环中有两个已命名的 <code>jit.matrix</code></p><p><code>jit.matrix</code> 接收来自 patch 顶部的 <code>metro</code> 的 bang，它连接到一个名为 <code>jit.conway</code> 的对象，其输出连接到另一个同名的 <code>jit.matrix</code>。结果是 <code>jit.conway</code> 的输出（无论它做什么）被写入跟其输入相同的矩阵中，从而创建反馈循环。</p><p>点击开关启动 <code>metro</code>。 patch 底部的 <code>jit.pwindow</code> 将显示 <code>jit.conway</code> 的输出。</p><p>如果想从一个新的随机矩阵开始，单击连到 <code>jit.noise</code> 的按钮，将新矩阵复制到反馈循环中。来自 <code>jit.op</code> 的矩阵会进入反馈循环中相同的 cellular 矩阵。</p><h2 id="生命的游戏"><a href="#生命的游戏" class="headerlink" title="生命的游戏"></a>生命的游戏</h2><p><code>jit.conway</code> 对输入矩阵执行名叫 “Game of Life” 的简单元胞自动机算法。该算法由普林斯顿大学的 John Conway 发明，模拟食物供应有限环境中的有机生存周期。矩阵中的单元格被看做是活的（非 0）或死的（0）。比较每个单元与周围的单元。如果一个活细胞有两个或三个活的邻居，它就活着。如果多于或少于该数字，它将死亡（0）。如果死去的细胞恰好有三个活的邻居，它就会变为活的（255）。就这么简单。</p><p>每当 <code>jit.conway</code> 接收到输入矩阵时，会开始一轮生命游戏。因此，在反馈循环内使用对象是有意义的，可以看到在同一初始数据集上执行多代算法。</p><p>例如，初始随机矩阵：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter17c.png" alt=""><br>一些随机矩阵值</p><p><code>jit.conway</code> 在前四次迭代中生成以下矩阵：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter17d.png" alt=""><br>在上面的数据集上 Game of Life 的前四代</p><p>使用随机矩阵 seeding 反馈循环后，可以打开 <code>metro</code> 并观察算法运行。Game of Life 的设计方式使得矩阵最终将稳定到一组自振荡 (self-oscillating) 细胞单元或空矩阵（a dead world）。在任何一种情况下，都可以 bang 一组新的数字重新开始。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>使用 <code>jit.matrix</code> 的 name 属性在 Jitter 中创建反馈循环。在对象链的任一端使用两个同名 <code>jit.matrix</code>，可以创建输出将被写入与输入来源相同的矩阵的链条。<code>jit.noise</code> 产生的任意随机数 type/dim/planecount 的矩阵。<code>jit.conway</code> 对输入矩阵做简单的元胞自动处理，在反馈回路中效果最好。</p><hr><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/Max-title-1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
+    
+      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
+    
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Max/MSP/Jitter 官方教程翻译18 - 使用已命名的矩阵</title>
@@ -661,48 +695,6 @@
       <category term="跨界" scheme="http://uegeek.com/tags/%E8%B7%A8%E7%95%8C/"/>
     
       <category term="创新" scheme="http://uegeek.com/tags/%E5%88%9B%E6%96%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MakeNoise10 - 延时和混响 Delay &amp; Reverb</title>
-    <link href="http://uegeek.com/180708-make-noise-10.html"/>
-    <id>http://uegeek.com/180708-make-noise-10.html</id>
-    <published>2018-07-08T04:50:44.000Z</published>
-    <updated>2018-08-22T09:40:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png" alt=""></p><a id="more"></a> <ul><li><a href="https://www.uegeek.com/180621-make-noise-01.html" target="_blank" rel="noopener">MakeNoise01 - 声音是什么？</a></li><li><a href="https://www.uegeek.com/180623-make-noise-02.html" target="_blank" rel="noopener">MakeNoise02 - 频率和音高</a></li><li><a href="https://www.uegeek.com/180624-make-noise-03.html" target="_blank" rel="noopener">MakeNoise03 - 振幅/响度/音量/增益 大乱斗</a></li><li><a href="https://www.uegeek.com/180626-make-noise-04.html" target="_blank" rel="noopener">MakeNoise04 - 波形和相位</a></li><li><a href="https://www.uegeek.com/180628-make-noise-05.html" target="_blank" rel="noopener">MakeNoise05 - Envelope 包络（ADSR）</a></li><li><a href="https://www.uegeek.com/180629-make-noise-06.html" target="_blank" rel="noopener">MakeNoise06 - 音色和均衡器(EQ)</a></li><li><a href="https://www.uegeek.com/180701-make-noise-07.html" target="_blank" rel="noopener">MakeNoise07 - 音频的分辨率 Sample rate/Bit depth</a></li><li><a href="https://www.uegeek.com/180703-make-noise-08.html" target="_blank" rel="noopener">MakeNoise08 - 振荡器和滤波器</a></li><li><a href="https://www.uegeek.com/180706-make-noise-09.html" target="_blank" rel="noopener">MakeNoise09 - 压缩 Compression</a></li></ul><p>音乐是时间的艺术。</p><p><strong>时间也是信号的天然属性。而声音设计，同时还是空间的艺术。</strong></p><p>声音必定产生在某个空间当中，人对声音的印象和记忆，多少都包含了对空间线索的直觉和感受。比如，密友之间的低语声，比较可能发生在一个小房间里；而轮船驶过的汽笛声，大概是在一个临海、开阔的码头，夹杂着繁忙的机械马达声和喧闹的人声。如果是清晨的港湾，大概又是不同的景象了。</p><embed src="http://www.xiami.com/widget/58846_1770984629,_300_146_cccccc_dddddd_0/multiPlayer.swf" type="application/x-shockwave-flash" width="300" height="146" wmode="opaque"><p>调整声音信号的方式有很多，延迟（delay）是必不可少的一种。混响（reverb）是塑造声音的空间感的秘密。今天我们就来一探究竟吧。</p><h2 id="Delay-延时"><a href="#Delay-延时" class="headerlink" title="Delay 延时"></a>Delay 延时</h2><blockquote><p>Delay is an audio effect and an effects unit which records an input signal to an audio storage medium, and then plays it back after a period of time. — Wiki￼</p></blockquote><p>延时可以在时间上平移一个信号。延迟效果器储存并保留音频信号一段时间后再将其释放。</p><p><img src="https://wiki.audacityteam.org/w/images/5/53/Delay.png" alt=""></p><p>延时是很多音效的核心，比如混响 Reverb、滤波 Filters 、和唱 Chorusing、Flanger（镶边，利用原音叠上稍微延迟的音，产生出金属感的回旋声）。</p><p>通过控制多条延迟的声音，可以产生回声效果。以一定顺序衰减并释放每条延迟声音，可以模拟出真实的回声效果。</p><p>延迟效果有很多种形式。比如在 Pink Floyd 的 <a href="https://open.spotify.com/track/5HNCy40Ni5BZJFw1TKzRsC" target="_blank" rel="noopener">Comfortably Numb</a> 里面，第一句歌词「Hello…Hello…Hello」是一个长延迟的效果。</p><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/4126197&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><p><img src="https://is4-ssl.mzstatic.com/image/thumb/Music49/v4/0f/f8/be/0ff8be03-465c-c0ce-4fe1-2db52ea50753/886445635850.jpg/1200x630bb.jpg" alt=""></p><p>Delay 的参数：</p><ul><li>Time/tap: the amount of time between the dry, unprocessed signal and the wet, processed signal.</li><li>Repeat/feedback: controls how many repeats of a delayed sound</li></ul><h2 id="Reverb-混响"><a href="#Reverb-混响" class="headerlink" title="Reverb 混响"></a>Reverb 混响</h2><p>混响可以帮助我们营造合适的空间「场所感」。</p><blockquote><p>混响(reverberation)是声源发音停止后，声音继续存在的声学现象。—wiki</p></blockquote><p>声音在空间中传播，会遇到不同的物体，发生反射（reflection）、吸收（absorption）和扩散（diffusion）。混响产生于声波的传播被墙壁或周围障碍物反射而滞后于发声。<br>￼<br><img src="http://www.prestigeacoustics.com.au/wp-content/uploads/2015/01/About-Sound5-copy3.png" alt=""></p><p>不同的材料对声音的吸收效果不同，常常需要精密的计算和搭配，才能营造出理想的声音效果。</p><p><img src="https://www.acousticpanelsreview.com/wp-content/uploads/2014/09/Sound-Absorption-Coefficient.png" alt=""></p><p>混响时间是指从其最初的反射声强度衰落 60 dB (降低到 -60dB)所花费的时间。<br>￼<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Reverberation_time_diagram.svg/440px-Reverberation_time_diagram.svg.png" alt=""></p><p>延时时间的最小值，应该至少为混响时间的四分之一，而且延时的长度应为质数（或各延时时长是互质的）。合理的混响效果建议每秒有 1000 个回声。</p><p>室内环境的声学效果涉及非常复杂的声学知识，尤其是录音棚和音乐厅。</p><p><img src="http://www.constructioncanada.net/wp-content/uploads/2016/02/Fig-4.jpg" alt=""></p><p>下图是 00 所拍摄的上海交响乐团音乐厅的一角，舞台上方使用了很多木质材料，来获得最佳的混响和其他声音效果。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/SSO.jpg" alt=""></p><h3 id="在-Ableton-Live-里处理混响"><a href="#在-Ableton-Live-里处理混响" class="headerlink" title="在 Ableton Live 里处理混响"></a>在 Ableton Live 里处理混响</h3><p>下面来看看 Ableton Live 里面是如何调整音频的混响的。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BAbleton%5Dreverb.png" alt=""></p><p>混响的参数：</p><ul><li>Dry/Wet: 没有混响/最大混响</li><li>Input: 控制对多少原始信号做混响处理</li><li>Reflect: 混响初期（early reflection），对混响感知影响更大</li><li>Diffuse: 混响末期（late reflection）</li><li>Size: 模拟不同大小的空间的混响 (对 Reflect 的影响大于 Diffuse)</li><li>Decay time: 混响消失所需时间</li><li>Predelay: 原始信号做混响处理之前的等待时间</li></ul><p>以下视频详细讲解了 Reverb 效果器的使用：</p><iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=a0714gvoo1l&tiny=0&auto=0" allowfullscreen></iframe><p><a href="https://v.qq.com/x/page/a0714gvoo1l.html" target="_blank" rel="noopener">Reverb in Ableton Live_腾讯视频</a></p><h2 id="Max-MSP-里的延时和混响"><a href="#Max-MSP-里的延时和混响" class="headerlink" title="Max/MSP 里的延时和混响"></a>Max/MSP 里的延时和混响</h2><p>Max/MSP 有丰富的控制延时的方法和对象。</p><p><code>delay~</code></p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Ddelay~.png" alt=""></p><p><code>tapin/tapout</code></p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dtapin-tapout.png" alt=""></p><p><code>teeth~</code></p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dteeth~.png" alt=""></p><p>还有处理非信号的延时器：<code>pipe</code></p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dpipe.png" alt=""></p><p>如果对如何从信号层面实现混响有兴趣，可以到 Max/MSP 里面拆开 BEAP 组件里面的 Reverb2，看看到底是怎么实现的。</p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dreverb2.png" alt=""></p><p><img src="http://7xjpra.com1.z0.glb.clouddn.com/%5BMax%5Dreverb2-patch.png" alt=""></p><p>(小编 0 已晕…… 后会有期)</p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://book.douban.com/subject/7069885/" target="_blank" rel="noopener">Audio Engineering 101 - A Beginner’s Guide to Music Production</a></li><li><a href="https://www.wikiwand.com/en/Reverberation" target="_blank" rel="noopener">Reverberation - Wikiwand</a></li><li><a href="https://www.acousticpanelsreview.com/acoustic-sound-absorption/" target="_blank" rel="noopener">Acoustic Sound Absorption - Acoustic Panels Review</a></li><li><a href="https://www.wikiwand.com/en/Delay_(audio_effect" target="_blank" rel="noopener">Delay (audio effect) - Wikiwand</a>)</li><li><a href="https://www.wikiwand.com/en/Comb_filter" target="_blank" rel="noopener">Comb filter - Wikiwand</a></li><li><a href="http://aquoibon.li/mixing_guide/" target="_blank" rel="noopener">混音指南（2016） | À quoi bon</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Music" scheme="http://uegeek.com/tags/Music/"/>
-    
-      <category term="Sound" scheme="http://uegeek.com/tags/Sound/"/>
-    
-      <category term="声音" scheme="http://uegeek.com/tags/%E5%A3%B0%E9%9F%B3/"/>
-    
-      <category term="Ableton Live" scheme="http://uegeek.com/tags/Ableton-Live/"/>
-    
-      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
-    
-      <category term="Delay" scheme="http://uegeek.com/tags/Delay/"/>
-    
-      <category term="Reverb" scheme="http://uegeek.com/tags/Reverb/"/>
-    
-      <category term="混响" scheme="http://uegeek.com/tags/%E6%B7%B7%E5%93%8D/"/>
-    
-      <category term="延迟" scheme="http://uegeek.com/tags/%E5%BB%B6%E8%BF%9F/"/>
-    
-      <category term="音效" scheme="http://uegeek.com/tags/%E9%9F%B3%E6%95%88/"/>
     
   </entry>
   
