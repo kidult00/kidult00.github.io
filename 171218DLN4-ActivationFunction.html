@@ -106,17 +106,17 @@
 <meta property="og:url" content="http://uegeek.com/171218DLN4-ActivationFunction.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Col.DL.dog_detect.png">
+<meta property="og:image" content="http://img.viz.mobi/Art_Code_Bro.png">
+<meta property="og:image" content="http://img.viz.mobi/Col.DL.dog_detect.png">
 <meta property="og:image" content="https://ml4a.github.io/images/figures/sigmoid.png">
 <meta property="og:image" content="https://ml4a.github.io/images/figures/sigmoid.png">
 <meta property="og:image" content="http://mathworld.wolfram.com/images/interactive/TanhReal.gif">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/relu.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/N_softmax.png">
-<meta property="og:updated_time" content="2018-08-22T09:35:47.000Z">
+<meta property="og:image" content="http://img.viz.mobi/relu.png">
+<meta property="og:image" content="http://img.viz.mobi/N_softmax.png">
+<meta property="og:updated_time" content="2018-09-25T07:44:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DL笔记：Activation Function 激活函数">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
+<meta name="twitter:image" content="http://img.viz.mobi/Art_Code_Bro.png">
 
 
 
@@ -447,7 +447,7 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p>
+        <p><img src="http://img.viz.mobi/Art_Code_Bro.png" alt=""></p>
 <a id="more"></a> 
 <p>回顾:</p>
 <ul>
@@ -458,7 +458,7 @@
 <p><code>阿扣</code>：阿特，今天我们来了解一下深度学习中的激活函数(Activation functions)。</p>
 <p><code>阿特</code>：又是函数……为什么要了解这个哦……</p>
 <p><code>阿扣</code>：在机器学习中，我们经常需要对输出结果打上「是」或「否」标签。比如对一张输入的图片，模型要判断图片里面有没有包含汪星人。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Col.DL.dog_detect.png" alt=""></p>
+<p><img src="http://img.viz.mobi/Col.DL.dog_detect.png" alt=""></p>
 <p><a href="http://www.uegeek.com/171213DLN3-LinearRegression.html" target="_blank" rel="noopener">上一回我们提到的逻辑回归</a>，可以用来减少预测值和真实值之间的误差。</p>
 <p><code>阿特</code>：那要怎么做呢？</p>
 <p><code>阿扣</code>：我们来用符号描述一下问题：</p>
@@ -498,12 +498,12 @@
 <p><img src="http://mathworld.wolfram.com/images/interactive/TanhReal.gif" alt=""></p>
 <h3 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h3><p>$$ReLU(z) = max(z,0)$$</p>
 <p>ReLU (rectified linear units) 是现在较常用的激活函数。如果输入 &lt; 0，ReLU 输出 0；如果输入 &gt;0，输出等于输入值。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/relu.png" alt=""></p>
+<p><img src="http://img.viz.mobi/relu.png" alt=""></p>
 <p>ReLU 计算量小（不涉及除法），一部分神经元的输出为 0 造成了网络的稀疏性，并且减少了参数的相互依存关系，缓解了过拟合问题的发生。</p>
 <p>ReLU 的缺点是，梯度较大时，ReLU 单元可能大都是 0，产生大量无效的计算（特征屏蔽太多，导致模型无法学习到有效特征）。</p>
 <h3 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h3><p>$$ softmax(z) = \frac{e^z{<em>j}}{\sum^K</em>{k=1}e^z{_k}}$$</p>
 <p>Softmax 函数将 K 维的实数向量压缩（映射）成另一个 K 维的实数向量，其中向量中的每个元素取值都介于(0，1)之间。<strong>常用于多分类问题</strong>。Softmax 把分数转换为概率分布，让正确的分类的概率接近 1，其他结果接近 0。相比 Sigmoid，它做了归一化处理。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/N_softmax.png" alt=""></p>
+<p><img src="http://img.viz.mobi/N_softmax.png" alt=""></p>
 <h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul>
 <li><a href="https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101" target="_blank" rel="noopener">Deep Learning Nanodegree | Udacity</a></li>
 <li><a href="https://www.coursera.org/learn/neural-networks-deep-learning" target="_blank" rel="noopener">Neural Networks and Deep Learning | Coursera</a></li>

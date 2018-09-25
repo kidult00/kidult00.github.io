@@ -106,14 +106,14 @@
 <meta property="og:url" content="http://uegeek.com/170304-deeplearning-week0.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/dl-week0-title.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/download_tensorflow_image.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/docker_mirror.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/docker-image-loaded.png">
-<meta property="og:updated_time" content="2018-08-22T09:33:05.000Z">
+<meta property="og:image" content="http://img.viz.mobi/dl-week0-title.png">
+<meta property="og:image" content="http://img.viz.mobi/download_tensorflow_image.png">
+<meta property="og:image" content="http://img.viz.mobi/docker_mirror.png">
+<meta property="og:image" content="http://img.viz.mobi/docker-image-loaded.png">
+<meta property="og:updated_time" content="2018-09-25T07:46:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DeepLearning-1：神经网络和 Docker 入门">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/dl-week0-title.png">
+<meta name="twitter:image" content="http://img.viz.mobi/dl-week0-title.png">
 
 
 
@@ -444,7 +444,7 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/dl-week0-title.png" alt=""></p>
+        <p><img src="http://img.viz.mobi/dl-week0-title.png" alt=""></p>
 <a id="more"></a> 
 <h2 id="一、神经网络简介"><a href="#一、神经网络简介" class="headerlink" title="一、神经网络简介"></a>一、神经网络简介</h2><p>人工神经网络：在输入层和输出层中间加入多个隐层。</p>
 <ul>
@@ -486,12 +486,12 @@
 <p>第二步：到 <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker hub</a> 找到 TensorFlow Image ，以此为模板构建自己的容器。参考 <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/docker/README.md" target="_blank" rel="noopener">Using TensorFlow via Docker</a>，用 <code>run</code> 命令加载 TensorFlow image：</p>
 <p><code>docker run -it -p 8888:8888 tensorflow/tensorflow</code></p>
 <p>开始下载后，发现速度非常慢：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/download_tensorflow_image.png" alt=""></p>
+<p><img src="http://img.viz.mobi/download_tensorflow_image.png" alt=""></p>
 <p>参考小伙伴的 <a href="http://www.jianshu.com/p/d896ec46db66" target="_blank" rel="noopener">Docker Hub Mirror加速Docker官方镜像下载</a> 笔记，使用镜像下载。在 Mac 上配置<a href="https://www.daocloud.io/mirror#accelerator-doc" target="_blank" rel="noopener">加速器</a>很简单，右键点击桌面顶栏的 docker 图标，选择 Preferences ，在 Advanced 标签下的 Registry mirrors 列表中加入镜像地址: <code>http://d43d99f5.m.daocloud.io Copy</code>，点击 Apply &amp; Restart 按钮使设置生效。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/docker_mirror.png" alt=""></p>
+<p><img src="http://img.viz.mobi/docker_mirror.png" alt=""></p>
 <p>再次运行<code>docker run -it -p 8888:8888 tensorflow/tensorflow</code>，速度飞了起来~</p>
 <p>下载成功后，可以在浏览器看到 Jupyter Notebook 界面：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/docker-image-loaded.png" alt=""></p>
+<p><img src="http://img.viz.mobi/docker-image-loaded.png" alt=""></p>
 <h3 id="Docker-常用命令"><a href="#Docker-常用命令" class="headerlink" title="Docker 常用命令"></a>Docker 常用命令</h3><ul>
 <li>关闭 docker：control+c</li>
 <li>查看运行状态：<code>docker ps</code> </li>

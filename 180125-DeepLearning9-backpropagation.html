@@ -106,13 +106,13 @@
 <meta property="og:url" content="http://uegeek.com/180125-DeepLearning9-backpropagation.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/vlcsnap-2017-12-19-15h02m16s033.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/vlcsnap-2017-12-19-15h06m32s756.png">
-<meta property="og:updated_time" content="2018-08-22T09:37:00.000Z">
+<meta property="og:image" content="http://img.viz.mobi/Art_Code_Bro.png">
+<meta property="og:image" content="http://img.viz.mobi/vlcsnap-2017-12-19-15h02m16s033.png">
+<meta property="og:image" content="http://img.viz.mobi/vlcsnap-2017-12-19-15h06m32s756.png">
+<meta property="og:updated_time" content="2018-09-25T07:42:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DeepLearning笔记：Backpropagation 反向传播算法">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
+<meta name="twitter:image" content="http://img.viz.mobi/Art_Code_Bro.png">
 
 
 
@@ -443,7 +443,7 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p>
+        <p><img src="http://img.viz.mobi/Art_Code_Bro.png" alt=""></p>
 <a id="more"></a> 
 <p><code>阿扣</code>：今天我们来学习反向传播算法。</p>
 <p><code>阿特</code>：为什么你一脸严肃哦？</p>
@@ -456,7 +456,7 @@
 <p><code>阿扣</code>：在神经网络里，输出节点的误差项，跟隐层的权重是成比例的。</p>
 <p><code>阿特</code>：意思是误差项越大，隐层节点的权重也越大？</p>
 <p><code>阿扣</code>：可以这么理解。既然我们知道输出的误差项，就可以用它来「反向传播」，求出隐层的误差项，再用于求输入节点的权重。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/vlcsnap-2017-12-19-15h02m16s033.png" alt=""></p>
+<p><img src="http://img.viz.mobi/vlcsnap-2017-12-19-15h02m16s033.png" alt=""></p>
 <p><code>阿特</code>：咦，那不是反过来了？先知道输出结果，再反推输入权重？</p>
 <p><code>阿扣</code>：对的，所以叫做「反向」呀。</p>
 <p>比如，输出层 k 个节点对应的误差项是 $\delta^o_k$ 。隐层有 j 个节点，那么隐层节点到输出节点的 j 个误差项是：</p>
@@ -465,7 +465,7 @@
 <p><code>阿扣</code>：嗯！误差项 δ 表示 <code>误差 * 激活函数的导数</code>，$\delta_j=(y-\hat y)f’(h_j)$。对比一下 $\delta^h<em>j=\sum W</em>{jk} \delta^o_k f’(h_j)$，看看有什么不同？</p>
 <p><code>阿特</code>：隐层到输出层的误差 (y-y^) 变成了 $\sum W_{jk} \delta^o_k$</p>
 <p><code>阿扣</code>：很棒！你发现了吧，$\delta_k$ 成为了 wx + b 中的变量 x：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/vlcsnap-2017-12-19-15h06m32s756.png" alt=""></p>
+<p><img src="http://img.viz.mobi/vlcsnap-2017-12-19-15h06m32s756.png" alt=""></p>
 <p><code>阿特</code>：啊，又要来算这个了……</p>
 <p><code>阿扣</code>：没关系，虽然看上去麻烦一些，但是跟正向传播的做法很类似，权重的更新为 $\Delta w_{ij}=\eta \delta^h_jx_i$ 。</p>
 <p><code>阿特</code>：每次都要来一遍，要死不少脑细胞啊……</p>

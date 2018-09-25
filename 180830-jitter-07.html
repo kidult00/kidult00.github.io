@@ -82,7 +82,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ArtxCode,Max/MSP,Jitter,矩阵,教程,Creative Coding,颜色," />
+  <meta name="keywords" content="ArtxCode,Max/MSP,Jitter,Creative Coding,教程,矩阵,颜色," />
 
 
 
@@ -100,25 +100,25 @@
 
 
 
-<meta name="keywords" content="ArtxCode,Max&#x2F;MSP,Jitter,矩阵,教程,Creative Coding,颜色">
+<meta name="keywords" content="ArtxCode,Max&#x2F;MSP,Jitter,Creative Coding,教程,矩阵,颜色">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Max&#x2F;MSP&#x2F;Jitter 官方教程翻译07 - ARGB 颜色">
 <meta property="og:url" content="http://uegeek.com/180830-jitter-07.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-7.jpg">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/tut5%20patch.png">
+<meta property="og:image" content="http://img.viz.mobi/Max-title-7.jpg">
+<meta property="og:image" content="http://img.viz.mobi/tut5%20patch.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter05a.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter05b.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter05c.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter05d.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter05f.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter05e.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png">
-<meta property="og:updated_time" content="2018-08-31T11:09:06.000Z">
+<meta property="og:image" content="http://img.viz.mobi/maxgroup0825.png">
+<meta property="og:updated_time" content="2018-09-25T07:38:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Max&#x2F;MSP&#x2F;Jitter 官方教程翻译07 - ARGB 颜色">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-7.jpg">
+<meta name="twitter:image" content="http://img.viz.mobi/Max-title-7.jpg">
 
 
 
@@ -449,7 +449,7 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-7.jpg" alt=""></p>
+        <p><img src="http://img.viz.mobi/Max-title-7.jpg" alt=""></p>
 <a id="more"></a>
 <ul>
 <li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li>
@@ -464,7 +464,7 @@
 </blockquote>
 <h2 id="Jitter-中的颜色"><a href="#Jitter-中的颜色" class="headerlink" title="Jitter 中的颜色"></a>Jitter 中的颜色</h2><p>本节将讨论如何在 Jitter 中处理颜色，主要讲解用数字表示颜色，而不涉及把数字可视化为颜色。用数字表示颜色有许多方法，而关于色彩理论的全面讨论 - 光和物质如何产生色彩感觉 - 远远超出了本教程的范围。如果想了解颜色相关的理论和/或颜色数值表示的更多信息，可以查看参考书目。</p>
 <p>本节重点说明 Jitter 表示颜色的方法，以及如何在矩阵中实现。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/tut5%20patch.png" alt=""></p>
+<p><img src="http://img.viz.mobi/tut5%20patch.png" alt=""></p>
 <h2 id="颜色组成：RGB"><a href="#颜色组成：RGB" class="headerlink" title="颜色组成：RGB"></a>颜色组成：RGB</h2><p>混合红色，绿色和蓝色可以产生任意颜色 - 每种颜色都有一定的亮度（intensity）。这是「加法合成（additive synthesis）」 - 添加一定量的三原色光来生成颜色（与此相反的是减法合成：混合有色颜料，如油漆，吸收某些颜色的光并反射其余部分）。这样就可以用红色，绿色和蓝色相对应的频率强度来描述任意颜色。</p>
 <p>在 Jitter 中一般用红色，绿色和蓝色的精确亮度组合来描述颜色。对于图像的每个像素 - 无论是视频，图片还是其他 2D 矩阵 - 至少需要三个值表示三原色。屏幕上的彩色图像一般使用至少 3 个平面的 2D 矩阵。</p>
 <h2 id="Alpha-通道"><a href="#Alpha-通道" class="headerlink" title="Alpha 通道"></a>Alpha 通道</h2><p>第 4 个平面一般是 alpha 通道 - 它存储像素的透明度信息。Jitter 矩阵中一般都会包含颜色透明度的 alpha 通道。多数情况下，<strong>alpha 通道存储在平面 0（矩阵平面从 0 开始编号），RGB 值存储在 1,2 和 3 平面中</strong>。</p>
@@ -499,7 +499,7 @@
 <p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p>
 </blockquote>
 <p>👇👇👇</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png" alt=""></p>
+<p><img src="http://img.viz.mobi/maxgroup0825.png" alt=""></p>
 
       
     </div>
@@ -573,11 +573,11 @@
           
             <a href="/tags/Jitter/" rel="tag"># Jitter</a>
           
-            <a href="/tags/矩阵/" rel="tag"># 矩阵</a>
+            <a href="/tags/Creative-Coding/" rel="tag"># Creative Coding</a>
           
             <a href="/tags/教程/" rel="tag"># 教程</a>
           
-            <a href="/tags/Creative-Coding/" rel="tag"># Creative Coding</a>
+            <a href="/tags/矩阵/" rel="tag"># 矩阵</a>
           
             <a href="/tags/颜色/" rel="tag"># 颜色</a>
           

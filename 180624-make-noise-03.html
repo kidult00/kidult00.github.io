@@ -106,17 +106,17 @@
 <meta property="og:url" content="http://uegeek.com/180624-make-noise-03.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png">
+<meta property="og:image" content="http://img.viz.mobi/MakeSound-title.png">
 <meta property="og:image" content="http://mathworld.wolfram.com/images/eps-gif/Amplitude_1000.gif">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/SPL2dB.png">
+<meta property="og:image" content="http://img.viz.mobi/SPL2dB.png">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Lindos4.svg/800px-Lindos4.svg.png">
 <meta property="og:image" content="https://images-na.ssl-images-amazon.com/images/I/71Z0oKDowKL._SL1500_.jpg">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/1696/0313/files/SoundComparison-Silencer-Supressor.jpg?v=1500407959">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/gain&meter.png">
-<meta property="og:updated_time" content="2018-08-22T09:39:18.000Z">
+<meta property="og:image" content="http://img.viz.mobi/gain&meter.png">
+<meta property="og:updated_time" content="2018-09-25T07:41:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MakeNoise03 - 振幅&#x2F;响度&#x2F;音量&#x2F;增益 大乱斗">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png">
+<meta name="twitter:image" content="http://img.viz.mobi/MakeSound-title.png">
 
 
 
@@ -447,7 +447,7 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/MakeSound-title.png" alt=""></p>
+        <p><img src="http://img.viz.mobi/MakeSound-title.png" alt=""></p>
 <a id="more"></a> 
 <ul>
 <li><a href="https://www.uegeek.com/180621-make-noise-01.html" target="_blank" rel="noopener">MakeNoise01 - 声音是什么？</a></li>
@@ -464,7 +464,7 @@
 <li>声压等级（SPL）：是<strong>描述声音大小的物理量</strong>，用声压值除以上面提到的标准声压值，取了对数再乘以10，就得到 SPL，公式见下图。</li>
 <li>分贝（decibels/dB）：是<strong>描述物理量比值的单位</strong>（分贝不仅用于声学，多用于衡量各种信号的强度、增益等）。</li>
 </ul>
-<p>￼<img src="http://7xjpra.com1.z0.glb.clouddn.com/SPL2dB.png" alt=""></p>
+<p>￼<img src="http://img.viz.mobi/SPL2dB.png" alt=""></p>
 <p>从以上公式容易看到，<strong>响度和声压并不是线性关系</strong>。一个声波大概需要 10 倍的压强，才能让我们在听觉上感受到 2 倍的响度。</p>
 <p>Fletcher-Munson 曲线总结了人耳对响度的敏感性。人耳对 3kHz~4kHz的声音最敏感，其他频率区域的声音往往都需要经过放大才能被听清。<br>￼<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Lindos4.svg/800px-Lindos4.svg.png" alt=""></p>
 <h2 id="常见的响度范围"><a href="#常见的响度范围" class="headerlink" title="常见的响度范围"></a>常见的响度范围</h2><p>大多数人能识别 3dB 的声音幅度变化。下图给出了常见的声音场景的响度：</p>
@@ -497,7 +497,7 @@
 <h3 id="在软件中的使用场景"><a href="#在软件中的使用场景" class="headerlink" title="在软件中的使用场景"></a>在软件中的使用场景</h3><p>现在，我们知道可以<strong>将 Gain 理解为对信号的调整，将 Volume 理解为处理完成后声音响度的听觉感受</strong>。</p>
 <p>这正好可以对应到 Max/MSP 和 Ableton Live 的实现中。</p>
 <p>Max/MSP 很擅长数字信号处理，主要在信号层面做底层的调控。所以在 Max/MSP 中只有控制 gain 的对象，而没有调控 volume 的对象。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/gain&amp;meter.png" alt=""><br>￼</p>
+<p><img src="http://img.viz.mobi/gain&amp;meter.png" alt=""><br>￼</p>
 <p>而 Ableton Live 善于处理音频，叠加各种音效和编排音轨。控制每一个音轨的音量是最基本的功能之一。在界面功能中，它会把信号的 level 描述为 volume：</p>
 <iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=r0700unhufv&tiny=0&auto=0" allowfullscreen></iframe>
 

@@ -106,18 +106,18 @@
 <meta property="og:url" content="http://uegeek.com/171222DLN6-GradientDescent.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
+<meta property="og:image" content="http://img.viz.mobi/Art_Code_Bro.png">
 <meta property="og:image" content="http://neuralnetworksanddeeplearning.com/images/tikz8.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Gradient%20Descent-i1.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Gradient%20Descent-i2.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/derivative-example.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/simpleNN.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Gradient%20Descent-i3.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/WX20171127-154242@2x.png">
-<meta property="og:updated_time" content="2018-08-22T09:35:57.000Z">
+<meta property="og:image" content="http://img.viz.mobi/Gradient%20Descent-i1.png">
+<meta property="og:image" content="http://img.viz.mobi/Gradient%20Descent-i2.png">
+<meta property="og:image" content="http://img.viz.mobi/derivative-example.png">
+<meta property="og:image" content="http://img.viz.mobi/simpleNN.png">
+<meta property="og:image" content="http://img.viz.mobi/Gradient%20Descent-i3.png">
+<meta property="og:image" content="http://img.viz.mobi/WX20171127-154242@2x.png">
+<meta property="og:updated_time" content="2018-09-25T07:44:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DL笔记：梯度下降 Gradient Descent">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
+<meta name="twitter:image" content="http://img.viz.mobi/Art_Code_Bro.png">
 
 
 
@@ -448,7 +448,7 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p>
+        <p><img src="http://img.viz.mobi/Art_Code_Bro.png" alt=""></p>
 <a id="more"></a> 
 <p><code>阿扣</code>：上一次我们了解了<a href="http://www.uegeek.com/171220DLN5-CostFunction.html" target="_blank" rel="noopener">损失函数</a>。为了找到使损失函数（比如用 SSE 计算）最小的 w (权重) 和 b (偏置项)，我们需要先了解一个重要的方法：梯度下降。</p>
 <p><code>阿特</code>：听起来像坐滑滑梯~</p>
@@ -463,9 +463,9 @@
 <p><code>阿扣</code>：坐这个滑滑梯可能有点晕 😄 。我先给你打个比方。想象一下，你在一个山峰的山顶，想用最快的速度到达山脚。</p>
 <p><code>阿特</code>：坐缆车可以吗？</p>
 <p><code>阿扣</code>：缆车，不存在的……只能靠走的。要往哪边下山呢？我们会选一个看起来「下降」最快的路径：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Gradient%20Descent-i1.png" alt=""></p>
+<p><img src="http://img.viz.mobi/Gradient%20Descent-i1.png" alt=""></p>
 <p>朝这个方向走一段后，我们再看下一步往哪个方向走，「下降」最快。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Gradient%20Descent-i2.png" alt=""></p>
+<p><img src="http://img.viz.mobi/Gradient%20Descent-i2.png" alt=""></p>
 <p>一直重复这个过程，就能最快的速度下到山脚。</p>
 <p><code>阿特</code>：是这么个道理。</p>
 <p><code>阿扣</code>：这个方法，就是「梯度下降」，在机器学习中很常见。所谓「梯度」，其实是指「变化率」或者「坡度 slope」，就是多变量函数的导数。</p>
@@ -475,7 +475,7 @@
 <p><code>阿扣</code>：你还记得怎么表示函数 f(x) 的导数吧？很简单，就是 f’(x) 。</p>
 <p><code>阿特</code>：嗯嗯，记得。</p>
 <p><code>阿扣</code>：所谓「梯度」，其实就是函数在某一点上的变化率，根据微分的知识，变化率可以通过这一点的切线求得，而切线其实就是函数的导数：f’(x)。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/derivative-example.png" alt=""></p>
+<p><img src="http://img.viz.mobi/derivative-example.png" alt=""></p>
 <p>来，跟我念一遍：求梯度 = 求变化率 = 求导数</p>
 <p><code>阿特</code>：求梯度 = 求变化率 = 求导数 （假装自己听懂了）</p>
 <p><code>阿扣</code>：了解了「梯度」，然后我们来看看「下降」又是怎么回事。</p>
@@ -488,13 +488,13 @@
 <p><a href="https://www.youtube.com/watch?time_continue=194&amp;v=L5QBqYDNJn0" target="_blank" rel="noopener">Linear Regression Answer - YouTube</a></p>
 <p><code>阿特</code>：这个视频不错，讲得挺清楚的~</p>
 <p><code>阿扣</code>：我们来复习一下。用一个函数 f(h) 表示 x 和 y 的关系。x 和 y 其实是已知的，它们来自真实的数据集。我们的目标是求出 w 和 b，使得计算出来的 $\hat y$ 最接近实际的 y 值。为了得到某种类型的 y 值（比如只有 0 和 1 两种输出），我们会使用类似 Sigmoid 这样的激活函数，对 f(h) 做一下转换。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/simpleNN.png" alt=""></p>
+<p><img src="http://img.viz.mobi/simpleNN.png" alt=""></p>
 <p><code>阿特</code>：哦，我说怎么有点难理解呢。因为以前碰到 x 和 y，它们都是未知数，现在它们变成了已知数，真正的目标其实是求 w 和 b！</p>
 <p><code>阿扣</code>：没错！这是深度学习算法中一个需要调整的认知。</p>
 <p>怎么得到 w 和 b 呢？用损失函数。如果损失函数的值大，说明模型预测得不准。我们要找到让损失函数的值最小的 w 和 b。更具体说，我们要找到 w 的变化幅度 $\Delta w$，每次调整一小步，看看误差 E 是不是变小了。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Gradient%20Descent-i3.png" alt=""></p>
+<p><img src="http://img.viz.mobi/Gradient%20Descent-i3.png" alt=""></p>
 <p>为了求出 $\Delta w$，我们引入「误差项」$\delta$ ，它表示 <code>误差 * 激活函数的导数</code>。然后用「误差项」$\delta$ 乘上学习率 $\eta$ （用来调整梯度的大小），再乘上 x，就是每次应该调整的权重值 $\Delta w_{ij}$</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/WX20171127-154242@2x.png" alt=""></p>
+<p><img src="http://img.viz.mobi/WX20171127-154242@2x.png" alt=""></p>
 <p><code>阿扣</code>：比如说，如果激活函数是 Sigmoid 函数。</p>
 <p>$$ f(h)=\frac {1}{1 + e^{−h}} $$ </p>
 <p>$$ f’(h)=f(h)(1−f(h))$$ </p>

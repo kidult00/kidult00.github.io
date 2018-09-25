@@ -106,17 +106,17 @@
 <meta property="og:url" content="http://uegeek.com/180104DeepLearning8-MultiLayer-Perceptrons.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/network-with-labeled-weights.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/multilayer-diagram-weights.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/input-times-weights.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/matrix-mult-3.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/matrix_eg1.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/inputs-matrix.png">
-<meta property="og:updated_time" content="2018-08-22T09:36:21.000Z">
+<meta property="og:image" content="http://img.viz.mobi/Art_Code_Bro.png">
+<meta property="og:image" content="http://img.viz.mobi/network-with-labeled-weights.png">
+<meta property="og:image" content="http://img.viz.mobi/multilayer-diagram-weights.png">
+<meta property="og:image" content="http://img.viz.mobi/input-times-weights.png">
+<meta property="og:image" content="http://img.viz.mobi/matrix-mult-3.png">
+<meta property="og:image" content="http://img.viz.mobi/matrix_eg1.png">
+<meta property="og:image" content="http://img.viz.mobi/inputs-matrix.png">
+<meta property="og:updated_time" content="2018-09-25T07:43:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DeepLearning笔记：多节点神经网络">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
+<meta name="twitter:image" content="http://img.viz.mobi/Art_Code_Bro.png">
 
 
 
@@ -447,7 +447,7 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p>
+        <p><img src="http://img.viz.mobi/Art_Code_Bro.png" alt=""></p>
 <a id="more"></a> 
 <p><code>阿扣</code>：上回我们<a href="http://www.uegeek.com/171226DLN7-GradientDescentinPython.html" target="_blank" rel="noopener">在 python 里面实现了单个神经元的梯度下降算法</a>。现在可以挑战一下多个神经元的网络了。</p>
 <p><code>阿特</code>：那会不会很难哦？</p>
@@ -458,21 +458,21 @@
 <li>有 3 个输入 x1,x2,x3，2 个隐层节点 h1,h2</li>
 <li>节点之间的权重用 w 表示，第一个下标为出发节点，第二个下标为目标节点，比如 $w_{11}$ 表示 x1 到 h1 的权重</li>
 </ul>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/network-with-labeled-weights.png" alt=""></p>
+<p><img src="http://img.viz.mobi/network-with-labeled-weights.png" alt=""></p>
 <p>我们把权重存在一个矩阵中，每一行对应一个输入值的权重，每一列对应一个隐层节点的权重：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/multilayer-diagram-weights.png" alt=""></p>
+<p><img src="http://img.viz.mobi/multilayer-diagram-weights.png" alt=""></p>
 <p>所以，隐层的第 j 个节点就表示为：$h_j = \sum<em>i w</em>{ij}x_i$</p>
 <p>权重和输入值相乘时，需要用到矩阵乘法中的点乘（dot product）：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/input-times-weights.png" alt=""></p>
+<p><img src="http://img.viz.mobi/input-times-weights.png" alt=""></p>
 <p><code>阿特</code>：啊……矩阵，我好些已经忘得差不多了……</p>
 <p><code>阿扣</code>：没关系，慢慢回忆起来。这里比较关键的是，两个矩阵相乘，<strong>左边矩阵的行数，必需跟右边矩阵的列数相等</strong>，不然没法相乘。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/matrix-mult-3.png" alt=""></p>
+<p><img src="http://img.viz.mobi/matrix-mult-3.png" alt=""></p>
 <p>比如我们要计算的神经网络的矩阵：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/matrix_eg1.png" alt=""></p>
+<p><img src="http://img.viz.mobi/matrix_eg1.png" alt=""></p>
 <p>左边矩阵有 1 行 3 列，右边矩阵有 3 行 1 列，它们是可以相乘的。</p>
 <p><code>阿特</code>：让我数一数……</p>
 <p><code>阿扣</code>：记得矩阵需要「门当户对」就好 😄 。上面这个矩阵，我们也可以调换左右顺序，并且让两个矩阵都转置（就是行列互换）一下来满足相乘的条件：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/inputs-matrix.png" alt=""></p>
+<p><img src="http://img.viz.mobi/inputs-matrix.png" alt=""></p>
 <p><code>阿特</code>：这跟上面那两个矩阵相乘的结果是一样的吗？</p>
 <p><code>阿扣</code>：是的。按照矩阵点乘的公式 ($h_1=x<em>1w</em>{11} + x<em>2w</em>{21}+x<em>3w</em>{31}$) 把它们展开，会发现其实是一个东西。</p>
 <h3 id="00-的-DeepLearning-笔记"><a href="#00-的-DeepLearning-笔记" class="headerlink" title="00 的 DeepLearning 笔记"></a>00 的 DeepLearning 笔记</h3><ul>

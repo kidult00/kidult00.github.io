@@ -106,16 +106,16 @@
 <meta property="og:url" content="http://uegeek.com/170929-DSNote3-NumPy-basic.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/data_science-title.jpg">
+<meta property="og:image" content="http://img.viz.mobi/data_science-title.jpg">
 <meta property="og:image" content="http://image.slidesharecdn.com/2013-11-14-20enterthematrix-131207071455-phpapp02/95/enter-the-matrix-10-638.jpg?cb=1386400624">
 <meta property="og:image" content="https://www.safaribooksonline.com/library/view/python-for-data/9781449323592/httpatomoreillycomsourceoreillyimages1346880.png">
 <meta property="og:image" content="https://www.safaribooksonline.com/library/view/python-for-data/9781449323592/httpatomoreillycomsourceoreillyimages1346882.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/wHm77PYlbWAFAAAAABJRU5ErkJggg==.png">
+<meta property="og:image" content="http://img.viz.mobi/wHm77PYlbWAFAAAAABJRU5ErkJggg==.png">
 <meta property="og:image" content="http://www.astroml.org/_images/fig_broadcast_visual_1.png">
-<meta property="og:updated_time" content="2018-08-22T09:34:56.000Z">
+<meta property="og:updated_time" content="2018-09-25T07:45:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="菜鸟数据科学入门03 - NumPy 数组基础和基本操作">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/data_science-title.jpg">
+<meta name="twitter:image" content="http://img.viz.mobi/data_science-title.jpg">
 
 
 
@@ -446,7 +446,7 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/data_science-title.jpg" alt=""></p>
+        <p><img src="http://img.viz.mobi/data_science-title.jpg" alt=""></p>
 <a id="more"></a> 
 <h3 id="为什么用-NumPy？"><a href="#为什么用-NumPy？" class="headerlink" title="为什么用 NumPy？"></a>为什么用 NumPy？</h3><p><a href="http://www.numpy.org/" target="_blank" rel="noopener">NumPy</a> 是一个用于科学计算的基础 Python 库（<a href="http://www.scipy.org/scipylib/download.html" target="_blank" rel="noopener">安装说明</a>）。它可以让你在 Python 中使用向量和数学矩阵，以及许多用 C 语言实现的底层函数。</p>
 <ul>
@@ -516,7 +516,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">In[]: print(<span class="string">'Values above 9:'</span>, norm10[mask])</span><br><span class="line"></span><br><span class="line">Out[]: (<span class="string">'Values above 9:'</span>, array([ <span class="number">13.69383139</span>,  <span class="number">13.49584954</span>]))</span><br></pre></td></tr></table></figure>
 <p>在生成图形时也非常好用：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">a = np.linspace(<span class="number">0</span>, <span class="number">2</span> * np.pi, <span class="number">50</span>)</span><br><span class="line">b = np.sin(a)</span><br><span class="line">plt.plot(a,b)</span><br><span class="line">mask = b &gt;= <span class="number">0</span></span><br><span class="line">plt.plot(a[mask], b[mask], <span class="string">'bo'</span>)</span><br><span class="line">mask = (b &gt;= <span class="number">0</span>) &amp; (a &lt;= np.pi / <span class="number">2</span>)</span><br><span class="line">plt.plot(a[mask], b[mask], <span class="string">'go'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/wHm77PYlbWAFAAAAABJRU5ErkJggg==.png" alt=""></p>
+<p><img src="http://img.viz.mobi/wHm77PYlbWAFAAAAABJRU5ErkJggg==.png" alt=""></p>
 <p>在程序中用条件式选择了图中不同的点。蓝色的点（也包含图中的绿点，只是绿点覆盖了蓝点），显示的是值大于零的点。绿点显示的是值大于 0 小于 Pi / 2 的点。</p>
 <h3 id="广播-Broadcasting"><a href="#广播-Broadcasting" class="headerlink" title="广播 Broadcasting"></a>广播 Broadcasting</h3><p>当不同 shape 的数组进行运算(按位加/按位减的运算，而不是矩阵乘法的运算)时，(某个维度上)小的数组就会沿着（同一维度上）大的数组自动填充。广播虽然是一个不错的偷懒办法，但是效率不高、降低运算速度通常也为人诟病。</p>
 <blockquote>

@@ -106,16 +106,16 @@
 <meta property="og:url" content="http://uegeek.com/180112python-scrapy-jdxl.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/robot_rock_dribbble.jpg">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/jdxlScrapy1.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/jdxlScrapy2.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/jdxlScrapy3.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/jdxlScrapyOutput.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/scrapy-jdxl-repo-qr.png">
-<meta property="og:updated_time" content="2018-08-22T09:36:39.000Z">
+<meta property="og:image" content="http://img.viz.mobi/robot_rock_dribbble.jpg">
+<meta property="og:image" content="http://img.viz.mobi/jdxlScrapy1.png">
+<meta property="og:image" content="http://img.viz.mobi/jdxlScrapy2.png">
+<meta property="og:image" content="http://img.viz.mobi/jdxlScrapy3.png">
+<meta property="og:image" content="http://img.viz.mobi/jdxlScrapyOutput.png">
+<meta property="og:image" content="http://img.viz.mobi/scrapy-jdxl-repo-qr.png">
+<meta property="og:updated_time" content="2018-09-25T07:43:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="码以致用02 - 用 Scrapy 爬虫抓取简单心理咨询师资料">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/robot_rock_dribbble.jpg">
+<meta name="twitter:image" content="http://img.viz.mobi/robot_rock_dribbble.jpg">
 
 
 
@@ -446,7 +446,7 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/robot_rock_dribbble.jpg" alt=""></p>
+        <p><img src="http://img.viz.mobi/robot_rock_dribbble.jpg" alt=""></p>
 <a id="more"></a> 
 <h2 id="目标和步骤"><a href="#目标和步骤" class="headerlink" title="目标和步骤"></a>目标和步骤</h2><p>爬虫目标：从简单心理网站上抓取心理咨询师列表和信息。</p>
 <p>学习目标：</p>
@@ -488,9 +488,9 @@
 </blockquote>
 <p>那怎么写 XPath 呢？</p>
 <p>感谢 Chrome，直接提供了 XPath 选取功能。对需要抓取的位置单击右键，点击 <code>Inspect</code>，打开 chrome-devtools 面板：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/jdxlScrapy1.png" alt=""></p>
+<p><img src="http://img.viz.mobi/jdxlScrapy1.png" alt=""></p>
 <p>对准要抓取的节点，再次右键，点击 <code>Copy XPath</code>，XPath 路径就复制好了。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/jdxlScrapy2.png" alt=""></p>
+<p><img src="http://img.viz.mobi/jdxlScrapy2.png" alt=""></p>
 <p>别高兴得太早，在调试坑里跌倒无数次的 00 颤抖地告诉你：<strong>直接复制的 XPath 往往不能直接用……</strong></p>
 <p>比如上面的咨询师姓名这里，chrome 提供的路径是：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//*[@id="content_wrapper"]/div[2]/div[2]/a[5]/div[1]/strong/text()</span><br></pre></td></tr></table></figure>
@@ -500,7 +500,7 @@
 <p>对初学者来说，如果之前没有太多写 html 和 css 的经验，每一个 xpath 都需要摸索好半天。不过这也是必经之路吧。折腾多了，就学会老老实实去看 <a href="https://www.w3schools.com/xml/xpath_intro.asp" target="_blank" rel="noopener">XPath 的文档</a>了。</p>
 <h3 id="问题3：内容没有节点怎么办？"><a href="#问题3：内容没有节点怎么办？" class="headerlink" title="问题3：内容没有节点怎么办？"></a>问题3：内容没有节点怎么办？</h3><p>抓到咨询师的咨询方式、地点、价格等信息的时候，坑爹的事情来了。</p>
 <p>这一坨的结构是：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/jdxlScrapy3.png" alt=""></p>
+<p><img src="http://img.viz.mobi/jdxlScrapy3.png" alt=""></p>
 <p>文字竟然没有包括在标签之内！前后都是个 i 标签！要怎么抓！</p>
 <p>然后开始了漫漫 Google 之路。最后终于找到了这篇：<a href="https://www.zhihu.com/question/38080188" target="_blank" rel="noopener">如何用scrapy提取不在标签内的文字？</a></p>
 <p>用 <code>following::text()</code> 的方式抓取了几个信息：</p>
@@ -521,12 +521,12 @@
 <p>然后搜到 <a href="https://zhuanlan.zhihu.com/p/24769534" target="_blank" rel="noopener">Scrapy爬虫框架教程（二）– 爬取豆瓣电影TOP250</a>，只需要在执行爬虫时设置输出参数就可以了：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl counselor -o output_file.csv</span><br></pre></td></tr></table></figure>
 <h2 id="查看、清理数据"><a href="#查看、清理数据" class="headerlink" title="查看、清理数据"></a>查看、清理数据</h2><p>新建 Jupyter Notebook，import pandas 包，用 <code>pd.read_csv</code> 命令查看文件：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/jdxlScrapyOutput.png" alt=""></p>
+<p><img src="http://img.viz.mobi/jdxlScrapyOutput.png" alt=""></p>
 <p>抓取的链接不完整，补全并输出：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'url'</span>] = <span class="string">'http://jiandanxinli.com'</span>+df[<span class="string">'url'</span>]</span><br><span class="line">df.to_csv(<span class="string">'counselor.csv'</span>, index=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
 <p>下一篇继续介绍用 Pandas 和 Bokeh 做简单的数据统计和可视化。</p>
 <p>项目源码请查看 <a href="https://github.com/kidult00/scrapy-jdxl" target="_blank" rel="noopener">00 的 github repo</a>：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/scrapy-jdxl-repo-qr.png" alt=""> </p>
+<p><img src="http://img.viz.mobi/scrapy-jdxl-repo-qr.png" alt=""> </p>
 <h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul>
 <li><a href="https://doc.scrapy.org/en/latest/" target="_blank" rel="noopener">Scrapy 1.5 documentation</a></li>
 <li><a href="https://www.wikiwand.com/en/XPath" target="_blank" rel="noopener">XPath - Wikiwand</a></li>

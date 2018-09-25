@@ -106,20 +106,20 @@
 <meta property="og:url" content="http://uegeek.com/171209DLN2-NeuralNetworks.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/neuralNetwork.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/perceptron-s.png">
+<meta property="og:image" content="http://img.viz.mobi/Art_Code_Bro.png">
+<meta property="og:image" content="http://img.viz.mobi/neuralNetwork.png">
+<meta property="og:image" content="http://img.viz.mobi/perceptron-s.png">
 <meta property="og:image" content="http://neuralnetworksanddeeplearning.com/images/tikz0.png">
 <meta property="og:image" content="https://viniciusarruda.github.io/images/mp_neuron.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/neuralNetwork1.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/ANN_example.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/fangjia_example.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/ngcourse_housingprice.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/HowToRecognizeDog.png">
-<meta property="og:updated_time" content="2018-08-22T09:35:30.000Z">
+<meta property="og:image" content="http://img.viz.mobi/neuralNetwork1.png">
+<meta property="og:image" content="http://img.viz.mobi/ANN_example.png">
+<meta property="og:image" content="http://img.viz.mobi/fangjia_example.png">
+<meta property="og:image" content="http://img.viz.mobi/ngcourse_housingprice.png">
+<meta property="og:image" content="http://img.viz.mobi/HowToRecognizeDog.png">
+<meta property="og:updated_time" content="2018-09-25T07:44:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DL笔记：Neural Networks 神经网络">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
+<meta name="twitter:image" content="http://img.viz.mobi/Art_Code_Bro.png">
 
 
 
@@ -450,16 +450,16 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p>
+        <p><img src="http://img.viz.mobi/Art_Code_Bro.png" alt=""></p>
 <a id="more"></a> 
 <p>回顾 - <a href="http://www.uegeek.com/171206DLNote1-ML-DL-Basic.html" target="_blank" rel="noopener">DL笔记：机器学习和深度学习的区别</a></p>
 <p><code>阿特</code>：听说深度学习的思想受到神经网络的启发，那是什么玩意儿？</p>
 <p><code>阿扣</code>：神经网络包括生物神经网络和人工神经网络。在生物神经网络中，每个神经元与其他神经元相连。它接收其他神经元的输入，当电位超过了某个阈值（threshold）而被「激活」时，会向相连的神经元「发射」（fire）信号。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/neuralNetwork.png" alt=""></p>
+<p><img src="http://img.viz.mobi/neuralNetwork.png" alt=""></p>
 <p><code>阿特</code>：那跟<a href="http://www.uegeek.com/171206DLNote1-ML-DL-Basic.html" target="_blank" rel="noopener">机器学习</a>有关系吗？机器没有生命啊……</p>
 <h3 id="Perceptrons-感知机"><a href="#Perceptrons-感知机" class="headerlink" title="Perceptrons 感知机"></a>Perceptrons 感知机</h3><p><code>阿扣</code>：参考生物神经网络，在计算机科学中，我们将独立的计算单元看做神经元。感知机 (Perceptron) 是神经网络的基本单位。每一个感知机都完成类似「给我一个数字，我告诉你它是正还是负」这样的简单任务。</p>
 <p>比如说，我们把神经元看做包含一个 0 到 1 之间数字的小球：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/perceptron-s.png" alt=""></p>
+<p><img src="http://img.viz.mobi/perceptron-s.png" alt=""></p>
 <p>神经元里面的数字叫激活函数 (Activation)。当数字超过某个阈值，比如说 0.5 时，我们就说这个神经元被激活了，它会输出 1 作为信号。如果神经元包含的数字小于 0.5，那它就输出 0，表示没有被激活。</p>
 <p>这个神经元就是一个感知机。</p>
 <p>一个感知机接收若干二进制输入 $x_1,x_2,…$，然后产生一个二进制输出：</p>
@@ -479,23 +479,23 @@
 <p>每一层神经元因为拥有上一层神经元的「经验」（上一层的输出），所以可以做出更抽象的「决策」。当我们把许多这样的神经元按一定的层次结构连接起来，就得到了人工神经网络（Artificial Neural Network）。</p>
 <p><code>阿特</code>：ANN，那我可以叫它 安？</p>
 <p><code>阿扣</code>：你喜欢咯…… 其实所有的深度学习的神经网络，都可以抽象成三个部分：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/neuralNetwork1.png" alt=""></p>
+<p><img src="http://img.viz.mobi/neuralNetwork1.png" alt=""></p>
 <p>除了输入和输出层，中间的层都叫隐层。<strong>深度神经网络就是隐层数量很多的神经网络，深度学习就是从多层神经网络中，自动学习出各种 pattern。</strong></p>
 <p><code>阿特</code>：666！能不能 input 废纸 output 比特币呀？</p>
 <p><code>阿扣</code>：……吃药时间到了</p>
 <h3 id="利用深度神经网络进行学习"><a href="#利用深度神经网络进行学习" class="headerlink" title="利用深度神经网络进行学习"></a>利用深度神经网络进行学习</h3><p><code>阿扣</code>：总结一下，对神经网络来说，<strong>输入层是数据集/变量，隐层是变量之间的关系（包含变量权重），形成高一级别的「模式」传递给下一个隐层，最后确定输出层的结果。</strong></p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/ANN_example.png" alt=""></p>
+<p><img src="http://img.viz.mobi/ANN_example.png" alt=""></p>
 <p><code>阿特</code>：为什么我总是听说「训练」神经网络好让它「学习」呢？</p>
 <p><code>阿扣</code>：训练神经网络的目标，其实就是<strong>计算和调整权重 weights，使得模型输出结果最接近真实的数据集。</strong></p>
 <p><code>阿特</code>：好抽象哦……</p>
 <p><code>阿扣</code>：举个例子，我们要预测房价的走势。假设知道房子大小可以预测房价，这个关系就可以用一个神经网络节点（node）来简单估计。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/fangjia_example.png" alt=""></p>
+<p><img src="http://img.viz.mobi/fangjia_example.png" alt=""></p>
 <p>如果我们知道很多房子的信息怎么办呢？这时候就需要很多的节点，这些节点构成神经网络。房子的多种信息作为输入，房价的预测值作为输出，中间层（可以有多个）是用来计算出前面一层信息的权重，得出一定的模式，传导给下一层，直到最后得出预测值 y。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/ngcourse_housingprice.png" alt=""></p>
+<p><img src="http://img.viz.mobi/ngcourse_housingprice.png" alt=""></p>
 <p>via: <a href="https://www.coursera.org/learn/neural-networks-deep-learning" target="_blank" rel="noopener">Neural Networks and Deep Learning | Coursera</a></p>
 <p><code>阿特</code>：好像有点明白了，让机器自己学习中间隐藏起来看不见的「规律」！</p>
 <p><code>阿扣</code>：再举个例子，图像识别是深度学习最广泛的应用之一，我们给系统看一张图，它能告诉我们这张图里有没有汪星人：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/HowToRecognizeDog.png" alt=""></p>
+<p><img src="http://img.viz.mobi/HowToRecognizeDog.png" alt=""></p>
 <p><code>阿特</code>：哇，原来机器在背后做了这么多事情，我还以为机器都很聪明呢，原来它们只是比较勤奋哈哈哈</p>
 <p><code>阿扣</code>：你得到了它~</p>
 <h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul>

@@ -82,7 +82,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python,深度学习,AI,ArtxCode,DeepLearning,Coding,编程,神经网络,Programming," />
+  <meta name="keywords" content="Python,深度学习,AI,ArtxCode,DeepLearning,Coding,神经网络,编程,Programming," />
 
 
 
@@ -100,26 +100,26 @@
 
 
 
-<meta name="keywords" content="Python,深度学习,AI,ArtxCode,DeepLearning,Coding,编程,神经网络,Programming">
+<meta name="keywords" content="Python,深度学习,AI,ArtxCode,DeepLearning,Coding,神经网络,编程,Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DeepLearning 笔记：如何评估神经网络的训练效果">
 <meta property="og:url" content="http://uegeek.com/180327-DeepLearning12-model-evaluation.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/DL-overfit.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/crossValidation.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/confusionMatrix1.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/DL-confusionMatrixTest1.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/DL-meanAbsoluteError.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/DL-meanSquaredError.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/DL-R2Score.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/DL-modelComplexityGraph.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/modelComplexityGraph.png">
-<meta property="og:updated_time" content="2018-08-22T09:38:02.000Z">
+<meta property="og:image" content="http://img.viz.mobi/Art_Code_Bro.png">
+<meta property="og:image" content="http://img.viz.mobi/DL-overfit.png">
+<meta property="og:image" content="http://img.viz.mobi/crossValidation.png">
+<meta property="og:image" content="http://img.viz.mobi/confusionMatrix1.png">
+<meta property="og:image" content="http://img.viz.mobi/DL-confusionMatrixTest1.png">
+<meta property="og:image" content="http://img.viz.mobi/DL-meanAbsoluteError.png">
+<meta property="og:image" content="http://img.viz.mobi/DL-meanSquaredError.png">
+<meta property="og:image" content="http://img.viz.mobi/DL-R2Score.png">
+<meta property="og:image" content="http://img.viz.mobi/DL-modelComplexityGraph.png">
+<meta property="og:image" content="http://img.viz.mobi/modelComplexityGraph.png">
+<meta property="og:updated_time" content="2018-09-25T07:42:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DeepLearning 笔记：如何评估神经网络的训练效果">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
+<meta name="twitter:image" content="http://img.viz.mobi/Art_Code_Bro.png">
 
 
 
@@ -450,7 +450,7 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p>
+        <p><img src="http://img.viz.mobi/Art_Code_Bro.png" alt=""></p>
 <a id="more"></a> 
 <p><code>阿扣</code>：阿特，我们已经学过怎样构建神经网络，得到预测结果了。不过到这里还没有完，还有重要的步骤。</p>
 <p><code>阿特</code>：是什么呢？</p>
@@ -459,11 +459,11 @@
 <p><code>阿扣</code>：没错，是这个思路。不过要怎样计算错误率呢？想想看，我们的模型是根据训练数据「拟合」出来的，也就是说，模型在这些数据中「学习」到了规律。但是这不代表模型在其他数据中也能预测得很好哦。</p>
 <p><code>阿特</code>：是不是像有的专家，在某些领域有经验，但是换一个领域可能跟普通人没什么区别。</p>
 <p><code>阿扣</code>：说得对。我们的训练模型也是这样，它有可能对给出的数据了如指掌，就像谈恋爱一样，成为某个姑娘的「专家」。但是换一个姑娘，人家喜欢吃什么、爱豆是谁、是不是颜控，它可能就抓瞎了。很多时候，不是模型复杂效果就好，因为那样可能是「过拟合」（over-fitting）了：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/DL-overfit.png" alt=""></p>
+<p><img src="http://img.viz.mobi/DL-overfit.png" alt=""></p>
 <h3 id="Cross-validation"><a href="#Cross-validation" class="headerlink" title="Cross validation"></a>Cross validation</h3><p>K-flld cross validation</p>
 <p><code>阿特</code>：那怎么防止过拟合呢？</p>
 <p><code>阿扣</code>：要学会评估训练效果。当模型遇到新的数据，看看这些数据它预测得咋样。一般的做法是，把训练数据分成 3 部分：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/crossValidation.png" alt=""></p>
+<p><img src="http://img.viz.mobi/crossValidation.png" alt=""></p>
 <table>
 <thead>
 <tr>
@@ -493,7 +493,7 @@
 <p><code>阿特</code>：就是把拿到的数据分三份，有一份要存起来，最后才拿出来用。</p>
 <p><code>阿扣</code>：奏四这个节奏。记住啊，千万不要用测试数据来训练模型！不然就「监守自盗」了啊！切记切记！</p>
 <h3 id="Confusion-matrices-混淆矩阵"><a href="#Confusion-matrices-混淆矩阵" class="headerlink" title="Confusion matrices 混淆矩阵"></a>Confusion matrices 混淆矩阵</h3><p><code>阿扣</code>：模型在做预测的时候，通常会犯两种错误。我们举个例子——要诊断某个人是不是得病。那么错误会有两种：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/confusionMatrix1.png" alt=""></p>
+<p><img src="http://img.viz.mobi/confusionMatrix1.png" alt=""></p>
 <ul>
 <li>实际上得病，但是判断为没病 (False Negative)</li>
 <li>实际上没病，但是判断为得病 (False Positive)</li>
@@ -503,17 +503,17 @@
 <p>Accuracy = (True positives + True Negatives) / Total</p>
 <p><code>阿特</code>：把对的加起来，除以总数。</p>
 <p><code>阿扣</code>：对呀对呀，来，给你留个小测试，看看是不是掌握了：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/DL-confusionMatrixTest1.png" alt=""></p>
+<p><img src="http://img.viz.mobi/DL-confusionMatrixTest1.png" alt=""></p>
 <h3 id="补充：如何评估线性模型"><a href="#补充：如何评估线性模型" class="headerlink" title="补充：如何评估线性模型"></a>补充：如何评估线性模型</h3><p>Mean Absolute Error ：把每个数据点的误差 $(y-\hat y)$ 加起来</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/DL-meanAbsoluteError.png" alt=""></p>
+<p><img src="http://img.viz.mobi/DL-meanAbsoluteError.png" alt=""></p>
 <p>Mean Squared Error ：把每个数据点误差的平方项加起来</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/DL-meanSquaredError.png" alt=""></p>
+<p><img src="http://img.viz.mobi/DL-meanSquaredError.png" alt=""></p>
 <p>R2 Score ：比较训练模型和最简单的模型。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/DL-R2Score.png" alt=""></p>
+<p><img src="http://img.viz.mobi/DL-R2Score.png" alt=""></p>
 <p>Model complexity graph</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/DL-modelComplexityGraph.png" alt=""></p>
+<p><img src="http://img.viz.mobi/DL-modelComplexityGraph.png" alt=""></p>
 <p>下图虚线表示验证集数据，实线表示训练数据。好的模型，在训练集和验证集上的准确率都比较高。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/modelComplexityGraph.png" alt=""></p>
+<p><img src="http://img.viz.mobi/modelComplexityGraph.png" alt=""></p>
 <h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul>
 <li><a href="https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101" target="_blank" rel="noopener">Deep Learning Nanodegree | Udacity</a></li>
 <li><a href="https://www.wikiwand.com/en/Confusion_matrix" target="_blank" rel="noopener">Confusion matrix - Wikiwand</a></li>
@@ -597,9 +597,9 @@
           
             <a href="/tags/Coding/" rel="tag"># Coding</a>
           
-            <a href="/tags/编程/" rel="tag"># 编程</a>
-          
             <a href="/tags/神经网络/" rel="tag"># 神经网络</a>
+          
+            <a href="/tags/编程/" rel="tag"># 编程</a>
           
             <a href="/tags/Programming/" rel="tag"># Programming</a>
           

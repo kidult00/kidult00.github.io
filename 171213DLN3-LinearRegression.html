@@ -106,16 +106,16 @@
 <meta property="og:url" content="http://uegeek.com/171213DLN3-LinearRegression.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/LinearRegressionInML.png">
+<meta property="og:image" content="http://img.viz.mobi/Art_Code_Bro.png">
+<meta property="og:image" content="http://img.viz.mobi/LinearRegressionInML.png">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Linear_regression.svg/640px-Linear_regression.svg.png?1512632790654">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/linearClassifier1.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/lin-reg-w-outliers.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/just-a-2d-reg.png">
-<meta property="og:updated_time" content="2018-08-22T09:35:35.000Z">
+<meta property="og:image" content="http://img.viz.mobi/linearClassifier1.png">
+<meta property="og:image" content="http://img.viz.mobi/lin-reg-w-outliers.png">
+<meta property="og:image" content="http://img.viz.mobi/just-a-2d-reg.png">
+<meta property="og:updated_time" content="2018-09-25T07:44:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DL笔记：Linear regression 线性回归">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
+<meta name="twitter:image" content="http://img.viz.mobi/Art_Code_Bro.png">
 
 
 
@@ -446,12 +446,12 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p>
+        <p><img src="http://img.viz.mobi/Art_Code_Bro.png" alt=""></p>
 <a id="more"></a> 
 <p><code>阿扣</code>：今天带你了解一下线性回归。</p>
 <p><code>阿特</code>：🙄 听起来就不是什么容易懂的东西……为什么要了解线……什么，线性回归呢？</p>
 <p><code>阿扣</code>：什么<a href="http://www.uegeek.com/171206DLNote1-ML-DL-Basic.html" target="_blank" rel="noopener">机器学习啊深度学习啊</a>，最终目的之一不就是<strong>根据已有数据做出预测</strong>，回归和分类都是「做预测」的主要手段。在下面这张图中找找看，线性回归在机器学习中的位置：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/LinearRegressionInML.png" alt=""></p>
+<p><img src="http://img.viz.mobi/LinearRegressionInML.png" alt=""></p>
 <p><code>阿特</code>：如果说目的都是做「预测」，回归分析和分类有什么不同呢?</p>
 <p><code>阿扣</code>：<strong>回归得到预测的具体数值</strong>，比如股市的行情、未来的气温值。<strong>而分类得到一个「声明」，或者说对数据打上的标签</strong>。</p>
 <p><code>阿特</code>：那什么是线性回归呢？</p>
@@ -473,7 +473,7 @@
 <p>我们先来用符号把这个 X 和 Y 的关系表达式写出来。A 表示我们手上有的数据集，比如你每天的能量摄入和体重值，哈哈哈，然后可以用它来预测你什么时候会变成个胖纸~</p>
 <p><code>阿特</code>：紧脏……</p>
 <p><code>阿扣</code>：来看看这张图，我告诉你每个字母代表什么：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/linearClassifier1.png" alt=""></p>
+<p><img src="http://img.viz.mobi/linearClassifier1.png" alt=""></p>
 <p><code>X</code> 是每天的能量摄入，<code>y</code> 是体重。我们想预测你的未来体重 $\hat y$ (给字母加个帽子一般表示它的预测值)，于是用 能量输入 乘以一个权重(weight) <code>W</code>，加上一个偏置项(bias) <code>b</code>，就是计算体重的函数了。</p>
 <p>$$WX + b = y$$</p>
 <p><code>阿特</code>：好像蛮简单的。</p>
@@ -492,7 +492,7 @@
 <li>只适用于本身是线性关系的数据</li>
 <li>对 outliner 敏感</li>
 </ul>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/lin-reg-w-outliers.png" alt=""></p>
+<p><img src="http://img.viz.mobi/lin-reg-w-outliers.png" alt=""></p>
 <p>比如上图右上角的几个点，偏离平局值比较多，我们叫 outliner。出现这种情况，我们可以试试其他的回归分析类型，或者放弃回归分析，用其他的算法了。</p>
 <table>
 <thead>
@@ -545,7 +545,7 @@
 <p>如果需要预测的结果依赖于多个变量，可以用多元线性回归，比如：</p>
 <p>$$y = m_1x_1 + m_2x_2 + b$$</p>
 <p>我们用一个三维平面来表示这个二元线性回归：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/just-a-2d-reg.png" alt=""></p>
+<p><img src="http://img.viz.mobi/just-a-2d-reg.png" alt=""></p>
 <p><code>阿特</code>：那么多回归类型，不会都要掌握吧？</p>
 <p><code>阿扣</code>：嗯，我们接触比较多的是逻辑回归(Logistic regression)。下回给你讲讲逻辑回归要用到的激活函数吧。</p>
 <p><code>阿特</code>：🐵 </p>

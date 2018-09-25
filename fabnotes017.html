@@ -106,21 +106,21 @@
 <meta property="og:url" content="http://uegeek.com/fabnotes017.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week8.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/FabISPMakeHex.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/usbtinyisp.jpeg">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/ISPmakefile.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/boardfuseok.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/boardfusemake.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/arduinoAddBoard.png">
+<meta property="og:image" content="http://img.viz.mobi/week8.png">
+<meta property="og:image" content="http://img.viz.mobi/FabISPMakeHex.png">
+<meta property="og:image" content="http://img.viz.mobi/usbtinyisp.jpeg">
+<meta property="og:image" content="http://img.viz.mobi/ISPmakefile.png">
+<meta property="og:image" content="http://img.viz.mobi/boardfuseok.png">
+<meta property="og:image" content="http://img.viz.mobi/boardfusemake.png">
+<meta property="og:image" content="http://img.viz.mobi/arduinoAddBoard.png">
 <meta property="og:image" content="http://highlowtech.org/wp-content/uploads/2011/10/boards-manager.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/arduinosetting.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/arduinochangepin.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/boardsucceed.jpeg">
-<meta property="og:updated_time" content="2016-08-06T14:31:40.000Z">
+<meta property="og:image" content="http://img.viz.mobi/arduinosetting.png">
+<meta property="og:image" content="http://img.viz.mobi/arduinochangepin.png">
+<meta property="og:image" content="http://img.viz.mobi/boardsucceed.jpeg">
+<meta property="og:updated_time" content="2018-09-25T08:17:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="作业8：刻板焊接烧程序[FabNotes017]">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week8.png">
+<meta name="twitter:image" content="http://img.viz.mobi/week8.png">
 
 
 
@@ -451,7 +451,7 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/week8.png" alt=""></p>
+        <p><img src="http://img.viz.mobi/week8.png" alt=""></p>
 <a id="more"></a>
 <p>这周的作业是</p>
 <blockquote>
@@ -475,7 +475,7 @@
 <p>  但是这时出现了错误：</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kidults-NMB:fabISP_mac.0.8.2_firmware kidult$ make hex</span><br><span class="line">avr-gcc -Wall -Os -DF_CPU=20000000	 -Iusbdrv -I. -DDEBUG_LEVEL=0 -mmcu=attiny44 -c usbdrv/usbdrv.c -o usbdrv/usbdrv.o</span><br><span class="line">make: avr-gcc: No such file or directory</span><br><span class="line">make: *** [usbdrv/usbdrv.o] Error 1</span><br></pre></td></tr></table></figure>
 <p>  好吧，忘记插我的 FabISP 到电脑了……插好后再试，ok 的：</p>
-<p>  <img src="http://7xjpra.com1.z0.glb.clouddn.com/FabISPMakeHex.png" alt=""></p>
+<p>  <img src="http://img.viz.mobi/FabISPMakeHex.png" alt=""></p>
 </li>
 <li><p>下一步，需要设置 fuse，让板子能使用外部的 clock ：输入命令 <code>make fuse</code></p>
 <p>  又出现了错误：</p>
@@ -484,10 +484,10 @@
 </li>
 </ul>
 <h3 id="第二轮尝试-使用现成的-USBtinyISP"><a href="#第二轮尝试-使用现成的-USBtinyISP" class="headerlink" title="第二轮尝试: 使用现成的 USBtinyISP"></a>第二轮尝试: 使用现成的 USBtinyISP</h3><p>首先，下载 <a href="http://academy.cba.mit.edu/classes/embedded_programming/hello.ftdi.44.echo.c" target="_blank" rel="noopener">hello.ftdi.44.echo.c</a>, <a href="http://academy.cba.mit.edu/classes/embedded_programming/hello.ftdi.44.echo.c.make" target="_blank" rel="noopener">hello.ftdi.44.echo.c.make</a> 。然后将板子连接到 USBtinyISP:</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/usbtinyisp.jpeg" alt=""></p>
+<p><img src="http://img.viz.mobi/usbtinyisp.jpeg" alt=""></p>
 <p>此处需要吐槽一下 New MacBook，只有一个 typeC 接口，一开始 USBtinyISP 接上去灯不亮，以为是我的 typeC 转接口坏了。试了大半个晚上后放弃。第二天试了一下连在另一台 MacBook Pro 上，USBtinyISP 的灯又亮了。插回到 New MacBook，依然不亮，怀疑是不是数据线坏了，又折腾半个晚上。偶然间又发现，充满电再插 USBtinyISP 会亮……所以问题可能出在 typeC 转接口对 USB 供电不足……</p>
 <p>折腾两三个晚上，终于到下一步。命令行进入前面下载好的两个文件的目录，输入命令：<br> <code>make -f hello.ftdi.44.echo.c.make</code></p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/ISPmakefile.png" alt=""></p>
+<p><img src="http://img.viz.mobi/ISPmakefile.png" alt=""></p>
 <p>Make 成功了。然后是 <code>sudo make -f hello.ftdi.44.echo.c.make program-usbtiny-fuses</code></p>
 <p>又出现错误提示：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">avr-objcopy -O ihex hello.ftdi.44.echo.out hello.ftdi.44.echo.c.hex;\</span><br><span class="line">	avr-size --mcu=attiny44 --format=avr hello.ftdi.44.echo.out</span><br><span class="line">AVR Memory Usage</span><br><span class="line">----------------</span><br><span class="line">Device: attiny44</span><br><span class="line"></span><br><span class="line">Program:     758 bytes (18.5% Full)</span><br><span class="line">(.text + .data + .bootloader)</span><br><span class="line"></span><br><span class="line">Data:         64 bytes (25.0% Full)</span><br><span class="line">(.data + .bss + .noinit)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">avrdude -p t44 -P usb -c usbtiny -U lfuse:w:0x5E:m</span><br><span class="line"></span><br><span class="line">avrdude: initialization failed, rc=-1</span><br><span class="line">         Double check connections and try again, or use -F to override</span><br><span class="line">         this check.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">avrdude <span class="keyword">done</span>.  Thank you.</span><br><span class="line"></span><br><span class="line">make: *** [program-usbtiny-fuses] Error 1</span><br></pre></td></tr></table></figure>
@@ -502,10 +502,10 @@
 <h3 id="第三轮尝试"><a href="#第三轮尝试" class="headerlink" title="第三轮尝试"></a>第三轮尝试</h3><p>终于盼到实验室重新开放，在空气质量500的房间中刻板子，然后搜刮了元器件回家打算自己焊。好不容易把东西凑齐，开工后发现焊锡太粗太劣质，根本没法焊。重新买了焊锡线，开工后崩溃地发现，电烙铁没有买配焊台的，调不了温度，焊枪温度太高，很容易把板子上面的铜面焊焦了。可好的板子都用完了，还是没有重新作出电路板来。</p>
 <p>等到周末，又去到实验室老老实实刻板子，焊元件。</p>
 <p>电路板完成后，连上 USBtinyISP，终于 fuse 成功：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/boardfuseok.png" alt=""></p>
+<p><img src="http://img.viz.mobi/boardfuseok.png" alt=""></p>
 <p>下一步</p>
 <p><code>make -f hello.ftdi.44.echo.c.make program-usbtiny</code></p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/boardfusemake.png" alt=""></p>
+<p><img src="http://img.viz.mobi/boardfusemake.png" alt=""></p>
 <p>现在，可以将程序烧录到板子上了。</p>
 <p>照着教程下载 <a href="http://academy.cba.mit.edu/classes/input_devices/python/term.py" target="_blank" rel="noopener">term.py</a>，输入命令 <code>python term.py /dev/ttyUSB0 115200</code>，继续是熟悉的错误提示：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"term.py"</span>, line <span class="number">89</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    ser = serial.Serial(port,speed)</span><br><span class="line">  File <span class="string">"/Library/Python/2.7/site-packages/serial/serialutil.py"</span>, line <span class="number">180</span>, <span class="keyword">in</span> __init__</span><br><span class="line">    self.open()</span><br><span class="line">  File <span class="string">"/Library/Python/2.7/site-packages/serial/serialposix.py"</span>, line <span class="number">294</span>, <span class="keyword">in</span> open</span><br><span class="line">    <span class="keyword">raise</span> SerialException(msg.errno, <span class="string">"could not open port %s: %s"</span> % (self._port, msg))</span><br><span class="line">serial.serialutil.SerialException: [Errno <span class="number">2</span>] could <span class="keyword">not</span> open port /dev/ttyUSB0: [Errno <span class="number">2</span>] No such file <span class="keyword">or</span> directory: <span class="string">'/dev/ttyUSB0'</span></span><br></pre></td></tr></table></figure>
@@ -516,22 +516,22 @@
 <blockquote>
 <p><a href="https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json" target="_blank" rel="noopener">https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json</a></p>
 </blockquote>
-<p> <img src="http://7xjpra.com1.z0.glb.clouddn.com/arduinoAddBoard.png" alt=""></p>
+<p> <img src="http://img.viz.mobi/arduinoAddBoard.png" alt=""></p>
 <p> 然后找到菜单里的 “Tools &gt; Board” ，打开 boards manager 。滚到列表底部，可以看到 “ATtiny”.<br> <img src="http://highlowtech.org/wp-content/uploads/2011/10/boards-manager.png" alt=""></p>
 <p> 安装，然后关闭 boards manager。</p>
 </li>
 <li><p>设置</p>
 <p> 设置 board:”ATtiny”, Processor:”ATtiny44”, Clock:”20 MHz”, Port:”USB”</p>
-<p> <img src="http://7xjpra.com1.z0.glb.clouddn.com/arduinosetting.png" alt=""></p>
+<p> <img src="http://img.viz.mobi/arduinosetting.png" alt=""></p>
 </li>
 <li><p>修改程序</p>
 <p> Load Arduino 自带的 Blink example, 把 13 号引脚改为 7:</p>
-<p> <img src="http://7xjpra.com1.z0.glb.clouddn.com/arduinochangepin.png" alt=""></p>
+<p> <img src="http://img.viz.mobi/arduinochangepin.png" alt=""></p>
 </li>
 <li><p>Burn Bootloader</p>
 </li>
 <li><p>成功了！</p>
-<p> <img src="http://7xjpra.com1.z0.glb.clouddn.com/boardsucceed.jpeg" alt=""></p>
+<p> <img src="http://img.viz.mobi/boardsucceed.jpeg" alt=""></p>
 </li>
 </ol>
 <hr>

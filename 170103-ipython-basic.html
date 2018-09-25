@@ -106,16 +106,16 @@
 <meta property="og:url" content="http://uegeek.com/170103-ipython-basic.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/170103IPython_basic_title.png">
+<meta property="og:image" content="http://img.viz.mobi/170103IPython_basic_title.png">
 <meta property="og:image" content="http://image.slidesharecdn.com/1idanielrodriguez-160614230356/95/connecting-python-to-the-spark-ecosystem-3-638.jpg?cb=1465945555">
 <meta property="og:image" content="http://jupyter.org/assets/jupyterpreview.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/IP.SS.cell.jpg">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/IP.SS.celltype.jpg">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/IP.SS.tab.jpg">
-<meta property="og:updated_time" content="2018-08-22T09:32:51.000Z">
+<meta property="og:image" content="http://img.viz.mobi/IP.SS.cell.jpg">
+<meta property="og:image" content="http://img.viz.mobi/IP.SS.celltype.jpg">
+<meta property="og:image" content="http://img.viz.mobi/IP.SS.tab.jpg">
+<meta property="og:updated_time" content="2018-09-25T07:46:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="菜鸟数据科学入门02 - IPython 基础">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/170103IPython_basic_title.png">
+<meta name="twitter:image" content="http://img.viz.mobi/170103IPython_basic_title.png">
 
 
 
@@ -446,7 +446,7 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/170103IPython_basic_title.png" alt=""></p>
+        <p><img src="http://img.viz.mobi/170103IPython_basic_title.png" alt=""></p>
 <a id="more"></a> 
 <h2 id="一、为什么要用-IPython？"><a href="#一、为什么要用-IPython？" class="headerlink" title="一、为什么要用 IPython？"></a>一、为什么要用 IPython？</h2><p><a href="http://ipython.org/" target="_blank" rel="noopener">IPython</a> (Interactive Python 的简写) 是一个强大的交互式 Python Shell，由 Fernando Perez 在 2001 发起。它的目标是提供 “Tools for the entire life cycle of research computing.” 如果说 Python 是数据科学操作的引擎，那么 IPython 就是交互式的控制面板。</p>
 <p>IPython 的优点：</p>
@@ -470,10 +470,10 @@
 <p>浏览器会打开本地的 Jupyter 控制台，新建或选择 .ipynb 后缀文件打开，就可以看到 Notebook 的页面了：</p>
 <p><img src="http://jupyter.org/assets/jupyterpreview.png" alt=""></p>
 <h2 id="三、Notebook-基本结构和操作"><a href="#三、Notebook-基本结构和操作" class="headerlink" title="三、Notebook 基本结构和操作"></a>三、Notebook 基本结构和操作</h2><p>在 Jupyter Notebook 中，基本的操作单元是 cell：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/IP.SS.cell.jpg" alt=""></p>
+<p><img src="http://img.viz.mobi/IP.SS.cell.jpg" alt=""></p>
 <p>每个 cell 由 <code>In</code>和<code>Out</code>，即输入和输出部分组成。在这里，IPython 实际上生成了名叫 <code>In</code>和<code>Out</code> 的 Python 变量，把操作历史存储起来，以便随时调用。<code>_</code>可调用上一个输出，<code>_X</code>可调用 <code>Out[X]</code> 的输出。</p>
 <p>IPython 中的 cell 支持 Markdown 格式，所以很适合用来生成带源码和运行结果的文档。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/IP.SS.celltype.jpg" alt=""></p>
+<p><img src="http://img.viz.mobi/IP.SS.celltype.jpg" alt=""></p>
 <p>Notebook 中常用操作</p>
 <p>命令模式 (按 <code>Esc</code> 键进入)</p>
 <table>
@@ -565,7 +565,7 @@
 </tbody>
 </table>
 <h2 id="四、实用功能"><a href="#四、实用功能" class="headerlink" title="四、实用功能"></a>四、实用功能</h2><h3 id="Tab自动补全"><a href="#Tab自动补全" class="headerlink" title="Tab自动补全"></a>Tab自动补全</h3><p>在输入命令时按下 tab 键，可以查看补全选项：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/IP.SS.tab.jpg" alt=""></p>
+<p><img src="http://img.viz.mobi/IP.SS.tab.jpg" alt=""></p>
 <h3 id="用-查询文档"><a href="#用-查询文档" class="headerlink" title="用 ? 查询文档"></a>用 <code>?</code> 查询文档</h3><p>比如，要查询 <code>len</code> 的用法，只需要输入 <code>len?</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [2]: len?</span><br><span class="line"></span><br><span class="line">Type:        builtin_function_or_method</span><br><span class="line">String form: &lt;built-in function len&gt;</span><br><span class="line">Namespace:   Python builtin</span><br><span class="line">Docstring:</span><br><span class="line">len(object) -&gt; integer</span><br><span class="line"></span><br><span class="line">Return the number of items of a sequence or mapping.</span><br></pre></td></tr></table></figure>
 <p>另外，用 <code>??</code> 可以查看源代码，比如输入<code>square??</code></p>

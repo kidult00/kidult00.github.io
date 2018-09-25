@@ -106,13 +106,13 @@
 <meta property="og:url" content="http://uegeek.com/171220DLN5-CostFunction.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/latex_9521ee448af952b9e073b5d31974241c.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/il_for_SSE-1.png">
-<meta property="og:updated_time" content="2018-08-22T09:35:53.000Z">
+<meta property="og:image" content="http://img.viz.mobi/Art_Code_Bro.png">
+<meta property="og:image" content="http://img.viz.mobi/latex_9521ee448af952b9e073b5d31974241c.png">
+<meta property="og:image" content="http://img.viz.mobi/il_for_SSE-1.png">
+<meta property="og:updated_time" content="2018-09-25T07:44:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DL笔记：Cost function 损失函数">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png">
+<meta name="twitter:image" content="http://img.viz.mobi/Art_Code_Bro.png">
 
 
 
@@ -443,7 +443,7 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Art_Code_Bro.png" alt=""></p>
+        <p><img src="http://img.viz.mobi/Art_Code_Bro.png" alt=""></p>
 <a id="more"></a> 
 <p><code>阿扣</code>：阿特，还记得训练神经网络的目标其实是什么吗？</p>
 <p><code>阿特</code>：我记得好像是要找出最合适的权重(weights)，使得输出结果尽可能接近真实值。</p>
@@ -451,10 +451,10 @@
 <p><code>阿特</code>：那怎么知道模型是不是在「犯错」呢？</p>
 <p><code>阿扣</code>：我们会找一个度量标准。一个常见的度量方法是计算误差的平方和（SSE, sum of the squared errors）：</p>
 <p>$$ E=\frac{1}{2}\sum_\mu\sum_j[y^\mu_j - f(\sum<em>i w</em>{ij}x^\mu_i)]^2 $$</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/latex_9521ee448af952b9e073b5d31974241c.png" alt=""></p>
+<p><img src="http://img.viz.mobi/latex_9521ee448af952b9e073b5d31974241c.png" alt=""></p>
 <p><code>阿特</code>：你……欺负人 &gt;.&lt;</p>
 <p><code>阿扣</code>：别着急，我们来拆解这一坨是个什么东西。先看看各个字母的含义：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/il_for_SSE-1.png" alt=""></p>
+<p><img src="http://img.viz.mobi/il_for_SSE-1.png" alt=""></p>
 <p>这个等式里面，有三个求和项（就是这个翻转了 90° 的 M： $\sum$ ）。</p>
 <p>最右边的求和项 $\sum<em>i w</em>{ij}x^\mu_i$ ，表示我们训练出来的权重 w 乘上输入值 x 得出的目标值 $\hat y$（也就是我们给数据打算的标签），然后用这些结果跟实际的数据中的 y 值做比较，看看偏差有多大。</p>
 <p>现在你理解了最右边的求和项了吗？</p>

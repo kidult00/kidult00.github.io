@@ -106,17 +106,17 @@
 <meta property="og:url" content="http://uegeek.com/180118-python-pandas-data-analysis.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/robot_rock_dribbble.jpg">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/jdxlScrapyOutput.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-01-18%20at%203.53.32%20PM.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-01-18%20at%203.57.36%20PM.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-01-18%20at%203.58.52%20PM.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-01-18%20at%204.10.14%20PM.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/jdxl-wordcloud.png">
-<meta property="og:updated_time" content="2018-08-22T09:36:52.000Z">
+<meta property="og:image" content="http://img.viz.mobi/robot_rock_dribbble.jpg">
+<meta property="og:image" content="http://img.viz.mobi/jdxlScrapyOutput.png">
+<meta property="og:image" content="http://img.viz.mobi/Screen%20Shot%202018-01-18%20at%203.53.32%20PM.png">
+<meta property="og:image" content="http://img.viz.mobi/Screen%20Shot%202018-01-18%20at%203.57.36%20PM.png">
+<meta property="og:image" content="http://img.viz.mobi/Screen%20Shot%202018-01-18%20at%203.58.52%20PM.png">
+<meta property="og:image" content="http://img.viz.mobi/Screen%20Shot%202018-01-18%20at%204.10.14%20PM.png">
+<meta property="og:image" content="http://img.viz.mobi/jdxl-wordcloud.png">
+<meta property="og:updated_time" content="2018-09-25T07:42:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="码以致用03 - 用 Pandas 分析爬虫抓取的数据">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/robot_rock_dribbble.jpg">
+<meta name="twitter:image" content="http://img.viz.mobi/robot_rock_dribbble.jpg">
 
 
 
@@ -447,10 +447,10 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/robot_rock_dribbble.jpg" alt=""></p>
+        <p><img src="http://img.viz.mobi/robot_rock_dribbble.jpg" alt=""></p>
 <a id="more"></a> 
 <p>上一篇，我们<a href="http://www.uegeek.com/180112python-scrapy-jdxl.html" target="_blank" rel="noopener">用 Scrapy 从简单心理网站上抓取了心理咨询师的信息</a>。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/jdxlScrapyOutput.png" alt=""></p>
+<p><img src="http://img.viz.mobi/jdxlScrapyOutput.png" alt=""></p>
 <p>接下来试着分析一下咨询师的价格。</p>
 <h3 id="如何去掉某一列中不需要的字符？"><a href="#如何去掉某一列中不需要的字符？" class="headerlink" title="如何去掉某一列中不需要的字符？"></a>如何去掉某一列中不需要的字符？</h3><p>在 <code>price</code> 列中，数据格式是 <code>600 元/次</code>。很明显，中文字符会给统计价格带来不便，需要想办法去掉。</p>
 <ul>
@@ -461,7 +461,7 @@
 <p>Pandas 语句可以这样写：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'price'</span>].str.rstrip(<span class="string">'元/次'</span>).apply(pd.to_numeric)</span><br></pre></td></tr></table></figure>
 <p>结果：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-01-18%20at%203.53.32%20PM.png" alt=""></p>
+<p><img src="http://img.viz.mobi/Screen%20Shot%202018-01-18%20at%203.53.32%20PM.png" alt=""></p>
 <h3 id="如何统计价格？"><a href="#如何统计价格？" class="headerlink" title="如何统计价格？"></a>如何统计价格？</h3><p>用 Pandas 做基本的数据统计如均值、最大值、最小值等，非常方便，分别用 <code>mean()</code>, <code>max()</code>, <code>min()</code>就可以：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"平均价格：&#123;:.1f&#125;元 \n最高价格：&#123;&#125;元 \n最低价格：&#123;&#125;元"</span>.format(df[<span class="string">'price'</span>].mean(),df[<span class="string">'price'</span>].max(),df[<span class="string">'price'</span>].min()))</span><br></pre></td></tr></table></figure>
 <ul>
@@ -470,20 +470,20 @@
 <li>最低价格：100元</li>
 </ul>
 <p>另外，Pandas 还提供了 <code>describe()</code> 函数，快速给出概要统计值：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-01-18%20at%203.57.36%20PM.png" alt=""></p>
+<p><img src="http://img.viz.mobi/Screen%20Shot%202018-01-18%20at%203.57.36%20PM.png" alt=""></p>
 <p>然后单独取出收费最高和最低的咨询师资料：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df.loc[df[<span class="string">'price'</span>].idxmax()]</span><br><span class="line">df.loc[df[<span class="string">'price'</span>].idxmin()]</span><br></pre></td></tr></table></figure>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-01-18%20at%203.58.52%20PM.png" alt=""></p>
+<p><img src="http://img.viz.mobi/Screen%20Shot%202018-01-18%20at%203.58.52%20PM.png" alt=""></p>
 <h3 id="如何统计咨询师介绍里的词频？"><a href="#如何统计咨询师介绍里的词频？" class="headerlink" title="如何统计咨询师介绍里的词频？"></a>如何统计咨询师介绍里的词频？</h3><p><strong>方法 1 ：用 jieba 分词，用 Counter 统计</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line"><span class="comment"># 单独导出咨询师介绍列</span></span><br><span class="line">df[<span class="string">'info'</span>].to_csv(<span class="string">'info.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'info.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    text = f.read()</span><br><span class="line"></span><br><span class="line">wordlist = Counter()</span><br><span class="line">words = jieba.cut(text)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">    <span class="keyword">if</span> len(word) &gt; <span class="number">1</span>: </span><br><span class="line">        wordlist[word] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen_cloud_word</span><span class="params">()</span>:</span></span><br><span class="line">    words = []</span><br><span class="line">    <span class="keyword">for</span> word,cnt <span class="keyword">in</span> wordlist.most_common(<span class="number">30</span>):</span><br><span class="line">        words.append(word)</span><br><span class="line">    <span class="keyword">return</span> words</span><br></pre></td></tr></table></figure>
 <p>列出前 30 个高频词：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Screen%20Shot%202018-01-18%20at%204.10.14%20PM.png" alt=""></p>
+<p><img src="http://img.viz.mobi/Screen%20Shot%202018-01-18%20at%204.10.14%20PM.png" alt=""></p>
 <p><strong>方法 2 ：用 wordcloud 直接制作标签云</strong></p>
 <p>word cloud 是一个 python 的标签云生成库，可以直接输入文本，得到标签云图片，还可以定制图片形状和颜色，小巧好用。(<a href="https://github.com/amueller/word_cloud" target="_blank" rel="noopener">https://github.com/amueller/word_cloud</a>)</p>
 <p>结合 matplotlib，很快就可以画出高频词的标签云：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line">%config InlineBackend.figure_format=<span class="string">'retina'</span></span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud, ImageColorGenerator</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">d = path.dirname(<span class="string">'info.txt'</span>)</span><br><span class="line"><span class="comment"># 设置字体</span></span><br><span class="line">font = <span class="string">r'/Users/kidult/Library/Fonts/MFKeSong_Noncommercial-Regular.TTF'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Read the whole text</span></span><br><span class="line">text = open(path.join(d, <span class="string">'info.txt'</span>)).read()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 排除词</span></span><br><span class="line">stopwords=(<span class="string">'Dr'</span>,<span class="string">'of'</span>,<span class="string">'to'</span>,<span class="string">'and'</span>,<span class="string">'The'</span>,<span class="string">'in'</span>,<span class="string">'zx'</span>,<span class="string">'至今'</span>,<span class="string">'中国'</span>,<span class="string">'同时'</span>,<span class="string">'当然'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用图片截取并取色</span></span><br><span class="line">heart_coloring = np.array(Image.open(path.join(d, <span class="string">"heart.png"</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Generate a word cloud image</span></span><br><span class="line">wordcloud = WordCloud(max_words=<span class="number">80</span>, background_color=<span class="string">'white'</span>, mask=heart_coloring,</span><br><span class="line">                      max_font_size=<span class="number">60</span>, relative_scaling=<span class="number">0.4</span>, font_path=font,stopwords=stopwords, random_state=<span class="number">42</span>)</span><br><span class="line">wordcloud.generate(text)</span><br><span class="line"></span><br><span class="line">image_colors = ImageColorGenerator(heart_coloring)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">8</span>))</span><br><span class="line">plt.axis(<span class="string">"off"</span>)</span><br><span class="line">plt.imshow(wordcloud.recolor(color_func=image_colors), interpolation=<span class="string">"bilinear"</span>);</span><br></pre></td></tr></table></figure>
 <p>结果如下：</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/jdxl-wordcloud.png" alt=""></p>
+<p><img src="http://img.viz.mobi/jdxl-wordcloud.png" alt=""></p>
 <p>完整的 Jupyter Notebook，请查看 <a href="https://github.com/kidult00/scrapy-jdxl/blob/master/jdxl/output/jdxl_experts_analysis.ipynb" target="_blank" rel="noopener">00 的 Github</a>。</p>
 <iframe src="http://nbviewer.jupyter.org/github/kidult00/scrapy-jdxl/blob/master/jdxl/output/jdxl_experts_analysis.ipynb" width="780" height="500"></iframe>
 

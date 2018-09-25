@@ -82,7 +82,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ArtxCode,Max/MSP,Jitter,矩阵,教程,Creative Coding," />
+  <meta name="keywords" content="ArtxCode,Max/MSP,Jitter,Creative Coding,教程,矩阵," />
 
 
 
@@ -100,32 +100,32 @@
 
 
 
-<meta name="keywords" content="ArtxCode,Max&#x2F;MSP,Jitter,矩阵,教程,Creative Coding">
+<meta name="keywords" content="ArtxCode,Max&#x2F;MSP,Jitter,Creative Coding,教程,矩阵">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Max&#x2F;MSP&#x2F;Jitter 官方教程翻译04 - 创建矩阵">
 <meta property="og:url" content="http://uegeek.com/180826-jitter-04.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-4.jpg">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/02patcher.png">
+<meta property="og:image" content="http://img.viz.mobi/Max-title-4.jpg">
+<meta property="og:image" content="http://img.viz.mobi/02patcher.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02a.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02a.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02b.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/max%20console.png">
+<meta property="og:image" content="http://img.viz.mobi/max%20console.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02c.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02d.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02e.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02f.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02g.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02h.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/max%20console%20fill.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/output%20display.png">
+<meta property="og:image" content="http://img.viz.mobi/max%20console%20fill.png">
+<meta property="og:image" content="http://img.viz.mobi/output%20display.png">
 <meta property="og:image" content="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02i.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png">
-<meta property="og:updated_time" content="2018-08-29T13:22:37.000Z">
+<meta property="og:image" content="http://img.viz.mobi/maxgroup0825.png">
+<meta property="og:updated_time" content="2018-09-25T07:38:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Max&#x2F;MSP&#x2F;Jitter 官方教程翻译04 - 创建矩阵">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-4.jpg">
+<meta name="twitter:image" content="http://img.viz.mobi/Max-title-4.jpg">
 
 
 
@@ -456,7 +456,7 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/Max-title-4.jpg" alt=""></p>
+        <p><img src="http://img.viz.mobi/Max-title-4.jpg" alt=""></p>
 <a id="more"></a>
 <ul>
 <li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li>
@@ -471,7 +471,7 @@
 <p>在<a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">上一篇教程</a>中，我们使用 <code>jit.window</code> 对象打开一个窗口，并将矩阵的内容显示为彩色像素。</p>
 <p>显示的矩阵来自 <code>jit.movi​​e</code> 对象，它用 QuickTime 视频的当前帧连续填充矩阵。<code>jit.window</code> 之所以能显示视频，只不过因为被告知要显示哪些矩阵的内容; 事实上，矩阵中的任何数值都可以显示。本教程通过一个更简单的例子帮助你理解矩阵，它是 Jitter 的核心思想。</p>
 <p>以下是本节完整的 patcher 截图</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/02patcher.png" alt=""></p>
+<p><img src="http://img.viz.mobi/02patcher.png" alt=""></p>
 <h2 id="jit-matrix-对象"><a href="#jit-matrix-对象" class="headerlink" title="jit.matrix 对象"></a>jit.matrix 对象</h2><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02a.png" alt=""><br>为单个 8 位值创建 16x12 存储空间</p>
 <p><code>jit.matrix</code> 对象创建矩阵并在内存中声明存储空间，以便我们存储和检索数值，并打印或显示出来。 <code>jit.matrix</code> 的参数包括：</p>
 <ul>
@@ -489,7 +489,7 @@
 <h2 id="jit-print对象"><a href="#jit-print对象" class="headerlink" title="jit.print对象"></a>jit.print对象</h2><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02b.png" alt=""><br>打印 <code>jit.matrix</code> 的内容</p>
 <p>在 <code>jit.matrix</code> 下面有一个新的 Jitter 对象：<code>jit.print</code>。它在入口处接收矩阵名称（<code>jit_matrix</code> 消息）并格式化矩阵的值，以便在 Max Console 中打印。它将格式化的值打印到 Max Console，就像 Max 的 <code>print</code> 对象一样，然后在 <code>jit_matrix</code> 消息中以矩阵名称的形式传递出来。</p>
 <p>单击标记为 “output” 的按钮，这会让 <code>jit.matrix</code> 传递矩阵名称给 <code>jit.print</code>，后者格式化值并在 Max Console 中显示：<code>jit_matrix [somename]</code>。左边的单词表示这是由 <code>jit.print</code>  对象打印的，这是 <code>jit.matrix</code> 出口的结果。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/max%20console.png" alt=""></p>
+<p><img src="http://img.viz.mobi/max%20console.png" alt=""></p>
 <p>因为我们没有指定矩阵的名称（没有指定 <code>jit.matrix</code> 的第一个输入参数），所以 <code>jit.matrix</code> 自己会生成唯一名称（类似 “u330000007”）。这里我们并不关心名称是什么，但它能够告诉 <code>jit.print</code> 对象要显示哪个矩阵的数据。</p>
 <p>上图显示了来自 <code>jit.print</code> 矩阵中的所有值，按 16 列和 12 行整齐排列。它们现在都是 0，因为我们还没有在矩阵中填充任何内容。</p>
 <h2 id="在矩阵中设置和查询值"><a href="#在矩阵中设置和查询值" class="headerlink" title="在矩阵中设置和查询值"></a>在矩阵中设置和查询值</h2><p>在<a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">上一章</a>中，我们知道如何使用 QuickTime 视频中的彩色数据帧自动填充整个矩阵。还可以将数值放置在矩阵的特定单元格中，并从特定位置检索。</p>
@@ -515,9 +515,9 @@
 <p>那些 bang 触发了<code>uzi 16</code>对象，因此它每次都会发出 1~16 的数字。然后把这些数字减去 1，这样值的范围就限定在 0~11 和 0~15，输出的结果作为矩阵中的 y 和 x 位置。对于 12 个 y 位置中的每一个，<code>uzi 16</code>对象指定所有 x 位置，然后在数学表达式（expr）中使用这些数字来计算要存储在该位置的值。这些数字从 outlet 发送给主 patch 创建定义好的 <code>setcell</code> 消息，就像我们之前手动做的那样。</p>
 <p>这里不需要关注具体的数学表达式。它可以生成任何公式。刚才我们用一个公式在每列中产生亮度的正弦梯度，这将让列的整体亮度从左向右增加（即随 x 增加）。</p>
 <p>关闭 <code>patcher fillmatrix</code> ，然后单击标记为 “fill” 的按钮。矩阵在 Max 的 scheduler 的每个时钟节拍中填充值（由子 patch 中的 uzi 对象生成）。现在单击标有 “output” 的按钮查看矩阵的内容。数值将打印在 Max Console 中，并显示在 <code>jit.pwindow</code> 中。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/max%20console%20fill.png" alt=""></p>
+<p><img src="http://img.viz.mobi/max%20console%20fill.png" alt=""></p>
 <p>即使对于像 16x12 这样的小型矩阵，仅仅查看 Max Console 中的数字打印输出，我们很难看到数值数据的趋势。而 <code>jit.pwindow</code> 中的显示能够清楚而直观地展示值在矩阵中的变化情况。这是数据可视化的好处。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/output%20display.png" alt=""></p>
+<p><img src="http://img.viz.mobi/output%20display.png" alt=""></p>
 <p>你可以想象在 Max 中以算法方式填充矩阵的其他方法，我们将在后面的教程中演示。</p>
 <h2 id="jit-matrix-可以响应的其他消息"><a href="#jit-matrix-可以响应的其他消息" class="headerlink" title="jit.matrix 可以响应的其他消息"></a>jit.matrix 可以响应的其他消息</h2><p><code>jit.matrix</code> 还可以接收许多其他消息。例如可以使用相同的值填充所有 <code>jit.matrix</code>。发送给<code>jit.matrix</code> 的 <code>clear</code>消息将所有值设置为 0，<code>setall</code> 消息（setall 后跟一个值）将矩阵中的所有单元设置为同一个值。</p>
 <p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter02i.png" alt=""><br>查询矩阵位置 8,6 处的值; 报告单元格 8 6 val [value(s)]</p>
@@ -532,7 +532,7 @@
 <p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p>
 </blockquote>
 <p>👇👇👇</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/maxgroup0825.png" alt=""></p>
+<p><img src="http://img.viz.mobi/maxgroup0825.png" alt=""></p>
 
       
     </div>
@@ -606,11 +606,11 @@
           
             <a href="/tags/Jitter/" rel="tag"># Jitter</a>
           
-            <a href="/tags/矩阵/" rel="tag"># 矩阵</a>
+            <a href="/tags/Creative-Coding/" rel="tag"># Creative Coding</a>
           
             <a href="/tags/教程/" rel="tag"># 教程</a>
           
-            <a href="/tags/Creative-Coding/" rel="tag"># Creative Coding</a>
+            <a href="/tags/矩阵/" rel="tag"># 矩阵</a>
           
         </div>
       

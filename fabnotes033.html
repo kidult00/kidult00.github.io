@@ -106,14 +106,14 @@
 <meta property="og:url" content="http://uegeek.com/fabnotes033.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week16.png">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week11mylightboard.jpeg">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/WeChat_1465544599.jpeg">
-<meta property="og:image" content="http://7xjpra.com1.z0.glb.clouddn.com/WeChat_1465547042.jpeg">
-<meta property="og:updated_time" content="2016-08-08T13:07:37.000Z">
+<meta property="og:image" content="http://img.viz.mobi/week16.png">
+<meta property="og:image" content="http://img.viz.mobi/week11mylightboard.jpeg">
+<meta property="og:image" content="http://img.viz.mobi/WeChat_1465544599.jpeg">
+<meta property="og:image" content="http://img.viz.mobi/WeChat_1465547042.jpeg">
+<meta property="og:updated_time" content="2018-09-25T08:10:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="作业16：界面和应用编程[FabNotes033]">
-<meta name="twitter:image" content="http://7xjpra.com1.z0.glb.clouddn.com/week16.png">
+<meta name="twitter:image" content="http://img.viz.mobi/week16.png">
 
 
 
@@ -444,20 +444,20 @@
       
 
       
-        <p><img src="http://7xjpra.com1.z0.glb.clouddn.com/week16.png" alt=""></p>
+        <p><img src="http://img.viz.mobi/week16.png" alt=""></p>
 <a id="more"></a> 
 <p>这周的作业是</p>
 <blockquote>
 <p>为输入/输出设备写一个应用程序</p>
 </blockquote>
 <p>为之前做的这个检测光线的板子做个小应用好了。</p>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/week11mylightboard.jpeg" alt=""></p>
+<p><img src="http://img.viz.mobi/week11mylightboard.jpeg" alt=""></p>
 <p>先试着让板子跟串口通讯，看看元件是不是正常传送检测值。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;SoftwareSerial.h&quot;</span><br><span class="line"> </span><br><span class="line">const int analogInPin =  A3;  // Analog input pin that the potentiometer is attached to</span><br><span class="line">int sensorValue = 0;        // value read from the pot</span><br><span class="line"> </span><br><span class="line">const int Rx = 2; // this is physical pin 7</span><br><span class="line">const int Tx = 7; // this is physical pin 6</span><br><span class="line">SoftwareSerial mySerial(Rx, Tx);</span><br><span class="line"> </span><br><span class="line">void setup() &#123;</span><br><span class="line">  pinMode(Rx, INPUT);</span><br><span class="line">  pinMode(Tx, OUTPUT);</span><br><span class="line">  mySerial.begin(9600); // send serial data at 9600 bits/sec</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void loop()&#123;</span><br><span class="line">  sensorValue = analogRead(analogInPin);</span><br><span class="line">  mySerial.println(sensorValue);</span><br><span class="line">  delay(500);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://7xjpra.com1.z0.glb.clouddn.com/WeChat_1465544599.jpeg" alt=""></p>
+<p><img src="http://img.viz.mobi/WeChat_1465544599.jpeg" alt=""></p>
 <p>光电晶体管工作正常。 </p>
 <p><a href="https://youtu.be/IOLJht_QtZU" target="_blank" rel="noopener">Video</a></p>
-<p>下一步，在 processing 里面写界面的程序。当检测到光线变暗时，界面提示 “-_- It’s dark!” ，如果光线变亮，提示 “it’s getting light ”：<br><img src="http://7xjpra.com1.z0.glb.clouddn.com/WeChat_1465547042.jpeg" alt=""></p>
+<p>下一步，在 processing 里面写界面的程序。当检测到光线变暗时，界面提示 “-_- It’s dark!” ，如果光线变亮，提示 “it’s getting light ”：<br><img src="http://img.viz.mobi/WeChat_1465547042.jpeg" alt=""></p>
 <p>The code:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">import processing.serial.*;</span><br><span class="line">Serial myPort;</span><br><span class="line">int lf = 10;</span><br><span class="line"> </span><br><span class="line">void setup()&#123;</span><br><span class="line">  size(300,300);</span><br><span class="line">  myPort = new Serial(this,&quot;/dev/tty.usbserial-A400gwhT&quot;,9600);</span><br><span class="line">  textAlign(CENTER, CENTER);</span><br><span class="line">  fill(255);</span><br><span class="line">  textSize(20);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void draw()&#123;</span><br><span class="line">  while(myPort.available() &gt; 0)&#123;</span><br><span class="line">    String str = myPort.readStringUntil(lf);</span><br><span class="line"></span><br><span class="line">    if(str!=null)&#123;</span><br><span class="line">      int value = Integer.parseInt(trim(str));</span><br><span class="line"> </span><br><span class="line">       if (value &gt;900) &#123;</span><br><span class="line">        print(&quot;it&apos;s dark &quot;);</span><br><span class="line">        println(value);</span><br><span class="line">        background(0,0,0);</span><br><span class="line">        text(&quot;-_- It&apos;s dark! &quot;,150,120);</span><br><span class="line">        text(value,150,200);</span><br><span class="line">       &#125; </span><br><span class="line">       else&#123;</span><br><span class="line">        print(&quot;it&apos;s getting light &quot;);</span><br><span class="line">        println(value);</span><br><span class="line">        background(204,153,0);</span><br><span class="line">        text(&quot;:P It&apos;s getting light &quot;,150,120);</span><br><span class="line">        text(value,150,200);</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <div class="video-container"><iframe src="//www.youtube.com/embed/O1mLcUZq9NM" frameborder="0" allowfullscreen></iframe></div>
