@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-09-25T07:36:48.000Z</updated>
+  <updated>2018-09-30T10:20:24.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Max/MSP/ Jitter 官方教程翻译20 - 迭代和矩阵重采样</title>
+    <link href="http://uegeek.com/180930-jitter-20.html"/>
+    <id>http://uegeek.com/180930-jitter-20.html</id>
+    <published>2018-09-30T10:19:02.000Z</published>
+    <updated>2018-09-30T10:20:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/Max-title-2.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180903-jitter-11.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 11 - 矩阵混合</a></li><li><a href="https://www.uegeek.com/180904-jitter-12.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 12 - Chromakeying 视频去背景合成</a></li><li><a href="https://www.uegeek.com/180906-jitter-13.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 13 - 列表和矩阵</a></li><li><a href="https://www.uegeek.com/180907-jitter-14.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 14 - 颜色查找表</a></li><li><a href="https://www.uegeek.com/180908-jitter-15.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 15 - 剪刀和胶水</a></li><li><a href="https://www.uegeek.com/180909-jitter-16.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 16 - 矩阵定位</a></li><li><a href="https://www.uegeek.com/180915-jitter-17.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 17 - 图像旋转</a></li><li><a href="https://www.uegeek.com/180917-jitter-18.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程18 - 使用已命名的矩阵</a></li><li><a href="https://www.uegeek.com/180924-jitter-19.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程19 - 使用已命名矩阵的反馈</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter18" target="_blank" rel="noopener">Tutorial 18: Iterative Processes and Matrix Re-Sampling</a></p></blockquote><p>本教程演示何时应该使用已命名 <code>jit.matrix</code> 对象的更复杂示例，以及如何使用 <code>jit.matrix</code> 对图像增采样（upsampling）和减采样（downsampling）。</p><p>patch 左上角包含一个 <code>jit.movi​e</code>，patch 打开时会加载一个静止图像 fuzz_circle.jpg。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18a.png" alt="">            </p><p>单击开关启动 <code>metro</code>。图像出现在 patch 右下角的 <code>jit.pwindow</code> 中：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18b.png" alt=""></p><p>fuzz_circle.jpg 包含一个白色圆圈与黑色背景，在最终矩阵里尺寸被缩放为小的圆形。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18c.png" alt=""></p><h2 id="Getting-Drunk"><a href="#Getting-Drunk" class="headerlink" title="Getting Drunk"></a>Getting Drunk</h2><p> patch 顶部将 <code>jit.movi​​e</code> 中的图像写入链条中的第一个 <code>jit.matrix</code>。<code>bangbang</code> 对象发出的 bang 用 <code>drunk</code> 对象随机变化坐标，来改变 <code>jit.matrix</code> 每一帧的 dstdimstart 和 dstdimend 属性。请注意第一个 <code>jit.matrix</code> 的 usedstdim 属性为 1，它将缩放输入矩阵：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18d.png" alt=""></p><p>第一个 <code>jit.matrix</code> 只是用来缩放圆形图像以适应输出矩阵的 80 x 60 区域。请注意，格式化缩放图像坐标的消息框，也会逐帧清除矩阵（用 <code>clear</code> 消息），这样就不会残留之前的图像。<code>drunk</code> 改变了圆圈的位置，让它四处抖动。</p><p>单击 patch 右下角 <code>jit.pwindow</code> 中的某个位置。圆圈将跳到单击的位置，并从那里开始移动。</p><p>在 <code>jit.pwindow</code> 中单击鼠标的结果将发送到 <code>r winclick</code> 对象。<code>route</code> 对象将 <code>mouse</code> 相关的信息抽出来，用 <code>unpack</code> 对象提取前两个元素（鼠标单击的 x 和 y 位置）。然后使用来设置 <code>drunk</code> 对象的新原点。</p><h2 id="反馈网络"><a href="#反馈网络" class="headerlink" title="反馈网络"></a>反馈网络</h2><p>一旦圆圈图像已被缩放并由 <code>jit.matrix</code> 放置好，patch 流程就进入一对名为 blurry 的 <code>jit.matrix</code> 反馈链：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18e.png" alt=""><br>反馈循环</p><p>这一部分包含四个 <code>jit.matrix</code>（不包括顶部的一个缩小圆形图像的对象）。其中两个对象同名（blurry），仅用于存储和检索由 patch 的其余部分之前生成的矩阵。最上面的 <code>jit.matrix</code> 将矩阵发送到第一个 <code>jit.op</code> 的右入口。此外，它用 <code>bangbang</code> 发送 bang 到第一个 <code>jit.matrix blurry</code> 让它输出矩阵。该矩阵最终到达 <code>jit.op</code> 的左入口，然后显示（通过 <code>jit.pwindow</code>）并乘以标量（第二个 <code>jit.op</code> 对象）。它最终会覆盖先前的矩阵（进入下面的 <code>jit.matrix blurry</code>）。先不管中间一些对象，可以看到 blurry 矩阵将保留圆形图像前一“帧”的某个版本：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18f.png" alt="">            </p><p>第一个 <code>jit.op @op max</code> 组合新旧图像。@op max 比较两个矩阵中每个单元并保留值较高的那个单元。第二个 <code>jit.op @op *</code> 对象乘以标量（由 patch 右侧的数字框发送到 <code>s fb</code>）使图像变暗：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18g.png" alt=""><br>反馈量指定图像在存储之前变暗的程度</p><p>在 patch 的蓝色区域中用标记为 <code>Feedback</code> 的数字框来更改反馈量。单击 <code>jit.pwindow</code> 移动圆圈时，注意圆圈后的轨迹如何增加或减少，这取决于所设置的反馈量。</p><h2 id="增采样和减采样"><a href="#增采样和减采样" class="headerlink" title="增采样和减采样"></a>增采样和减采样</h2><p>图像处理算法的最后一步，涉及这两个对象之间的区域：发送前一帧中保留的矩阵的第一个 <code>jit.matrix blurry</code>，以及合成前后两个矩阵的 <code>jit.op</code>：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18h.png" alt=""><br>用 <code>jit.matrix</code> 重新采样图像</p><p>教程 patch 中两个绿色 <code>jit.matrix</code> 重新采样上方的 <code>jit.matrix</code> 的模糊图像矩阵。两个 <code>jit.matrix</code> 中的第一个将 dim 的属性设置为 4 x 4。可以用蓝色区域中标记为 Pixelation 的数字框来更改。这个数字被发送到 <code>jit.matrix</code> 上方的 <code>s dim</code>   对象。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18i.png" alt="">            </p><p>在教程 patch 的蓝色区域中，更改标记为 Pixelation 的数字框。注意圆形轨迹如何变化。</p><p>对图像矩阵减采样，<code>jit.matrix</code> 将 320 x 240 矩阵从其输入复制到一个小得多的矩阵中，舍弃多余的数据。得到像素化的图像，可以用矩阵的 dim 控制。</p><p>第二个 <code>jit.matrix</code> 将矩阵增采样回到 320 x 240 大小。当后续的对象处理矩阵时，它们有全分辨率图像并将输出全分辨率矩阵。</p><p><code>jit.streak</code> 对象通过随机复制到相邻单元得到好看的像素化轨迹效果。<code>jit.streak</code> 的 prob 属性控制矩阵中任何给定单元格被复制到相邻单元格的可能性。这里的 prob 为 0.5，任何给定单元格都有 50％ 的可能性。</p><blockquote><p>技术细节：默认情况下 <code>jit.streak</code> 将单元格复制到左侧。更改  direction 属性将改变此行为。还有一个 scale 属性可以指定被复制的单元格与其原始值的亮度比值。<code>jit.streak</code> 的帮助文档有更具体的信息。</p></blockquote><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18j.png" alt="">            </p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>成对命名 <code>jit.matrix</code> 可以有效地存储先前迭代。这些技术可以用合成对象（例如 <code>jit.op</code>）组合先前矩阵与当前矩阵来生成视频延迟效果。还可以使用 <code>jit.matrix</code> 重新采样图像（使用 dim 属性）以更有效地执行算法（矩阵越小，图像处理得越快）并创建像素化效果。<code>jit.streak</code> 对象根据概率因子（prob 属性）随机复制单元格到相邻单元格。</p><hr><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://img.viz.mobi/maxgroup0825.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/Max-title-2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
+    
+      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
+    
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Max/MSP/Jitter 官方教程翻译19 - 使用已命名矩阵的反馈</title>
@@ -40,11 +74,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -74,11 +108,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -108,11 +142,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -142,11 +176,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -176,11 +210,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -208,11 +242,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -242,11 +276,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="列表" scheme="http://uegeek.com/tags/%E5%88%97%E8%A1%A8/"/>
     
@@ -276,11 +310,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Chromakeying" scheme="http://uegeek.com/tags/Chromakeying/"/>
     
@@ -312,11 +346,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Math" scheme="http://uegeek.com/tags/Math/"/>
     
@@ -348,11 +382,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -380,11 +414,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -414,11 +448,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -448,11 +482,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -484,11 +518,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -516,11 +550,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="数学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
@@ -550,11 +584,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -584,9 +618,9 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -616,9 +650,9 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -648,53 +682,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>破解 AI 时代的焦虑 —— 从人机交互到人机协同创作</title>
-    <link href="http://uegeek.com/180717-human-computer-symbiosis.html"/>
-    <id>http://uegeek.com/180717-human-computer-symbiosis.html</id>
-    <published>2018-07-17T15:11:58.000Z</published>
-    <updated>2018-09-25T07:40:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/AI-co-keynote_imges.001.jpeg" alt=""></p><a id="more"></a> <p>这是 4 月做的一次分享。大概是我做过的分享中，现场讨论气氛最热烈的一次了。</p><p>最近抽空整理成文章，希望大家可以继续讨论这个有趣、有争议的话题。</p><p>为什么分享这个话题呢？</p><p>我做了好多年交互设计的工作，所以学习和工作一直有一个离不开的主题——人机交互（Human-Computer Interaction）。</p><h2 id="人机关系的演进"><a href="#人机关系的演进" class="headerlink" title="人机关系的演进"></a>人机关系的演进</h2><p>什么是人机交互？我把它简单理解为：</p><blockquote><p>人如何与机器或是某个复杂系统的沟通和互动过程。</p></blockquote><p>更为完整的版本，请看我在知乎上的回答 <a href="https://www.zhihu.com/question/19788122/answer/119319267" target="_blank" rel="noopener">什么是交互设计？</a></p><p>比如，鼠标就是一个解决人和机器互动问题的经典产品。</p><p><img src="http://img.viz.mobi/AI-co-keynote_imges.003.jpeg" alt=""></p><p>现在大家都觉得鼠标再平常不过了，但是在当年，Douglas Engelbart 的这一项发明，极好地解决了人们在图形化计算机界面操纵屏幕元素的问题。为了表彰这项发明以及在人机交互领域的开拓式贡献，Douglas Engelbart 在 1997 年获得了「计算机界的诺贝尔奖」——图灵奖。</p><blockquote><p>For an inspiring vision of the future of interactive computing and the invention of key technologies to help realize this vision. – Turing Award Citation</p></blockquote><p>人和机器的对话、交互一直在演进。这也从一个侧面反映了人创造工具的历史：</p><p><img src="http://killerinfographics.com/wp-content/uploads/2014/12/DickiesIGjess.edits12-211.jpg" alt=""></p><p>人创造的工具越来越多样、复杂、强大。想想看，今天我们在手机上能完成多少事情。</p><p>于是，有人慢慢感到这种发展速度似乎不大对劲……奇点要来了，AlphaGo 也出现了。</p><p><img src="http://img.viz.mobi/human-progress.png" alt=""></p><p>随着深度学习热潮的演进，大家发现，以前为了让机器智能化而不得不做的很多工作，比如，符号化、标准化、模块化、输入大量专家知识、需要庞大的训练数据集、要做苦脏累的特征工程等等，现在都简化了。基本上，只要目标足够清晰、可操作，训练数据和计算资源足够，机器学习产生的结果就可以满足要求。</p><p>我个人也经历了一次切身的体验。</p><p>今年年初在上 Udacity 的 <a href="https://github.com/kidult00/deep_learning_nanodegree_projects" target="_blank" rel="noopener">Deep Learning Nano Degree 课程</a>的时候，最后一个实践项目，是基于人脸图像库，用生成对抗网络（GAN）算法自动生成人脸。</p><p>虽然在学习过程中，早已对算法能实现的结果有所预期。但是当我把程序放到 AWS 的 GPU 上面跑了不到二十分钟，看到结果时还是忍不住隐隐感到机器的强大和压迫。</p><p>这是最开始几个训练迭代生成的模糊不清的轮廓：</p><p><img src="http://img.viz.mobi/face-gen-before.png" alt=""></p><p>这是十几分钟训练结束后生成的人脸：</p><p><img src="http://img.viz.mobi/face-gen-after.png" alt=""></p><p>说一点儿都不焦虑是假的。</p><p>何况各种媒体还铺天盖地强化这种焦虑，今天是一百零八种会被机器取代的工作，明天是哪个比赛机器又战胜了人……</p><p>于是大家经不住会问：</p><p><img src="http://img.viz.mobi/AI-co-keynote_imges.010.jpeg" alt=""></p><p>似乎只有像诗词、小说、爵士乐、即兴表演这些领域，机器看起来就是不太擅长。</p><p>但，也不好说。</p><p>Paul 是一个专门给人画肖像画的机器。从 2011 年至今已经创做了非常多的作品。看起来非常有艺术感，不是吗？</p><p><img src="http://img.viz.mobi/AI-co-keynote_imges.011.jpeg" alt=""></p><p><img src="http://img.viz.mobi/emoji-desperate.png" alt=""></p><p>有时候在焦虑之余，又忍不住会想：这种焦虑到底从何而来？</p><p>如果看过莱考夫「我们赖以生存的隐喻」的同学都知道，隐喻 Metaphor 对我们的影响有多么大。仔细想想，感到机器的威胁，是不是也源于人机关系的一些基本隐喻？</p><p>我们基本上都是以一种对立或一分为二的方式来看待这些基本词汇：</p><p><img src="http://img.viz.mobi/AI-co-keynote_imges.014.jpeg" alt=""></p><p>看到这些词汇，我们会下意识地觉得它们是对立关系。逻辑、精确、冰冷的工程思维，怎么跟想象、感性、个性、创作融为一炉呢？</p><p>这大概就是问题所在了。</p><h2 id="隐喻和可能"><a href="#隐喻和可能" class="headerlink" title="隐喻和可能"></a>隐喻和可能</h2><p>语言有边界。这是语言能高效传递信息的代价之一。</p><p>所以，打破语言或者说概念的界限，也许就是找到新出路的起点。</p><p>（PS. 在心理咨询中，咨询师很重要的一部分工作，是帮助来访者呈现问题、reframe 问题，而不是直接插手去替他解决问题。）</p><p>其实早在 50 多年前，就有人探讨过人机关系的「未来简史」。</p><p>美国心理学家和计算机科学家 Licklider 在 Man-Computer Symbiosis 这篇论文中，讨论人跟机器的关系存在什么样的可能性，提出「人机共生」的概念。</p><p><img src="http://img.viz.mobi/AI-co-keynote_imges.016.jpeg" alt=""></p><p>快 60 年过去了，技术的发展让「蠢机器」第一次有可能成为人类的「好基友」，我们为什么首先感到的是焦虑而不是兴奋呢？</p><p>还记得 2016 年，在 AlphaGo 战胜李世石后，跟安猪老师在大理有过一次讨论。当时我的感慨是，为 AlphaGo 的胜利感到挺开心的，但并不是因为我是技术的脑残粉，而是因为我觉得到了这个时候，人不得不去面对这样一个问题：</p><blockquote><p>人到底擅长什么？</p></blockquote><p>也就是说，当接受生物智能无法跟上非生物智能的发展时：</p><p><img src="http://img.viz.mobi/AI-co-keynote_imges.018.jpeg" alt=""></p><p>人到底有哪些可以让机器「羡慕」（当然，机器不会有这种情绪）的天赋呢？</p><p>至今我还没有答案，但我想，大概会包括：直觉、洞察力、探索和意外的创造。人欣赏「意外」的审美、运用「意外」的创造力，应该会长期秒杀机器。</p><blockquote><p>人跟机器最大的区别到底是什么？</p></blockquote><p>我一直在问自己这个问题。</p><p><img src="http://img.viz.mobi/AI-co-keynote_imges.021.jpeg" alt=""></p><p>意图，可能是现阶段人跟机器最大的差别。</p><p>人因为时间、空间、认知方面的三大局限，因为生命时长极其有限、可触达的空间极其有限、工作记忆（内存）极其有限，决定了人类的一些基本 drive 和价值观。人的美妙与荒谬，可能都来自于两行二选一的核心代码：</p><blockquote><p>Be numb/sober and Duplicate</p><p>Be insane/self-distroying and Love</p></blockquote><p>所以我（naive地）认为，突破时间、空间、认知限制，渴望无限，是人类物种永恒的追求，换一个词来概括，那就是——意图。</p><p>我们在基本意图上发展出复杂的能力，会体会微妙的情感，会追求意义，会审美、表达、共情，会讲故事和构建社会关系……</p><p>而机器，无所不能，但就是没有意图！</p><p><strong>这样看来，现在难道不是人类最好的时代吗？有一个毫无私心、任劳任怨、潜力无限的助手，为什么我们担心的是被助手取代，而不是兴高采烈地放开手脚去创造呢？</strong></p><h2 id="人机关系的新阶段"><a href="#人机关系的新阶段" class="headerlink" title="人机关系的新阶段"></a>人机关系的新阶段</h2><p>无论技术如何发展，人类从来没有停止过创造。</p><p>这是用 Google DeepDream 算法生成的作品：</p><p><img src="http://img.viz.mobi/DeepDream2.jpg" alt=""></p><p>DeepDream 网站的首页，已经为人机关系的新时代做了注脚：</p><p><img src="http://img.viz.mobi/Human-ai-collaboration.png" alt=""></p><p>艺术家们一直在尝试探索人机关系，可能是这样的：</p><p><img src="http://img.viz.mobi/Alex%20Kiessling.jpg" alt=""></p><p>也可能是这样的：</p><p><img src="http://img.viz.mobi/di_2016_ars_11-1024x684.jpg" alt=""></p><p>上图是一位叫做 Dragan iLiC 艺术家的项目，人充当机器的笔刷，由机械臂控制着人去作画。</p><p>在分享的现场，这张图引发了热烈的讨论。有的小伙伴表示，这样做的目的到底是什么，她看不出任何意义。有的小伙伴认为这是对人机关系一种悲观的表达。有的小伙伴的态度则更为中立而开放……</p><p>我想，这恰恰就是艺术家的目的吧：激发人们的反思与讨论。并不存在对与错，只是 raise questions，这也许就是最大的善意。</p><h2 id="音乐，人机协同即将爆发的领域？"><a href="#音乐，人机协同即将爆发的领域？" class="headerlink" title="音乐，人机协同即将爆发的领域？"></a>音乐，人机协同即将爆发的领域？</h2><p>最近关注音乐和技术结合的领域比较多，越来越觉得音乐也许会迎来人机共创的繁荣时期。</p><p>音乐本身是符号化、形式化非常强的「语言」。音乐的规律经过数百年的研究和沉淀，几乎已经没有太多规律上的「未知和秘密」，更多的变化会来自文化思潮影响下的风格探索。</p><p>算法作曲早已不是什么新鲜事，基于 AI 自动生成音乐已经有很多成熟的应用。甚至是在对即兴表演要求相当高的爵士乐，也已经有人机共同即兴表演的尝试。比如 Al Biles 教授的 GenJam 项目，从 2005 年至今，已经演出过数十场。</p><iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=z0712pdmu7n&tiny=0&auto=0" allowfullscreen></iframe><p><a href="https://v.qq.com/x/page/z0712pdmu7n.html" target="_blank" rel="noopener">GenJam’s Journey_腾讯视频</a></p><p>而去年的 Qosmo AI DJ 项目也展示了人类 DJ 和 AI DJ 一起 Jam 的效果~</p><iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=t0602v8uxp2&tiny=0&auto=0" allowfullscreen></iframe><p><a href="https://v.qq.com/x/page/t0602v8uxp2.html" target="_blank" rel="noopener">AI DJ Project 人工智能 DJ 与人类合作打碟_腾讯视频</a></p><h2 id="何以解忧？"><a href="#何以解忧？" class="headerlink" title="何以解忧？"></a>何以解忧？</h2><blockquote><p>这是最坏的时代</p><p>也是最好的时代</p></blockquote><p>这取决于我们现在每做的一个决定、每投入的分分秒秒。</p><p>回到主题，如何破解 AI 时代的焦虑呢？</p><p>以下是 00 给（自己）的解药：</p><p><img src="http://img.viz.mobi/AI-co-keynote_imges.031.jpeg" alt=""></p><p><img src="http://img.viz.mobi/AI-co-keynote_imges.032.jpeg" alt=""></p><p><img src="http://img.viz.mobi/AI-co-keynote_imges.033.jpeg" alt=""></p><p><img src="http://img.viz.mobi/AI-co-keynote_imges.035.jpeg" alt=""></p><p>回归创造者的使命，装备上创造所需要的心、眼、脑、手，去看去爱去体验。知识可以学习，但智慧更多是一种体验。把技术当成伙伴和切磋的对手，去行动，去试验，去创造。</p><p>最后</p><p><img src="http://img.viz.mobi/AI-co-keynote_imges.037.jpeg" alt=""></p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://web.stanford.edu/dept/SUL/library/extra4/sloan/MouseSite/1968Demo.html" target="_blank" rel="noopener">Doug Engelbart 1968 Demo</a></li><li><a href="http://patricktresset.com/new/" target="_blank" rel="noopener">PATRICK TRESSET |</a></li><li><a href="http://worrydream.com/refs/Licklider%20-%20Man-Computer%20Symbiosis.pdf" target="_blank" rel="noopener">Licklider - Man-Computer Symbiosis.pdf</a></li><li><a href="http://www.draganilic.org/" target="_blank" rel="noopener">www.draganilic.org</a></li><li><a href="http://igm.rit.edu/~jabics/GenJam.html" target="_blank" rel="noopener">GenJam</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/AI-co-keynote_imges.001.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="交互设计" scheme="http://uegeek.com/tags/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/"/>
-    
-      <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Deisgn" scheme="http://uegeek.com/tags/Deisgn/"/>
-    
-      <category term="人工智能" scheme="http://uegeek.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-      <category term="HCI" scheme="http://uegeek.com/tags/HCI/"/>
-    
-      <category term="人机交互" scheme="http://uegeek.com/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/"/>
-    
-      <category term="人机共生" scheme="http://uegeek.com/tags/%E4%BA%BA%E6%9C%BA%E5%85%B1%E7%94%9F/"/>
-    
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
-      <category term="跨界" scheme="http://uegeek.com/tags/%E8%B7%A8%E7%95%8C/"/>
-    
-      <category term="创新" scheme="http://uegeek.com/tags/%E5%88%9B%E6%96%B0/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
