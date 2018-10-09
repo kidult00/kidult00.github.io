@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="t1oNPvdeea" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ArtxCode,Creative Coding,艺术,Generative Art,Computational Creativity,创意,创造力," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="ArtxCode,Creative Coding,艺术,Generative Art,Computational Creativity,创意,创造力">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生成式艺术和算法创作01-概述">
+<meta property="og:url" content="http://uegeek.com/181009-generative-art-creativity-01.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.viz.mobi/CC-blogtitle.png">
+<meta property="og:image" content="http://img.viz.mobi/justMyMind.jpg">
+<meta property="og:image" content="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=be465b88fdf21a6e05ab522458452344&auto=format&fit=crop&w=800&q=60">
+<meta property="og:image" content="https://images.g2a.com/newlayout/470x470/1x1x0/a476e4dbb6b0/591ef89dae653af3c942eff4">
+<meta property="og:image" content="http://www.sfu.ca/~mdevos/notes/geom-sym/wallpaper/2222/egypt8b.jpg">
+<meta property="og:image" content="https://www.researchgate.net/profile/Philip_Galanter/publication/220947690/figure/fig2/AS:651931043233793@1532443881222/Effective-complexity-used-to-organize-various-generative-art-systems.png">
+<meta property="og:image" content="http://img.viz.mobi/reflective%20system.png">
+<meta property="og:image" content="http://img.viz.mobi/interactive%20system.png">
+<meta property="og:image" content="https://static1.squarespace.com/static/5800c6211b631b49b4d63657/t/5807227bebbd1a790b76fdb6/1476862594263/">
+<meta property="og:image" content="https://images2.corriereobjects.it/methode_image/2015/09/09/Cultura/Foto%20Gallery%20-%20Trattate/sfpeople_ori_crop_MASTER__0x0_MGZOOM.jpg">
+<meta property="og:image" content="https://windowsunited.de/wp-content/uploads/sites/3/2018/06/AARON-neu-4-1024x553.jpg">
+<meta property="og:image" content="https://static1.squarespace.com/static/5800c6211b631b49b4d63657/t/5b0f2e52aa4a99692dc998a2/1527721560441/robotart_announcement.jpg?format=2500w">
+<meta property="og:image" content="http://abjad.mbrsi.org/_images/mozart-tables.png">
+<meta property="og:image" content="https://discourse-cdn-sjc2.com/standard17/uploads/critterandguitari/original/2X/a/aede09d8452c1b3d4273a4515dfa6c941c62e21e.jpg">
+<meta property="og:image" content="https://www.sonycsl.co.jp/wp-content/uploads/2015/08/Continuator.jpg">
+<meta property="og:image" content="https://pic.36krcnd.com/201801/30024716/k5qmdhmi5h5yyl6u!1200">
+<meta property="og:image" content="http://www-31.ibm.com/ibm/cn/cognitive/outthink/watson/music/images/bg-03.jpg">
+<meta property="og:updated_time" content="2018-10-09T11:30:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="生成式艺术和算法创作01-概述">
+<meta name="twitter:image" content="http://img.viz.mobi/CC-blogtitle.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/181009-generative-art-creativity-01.html"/>
+
+
+
+
+
+  <title>生成式艺术和算法创作01-概述 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/181009-generative-art-creativity-01.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">生成式艺术和算法创作01-概述</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-09T19:18:35+08:00">
+                2018-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/181009-generative-art-creativity-01.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="181009-generative-art-creativity-01.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p>
+<a id="more"></a>
+<p>自从今年把兴趣领域<a href="https://www.uegeek.com/180717-human-computer-symbiosis.html" target="_blank" rel="noopener">从人机交互扩展到人机协同创作</a>之后，接触到越来越多「艺术x技术」的新鲜知识、有趣项目和精彩作品。一个星期有那么 7 天心情如下图：</p>
+<p><img src="http://img.viz.mobi/justMyMind.jpg" alt=""></p>
+<p>这个系列，<a href="https://uegeek.com/">00</a> 将会（希望是深入地）整理和介绍 Generative Art 和 Computational Creativity 的一些研究领域、概念和作品。当然，我们不满足于做手残党。为了避免出现只是看看图惊叹两句就没有然后的纯消费行为，这个系列也会探讨相关的技术、算法，以及实现的思路。</p>
+<h2 id="需求井喷下的工具进化"><a href="#需求井喷下的工具进化" class="headerlink" title="需求井喷下的工具进化"></a>需求井喷下的工具进化</h2><p>为什么关注生成式艺术和算法创作？</p>
+<p>除了个人的职业背景和癖好，还有对声色犬马的生活，哦不，做一个声色全码的手艺人的向往。</p>
+<p>创意和娱乐产业发展到今天，已经是一个巨大的造梦引擎。但消费市场对极致体验和制造梦境能力的追求并不会停歇，这迫使技术和计算能力以前所未有的速度变化和发展。不但场景越来越宏大、梦幻、沉浸，对实时性、多角色协同、虚实融合的诉求也愈发强烈。这其中有大量的创作工作要做。</p>
+<p><img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=be465b88fdf21a6e05ab522458452344&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt=""></p>
+<p>比如，在 Minecraft 中，每周有超过 1000 万玩家，会在游戏里待上 20 小时。这样算下来，需要多少作曲家才能为每一位玩家提供个性化的音乐呢？</p>
+<p><img src="https://images.g2a.com/newlayout/470x470/1x1x0/a476e4dbb6b0/591ef89dae653af3c942eff4" alt=""></p>
+<p>Non-linear （非线性叙事）媒体日渐流行，自动生成丰富而个性化的内容流成为强需求，或者至少需要有方法能够帮助创意工作者更有效地完成创意任务。但是传统的工具例如视频剪辑、音频效果制作、图像合成等等，工具本身并不能提供更多的帮助。不论创意有多明确，一切都需要从头开始。</p>
+<p>为什么机器不能以更动态、灵活、人性的方式与我们交互呢？比如说，我已经设计过 100 张海报，这次的设计跟其中的 3 张风格相似，但是内容会有变化。创作工具能不能自动生成几个草稿或模板，让我不必重零开始呢？</p>
+<p>打造这样的工具或者工作流程，需要研究人类的创造过程，让机器在一定程度上自主完成创造过程，才能更好地辅助我们创造。</p>
+<p>应用了计算机算法的生成式艺术处于艺术和创造的前沿，已经涌现出许多艺术和文化作品。</p>
+<h2 id="生成式艺术"><a href="#生成式艺术" class="headerlink" title="生成式艺术"></a>生成式艺术</h2><p><strong>生成式艺术（Generative art）是指部分或全部使用自动创作系统（autonomous system）创造的艺术。</strong></p>
+<blockquote>
+<p>Generative art refers to any art practice where the artist <strong>uses a system</strong>, such as a set of natural language rules, a computer program, a machine, or other procedural invention, which is set into motion <strong>with some degree of autonomy</strong> contributing to or resulting in a completed work of art. </p>
+<p>—— Philip Galanter </p>
+</blockquote>
+<p>可以用来辅助生成艺术作品的系统有很多，通常是一个非人类的独立系统（不一定是计算机），只要它可以独立确定一件艺术品的特征。生成式艺术几乎跟艺术本身一样古老，使用几何对称、样式、重复来生成图案的做法，已经存在几千年了。</p>
+<p><img src="http://www.sfu.ca/~mdevos/notes/geom-sym/wallpaper/2222/egypt8b.jpg" alt=""></p>
+<p>艺术家需要设计一个自主运作的机制来创作作品，这个机制通常包含一组规则，例如自然/音乐/编程语言、二进制代码、数据映射、生物指令等，由它们生成自动化处理过程，最终产生艺术作品。</p>
+<p>生成式艺术可以为艺术家提供减少主观创造意向的手段。在不同的条件、参数、设置下，运行过程不同，结果会呈现出一定特征，但常常是不可预测的。</p>
+<p>随着互动需求的增加、计算机计算能力提高，越来越多的生成式艺术作品是实时生成的，而且系统会收集反馈或产生即时的新输入，让结果持续更新和变化。</p>
+<p>需要注意的是，<strong>生成式艺术并不是艺术流派、艺术运动或某种意识形态，它只是一种创造性的方法</strong>，与作品的意图和价值取向无关。</p>
+<h2 id="算法创作"><a href="#算法创作" class="headerlink" title="算法创作"></a>算法创作</h2><p>Computational Creativity（我翻译为算法创作），是一个学术研究领域，<strong>研究的对象主要是创意活动的计算化/自动化过程。</strong>它并不局限于艺术，还包含各种创造性活动，如绘画、音乐、文学、表演等等。</p>
+<p>算法创作听起来跟人工智能似乎很像，都强调算法、计算、自动的处理过程。它们是一样的吗？</p>
+<p>让我们先来看看 Sternberg 在 Handbook of Creativity 里提出的创造性最重要的 3 类智能：</p>
+<ul>
+<li>分析智能 Analytical Intelligence：分析、评论、判断、比较、评估</li>
+<li>实用智能 Practical Intelligence：使用、实施</li>
+<li>创作智能 Synthetic/creative Intelligence：想象、创造、发明、发现、预测 </li>
+</ul>
+<p>再来回顾一下人工智能先驱司马贺给出的人工智能的定义：</p>
+<blockquote>
+<p>Artificial intelligence is the science of having machines solve problems that do require intelligence when solved by human. </p>
+<p>—— Herbert Simon (1960)</p>
+</blockquote>
+<p>此处的重点是：solve problems。</p>
+<p>AI 擅长 rational problem solving，也就是说，擅长处理那些解决方案可能很复杂，但是容易理解、目标明确或定义良好（well defined）的问题。</p>
+<p>但是，机器可以擅长创作吗？</p>
+<p>跟理性问题相比，创造性活动一般没有「最佳」结果或答案。不存在最好的音乐、绘画、诗歌、故事、笑话、菜谱、游戏……这一类活动更加需要 Sternberg 所说的第三类 synthetic 智能。于是算法创作渐渐从 AI 研究领域中分离出来，因为「最优」（optimality）的概念对创作行为来说是定义不良的（ill-defined）。</p>
+<h2 id="Creative-System-的分类"><a href="#Creative-System-的分类" class="headerlink" title="Creative System 的分类"></a>Creative System 的分类</h2><p>从通用性来分，创意系统可分为特定的 (基于领域/任务/审美的) 和通用的。</p>
+<p>从自动化程度来分，可分为响应式的和全自动的。</p>
+<p>从互动性来分，可分为低互动性的（只响应输入，比如一般的人机交互界面）和高互动性的（可以相互影响的代理行为）。</p>
+<p>从系统的知识来源分，可分为硬编码的、输入的和学习式的（比如从语料学习）。</p>
+<p>从系统的行为模式来分，可分为：fixed - periodic - complex - chaotic。</p>
+<p>从有效复杂性（effective complexity）来分，可以分为：</p>
+<p><img src="https://www.researchgate.net/profile/Philip_Galanter/publication/220947690/figure/fig2/AS:651931043233793@1532443881222/Effective-complexity-used-to-organize-various-generative-art-systems.png" alt=""></p>
+<p>从架构和算法来分，可以分为：</p>
+<ul>
+<li><p>generative</p>
+</li>
+<li><p>generate and evaluate</p>
+</li>
+<li><p>generative with reflexive feedback</p>
+<p><img src="http://img.viz.mobi/reflective%20system.png" alt=""></p>
+</li>
+<li><p>interactive and adaptive</p>
+<p><img src="http://img.viz.mobi/interactive%20system.png" alt=""></p>
+</li>
+</ul>
+<h2 id="算法创作的领域实践"><a href="#算法创作的领域实践" class="headerlink" title="算法创作的领域实践"></a>算法创作的领域实践</h2><h3 id="生成绘画"><a href="#生成绘画" class="headerlink" title="生成绘画"></a>生成绘画</h3><p>哈罗德·科恩（Harold Cohen）的 AARON 系统是一个从 1973 年开始的长期项目，他将软件人工智能与机器人绘画设备相结合，让机器自动作画，可以算得上是 AI 画家的鼻祖了。</p>
+<p><img src="https://static1.squarespace.com/static/5800c6211b631b49b4d63657/t/5807227bebbd1a790b76fdb6/1476862594263/" style="zoom:50%"></p>
+<p>自动作画的机器人被明名为 AARON。AARON 是一台很原始的绘画机器，但它可以在没有照片或其他人类输入参考的情况下绘制人物形象的静物和肖像。</p>
+<p>在专注水彩作画的 40 多年里，AARON 的绘画能力逐年提高。80 年代学会了将物体或人物放置在三维空间中，从 1990 年起可以用彩色绘画。它的部分作品已被泰特等知名美术馆和一些私人收藏家收藏。</p>
+<p><img src="https://images2.corriereobjects.it/methode_image/2015/09/09/Cultura/Foto%20Gallery%20-%20Trattate/sfpeople_ori_crop_MASTER__0x0_MGZOOM.jpg" style="zoom:50%"></p>
+<p>Final Approach 是 2013 年 AARON 最新的绘画作品之一：</p>
+<p><img src="https://windowsunited.de/wp-content/uploads/sites/3/2018/06/AARON-neu-4-1024x553.jpg" alt=""></p>
+<p>时间快进到 2018 年，已经连续举办 3 年的 Robot Art Prize 已落下帷幕（ARRON 也参加了比赛🙂），第一名由名叫 cloudpainter 的机器人画家获得，下面是它的画作：</p>
+<p><img src="https://static1.squarespace.com/static/5800c6211b631b49b4d63657/t/5b0f2e52aa4a99692dc998a2/1527721560441/robotart_announcement.jpg?format=2500w" alt=""></p>
+<blockquote>
+<p>我认为，在短期内，机器人将越来越多地用于数字艺术的最终生产，特别是那些有很多细节或重复元素的机器人。</p>
+</blockquote>
+<p>创立 RobotArt 的艺术家和工程师 Andrew Conru 表示。</p>
+<p>但他不认为机器人或算法艺术家会取代更有创造性的人类。他把机器创造的艺术品比作照相机的创造<strong>。</strong>摄影成为一种全新的艺术分支，捕捉不同类型的图像和作品。</p>
+<p>Conru 认为机器人和人类艺术品将继续存在。每个人都会为艺术领域带来不同的技能和方法。正如他的网站所说：</p>
+<blockquote>
+<p>We all win when we see something beautiful.</p>
+</blockquote>
+<h3 id="生成音乐"><a href="#生成音乐" class="headerlink" title="生成音乐"></a>生成音乐</h3><p>人们希望借助自然的力量更自动地创作音乐，这种想法实际上早已出现。从某种程度上说，第一首自动生成音乐来自于大自然：中国的风铃、古希腊的风弦琴、日本的水琴窟等。</p>
+<p>莫扎特的 Musikalisches Würfelspiel（Musical Dice Game，1757）被认为是早期的基于随机性的生成系统。</p>
+<p><img src="http://abjad.mbrsi.org/_images/mozart-tables.png" style="zoom:40%"></p>
+<p>在这部作品中，他创作了 176 小节音乐，然后将小节号排列为两个特殊的矩阵图，通过演奏家掷般子的方式来决定音乐序列的选择。这个机制提供了有序和无序的平衡。可以说，将算法应用于音乐创作可能和音乐本身一样古老。</p>
+<p>Iannis Xenakis 在他 1958 年的专辑 Analogique 中，使用了马尔可夫链来作曲。他在著作 Formalized Music: Thought and Mathematics in Composition 里详细描述了使用马尔可夫模型的算法。</p>
+<p><img src="https://discourse-cdn-sjc2.com/standard17/uploads/critterandguitari/original/2X/a/aede09d8452c1b3d4273a4515dfa6c941c62e21e.jpg" alt=""></p>
+<iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=e1343co9tml" allowfullscreen="true"></iframe>
+
+<p>第三章“马尔可夫的随机音乐：应用”（节选）<a href="https://v.qq.com/x/page/e1343co9tml.html" target="_blank" rel="noopener">音乐生成3_腾讯视频</a></p>
+<p>John Cage，Farmers Manual 和 Brian Eno 等现代（电子）音乐先驱都在早期作品中开始使用生成系统。</p>
+<p>Continuator 是 Francois Pache 在索尼计算机科学实验室 (Sony Computer Science Laoratories) 时主导的项目。</p>
+<blockquote>
+<p>The Continuator is a usable musical instrument combining techniques from interactive and automatic learning systems. </p>
+</blockquote>
+<p><img src="https://www.sonycsl.co.jp/wp-content/uploads/2015/08/Continuator.jpg" alt=""></p>
+<p>他最近几年则投入到 <a href="http://www.flow-machines.com/" target="_blank" rel="noopener">Flow Machines</a> 项目中。</p>
+<p><img src="https://pic.36krcnd.com/201801/30024716/k5qmdhmi5h5yyl6u!1200" alt=""></p>
+<p>2016 年，格莱美获奖制作人 Alex Da Kid 与 IBM Watson 搭档合作一起创作歌曲。Watson 将大量的非结构化数据转化为情感洞察，创造出有史以来一种全新的音乐——可以“聆听”受众的音乐。</p>
+<iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=b0388czlxm5" allowfullscreen="true"></iframe>
+
+<p><a href="https://v.qq.com/x/page/b0388czlxm5.html" target="_blank" rel="noopener">Alex Da Kid 携手IBM Watson创作故事揭秘_腾讯视频</a></p>
+<p><a href="https://www.ibm.com/ibm/cn/cognitive/outthink/watson/index.html" target="_blank" rel="noopener">Watson</a> 分析了近五年的文化和音乐数据，探索全新的情感洞察。</p>
+<p>为了解最普遍最主流的话题及主题，自然语言分析 API <a href="http://www.ibm.com/watson/developercloud/alchemy-language.html" target="_blank" rel="noopener">Watson Alchemy Language</a> 分析了过去 5 年的各类文本，包括诺贝尔和平奖演讲内容，《纽约时报》头版，美国最高法院的裁定，洛杉矶 Getty 博物馆的报告，维基百科文章，热门电影梗概等等。</p>
+<p>掌握这些文化主题后，情绪分析 API <a href="http://www.ibm.com/watson/developercloud/tone-analyzer.html" target="_blank" rel="noopener">Watson Tone Analyzer</a> 分析相关的社交媒体内容了解受众对主题的想法和感受。它还分析了过去 5 年 Billboard Hot 100 歌曲中超过 26000 首歌的歌词。Watson Beat 检测出来热门歌曲的作曲过程中，从逐年来不同的节奏、音高、乐器、流派中找出关系模型，帮助 Alex 发现不同声音所反映出的不同情感。</p>
+<p>同时, 颜色分析 API <a href="http://www.research.ibm.com/" target="_blank" rel="noopener">Cognitive Color Design Tool</a> 对专辑封面、图像、色彩的分析也启发了 Alex 专辑封面的制作。</p>
+<p><img src="http://www-31.ibm.com/ibm/cn/cognitive/outthink/watson/music/images/bg-03.jpg" alt=""></p>
+<hr>
+<p>新的创作时代已经到来。</p>
+<p>新技术激发了前所未有的创造力，新的创作方式将赋予创作者们更大的能量。</p>
+<p>00 的生成式艺术和算法创作系列，将带你一起探索（看起来很 Geek 很头疼的）知识和项目，其中很多都是艺术创作领域中前沿和硬核的话题，例如混沌和分型理论（Chaotic &amp; Fractal）、形状语法（Shape grammar）、规则系统（Rule-based system）、马尔可夫模型（Markov Model）、智能代理（Intelligent Agents）、多代理系统（Multi-agent system）、元胞自动机（Cellular Automaton）等。</p>
+<p>道阻且长，行则将之。</p>
+<p>感谢你的陪伴。</p>
+<h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul>
+<li>Sternberg, R. J., &amp; O’HARA, L. A. (1999). 13 Creativity and Intelligence. <em>Handbook of creativity</em>, 251.</li>
+<li>Philip Galanter. What is Generative Art? Complexity theory as a context for art theory, 2003 International Conference on Generative Art</li>
+<li><a href="https://www.wikiwand.com/en/Triarchic_theory_of_intelligence" target="_blank" rel="noopener">Triarchic theory of intelligence - Wikiwand</a></li>
+<li><a href="http://www.aaronshome.com/aaron/index.html" target="_blank" rel="noopener">Harold Cohen Home Page</a></li>
+<li><a href="http://www.cloudpainter.com/" target="_blank" rel="noopener">cloudpainter - an artificially intelligent painting robot</a></li>
+<li><a href="http://freedomandsafety.com/ru/node/1380" target="_blank" rel="noopener">Qbits for Cubists: Robots Made These Incredible Works of Fine Art | Freedom and Safety</a></li>
+<li><a href="https://www.wikiwand.com/en/Musikalisches_W%C3%BCrfelspiel" target="_blank" rel="noopener">Musikalisches Würfelspiel - Wikiwand</a></li>
+<li><a href="https://www.francoispachet.fr/" target="_blank" rel="noopener">François Pachet - Director of Spotify Creator Technology Research Lab</a></li>
+<li><a href="http://www.flow-machines.com/" target="_blank" rel="noopener">Flow Machines: AI music-making</a></li>
+<li><a href="https://medium.com/artists-and-machine-intelligence/neural-nets-for-generating-music-f46dffac21c0" target="_blank" rel="noopener">Neural Nets for Generating Music – Artists and Machine Intelligence – Medium</a></li>
+<li><a href="http://www-31.ibm.com/ibm/cn/cognitive/outthink/watson/music/" target="_blank" rel="noopener">IBM Watson Music - 中国</a></li>
+<li><a href="https://xw.qq.com/cmsid/20180409A1295K00" target="_blank" rel="noopener">机器人都能画出《蒙娜丽莎的微笑》了，那还要画家干什么？</a></li>
+<li><a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1538363661&amp;ver=1155&amp;signature=YiP2N6ONasXfYcTqidl7jz2x1KrfHO30I3hUGwHi9O2uqAL9tp8Z0xfeS7fVVljj7QMjazIetslJJ8r8whpe*brPZcbR3c1vRHin6Ovul4nxwE-ujd8z0qRXCeH1JIYg&amp;new=1" target="_blank" rel="noopener">人工智能是怎么创作音乐的？</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果文章帮您节省时间或者解答疑问，不妨打个赏 :)</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    kidult00
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://uegeek.com/181009-generative-art-creativity-01.html" title="生成式艺术和算法创作01-概述">http://uegeek.com/181009-generative-art-creativity-01.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArtxCode/" rel="tag"># ArtxCode</a>
+          
+            <a href="/tags/Creative-Coding/" rel="tag"># Creative Coding</a>
+          
+            <a href="/tags/艺术/" rel="tag"># 艺术</a>
+          
+            <a href="/tags/Generative-Art/" rel="tag"># Generative Art</a>
+          
+            <a href="/tags/Computational-Creativity/" rel="tag"># Computational Creativity</a>
+          
+            <a href="/tags/创意/" rel="tag"># 创意</a>
+          
+            <a href="/tags/创造力/" rel="tag"># 创造力</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/180930-jitter-20.html" rel="next" title="Max/MSP/ Jitter 官方教程翻译20 - 迭代和矩阵重采样">
+                <i class="fa fa-chevron-left"></i> Max/MSP/ Jitter 官方教程翻译20 - 迭代和矩阵重采样
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">Designer / Maker / Learner</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">242</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">224</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://steemit.com/@kidult00/" target="_blank" title="Steemit">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Steemit
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求井喷下的工具进化"><span class="nav-number">1.</span> <span class="nav-text">需求井喷下的工具进化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成式艺术"><span class="nav-number">2.</span> <span class="nav-text">生成式艺术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法创作"><span class="nav-number">3.</span> <span class="nav-text">算法创作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Creative-System-的分类"><span class="nav-number">4.</span> <span class="nav-text">Creative System 的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法创作的领域实践"><span class="nav-number">5.</span> <span class="nav-text">算法创作的领域实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成绘画"><span class="nav-number">5.1.</span> <span class="nav-text">生成绘画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成音乐"><span class="nav-number">5.2.</span> <span class="nav-text">生成音乐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ref"><span class="nav-number">5.3.</span> <span class="nav-text">Ref</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/181009-generative-art-creativity-01.html';
+          this.page.identifier = '181009-generative-art-creativity-01.html';
+          this.page.title = '生成式艺术和算法创作01-概述';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

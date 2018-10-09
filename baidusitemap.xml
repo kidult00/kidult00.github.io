@@ -4,6 +4,38 @@
 
     
   <url>
+    <loc>http://uegeek.com/181009-generative-art-creativity-01.html</loc>
+    <lastmod>2018-10-09T11:30:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>生成式艺术和算法创作01-概述</title>
+        <pubTime>2018-10-09T11:18:35.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
+         
+        <tag>Generative Art</tag>
+         
+        <tag>Computational Creativity</tag>
+         
+        <tag>创意</tag>
+         
+        <tag>创造力</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/180930-jitter-20.html</loc>
     <lastmod>2018-09-30T10:20:24.000Z</lastmod>
     <data>
@@ -2325,13 +2357,13 @@
         <title>中欧四国扫(ba)盲(gua)帖之一：“中欧”还是“东欧”？</title>
         <pubTime>2015-09-18T13:37:38.000Z</pubTime>
         
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>历史</tag>
          
-        <tag>中欧</tag>
-         
         <tag>捷克</tag>
+         
+        <tag>Travel</tag>
          
         <tag>奥地利</tag>
          
@@ -2359,9 +2391,9 @@
         
         <tag>Note</tag>
          
-        <tag>人类简史</tag>
-         
         <tag>历史</tag>
+         
+        <tag>人类简史</tag>
          
          
            
@@ -2383,13 +2415,13 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>历史</tag>
          
-        <tag>中欧</tag>
-         
         <tag>捷克</tag>
+         
+        <tag>Travel</tag>
          
          
            
@@ -2411,11 +2443,11 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>历史</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>哈布斯堡王朝</tag>
          
@@ -2443,13 +2475,13 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>历史</tag>
          
-        <tag>中欧</tag>
-         
         <tag>捷克</tag>
+         
+        <tag>Travel</tag>
          
          
            
@@ -2471,11 +2503,11 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>历史</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>东正教</tag>
          
@@ -2507,11 +2539,11 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>历史</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>哥特式</tag>
          
@@ -5467,11 +5499,11 @@
         <title>Word2007如何转PDF(软件下载)</title>
         <pubTime>2007-05-20T10:49:50.000Z</pubTime>
         
-        <tag>Tip</tag>
-         
         <tag>PDF</tag>
          
         <tag>Software</tag>
+         
+        <tag>Tip</tag>
          
          
            
@@ -5577,9 +5609,9 @@
         <title>Excel中所有空格如何自动填入上一行相同数字或内容</title>
         <pubTime>2008-06-29T02:37:30.000Z</pubTime>
         
-        <tag>Office</tag>
-         
         <tag>Tip</tag>
+         
+        <tag>Office</tag>
          
          
            
