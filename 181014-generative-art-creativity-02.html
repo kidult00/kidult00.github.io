@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="t1oNPvdeea" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ArtxCode,艺术,Creative Coding,Generative Art,Computational Creativity,创意,创造力,随机,噪声,Noise," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="ArtxCode,艺术,Creative Coding,Generative Art,Computational Creativity,创意,创造力,随机,噪声,Noise">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生成式艺术和算法创作02-随机和噪声">
+<meta property="og:url" content="http://uegeek.com/181014-generative-art-creativity-02.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.viz.mobi/CC-blogtitle.png">
+<meta property="og:image" content="http://blog.cloudera.com/wp-content/uploads/2015/12/distribution.png">
+<meta property="og:image" content="http://img.viz.mobi/various%20colors%20of%20noise.png">
+<meta property="og:image" content="https://discourse-cdn-sjc2.com/standard17/uploads/critterandguitari/original/2X/a/aede09d8452c1b3d4273a4515dfa6c941c62e21e.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Random_Walk_example.svg/840px-Random_Walk_example.svg.png">
+<meta property="og:image" content="https://www.tate.org.uk/art/images/work/T/T01/T01847_10.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/1/1b/Quantum_Cloud_by_Antony_Gormley_in_March_2011_01.jpg">
+<meta property="og:image" content="https://media.moddb.com/images/games/1/39/38759/3x-ANITblB0.1.jpg">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/ed5b799e7d9cd423db6f533050ddfda181b4850b">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/SimplexNoise2D.png/240px-SimplexNoise2D.png">
+<meta property="og:updated_time" content="2018-10-14T15:06:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="生成式艺术和算法创作02-随机和噪声">
+<meta name="twitter:image" content="http://img.viz.mobi/CC-blogtitle.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/181014-generative-art-creativity-02.html"/>
+
+
+
+
+
+  <title>生成式艺术和算法创作02-随机和噪声 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/181014-generative-art-creativity-02.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">生成式艺术和算法创作02-随机和噪声</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-14T23:02:20+08:00">
+                2018-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/181014-generative-art-creativity-02.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="181014-generative-art-creativity-02.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p>
+<a id="more"></a>
+<p><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></p>
+<p>利用随机性（Randomness）和噪声（Noise），可能是最古老、最简单、最常见的生成式艺术的方法。</p>
+<p>艺术家用各种参数来定义一个变化空间，可以在一定范围内取值，随机选中的值影响被操控的元素，形成最终的作品。</p>
+<p>随机性表示一定程度上的目的、动机、规则等可预测性的缺失。引入随机性可以带来多样、不可预测的结果，从而让作品更丰富而有活力。</p>
+<h2 id="产生各种概率分布的随机数"><a href="#产生各种概率分布的随机数" class="headerlink" title="产生各种概率分布的随机数"></a>产生各种概率分布的随机数</h2><p>概率分布是随机变量的概率性质。比如，符合均匀分布的随机数，表示所有可能选项的出现概率是一样的。选择不同的概率分布，可以让随机数产生不同的结果。</p>
+<p>常见的概率分布：</p>
+<p><img src="http://blog.cloudera.com/wp-content/uploads/2015/12/distribution.png" alt=""></p>
+<p><a href="http://blog.cloudera.com/blog/2015/12/common-probability-distributions-the-data-scientists-crib-sheet/" target="_blank" rel="noopener">http://blog.cloudera.com/blog/2015/12/common-probability-distributions-the-data-scientists-crib-sheet/</a></p>
+<ul>
+<li>Uniform distribution：均匀分布</li>
+<li>Bernoulli distribution：伯努利分布，就是常见的 0-1 分布，即随机变量只取 0 或者 1，频率分别为 1−p 和 p</li>
+<li>Binomial distribution：二项分布，例如在一连串 N/yes/no 中八次成功的概率。二项分布公式基于伯努利分布得到，因为每次实验都是独立的，因此每次实验都是一次伯努利实验</li>
+<li>Hypergeometric distribution：超几何分布，常用来表示在 N 个物品中有指定商品 M 个，不放回抽取 n 个，抽中指定商品的个数</li>
+<li>Poisson distribution：泊松分布，主要用来研究单位时间或单位空间内某事件的发生次数，事件的发生必须是相互独立的，比如单位时间内通过某一交通灯的车辆数</li>
+</ul>
+<p>具有相同分布函数的随机变量一定是同分布的，因此可以用分布函数来描述一个分布，但更常用的描述手段是<a href="https://www.wikiwand.com/zh-hans/%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">概率密度函数</a>（Probability Density Functions）。利用概率分布和密度函数，可以引导和交叉训练随机性，让某些部分发生概率更高，而另一些概率更低。</p>
+<h2 id="噪声"><a href="#噪声" class="headerlink" title="噪声"></a>噪声</h2><blockquote>
+<p>In <a href="https://www.wikiwand.com/en/Signal_processing" target="_blank" rel="noopener">signal processing</a>, <strong>white noise</strong> is a random <a href="https://www.wikiwand.com/en/Signal_(information_theory" target="_blank" rel="noopener">signal</a>) having equal intensity at different <a href="https://www.wikiwand.com/en/Frequencies" target="_blank" rel="noopener">frequencies</a>, giving it a constant <a href="https://www.wikiwand.com/en/Power_spectral_density" target="_blank" rel="noopener">power spectral density</a>. – Wiki</p>
+</blockquote>
+<p>我们经常会听到一个名词：白噪声。</p>
+<p>它是什么意思呢？为什么噪声还有颜色呢？</p>
+<p>白噪声是一种功率谱密度为常数的随机信号或随机过程。即信号在各个频段上的功率是一样的。</p>
+<p>由于白光是由各种频率（颜色）的单色光混合而成，因而此信号的这种具有平坦功率谱的性质被称作是「白色的」，此信号也因此被称作白噪声。相对的，其他不具有这一性质的噪声信号被称为有色噪声。</p>
+<p>需要注意，<strong>相关性和概率分布是不同的概念</strong>。白色仅意味着信号是不相关的，白噪声的定义除了要求均值为零，并没有对信号应当服从哪种概率分布作出任何假设。因此，如果某白噪声过程服从<a href="https://www.wikiwand.com/zh/%E9%AB%98%E6%96%AF%E5%88%86%E5%B8%83" target="_blank" rel="noopener">高斯分布</a>，它就是「高斯白噪声」。类似的，还有泊松白噪声、柯西白噪声等。</p>
+<p>噪声的颜色分类，来自于将频谱中的噪声谱密度函数，和频谱中的<a href="https://www.wikiwand.com/zh/%E5%85%89%E6%B3%A2" target="_blank" rel="noopener">光波</a>信号做形式上的类比，也就是说，如果一束光波在频域内具有和蓝噪声相同的谱密度图样，则这束光波看上去将呈现蓝色。</p>
+<ul>
+<li>White noise: 频率密度均匀分布</li>
+<li>Brown noise (Red noise): 由布朗运动造成，又称为随机移动噪音（random walk noise）</li>
+<li>Pink noise (F noise): <a href="https://www.wikiwand.com/zh/%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6" target="_blank" rel="noopener">功率谱密度</a>与频率成反比的频谱信号或过程。在粉红噪声中，每个倍频程中都有一个等量的噪声功率。在生成式艺术中很常用，因为它可以模拟自然现象中的随机性</li>
+</ul>
+<p><img src="http://img.viz.mobi/various%20colors%20of%20noise.png" alt=""></p>
+<h3 id="Aleatoric-Music-机遇音乐"><a href="#Aleatoric-Music-机遇音乐" class="headerlink" title="Aleatoric Music 机遇音乐"></a>Aleatoric Music 机遇音乐</h3><blockquote>
+<p>A process is said to be aleatoric … if its course is determined in general but depends on chance in detail. </p>
+<p>—— Werner Meyer- Eppler, 1957</p>
+</blockquote>
+<p>机遇音乐是一种包含随机性元素的音乐创作。</p>
+<p>在一首音乐作品中，作曲家在某些地方会让演奏者按自己的意愿，或使用一些系統来决定音乐的演奏，由于随机性不可能每次都得出相同的结果，所以乐曲每次的演奏版本都不完全相同。</p>
+<p>Iannis Xenakis 开创了机遇音乐的一个子类：随机音乐（Stochastic music），即在音乐创作中或者在演奏中使用随机过程生成乐曲片段。</p>
+<p>Xenakis 经常使用计算机来制作乐谱，例如包括 Morsima-Amorsima 和 Atrées 在内的 ST 系列。</p>
+<p><img src="https://discourse-cdn-sjc2.com/standard17/uploads/critterandguitari/original/2X/a/aede09d8452c1b3d4273a4515dfa6c941c62e21e.jpg" alt=""></p>
+<h3 id="Noise-music-噪声音乐"><a href="#Noise-music-噪声音乐" class="headerlink" title="Noise music 噪声音乐"></a>Noise music 噪声音乐</h3><p>Noise music 是音乐的一个子流派，研究声学噪声的概念并将其作为重要的声学材料。</p>
+<blockquote>
+<p>I believe that the use of noise to make music will continue and increase until we reach a music produced through the aid of electrical instruments which will make available for musical purposes any and all sounds that can be heard.</p>
+<p>— John Cage, The Future of Music: Credo (1937)</p>
+</blockquote>
+<p>让我们来听听日本著名的噪音音乐人 Merzbow 的一首作品，感受一下什么是噪声音乐：</p>
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/450625851&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+
+<p><a href="https://soundcloud.com/merzbow/v2-1" target="_blank" rel="noopener">https://soundcloud.com/merzbow/v2-1</a></p>
+<blockquote>
+<p>噪音和音乐的定义因人而异，如果噪音是指让人不舒服的声音的话，流行音乐对我而言就是噪音。</p>
+<p>——Merzbow</p>
+</blockquote>
+<p>在工业噪音、噪音摇滚、No wave 和 Harsh noise 之后，出现了大量的噪音音乐家，风格包括 Ambient、Microsound、Glitch 等，更强调微妙的脉冲式声响和敏感的听觉。</p>
+<h2 id="Random-walk"><a href="#Random-walk" class="headerlink" title="Random walk"></a>Random walk</h2><p>Random walk 1905 年由皮尔逊首次提出，它是一种数学统计模型，由一连串轨迹组成，每一步根据概率随机选择。步长可以是固定也可以是动态的。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Random_Walk_example.svg/840px-Random_Walk_example.svg.png" style="zoom:50%"></p>
+<p>一维 Random Walk</p>
+<p>Brownian movement 是 Random walk 的特例（step 为 0）。所以上文提到的 Brown noise 也称为 Random walk noise。</p>
+<p>随机漫步的算法虽然简单，但是经过多次迭代，可以产生丰富的随机效果，所以在生成式艺术中被广泛使用。</p>
+<p>Chance and Order 是 Kenneth Martin 1971 使用随机漫步规则创作的一个系列。</p>
+<blockquote>
+<p>the points of intersection on a grid of squares are numbered and the numbers are written on small cards and picked at random… A line is made between each successive pair of numbers as they are picked out. </p>
+<p>——Kenneth Martin</p>
+</blockquote>
+<p><img src="https://www.tate.org.uk/art/images/work/T/T01/T01847_10.jpg" style="zoom:50%"></p>
+<p>Quantum cloud 是艺术家 Antony Gormley 1999 年完成的当代雕塑作品。它由一系列四面体单元构成，由 1.5 米长的钢制成。钢架部分用 Random walk 算法生成。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Quantum_Cloud_by_Antony_Gormley_in_March_2011_01.jpg" style="zoom:20%"></p>
+<h2 id="Perlin-noise"><a href="#Perlin-noise" class="headerlink" title="Perlin noise"></a>Perlin noise</h2><p>Perlin noise 是由 Ken Perlin 发明的自然噪声生成算法，经常用来模拟自然界中的噪声现象、人体的随机运动、蚂蚁行进的线路等。还可以通过计算分形来模拟云朵，火焰等非常复杂的纹理。</p>
+<p><img src="https://media.moddb.com/images/games/1/39/38759/3x-ANITblB0.1.jpg" alt=""></p>
+<p>在很多生成式系统中，比如游戏制作场景里的贴图材质、波澜起伏的地面和海洋，很多都是用 perlin noise 生成的。它旨在描述自然中的随机效果，创建的纹理可以直接运用于顶点着色器，而不是像纹理映射技术，先生成一张纹理图，然后把贴图附加到一个三维物体上。也就是说，只需要提供每个顶点的 (x,y,z) 的坐标，传入 perlin noise 函数，计算得到一个随机数，然后与原颜色运算，得到新的颜色，如同直接在物体表面绘制纹理一样。</p>
+<p>Perlin 认为，理想的噪声函数应当具有以下性质：</p>
+<ol>
+<li>旋转统计不变性（不管怎么旋转它的域都有同样的统计特性）  </li>
+<li>能量在频谱上集中于一个窄带（图像是连续的，高频分量受限）</li>
+<li>变换统计不变性（不管如何平移它的域都有同样的统计特性）</li>
+</ol>
+<p>产生 2D Perlin Noise 的方法：</p>
+<ol>
+<li>为所有坐标为（x,y）且 x, y 都是整数的点指定一个值，同时指定一个<a href="https://www.wikiwand.com/zh/%E6%A2%AF%E5%BA%A6" target="_blank" rel="noopener">梯度</a>，这些点将空间分成方格；</li>
+<li>对于坐标轴为整数的点，即上述方格的顶点的值作为该点的值；对于某个方格内部的点（x,y），用所在方格四个顶点的值和<a href="https://www.wikiwand.com/zh/%E6%A2%AF%E5%BA%A6" target="_blank" rel="noopener">梯度</a>进行插值。</li>
+</ol>
+<p>为了简化计算，方便硬件实现，Ken Perlin 在 2002 年改进了方法，称为 Simplex 噪声。Simplex 噪声使用 <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ed5b799e7d9cd423db6f533050ddfda181b4850b" alt="{\displaystyle 6t^{5}-15t^{4}+10t^{3))">作为插值函数，避免了导数中的线性部分。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/SimplexNoise2D.png/240px-SimplexNoise2D.png" alt=""></p>
+<p>使用 Simplex 方法产生噪声</p>
+<h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul>
+<li><a href="https://www.wikiwand.com/zh-hans/%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83" target="_blank" rel="noopener">概率分布 - Wikiwand</a></li>
+<li><a href="https://www.wikiwand.com/en/Probability_density_function" target="_blank" rel="noopener">Probability density function - Wikiwand</a></li>
+<li><a href="http://blog.cloudera.com/blog/2015/12/common-probability-distributions-the-data-scientists-crib-sheet/" target="_blank" rel="noopener">Common Probability Distributions: The Data Scientist’s Crib Sheet - Cloudera Engineering Blog</a></li>
+<li><a href="https://www.wikiwand.com/zh/%E7%99%BD%E9%9B%9C%E8%A8%8A" target="_blank" rel="noopener">白噪声 - Wikiwand</a></li>
+<li><a href="https://www.wikiwand.com/zh/%E5%99%AA%E5%A3%B0%E7%9A%84%E9%A2%9C%E8%89%B2" target="_blank" rel="noopener">噪声的颜色 - Wikiwand</a></li>
+<li><a href="https://www.wikiwand.com/en/Pink_noise" target="_blank" rel="noopener">Pink noise - Wikiwand</a></li>
+<li><a href="https://www.wikiwand.com/en/Aleatoric_music" target="_blank" rel="noopener">Aleatoric music - Wikiwand</a></li>
+<li><a href="https://www.wikiwand.com/en/Noise_music" target="_blank" rel="noopener">Noise music - Wikiwand</a></li>
+<li><a href="https://www.wikiwand.com/zh/Perlin%E5%99%AA%E5%A3%B0" target="_blank" rel="noopener">Perlin噪声 - Wikiwand</a></li>
+<li><a href="http://flafla2.github.io/2014/08/09/perlinnoise.html" target="_blank" rel="noopener">Understanding Perlin Noise</a></li>
+<li><a href="https://blog.csdn.net/ZJU_fish1996/article/details/71136348" target="_blank" rel="noopener">[图形学] 柏林噪声 （perlin noise）</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果文章帮您节省时间或者解答疑问，不妨打个赏 :)</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    kidult00
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://uegeek.com/181014-generative-art-creativity-02.html" title="生成式艺术和算法创作02-随机和噪声">http://uegeek.com/181014-generative-art-creativity-02.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArtxCode/" rel="tag"># ArtxCode</a>
+          
+            <a href="/tags/艺术/" rel="tag"># 艺术</a>
+          
+            <a href="/tags/Creative-Coding/" rel="tag"># Creative Coding</a>
+          
+            <a href="/tags/Generative-Art/" rel="tag"># Generative Art</a>
+          
+            <a href="/tags/Computational-Creativity/" rel="tag"># Computational Creativity</a>
+          
+            <a href="/tags/创意/" rel="tag"># 创意</a>
+          
+            <a href="/tags/创造力/" rel="tag"># 创造力</a>
+          
+            <a href="/tags/随机/" rel="tag"># 随机</a>
+          
+            <a href="/tags/噪声/" rel="tag"># 噪声</a>
+          
+            <a href="/tags/Noise/" rel="tag"># Noise</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/181009-generative-art-creativity-01.html" rel="next" title="生成式艺术和算法创作01-概述">
+                <i class="fa fa-chevron-left"></i> 生成式艺术和算法创作01-概述
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">Designer / Maker / Learner</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">243</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">227</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://steemit.com/@kidult00/" target="_blank" title="Steemit">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Steemit
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#产生各种概率分布的随机数"><span class="nav-number">1.</span> <span class="nav-text">产生各种概率分布的随机数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#噪声"><span class="nav-number">2.</span> <span class="nav-text">噪声</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Aleatoric-Music-机遇音乐"><span class="nav-number">2.1.</span> <span class="nav-text">Aleatoric Music 机遇音乐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Noise-music-噪声音乐"><span class="nav-number">2.2.</span> <span class="nav-text">Noise music 噪声音乐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Random-walk"><span class="nav-number">3.</span> <span class="nav-text">Random walk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Perlin-noise"><span class="nav-number">4.</span> <span class="nav-text">Perlin noise</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ref"><span class="nav-number">4.1.</span> <span class="nav-text">Ref</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/181014-generative-art-creativity-02.html';
+          this.page.identifier = '181014-generative-art-creativity-02.html';
+          this.page.title = '生成式艺术和算法创作02-随机和噪声';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
