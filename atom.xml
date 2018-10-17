@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-10-14T15:06:04.000Z</updated>
+  <updated>2018-10-17T11:25:40.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>算法创作实战01 - 巴纳姆效应之随机星座实验</title>
+    <link href="http://uegeek.com/181017-computational-creativity-in-maxmsp-01.html"/>
+    <id>http://uegeek.com/181017-computational-creativity-in-maxmsp-01.html</id>
+    <published>2018-10-17T10:22:16.000Z</published>
+    <updated>2018-10-17T11:25:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-title1.jpg" alt=""></p><a id="more"></a><p>在「生成式艺术和算法创作」系列第二篇中，00 <a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">介绍了随机和噪声在算法创作中的应用</a>。</p><p>今天我们一起来用 Max/MSP 实现一个半（hu）仙（shuo）算（ba）命（dao）小应用，加深对 Max/MSP 中 <code>random</code> 对象的了解，并且学习如何使用 <code>coll</code> 对象。</p><blockquote><p>名称：麦克斯半仙儿（又名 Random Bullshit）</p><p>主要使用的对象：random, coll, route, jit.cellblock, fpic</p><p>难度系数：★☆☆☆☆</p></blockquote><h2 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h2><p>巴纳姆效应（Barnum effect）是 1948 年由心理学家伯特伦·福勒通过试验提出的一种心理学现象，以<a href="https://baike.baidu.com/item/%E6%9D%82%E6%8A%80/4863" target="_blank" rel="noopener">杂技</a>师巴纳姆的名字命名。巴纳姆效应是一种心理现象，人们会对他们认为是为自己量身订做的一些人格描述，给予高度准确的评价，而这些描述往往十分模糊及普遍，以致能够放诸四海皆准适用于很多人身上。（<a href="https://www.wikiwand.com/zh-hans/%E5%B7%B4%E7%B4%8D%E5%A7%86%E6%95%88%E6%87%89" target="_blank" rel="noopener">https://www.wikiwand.com/zh-hans/%E5%B7%B4%E7%B4%8D%E5%A7%86%E6%95%88%E6%87%89</a>)</p><p>据说巴纳姆的成功秘诀是：「永远要让每一个观众都感到自己若有所获」。意思如果要让每一个人都能感到对自己个性的描述是准确的，就要去提供一些放之四海而皆准的描述。看手相、算命、占星术及其他伪心理学经常利用这种效应，怎么说都能让你听着有点儿道理。于是有人将十二星座的描述随机排列，发现不同星座的描述基本上可以适用于其他星座。</p><p>所以今天我们来实践一下这个想法，看看程序随机给出的星座描述，有没有戳中你 🌝。</p><h2 id="任务拆解"><a href="#任务拆解" class="headerlink" title="任务拆解"></a>任务拆解</h2><p>这个程序叫麦克斯半仙儿，用户选择自己的星座后，程序给出描述。最后的成果是这样：</p><p><img src="http://img.viz.mobi/BarnumEffectDemo.gif" alt=""></p><p>首先来拆解需要干的事儿：</p><ul><li>收集十二星座的简短描述和图标</li><li>存储文本，方便随机调用</li><li>12 星座的选择控件</li><li>显示结果（包括加载默认值）</li></ul><p>开始动手前，请复习 Max/MSP 文档中 random, coll, route, jit.cellblock, fpic 等对象的说明。</p><h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><p>这个小程序的核心是用 <code>random</code> 对象随机显示 <code>coll</code> 对象中存储的内容。<code>coll</code> 即 collection，用来存储一个列表，列表中每一项都包含 key 和 value（中间用 ， 隔开），可以通过 key 获取对应的 value。value 可以是单个值，也可以是以空格分隔的多个值。</p><p>在 Max 中新建名字为 blah 的 <code>coll</code> 对象，双击（或者 cmd+点击）打开，填入我们在网上找到的十二星座描述内容，格式如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0, 你大方、明朗，全身充滿活力……;</span><br><span class="line">1, 你不但好學、知識豐富，還很……;</span><br><span class="line">2, 嗯，你善於說服別人，還是個……;</span><br><span class="line">……</span><br></pre></td></tr></table></figure><p>十二个星座描述的索引是从 0~11，所以在 <code>coll</code> 前用一个 <code>random</code> 对象随机选取其中一个星座的描述，然后从 <code>coll</code> 的左出口输出。因为我们存储的是文本内容（symbol），所以需要用一个 <code>route</code> 对象读取 symbol 内容，并发送到显示区域。</p><p><img src="http://img.viz.mobi/BarnumEffect-coll.png" alt=""></p><p>如果不想每次双击打开 <code>coll</code> 查看，可以用 <code>refer 名字</code> 消息连接一个 <code>jit.cellblock</code> 查看 <code>coll</code> 里面的内容。</p><p>随机调用的内容准备就绪后，接下来是选择星座的界面：</p><p><img src="http://img.viz.mobi/BarnumEffect-ui.png" alt=""></p><p>用 <code>fpic</code> 显示星座图标，在上面覆盖一个 <code>button</code> 对象，将按钮背景设置为透明。然后将按钮连接到 <code>random</code> 对象，读取 <code>coll</code> 的内容。</p><p>因为想显示每次选择的星座名称，所以每个按钮连接了一个包含对应星座名称的 <code>message</code> ，点击按钮时可以触发显示在内容区域。其实用 <code>radio group</code> 对象能更好实现，但是它的 UI 不好自定义，就放弃了。</p><p>完整的 patch 如下：</p><p><img src="http://img.viz.mobi/BarnumEffectPatch.png" alt=""></p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>程序做好以后，随机生成了几个描述，发到朋友圈，让大家猜这些描述原本对应的是什么星座。</p><p>结果是——没有全部猜对的，哈哈哈！应该给撰写星座描述的小编加🍗~</p><p>下一期实战见~</p><hr><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://img.viz.mobi/maxgroup0825.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/CC-title1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
+    
+      <category term="Computational Creativity" scheme="http://uegeek.com/tags/Computational-Creativity/"/>
+    
+      <category term="创意" scheme="http://uegeek.com/tags/%E5%88%9B%E6%84%8F/"/>
+    
+      <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
+    
+      <category term="随机" scheme="http://uegeek.com/tags/%E9%9A%8F%E6%9C%BA/"/>
+    
+      <category term="巴纳姆效应" scheme="http://uegeek.com/tags/%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94/"/>
+    
+      <category term="星座" scheme="http://uegeek.com/tags/%E6%98%9F%E5%BA%A7/"/>
+    
+      <category term="MaxMSP" scheme="http://uegeek.com/tags/MaxMSP/"/>
+    
+  </entry>
   
   <entry>
     <title>生成式艺术和算法创作02-随机和噪声</title>
@@ -61,9 +103,9 @@
     <link href="http://uegeek.com/181009-generative-art-creativity-01.html"/>
     <id>http://uegeek.com/181009-generative-art-creativity-01.html</id>
     <published>2018-10-09T11:18:35.000Z</published>
-    <updated>2018-10-09T14:15:33.000Z</updated>
+    <updated>2018-10-15T04:11:58.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p><a id="more"></a><p>自从今年把兴趣领域<a href="https://www.uegeek.com/180717-human-computer-symbiosis.html" target="_blank" rel="noopener">从人机交互扩展到人机协同创作</a>之后，接触到越来越多「艺术x技术」的新鲜知识、有趣项目和精彩作品。一个星期有那么 7 天心情如下图：</p><p><img src="http://img.viz.mobi/justMyMind.jpg" alt=""></p><p>这个系列，<a href="https://uegeek.com/">00</a> 将会（希望是深入地）整理和介绍 Generative Art 和 Computational Creativity 的一些研究领域、概念和作品。当然，我们不满足于做手残党。为了避免出现只是看看图惊叹两句就没有然后的纯消费行为，这个系列也会探讨相关的技术、算法，以及实现的思路。</p><h2 id="需求井喷下的工具进化"><a href="#需求井喷下的工具进化" class="headerlink" title="需求井喷下的工具进化"></a>需求井喷下的工具进化</h2><p>为什么关注生成式艺术和算法创作？</p><p>除了个人的职业背景和癖好，还有对声色犬马的生活，哦不，做一个声色全码的手艺人的向往。</p><p>创意和娱乐产业发展到今天，已经是一个巨大的造梦引擎。但消费市场对极致体验和制造梦境能力的追求并不会停歇，这迫使技术和计算能力以前所未有的速度变化和发展。不但场景越来越宏大、梦幻、沉浸，对实时性、多角色协同、虚实融合的诉求也愈发强烈。这其中有大量的创作工作要做。</p><p><img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=be465b88fdf21a6e05ab522458452344&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt=""></p><p>比如，在 Minecraft 中，每周有超过 1000 万玩家，会在游戏里待上 20 小时。这样算下来，需要多少作曲家才能为每一位玩家提供个性化的音乐呢？</p><p><img src="https://images.g2a.com/newlayout/470x470/1x1x0/a476e4dbb6b0/591ef89dae653af3c942eff4" alt=""></p><p>Non-linear （非线性叙事）媒体日渐流行，自动生成丰富而个性化的内容流成为强需求，或者至少需要有方法能够帮助创意工作者更有效地完成创意任务。但是传统的工具例如视频剪辑、音频效果制作、图像合成等等，工具本身并不能提供更多的帮助。不论创意有多明确，一切都需要从头开始。</p><p>为什么机器不能以更动态、灵活、人性的方式与我们交互呢？比如说，我已经设计过 100 张海报，这次的设计跟其中的 3 张风格相似，但是内容会有变化。创作工具能不能自动生成几个草稿或模板，让我不必重零开始呢？</p><p>打造这样的工具或者工作流程，需要研究人类的创造过程，让机器在一定程度上自主完成创造过程，才能更好地辅助我们创造。</p><p>应用了计算机算法的生成式艺术处于艺术和创造的前沿，已经涌现出许多艺术和文化作品。</p><h2 id="生成式艺术"><a href="#生成式艺术" class="headerlink" title="生成式艺术"></a>生成式艺术</h2><p><strong>生成式艺术（Generative art）是指部分或全部使用自动创作系统（autonomous system）创造的艺术。</strong></p><blockquote><p>Generative art refers to any art practice where the artist <strong>uses a system</strong>, such as a set of natural language rules, a computer program, a machine, or other procedural invention, which is set into motion <strong>with some degree of autonomy</strong> contributing to or resulting in a completed work of art. </p><p>—— Philip Galanter </p></blockquote><p>可以用来辅助生成艺术作品的系统有很多，通常是一个非人类的独立系统（不一定是计算机），只要它可以独立确定一件艺术品的特征。生成式艺术几乎跟艺术本身一样古老，使用几何对称、样式、重复来生成图案的做法，已经存在几千年了。</p><p><img src="http://www.sfu.ca/~mdevos/notes/geom-sym/wallpaper/2222/egypt8b.jpg" alt=""></p><p>艺术家需要设计一个自主运作的机制来创作作品，这个机制通常包含一组规则，例如自然/音乐/编程语言、二进制代码、数据映射、生物指令等，由它们生成自动化处理过程，最终产生艺术作品。</p><p>生成式艺术可以为艺术家提供减少主观创造意向的手段。在不同的条件、参数、设置下，运行过程不同，结果会呈现出一定特征，但常常是不可预测的。</p><p>随着互动需求的增加、计算机计算能力提高，越来越多的生成式艺术作品是实时生成的，而且系统会收集反馈或产生即时的新输入，让结果持续更新和变化。</p><p>需要注意的是，<strong>生成式艺术并不是艺术流派、艺术运动或某种意识形态，它只是一种创造性的方法</strong>，与作品的意图和价值取向无关。</p><h2 id="算法创作"><a href="#算法创作" class="headerlink" title="算法创作"></a>算法创作</h2><p>Computational Creativity（我翻译为算法创作），是一个学术研究领域，<strong>研究的对象主要是创意活动的计算化/自动化过程。</strong>它并不局限于艺术，还包含各种创造性活动，如绘画、音乐、文学、表演等等。</p><p>算法创作听起来跟人工智能似乎很像，都强调算法、计算、自动的处理过程。它们是一样的吗？</p><p>让我们先来看看 Sternberg 在 Handbook of Creativity 里提出的创造性最重要的 3 类智能：</p><ul><li>分析智能 Analytical Intelligence：分析、评论、判断、比较、评估</li><li>实用智能 Practical Intelligence：使用、实施</li><li>创作智能 Synthetic/creative Intelligence：想象、创造、发明、发现、预测 </li></ul><p>再来回顾一下人工智能先驱司马贺给出的人工智能的定义：</p><blockquote><p>Artificial intelligence is the science of having machines solve problems that do require intelligence when solved by human. </p><p>—— Herbert Simon (1960)</p></blockquote><p>此处的重点是：solve problems。</p><p>AI 擅长 rational problem solving，也就是说，擅长处理那些解决方案可能很复杂，但是容易理解、目标明确或定义良好（well defined）的问题。</p><p>但是，机器可以擅长创作吗？</p><p>跟理性问题相比，创造性活动一般没有「最佳」结果或答案。不存在最好的音乐、绘画、诗歌、故事、笑话、菜谱、游戏……这一类活动更加需要 Sternberg 所说的第三类 synthetic 智能。于是算法创作渐渐从 AI 研究领域中分离出来，因为「最优」（optimality）的概念对创作行为来说是定义不良的（ill-defined）。</p><h2 id="Creative-System-的分类"><a href="#Creative-System-的分类" class="headerlink" title="Creative System 的分类"></a>Creative System 的分类</h2><p>从通用性来分，创意系统可分为特定的 (基于领域/任务/审美的) 和通用的。</p><p>从自动化程度来分，可分为响应式的和全自动的。</p><p>从互动性来分，可分为低互动性的（只响应输入，比如一般的人机交互界面）和高互动性的（可以相互影响的智能体行为）。</p><p>从系统的知识来源分，可分为硬编码的、输入的和学习式的（比如从语料学习）。</p><p>从系统的行为模式来分，可分为：fixed - periodic - complex - chaotic。</p><p>从有效复杂性（effective complexity）来分，可以分为：</p><p><img src="https://www.researchgate.net/profile/Philip_Galanter/publication/220947690/figure/fig2/AS:651931043233793@1532443881222/Effective-complexity-used-to-organize-various-generative-art-systems.png" alt=""></p><p>从架构和算法来分，可以分为：</p><ul><li><p>generative</p></li><li><p>generate and evaluate</p></li><li><p>generative with reflexive feedback</p><p><img src="http://img.viz.mobi/reflective%20system.png" alt=""></p></li><li><p>interactive and adaptive</p><p><img src="http://img.viz.mobi/interactive%20system.png" alt=""></p></li></ul><h2 id="算法创作的领域实践"><a href="#算法创作的领域实践" class="headerlink" title="算法创作的领域实践"></a>算法创作的领域实践</h2><h3 id="生成绘画"><a href="#生成绘画" class="headerlink" title="生成绘画"></a>生成绘画</h3><p>哈罗德·科恩（Harold Cohen）的 AARON 系统是一个从 1973 年开始的长期项目，他将软件人工智能与机器人绘画设备相结合，让机器自动作画，可以算得上是 AI 画家的鼻祖了。</p><p><img src="https://static1.squarespace.com/static/5800c6211b631b49b4d63657/t/5807227bebbd1a790b76fdb6/1476862594263/" style="zoom:50%"></p><p>自动作画的机器人被明名为 AARON。AARON 是一台很原始的绘画机器，但它可以在没有照片或其他人类输入参考的情况下绘制人物形象的静物和肖像。</p><p>在专注水彩作画的 40 多年里，AARON 的绘画能力逐年提高。80 年代学会了将物体或人物放置在三维空间中，从 1990 年起可以用彩色绘画。它的部分作品已被泰特等知名美术馆和一些私人收藏家收藏。</p><p><img src="https://images2.corriereobjects.it/methode_image/2015/09/09/Cultura/Foto%20Gallery%20-%20Trattate/sfpeople_ori_crop_MASTER__0x0_MGZOOM.jpg" style="zoom:50%"></p><p>Final Approach 是 2013 年 AARON 最新的绘画作品之一：</p><p><img src="https://windowsunited.de/wp-content/uploads/sites/3/2018/06/AARON-neu-4-1024x553.jpg" alt=""></p><p>时间快进到 2018 年，已经连续举办 3 年的 Robot Art Prize 已落下帷幕（ARRON 也参加了比赛🙂），第一名由名叫 cloudpainter 的机器人画家获得，下面是它的画作：</p><p><img src="https://static1.squarespace.com/static/5800c6211b631b49b4d63657/t/5b0f2e52aa4a99692dc998a2/1527721560441/robotart_announcement.jpg?format=2500w" alt=""></p><blockquote><p>我认为，在短期内，机器人将越来越多地用于数字艺术的最终生产，特别是那些有很多细节或重复元素的机器人。</p></blockquote><p>创立 RobotArt 的艺术家和工程师 Andrew Conru 表示。</p><p>但他不认为机器人或算法艺术家会取代更有创造性的人类。他把机器创造的艺术品比作照相机的创造<strong>。</strong>摄影成为一种全新的艺术分支，捕捉不同类型的图像和作品。</p><p>Conru 认为机器人和人类艺术品将继续存在。每个人都会为艺术领域带来不同的技能和方法。正如他的网站所说：</p><blockquote><p>We all win when we see something beautiful.</p></blockquote><h3 id="生成音乐"><a href="#生成音乐" class="headerlink" title="生成音乐"></a>生成音乐</h3><p>人们希望借助自然的力量更自动地创作音乐，这种想法实际上早已出现。从某种程度上说，第一首自动生成音乐来自于大自然：中国的风铃、古希腊的风弦琴、日本的水琴窟等。</p><p>莫扎特的 Musikalisches Würfelspiel（Musical Dice Game，1757）被认为是早期的基于随机性的生成系统。</p><p><img src="http://abjad.mbrsi.org/_images/mozart-tables.png" style="zoom:40%"></p><p>在这部作品中，他创作了 176 小节音乐，然后将小节号排列为两个特殊的矩阵图，通过演奏家掷般子的方式来决定音乐序列的选择。这个机制提供了有序和无序的平衡。可以说，将算法应用于音乐创作可能和音乐本身一样古老。</p><p>Iannis Xenakis 在他 1958 年的专辑 Analogique 中，使用了马尔可夫链来作曲。他在著作 Formalized Music: Thought and Mathematics in Composition 里详细描述了使用马尔可夫模型的算法。</p><p><img src="https://discourse-cdn-sjc2.com/standard17/uploads/critterandguitari/original/2X/a/aede09d8452c1b3d4273a4515dfa6c941c62e21e.jpg" alt=""></p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=e1343co9tml" allowfullscreen="true"></iframe><p>第三章“马尔可夫的随机音乐：应用”（节选）<a href="https://v.qq.com/x/page/e1343co9tml.html" target="_blank" rel="noopener">音乐生成3_腾讯视频</a></p><p>John Cage，Farmers Manual 和 Brian Eno 等现代（电子）音乐先驱都在早期作品中开始使用生成系统。</p><p>Continuator 是 Francois Pache 在索尼计算机科学实验室 (Sony Computer Science Laoratories) 时主导的项目。</p><blockquote><p>The Continuator is a usable musical instrument combining techniques from interactive and automatic learning systems. </p></blockquote><p><img src="https://www.sonycsl.co.jp/wp-content/uploads/2015/08/Continuator.jpg" alt=""></p><p>他最近几年则投入到 <a href="http://www.flow-machines.com/" target="_blank" rel="noopener">Flow Machines</a> 项目中。</p><p><img src="https://pic.36krcnd.com/201801/30024716/k5qmdhmi5h5yyl6u!1200" alt=""></p><p>2016 年，格莱美获奖制作人 Alex Da Kid 与 IBM Watson 搭档合作一起创作歌曲。Watson 将大量的非结构化数据转化为情感洞察，创造出有史以来一种全新的音乐——可以“聆听”受众的音乐。</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=b0388czlxm5" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/b0388czlxm5.html" target="_blank" rel="noopener">Alex Da Kid 携手IBM Watson创作故事揭秘_腾讯视频</a></p><p><a href="https://www.ibm.com/ibm/cn/cognitive/outthink/watson/index.html" target="_blank" rel="noopener">Watson</a> 分析了近五年的文化和音乐数据，探索全新的情感洞察。</p><p>为了解最普遍最主流的话题及主题，自然语言分析 API <a href="http://www.ibm.com/watson/developercloud/alchemy-language.html" target="_blank" rel="noopener">Watson Alchemy Language</a> 分析了过去 5 年的各类文本，包括诺贝尔和平奖演讲内容，《纽约时报》头版，美国最高法院的裁定，洛杉矶 Getty 博物馆的报告，维基百科文章，热门电影梗概等等。</p><p>掌握这些文化主题后，情绪分析 API <a href="http://www.ibm.com/watson/developercloud/tone-analyzer.html" target="_blank" rel="noopener">Watson Tone Analyzer</a> 分析相关的社交媒体内容了解受众对主题的想法和感受。它还分析了过去 5 年 Billboard Hot 100 歌曲中超过 26000 首歌的歌词。Watson Beat 检测出来热门歌曲的作曲过程中，从逐年来不同的节奏、音高、乐器、流派中找出关系模型，帮助 Alex 发现不同声音所反映出的不同情感。</p><p>同时, 颜色分析 API <a href="http://www.research.ibm.com/" target="_blank" rel="noopener">Cognitive Color Design Tool</a> 对专辑封面、图像、色彩的分析也启发了 Alex 专辑封面的制作。</p><p><img src="http://www-31.ibm.com/ibm/cn/cognitive/outthink/watson/music/images/bg-03.jpg" alt=""></p><hr><p>新的创作时代已经到来。</p><p>新技术激发了前所未有的创造力，新的创作方式将赋予创作者们更大的能量。</p><p>00 的生成式艺术和算法创作系列，将带你一起探索（看起来很 Geek 很头疼的）知识和项目，其中很多都是艺术创作领域中前沿和硬核的话题，例如混沌和分型理论（Chaotic &amp; Fractal）、形状语法（Shape grammar）、规则系统（Rule-based system）、马尔可夫模型（Markov Model）、智能主体（Intelligent Agents）、多智能体系统（Multi-agent system）、元胞自动机（Cellular Automaton）等。</p><p>道阻且长，行则将至。</p><p>感谢你的陪伴。</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li>Sternberg, R. J., &amp; O’HARA, L. A. (1999). 13 Creativity and Intelligence. <em>Handbook of creativity</em>, 251.</li><li>Philip Galanter. What is Generative Art? Complexity theory as a context for art theory, 2003 International Conference on Generative Art</li><li><a href="https://www.wikiwand.com/en/Triarchic_theory_of_intelligence" target="_blank" rel="noopener">Triarchic theory of intelligence - Wikiwand</a></li><li><a href="http://www.aaronshome.com/aaron/index.html" target="_blank" rel="noopener">Harold Cohen Home Page</a></li><li><a href="http://www.cloudpainter.com/" target="_blank" rel="noopener">cloudpainter - an artificially intelligent painting robot</a></li><li><a href="http://freedomandsafety.com/ru/node/1380" target="_blank" rel="noopener">Qbits for Cubists: Robots Made These Incredible Works of Fine Art | Freedom and Safety</a></li><li><a href="https://www.wikiwand.com/en/Musikalisches_W%C3%BCrfelspiel" target="_blank" rel="noopener">Musikalisches Würfelspiel - Wikiwand</a></li><li><a href="https://www.francoispachet.fr/" target="_blank" rel="noopener">François Pachet - Director of Spotify Creator Technology Research Lab</a></li><li><a href="http://www.flow-machines.com/" target="_blank" rel="noopener">Flow Machines: AI music-making</a></li><li><a href="https://medium.com/artists-and-machine-intelligence/neural-nets-for-generating-music-f46dffac21c0" target="_blank" rel="noopener">Neural Nets for Generating Music – Artists and Machine Intelligence – Medium</a></li><li><a href="http://www-31.ibm.com/ibm/cn/cognitive/outthink/watson/music/" target="_blank" rel="noopener">IBM Watson Music - 中国</a></li><li><a href="https://xw.qq.com/cmsid/20180409A1295K00" target="_blank" rel="noopener">机器人都能画出《蒙娜丽莎的微笑》了，那还要画家干什么？</a></li><li><a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1538363661&amp;ver=1155&amp;signature=YiP2N6ONasXfYcTqidl7jz2x1KrfHO30I3hUGwHi9O2uqAL9tp8Z0xfeS7fVVljj7QMjazIetslJJ8r8whpe*brPZcbR3c1vRHin6Ovul4nxwE-ujd8z0qRXCeH1JIYg&amp;new=1" target="_blank" rel="noopener">人工智能是怎么创作音乐的？</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p><a id="more"></a><p>自从今年把兴趣领域<a href="https://www.uegeek.com/180717-human-computer-symbiosis.html" target="_blank" rel="noopener">从人机交互扩展到人机协同创作</a>之后，接触到越来越多「艺术x技术」的新鲜知识、有趣项目和精彩作品。一个星期有那么 7 天心情如下图：</p><p><img src="http://img.viz.mobi/justMyMind.jpg" alt=""></p><p>这个系列，<a href="https://uegeek.com/">00</a> 将会（希望是深入地）整理和介绍 Generative Art 和 Computational Creativity 的一些研究领域、概念和作品。当然，我们不满足于做手残党。为了避免出现只是看看图惊叹两句就没有然后的纯消费行为，这个系列也会探讨相关的技术、算法，以及实现的思路。</p><h2 id="需求井喷下的工具进化"><a href="#需求井喷下的工具进化" class="headerlink" title="需求井喷下的工具进化"></a>需求井喷下的工具进化</h2><p>为什么关注生成式艺术和算法创作？</p><p>除了个人的职业背景和癖好，还有对声色犬马的生活，哦不，做一个声色全码的手艺人的向往。</p><p>创意和娱乐产业发展到今天，已经是一个巨大的造梦引擎。但消费市场对极致体验和制造梦境能力的追求并不会停歇，这迫使技术和计算能力以前所未有的速度变化和发展。不但场景越来越宏大、梦幻、沉浸，对实时性、多角色协同、虚实融合的诉求也愈发强烈。这其中有大量的创作工作要做。</p><p><img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=be465b88fdf21a6e05ab522458452344&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt=""></p><p>比如，在 Minecraft 中，每周有超过 1000 万玩家，会在游戏里待上 20 小时。这样算下来，需要多少作曲家才能为每一位玩家提供个性化的音乐呢？</p><p><img src="https://images.g2a.com/newlayout/470x470/1x1x0/a476e4dbb6b0/591ef89dae653af3c942eff4" alt=""></p><p>Non-linear （非线性叙事）媒体日渐流行，自动生成丰富而个性化的内容流成为强需求，或者至少需要有方法能够帮助创意工作者更有效地完成创意任务。但是传统的工具例如视频剪辑、音频效果制作、图像合成等等，工具本身并不能提供更多的帮助。不论创意有多明确，一切都需要从头开始。</p><p>为什么机器不能以更动态、灵活、人性的方式与我们交互呢？比如说，我已经设计过 100 张海报，这次的设计跟其中的 3 张风格相似，但是内容会有变化。创作工具能不能自动生成几个草稿或模板，让我不必重零开始呢？</p><p>打造这样的工具或者工作流程，需要研究人类的创造过程，让机器在一定程度上自主完成创造过程，才能更好地辅助我们创造。</p><p>应用了计算机算法的生成式艺术处于艺术和创造的前沿，已经涌现出许多艺术和文化作品。</p><h2 id="生成式艺术"><a href="#生成式艺术" class="headerlink" title="生成式艺术"></a>生成式艺术</h2><p><strong>生成式艺术（Generative art）是指部分或全部使用自动创作系统（autonomous system）创造的艺术。</strong></p><blockquote><p>Generative art refers to any art practice where the artist <strong>uses a system</strong>, such as a set of natural language rules, a computer program, a machine, or other procedural invention, which is set into motion <strong>with some degree of autonomy</strong> contributing to or resulting in a completed work of art. </p><p>—— Philip Galanter </p></blockquote><p>可以用来辅助生成艺术作品的系统有很多，通常是一个非人类的独立系统（不一定是计算机），只要它可以独立确定一件艺术品的特征。生成式艺术几乎跟艺术本身一样古老，使用几何对称、样式、重复来生成图案的做法，已经存在几千年了。</p><p><img src="http://www.sfu.ca/~mdevos/notes/geom-sym/wallpaper/2222/egypt8b.jpg" alt=""></p><p>艺术家需要设计一个自主运作的机制来创作作品，这个机制通常包含一组规则，例如自然/音乐/编程语言、二进制代码、数据映射、生物指令等，由它们生成自动化处理过程，最终产生艺术作品。</p><p>生成式艺术可以为艺术家提供减少主观创造意向的手段。在不同的条件、参数、设置下，运行过程不同，结果会呈现出一定特征，但常常是不可预测的。</p><p>随着互动需求的增加、计算机计算能力提高，越来越多的生成式艺术作品是实时生成的，而且系统会收集反馈或产生即时的新输入，让结果持续更新和变化。</p><p>需要注意的是，<strong>生成式艺术并不是艺术流派、艺术运动或某种意识形态，它只是一种创造性的方法</strong>，与作品的意图和价值取向无关。</p><h2 id="算法创作"><a href="#算法创作" class="headerlink" title="算法创作"></a>算法创作</h2><p>Computational Creativity（我翻译为算法创作），是一个学术研究领域，<strong>研究的对象主要是创意活动的计算化/自动化过程。</strong>它并不局限于艺术，还包含各种创造性活动，如绘画、音乐、文学、表演等等。</p><p>算法创作听起来跟人工智能似乎很像，都强调算法、计算、自动的处理过程。它们是一样的吗？</p><p>让我们先来看看 Sternberg 在 Handbook of Creativity 里提出的创造性最重要的 3 类智能：</p><ul><li>分析智能 Analytical Intelligence：分析、评论、判断、比较、评估</li><li>实用智能 Practical Intelligence：使用、实施</li><li>创作智能 Synthetic/creative Intelligence：想象、创造、发明、发现、预测 </li></ul><p>再来回顾一下人工智能先驱司马贺给出的人工智能的定义：</p><blockquote><p>Artificial intelligence is the science of having machines solve problems that do require intelligence when solved by human. </p><p>—— Herbert Simon (1960)</p></blockquote><p>此处的重点是：solve problems。</p><p>AI 擅长 rational problem solving，也就是说，擅长处理那些解决方案可能很复杂，但是容易理解、目标明确或定义良好（well defined）的问题。</p><p>但是，机器可以擅长创作吗？</p><p>跟理性问题相比，创造性活动一般没有「最佳」结果或答案。不存在最好的音乐、绘画、诗歌、故事、笑话、菜谱、游戏……这一类活动更加需要 Sternberg 所说的第三类 synthetic 智能。于是算法创作渐渐从 AI 研究领域中分离出来，因为「最优」（optimality）的概念对创作行为来说是定义不良的（ill-defined）。</p><h2 id="Creative-System-的分类"><a href="#Creative-System-的分类" class="headerlink" title="Creative System 的分类"></a>Creative System 的分类</h2><p>从通用性来分，创意系统可分为特定的 (基于领域/任务/审美的) 和通用的。</p><p>从自动化程度来分，可分为响应式的和全自动的。</p><p>从互动性来分，可分为低互动性的（只响应输入，比如一般的人机交互界面）和高互动性的（可以相互影响的智能体行为）。</p><p>从系统的知识来源分，可分为硬编码的、输入的和学习式的（比如从语料学习）。</p><p>从系统的行为模式来分，可分为：fixed - periodic - complex - chaotic。</p><p>从有效复杂性（effective complexity）来分，可以分为：</p><p><img src="https://www.researchgate.net/profile/Philip_Galanter/publication/220947690/figure/fig2/AS:651931043233793@1532443881222/Effective-complexity-used-to-organize-various-generative-art-systems.png" alt=""></p><p>从架构和算法来分，可以分为：</p><ul><li><p>generative</p></li><li><p>generate and evaluate</p></li><li><p>generative with reflexive feedback</p><p><img src="http://img.viz.mobi/reflective%20system.png" alt=""></p></li><li><p>interactive and adaptive</p><p><img src="http://img.viz.mobi/interactive%20system.png" alt=""></p></li></ul><h2 id="算法创作的领域实践"><a href="#算法创作的领域实践" class="headerlink" title="算法创作的领域实践"></a>算法创作的领域实践</h2><h3 id="生成绘画"><a href="#生成绘画" class="headerlink" title="生成绘画"></a>生成绘画</h3><p>哈罗德·科恩（Harold Cohen）的 AARON 系统是一个从 1973 年开始的长期项目，他将软件人工智能与机器人绘画设备相结合，让机器自动作画，可以算得上是 AI 画家的鼻祖了。</p><p><img src="https://static1.squarespace.com/static/5800c6211b631b49b4d63657/t/5807227bebbd1a790b76fdb6/1476862594263/" style="zoom:50%"></p><p>自动作画的机器人被明名为 AARON。AARON 是一台很原始的绘画机器，但它可以在没有照片或其他人类输入参考的情况下绘制人物形象的静物和肖像。</p><p>在专注水彩作画的 40 多年里，AARON 的绘画能力逐年提高。80 年代学会了将物体或人物放置在三维空间中，从 1990 年起可以用彩色绘画。它的部分作品已被泰特等知名美术馆和一些私人收藏家收藏。</p><p><img src="https://images2.corriereobjects.it/methode_image/2015/09/09/Cultura/Foto%20Gallery%20-%20Trattate/sfpeople_ori_crop_MASTER__0x0_MGZOOM.jpg" style="zoom:50%"></p><p>Final Approach 是 2013 年 AARON 最新的绘画作品之一：</p><p><img src="https://windowsunited.de/wp-content/uploads/sites/3/2018/06/AARON-neu-4-1024x553.jpg" alt=""></p><p>时间快进到 2018 年，已经连续举办 3 年的 Robot Art Prize 已落下帷幕（ARRON 也参加了比赛🙂），第一名由名叫 cloudpainter 的机器人画家获得，下面是它的画作：</p><p><img src="https://static1.squarespace.com/static/5800c6211b631b49b4d63657/t/5b0f2e52aa4a99692dc998a2/1527721560441/robotart_announcement.jpg?format=2500w" alt=""></p><blockquote><p>我认为，在短期内，机器人将越来越多地用于数字艺术的最终生产，特别是那些有很多细节或重复元素的机器人。</p></blockquote><p>创立 RobotArt 的艺术家和工程师 Andrew Conru 表示。</p><p>但他不认为机器人或算法艺术家会取代更有创造性的人类。他把机器创造的艺术品比作照相机的创造<strong>。</strong>摄影成为一种全新的艺术分支，捕捉不同类型的图像和作品。</p><p>Conru 认为机器人和人类艺术品将继续存在。每个人都会为艺术领域带来不同的技能和方法。正如他的网站所说：</p><blockquote><p>We all win when we see something beautiful.</p></blockquote><h3 id="生成音乐"><a href="#生成音乐" class="headerlink" title="生成音乐"></a>生成音乐</h3><p>人们希望借助自然的力量更自动地创作音乐，这种想法实际上早已出现。从某种程度上说，第一首自动生成音乐来自于大自然：中国的风铃、古希腊的风弦琴、日本的水琴窟等。</p><p>莫扎特的 Musikalisches Würfelspiel（Musical Dice Game，1757）被认为是早期的基于随机性的生成系统。</p><p><img src="http://abjad.mbrsi.org/_images/mozart-tables.png" style="zoom:40%"></p><p>在这部作品中，他创作了 176 小节音乐，然后将小节号排列为两个特殊的矩阵图，通过演奏家掷般子的方式来决定音乐序列的选择。这个机制提供了有序和无序的平衡。可以说，将算法应用于音乐创作可能和音乐本身一样古老。</p><p>Iannis Xenakis 在他 1958 年的专辑 Analogique 中，使用了马尔可夫链来作曲。他在著作 Formalized Music: Thought and Mathematics in Composition 里详细描述了使用马尔可夫模型的算法。</p><p><img src="https://discourse-cdn-sjc2.com/standard17/uploads/critterandguitari/original/2X/a/aede09d8452c1b3d4273a4515dfa6c941c62e21e.jpg" alt=""></p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=e1343co9tml" allowfullscreen="true"></iframe><p>第三章“马尔可夫的随机音乐：应用”（节选）<a href="https://v.qq.com/x/page/e1343co9tml.html" target="_blank" rel="noopener">音乐生成3_腾讯视频</a></p><p>John Cage，Farmers Manual 和 Brian Eno 等现代（电子）音乐先驱都在早期作品中开始使用生成系统。</p><p>Continuator 是 Francois Pache 在索尼计算机科学实验室 (Sony Computer Science Laoratories) 时主导的项目。</p><blockquote><p>The Continuator is a usable musical instrument combining techniques from interactive and automatic learning systems. </p></blockquote><p><img src="https://www.sonycsl.co.jp/wp-content/uploads/2015/08/Continuator.jpg" alt=""></p><p>他最近几年则投入到 <a href="http://www.flow-machines.com/" target="_blank" rel="noopener">Flow Machines</a> 项目中。</p><p><img src="https://pic.36krcnd.com/201801/30024716/k5qmdhmi5h5yyl6u!1200" alt=""></p><p>2016 年，格莱美获奖制作人 Alex Da Kid 与 IBM Watson 搭档合作一起创作歌曲。Watson 将大量的非结构化数据转化为情感洞察，创造出有史以来一种全新的音乐——可以“聆听”受众的音乐。</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=b0388czlxm5" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/b0388czlxm5.html" target="_blank" rel="noopener">Alex Da Kid 携手IBM Watson创作故事揭秘_腾讯视频</a></p><p><a href="https://www.ibm.com/ibm/cn/cognitive/outthink/watson/index.html" target="_blank" rel="noopener">Watson</a> 分析了近五年的文化和音乐数据，探索全新的情感洞察。</p><p>为了解最普遍最主流的话题及主题，自然语言分析 API <a href="http://www.ibm.com/watson/developercloud/alchemy-language.html" target="_blank" rel="noopener">Watson Alchemy Language</a> 分析了过去 5 年的各类文本，包括诺贝尔和平奖演讲内容，《纽约时报》头版，美国最高法院的裁定，洛杉矶 Getty 博物馆的报告，维基百科文章，热门电影梗概等等。</p><p>掌握这些文化主题后，情绪分析 API <a href="https://www.ibm.com/watson/services/tone-analyzer/" target="_blank" rel="noopener">Watson Tone Analyzer</a> 分析相关的社交媒体内容了解受众对主题的想法和感受。它还分析了过去 5 年 Billboard Hot 100 歌曲中超过 26000 首歌的歌词。Watson Beat 检测出来热门歌曲的作曲过程中，从逐年来不同的节奏、音高、乐器、流派中找出关系模型，帮助 Alex 发现不同声音所反映出的不同情感。</p><p>同时, 颜色分析 API <a href="http://www.research.ibm.com/" target="_blank" rel="noopener">Cognitive Color Design Tool</a> 对专辑封面、图像、色彩的分析也启发了 Alex 专辑封面的制作。</p><p><img src="http://www-31.ibm.com/ibm/cn/cognitive/outthink/watson/music/images/bg-03.jpg" alt=""></p><hr><p>新的创作时代已经到来。</p><p>新技术激发了前所未有的创造力，新的创作方式将赋予创作者们更大的能量。</p><p>00 的生成式艺术和算法创作系列，将带你一起探索（看起来很 Geek 很头疼的）知识和项目，其中很多都是艺术创作领域中前沿和硬核的话题，例如混沌和分型理论（Chaotic &amp; Fractal）、形状语法（Shape grammar）、规则系统（Rule-based system）、马尔可夫模型（Markov Model）、智能主体（Intelligent Agents）、多智能体系统（Multi-agent system）、元胞自动机（Cellular Automaton）等。</p><p>道阻且长，行则将至。</p><p>感谢你的陪伴。</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li>Sternberg, R. J., &amp; O’HARA, L. A. (1999). 13 Creativity and Intelligence. <em>Handbook of creativity</em>, 251.</li><li>Philip Galanter. What is Generative Art? Complexity theory as a context for art theory, 2003 International Conference on Generative Art</li><li><a href="https://www.wikiwand.com/en/Triarchic_theory_of_intelligence" target="_blank" rel="noopener">Triarchic theory of intelligence - Wikiwand</a></li><li><a href="http://www.aaronshome.com/aaron/index.html" target="_blank" rel="noopener">Harold Cohen Home Page</a></li><li><a href="http://www.cloudpainter.com/" target="_blank" rel="noopener">cloudpainter - an artificially intelligent painting robot</a></li><li><a href="http://freedomandsafety.com/ru/node/1380" target="_blank" rel="noopener">Qbits for Cubists: Robots Made These Incredible Works of Fine Art | Freedom and Safety</a></li><li><a href="https://www.wikiwand.com/en/Musikalisches_W%C3%BCrfelspiel" target="_blank" rel="noopener">Musikalisches Würfelspiel - Wikiwand</a></li><li><a href="https://www.francoispachet.fr/" target="_blank" rel="noopener">François Pachet - Director of Spotify Creator Technology Research Lab</a></li><li><a href="http://www.flow-machines.com/" target="_blank" rel="noopener">Flow Machines: AI music-making</a></li><li><a href="https://medium.com/artists-and-machine-intelligence/neural-nets-for-generating-music-f46dffac21c0" target="_blank" rel="noopener">Neural Nets for Generating Music – Artists and Machine Intelligence – Medium</a></li><li><a href="http://www-31.ibm.com/ibm/cn/cognitive/outthink/watson/music/" target="_blank" rel="noopener">IBM Watson Music - 中国</a></li><li><a href="https://xw.qq.com/cmsid/20180409A1295K00" target="_blank" rel="noopener">机器人都能画出《蒙娜丽莎的微笑》了，那还要画家干什么？</a></li><li><a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1538363661&amp;ver=1155&amp;signature=YiP2N6ONasXfYcTqidl7jz2x1KrfHO30I3hUGwHi9O2uqAL9tp8Z0xfeS7fVVljj7QMjazIetslJJ8r8whpe*brPZcbR3c1vRHin6Ovul4nxwE-ujd8z0qRXCeH1JIYg&amp;new=1" target="_blank" rel="noopener">人工智能是怎么创作音乐的？</a></li></ul>]]></content>
     
     <summary type="html">
     
@@ -114,11 +156,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -148,11 +190,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -182,11 +224,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -216,11 +258,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -250,11 +292,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -284,11 +326,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -316,11 +358,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -350,11 +392,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="列表" scheme="http://uegeek.com/tags/%E5%88%97%E8%A1%A8/"/>
     
@@ -384,11 +426,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="Chromakeying" scheme="http://uegeek.com/tags/Chromakeying/"/>
     
@@ -420,11 +462,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="Math" scheme="http://uegeek.com/tags/Math/"/>
     
@@ -456,11 +498,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -488,11 +530,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -522,11 +564,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -556,11 +598,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -592,11 +634,11 @@
     
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -624,11 +666,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="数学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
@@ -658,43 +700,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
       <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Max/MSP/Jitter 官方教程翻译03 - 播放 QuickTime 视频</title>
-    <link href="http://uegeek.com/180825-jitter-03.html"/>
-    <id>http://uegeek.com/180825-jitter-03.html</id>
-    <published>2018-08-24T16:05:34.000Z</published>
-    <updated>2018-09-25T07:39:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/Max-title-3.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter01" target="_blank" rel="noopener">Tutorial 1: Playing a QuickTime Movie</a></p></blockquote><p>这个教程教你使用 Jitter 执行最简单但最有用的任务之一：在窗口中播放 QuickTime 视频。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter01a.png" alt=""><br>打开 QuickTime 电影文件</p><p>这个 Patch 中有两个 Jitter 对象：<code>jit.movi​​e</code> 和 <code>jit.window</code>。<code>jit.window</code> 会自动打开电脑屏幕上的窗口。<code>jit.movi​​e</code> 则打开 QuickTime 视频并开始播放。</p><p>单击 <code>read countdown.mov</code> 的消息框，<code>jit.movi​​e</code> 就会打开 QuickTime 视频文件 countdown.mov 并开始读取。</p><p>默认情况下，<code>jit.movi​​e</code> 会在打开文件后立即播放。但是请注意，即使 <code>jit.movi​​e</code> 对象正在播放电影，窗口中却没有显示，因为：</p><p>Jitter 中的每个对象都执行特定任务——可能非常简单，也可能相当复杂。播放 QuickTime 视频实际上被分解为两个任务：</p><ol><li>从硬盘上的文件中将每帧视频数据读入 RAM</li><li>获取 RAM 中的数据，并将其显示为屏幕上的彩色像素</li></ol><p>第一个任务由 <code>jit.movi​​e</code> 执行，第二个任务由 <code>jit.window</code> 执行。为了让 <code>jit.window</code> 知道要显示什么，这两个对象需要进行通信。</p><h2 id="Jitter-对象如何通信"><a href="#Jitter-对象如何通信" class="headerlink" title="Jitter 对象如何通信"></a>Jitter 对象如何通信</h2><blockquote><p>重要概念：Jitter 对象相互通信的关键是<strong>矩阵的名称</strong> —— 它指定了数据在内存中的位置。Jitter 对象输出其他 Jitter 对象能理解的消息（<code>jit_matrix</code>，后跟空格和存储数据的矩阵名称）。此消息通过接线在对象之间传递。</p><p><strong>接收的对象从入口接收消息，从内存中的指定位置获取数据，以某种方式修改数据，并发送修改后的名称数据，输出到对象的左侧出口。</strong></p><p>这样每个对象查看内存中相应的位置来获取所需的数据，执行各自的任务，而不必知道其他对象正在做什么。大多数 Jitter 对象只有从另一个对象获取 jit_matrix 消息，得知该查看相应的矩阵，才会对那里的数据做一些事情。</p></blockquote><p>在多数情况下，Jitter 对象自己会生成唯一的名称。你也可以指定名称（最好是这样）。显式地命名矩阵，不同对象就可以使用相同的内存空间。</p><h2 id="由-Jitter-对象触发动作"><a href="#由-Jitter-对象触发动作" class="headerlink" title="由 Jitter 对象触发动作"></a>由 Jitter 对象触发动作</h2><p>是什么让一个 Jitter 对象将 <code>jit_matrix</code> 消息发送给另一个对象呢？大多数 Jitter 对象在收到消息 <code>outputmatrix</code> 或 <code>bang</code> 时，会发出 <code>jit_matrix</code> 消息。另外，一个对象收到消息并修改了数据后，它会自动发出一条 <code>jit_matrix</code> 消息，通知其他包含相同矩阵名称的对象。</p><p>也就是说，当一个对象收到 <code>jit_matrix</code> 消息时，它会做一些事情并发出自己的 <code>jit_matrix</code> 消息。当一个对象收到 <code>outputmatrix</code> 或 <code>bang</code> 时，它会发送一个 <code>jit_matrix</code> 消息，而不做任何其他事情。</p><p>因此在示例中，<code>jit.movi​​e</code> 对象正在播放 QuickTime 视频，不断存储当前的视频帧，但 <code>jit.window</code> 对象只会在从 <code>jit.movi​​e</code> 对象接收到 <code>jit_matrix</code> 消息时显示内容。只有当 <code>jit.movi​​e</code> 收到消息<code>bang</code>（或 outputmatrix）时才会发生这种情况。那时，<code>jit.window</code> 将显示当前正在电影中播放的任何视频帧。</p><p>为了使 <code>jit.window</code> 以一定速度更新并不断显示视频帧，就需要以同样的速度发送 <code>bang</code> 消息给 <code>jit.movi​​e</code>。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter01b.png" alt=""><br>视频在 jit.movi​​e 中播放，每当要显示一帧时都要发送 bang 消息</p><ul><li>单击标记了 play 的开关，<code>metro</code> 对象就会启动。这将以每秒 25 次（每 40 毫秒）的速度发出 <code>bang</code> 消息。这个速度足以显示该视频的每一帧。只要 <code>bang</code> 继续，我们就能看到窗口中显示的视频。</li></ul><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter01c.png" alt=""><br>jit.window 显示矩阵的内容</p><ul><li><p>点击开关停止 <code>metro</code>。<code>jit.window</code> 对象停止更新电影窗口，现在只会看到最后显示的静止图像。电影仍在播放 - <code>jit.movi​​e</code> 仍在逐帧更新内存 - 但 <code>jit.window</code> 会忽略这些更新，因为 <code>jit.movi​​e</code> 不再发送消息。</p></li><li><p>你可以单击 <code>metro</code> 下方的按钮，来验证电影是否仍在播放。这会让 <code>jit.movi​​e</code> 将 <code>jit_matrix</code> 消息发送到 <code>jit.window</code>，当前帧会更新 Movie 窗口。连续点几次，会看到电影在鼠标点击之间有变化。</p></li></ul><p>总而言之，<code>jit.movi​​e</code> 以视频正常速率逐帧读取 QuickTime 文件的一帧。当 <code>jit.movi​​e</code> 收到 <code>bang</code> 消息时，会将该数据的位置传达给 <code>jit.window</code>，然后 <code>jit.movi​​e</code> 收到 <code>bang</code> 时所包含的任何帧都由 <code>jit.window</code> 显示出来。</p><h2 id="对象中的参数"><a href="#对象中的参数" class="headerlink" title="对象中的参数"></a>对象中的参数</h2><p>本教程中的 <code>jit.movi​​e</code> 的两个参数 320 和 240，指定了对象在内存中保留单帧视频时的宽度和高度。它会声明足够的 RAM 来存储这些帧。因此，使用 read 消息输入希望读入的视频的尺寸是 ok 的。这样我们知道 QuickTime 视频的尺寸是 320x240。</p><p>如果输入的维度小于读入的视频的尺寸，<code>jit.movi​​e</code> 没法声明足够的存储空间，就不得不忽略每帧的一些像素。相反，如果输入的维度大于读入的视频尺寸，则每一帧中都没有足够的像素来填充已分配的内存空间，因此 <code>jit.movi​​e</code> 会平均分发数据，并用重复数据填充空余的内存。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter01b.png" alt="">    </p><p><code>jit.window</code> 对象有五个输入的参数：<code>Movie 5 41 325 281</code>。第一个参数是 <code>jit.window</code> 显示的矩阵的名称。它也会出现在视频窗口的标题栏中。它可以是任何单词（用引号括起来的话，可以是多个单词）。接下来的两个参数，表示视频窗口显示区域左上角的 x，y 屏幕坐标，后两个参数是显示区域右下角的坐标（左-上-右-下）。选择了这些数字是因为</p><ul><li>它们定义了一个 320x240 的显示区域，与视频尺寸相同</li><li>当考虑操作系统默认的窗口边框、标题栏和菜单栏的尺寸时，窗口刚好隐藏在桌面的左上角。（当然也可以设置标题栏不显示）</li></ul><p>输入 <code>metro</code> 的参数 40，使其每秒发出 25 次 <code>bang</code>消息。QuickTime 视频的帧速率是每秒24帧，因此这个 <code>metro</code> 持续触发 <code>jit.movi​​e</code> 对象，确保每帧都能显示。</p><p>要播放 QuickTime 视频，请使用 <code>jit.movi​​e</code> 打开文件并将视频的连续帧读入 RAM，然后使用 <code>jit.window</code> 在单独的窗口中显示视频。使用输入的参数指定视频的尺寸，以及屏幕上显示区域的精确坐标。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Jitter 对象通过相互发送矩阵的名称，来传递特定视频帧的信息——该信息在内存中的位置。 Jitter 对象获得矩阵名称时，它使用该位置的数据执行指定的任务，然后将修改后的数据名称，发送给其他 Jitter 对象。几乎所有 Jitter 对象在收到<code>bang</code>消息 （或 outputmatrix）时都会发出一个名称（包含在<code>jit_matrix</code>消息中）。因此，为了显示视频的连续帧，以某个速率向 <code>jit.movie</code> 发送 <code>bang</code> 消息，然后​​连接到<code>jit.window</code>显示。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter01d.png" alt=""><br>跟踪每个对象的消息和角色</p><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://img.viz.mobi/maxgroup0825.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/Max-title-3.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
-    
-      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
-    
-      <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
-    
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
