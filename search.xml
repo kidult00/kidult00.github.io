@@ -3,6 +3,118 @@
   
     
     <entry>
+      <title><![CDATA[生成式艺术和算法创作03-混沌和分形]]></title>
+      <url>/181021-generative-art-creativity-03.html</url>
+      <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p>
+<a id="more"></a>
+<p><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></p>
+<p><a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">生成式艺术和算法创作02-随机和噪声</a></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Lorenz_attractor_yb.svg/800px-Lorenz_attractor_yb.svg.png?1538707261695" style="zoom:50%"></p>
+<h2 id="动态系统"><a href="#动态系统" class="headerlink" title="动态系统"></a>动态系统</h2><p>动态系统（dynamical system）是数学上的一个概念，是一种固定的规则，它描述一个给定空间中所有点随着时间变化的情况，例如运动的钟摆、弹跳的球、管道中水的流动等。</p>
+<p>动态系统的行为可以分为四类：</p>
+<ul>
+<li>Fixed point behavior (equilibrium)：固定（平衡）行为</li>
+<li>Limit cycle or periodic behavior：循环或周期行为</li>
+<li>Quasi-periodic behavior：准周期行为</li>
+<li>Chaotic behavior：无序行为</li>
+</ul>
+<p><strong>虽然动态系统是可以确定的，但是一旦输入发生微小改变，结果都会变得难以预测。混沌系统短期、局部可预测，长期、全局不可预测的特点，让它成为算法创作中常用的手段。</strong></p>
+<p><img src="http://sprott.physics.wisc.edu/pubs/354fig01.gif" alt=""></p>
+<p>via Generalization of the simplest autonomous chaotic system</p>
+<p>单峰映象（logistic map）是一个二次的多项式映射，是由简单非线性方程式产生<a href="https://www.wikiwand.com/zh/%E6%B7%B7%E6%B2%8C%E7%90%86%E8%AE%BA" target="_blank" rel="noopener">混沌</a>现象的经典范例。</p>
+<p>这种映射因生物学家 Robert May 在 1976 年发表的一篇论文而著名。公式为 $$x_{n+1}=rx_n(1-x_n)$$。对于任一个 r 值，最多只有一个稳定的极限环，若稳定极限环存在，几乎所有的点最后都会趋近极限。这些情况可用分枝图表示，分枝图中的横轴是 r 的数值，纵轴中显示大部份初值下稳态可能的 x 值，若数值在 2 个值中震荡，分枝图上对应的数值就会有 2 个点。若某 r 值已无法明确有几个对应的点，系统可能已经处于混沌状态。</p>
+<p>分枝图有自相似的特性。若将分枝图中 r=3.82 的部份展开，只取三个分支中的一个，图形会好像是原分枝图缩放及扭曲后的结果。所有非混沌的参数 r 都有此一特性。可以看出混沌和分形的关系。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/LogisticMap_BifurcationDiagram.png" alt=""></p>
+<p>吸引子（attractor）是微积分和系统科学论中的一个概念。一个系统有朝某个稳态发展的趋势，这个稳态就叫做吸引子。</p>
+<p>吸引子分为平庸吸引子和奇异吸引子。例如一个钟摆系统有一个平庸吸引子，这个吸引子使钟摆系统向停止晃动的稳态发展。平庸吸引子有不动点（平衡）、极限环（周期运动）和整数维环面（概周期运动）三种模式。不属于平庸的吸引子的都称为奇异吸引子，它表现了混沌系统中非周期性，无序的系统状态，例如天气系统。目前吸引子在学术上还没有完善的定义，奇异吸引子对于<a href="https://www.wikiwand.com/zh/%E6%B7%B7%E6%B2%8C%E7%90%86%E8%AE%BA" target="_blank" rel="noopener">混沌系统</a>的研究意义重大。</p>
+<p>混沌理论的思想也从上世纪后半叶开始，逐渐渗入到音乐和作曲领域。</p>
+<p>1960 年 George Brecht 在滴水事件（drip event）中，使不同来源的水，滴进所有空的容器。这个作品可以被视为音乐、剧场、或者是动态雕塑。</p>
+<p><img src="https://www.moma.org/media/W1siZiIsIjMwNDk2NSJdLFsicCIsImNvbnZlcnQiLCItcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=74b38f4f98552501" alt=""></p>
+<p>Brecht 的极简主义艺术活动是神秘费解、令人困惑的，这些作品及其配乐为观众设计成仅在想象的范围内可被解读与激活。滴水音乐（drip music）由此形成，指可由单个或多个表演者演出单一滴水水源与一个空的容器，通过设置使水滴入容器中。Drip music 很快就成为激浪派（fluxus）的标志，flux 一词本身不仅指持续的运动与改变，也指流体与流动，或更精确的是一个流体的流动速度。</p>
+<p>80 年代，混沌理论开始被应用在作曲中。它适用于音高、持续时间、动态范围和编排。它们很容易产生重复，以及周期性/准周期性模型变化，或者在混沌模式下产生更多不可预测的行为，而重复、变化、convergence 和 divergence 是音乐作曲里的关键要素。</p>
+<h2 id="分形"><a href="#分形" class="headerlink" title="分形"></a>分形</h2><p>分形是一个可以分成数个部分的几何形状，且每一部分都（至少近似地）是整体缩小后的形狀，即具有<a href="https://www.wikiwand.com/zh/%E8%87%AA%E7%9B%B8%E4%BC%BC" target="_blank" rel="noopener">自相似</a>的性质。分形也被称为扩展对称或展开对称。如果在每次放大后，形状的重复是完全相同的，被称为自相似。作为一个数学函数，分形通常是处处不可微的。无穷分形曲线可以理解为一条一维的曲线在空间中绕行。</p>
+<blockquote>
+<p>Fractals are mathematical dynamic systems represented by iterative equations that develop curves and geometrical shapes that have property of self-similarity. </p>
+</blockquote>
+<p>Sierpinski 三角是典型的自相似分形图形。1915 年由波兰数学家 Wacław Franciszek Sierpiński 提出。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Sierpinski_triangle_%28blue%29.jpg" alt=""></p>
+<p>算法：</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Sierpinski_triangle_evolution.svg/1024px-Sierpinski_triangle_evolution.svg.png" alt=""></p>
+<ol>
+<li>取一个实心的三角形（多数使用等边三角形）</li>
+<li>沿三边中点的连线，将它分成四个小三角形</li>
+<li>去掉中间的那一个小三角形</li>
+<li>对其余三个小三角形重复第 1 步</li>
+</ol>
+<p>Sierpinski 三角可由分型树产生：</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Fractal_tree.gif" alt=""></p>
+<p>分形算法已经被广泛用于生成式艺术创作中。</p>
+<p>Bogdan Soban 是斯洛文尼亚的信息学专家和软件开发者，退休后作为自由艺术家从事创作。他从 1999 年开始接触生成式艺术，开始编写基于算法的生成式艺术软件用于创作。</p>
+<p><img src="http://www.soban-art.com/images/naslovnica.jpg" alt=""></p>
+<p>Paul DeCelle 用 Frederik Slijkerman 开发的 <a href="http://www.ultrafractal.com/" target="_blank" rel="noopener">Ultra Fractal</a> 创作了一些列作品：</p>
+<p><img src="http://www.submit.manscostyle.com/submit/130_Image9.jpg" alt=""></p>
+<p><img src="https://www.fractalus.com/paul/20071022-kesius.jpg" alt=""></p>
+<p>Etienne Saint Amant 是来自加拿大魁北克省舍布鲁克的艺术家。他专注于用数学语言设计和描述的大幅艺术品，致力于概念研究和当代艺术创作。</p>
+<p><img src="https://t00.deviantart.net/AIQ7rP3wX0CLZ0sC29rhgA1QBZE=/fit-in/700x350/filters:fixed_height(100,100" alt="">:origin()/pre00/ae50/th/pre/i/2005/136/1/4/rakis_by_etiennesaintamant.jpg)</p>
+<p><img src="https://chaoscopia.com/artworks/m20180926-13.jpg" alt=""></p>
+<p>一些分形艺术的软件：</p>
+<ul>
+<li><a href="https://www.ultrafractal.com/" target="_blank" rel="noopener">Ultra Fractal: Advanced Fractal Software for Windows and macOS</a></li>
+<li><a href="http://fract.al/" target="_blank" rel="noopener">Frax - Immerse, Create, Inspire</a> </li>
+<li><a href="https://mandelbulber.com/" target="_blank" rel="noopener">Laravel</a></li>
+<li><a href="http://www.fractal-explorer.com/" target="_blank" rel="noopener">Fractal Explorer</a></li>
+<li><a href="http://www.apophysis.org/" target="_blank" rel="noopener">Apophysis.org</a></li>
+</ul>
+<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul>
+<li><a href="https://www.wikiwand.com/en/Dynamical_system" target="_blank" rel="noopener">Dynamical system - Wikiwand</a></li>
+<li><a href="https://www.wikiwand.com/en/Attractor" target="_blank" rel="noopener">Attractor - Wikiwand</a></li>
+<li><a href="https://www.wikiwand.com/en/Logistic_map" target="_blank" rel="noopener">Logistic map - Wikiwand</a></li>
+<li><a href="https://www.wikiwand.com/zh/%E5%88%86%E5%BD%A2" target="_blank" rel="noopener">分形 - Wikiwand</a></li>
+<li><a href="https://www.wikiwand.com/en/Sierpinski_triangle" target="_blank" rel="noopener">Sierpinski triangle - Wikiwand</a></li>
+<li><a href="http://sprott.physics.wisc.edu/pubs/paper354.htm" target="_blank" rel="noopener">Generalization of the Simplest Autonomous Chaotic System</a></li>
+<li><a href="https://www.moma.org/collection/works/127310?artist_id=756&amp;locale=zh&amp;page=1&amp;sov_referrer=artist" target="_blank" rel="noopener">Poul Hansen, George Brecht, Dick Higgins. George Brecht’s Drip Music, performed by Dick Higgins during Fluxus/Musik og Anti-Musik/det Instrumentale Teater, Nikolai Kirke, Copenhagen, November 23, 1962. 1962 | MoMA</a></li>
+<li><a href="http://www.soban-art.com/index-ang.asp" target="_blank" rel="noopener">Generative Art - generated, artificial, random, software</a></li>
+<li><a href="https://www.fractalus.com/paul/" target="_blank" rel="noopener">Fractal Art by Paul DeCelle</a></li>
+<li><a href="https://chaoscopia.com/nouveautes_en.html" target="_blank" rel="noopener">chaoscopia - news</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ArtxCode </tag>
+            
+            <tag> 艺术 </tag>
+            
+            <tag> Creative Coding </tag>
+            
+            <tag> Generative Art </tag>
+            
+            <tag> Computational Creativity </tag>
+            
+            <tag> 创意 </tag>
+            
+            <tag> 创造力 </tag>
+            
+            <tag> 混沌 </tag>
+            
+            <tag> 分形 </tag>
+            
+            <tag> Chaotic </tag>
+            
+            <tag> Fractal </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[算法创作实战02 - 用 MaxMSP 生成随机颜色]]></title>
       <url>/181021-computational-creativity-in-maxmsp-02.html</url>
       <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-title1.jpg" alt=""></p>
@@ -2659,9 +2771,9 @@
         
         <tags>
             
-            <tag> 交互设计 </tag>
-            
             <tag> AI </tag>
+            
+            <tag> 交互设计 </tag>
             
             <tag> ArtxCode </tag>
             
@@ -19537,9 +19649,9 @@ SONET optical fiber
             
             <tag> 交互设计 </tag>
             
-            <tag> iOS </tag>
-            
             <tag> Guideline </tag>
+            
+            <tag> iOS </tag>
             
             <tag> 规范 </tag>
             

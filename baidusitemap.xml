@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://uegeek.com/181021-generative-art-creativity-03.html</loc>
+    <lastmod>2018-10-21T12:17:19.000Z</lastmod>
+    <data>
+        <display>
+        <title>生成式艺术和算法创作03-混沌和分形</title>
+        <pubTime>2018-10-21T12:11:30.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
+         
+        <tag>Generative Art</tag>
+         
+        <tag>Computational Creativity</tag>
+         
+        <tag>创意</tag>
+         
+        <tag>创造力</tag>
+         
+        <tag>混沌</tag>
+         
+        <tag>分形</tag>
+         
+        <tag>Chaotic</tag>
+         
+        <tag>Fractal</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/181021-computational-creativity-in-maxmsp-02.html</loc>
     <lastmod>2018-10-21T11:15:56.000Z</lastmod>
     <data>
@@ -1327,9 +1367,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>iOS</tag>
-         
         <tag>Guideline</tag>
+         
+        <tag>iOS</tag>
          
         <tag>规范</tag>
          
@@ -4485,9 +4525,9 @@
         <title>破解 AI 时代的焦虑 —— 从人机交互到人机协同创作</title>
         <pubTime>2018-07-17T15:11:58.000Z</pubTime>
         
-        <tag>交互设计</tag>
-         
         <tag>AI</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>ArtxCode</tag>
          

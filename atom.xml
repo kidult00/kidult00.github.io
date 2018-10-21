@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-10-21T11:15:56.000Z</updated>
+  <updated>2018-10-21T12:17:19.000Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生成式艺术和算法创作03-混沌和分形</title>
+    <link href="http://uegeek.com/181021-generative-art-creativity-03.html"/>
+    <id>http://uegeek.com/181021-generative-art-creativity-03.html</id>
+    <published>2018-10-21T12:11:30.000Z</published>
+    <updated>2018-10-21T12:17:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p><a id="more"></a><p><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></p><p><a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">生成式艺术和算法创作02-随机和噪声</a></p><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Lorenz_attractor_yb.svg/800px-Lorenz_attractor_yb.svg.png?1538707261695" style="zoom:50%"></p><h2 id="动态系统"><a href="#动态系统" class="headerlink" title="动态系统"></a>动态系统</h2><p>动态系统（dynamical system）是数学上的一个概念，是一种固定的规则，它描述一个给定空间中所有点随着时间变化的情况，例如运动的钟摆、弹跳的球、管道中水的流动等。</p><p>动态系统的行为可以分为四类：</p><ul><li>Fixed point behavior (equilibrium)：固定（平衡）行为</li><li>Limit cycle or periodic behavior：循环或周期行为</li><li>Quasi-periodic behavior：准周期行为</li><li>Chaotic behavior：无序行为</li></ul><p><strong>虽然动态系统是可以确定的，但是一旦输入发生微小改变，结果都会变得难以预测。混沌系统短期、局部可预测，长期、全局不可预测的特点，让它成为算法创作中常用的手段。</strong></p><p><img src="http://sprott.physics.wisc.edu/pubs/354fig01.gif" alt=""></p><p>via Generalization of the simplest autonomous chaotic system</p><p>单峰映象（logistic map）是一个二次的多项式映射，是由简单非线性方程式产生<a href="https://www.wikiwand.com/zh/%E6%B7%B7%E6%B2%8C%E7%90%86%E8%AE%BA" target="_blank" rel="noopener">混沌</a>现象的经典范例。</p><p>这种映射因生物学家 Robert May 在 1976 年发表的一篇论文而著名。公式为 $$x_{n+1}=rx_n(1-x_n)$$。对于任一个 r 值，最多只有一个稳定的极限环，若稳定极限环存在，几乎所有的点最后都会趋近极限。这些情况可用分枝图表示，分枝图中的横轴是 r 的数值，纵轴中显示大部份初值下稳态可能的 x 值，若数值在 2 个值中震荡，分枝图上对应的数值就会有 2 个点。若某 r 值已无法明确有几个对应的点，系统可能已经处于混沌状态。</p><p>分枝图有自相似的特性。若将分枝图中 r=3.82 的部份展开，只取三个分支中的一个，图形会好像是原分枝图缩放及扭曲后的结果。所有非混沌的参数 r 都有此一特性。可以看出混沌和分形的关系。</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/LogisticMap_BifurcationDiagram.png" alt=""></p><p>吸引子（attractor）是微积分和系统科学论中的一个概念。一个系统有朝某个稳态发展的趋势，这个稳态就叫做吸引子。</p><p>吸引子分为平庸吸引子和奇异吸引子。例如一个钟摆系统有一个平庸吸引子，这个吸引子使钟摆系统向停止晃动的稳态发展。平庸吸引子有不动点（平衡）、极限环（周期运动）和整数维环面（概周期运动）三种模式。不属于平庸的吸引子的都称为奇异吸引子，它表现了混沌系统中非周期性，无序的系统状态，例如天气系统。目前吸引子在学术上还没有完善的定义，奇异吸引子对于<a href="https://www.wikiwand.com/zh/%E6%B7%B7%E6%B2%8C%E7%90%86%E8%AE%BA" target="_blank" rel="noopener">混沌系统</a>的研究意义重大。</p><p>混沌理论的思想也从上世纪后半叶开始，逐渐渗入到音乐和作曲领域。</p><p>1960 年 George Brecht 在滴水事件（drip event）中，使不同来源的水，滴进所有空的容器。这个作品可以被视为音乐、剧场、或者是动态雕塑。</p><p><img src="https://www.moma.org/media/W1siZiIsIjMwNDk2NSJdLFsicCIsImNvbnZlcnQiLCItcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=74b38f4f98552501" alt=""></p><p>Brecht 的极简主义艺术活动是神秘费解、令人困惑的，这些作品及其配乐为观众设计成仅在想象的范围内可被解读与激活。滴水音乐（drip music）由此形成，指可由单个或多个表演者演出单一滴水水源与一个空的容器，通过设置使水滴入容器中。Drip music 很快就成为激浪派（fluxus）的标志，flux 一词本身不仅指持续的运动与改变，也指流体与流动，或更精确的是一个流体的流动速度。</p><p>80 年代，混沌理论开始被应用在作曲中。它适用于音高、持续时间、动态范围和编排。它们很容易产生重复，以及周期性/准周期性模型变化，或者在混沌模式下产生更多不可预测的行为，而重复、变化、convergence 和 divergence 是音乐作曲里的关键要素。</p><h2 id="分形"><a href="#分形" class="headerlink" title="分形"></a>分形</h2><p>分形是一个可以分成数个部分的几何形状，且每一部分都（至少近似地）是整体缩小后的形狀，即具有<a href="https://www.wikiwand.com/zh/%E8%87%AA%E7%9B%B8%E4%BC%BC" target="_blank" rel="noopener">自相似</a>的性质。分形也被称为扩展对称或展开对称。如果在每次放大后，形状的重复是完全相同的，被称为自相似。作为一个数学函数，分形通常是处处不可微的。无穷分形曲线可以理解为一条一维的曲线在空间中绕行。</p><blockquote><p>Fractals are mathematical dynamic systems represented by iterative equations that develop curves and geometrical shapes that have property of self-similarity. </p></blockquote><p>Sierpinski 三角是典型的自相似分形图形。1915 年由波兰数学家 Wacław Franciszek Sierpiński 提出。</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Sierpinski_triangle_%28blue%29.jpg" alt=""></p><p>算法：</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Sierpinski_triangle_evolution.svg/1024px-Sierpinski_triangle_evolution.svg.png" alt=""></p><ol><li>取一个实心的三角形（多数使用等边三角形）</li><li>沿三边中点的连线，将它分成四个小三角形</li><li>去掉中间的那一个小三角形</li><li>对其余三个小三角形重复第 1 步</li></ol><p>Sierpinski 三角可由分型树产生：</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Fractal_tree.gif" alt=""></p><p>分形算法已经被广泛用于生成式艺术创作中。</p><p>Bogdan Soban 是斯洛文尼亚的信息学专家和软件开发者，退休后作为自由艺术家从事创作。他从 1999 年开始接触生成式艺术，开始编写基于算法的生成式艺术软件用于创作。</p><p><img src="http://www.soban-art.com/images/naslovnica.jpg" alt=""></p><p>Paul DeCelle 用 Frederik Slijkerman 开发的 <a href="http://www.ultrafractal.com/" target="_blank" rel="noopener">Ultra Fractal</a> 创作了一些列作品：</p><p><img src="http://www.submit.manscostyle.com/submit/130_Image9.jpg" alt=""></p><p><img src="https://www.fractalus.com/paul/20071022-kesius.jpg" alt=""></p><p>Etienne Saint Amant 是来自加拿大魁北克省舍布鲁克的艺术家。他专注于用数学语言设计和描述的大幅艺术品，致力于概念研究和当代艺术创作。</p><p><img src="https://t00.deviantart.net/AIQ7rP3wX0CLZ0sC29rhgA1QBZE=/fit-in/700x350/filters:fixed_height(100,100" alt="">:origin()/pre00/ae50/th/pre/i/2005/136/1/4/rakis_by_etiennesaintamant.jpg)</p><p><img src="https://chaoscopia.com/artworks/m20180926-13.jpg" alt=""></p><p>一些分形艺术的软件：</p><ul><li><a href="https://www.ultrafractal.com/" target="_blank" rel="noopener">Ultra Fractal: Advanced Fractal Software for Windows and macOS</a></li><li><a href="http://fract.al/" target="_blank" rel="noopener">Frax - Immerse, Create, Inspire</a> </li><li><a href="https://mandelbulber.com/" target="_blank" rel="noopener">Laravel</a></li><li><a href="http://www.fractal-explorer.com/" target="_blank" rel="noopener">Fractal Explorer</a></li><li><a href="http://www.apophysis.org/" target="_blank" rel="noopener">Apophysis.org</a></li></ul><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.wikiwand.com/en/Dynamical_system" target="_blank" rel="noopener">Dynamical system - Wikiwand</a></li><li><a href="https://www.wikiwand.com/en/Attractor" target="_blank" rel="noopener">Attractor - Wikiwand</a></li><li><a href="https://www.wikiwand.com/en/Logistic_map" target="_blank" rel="noopener">Logistic map - Wikiwand</a></li><li><a href="https://www.wikiwand.com/zh/%E5%88%86%E5%BD%A2" target="_blank" rel="noopener">分形 - Wikiwand</a></li><li><a href="https://www.wikiwand.com/en/Sierpinski_triangle" target="_blank" rel="noopener">Sierpinski triangle - Wikiwand</a></li><li><a href="http://sprott.physics.wisc.edu/pubs/paper354.htm" target="_blank" rel="noopener">Generalization of the Simplest Autonomous Chaotic System</a></li><li><a href="https://www.moma.org/collection/works/127310?artist_id=756&amp;locale=zh&amp;page=1&amp;sov_referrer=artist" target="_blank" rel="noopener">Poul Hansen, George Brecht, Dick Higgins. George Brecht’s Drip Music, performed by Dick Higgins during Fluxus/Musik og Anti-Musik/det Instrumentale Teater, Nikolai Kirke, Copenhagen, November 23, 1962. 1962 | MoMA</a></li><li><a href="http://www.soban-art.com/index-ang.asp" target="_blank" rel="noopener">Generative Art - generated, artificial, random, software</a></li><li><a href="https://www.fractalus.com/paul/" target="_blank" rel="noopener">Fractal Art by Paul DeCelle</a></li><li><a href="https://chaoscopia.com/nouveautes_en.html" target="_blank" rel="noopener">chaoscopia - news</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/CC-blogtitle.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
+    
+      <category term="Computational Creativity" scheme="http://uegeek.com/tags/Computational-Creativity/"/>
+    
+      <category term="创意" scheme="http://uegeek.com/tags/%E5%88%9B%E6%84%8F/"/>
+    
+      <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
+    
+      <category term="混沌" scheme="http://uegeek.com/tags/%E6%B7%B7%E6%B2%8C/"/>
+    
+      <category term="分形" scheme="http://uegeek.com/tags/%E5%88%86%E5%BD%A2/"/>
+    
+      <category term="Chaotic" scheme="http://uegeek.com/tags/Chaotic/"/>
+    
+      <category term="Fractal" scheme="http://uegeek.com/tags/Fractal/"/>
+    
+  </entry>
   
   <entry>
     <title>算法创作实战02 - 用 MaxMSP 生成随机颜色</title>
@@ -679,40 +721,6 @@
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
       <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Max/MSP/Jitter 官方教程翻译05 - 矩阵的数学运算</title>
-    <link href="http://uegeek.com/180828-jitter-05.html"/>
-    <id>http://uegeek.com/180828-jitter-05.html</id>
-    <published>2018-08-28T11:37:40.000Z</published>
-    <updated>2018-09-25T07:38:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/Max-title-5.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter03" target="_blank" rel="noopener">Tutorial 3: Math Operations on a Matrix</a></p></blockquote><p>本教程介绍如何对存储在 Jitter 矩阵中的数据做简单的数学运算，使用 <code>jit.op</code> 对象来缩放矩阵单元格或单个平面。</p><p>教程分为三个​​简单的例子，你可以使用 <code>jit.op</code> 对象执行这些操作。<code>jit.op</code> 对矩阵的所有对象而不是单个数字执行数学运算。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter03a.png" alt=""><br>向矩阵中的所有单元格添加常量</p><p>第一个示例显示了连接到 <code>jit.op</code> 的 <code>jit.matrix</code> 对象，其输出可由 <code>jit.pwindow</code> 查看。每次改变连接到 <code>jit.op</code> 右输入口的数字框，都会从 <code>jit.matrix</code> 输出一个新的矩阵。从参数中可以看出，<code>jit.matrix</code> 生成一个 4x3 的单平面 char（0-255） 矩阵。<code>jit.pwindow</code> 把这个矩阵可视化为一个灰度图像。拖动数字框将改变显示的灰度级别（黑色 0 ~ 白色 255）。</p><p>请注意，<code>jit.matrix</code> 输出了一个所有单元格都为 0 的矩阵。如果将 <code>jit.matrix</code> 和 <code>jit.pwindow</code> 对象绕过 <code>jit.op</code> 连接在一起，无论向 <code>jit.matrix</code> 发送多少次 bang 消息，都只能看到黑色图像。<code>jit.op</code> 向 <code>jit.matrix</code> 和 <code>jit.op</code> 之间的矩阵的所有单元都加上了一个值（由数字框给定）。</p><h2 id="操作符"><a href="#操作符" class="headerlink" title="@ 操作符"></a>@ 操作符</h2><p><code>jit.op</code> 根据参数指定的运算（用 @op 表示）向矩阵加了一个值（不是乘或除）。@op 之后的参数是一个符号（或符号列表），它定义了 <code>jit.op</code> 在输入矩阵上执行的数学运算。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter03a.png" alt=""></p><p>在这个例子中，op 属性设置为 + ，它对从左入口输入的任何矩阵都执行加法操作。右侧入口中的整数值会加到矩阵中的所有单元格。这个值被称为标量（scalar），因为它向整个矩阵添加了相同的值（在教程 11 中我们会展示 <code>jit.op</code> 如何使用两个矩阵进行数学运算）。</p><blockquote><p>要点：更改 <code>jit.op</code> 右侧入口中的标量值不会输出新矩阵。如果断开数字框和按钮之间的接线，<code>jit.pwindow</code> 将停止显示任何新内容。原因在于，大多数 Jitter 对象与大多数 Max 对象一样，仅在数据进入其最左侧入口时才会输出数据。</p><p>在上面的例子中，每次更改数字框时 <code>jit.op</code> 都会存储新的标量值。此时按钮发送一个 bang 给 <code>jit.matrix</code>，让它将新的矩阵（所有值设置为 0）发送到 <code>jit.op</code> 的左入口，触发输出矩阵。</p><p>如果在按钮上方的接线上放置一个断点，然后 shift-cmd-T 逐步执行消息，就能看到它是如何运作的。（有关如何使用断点功能跟踪 Max 消息，请参阅教程：消息顺序和调试）</p></blockquote><p>使用 <code>jit.op</code> 的 val 属性，标量值也可以作为常量。例如，如果想要为矩阵的所有单元格添加 134，可以使用 val 属性并省去数字框：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter03b.png" alt="">            </p><p>类似地，如果想要更改由任何给定的 <code>jit.op</code> 对象执行的数学运算，可以用消息 <code>op</code> 后跟数学符号，发送到对象的左入口。</p><h2 id="多平面数据的数学运算"><a href="#多平面数据的数学运算" class="headerlink" title="多平面数据的数学运算"></a>多平面数据的数学运算</h2><p>第二个示例显示了使用 <code>jit.op</code> 将值传入矩阵的更复杂的例子。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter03c.png" alt=""><br>为矩阵的每个平面使用单独的标量</p><p>这个 patch 跟第一个类似，区别在于现在使用的是 4 平面矩阵。这由 <code>jit.matrix</code> 的第一个参数给出。<code>jit.pwindow</code> 现在有颜色了，它正在解析矩阵 α/红/绿/蓝 4 个单独存储颜色通道的平面。这个例子中的 <code>jit.op</code> 包含 op 属性的四个符号的列表：每个符号设置输入矩阵的一个平面的数学运算。在这个 patch 中，保留第一个（alpha）平面不做改动，而为其他 3 个平面做加法运算。</p><p><code>pak</code> 对象向 <code>jit.op</code> 右输入口传送四个打包的整数。<code>pak</code> 和 <code>pack</code> 的唯一区别是，当更改任何数字时，<code>pak</code> 都会输出一个新列表（<code>pack</code> 需要一个新数字或左侧入口的一个 bang 来触发输出新列表）。由 <code>pak</code> 生成的四个数字决定了传入 <code>jit.op</code> 矩阵的每个平面的标量值。</p><p>在上面的示例中，平面 0 没有添加任何内容（op 属性的第一个参数是 pass）。平面 1,2 和 3 将分别添加 161,26 和 254。<code>jit.pwindow</code> 将输出矩阵的单元格解析为洋红色（即使只看到一种颜色，矩阵中实际上有 12 个单元格，都设置为相同的值）。</p><blockquote><p>要点：如果<code>jit.op</code> 对象的 op 属性只有一个值（只使用一个数字作为标量），<code>jit.op</code> 将在输入矩阵的所有平面都使用该运算符号和标量值。</p></blockquote><h2 id="修改图像中的颜色"><a href="#修改图像中的颜色" class="headerlink" title="修改图像中的颜色"></a>修改图像中的颜色</h2><p>第三个例子说明如何在矩阵中使用 <code>jit.op</code>，这个矩阵已经存储了相关数据：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter03d.png" alt=""><br>将单个平面与标量相乘</p><p>单击消息框 <code>importmovie colorbars.png</code>，<code>jit.matrix</code> 的 <code>importmovie</code> 消息将图像或 QuickTime 视频文件中的单帧图像加载到对象存储的矩阵中。它会将原图像缩放到矩阵的尺寸（320 x 240）。</p><p>单击按钮，<code>jit.pwindow</code> 中显示图像校准颜色条。这时 <code>jit.op</code> 的算术运算符设置为：alpha 平面不做修改（pass）， 其他平面设置为 *（乘）。这个矩阵有 4 个平面，因此使用 4 个浮点数列表设置每个标量。平面 1~3 中的值都是 1.，结果是显示原始的图像：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter03e.png" alt=""><br>所有标量均为 1</p><p>如果将标量设置为 1.0，0 和 0.，会看到以下图像：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter03f.png" alt=""></p><p>包含颜色条的矩阵的所有平面（平面 1 除外）都乘以 0。这将消除矩阵的α，绿色和蓝色平面，仅留下红色（平面 1）。</p><p>将中间值（例如 0.,0.,1. 和 0.5）设置为 <code>jit.op</code> 的标量，会得到颜色栏看起来不同的图像：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter03g.png" alt=""></p><p>在这种情况下，忽略 alpha 通道并将红色通道归零。蓝色平面的值是它们的一半。绿色通道（平面 2）保持不变。</p><blockquote><p>要点： <code>jit.op</code> 中的一些数学标量使用浮点数，有些则使用整数。这取决于相关运算符（由 op 属性定义）以及输入矩阵的类型。本教程所有示例都使用了 char 矩阵，因此在添加时可以使用整数（任何浮点数都将被截断，因为矩阵数据保留 0-255 范围内的整数）。</p><p>如果使用 float32 矩阵作为输入，就需要添加浮点数。同样，用 char 乘以浮点标量的矩阵也可以（240 * 0.5 = 120，整数）。但是，由于 <code>jit.op</code> 输出的矩阵仍然是 char 矩阵（参见下面的注释），因此仍然只能获得 0-255 范围内的值。</p></blockquote><p>如果你尝试使用标量值，容易看到某些颜色条消失或与相邻条形图合并。这是因为颜色条都设置为范围相似的标准颜色值。如果一次只显示一个通道（设置一个平面为 1，其余为 0），顶部七个条形中的四个将显示颜色。</p><p>本教程中只演示了 + 和 * 运算符，实际上 <code>jit.op</code> 对象可以执行许多其他的数学运算。运算符的完整列表请查看参考文档，或双击 <code>jit.op</code> 帮助文件中的 p op_list 子 patch。</p><h2 id="调整大小"><a href="#调整大小" class="headerlink" title="调整大小"></a>调整大小</h2><p>创建 <code>jit.pwindow</code> 对象时，它默认显示为 80 像素宽，60 像素高。它可以像 Max 中的许多 UI 对象一样改变大小。如果要精确地指定大小，可以使用 inspector 或向其发送尺寸消息，后跟宽度和高度（以像素为单位）：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter03h.png" alt=""><br>更改 <code>jit.pwindow</code> 的大小</p><p>如果给某个固定尺寸（像素）的 <code>jit.pwindow</code> 发送不同的尺寸的矩阵，<code>jit.pwindow</code> 会按自身的大小来缩放传入的矩阵。如果将非常小的矩阵发送到非常大的 <code>jit.pwindow</code> ，会做像素化处理（图像中颜色完全相同的矩形区域）。如果发送大矩阵到一个小的 <code>jit.pwindow</code>，可能会丢失不同程度的细节。</p><blockquote><p>要点：在上面的示例中，含有颜色块的 <code>jit.matrix</code> 的大小（由其维度决定）为 320 x 240 个单元格，planecount 为 4，类型是 char。<code>jit.op</code> 对象（以及大多数 Jitter 对象）识别出信息并自动适配计算、输出相同规格的矩阵。</p><p>如果要更改 <code>jit.matrix</code> 的大小， <code>jit.op</code> 将立即识别变化并重新适应。<code>jit.pwindow</code> 也适配传入的矩阵，但方式略有不同。如果输入矩阵小于其自身的尺寸，则使用重复数据填充所有像素。（这会产生前一段中描述的像素化效果）如果输入矩阵大于其自身的维度，则必须忽略某些数据，只显示它可以显示的内容。因此，即使教程 patch 中的 <code>jit.pwindow</code>跟输入矩阵的大小不同，它们也会尽可能适配 <code>jit.op</code> 矩阵。</p><p>最后一个例子中的 <code>jit.pwindow</code> 尽可能显示了 <code>jit.op</code> 输出的整个矩阵，但它必须忽略所有其他行和列，以使其接收的 320x240 矩阵适合自己的 160x120 显示区域。</p></blockquote><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><code>jit.op</code> 对矩阵上的所有数据进行数学运算。可以分别对矩阵单元格中的整体或每个平面执行计算。<code>jit.op</code> 的 op 属性决定要执行什么数学运算，可以输入 <code>@op [operator]</code> 属性参数，或者由左入口中的 <code>op [operator]</code> 消息提供。</p><p>对于多平面矩阵（例如彩色图片和视频），可以给出运算符列表（例如，op pass <em> </em> *）来指定每个平面的操作，并且可以为每个平面提供不同的标量值。在教程 11 中我们会看到如何使用矩阵来代替简单的标量。</p><p>你可以使用 <code>size [width] [height]</code> 消息设置 <code>jit.pwindow</code> 的大小。<code>jit.pwindow</code> 将尽可能适应接收到的矩阵的大小。如果输入矩阵小于其维度，它将复制数据；如果输入矩阵大于其自身维度，它将忽略某些数据。大多数 Jitter 对象都尽量适应它们接收的矩阵的维度、类型和平面数量。对 <code>jit.op</code> 而言，它没有自己的维度，所以它自动适配传入的矩阵大小。</p><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://img.viz.mobi/maxgroup0825.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/Max-title-5.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
-    
-      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-      <category term="数学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
