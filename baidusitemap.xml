@@ -4,8 +4,46 @@
 
     
   <url>
+    <loc>http://uegeek.com/181021-computational-creativity-in-maxmsp-02.html</loc>
+    <lastmod>2018-10-21T11:15:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>算法创作实战02 - 用 MaxMSP 生成随机颜色</title>
+        <pubTime>2018-10-21T11:13:58.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
+         
+        <tag>颜色</tag>
+         
+        <tag>Generative Art</tag>
+         
+        <tag>Computational Creativity</tag>
+         
+        <tag>创意</tag>
+         
+        <tag>创造力</tag>
+         
+        <tag>随机</tag>
+         
+        <tag>MaxMSP</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/181017-computational-creativity-in-maxmsp-01.html</loc>
-    <lastmod>2018-10-17T11:25:40.000Z</lastmod>
+    <lastmod>2018-10-17T11:37:53.000Z</lastmod>
     <data>
         <display>
         <title>算法创作实战01 - 巴纳姆效应之随机星座实验</title>
@@ -2971,9 +3009,9 @@
         
         <tag>Design</tag>
          
-        <tag>Reading</tag>
-         
         <tag>设计师</tag>
+         
+        <tag>Reading</tag>
          
          
            
@@ -3019,9 +3057,9 @@
         
         <tag>Design</tag>
          
-        <tag>Reading</tag>
-         
         <tag>设计师</tag>
+         
+        <tag>Reading</tag>
          
          
            
@@ -3043,9 +3081,9 @@
         
         <tag>Design</tag>
          
-        <tag>Reading</tag>
-         
         <tag>设计师</tag>
+         
+        <tag>Reading</tag>
          
          
            
@@ -3067,9 +3105,9 @@
         
         <tag>Design</tag>
          
-        <tag>Reading</tag>
-         
         <tag>设计师</tag>
+         
+        <tag>Reading</tag>
          
          
            
@@ -3895,11 +3933,11 @@
          
         <tag>神经网络</tag>
          
-        <tag>Programming</tag>
-         
         <tag>Backpro</tag>
          
         <tag>反向传播</tag>
+         
+        <tag>Programming</tag>
          
          
            
@@ -4019,11 +4057,11 @@
          
         <tag>神经网络</tag>
          
-        <tag>Programming</tag>
-         
         <tag>AWS</tag>
          
         <tag>GPU</tag>
+         
+        <tag>Programming</tag>
          
          
            
