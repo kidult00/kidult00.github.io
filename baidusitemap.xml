@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>http://uegeek.com/181107-generative-art-creativity-05.html</loc>
+    <lastmod>2018-11-07T13:27:36.000Z</lastmod>
+    <data>
+        <display>
+        <title>生成式艺术和算法创作05-Tessellation</title>
+        <pubTime>2018-11-07T13:13:18.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
+         
+        <tag>Generative Art</tag>
+         
+        <tag>Computational Creativity</tag>
+         
+        <tag>创意</tag>
+         
+        <tag>创造力</tag>
+         
+        <tag>Tessellation</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/181023-generative-art-creativity-04.html</loc>
     <lastmod>2018-10-23T11:36:53.000Z</lastmod>
     <data>
@@ -4007,11 +4041,11 @@
          
         <tag>神经网络</tag>
          
-        <tag>Programming</tag>
-         
         <tag>Backpro</tag>
          
         <tag>反向传播</tag>
+         
+        <tag>Programming</tag>
          
          
            
@@ -4131,11 +4165,11 @@
          
         <tag>神经网络</tag>
          
+        <tag>Programming</tag>
+         
         <tag>AWS</tag>
          
         <tag>GPU</tag>
-         
-        <tag>Programming</tag>
          
          
            
@@ -4561,9 +4595,9 @@
         
         <tag>AI</tag>
          
-        <tag>ArtxCode</tag>
-         
         <tag>交互设计</tag>
+         
+        <tag>ArtxCode</tag>
          
         <tag>Deisgn</tag>
          
@@ -5315,9 +5349,9 @@
         <title>读书笔记-信息设计</title>
         <pubTime>2010-12-26T15:10:45.000Z</pubTime>
         
-        <tag>可视化</tag>
-         
         <tag>Note</tag>
+         
+        <tag>可视化</tag>
          
         <tag>Information design</tag>
          
