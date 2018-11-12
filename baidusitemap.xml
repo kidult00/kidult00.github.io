@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://uegeek.com/181112TedxWumaStreet.html</loc>
+    <lastmod>2018-11-12T15:57:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>兴趣多动症的自救指南 | 00 的 TEDx 演讲全文</title>
+        <pubTime>2018-11-12T15:54:05.000Z</pubTime>
+        
+        <tag>TED</tag>
+         
+        <tag>Speech</tag>
+         
+        <tag>演讲</tag>
+         
+        <tag>兴趣</tag>
+         
+         
+           
+             
+              <breadCrumb title="HackYourself" url="http://uegeek.com/categories/HackYourself/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/181107-generative-art-creativity-05.html</loc>
     <lastmod>2018-11-07T13:27:36.000Z</lastmod>
     <data>
@@ -173,11 +199,11 @@
          
         <tag>随机</tag>
          
+        <tag>MaxMSP</tag>
+         
         <tag>巴纳姆效应</tag>
          
         <tag>星座</tag>
-         
-        <tag>MaxMSP</tag>
          
          
            
@@ -4041,11 +4067,11 @@
          
         <tag>神经网络</tag>
          
+        <tag>Programming</tag>
+         
         <tag>Backpro</tag>
          
         <tag>反向传播</tag>
-         
-        <tag>Programming</tag>
          
          
            
@@ -4165,11 +4191,11 @@
          
         <tag>神经网络</tag>
          
-        <tag>Programming</tag>
-         
         <tag>AWS</tag>
          
         <tag>GPU</tag>
+         
+        <tag>Programming</tag>
          
          
            
@@ -4593,9 +4619,9 @@
         <title>破解 AI 时代的焦虑 —— 从人机交互到人机协同创作</title>
         <pubTime>2018-07-17T15:11:58.000Z</pubTime>
         
-        <tag>AI</tag>
-         
         <tag>交互设计</tag>
+         
+        <tag>AI</tag>
          
         <tag>ArtxCode</tag>
          
