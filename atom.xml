@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-11-12T16:25:06.000Z</updated>
+  <updated>2018-11-20T12:54:55.373Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生成式艺术和算法创作06-形状语法</title>
+    <link href="http://uegeek.com/181120-generative-art-creativity-06.html"/>
+    <id>http://uegeek.com/181120-generative-art-creativity-06.html</id>
+    <published>2018-11-20T12:51:14.000Z</published>
+    <updated>2018-11-20T12:54:55.373Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p><a id="more"></a><p># </p><ul><li><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></li><li><a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">生成式艺术和算法创作02-随机和噪声</a></li><li><a href="https://www.uegeek.com/181021-generative-art-creativity-03.html" target="_blank" rel="noopener">生成式艺术和算法创作03-混沌和分形</a></li><li><a href="https://www.uegeek.com/181023-generative-art-creativity-04.html" target="_blank" rel="noopener">生成式艺术和算法创作04-规则系统</a></li><li><a href="https://www.uegeek.com/181107-generative-art-creativity-05.html" target="_blank" rel="noopener">生成式艺术和算法创作05-Tessellation</a></li></ul><p>形状语法/形状文法（Shape grammars）是生成特定类别几何形状的生产系统。</p><p>1971年，<a href="https://www.wikiwand.com/en/George_Stiny" target="_blank" rel="noopener">George Stiny</a> 和 <a href="https://www.wikiwand.com/en/James_Gips" target="_blank" rel="noopener">James Gips</a> 在一篇开创性的文章中定义了形状语法的基础。形状语法是一种计算机辅助设计方法，是研究二维和三维语言的一种方式，它可以按照人们的设计思想和要求，按照一定的规则自动产生新形态。</p><p><img src="http://web.mit.edu/haldane/www/icerays/sm_iceray07.jpg" alt=""></p><p>具体来说，形状语法由形状规则（shape rules）和选择、处理规则的生成引擎（generation engine）组成。形状语法执行计算的两个主要步骤是：识别特定形状，用可能的形状替代。</p><p>形状规则定义如何转换现有形状，由两个部分组成，两个部分由从左到右指向的箭头分隔：</p><ul><li>箭头左侧的部分称为左侧（LHS），描绘形状和标记的条件。</li><li>箭头右侧的部分称为右侧（RHS），描述如何转换 LHS 形状以及标记的位置，标记有助于定位和定向新形状。</li></ul><p>形状语法最少由三个形状规则组成：<strong>起始规则，至少一个转换规则和终止规则</strong>。形状语法中的生产规则可以连续应用，类似 <a href="https://www.wikiwand.com/en/L-System" target="_blank" rel="noopener">L-Systems 中的</a> productions。</p><p>形状语法通常是一个四元组，SG＝（S, L, R, I）。其中 S 是形状的有限集合，L 是符号的有限集合，R 是规则的有限集合，I 是初始形状。形状文法产生的形状，都应通过形状规则由初始形状派生出来。</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/shape%20grammars%20in%20action.png" alt="shape grammars in action"></p><p><img src="https://d2w9rnfcy7mm78.cloudfront.net/2351379/display_c5bf667d63e6917a82a5163d65212a6d.jpg" alt=""></p><p>形状语法在一个小规模的、定义明确的生成问题（如住房布局和结构细化）时最有用。由于形状规则通常是在小形状上定义的，因此形状语法可以包含许多规则。</p><p>Mitchell 提出的 Palladian 别墅形状语法包含 69 个规则，这些规则适用于整个八个实施步骤。</p><p><img src="https://images.slideplayer.com/27/9112988/slides/slide_6.jpg" alt=""></p><p><img src="https://images.slideplayer.com/27/9112988/slides/slide_7.jpg" alt=""></p><p>Rules of Mughal garden：</p><p><img src="https://arch.gatech.edu/sites/default/files/03_mughal_production.jpg" alt=""></p><p>借助 CAD，形状语法可以节省人力、缩短设计周期、产生系列化方案，能很好地传承文脉，使设计内涵在新环境下得以保存和发展，受到了设计界尤其是建筑设计的高度重视。</p><p><img src="http://keyan.info/wp-content/uploads/2013/04/KeyanGrammar2.png" alt=""></p><p><img src="https://arch.gatech.edu/sites/default/files/08_98_cube_subgroups.jpg" alt=""></p><p>近几十年来，形状语法在计算机图形学中越来越重要。 </p><p>除了用于建筑物或城市的程序建模（例如电影或视频游戏），Shape Grammars 是许多开发系统的基础，它们使用生产规则来生成各种不同的 3D 模型。 使用 Shape Grammars 可以创建具有逼真外观的街道平面图，以及建筑物的外墙或内部空间。</p><p>运用形状语法生成的建筑模型和建筑设计：</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/architecture%20used%20shape%20grammars.png" alt="architecture used shape grammars"></p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.wikiwand.com/en/Shape_grammar" target="_blank" rel="noopener">Shape grammar - Wikiwand</a></li><li><a href="http://www.shapegrammar.org/" target="_blank" rel="noopener">Shape Grammars</a></li><li><a href="https://www.youtube.com/watch?v=pg1NpMmPv48" target="_blank" rel="noopener">The complex geometry of Islamic design - Eric Broug - YouTube</a></li><li><a href="http://users.metu.edu.tr/baykan/arch467/Readings/Stiny-Mitchell.pdf" target="_blank" rel="noopener">Stiny-Mitchell.pdf</a></li><li><a href="https://arch.gatech.edu/design-computation-1" target="_blank" rel="noopener">Design Computation | School of Architecture | Georgia Institute of Technology | Atlanta, GA</a></li><li><a href="https://slideplayer.com/slide/9522024/" target="_blank" rel="noopener">What is computation? What is a shape grammar? How are shape grammars used in design? How is a shape grammar developed? - ppt download</a></li><li><a href="https://www.youtube.com/watch?v=t-VUpX-xVo4" target="_blank" rel="noopener">Procedural Building Generation with Grammars - YouTube</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/CC-blogtitle.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
+    
+      <category term="Computational Creativity" scheme="http://uegeek.com/tags/Computational-Creativity/"/>
+    
+      <category term="创意" scheme="http://uegeek.com/tags/%E5%88%9B%E6%84%8F/"/>
+    
+      <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
+    
+      <category term="Shape Grammar" scheme="http://uegeek.com/tags/Shape-Grammar/"/>
+    
+      <category term="形状语法" scheme="http://uegeek.com/tags/%E5%BD%A2%E7%8A%B6%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>兴趣多动症的自救指南 | 00 的 TEDx 演讲全文</title>
@@ -240,11 +278,11 @@
     
       <category term="随机" scheme="http://uegeek.com/tags/%E9%9A%8F%E6%9C%BA/"/>
     
-      <category term="MaxMSP" scheme="http://uegeek.com/tags/MaxMSP/"/>
-    
       <category term="巴纳姆效应" scheme="http://uegeek.com/tags/%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94/"/>
     
       <category term="星座" scheme="http://uegeek.com/tags/%E6%98%9F%E5%BA%A7/"/>
+    
+      <category term="MaxMSP" scheme="http://uegeek.com/tags/MaxMSP/"/>
     
   </entry>
   
@@ -346,11 +384,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -380,11 +418,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -414,11 +452,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -448,11 +486,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -482,11 +520,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -516,11 +554,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -548,11 +586,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -582,11 +620,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="列表" scheme="http://uegeek.com/tags/%E5%88%97%E8%A1%A8/"/>
     
@@ -616,11 +654,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="Chromakeying" scheme="http://uegeek.com/tags/Chromakeying/"/>
     
@@ -652,11 +690,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="Math" scheme="http://uegeek.com/tags/Math/"/>
     
@@ -686,47 +724,13 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
       <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Max/MSP/Jitter 官方教程翻译09 - 调整图像颜色</title>
-    <link href="http://uegeek.com/180901-jitter-09.html"/>
-    <id>http://uegeek.com/180901-jitter-09.html</id>
-    <published>2018-09-01T10:28:20.000Z</published>
-    <updated>2018-09-25T07:38:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/Max-title-9.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter07" target="_blank" rel="noopener">Tutorial 7: Image Level Adjustment</a></p></blockquote><p>本教程介绍如何调整 Jitter 矩阵中图像数据的亮度、对比度和饱和度，以及色调和色调旋转(hue rotation)的概念。</p><p>教程 patch 中有两个新对象：<code>jit.brcosa</code> ，控制矩阵中图像数据的亮度（brightness）、对比度（contrast）和饱和度（saturation），以及 <code>jit.hue</code>，旋转图像的色调。</p><h2 id="亮度，对比度和饱和度"><a href="#亮度，对比度和饱和度" class="headerlink" title="亮度，对比度和饱和度"></a>亮度，对比度和饱和度</h2><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07a.png" alt=""><br>打开并查看图像</p><p>点击 <code>read colorwheel.pct</code> 消息框打开文件 colorwheel.pct。点击开关启动 <code>metro</code> 开始显示视频。</p><p>patch 底部 <code>jit.pwindow</code> 中会出现一个色轮：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07b.png" alt="">            </p><p><code>jit.pwindow</code> 展示了穿越过两个对象的图像。我们先谈谈 <code>jit.brcosa</code>，然后再到 <code>jit.hue</code>。</p><p><code>jit.brcosa</code> 对象将 4 平面 char 矩阵看作 ARGB 图像数据，可以调整矩阵数据的亮度、对比度、饱和度。三个属性的默认值是 1.0，这样矩阵保持不变：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07c.png" alt=""><br>使用 <code>jit.brcosa</code> 对象</p><p>更改 <code>jit.brcosa</code> 对象的属性并观察输出矩阵的变化。</p><p>与参考颜色（通常为黑色）相比，图像的亮度是指整体亮度/暗度。更改亮度属性相当于将矩阵中的值乘以该值。亮度值为 0 的图像是黑色；大于 1.0 的亮度值值将逐渐增加所有非 0 单元格直到白色（255）。值 0.5 使图像明显变暗，将值的范围从 0~255 降到 0~127。下面的色轮显示了一些亮度值：<br><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07d.png" alt=""><br>亮度值分别为 0.5，1.5 和 10 的色轮</p><p>用这种方式调整时，单元格的值会被裁剪为 0 和 255。这就是为什么亮度为 10 的那个图像基本上是白色，颜色只显示在原始矩阵中一/多个可见颜色平面（RGB 或平面 1,2 和 3）为 0 的区域。</p><p>图像对比度可以表示为<strong>图像中的颜色偏离整个原始图像的平均亮度的量</strong>（见下文）。当<code>jit.brcosa</code> 的对比度属性增加到 1.0 以上，高于整个矩阵平均亮度的单元变亮（增加），低于平均值的单元变暗（减少）。结果是矩阵图像 dynamic expansion，亮值更亮，暗值更暗。低于 1.0 的对比度设置则相反，较暗的色调变浅，较浅的色调变暗，直到对比度为 0.0，只保留整个图像的平均灰度。负值会以相同的总体对比度反转图像的颜色。</p><blockquote><p>技术细节：矩阵的平均亮度可以通过平均矩阵中所有单元格的值来计算，各平面互不干扰（获得 Alpha，red，green，blue 平面各自的平均值）。然后将三个平面乘以公式：</p><p><code>L = .299 * Red+ .587 * Green + .114 * Blue</code></p><p>L 值就是整个矩阵的平均亮度，<code>jit.brcosa</code> 用它来确定调整对比度时扩展的阈值。</p></blockquote><p>以下是一些对比度设置：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07e.png" alt=""><br>比度设定为 0.3，2，-1 和 100 的色轮</p><p>第一个例子中色轮的对比度急剧下降（单元格的值都接近矩阵的平均亮度）。第二个例子中对比度增加。请注意色轮中间较浅的色调开始接近白色。第三个示例显示了负值对比度。颜色与原始颜色相反，但矩阵的平均亮度与原始颜色相同。最后一个例子是大幅增强对比的结果。该示例中的单元值被极化为0 或 255。</p><p>图像饱和度反映了单元格中主要颜色与次要颜色的比率。随着饱和度值降至 1.0 以下，单元格中的所有颜色值将变得相似，变成去饱和的灰度。高于 1.0 的值将使颜色彼此远离，从而强化了主色。与对比度类似，饱和度属性的负值将反转颜色，但保留与原始颜色相同的亮度关系。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07f.png" alt=""><br>饱和度值为 0.2,2 和 -1 的色轮</p><p>第一个图像是去饱和的，矩阵中的每个单元格值都趋近于该单元格的亮度值。第二张图像过饱和，颜色比原始图像更亮（或更暗）。第三个图像保持色轮的原始亮度，但反转了颜色。</p><h2 id="Hue-and-Cry"><a href="#Hue-and-Cry" class="headerlink" title="Hue and Cry"></a>Hue and Cry</h2><p><code>jit.hue</code> 对象可以旋转输入矩阵的色调。设置 hue_angle 属性会将输入矩阵的色调旋转指定的度数（以度为单位）：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07g.png" alt=""><br>hue_angle 属性旋转输入矩阵的色调</p><p>矩阵单元的色调可以看作是其基本颜色（例如，品红色）。图像色调在色轮上从红色变为绿色、蓝色，再变为红色。用 0-360 度数指定的色调值，以及图像的饱和度和亮度，可用描述特定的颜色，这与 RGB 值描述唯一颜色的方式非常相似。向前旋转图像的色调，我们移动颜色光谱的红色部分，使其显示为绿色，光谱的绿色部分显示为蓝色，蓝色部分显示为红色。饱和度和亮度不会改变。负色调旋转会将红色变为蓝色。以 120 度为增量的色调旋转将使图像与原始色调精确地移位一个（或多个）色彩平面。</p><blockquote><p>技术细节：我们的眼睛通过视网膜锥体的感知器来感知颜色（还有一种被称为 rods 的感知器专门探测微弱的光，但是不识别颜色）。我们眼睛的锥体响应三种不同波长的光来区分：L-senstive receptors 感知长波长的光（红色），M-senstive receptors 感知中波长光（绿色），以及 S-senstive receptors 感知短波长的光（蓝色）。跟听觉系统被加权以更好地感知人类语音范围内的频率一样，为了感知环境最关键的中间波长，我们的视锥细胞的分布也经过了加权处理。于是我们眼睛中的绿色感知器大约是其他两种颜色的两倍。所以上面的亮度公式将几乎 60％ 的感知亮度分配给图像中的绿色值。</p></blockquote><p>单击开关以自动化色轮的 hue_angle。请注意，当 hue_angle 达到 360 度时，会恢复原始矩阵图像。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter07h.png" alt=""><br>色轮在各种色调之间旋转（0~360 度）</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><code>jit.brcosa</code> 和 <code>jit.hue</code> 对象控制输入矩阵的亮度，对比度，饱和度和色调。你可以使用这两个对象调整动态水平（例如自动曝光），校正色彩或实现指定色调的位移。</p><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://img.viz.mobi/maxgroup0825.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/Max-title-9.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
-    
-      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-      <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
   </entry>
   
