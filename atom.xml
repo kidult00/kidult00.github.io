@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-11-20T12:54:55.373Z</updated>
+  <updated>2018-11-23T12:23:28.766Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>生成式艺术和算法创作06-形状语法</title>
-    <link href="http://uegeek.com/181120-generative-art-creativity-06.html"/>
-    <id>http://uegeek.com/181120-generative-art-creativity-06.html</id>
-    <published>2018-11-20T12:51:14.000Z</published>
-    <updated>2018-11-20T12:54:55.373Z</updated>
+    <title>生成式艺术和算法创作07-向自然致敬的 L-system</title>
+    <link href="http://uegeek.com/181123-generative-art-creativity-07.html"/>
+    <id>http://uegeek.com/181123-generative-art-creativity-07.html</id>
+    <published>2018-11-23T12:20:51.000Z</published>
+    <updated>2018-11-23T12:23:28.766Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p><a id="more"></a><p># </p><ul><li><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></li><li><a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">生成式艺术和算法创作02-随机和噪声</a></li><li><a href="https://www.uegeek.com/181021-generative-art-creativity-03.html" target="_blank" rel="noopener">生成式艺术和算法创作03-混沌和分形</a></li><li><a href="https://www.uegeek.com/181023-generative-art-creativity-04.html" target="_blank" rel="noopener">生成式艺术和算法创作04-规则系统</a></li><li><a href="https://www.uegeek.com/181107-generative-art-creativity-05.html" target="_blank" rel="noopener">生成式艺术和算法创作05-Tessellation</a></li></ul><p>形状语法/形状文法（Shape grammars）是生成特定类别几何形状的生产系统。</p><p>1971年，<a href="https://www.wikiwand.com/en/George_Stiny" target="_blank" rel="noopener">George Stiny</a> 和 <a href="https://www.wikiwand.com/en/James_Gips" target="_blank" rel="noopener">James Gips</a> 在一篇开创性的文章中定义了形状语法的基础。形状语法是一种计算机辅助设计方法，是研究二维和三维语言的一种方式，它可以按照人们的设计思想和要求，按照一定的规则自动产生新形态。</p><p><img src="http://web.mit.edu/haldane/www/icerays/sm_iceray07.jpg" alt=""></p><p>具体来说，形状语法由形状规则（shape rules）和选择、处理规则的生成引擎（generation engine）组成。形状语法执行计算的两个主要步骤是：识别特定形状，用可能的形状替代。</p><p>形状规则定义如何转换现有形状，由两个部分组成，两个部分由从左到右指向的箭头分隔：</p><ul><li>箭头左侧的部分称为左侧（LHS），描绘形状和标记的条件。</li><li>箭头右侧的部分称为右侧（RHS），描述如何转换 LHS 形状以及标记的位置，标记有助于定位和定向新形状。</li></ul><p>形状语法最少由三个形状规则组成：<strong>起始规则，至少一个转换规则和终止规则</strong>。形状语法中的生产规则可以连续应用，类似 <a href="https://www.wikiwand.com/en/L-System" target="_blank" rel="noopener">L-Systems 中的</a> productions。</p><p>形状语法通常是一个四元组，SG＝（S, L, R, I）。其中 S 是形状的有限集合，L 是符号的有限集合，R 是规则的有限集合，I 是初始形状。形状文法产生的形状，都应通过形状规则由初始形状派生出来。</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/shape%20grammars%20in%20action.png" alt="shape grammars in action"></p><p><img src="https://d2w9rnfcy7mm78.cloudfront.net/2351379/display_c5bf667d63e6917a82a5163d65212a6d.jpg" alt=""></p><p>形状语法在一个小规模的、定义明确的生成问题（如住房布局和结构细化）时最有用。由于形状规则通常是在小形状上定义的，因此形状语法可以包含许多规则。</p><p>Mitchell 提出的 Palladian 别墅形状语法包含 69 个规则，这些规则适用于整个八个实施步骤。</p><p><img src="https://images.slideplayer.com/27/9112988/slides/slide_6.jpg" alt=""></p><p><img src="https://images.slideplayer.com/27/9112988/slides/slide_7.jpg" alt=""></p><p>Rules of Mughal garden：</p><p><img src="https://arch.gatech.edu/sites/default/files/03_mughal_production.jpg" alt=""></p><p>借助 CAD，形状语法可以节省人力、缩短设计周期、产生系列化方案，能很好地传承文脉，使设计内涵在新环境下得以保存和发展，受到了设计界尤其是建筑设计的高度重视。</p><p><img src="http://keyan.info/wp-content/uploads/2013/04/KeyanGrammar2.png" alt=""></p><p><img src="https://arch.gatech.edu/sites/default/files/08_98_cube_subgroups.jpg" alt=""></p><p>近几十年来，形状语法在计算机图形学中越来越重要。 </p><p>除了用于建筑物或城市的程序建模（例如电影或视频游戏），Shape Grammars 是许多开发系统的基础，它们使用生产规则来生成各种不同的 3D 模型。 使用 Shape Grammars 可以创建具有逼真外观的街道平面图，以及建筑物的外墙或内部空间。</p><p>运用形状语法生成的建筑模型和建筑设计：</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/architecture%20used%20shape%20grammars.png" alt="architecture used shape grammars"></p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.wikiwand.com/en/Shape_grammar" target="_blank" rel="noopener">Shape grammar - Wikiwand</a></li><li><a href="http://www.shapegrammar.org/" target="_blank" rel="noopener">Shape Grammars</a></li><li><a href="https://www.youtube.com/watch?v=pg1NpMmPv48" target="_blank" rel="noopener">The complex geometry of Islamic design - Eric Broug - YouTube</a></li><li><a href="http://users.metu.edu.tr/baykan/arch467/Readings/Stiny-Mitchell.pdf" target="_blank" rel="noopener">Stiny-Mitchell.pdf</a></li><li><a href="https://arch.gatech.edu/design-computation-1" target="_blank" rel="noopener">Design Computation | School of Architecture | Georgia Institute of Technology | Atlanta, GA</a></li><li><a href="https://slideplayer.com/slide/9522024/" target="_blank" rel="noopener">What is computation? What is a shape grammar? How are shape grammars used in design? How is a shape grammar developed? - ppt download</a></li><li><a href="https://www.youtube.com/watch?v=t-VUpX-xVo4" target="_blank" rel="noopener">Procedural Building Generation with Grammars - YouTube</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></li><li><a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">生成式艺术和算法创作02-随机和噪声</a></li><li><a href="https://www.uegeek.com/181021-generative-art-creativity-03.html" target="_blank" rel="noopener">生成式艺术和算法创作03-混沌和分形</a></li><li><a href="https://www.uegeek.com/181023-generative-art-creativity-04.html" target="_blank" rel="noopener">生成式艺术和算法创作04-规则系统</a></li><li><a href="https://www.uegeek.com/181107-generative-art-creativity-05.html" target="_blank" rel="noopener">生成式艺术和算法创作05-Tessellation</a></li><li><a href="https://www.uegeek.com/181120-generative-art-creativity-06.html" target="_blank" rel="noopener">生成式艺术和算法创作06-形状语法</a></li></ul><p>Lindenmayer system，简称 L-system，是由荷兰乌特勒支大学的生物学和植物学家，匈牙利裔的 Aristid Lindenmayer 于 1968 年提出的有关生长发展中的细胞交互作用的数学模型，被广泛应用于植物生长过程的研究和建模，也常用于模拟各种生物体的形态。</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Fractal_weeds.jpg/600px-Fractal_weeds.jpg" alt=""></p><p>使用 L-system 生成的 3D 杂草</p><h2 id="L-system-语法"><a href="#L-system-语法" class="headerlink" title="L-system 语法"></a>L-system 语法</h2><p>L-system 是一系列不同形式的语法规则，它的自然递归规则产生自相似性，也能用于生成自相似的分形，例如迭代函数系统，因此也是一种形态发生（morphogenesis）算法。</p><p>L-system 一般可以这样定义：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">G ＝｛V,S,ω,P&#125;,</span><br><span class="line"></span><br><span class="line">V: 变量符号集合</span><br><span class="line"></span><br><span class="line">S: 常量符号集合</span><br><span class="line"></span><br><span class="line">ω: 初始状态串(i.e. seed or axiom)</span><br><span class="line"></span><br><span class="line">P: 生成式规则(production)</span><br></pre></td></tr></table></figure><p>例如，Lindenmayer 研究海藻生长模式时提出的最早的 L-system：</p><blockquote><p><strong>变量</strong> : A B</p><p><strong>常量</strong> : 无</p><p><strong>公理 </strong>(axiom) : A</p><p><strong>规则</strong> : (A → AB), (B → A)</p></blockquote><p>迭代过程：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">n = 0 : A</span><br><span class="line">n = 1 : AB</span><br><span class="line">n = 2 : ABA</span><br><span class="line">n = 3 : ABAAB</span><br><span class="line">n = 4 : ABAABABA</span><br><span class="line">n = 5 : ABAABABAABAAB</span><br><span class="line">n = 6 : ABAABABAABAABABAABABA</span><br><span class="line">n = 7 : ABAABABAABAABABAABABAABAABABAABAAB</span><br><span class="line"></span><br><span class="line">用树状分枝表示迭代过程会更容易理解：</span><br><span class="line"></span><br><span class="line">n=0:         A           开始 (公理/起始点)</span><br><span class="line">            / \</span><br><span class="line">n=1:       A   B         根据规则(A → AB)起始点A拓展成AB，由于起始点没有B，规则(B → A)没有被用到</span><br><span class="line">          /|    \</span><br><span class="line">n=2:     A B     A       AB中的A拓展成AB，B变成A，于是得到了ABA</span><br><span class="line">        /| |     |\</span><br><span class="line">n=3:   A B A     A B     可以看到每个A都是一个新的子树的根，由此引发出和整体结构同构的子结构。</span><br><span class="line">      /| | |\    |\ \</span><br><span class="line">n=4: A B A A B   A B A</span><br></pre></td></tr></table></figure><p>下面我们来看看著名的 Koch snowflake（科赫曲线）是如何用 L-system 生成迭代过程的：</p><p><img src="https://www.researchgate.net/profile/Hamid_Bennis/publication/316742654/figure/fig1/AS:545826508607488@1507146588038/Koch-curve-at-iterations-from-0-to-4.png" alt=""></p><p> L-system 规则是：F→F+F–F+F。想象一下有一只乌龟🐢，当它接收到指令 F 时向前走，接收到指令 + 号就左转 60°，- 号右转 60°：</p><p><img src="http://www.fractalcurves.com/images/side_turtle_draws_Koch.jpg" alt=""></p><p>F→F+F–F+F 的意思就是：把每一个线段 F，用 <code>F&#39; 右转 F&#39; 左转再左转 F&#39; 右转 F&#39;</code> 替代……晕了吧？00 为你准备了分解动作示意图：</p><p><img src="http://img.viz.mobi/Koch%20Snowflake%20Rule.png" alt=""></p><p>使用 L-system 生成图形图像时，模型中的符号要能引用计算机屏幕上的图形元素。例如，Fractint 程序使用 Turtle graphics（类似于 Logo 编程语言中的图形）来生成屏幕图像。它将 L-system 模型中的每个常量解释为海龟命令。</p><p>在 L-system 的语法中，常用的符号及其含义：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Character        Meaning</span><br><span class="line">   F         Move forward by line length drawing a line</span><br><span class="line">   f         Move forward by line length without drawing a line</span><br><span class="line">   +         Turn left by turning angle</span><br><span class="line">   -         Turn right by turning angle</span><br><span class="line">   |         Reverse direction (ie: turn by 180 degrees)</span><br><span class="line">   [         Push current drawing state onto stack</span><br><span class="line">   ]         Pop current drawing state from the stack</span><br><span class="line">   #         Increment the line width by line width increment</span><br><span class="line">   !         Decrement the line width by line width increment</span><br><span class="line">   @         Draw a dot with line width radius</span><br><span class="line">   &#123;         Open a polygon</span><br><span class="line">   &#125;         Close a polygon and fill it with fill colour</span><br><span class="line">   &gt;         Multiply the line length by the line length scale factor</span><br><span class="line">   &lt;         Divide the line length by the line length scale factor</span><br><span class="line">   &amp;         Swap the meaning of + and -</span><br><span class="line">   (         Decrement turning angle by turning angle increment</span><br><span class="line">   )         Increment turning angle by turning angle increment</span><br></pre></td></tr></table></figure><h2 id="L-system-在生成式艺术中的应用"><a href="#L-system-在生成式艺术中的应用" class="headerlink" title="L-system 在生成式艺术中的应用"></a>L-system 在生成式艺术中的应用</h2><p>L-system 常被艺术家用于生成植物形态或者模拟植物的生长过程。</p><p>例如，下面的规则可以生成一株 Fractal plant：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">变量 : X F</span><br><span class="line">常量 : + − [ ]</span><br><span class="line">起始状态 : X</span><br><span class="line">规则 : (X → F+[[X]-X]-F[-FX]+X), (F → FF)</span><br><span class="line">角度 : 25°</span><br></pre></td></tr></table></figure><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Fractal-plant.svg/906px-Fractal-plant.svg.png" style="zoom:50%"></p><p>如果 L-system 语法中每个规则仅涉及单个符号而不涉及邻近符号，则属于 context-free。如果规则不仅取决于单个符号而且还取决于邻近符号，则属于 context-sensitive  L-system。这样，不同的规则可以在不同的上下文中运用。</p><p>如果每个符号对应多个 production，并且在每次迭代时以一定概率随机选择，则它是随机 L-system（Stochastic L-systems）。</p><p><img src="https://image.slidesharecdn.com/20procedural-120403132552-phpapp01/95/cs-354-procedural-methods-23-728.jpg?cb=1333459756" alt=""></p><p>L-system weed:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">axiom = F</span><br><span class="line">F -&gt; FF-[XY]+[XY]</span><br><span class="line">X -&gt; +FY</span><br><span class="line">Y -&gt; -FX</span><br><span class="line">angle = 22.5</span><br></pre></td></tr></table></figure><p><img src="http://paulbourke.net/fractals/lsys/weed_1.gif" alt=""></p><p>L-system 已经是很成熟的算法，组合不同的规则、尺寸、角度和迭代次数，可以生成变化多样、富有美感的生成式图形。</p><p><img src="http://img.viz.mobi/l-system%20generator1.png" alt=""></p><p><img src="http://img.viz.mobi/l-system%20generator2.png" style="zoom:50%"></p><p>Christa Sommerer 和 Laurent Mignonneau 研究互动式植物生成过程，采集人在环境中的移动等数据作为参数，加入到生成式算法中。</p><div class="video-container"><iframe src="//www.youtube.com/embed/JXX7JNFD2X8" frameborder="0" allowfullscreen></iframe></div><p><a href="https://www.youtube.com/watch?v=JXX7JNFD2X8" target="_blank" rel="noopener">Interactive Plant Growing - YouTube</a></p><p><img src="http://www.interface.ufg.ac.at/christa-laurent/BOOK/InteractiveArtResearch/InteractiveArtResearch.jpg" alt=""></p><p>Jon McCormack 是莫纳什大学的一名艺术家兼计算机科学教授，他的工作包含了算法创作。</p><p>他创作的 Fifty Sisters (2012)系列的特色是「未来的植物」，这些植物用代码通过算法生成。在另一部名为 Eden 的作品中，他创作了一个以虚拟生物为主题的装置作品。</p><p>Bloom 是昆士兰州 QUT 创意产业区委托他制作的一幅 43米 x 9.7米 的数字图像。</p><p><img src="http://jonmccormack.info/wp-content/uploads/2011/04/Bloom960.png" alt=""></p><p>「我认为自己是艺术家」，McCormack 在谈到他的作品时说。</p><blockquote><p>电脑仍然非常原始——它没有人类的创造力，但它有能力做一些我们无法做到的事情。人工智能目前只能给艺术实践带来有限的视角，它们只能利用所学到的知识，而人类的现实情况则是非常广阔的，并且能够给艺术带来了更深刻的视角。</p></blockquote><p>McCormack 指出，人工智能本身就可以创造出看起来像艺术的东西，但是能否把它看作艺术是一个更难的问题。「我们对艺术的看法，很大程度上是人类之间的交流。一旦把一台电脑带进这个情境，你就会突然发现一个非人类的实体正在努力实现这个角色，而这个角色过去是由人类主导的。」</p><p>我们不仅把机器当成一个工具，更是一个合作伙伴或合作者，它拥有自己创造的能力。McCormack 说：</p><blockquote><p>我们一直认为列侬和麦卡特尼是伟大的音乐创作伙伴。我们最终是否会看到一个转折点，这个转折点让我们承认，人类和计算机的伙伴关系不仅仅是其各部分的总和。</p></blockquote><h2 id="L-system-在建筑设计中的应用"><a href="#L-system-在建筑设计中的应用" class="headerlink" title="L-system 在建筑设计中的应用"></a>L-system 在建筑设计中的应用</h2><p>建筑一直都离不开技术的影响。如今电脑技术已经为建筑界带来了许多改变，但它依然潜力无限，甚至可能彻底动摇建筑界的基础规则。</p><p>Michael Hansmeyer 是一位建筑师和程序员，他探索使用算法和计算来生成建筑形式。受到了细胞分裂的启发，Michael Hansmeyer 写下了拥有惊人艳丽的造型和无数刻面的设计运算法则。没人能将他们手绘出来，但它们确实可以被做出来——它们也可以向常规的建筑形态掀起思想狂潮。</p><p><img src="http://www.michael-hansmeyer.com/images/l-systems/l-system-7.jpg" alt=""></p><p><img src="http://www.michael-hansmeyer.com/images/l-systems/l-system-2.jpg" alt=""></p><p>下面是 Michael Hansmeyer 在 TED 2012 年会上的演讲 Building unimaginable shapes：</p><iframe height="498" width="510" src="http://player.youku.com/embed/XNDc4MDM2NzA4" frameborder="0" 'allowfullscreen'=""></iframe><p><a href="https://v.youku.com/v_show/id_XNDc4MDM2NzA4.html" target="_blank" rel="noopener">Michael Hansmeyer：塑造不可思议</a></p><h2 id="L-systems-在音乐中的应用"><a href="#L-systems-在音乐中的应用" class="headerlink" title="L-systems 在音乐中的应用"></a>L-systems 在音乐中的应用</h2><p>使用 L-system 辅助生成音乐片段的研究由来已久。</p><p>Przemyslaw Prusinkiewicz 在 1986 年的论文 Score generation with L-system 中探讨了用算法生成乐谱的方法：用 L-system 生成字符符号，再讲符号解析成一系列的音符<br><img src="https://ai2-s2-public.s3.amazonaws.com/figures/2017-08-08/2820acc0a2efeeaae441ed3b8fba00b7fbcaac8b/4-Figure4-1.png" alt=""></p><p>The score associated with the Hilbert curv in the common musical notation</p><p>随着技术的演进，生成式音乐、算法作曲越来越成熟，架构也越来越复杂，L-system 依然被用作规则和语法生成的方式：</p><p><img src="https://ai2-s2-public.s3.amazonaws.com/figures/2017-08-08/fabba1ee66cd3a835fdfabcb78e19f330eabaf9f/4-Figure1-1.png" alt=""></p><p>via: Improving L-System Music Rendering Using a Hybrid of Stochastic and Context-Sensitive Grammars in a Visual Language Framework.</p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.wikiwand.com/en/L-system" target="_blank" rel="noopener">L-system - Wikiwand</a></li><li><a href="https://www.wikiwand.com/en/Koch_snowflake" target="_blank" rel="noopener">Koch snowflake - Wikiwand</a></li><li><a href="http://paulbourke.net/fractals/lsys/" target="_blank" rel="noopener">L-System manual</a></li><li><a href="https://www.wikiwand.com/en/Turtle_graphics" target="_blank" rel="noopener">Turtle graphics - Wikiwand</a></li><li><a href="http://piratefsh.github.io/p5js-art/public/lsystems/" target="_blank" rel="noopener">L-Systems Renderer</a></li><li><a href="http://www.kevs3d.co.uk/dev/lsystems/" target="_blank" rel="noopener">L-Systems Turtle Graphics Renderer - HTML5 Canvas - by Kevin Roast</a></li><li><a href="http://jonmccormack.info/" target="_blank" rel="noopener">Jon McCormack</a></li><li><a href="http://www.michael-hansmeyer.com/l-systems" target="_blank" rel="noopener">Michael Hansmeyer - L-Systems</a></li><li><a href="http://www.michael-hansmeyer.com/" target="_blank" rel="noopener">Michael Hansmeyer - Computational Architecture</a></li><li><a href="http://algorithmicbotany.org/papers/score.icmc86.html" target="_blank" rel="noopener">Score generation with L-systems</a></li><li><a href="https://www.semanticscholar.org/paper/Improving-L-System-Music-Rendering-Using-a-Hybrid-a-Lim-Talib/fabba1ee66cd3a835fdfabcb78e19f330eabaf9f" target="_blank" rel="noopener">Improving L-System Music Rendering Using a Hybrid of Stochastic and Context-Sensitive Grammars in a Visual Language Framework - Semantic Scholar</a></li><li><a href="http://www.theatreofnoise.com/2014/03/l-system-garden-max-implementation-of.html" target="_blank" rel="noopener">theatre of noise: L-System Garden: Max implementation of Lindenmeyer</a></li><li><a href="http://creativetuts.com/creating-cubic-spline-with-mospline-l-system/" target="_blank" rel="noopener">Creating Cubic Spline with Mospline L-System</a></li><li><a href="http://www.motionesque.com/beautyoffractals/" target="_blank" rel="noopener">The Beauty of Fractals - L-system in Houdini - motionesque - Andrea Kühne | motionesquemotionesque</a></li></ul>]]></content>
     
     <summary type="html">
     
@@ -36,9 +36,47 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
+      <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
+    
+      <category term="Computational Creativity" scheme="http://uegeek.com/tags/Computational-Creativity/"/>
+    
+      <category term="创意" scheme="http://uegeek.com/tags/%E5%88%9B%E6%84%8F/"/>
+    
+      <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
+    
+      <category term="分形" scheme="http://uegeek.com/tags/%E5%88%86%E5%BD%A2/"/>
+    
+      <category term="L-system" scheme="http://uegeek.com/tags/L-system/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>生成式艺术和算法创作06-形状语法</title>
+    <link href="http://uegeek.com/181120-generative-art-creativity-06.html"/>
+    <id>http://uegeek.com/181120-generative-art-creativity-06.html</id>
+    <published>2018-11-20T12:51:14.000Z</published>
+    <updated>2018-11-23T12:21:17.043Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></li><li><a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">生成式艺术和算法创作02-随机和噪声</a></li><li><a href="https://www.uegeek.com/181021-generative-art-creativity-03.html" target="_blank" rel="noopener">生成式艺术和算法创作03-混沌和分形</a></li><li><a href="https://www.uegeek.com/181023-generative-art-creativity-04.html" target="_blank" rel="noopener">生成式艺术和算法创作04-规则系统</a></li><li><a href="https://www.uegeek.com/181107-generative-art-creativity-05.html" target="_blank" rel="noopener">生成式艺术和算法创作05-Tessellation</a></li></ul><p>形状语法/形状文法（Shape grammars）是生成特定类别几何形状的生产系统。</p><p>1971年，<a href="https://www.wikiwand.com/en/George_Stiny" target="_blank" rel="noopener">George Stiny</a> 和 <a href="https://www.wikiwand.com/en/James_Gips" target="_blank" rel="noopener">James Gips</a> 在一篇开创性的文章中定义了形状语法的基础。形状语法是一种计算机辅助设计方法，是研究二维和三维语言的一种方式，它可以按照人们的设计思想和要求，按照一定的规则自动产生新形态。</p><p><img src="http://web.mit.edu/haldane/www/icerays/sm_iceray07.jpg" alt=""></p><p>具体来说，形状语法由形状规则（shape rules）和选择、处理规则的生成引擎（generation engine）组成。形状语法执行计算的两个主要步骤是：识别特定形状，用可能的形状替代。</p><p>形状规则定义如何转换现有形状，由两个部分组成，两个部分由从左到右指向的箭头分隔：</p><ul><li>箭头左侧的部分称为左侧（LHS），描绘形状和标记的条件。</li><li>箭头右侧的部分称为右侧（RHS），描述如何转换 LHS 形状以及标记的位置，标记有助于定位和定向新形状。</li></ul><p>形状语法最少由三个形状规则组成：<strong>起始规则，至少一个转换规则和终止规则</strong>。形状语法中的生产规则可以连续应用，类似 <a href="https://www.wikiwand.com/en/L-System" target="_blank" rel="noopener">L-Systems 中的</a> productions。</p><p>形状语法通常是一个四元组，SG＝（S, L, R, I）。其中 S 是形状的有限集合，L 是符号的有限集合，R 是规则的有限集合，I 是初始形状。形状文法产生的形状，都应通过形状规则由初始形状派生出来。</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/shape%20grammars%20in%20action.png" alt="shape grammars in action"></p><p><img src="https://d2w9rnfcy7mm78.cloudfront.net/2351379/display_c5bf667d63e6917a82a5163d65212a6d.jpg" alt=""></p><p>形状语法在一个小规模的、定义明确的生成问题（如住房布局和结构细化）时最有用。由于形状规则通常是在小形状上定义的，因此形状语法可以包含许多规则。</p><p>Mitchell 提出的 Palladian 别墅形状语法包含 69 个规则，这些规则适用于整个八个实施步骤。</p><p><img src="https://images.slideplayer.com/27/9112988/slides/slide_6.jpg" alt=""></p><p><img src="https://images.slideplayer.com/27/9112988/slides/slide_7.jpg" alt=""></p><p>Rules of Mughal garden：</p><p><img src="https://arch.gatech.edu/sites/default/files/03_mughal_production.jpg" alt=""></p><p>借助 CAD，形状语法可以节省人力、缩短设计周期、产生系列化方案，能很好地传承文脉，使设计内涵在新环境下得以保存和发展，受到了设计界尤其是建筑设计的高度重视。</p><p><img src="http://keyan.info/wp-content/uploads/2013/04/KeyanGrammar2.png" alt=""></p><p><img src="https://arch.gatech.edu/sites/default/files/08_98_cube_subgroups.jpg" alt=""></p><p>近几十年来，形状语法在计算机图形学中越来越重要。 </p><p>除了用于建筑物或城市的程序建模（例如电影或视频游戏），Shape Grammars 是许多开发系统的基础，它们使用生产规则来生成各种不同的 3D 模型。 使用 Shape Grammars 可以创建具有逼真外观的街道平面图，以及建筑物的外墙或内部空间。</p><p>运用形状语法生成的建筑模型和建筑设计：</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/architecture%20used%20shape%20grammars.png" alt="architecture used shape grammars"></p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.wikiwand.com/en/Shape_grammar" target="_blank" rel="noopener">Shape grammar - Wikiwand</a></li><li><a href="http://www.shapegrammar.org/" target="_blank" rel="noopener">Shape Grammars</a></li><li><a href="https://www.youtube.com/watch?v=pg1NpMmPv48" target="_blank" rel="noopener">The complex geometry of Islamic design - Eric Broug - YouTube</a></li><li><a href="http://users.metu.edu.tr/baykan/arch467/Readings/Stiny-Mitchell.pdf" target="_blank" rel="noopener">Stiny-Mitchell.pdf</a></li><li><a href="https://arch.gatech.edu/design-computation-1" target="_blank" rel="noopener">Design Computation | School of Architecture | Georgia Institute of Technology | Atlanta, GA</a></li><li><a href="https://slideplayer.com/slide/9522024/" target="_blank" rel="noopener">What is computation? What is a shape grammar? How are shape grammars used in design? How is a shape grammar developed? - ppt download</a></li><li><a href="https://www.youtube.com/watch?v=t-VUpX-xVo4" target="_blank" rel="noopener">Procedural Building Generation with Grammars - YouTube</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/CC-blogtitle.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -110,9 +148,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -146,9 +184,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -182,9 +220,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -224,9 +262,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -264,9 +302,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -306,9 +344,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -346,9 +384,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -386,9 +424,9 @@
     
       <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -420,9 +458,9 @@
     
       <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -454,9 +492,9 @@
     
       <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -488,9 +526,9 @@
     
       <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -522,9 +560,9 @@
     
       <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -556,9 +594,9 @@
     
       <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -588,9 +626,9 @@
     
       <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -622,9 +660,9 @@
     
       <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="列表" scheme="http://uegeek.com/tags/%E5%88%97%E8%A1%A8/"/>
     
@@ -656,9 +694,9 @@
     
       <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Chromakeying" scheme="http://uegeek.com/tags/Chromakeying/"/>
     
@@ -692,45 +730,11 @@
     
       <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Math" scheme="http://uegeek.com/tags/Math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Max/MSP/Jitter 官方教程翻译10 - 交叉渐变</title>
-    <link href="http://uegeek.com/180902-jitter-10.html"/>
-    <id>http://uegeek.com/180902-jitter-10.html</id>
-    <published>2018-09-02T10:29:21.000Z</published>
-    <updated>2018-09-25T07:38:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/Max-title-1.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter08" target="_blank" rel="noopener">Tutorial 8: Simple Mixing</a></p></blockquote><p>本教程介绍如何使用 <code>jit.xfade</code> 对象混合和淡入淡出两个图像。</p><h2 id="混合两个视频源"><a href="#混合两个视频源" class="headerlink" title="混合两个视频源"></a>混合两个视频源</h2><p>混合两个图像是视频处理中最常见和最有用的技巧之一。</p><p>最简单的视频混合是将两个图像叠加起来，可以调整任一图像的强度。逐渐淡出一个图像，同时淡入另一个图像，可以创建图像之间的平滑过渡淡入淡出效果。</p><p>Jitter 处理混合和过渡渐变的对象是 <code>jit.xfade</code>。</p><blockquote><p>技术细节：这种类型的混合，将一个矩阵中的每个值，加到另一个矩阵各单元和各平面的相应值上，并输出所有总和的矩阵。但这样让输出图像的值都大于任何一个输入图像，会比原始图像更亮（如果矩阵包含 char 数据，某些值甚至会在 255 处裁剪）。所以在它们相加之前应该减小一个或两个图像的强度。例如，为了按相同比例混合两个图像，在相加之前将它们缩小相等的量（例如，0.5 倍）。</p></blockquote><h2 id="jit-xfade"><a href="#jit-xfade" class="headerlink" title="jit.xfade"></a>jit.xfade</h2><p><strong><code>jit.xfade</code> 对象接收两个输入口的矩阵，缩放两个矩阵中的值，然后把两个矩阵相加并输出混合后的矩阵</strong>。两个输入矩阵缩放因子由 xfade 属性决定。xfade 是 1~0 之间单个（浮点） 数值，是右输入口矩阵的缩放因子。左输入口的矩阵按 1-xfade 的比例缩放。如果逐渐将 xfade 值从 0 增加到 1，输出矩阵将从左输入到右输入淡入淡出。</p><p>打开教程 patch。<code>loadbang</code> 对象自动读取两个源视频。开启<code>metro</code>。开始只会看到左侧视频。拖动滑块更改 xfade 值来控制左右矩阵的混合。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter08a.png" alt=""><br>值为 0.5 时左右矩阵以相同比例混合</p><h2 id="自动交叉渐变"><a href="#自动交叉渐变" class="headerlink" title="自动交叉渐变"></a>自动交叉渐变</h2><p>交叉渐变是最常见的图像转换方式之一。它可以非常缓慢 - 持续几秒 - 或者非常快速，只持续几分之一秒，只比突然跳帧略微平滑。</p><p>在 patch 左上角，有一个从视频 A 到 B （B 到 A）的自动渐变控制器。交叉渐变可以持续用数字框指定的任意过渡时间。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter08b.png" alt=""><br>自动发送不断变化的 xfade 值</p><p>用数字框设置一个比较长的渐变时间（例如 5000 ms），可以看到交叉渐变器的效果。单击 Go To 右侧的开关淡入视频 B。</p><p>Go To 开关实际上是一个范围为 2 的 <code>slider</code>和一个 <code>* 100</code>乘法器，所以只会发送 0 和 100 两个值。单击开关右侧发出值 100，<code>pack</code> 发出消息 <code>100 5000</code>，<code>line</code> 对象在五秒内发出 0~100 的连续值（每 50 毫秒一个新值）。然后将这些值乘以 0.01，得到平滑变化的从 0~1 的 xfade 值。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>叠加两个矩阵是最简单的混合视频图像的方法。想要控制两个图像的混合比例，首先要按某个因子缩放每个矩阵。想从一个图像渐变到另一个图像，将一个图像的缩放因子从 1 减小到 0，另一个从 0 增加到 1。</p><p><code>jit.xfade</code> 对象专门混合和/或交叉渐变两个矩阵。xfade 属性指定两个矩阵之间的混合比例。<strong>将 xfade 值从 0 连续增大到 1 可实现平滑的交叉渐变。</strong>可以使用 <code>line</code> 或其他 Max 计时对象来自动化交叉渐变。</p><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://img.viz.mobi/maxgroup0825.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/Max-title-1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
-    
-      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="视频" scheme="http://uegeek.com/tags/%E8%A7%86%E9%A2%91/"/>
     
   </entry>
   
