@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[算法创作实战03 - 用 MaxMSP 实现 L-system]]></title>
+    <url>%2F181128-computational-creativity-in-maxmsp-03.html</url>
+    <content type="text"><![CDATA[算法创作实战01 - 巴纳姆效应之随机星座实验 算法创作实战02 - 用 MaxMSP 生成随机颜色 好久不见~ 前面两篇算法创作的实战，都是相对容易的小程序。今天我们一起来挑战用 Max/MSP (更准确说，是用 jitter) 来「种」植物。 名称：L-system 主要使用的对象：jit.linden, jit.turtle, jit.matrix, jit.str.fromsymbol, jit.iter, jit.lcd, jit.pwindow 难度系数：★★★★☆ 什么是 L-system?在生成式艺术和算法创作07-向自然致敬的 L-system 中，已经对 L-system 做了详细的介绍。L-system 是 Aristid Lindenmayer 提出的有关生长发展中的细胞交互作用的数学模型，被广泛应用于植物生长过程的研究和建模，也常用于模拟各种生物体的形态。 L-system 是一系列不同形式的语法规则，它的自然递归规则产生自相似性，也能用于生成自相似的分形，例如迭代函数系统。它一般可以这样定义： 123456789G ＝｛V,S,ω,P&#125;,V: 变量符号集合S: 常量符号集合ω: 初始状态串(i.e. seed or axiom)P: 生成式规则(production) 接下来，我们动手来实现它。 开始的正确姿势 如何在 Max/MSP 实现 L-system？ 最开始面对这个问题，会觉得茫然无措：该从哪里开始？ 回答与软件相关的工程问题，最好答案永远是——搜索。 而搜索的第一站，不是 Google，应该是官方文档。在经历了长时间漫无头绪的搜索，各种成功不成功的尝试后，00 再次获得了一个多么痛的领悟——永远先搜索软件文档。搜索结果已经清楚明白地列出跟 L-system 有关的对象了！ 然后我们来仔细读一下文档里面的说明吧。 jit.linden打开 jit.linden 的帮助文档，例子如下： 一阵头晕目眩后冷静下来，试着运行程序。然而并不知道它在做什么…… 只好静下心来一点一点看。 首先是找出核心对象。核心对象 jit.linden 前面连接的是一个矩阵，接收了 tolinden 的消息（unlock patch 后才看到 s tolinden 的内容）；后面连接的是同一个矩阵。将矩阵可视化出来时需要变成 1 维 1 平面的矩阵。但是这个可视化方式非常不直观，需要另外寻找方法。（所以搜索结果列出了 jit.turtle 是不是……） 例子右边是规则相关的部分。在生成式艺术和算法创作07-向自然致敬的 L-system 中我们已经知道，生成式规则(production) 是决定 L-system 生成结果的关键。那么，这里 production 后面的一串 * F * +[F+]* G * -[GF-]F - F -- 是什么意思呢？下面给出的注释是： list of symbols in the format：left_context strict_predecessor right_context successor if a symbol matching the strict_predecessors is found in the matrix it is replaced with the sucessor string if the left and right context is met. the wildcard character (‘*’ by default) means no left or right context. 还是一知半解的感觉，这时候需要打开顶部 p moreinfo 子 patch。里面解释了 production 规则是如何设定的。 L-systems work on an interpreted grammar model wherein a syntax is defined for replacing individual elements of the incoming string with a replacement string. L-systems get larger through successive productions. the size of the Jitter matrix used by the object determines the maximum length of the string, so a large matrix is advisable, even if the axiom (starting string) is very small. 大意是，随着迭代，矩阵会变得越来越大，建议设定一个较大尺寸的矩阵。 ‘production F +F[F]’ tells jit.linden to take every ‘F’ found in the input matrix and replace it with the string ‘+F[F]’. So the first four generations of an L-system with an axiom of ‘F’ would look like this: 1234F+F[F]++F[F][+F[F]]+++F[F][+F[F]][++F[F][+F[F]]] production 接着的第一个 F 是初始值，或者叫做 axiom（公理），第二个 是 axiom 替代自己的规则。 More complex models can be created by adding multiple productions, or by introducing context matching into the L-system grammar. 例如：production G F * +F 意思是只有在 F 前面是一个 G 的时候，才将 F 替换为 +F 。 又如：production G F * +F * G * G- 包含两个规则，一个是上面提到的 GF 替换 为 G+F; 另一个是 G 替换为 G-。 jit.linden 最多可以定义 50 个规则。 the jit.turtle object interprets L-systems as turtle graphics, so that characters such as ‘F’, ‘+’, and ‘-‘ acquire special meaning. you could easily use jit.iter to access the Lindenmayer string in Max. 这一段也剧透了很多重要信息，包括用 jit.iter 获取字符串和用 jit.turtle 显示 L-system 生成的图形。 jit.turtle 然后再来看看 jit.turtle 怎么画图。 jit.turtle 前面是设定各种参数，例如步进值、旋转角度、起始点等，然后接收 jtr 传来的 production 规则，尤其要理解 F、+、- 的含义。jit.turtle 后面接的是一个 jit.lcd ，将规则显示出来。 生成 L-system下面开始动手尝试了。好消息是，不必从零开始，从 jit.linden 帮助里面 copy 主要的部分，就可以快速建立起程序的框架。 首先是用规则生成矩阵的部分。又可以分为矩阵、公理和规则三部分： 矩阵部分：jit.linden 前面是一个初始化矩阵，r generate 接收每一步的生成指令；jit.linden 后面是一步生成后存储的矩阵，在下面用 jit.cellblock 和 jit.pwindow 显示存储的值和存储占用情况 公理：用 jit.str.fromsymbol 接收 axiom 字母并转换成 ASCII 编码，同时指定矩阵的大小，如 1000 规则：将包含 axiom、production、turtle 参数的规则写入一个 message 中，然后用 r linden 接收并传入 jit.linden 接下来将矩阵中存储的规则用 jit.turtle 画出来。 这里的关键是用 jit.iter 将矩阵中每个值依次传到 jit.turtle ，并且接收 r turtle 中关于角度、大小等设置值，然后传给 jit.lcd 绘制： Let’s Play!接下来终于进入寻找有趣 production 的游戏环节了~ 可以自己试验，也可以从网上搜刮一些已经写好的规则。一个完整的规则可以写到一个 message 里面，打包传给 jit.linden: 下面进入愉快的玩耍时间~ 种草： 1* A * F * F * F-[[A]+A]+F[+FA] 种（歪的）树： 1* X * C0F-[C2[X]+C3X]+C1F[C3+FX]-X * F * FF 种粮食： 1* A * G * G * GFX[+G][-G] * X * X[-FFF][+FFF]FX 大城市的“地铁图”： 1* F * +F[--F+F] Ref 生成式艺术和算法创作07-向自然致敬的 L-system L-system - Wikiwand Koch snowflake - Wikiwand L-System manual Turtle graphics - Wikiwand L-Systems Renderer L-Systems Turtle Graphics Renderer - HTML5 Canvas - by Kevin Roast Max/MSP/Jitter 教程 01 - 什么是矩阵？ Max/MSP/Jitter 教程 02 - Jitter 对象的属性 Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频 Max/MSP/Jitter 教程 04 - 创建矩阵 Max/MSP/Jitter 教程 05 - 矩阵的数学运算 Max/MSP/Jitter 教程 06 - 控制视频播放 Max/MSP/Jitter 教程 07 - ARGB 颜色 Max/MSP/Jitter 教程 08 - 调整颜色 Max/MSP/Jitter 教程 09 - 调整图像颜色 Max/MSP/Jitter 教程 10 - 简单混合 友情提示：独自折腾 Max 易患上癔症……不妨入群互助 👇👇👇]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>ArtxCode</tag>
+        <tag>Creative Coding</tag>
+        <tag>艺术</tag>
+        <tag>Generative Art</tag>
+        <tag>Computational Creativity</tag>
+        <tag>创意</tag>
+        <tag>创造力</tag>
+        <tag>MaxMSP</tag>
+        <tag>L-system</tag>
+        <tag>分形</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[生成式艺术和算法创作07-向自然致敬的 L-system]]></title>
     <url>%2F181123-generative-art-creativity-07.html</url>
     <content type="text"><![CDATA[生成式艺术和算法创作01-概述 生成式艺术和算法创作02-随机和噪声 生成式艺术和算法创作03-混沌和分形 生成式艺术和算法创作04-规则系统 生成式艺术和算法创作05-Tessellation 生成式艺术和算法创作06-形状语法 Lindenmayer system，简称 L-system，是由荷兰乌特勒支大学的生物学和植物学家，匈牙利裔的 Aristid Lindenmayer 于 1968 年提出的有关生长发展中的细胞交互作用的数学模型，被广泛应用于植物生长过程的研究和建模，也常用于模拟各种生物体的形态。 使用 L-system 生成的 3D 杂草 L-system 语法L-system 是一系列不同形式的语法规则，它的自然递归规则产生自相似性，也能用于生成自相似的分形，例如迭代函数系统，因此也是一种形态发生（morphogenesis）算法。 L-system 一般可以这样定义： 123456789G ＝｛V,S,ω,P&#125;,V: 变量符号集合S: 常量符号集合ω: 初始状态串(i.e. seed or axiom)P: 生成式规则(production) 例如，Lindenmayer 研究海藻生长模式时提出的最早的 L-system： 变量 : A B 常量 : 无 公理 (axiom) : A 规则 : (A → AB), (B → A) 迭代过程： 1234567891011121314151617181920n = 0 : An = 1 : ABn = 2 : ABAn = 3 : ABAABn = 4 : ABAABABAn = 5 : ABAABABAABAABn = 6 : ABAABABAABAABABAABABAn = 7 : ABAABABAABAABABAABABAABAABABAABAAB用树状分枝表示迭代过程会更容易理解：n=0: A 开始 (公理/起始点) / \n=1: A B 根据规则(A → AB)起始点A拓展成AB，由于起始点没有B，规则(B → A)没有被用到 /| \n=2: A B A AB中的A拓展成AB，B变成A，于是得到了ABA /| | |\n=3: A B A A B 可以看到每个A都是一个新的子树的根，由此引发出和整体结构同构的子结构。 /| | |\ |\ \n=4: A B A A B A B A 下面我们来看看著名的 Koch snowflake（科赫曲线）是如何用 L-system 生成迭代过程的： L-system 规则是：F→F+F–F+F。想象一下有一只乌龟🐢，当它接收到指令 F 时向前走，接收到指令 + 号就左转 60°，- 号右转 60°： F→F+F–F+F 的意思就是：把每一个线段 F，用 F&#39; 右转 F&#39; 左转再左转 F&#39; 右转 F&#39; 替代……晕了吧？00 为你准备了分解动作示意图： 使用 L-system 生成图形图像时，模型中的符号要能引用计算机屏幕上的图形元素。例如，Fractint 程序使用 Turtle graphics（类似于 Logo 编程语言中的图形）来生成屏幕图像。它将 L-system 模型中的每个常量解释为海龟命令。 在 L-system 的语法中，常用的符号及其含义： 123456789101112131415161718Character Meaning F Move forward by line length drawing a line f Move forward by line length without drawing a line + Turn left by turning angle - Turn right by turning angle | Reverse direction (ie: turn by 180 degrees) [ Push current drawing state onto stack ] Pop current drawing state from the stack # Increment the line width by line width increment ! Decrement the line width by line width increment @ Draw a dot with line width radius &#123; Open a polygon &#125; Close a polygon and fill it with fill colour &gt; Multiply the line length by the line length scale factor &lt; Divide the line length by the line length scale factor &amp; Swap the meaning of + and - ( Decrement turning angle by turning angle increment ) Increment turning angle by turning angle increment L-system 在生成式艺术中的应用L-system 常被艺术家用于生成植物形态或者模拟植物的生长过程。 例如，下面的规则可以生成一株 Fractal plant： 12345变量 : X F常量 : + − [ ]起始状态 : X规则 : (X → F+[[X]-X]-F[-FX]+X), (F → FF)角度 : 25° 如果 L-system 语法中每个规则仅涉及单个符号而不涉及邻近符号，则属于 context-free。如果规则不仅取决于单个符号而且还取决于邻近符号，则属于 context-sensitive L-system。这样，不同的规则可以在不同的上下文中运用。 如果每个符号对应多个 production，并且在每次迭代时以一定概率随机选择，则它是随机 L-system（Stochastic L-systems）。 L-system weed: 12345axiom = FF -&gt; FF-[XY]+[XY]X -&gt; +FYY -&gt; -FXangle = 22.5 L-system 已经是很成熟的算法，组合不同的规则、尺寸、角度和迭代次数，可以生成变化多样、富有美感的生成式图形。 Christa Sommerer 和 Laurent Mignonneau 研究互动式植物生成过程，采集人在环境中的移动等数据作为参数，加入到生成式算法中。 Interactive Plant Growing - YouTube Jon McCormack 是莫纳什大学的一名艺术家兼计算机科学教授，他的工作包含了算法创作。 他创作的 Fifty Sisters (2012)系列的特色是「未来的植物」，这些植物用代码通过算法生成。在另一部名为 Eden 的作品中，他创作了一个以虚拟生物为主题的装置作品。 Bloom 是昆士兰州 QUT 创意产业区委托他制作的一幅 43米 x 9.7米 的数字图像。 「我认为自己是艺术家」，McCormack 在谈到他的作品时说。 电脑仍然非常原始——它没有人类的创造力，但它有能力做一些我们无法做到的事情。人工智能目前只能给艺术实践带来有限的视角，它们只能利用所学到的知识，而人类的现实情况则是非常广阔的，并且能够给艺术带来了更深刻的视角。 McCormack 指出，人工智能本身就可以创造出看起来像艺术的东西，但是能否把它看作艺术是一个更难的问题。「我们对艺术的看法，很大程度上是人类之间的交流。一旦把一台电脑带进这个情境，你就会突然发现一个非人类的实体正在努力实现这个角色，而这个角色过去是由人类主导的。」 我们不仅把机器当成一个工具，更是一个合作伙伴或合作者，它拥有自己创造的能力。McCormack 说： 我们一直认为列侬和麦卡特尼是伟大的音乐创作伙伴。我们最终是否会看到一个转折点，这个转折点让我们承认，人类和计算机的伙伴关系不仅仅是其各部分的总和。 L-system 在建筑设计中的应用建筑一直都离不开技术的影响。如今电脑技术已经为建筑界带来了许多改变，但它依然潜力无限，甚至可能彻底动摇建筑界的基础规则。 Michael Hansmeyer 是一位建筑师和程序员，他探索使用算法和计算来生成建筑形式。受到了细胞分裂的启发，Michael Hansmeyer 写下了拥有惊人艳丽的造型和无数刻面的设计运算法则。没人能将他们手绘出来，但它们确实可以被做出来——它们也可以向常规的建筑形态掀起思想狂潮。 下面是 Michael Hansmeyer 在 TED 2012 年会上的演讲 Building unimaginable shapes： Michael Hansmeyer：塑造不可思议 L-systems 在音乐中的应用使用 L-system 辅助生成音乐片段的研究由来已久。 Przemyslaw Prusinkiewicz 在 1986 年的论文 Score generation with L-system 中探讨了用算法生成乐谱的方法：用 L-system 生成字符符号，再讲符号解析成一系列的音符 The score associated with the Hilbert curv in the common musical notation 随着技术的演进，生成式音乐、算法作曲越来越成熟，架构也越来越复杂，L-system 依然被用作规则和语法生成的方式： via: Improving L-System Music Rendering Using a Hybrid of Stochastic and Context-Sensitive Grammars in a Visual Language Framework. Ref L-system - Wikiwand Koch snowflake - Wikiwand L-System manual Turtle graphics - Wikiwand L-Systems Renderer L-Systems Turtle Graphics Renderer - HTML5 Canvas - by Kevin Roast Jon McCormack Michael Hansmeyer - L-Systems Michael Hansmeyer - Computational Architecture Score generation with L-systems Improving L-System Music Rendering Using a Hybrid of Stochastic and Context-Sensitive Grammars in a Visual Language Framework - Semantic Scholar theatre of noise: L-System Garden: Max implementation of Lindenmeyer Creating Cubic Spline with Mospline L-System The Beauty of Fractals - L-system in Houdini - motionesque - Andrea Kühne | motionesquemotionesque]]></content>
@@ -15,8 +35,8 @@
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
-        <tag>分形</tag>
         <tag>L-system</tag>
+        <tag>分形</tag>
       </tags>
   </entry>
   <entry>
@@ -103,8 +123,8 @@
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
-        <tag>混沌</tag>
         <tag>分形</tag>
+        <tag>混沌</tag>
         <tag>Chaotic</tag>
         <tag>Fractal</tag>
       </tags>
@@ -1277,8 +1297,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -1290,8 +1310,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -1303,8 +1323,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -1316,8 +1336,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -2647,8 +2667,8 @@
       <tags>
         <tag>Design</tag>
         <tag>设计</tag>
-        <tag>service design</tag>
         <tag>服务设计</tag>
+        <tag>service design</tag>
       </tags>
   </entry>
   <entry>
@@ -2736,8 +2756,8 @@
       <tags>
         <tag>Design</tag>
         <tag>交互设计</tag>
-        <tag>iOS</tag>
         <tag>Guideline</tag>
+        <tag>iOS</tag>
         <tag>规范</tag>
       </tags>
   </entry>
@@ -3370,8 +3390,8 @@
       </categories>
       <tags>
         <tag>产品</tag>
-        <tag>用户</tag>
         <tag>UCD</tag>
+        <tag>用户</tag>
       </tags>
   </entry>
   <entry>
