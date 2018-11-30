@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-11-28T13:30:56.810Z</updated>
+  <updated>2018-11-30T14:18:12.189Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生成式艺术和算法创作08-马尔可夫模型</title>
+    <link href="http://uegeek.com/181130-generative-art-creativity-08.html"/>
+    <id>http://uegeek.com/181130-generative-art-creativity-08.html</id>
+    <published>2018-11-30T14:16:40.000Z</published>
+    <updated>2018-11-30T14:18:12.189Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></li><li><a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">生成式艺术和算法创作02-随机和噪声</a></li><li><a href="https://www.uegeek.com/181021-generative-art-creativity-03.html" target="_blank" rel="noopener">生成式艺术和算法创作03-混沌和分形</a></li><li><a href="https://www.uegeek.com/181023-generative-art-creativity-04.html" target="_blank" rel="noopener">生成式艺术和算法创作04-规则系统</a></li><li><a href="https://www.uegeek.com/181107-generative-art-creativity-05.html" target="_blank" rel="noopener">生成式艺术和算法创作05-Tessellation</a></li><li><a href="https://www.uegeek.com/181120-generative-art-creativity-06.html" target="_blank" rel="noopener">生成式艺术和算法创作06-形状语法</a></li><li><a href="https://www.uegeek.com/181123-generative-art-creativity-07.html" target="_blank" rel="noopener">生成式艺术和算法创作07-向自然致敬的 L-system</a></li></ul><h2 id="马尔可夫模型-Markov-Model"><a href="#马尔可夫模型-Markov-Model" class="headerlink" title="马尔可夫模型 Markov Model"></a>马尔可夫模型 Markov Model</h2><p>开始的开始，有必要来认识一下主人公，俄国数学家安德雷·安德耶维齐·马尔可夫。</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/AAMarkov.jpg/640px-AAMarkov.jpg" alt=""></p><p>1874 年，18 岁的马尔可夫考入圣彼得堡大学，师从切比雪夫（著名的切比雪夫定理提出者）。他是物理-数学博士，圣彼得堡大学教授，圣彼得堡科学院院士。在概率论、数论、函数逼近论和微分方程等方面卓有成就。</p><p>总的来说，马尔可夫模型是一种<strong>统计模型</strong>，可以用于计算条件概率分布，为一系列的离散事件建模。这就应用很广泛了，哪些是「离散事件」呢？句子中的词汇，音乐中的音符，通过交通灯的车辆数，女票每个月购物的次数……</p><p>以「马尔可夫」开头的术语有很多，先来熟悉一下最重要的几个：</p><ul><li>马尔可夫性质：当一个随机过程在给定现在状态及所有过去状态情况下，其未来状态的条件概率分布仅依赖于当前状态。</li><li>马尔可夫过程：是一个具备了马可夫性质的随机过程，不具备记忆特质（memorylessness）。换言之，马可夫过程的条件概率仅仅与系统的当前状态相关，而与过去历史或未来状态，都是独立、不相关的。</li><li>马尔可夫链：具备离散状态的马可夫过程，通常使用离散的时间集合定义。</li><li>马尔可夫模型：用马尔科夫过程生成序列的算法模型</li></ul><p>它们之间的关系大概可以这样划分：</p><table><thead><tr><th></th><th>系统状态是完全可观察的</th><th>系统状态是部分可观察的</th></tr></thead><tbody><tr><td>系统是自治的</td><td><a href="https://www.wikiwand.com/en/Markov_chain" target="_blank" rel="noopener">马尔可夫链</a></td><td><a href="https://www.wikiwand.com/en/Hidden_Markov_model" target="_blank" rel="noopener">隐马尔可夫模型</a></td></tr><tr><td>系统受到控制</td><td><a href="https://www.wikiwand.com/en/Markov_decision_process" target="_blank" rel="noopener">马尔可夫决策过程</a></td><td><a href="https://www.wikiwand.com/en/Partially_observable_Markov_decision_process" target="_blank" rel="noopener">部分可观察的马尔可夫决策过程</a></td></tr></tbody></table><p>在马尔可夫模型中</p><ul><li>$X_t$ 是时间 t 时表示音符的随机变量</li><li>$P(X_t)$ 是随机事件 $X_t$ 的概率分布</li></ul><p><img src="http://img.viz.mobi/cc-markov-model.png" alt=""></p><p>马尔可夫模型可以基于「上文」做出判断和预测，未来状态只取决于当前状态或者限定范围的过去状态。</p><p>实现马尔可夫模型的学习算法有几个步骤：</p><ul><li>构建一个 transition count table (state transition matrix)，计算每一种可能的上下文的频率分布</li><li>用每一种组合的 count 除以所有的组合总数，即下表中每一行加起来为 1</li><li>随机选择一个起始值，根据概率表格选择下一个序列值</li></ul><p>马尔可夫模型生成算法其实也是一种 <a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">random walk</a> ，根据转换概率分布，基于目前已经生成的序列，随机选择下一个序列值。</p><p>以一段乐曲为例，它由音符 B2,C4#,D4,E4,F4#,G4,G4#,A4,B4,C5#,D5,E5 组成。计算每一个音符后面紧跟着的音符的出现概率。例如，最后一个音符 E5，出现在它后面的音符只有 A4 和 C5#，出现概率分别是 6/16 和 10/16。当生成新的序列时，如果当前音符是 E5，那么根据表格，下一个音符只可能是 A4 或 C5#。</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/song%20corpus.png" alt="song corpus"></p><p>再来看一个三节点的马尔可夫链：</p><p><img src="http://codehop.com/wp-content/uploads/2010/07/3_node_markov_chain.gif" alt=""></p><p>这首马尔可夫旋律以 state_0 开始，播放一个八分音符 Eb。然后选择一个新的状态。选择 state_0，state_1 或 state_2 的概率相等，都是 1/3。假设选择了 state_2，则播放下加二间的十六分音符 G。从 state_2 开始，state_0 被选择的概率是 1/10，state_1 是 2/10，state_2 是 7/10。</p><p>因为马尔可夫模型状态是离散的，可以用有限状态的自动机 (automata) 来表示。</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/markov%20models%20automata%20representation.png" alt="markov models automata representation"></p><h2 id="变量马尔可夫模型"><a href="#变量马尔可夫模型" class="headerlink" title="变量马尔可夫模型"></a>变量马尔可夫模型</h2><p>在随机过程中，变量马尔可夫（Variable order Markov Models/VOM/VMM/VOMM）模型是一类重要的模型，它扩展了马尔可夫模型。</p><p>马尔可夫模型中，具有马尔可夫性质的序列中的每个随机变量，取决于固定数量的随机变量；在 VOM 模型中，该数量的调节随机变量可以基于观察到的特定实现而变化。</p><p>这个实现序列通常被称为上下文 ; 因此 VOM 模型也称为上下文树。调节随机变量数量的灵活性对于许多应用来说是非常有利的，例如统计分析、分类和预测。</p><p>变量马尔可夫模型一般由三部分组成：</p><ul><li>Counting：建立转换表，这是预测的来源</li><li>Smoothing：处理未见过的事件/序列</li><li>Variable length modeling:<ul><li>A transition matrix</li><li>Probabilistic suffix tree</li><li>Factor Oracle, and Context Tree Weighting method (CTW)</li><li>Lempel-Ziv 78 and its improvement LZ-MS</li><li>Prediction by partial match</li></ul></li></ul><p>它的缺点之一是难以产生语料之外的内容。</p><h2 id="隐马尔科夫模型-Hidden-Markov-Model"><a href="#隐马尔科夫模型-Hidden-Markov-Model" class="headerlink" title="隐马尔科夫模型 Hidden Markov Model"></a>隐马尔科夫模型 Hidden Markov Model</h2><p>隐马尔可夫模型（Hidden Markov Model，HMM）是统计模型，它用来描述一个<strong>含有隐含未知参数的马尔可夫过程</strong>。其难点是<strong>从可观察的参数中确定该过程的隐含参数</strong>，然后利用这些参数来作进一步的分析，例如模式识别。</p><p>在一般的马尔可夫模型中，状态对于观察者来说是直接可见的。这样状态的转换概率便是全部的参数。</p><p>而在隐马尔可夫模型中，状态并不是直接可见的，<strong>但受状态影响的某些变量是可见的</strong>。每一个状态在可能输出的符号上，都有一定的概率分布。因此输出符号的序列能够透露出状态序列的一些信息。</p><p><img src="http://www.davidsbatista.net/assets/images/2017-11-11-HMM.png" alt=""></p><p>也就是说，HMM 系统的实际状态是隐藏的，只能观察到 emission probilities。</p><p>HMM 常用来学习两个耦合的内容语料。例如，在语音识别中，可见的信息是音频信号，隐藏的信息是语音词汇。又例如，旋律是可见信息，伴奏/ 和声 是隐藏的信息。</p><p>最常见的三种 Hidden Markov Model 算法：</p><ul><li>the forward algorithm: 计算特定序列的概率，假设已知 transitions and observation 概率和初始状态</li><li>the Baum-Welch algorithm：找出被观测序列中最常见的参数</li><li>the Viterbi algorithm：维特比算法，基于观测序列计算隐藏状态最可能的序列（viterbi path）</li></ul><p>隐马尔科夫模型的优势：</p><ul><li>是学习和生成离散序列最有效和使用广泛的算法</li><li>可以对横轴和纵轴的相关性都建模，HMM 是随机耦合过程</li><li>比马尔可夫模型更好保留原始的数据结构</li></ul><p>劣势：</p><ul><li>需要有很好的领域知识来调整模型结构和参数</li><li>需要相对大的训练数据集</li></ul><h2 id="马尔可夫模型在音乐中的应用"><a href="#马尔可夫模型在音乐中的应用" class="headerlink" title="马尔可夫模型在音乐中的应用"></a>马尔可夫模型在音乐中的应用</h2><p>Lejaren Hiller 在 1957 年完成了算法生成的弦乐四重奏「依利亚克组曲」（Illiac Suite），这也是历史上第一支完全由计算机生成的音乐作品。首先使用马尔可夫链模型来产生有限控制的随机音符，之后利用和声与复调的规则测试这些音符，最后选择符合规则的材料，修改、组合成传统音乐记谱的弦乐四重奏。</p><p><img src="https://pbs.twimg.com/media/DfAdXfHV4AA0Bxb.jpg" alt="ILLIAC Suite "></p><div class="video-container"><iframe src="//www.youtube.com/embed/QyqiSbbwHIs" frameborder="0" allowfullscreen></iframe></div><p><a href="https://www.youtube.com/watch?v=QyqiSbbwHIs" target="_blank" rel="noopener">Lejaren Hiller - Illiac Suite for String Quartet [4/4] - YouTube</a></p><p><a href="http://www.musicainformatica.org/topics/illiac-suite.php" target="_blank" rel="noopener">该作品分为四个乐章</a>：</p><ul><li>第一乐章：计算机生成的不同长度的固定主题旋律</li><li>第二乐章：使用变奏的规则生成的四声部音乐</li><li>第三乐章：通过计算机对节奏、动态和演奏法的不同处理生成的音乐</li><li>第四乐章：通过衍生算法和马尔可夫链的不同模型及概率生成的音乐（pitch, intervals and textures）</li></ul><p>Iannis Xenakis在他 1958 年的专辑 Analogique 中就使用了马尔可夫链来作曲。</p><p><img src="http://img.viz.mobi/xenakis.jpg" alt=""></p><p>在他的著作 Formalized Music: Thought and Mathematics in Composition 里详细描述了使用马尔可夫模型的算法。</p><p><img src="https://discourse-cdn-sjc2.com/standard17/uploads/critterandguitari/original/2X/a/aede09d8452c1b3d4273a4515dfa6c941c62e21e.jpg" alt=""></p><p><img src="http://img.viz.mobi/markovian%20stochastic%20music.png" style="zoom:50%"></p><p>用马尔可夫模型生成音乐的优势，包括符合直觉、容易理解，以及计算量小。但也存在一些问题。例如，输出相当随机、缺乏整体结构；抽象层级有限，容易重复语料库中的片段；限于一维符号序列；限于风格模仿等等。</p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.wikiwand.com/en/Markov_model" target="_blank" rel="noopener">Markov model - Wikiwand</a></li><li><a href="https://www.wikiwand.com/zh-hans/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%80%A7%E8%B4%A8" target="_blank" rel="noopener">马尔可夫性质 - Wikiwand</a></li><li><a href="https://www.wikiwand.com/zh-hans/%E9%A6%AC%E5%8F%AF%E5%A4%AB%E9%81%8E%E7%A8%8B" target="_blank" rel="noopener">马可夫过程 - Wikiwand</a></li><li><a href="https://www.wikiwand.com/zh-hans/%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">隐马尔可夫模型 - Wikiwand</a></li><li><a href="https://www.wikiwand.com/en/Variable-order_Markov_model" target="_blank" rel="noopener">Variable-order Markov model - Wikiwand</a></li><li><a href="http://setosa.io/ev/markov-chains/" target="_blank" rel="noopener">Markov Chains explained visually</a></li><li><a href="http://codehop.com/three-node-markov-chain/" target="_blank" rel="noopener">Three Node Markov Chain</a></li><li><a href="https://www.uegeek.com/170713-algorithmic-composition-1.html" target="_blank" rel="noopener">算法作曲历险记01-简史 | 00’s Adventure</a></li><li><a href="https://www.wikiwand.com/en/Iannis_Xenakis" target="_blank" rel="noopener">Iannis Xenakis - Wikiwand</a></li><li><a href="http://metacreation.net/project_1/" target="_blank" rel="noopener">Harmonic Progression</a></li><li><a href="http://www.sfu.ca/~eigenfel/ControlledMarkovSelection.pdf" target="_blank" rel="noopener">Realtime Generation of Harmonic Progressions Using Controlled Markov Selection | PDF</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/CC-blogtitle.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
+    
+      <category term="Computational Creativity" scheme="http://uegeek.com/tags/Computational-Creativity/"/>
+    
+      <category term="创意" scheme="http://uegeek.com/tags/%E5%88%9B%E6%84%8F/"/>
+    
+      <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
+    
+      <category term="Markov" scheme="http://uegeek.com/tags/Markov/"/>
+    
+      <category term="马尔可夫" scheme="http://uegeek.com/tags/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB/"/>
+    
+      <category term="马尔可夫模型" scheme="http://uegeek.com/tags/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>算法创作实战03 - 用 MaxMSP 实现 L-system</title>
@@ -36,9 +76,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -76,9 +116,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -114,9 +154,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -188,9 +228,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -224,9 +264,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -260,9 +300,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -302,9 +342,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -342,9 +382,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -356,11 +396,11 @@
     
       <category term="随机" scheme="http://uegeek.com/tags/%E9%9A%8F%E6%9C%BA/"/>
     
+      <category term="MaxMSP" scheme="http://uegeek.com/tags/MaxMSP/"/>
+    
       <category term="巴纳姆效应" scheme="http://uegeek.com/tags/%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94/"/>
     
       <category term="星座" scheme="http://uegeek.com/tags/%E6%98%9F%E5%BA%A7/"/>
-    
-      <category term="MaxMSP" scheme="http://uegeek.com/tags/MaxMSP/"/>
     
   </entry>
   
@@ -384,9 +424,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -424,9 +464,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -462,11 +502,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -496,11 +536,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -530,11 +570,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -564,11 +604,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -598,11 +638,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -632,11 +672,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
   </entry>
   
@@ -664,11 +704,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -698,49 +738,13 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="列表" scheme="http://uegeek.com/tags/%E5%88%97%E8%A1%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Max/MSP/Jitter 官方教程翻译12 - Chromakeying 视频去背景合成</title>
-    <link href="http://uegeek.com/180904-jitter-12.html"/>
-    <id>http://uegeek.com/180904-jitter-12.html</id>
-    <published>2018-09-04T11:16:04.000Z</published>
-    <updated>2018-09-25T07:38:19.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/Max-title-3.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180903-jitter-11.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 11 - 矩阵混合</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter10" target="_blank" rel="noopener">Tutorial 10: Chromakeying</a></p></blockquote><p>本教程介绍如何使用 <code>jit.chromakey</code> 对两个源视频Chromakeying（去背景合成，chroma-纯色，key-抽离颜色）。还将学习如何使用 <code>suckah</code> 对象获取屏幕上任意像素的颜色。</p><p>打开教程 patch，由 <code>loadbang</code> 发送 <code>read</code> 消息到两个 <code>jit.movi​​e</code> 对象，自动读取两个视频（oh.mov 和 traffic.mov）：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10a.png" alt=""><br>通过 <code>loadbang</code> 初始化 patch</p><p>其他参数也由连接到右侧消息框的 <code>loadbang</code> 初始化。消息框发送消息到 patch 中其他名为 <code>receive</code> 的对象完成初始化。（参见<a href="https://docs.cycling74.com/max7/tutorials/basicchapter16" target="_blank" rel="noopener">教程 18：Remote Messaging</a>）。</p><p>点击开关启动 <code>metro</code>。三个 <code>jit.pwindow</code> 对象中出现了图像。开关不仅可以启动和停止 <code>metro</code>，还可以启动和停止两个 <code>jit.movi​​e</code> 视频播放。</p><p>教程 patch 的下半部分（三个 <code>jit.pwindow</code> 中的两个）是这样的：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10b.png" alt=""><br><code>jit.chromakey</code> 对象</p><p>点击左侧 <code>jit.pwindow</code> 对象的蓝色区域（即视频中男性头部后面的区域）。</p><p>第三个 <code>jit.pwindow</code>（在 patch 右下角）将显示：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10c.png" alt="">            </p><blockquote><p>历史说明：蓝屏合成（在蓝色哑光背景下拍摄现场镜头的过程）在 20 世纪 30 年代就出现了，目的是为了后期用其他图像替换蓝色。蓝屏合成涉及平版印刷分色，起初是非常昂贵的电影工艺，它（现在更常见的是绿屏合成）已经演变成影视制作中最常见的特效。通过数字叠加完成 Chromakeying（蓝屏处理的术语）让它更普及。Chromakeying 在电视行业中常被称为 CSO（色彩分离叠加），由 1960 年代开发它的 BBC 团队命名。蓝屏发明者 Petro Vlahos 在 1994 年被授予了电影艺术与科学学院终身成就奖，以表彰这项无可替代的技术。</p></blockquote><h2 id="jit-chromakey-对象"><a href="#jit-chromakey-对象" class="headerlink" title="jit.chromakey 对象"></a>jit.chromakey 对象</h2><p>去背景合成 - 将一个图像叠加在另一个上面，选择性替换颜色的过程 - 由 <code>jit.chromakey</code> 对象实现。<strong>通过指定颜色和其他参数， <code>jit.chromakey</code> 在第一个（左侧）矩阵中检测包含该颜色的单元，并在生成输出矩阵时，用第二个（右侧）矩阵中的对应单元替换它们。</strong>这样，来自第一个矩阵的单元叠加到第二个矩阵上。</p><p>可以选择任何颜色为要去除的背景，请尝试点击左侧 <code>jit.pwindow</code> 中的其他区域。不同的颜色会从男人的脸上移除，而显示出第二个视频中的图像。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10d.png" alt=""><br>消失的面孔（第一部分）</p><p><code>jit.chromakey</code> 用 <code>color</code> 属性（称为参考颜色）来定义中心色。这个属性是一个值列表，应用于等待抠图的矩阵中的所有平面。<code>tol</code> 属性定义中心色的<strong>容差范围</strong>。此范围内的颜色也会被去除。</p><p>将 <code>jit.chromakey</code> 与 char 矩阵一起使用时，属性值的范围在 0.0~1.0，然后映射到 char 数据所需的 0~255。所以可以将属性设置为 <code>color 0 0 1.0 0</code>，而不是 <code>0 0 255 0</code>。<code>tol</code> 为 0.5 时会去除距离参考色一半色阶的所有颜色（key all values within half of the chromatic distance from the reference color）。<code>tol</code> 为 0 时只会用精确的参考色来完成抠图。</p><p>再次点击左侧视频中的蓝色区域，然后调整 <code>tol</code> 属性查看输出的变化。在低容差时，左图中的一些蓝屏将保留。容差值非常高时，男人脸部的部分可能会消失。</p><p>在教程 patch 中，我们通过点击不可见的对象来设置 <code>jit.chromakey</code> 的颜色属性。解锁 patch，会看到左侧 <code>jit.pwindow</code> 上面的同心红色方块区域：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10e.png" alt=""><br><code>suckah</code> 对象</p><p>该区域是名为 <code>suckah</code> 的 Max UI 对象，可以在 interface 工具栏找到它：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10f.png" alt=""><br>对象面板中的 suckah 对象</p><p><code>suckah</code> 对象获取它所覆盖的屏幕像素的 RGB 值。当单击对象时（patch 处于锁定状态），它会获取 0.0~1.0 范围内的浮点数值。例如，单击视频中的纯蓝色区域，<code>suckah</code> 会发送 <code>0 0 1.0</code> 列表（suckah 的初始版本使用 0~255 范围。如果需要，可以在 inspector 中选择这个设置）</p><p><code>suckah</code> 对象获取 RGB 颜色列表后，用 <code>prepend 0</code> 在前面加上 0（增加 alpha 值到列表最前面）来设置 <code>jit.chromakey</code> 的颜色属性。然后再 <code>prepend color</code> 并发送给 <code>jit.chromakey</code>。</p><h2 id="Chromakey-选项"><a href="#Chromakey-选项" class="headerlink" title="Chromakey 选项"></a>Chromakey 选项</h2><p><code>jit.chromakey</code> 对象有附加属性：minkey，maxkey 和 fade。当矩阵从左入口进入，<code>jit.chromakey</code> 基于该矩阵在内部创建一个灰度（单平面）遮罩。输入矩阵中，在容差（tol）范围内颜色值的单元格，将设置为遮罩中的 maxkey 属性值（默认为 1）。容差范围之外的区域乘以 minkey 属性（默认为 0）。如果 minkey 和 maxkey 为 0 和 1，生成的图像在去背景的位置应该看起来是白色，而在要保留原始图像的位置看起来是黑色。</p><p>将得到的遮罩及其负片，分别乘以右矩阵和左矩阵。然后添加乘法的结果以形成合成图像。下图说明了这个过程：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10g.png" alt=""><br>遮罩（minkey 为 0，maxkey 为 1）和合成效果</p><p>maxkey 属性设置右边输出矩阵的强度，minkey 属性设置左边矩阵的强度。如果要反转 minkey 和 maxkey 属性，chromakey 将被反转：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter10h.png" alt=""><br>minkey 为 1，maxkey 为 0（反向色度键）的合成效果</p><p>fade 属性在被去除和保留的区域之间生成插值，可以生成柔化边缘。左边矩阵中的颜色略微超出了容差范围，但是在参考颜色的 tol + fade 的范围内，在原始颜色和右侧矩阵对应单元格中的颜色之间插值。插值取决于 fade 值的大小，以及颜色距离容差边界有多远。</p><p>尝试不同的 tol，fade，minkey，maxkey 和 color 值。观察五个属性如何影响不同的抠图效果，以及 minkey 和 maxkey 值如何相互补充。</p><p>完全去除背景很困难。选取合适的 tol 和 fade 属性值，才能确保第一个图像中的区域对第二个图像起作用。包含很多细节的图像，通常会在抠图和保留区域之间颜色变化的区域，出现轻微的斑点。此外，单一颜色（例如蓝色）基本上满足不了去背景的需要，必须使用一系列值。但是你会发现，希望去除的颜色会出现在想要保留的区域中！平衡所有因素以获得满意的效果，是使用 <code>jit.chromakey</code> 对象最困难的部分。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><code>jit.chromakey</code> 对象实现两个 Jitter 对象的 chromakeying。可以使用 color 和 tol 属性设置抠图的颜色范围，并用 fade，minkey 和 maxkey 值来定义两个矩阵在合成时的工作方式。<code>suckah</code> 对象放置在 <code>jit.pwindow</code> 上方，点击即可以获取所在位置的颜色。</p><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://img.viz.mobi/maxgroup0825.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/Max-title-3.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
-    
-      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="Chromakeying" scheme="http://uegeek.com/tags/Chromakeying/"/>
-    
-      <category term="抠图" scheme="http://uegeek.com/tags/%E6%8A%A0%E5%9B%BE/"/>
     
   </entry>
   

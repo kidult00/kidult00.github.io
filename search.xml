@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[生成式艺术和算法创作08-马尔可夫模型]]></title>
+    <url>%2F181130-generative-art-creativity-08.html</url>
+    <content type="text"><![CDATA[生成式艺术和算法创作01-概述 生成式艺术和算法创作02-随机和噪声 生成式艺术和算法创作03-混沌和分形 生成式艺术和算法创作04-规则系统 生成式艺术和算法创作05-Tessellation 生成式艺术和算法创作06-形状语法 生成式艺术和算法创作07-向自然致敬的 L-system 马尔可夫模型 Markov Model开始的开始，有必要来认识一下主人公，俄国数学家安德雷·安德耶维齐·马尔可夫。 1874 年，18 岁的马尔可夫考入圣彼得堡大学，师从切比雪夫（著名的切比雪夫定理提出者）。他是物理-数学博士，圣彼得堡大学教授，圣彼得堡科学院院士。在概率论、数论、函数逼近论和微分方程等方面卓有成就。 总的来说，马尔可夫模型是一种统计模型，可以用于计算条件概率分布，为一系列的离散事件建模。这就应用很广泛了，哪些是「离散事件」呢？句子中的词汇，音乐中的音符，通过交通灯的车辆数，女票每个月购物的次数…… 以「马尔可夫」开头的术语有很多，先来熟悉一下最重要的几个： 马尔可夫性质：当一个随机过程在给定现在状态及所有过去状态情况下，其未来状态的条件概率分布仅依赖于当前状态。 马尔可夫过程：是一个具备了马可夫性质的随机过程，不具备记忆特质（memorylessness）。换言之，马可夫过程的条件概率仅仅与系统的当前状态相关，而与过去历史或未来状态，都是独立、不相关的。 马尔可夫链：具备离散状态的马可夫过程，通常使用离散的时间集合定义。 马尔可夫模型：用马尔科夫过程生成序列的算法模型 它们之间的关系大概可以这样划分： 系统状态是完全可观察的 系统状态是部分可观察的 系统是自治的 马尔可夫链 隐马尔可夫模型 系统受到控制 马尔可夫决策过程 部分可观察的马尔可夫决策过程 在马尔可夫模型中 $X_t$ 是时间 t 时表示音符的随机变量 $P(X_t)$ 是随机事件 $X_t$ 的概率分布 马尔可夫模型可以基于「上文」做出判断和预测，未来状态只取决于当前状态或者限定范围的过去状态。 实现马尔可夫模型的学习算法有几个步骤： 构建一个 transition count table (state transition matrix)，计算每一种可能的上下文的频率分布 用每一种组合的 count 除以所有的组合总数，即下表中每一行加起来为 1 随机选择一个起始值，根据概率表格选择下一个序列值 马尔可夫模型生成算法其实也是一种 random walk ，根据转换概率分布，基于目前已经生成的序列，随机选择下一个序列值。 以一段乐曲为例，它由音符 B2,C4#,D4,E4,F4#,G4,G4#,A4,B4,C5#,D5,E5 组成。计算每一个音符后面紧跟着的音符的出现概率。例如，最后一个音符 E5，出现在它后面的音符只有 A4 和 C5#，出现概率分别是 6/16 和 10/16。当生成新的序列时，如果当前音符是 E5，那么根据表格，下一个音符只可能是 A4 或 C5#。 再来看一个三节点的马尔可夫链： 这首马尔可夫旋律以 state_0 开始，播放一个八分音符 Eb。然后选择一个新的状态。选择 state_0，state_1 或 state_2 的概率相等，都是 1/3。假设选择了 state_2，则播放下加二间的十六分音符 G。从 state_2 开始，state_0 被选择的概率是 1/10，state_1 是 2/10，state_2 是 7/10。 因为马尔可夫模型状态是离散的，可以用有限状态的自动机 (automata) 来表示。 变量马尔可夫模型在随机过程中，变量马尔可夫（Variable order Markov Models/VOM/VMM/VOMM）模型是一类重要的模型，它扩展了马尔可夫模型。 马尔可夫模型中，具有马尔可夫性质的序列中的每个随机变量，取决于固定数量的随机变量；在 VOM 模型中，该数量的调节随机变量可以基于观察到的特定实现而变化。 这个实现序列通常被称为上下文 ; 因此 VOM 模型也称为上下文树。调节随机变量数量的灵活性对于许多应用来说是非常有利的，例如统计分析、分类和预测。 变量马尔可夫模型一般由三部分组成： Counting：建立转换表，这是预测的来源 Smoothing：处理未见过的事件/序列 Variable length modeling: A transition matrix Probabilistic suffix tree Factor Oracle, and Context Tree Weighting method (CTW) Lempel-Ziv 78 and its improvement LZ-MS Prediction by partial match 它的缺点之一是难以产生语料之外的内容。 隐马尔科夫模型 Hidden Markov Model隐马尔可夫模型（Hidden Markov Model，HMM）是统计模型，它用来描述一个含有隐含未知参数的马尔可夫过程。其难点是从可观察的参数中确定该过程的隐含参数，然后利用这些参数来作进一步的分析，例如模式识别。 在一般的马尔可夫模型中，状态对于观察者来说是直接可见的。这样状态的转换概率便是全部的参数。 而在隐马尔可夫模型中，状态并不是直接可见的，但受状态影响的某些变量是可见的。每一个状态在可能输出的符号上，都有一定的概率分布。因此输出符号的序列能够透露出状态序列的一些信息。 也就是说，HMM 系统的实际状态是隐藏的，只能观察到 emission probilities。 HMM 常用来学习两个耦合的内容语料。例如，在语音识别中，可见的信息是音频信号，隐藏的信息是语音词汇。又例如，旋律是可见信息，伴奏/ 和声 是隐藏的信息。 最常见的三种 Hidden Markov Model 算法： the forward algorithm: 计算特定序列的概率，假设已知 transitions and observation 概率和初始状态 the Baum-Welch algorithm：找出被观测序列中最常见的参数 the Viterbi algorithm：维特比算法，基于观测序列计算隐藏状态最可能的序列（viterbi path） 隐马尔科夫模型的优势： 是学习和生成离散序列最有效和使用广泛的算法 可以对横轴和纵轴的相关性都建模，HMM 是随机耦合过程 比马尔可夫模型更好保留原始的数据结构 劣势： 需要有很好的领域知识来调整模型结构和参数 需要相对大的训练数据集 马尔可夫模型在音乐中的应用Lejaren Hiller 在 1957 年完成了算法生成的弦乐四重奏「依利亚克组曲」（Illiac Suite），这也是历史上第一支完全由计算机生成的音乐作品。首先使用马尔可夫链模型来产生有限控制的随机音符，之后利用和声与复调的规则测试这些音符，最后选择符合规则的材料，修改、组合成传统音乐记谱的弦乐四重奏。 Lejaren Hiller - Illiac Suite for String Quartet [4/4] - YouTube 该作品分为四个乐章： 第一乐章：计算机生成的不同长度的固定主题旋律 第二乐章：使用变奏的规则生成的四声部音乐 第三乐章：通过计算机对节奏、动态和演奏法的不同处理生成的音乐 第四乐章：通过衍生算法和马尔可夫链的不同模型及概率生成的音乐（pitch, intervals and textures） Iannis Xenakis在他 1958 年的专辑 Analogique 中就使用了马尔可夫链来作曲。 在他的著作 Formalized Music: Thought and Mathematics in Composition 里详细描述了使用马尔可夫模型的算法。 用马尔可夫模型生成音乐的优势，包括符合直觉、容易理解，以及计算量小。但也存在一些问题。例如，输出相当随机、缺乏整体结构；抽象层级有限，容易重复语料库中的片段；限于一维符号序列；限于风格模仿等等。 Ref Markov model - Wikiwand 马尔可夫性质 - Wikiwand 马可夫过程 - Wikiwand 隐马尔可夫模型 - Wikiwand Variable-order Markov model - Wikiwand Markov Chains explained visually Three Node Markov Chain 算法作曲历险记01-简史 | 00’s Adventure Iannis Xenakis - Wikiwand Harmonic Progression Realtime Generation of Harmonic Progressions Using Controlled Markov Selection | PDF]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>ArtxCode</tag>
+        <tag>艺术</tag>
+        <tag>Creative Coding</tag>
+        <tag>Generative Art</tag>
+        <tag>Computational Creativity</tag>
+        <tag>创意</tag>
+        <tag>创造力</tag>
+        <tag>Markov</tag>
+        <tag>马尔可夫</tag>
+        <tag>马尔可夫模型</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[算法创作实战03 - 用 MaxMSP 实现 L-system]]></title>
     <url>%2F181128-computational-creativity-in-maxmsp-03.html</url>
     <content type="text"><![CDATA[算法创作实战01 - 巴纳姆效应之随机星座实验 算法创作实战02 - 用 MaxMSP 生成随机颜色 好久不见~ 前面两篇算法创作的实战，都是相对容易的小程序。今天我们一起来挑战用 Max/MSP (更准确说，是用 jitter) 来「种」植物。 名称：L-system 主要使用的对象：jit.linden, jit.turtle, jit.matrix, jit.str.fromsymbol, jit.iter, jit.lcd, jit.pwindow 难度系数：★★★★☆ 什么是 L-system?在生成式艺术和算法创作07-向自然致敬的 L-system 中，已经对 L-system 做了详细的介绍。L-system 是 Aristid Lindenmayer 提出的有关生长发展中的细胞交互作用的数学模型，被广泛应用于植物生长过程的研究和建模，也常用于模拟各种生物体的形态。 L-system 是一系列不同形式的语法规则，它的自然递归规则产生自相似性，也能用于生成自相似的分形，例如迭代函数系统。它一般可以这样定义： 123456789G ＝｛V,S,ω,P&#125;,V: 变量符号集合S: 常量符号集合ω: 初始状态串(i.e. seed or axiom)P: 生成式规则(production) 接下来，我们动手来实现它。 开始的正确姿势 如何在 Max/MSP 实现 L-system？ 最开始面对这个问题，会觉得茫然无措：该从哪里开始？ 回答与软件相关的工程问题，最好答案永远是——搜索。 而搜索的第一站，不是 Google，应该是官方文档。在经历了长时间漫无头绪的搜索，各种成功不成功的尝试后，00 再次获得了一个多么痛的领悟——永远先搜索软件文档。搜索结果已经清楚明白地列出跟 L-system 有关的对象了！ 然后我们来仔细读一下文档里面的说明吧。 jit.linden打开 jit.linden 的帮助文档，例子如下： 一阵头晕目眩后冷静下来，试着运行程序。然而并不知道它在做什么…… 只好静下心来一点一点看。 首先是找出核心对象。核心对象 jit.linden 前面连接的是一个矩阵，接收了 tolinden 的消息（unlock patch 后才看到 s tolinden 的内容）；后面连接的是同一个矩阵。将矩阵可视化出来时需要变成 1 维 1 平面的矩阵。但是这个可视化方式非常不直观，需要另外寻找方法。（所以搜索结果列出了 jit.turtle 是不是……） 例子右边是规则相关的部分。在生成式艺术和算法创作07-向自然致敬的 L-system 中我们已经知道，生成式规则(production) 是决定 L-system 生成结果的关键。那么，这里 production 后面的一串 * F * +[F+]* G * -[GF-]F - F -- 是什么意思呢？下面给出的注释是： list of symbols in the format：left_context strict_predecessor right_context successor if a symbol matching the strict_predecessors is found in the matrix it is replaced with the sucessor string if the left and right context is met. the wildcard character (‘*’ by default) means no left or right context. 还是一知半解的感觉，这时候需要打开顶部 p moreinfo 子 patch。里面解释了 production 规则是如何设定的。 L-systems work on an interpreted grammar model wherein a syntax is defined for replacing individual elements of the incoming string with a replacement string. L-systems get larger through successive productions. the size of the Jitter matrix used by the object determines the maximum length of the string, so a large matrix is advisable, even if the axiom (starting string) is very small. 大意是，随着迭代，矩阵会变得越来越大，建议设定一个较大尺寸的矩阵。 ‘production F +F[F]’ tells jit.linden to take every ‘F’ found in the input matrix and replace it with the string ‘+F[F]’. So the first four generations of an L-system with an axiom of ‘F’ would look like this: 1234F+F[F]++F[F][+F[F]]+++F[F][+F[F]][++F[F][+F[F]]] production 接着的第一个 F 是初始值，或者叫做 axiom（公理），第二个 是 axiom 替代自己的规则。 More complex models can be created by adding multiple productions, or by introducing context matching into the L-system grammar. 例如：production G F * +F 意思是只有在 F 前面是一个 G 的时候，才将 F 替换为 +F 。 又如：production G F * +F * G * G- 包含两个规则，一个是上面提到的 GF 替换 为 G+F; 另一个是 G 替换为 G-。 jit.linden 最多可以定义 50 个规则。 the jit.turtle object interprets L-systems as turtle graphics, so that characters such as ‘F’, ‘+’, and ‘-‘ acquire special meaning. you could easily use jit.iter to access the Lindenmayer string in Max. 这一段也剧透了很多重要信息，包括用 jit.iter 获取字符串和用 jit.turtle 显示 L-system 生成的图形。 jit.turtle 然后再来看看 jit.turtle 怎么画图。 jit.turtle 前面是设定各种参数，例如步进值、旋转角度、起始点等，然后接收 jtr 传来的 production 规则，尤其要理解 F、+、- 的含义。jit.turtle 后面接的是一个 jit.lcd ，将规则显示出来。 生成 L-system下面开始动手尝试了。好消息是，不必从零开始，从 jit.linden 帮助里面 copy 主要的部分，就可以快速建立起程序的框架。 首先是用规则生成矩阵的部分。又可以分为矩阵、公理和规则三部分： 矩阵部分：jit.linden 前面是一个初始化矩阵，r generate 接收每一步的生成指令；jit.linden 后面是一步生成后存储的矩阵，在下面用 jit.cellblock 和 jit.pwindow 显示存储的值和存储占用情况 公理：用 jit.str.fromsymbol 接收 axiom 字母并转换成 ASCII 编码，同时指定矩阵的大小，如 1000 规则：将包含 axiom、production、turtle 参数的规则写入一个 message 中，然后用 r linden 接收并传入 jit.linden 接下来将矩阵中存储的规则用 jit.turtle 画出来。 这里的关键是用 jit.iter 将矩阵中每个值依次传到 jit.turtle ，并且接收 r turtle 中关于角度、大小等设置值，然后传给 jit.lcd 绘制： Let’s Play!接下来终于进入寻找有趣 production 的游戏环节了~ 可以自己试验，也可以从网上搜刮一些已经写好的规则。一个完整的规则可以写到一个 message 里面，打包传给 jit.linden: 下面进入愉快的玩耍时间~ 种草： 1* A * F * F * F-[[A]+A]+F[+FA] 种（歪的）树： 1* X * C0F-[C2[X]+C3X]+C1F[C3+FX]-X * F * FF 种粮食： 1* A * G * G * GFX[+G][-G] * X * X[-FFF][+FFF]FX 大城市的“地铁图”： 1* F * +F[--F+F] Ref 生成式艺术和算法创作07-向自然致敬的 L-system L-system - Wikiwand Koch snowflake - Wikiwand L-System manual Turtle graphics - Wikiwand L-Systems Renderer L-Systems Turtle Graphics Renderer - HTML5 Canvas - by Kevin Roast Max/MSP/Jitter 教程 01 - 什么是矩阵？ Max/MSP/Jitter 教程 02 - Jitter 对象的属性 Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频 Max/MSP/Jitter 教程 04 - 创建矩阵 Max/MSP/Jitter 教程 05 - 矩阵的数学运算 Max/MSP/Jitter 教程 06 - 控制视频播放 Max/MSP/Jitter 教程 07 - ARGB 颜色 Max/MSP/Jitter 教程 08 - 调整颜色 Max/MSP/Jitter 教程 09 - 调整图像颜色 Max/MSP/Jitter 教程 10 - 简单混合 友情提示：独自折腾 Max 易患上癔症……不妨入群互助 👇👇👇]]></content>
@@ -9,8 +29,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -29,8 +49,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -48,8 +68,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -81,8 +101,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -99,8 +119,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -117,8 +137,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -138,8 +158,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>颜色</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
@@ -158,16 +178,16 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>随机</tag>
+        <tag>MaxMSP</tag>
         <tag>巴纳姆效应</tag>
         <tag>星座</tag>
-        <tag>MaxMSP</tag>
       </tags>
   </entry>
   <entry>
@@ -179,8 +199,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -199,8 +219,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -218,9 +238,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
         <tag>图像</tag>
       </tags>
   </entry>
@@ -235,9 +255,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
         <tag>图像</tag>
       </tags>
   </entry>
@@ -252,9 +272,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
         <tag>图像</tag>
       </tags>
   </entry>
@@ -269,9 +289,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
         <tag>图像</tag>
       </tags>
   </entry>
@@ -286,9 +306,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
         <tag>图像</tag>
       </tags>
   </entry>
@@ -303,9 +323,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
       </tags>
   </entry>
   <entry>
@@ -319,9 +339,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
         <tag>颜色</tag>
       </tags>
   </entry>
@@ -336,9 +356,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
         <tag>列表</tag>
       </tags>
   </entry>
@@ -353,9 +373,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
         <tag>Chromakeying</tag>
         <tag>抠图</tag>
       </tags>
@@ -371,9 +391,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
         <tag>Math</tag>
       </tags>
   </entry>
@@ -389,9 +409,9 @@
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
         <tag>视频</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
       </tags>
   </entry>
   <entry>
@@ -405,9 +425,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
         <tag>颜色</tag>
       </tags>
   </entry>
@@ -422,9 +442,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
         <tag>颜色</tag>
       </tags>
   </entry>
@@ -439,9 +459,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
         <tag>颜色</tag>
       </tags>
   </entry>
@@ -457,9 +477,9 @@
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
         <tag>视频</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
       </tags>
   </entry>
   <entry>
@@ -473,9 +493,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
         <tag>数学</tag>
       </tags>
   </entry>
@@ -490,9 +510,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
       </tags>
   </entry>
   <entry>
@@ -507,8 +527,8 @@
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
         <tag>视频</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -523,8 +543,8 @@
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
         <tag>视频</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -539,9 +559,9 @@
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
         <tag>视频</tag>
-        <tag>矩阵</tag>
-        <tag>教程</tag>
         <tag>Creative Coding</tag>
+        <tag>教程</tag>
+        <tag>矩阵</tag>
       </tags>
   </entry>
   <entry>
@@ -793,9 +813,9 @@
         <tag>Coding</tag>
         <tag>编程</tag>
         <tag>神经网络</tag>
-        <tag>Programming</tag>
         <tag>AWS</tag>
         <tag>GPU</tag>
+        <tag>Programming</tag>
       </tags>
   </entry>
   <entry>
@@ -859,9 +879,9 @@
         <tag>Coding</tag>
         <tag>编程</tag>
         <tag>神经网络</tag>
+        <tag>Programming</tag>
         <tag>Backpro</tag>
         <tag>反向传播</tag>
-        <tag>Programming</tag>
       </tags>
   </entry>
   <entry>
@@ -1011,8 +1031,8 @@
       </categories>
       <tags>
         <tag>HackYourself</tag>
-        <tag>大哉问</tag>
         <tag>Coding</tag>
+        <tag>大哉问</tag>
         <tag>编程</tag>
       </tags>
   </entry>
@@ -1256,8 +1276,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计</tag>
         <tag>Note</tag>
+        <tag>设计</tag>
       </tags>
   </entry>
   <entry>
@@ -1297,8 +1317,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -1310,8 +1330,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -1323,8 +1343,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -1336,8 +1356,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -2245,8 +2265,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计</tag>
         <tag>交互设计</tag>
+        <tag>设计</tag>
         <tag>服务设计</tag>
         <tag>o2o</tag>
         <tag>体验</tag>
@@ -2262,8 +2282,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计</tag>
         <tag>交互设计</tag>
+        <tag>设计</tag>
         <tag>服务设计</tag>
         <tag>o2o</tag>
         <tag>体验</tag>
@@ -2279,8 +2299,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计</tag>
         <tag>交互设计</tag>
+        <tag>设计</tag>
         <tag>服务设计</tag>
         <tag>o2o</tag>
         <tag>体验</tag>
@@ -2296,8 +2316,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计</tag>
         <tag>交互设计</tag>
+        <tag>设计</tag>
         <tag>服务设计</tag>
         <tag>o2o</tag>
         <tag>体验</tag>
@@ -2475,8 +2495,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计</tag>
         <tag>交互设计</tag>
+        <tag>设计</tag>
         <tag>o2o</tag>
         <tag>体验设计</tag>
       </tags>
@@ -2538,8 +2558,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>IxD</tag>
         <tag>交互设计</tag>
+        <tag>IxD</tag>
       </tags>
   </entry>
   <entry>
@@ -2667,8 +2687,8 @@
       <tags>
         <tag>Design</tag>
         <tag>设计</tag>
-        <tag>服务设计</tag>
         <tag>service design</tag>
+        <tag>服务设计</tag>
       </tags>
   </entry>
   <entry>
@@ -2792,9 +2812,9 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>IxD</tag>
         <tag>Note</tag>
         <tag>交互设计</tag>
+        <tag>IxD</tag>
       </tags>
   </entry>
   <entry>
@@ -2813,8 +2833,8 @@
         <category>动手</category>
       </categories>
       <tags>
-        <tag>IxD</tag>
         <tag>交互设计</tag>
+        <tag>IxD</tag>
         <tag>Leap motion</tag>
       </tags>
   </entry>
@@ -2840,10 +2860,10 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>IxD</tag>
-        <tag>设计</tag>
         <tag>交互设计</tag>
         <tag>产品</tag>
+        <tag>IxD</tag>
+        <tag>设计</tag>
       </tags>
   </entry>
   <entry>
@@ -2867,8 +2887,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>IxD</tag>
         <tag>交互设计</tag>
+        <tag>IxD</tag>
         <tag>服务设计</tag>
         <tag>规划</tag>
       </tags>
@@ -2894,8 +2914,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>IxD</tag>
         <tag>交互设计</tag>
+        <tag>IxD</tag>
         <tag>控件</tag>
       </tags>
   </entry>
@@ -2908,8 +2928,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>IxD</tag>
         <tag>交互设计</tag>
+        <tag>IxD</tag>
         <tag>设计思维</tag>
       </tags>
   </entry>
@@ -2971,8 +2991,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计</tag>
         <tag>Note</tag>
+        <tag>设计</tag>
         <tag>Layout</tag>
       </tags>
   </entry>
@@ -3021,8 +3041,8 @@
         <category>设计</category>
       </categories>
       <tags>
-        <tag>IxD</tag>
         <tag>交互设计</tag>
+        <tag>IxD</tag>
         <tag>Navigation</tag>
         <tag>Pagination</tag>
       </tags>
@@ -3102,9 +3122,9 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>IxD</tag>
         <tag>Note</tag>
         <tag>交互设计</tag>
+        <tag>IxD</tag>
       </tags>
   </entry>
   <entry>
@@ -3116,8 +3136,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>IxD</tag>
         <tag>交互设计</tag>
+        <tag>IxD</tag>
       </tags>
   </entry>
   <entry>
@@ -3390,8 +3410,8 @@
       </categories>
       <tags>
         <tag>产品</tag>
-        <tag>UCD</tag>
         <tag>用户</tag>
+        <tag>UCD</tag>
       </tags>
   </entry>
   <entry>
