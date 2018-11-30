@@ -109,15 +109,15 @@
 <meta property="og:image" content="http://img.viz.mobi/CC-blogtitle.png">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/AAMarkov.jpg/640px-AAMarkov.jpg">
 <meta property="og:image" content="http://img.viz.mobi/cc-markov-model.png">
-<meta property="og:image" content="http://uegeek.com/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/song%20corpus.png">
+<meta property="og:image" content="http://img.viz.mobi/2-song%20corpus.png">
 <meta property="og:image" content="http://codehop.com/wp-content/uploads/2010/07/3_node_markov_chain.gif">
-<meta property="og:image" content="http://uegeek.com/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/markov%20models%20automata%20representation.png">
+<meta property="og:image" content="http://img.viz.mobi/4-markov%20models%20automata%20representation.png">
 <meta property="og:image" content="http://www.davidsbatista.net/assets/images/2017-11-11-HMM.png">
 <meta property="og:image" content="https://pbs.twimg.com/media/DfAdXfHV4AA0Bxb.jpg">
 <meta property="og:image" content="http://img.viz.mobi/xenakis.jpg">
 <meta property="og:image" content="https://discourse-cdn-sjc2.com/standard17/uploads/critterandguitari/original/2X/a/aede09d8452c1b3d4273a4515dfa6c941c62e21e.jpg">
 <meta property="og:image" content="http://img.viz.mobi/markovian%20stochastic%20music.png">
-<meta property="og:updated_time" content="2018-11-30T14:18:12.189Z">
+<meta property="og:updated_time" content="2018-11-30T14:49:46.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生成式艺术和算法创作08-马尔可夫模型">
 <meta name="twitter:image" content="http://img.viz.mobi/CC-blogtitle.png">
@@ -510,12 +510,12 @@
 </ul>
 <p>马尔可夫模型生成算法其实也是一种 <a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">random walk</a> ，根据转换概率分布，基于目前已经生成的序列，随机选择下一个序列值。</p>
 <p>以一段乐曲为例，它由音符 B2,C4#,D4,E4,F4#,G4,G4#,A4,B4,C5#,D5,E5 组成。计算每一个音符后面紧跟着的音符的出现概率。例如，最后一个音符 E5，出现在它后面的音符只有 A4 和 C5#，出现概率分别是 6/16 和 10/16。当生成新的序列时，如果当前音符是 E5，那么根据表格，下一个音符只可能是 A4 或 C5#。</p>
-<p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/song%20corpus.png" alt="song corpus"></p>
+<p><img src="http://img.viz.mobi/2-song%20corpus.png" alt="song corpus"></p>
 <p>再来看一个三节点的马尔可夫链：</p>
 <p><img src="http://codehop.com/wp-content/uploads/2010/07/3_node_markov_chain.gif" alt=""></p>
 <p>这首马尔可夫旋律以 state_0 开始，播放一个八分音符 Eb。然后选择一个新的状态。选择 state_0，state_1 或 state_2 的概率相等，都是 1/3。假设选择了 state_2，则播放下加二间的十六分音符 G。从 state_2 开始，state_0 被选择的概率是 1/10，state_1 是 2/10，state_2 是 7/10。</p>
 <p>因为马尔可夫模型状态是离散的，可以用有限状态的自动机 (automata) 来表示。</p>
-<p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/markov%20models%20automata%20representation.png" alt="markov models automata representation"></p>
+<p><img src="http://img.viz.mobi/4-markov%20models%20automata%20representation.png" alt="markov models automata representation"></p>
 <h2 id="变量马尔可夫模型"><a href="#变量马尔可夫模型" class="headerlink" title="变量马尔可夫模型"></a>变量马尔可夫模型</h2><p>在随机过程中，变量马尔可夫（Variable order Markov Models/VOM/VMM/VOMM）模型是一类重要的模型，它扩展了马尔可夫模型。</p>
 <p>马尔可夫模型中，具有马尔可夫性质的序列中的每个随机变量，取决于固定数量的随机变量；在 VOM 模型中，该数量的调节随机变量可以基于观察到的特定实现而变化。</p>
 <p>这个实现序列通常被称为上下文 ; 因此 VOM 模型也称为上下文树。调节随机变量数量的灵活性对于许多应用来说是非常有利的，例如统计分析、分类和预测。</p>

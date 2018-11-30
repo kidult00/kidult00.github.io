@@ -36,8 +36,8 @@
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>MaxMSP</tag>
-        <tag>L-system</tag>
         <tag>分形</tag>
+        <tag>L-system</tag>
       </tags>
   </entry>
   <entry>
@@ -55,8 +55,8 @@
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
-        <tag>L-system</tag>
         <tag>分形</tag>
+        <tag>L-system</tag>
       </tags>
   </entry>
   <entry>
@@ -143,8 +143,8 @@
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
-        <tag>分形</tag>
         <tag>混沌</tag>
+        <tag>分形</tag>
         <tag>Chaotic</tag>
         <tag>Fractal</tag>
       </tags>
@@ -185,9 +185,9 @@
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>随机</tag>
-        <tag>MaxMSP</tag>
         <tag>巴纳姆效应</tag>
         <tag>星座</tag>
+        <tag>MaxMSP</tag>
       </tags>
   </entry>
   <entry>
@@ -813,9 +813,9 @@
         <tag>Coding</tag>
         <tag>编程</tag>
         <tag>神经网络</tag>
+        <tag>Programming</tag>
         <tag>AWS</tag>
         <tag>GPU</tag>
-        <tag>Programming</tag>
       </tags>
   </entry>
   <entry>
@@ -879,9 +879,9 @@
         <tag>Coding</tag>
         <tag>编程</tag>
         <tag>神经网络</tag>
-        <tag>Programming</tag>
         <tag>Backpro</tag>
         <tag>反向传播</tag>
+        <tag>Programming</tag>
       </tags>
   </entry>
   <entry>
@@ -1031,8 +1031,8 @@
       </categories>
       <tags>
         <tag>HackYourself</tag>
-        <tag>Coding</tag>
         <tag>大哉问</tag>
+        <tag>Coding</tag>
         <tag>编程</tag>
       </tags>
   </entry>
@@ -1276,8 +1276,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Note</tag>
         <tag>设计</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -2265,8 +2265,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>交互设计</tag>
         <tag>设计</tag>
+        <tag>交互设计</tag>
         <tag>服务设计</tag>
         <tag>o2o</tag>
         <tag>体验</tag>
@@ -2282,8 +2282,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>交互设计</tag>
         <tag>设计</tag>
+        <tag>交互设计</tag>
         <tag>服务设计</tag>
         <tag>o2o</tag>
         <tag>体验</tag>
@@ -2299,8 +2299,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>交互设计</tag>
         <tag>设计</tag>
+        <tag>交互设计</tag>
         <tag>服务设计</tag>
         <tag>o2o</tag>
         <tag>体验</tag>
@@ -2316,8 +2316,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>交互设计</tag>
         <tag>设计</tag>
+        <tag>交互设计</tag>
         <tag>服务设计</tag>
         <tag>o2o</tag>
         <tag>体验</tag>
@@ -2333,9 +2333,9 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
+        <tag>Travel</tag>
         <tag>哥特式</tag>
         <tag>巴洛克</tag>
         <tag>布拉格</tag>
@@ -2353,9 +2353,9 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
+        <tag>Travel</tag>
         <tag>东正教</tag>
         <tag>基督教</tag>
         <tag>天主教</tag>
@@ -2372,10 +2372,10 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -2387,10 +2387,10 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>奥地利</tag>
+        <tag>Travel</tag>
         <tag>哈布斯堡王朝</tag>
         <tag>维也纳</tag>
       </tags>
@@ -2404,10 +2404,10 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -2418,13 +2418,13 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
         <tag>匈牙利</tag>
+        <tag>历史</tag>
         <tag>奥地利</tag>
         <tag>捷克</tag>
         <tag>斯洛伐克</tag>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -2436,8 +2436,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>人类简史</tag>
         <tag>历史</tag>
+        <tag>人类简史</tag>
       </tags>
   </entry>
   <entry>
@@ -2495,8 +2495,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>交互设计</tag>
         <tag>设计</tag>
+        <tag>交互设计</tag>
         <tag>o2o</tag>
         <tag>体验设计</tag>
       </tags>
@@ -2558,8 +2558,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>交互设计</tag>
         <tag>IxD</tag>
+        <tag>交互设计</tag>
       </tags>
   </entry>
   <entry>
@@ -2776,8 +2776,8 @@
       <tags>
         <tag>Design</tag>
         <tag>交互设计</tag>
-        <tag>Guideline</tag>
         <tag>iOS</tag>
+        <tag>Guideline</tag>
         <tag>规范</tag>
       </tags>
   </entry>
@@ -2812,9 +2812,9 @@
         <category>读书</category>
       </categories>
       <tags>
+        <tag>IxD</tag>
         <tag>Note</tag>
         <tag>交互设计</tag>
-        <tag>IxD</tag>
       </tags>
   </entry>
   <entry>
@@ -2833,8 +2833,8 @@
         <category>动手</category>
       </categories>
       <tags>
-        <tag>交互设计</tag>
         <tag>IxD</tag>
+        <tag>交互设计</tag>
         <tag>Leap motion</tag>
       </tags>
   </entry>
@@ -2860,10 +2860,10 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>交互设计</tag>
-        <tag>产品</tag>
         <tag>IxD</tag>
         <tag>设计</tag>
+        <tag>交互设计</tag>
+        <tag>产品</tag>
       </tags>
   </entry>
   <entry>
@@ -2887,8 +2887,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>交互设计</tag>
         <tag>IxD</tag>
+        <tag>交互设计</tag>
         <tag>服务设计</tag>
         <tag>规划</tag>
       </tags>
@@ -2914,8 +2914,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>交互设计</tag>
         <tag>IxD</tag>
+        <tag>交互设计</tag>
         <tag>控件</tag>
       </tags>
   </entry>
@@ -2928,8 +2928,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>交互设计</tag>
         <tag>IxD</tag>
+        <tag>交互设计</tag>
         <tag>设计思维</tag>
       </tags>
   </entry>
@@ -2991,8 +2991,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Note</tag>
         <tag>设计</tag>
+        <tag>Note</tag>
         <tag>Layout</tag>
       </tags>
   </entry>
@@ -3041,8 +3041,8 @@
         <category>设计</category>
       </categories>
       <tags>
-        <tag>交互设计</tag>
         <tag>IxD</tag>
+        <tag>交互设计</tag>
         <tag>Navigation</tag>
         <tag>Pagination</tag>
       </tags>
@@ -3122,9 +3122,9 @@
         <category>读书</category>
       </categories>
       <tags>
+        <tag>IxD</tag>
         <tag>Note</tag>
         <tag>交互设计</tag>
-        <tag>IxD</tag>
       </tags>
   </entry>
   <entry>
@@ -3136,8 +3136,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>交互设计</tag>
         <tag>IxD</tag>
+        <tag>交互设计</tag>
       </tags>
   </entry>
   <entry>
