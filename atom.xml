@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-11-30T14:49:46.699Z</updated>
+  <updated>2018-12-08T11:46:03.928Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生成式艺术和算法创作09-人工智能体</title>
+    <link href="http://uegeek.com/181208-generative-art-creativity-09.html"/>
+    <id>http://uegeek.com/181208-generative-art-creativity-09.html</id>
+    <published>2018-12-08T11:43:54.000Z</published>
+    <updated>2018-12-08T11:46:03.928Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></li><li><a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">生成式艺术和算法创作02-随机和噪声</a></li><li><a href="https://www.uegeek.com/181021-generative-art-creativity-03.html" target="_blank" rel="noopener">生成式艺术和算法创作03-混沌和分形</a></li><li><a href="https://www.uegeek.com/181023-generative-art-creativity-04.html" target="_blank" rel="noopener">生成式艺术和算法创作04-规则系统</a></li><li><a href="https://www.uegeek.com/181107-generative-art-creativity-05.html" target="_blank" rel="noopener">生成式艺术和算法创作05-Tessellation</a></li><li><a href="https://www.uegeek.com/181120-generative-art-creativity-06.html" target="_blank" rel="noopener">生成式艺术和算法创作06-形状语法</a></li><li><a href="https://www.uegeek.com/181123-generative-art-creativity-07.html" target="_blank" rel="noopener">生成式艺术和算法创作07-向自然致敬的 L-system</a></li><li><a href="https://www.uegeek.com/181130-generative-art-creativity-08.html" target="_blank" rel="noopener">生成式艺术和算法创作08-马尔可夫模型</a></li></ul><h2 id="人工智能体"><a href="#人工智能体" class="headerlink" title="人工智能体"></a>人工智能体</h2><p>我们常看到 OOP - 面向对象的编程，对象是 Object。这篇文章则是关于智能体（agent）的综述。智能体和对象有什么区别呢？智能体是主动的，对象则不是。</p><p>智能体的概念是计算机科学的核心，在认知科学中也很重要。因为它可以研究真实的主体，建模和在现实世界中模拟并观察智能群体。</p><p>人工智能体是一个计算机系统，能够代表使用者或设计者自主运行。<strong>智能体可以形式化表达为从感知到行动的函数</strong>，它将每个可能的感知序列，映射到智能体可以执行的操作，或映射到影响最终操作的系数、反馈元素、函数或常量。软件和机器人都可视为智能体。</p><p>人工智能体有以下特征：</p><ul><li>情境性（situatedness）：通过传感器感知环境，能够通过行动效果器（effectors）影响环境 </li><li>自主和积极主动（Autonomy and pro-activity）: 行动没有外部干预，自己控制内部状态</li><li>灵活性<ul><li>可响应: 及时响应环境的变化</li><li>社交性：与其他智能体或人类互动</li></ul></li></ul><p><img src="https://www.doc.ic.ac.uk/project/examples/2005/163/g0516334/images/sensorseniv.png" alt=""></p><p>智能体的结构</p><ul><li>认知（Cognitive）：维持内部符号表征（一般会有记忆），可能包含推理和规划的评估结构（deliberative architectures）</li><li>反应（Reactive）：没有明确的环境表征，专注于行为规则<ul><li>反射：没有内部状态（只是将输入映射到输出）</li><li>反应：有内部状态（但不是认知）</li></ul></li><li>混合（Hybrid）：混合反应和认知成分，以平衡反应性（reactiveness）和审慎性（deliberativeness）</li></ul><blockquote><p>A first-order intentional system has beliefs and desires but no beliefs and desires about beliefs and desires.</p><p>A second -order intentioal system has beliefs and desires about beliefs and desires both those of others and its own.</p></blockquote><p>一阶意向系统和二阶意向系统。</p><h2 id="Belief–Desire–Intention-BDI-模型"><a href="#Belief–Desire–Intention-BDI-模型" class="headerlink" title="Belief–Desire–Intention BDI 模型"></a>Belief–Desire–Intention BDI 模型</h2><p>信念 - 愿望 - 意图模型（BDI）是智能体编程的软件模型。从表面看，它以智能体的信念、愿望和意图的实现为特征，使用这些概念来解决智能体编程中的特定问题。 实质上它提供了一种机制，将选择计划的活动与当前活动计划的执行分开。 因此，BDI 智能体能够平衡计划（选择做什么）和执行这些计划所花费的时间。</p><p><img src="http://www.inf.ufrgs.br/prosoft/bdi4jade/wp-content/uploads/bdiArch.jpg" alt=""></p><ul><li>Beliefs：信息态度，表示状态和智能体的 know-how，可能是错误的，由 perception 和 reasoning 更新</li><li>Desires：动机态度，评估是对欲望的过滤，决定哪个愿望可以提升为真正的意图</li><li>Intertions：智能体致力于发生的愿望，它是一致的、不冲突的、可能达成的，比 Desires 要强</li></ul><p>确定性行动由以下元素表示：</p><ul><li>可能包含参数的名称</li><li>前置条件列表：必须为真的要执行操作的事实列表</li><li>删除列表：执行操作后不再为真的事实列表</li><li>添加列表：通过执行操作使事实为真的列表</li></ul><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/4-cognitive-agents-and-multiagent-systems/BDI%20agent.png" alt="BDI agent"></p><p>Interpreter 主要做两个操作：</p><ul><li>根据当前的信念选择需要追求的意图</li><li>Mean-end 推理生成或选择要执行的计划，以实现意图</li></ul><p>BDI 算法可以表达如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">(B,D,I): = Initialize-state();</span><br><span class="line"></span><br><span class="line">While(true):</span><br><span class="line"></span><br><span class="line">    update(B,D,I); //according to internal and external perceptions</span><br><span class="line"></span><br><span class="line">    Options: = option-generator(B,D,I)</span><br><span class="line"></span><br><span class="line">    Selected-options: = deliberate(B,D,I)</span><br><span class="line"></span><br><span class="line">    Update-intentions(selected-options, I)</span><br><span class="line"></span><br><span class="line">    Plan: = planning(I,B)</span><br><span class="line"></span><br><span class="line">    execute(plan);</span><br><span class="line"></span><br><span class="line">    Get-new-perceptions()</span><br><span class="line"></span><br><span class="line">end while</span><br></pre></td></tr></table></figure><p>可以对基础 BDI 算法做很多调整，比如重新规划或意图再考虑。问题是，如果经常重新考虑，会花费太多时间来评估而没有足够时间采取行动；如果使用两种策略，不经常重新考虑，那么盲目执行可能会做出不相关的行动。</p><p>真是经典的 exploration vs. exploitation (deliberation and action) tension 呢！</p><h2 id="智能体在多个创作领域的应用"><a href="#智能体在多个创作领域的应用" class="headerlink" title="智能体在多个创作领域的应用"></a>智能体在多个创作领域的应用</h2><h3 id="UNMAKEABLE-LOVE"><a href="#UNMAKEABLE-LOVE" class="headerlink" title="UNMAKEABLE LOVE"></a>UNMAKEABLE LOVE</h3><p>UNMAKEABLE LOVE 是一个互动多媒体装置作品。此作品由多人操控，但观众无法操控 3D 动画影像，只能透过手电筒感应器的虚拟光束投射到背投式影幕，聚光探索 3D 人物动画的行为与影像。</p><p><img src="http://unmakeablelove.org/images/UML_main.png" alt=""></p><p><a href="http://unmakeablelove.org/" target="_blank" rel="noopener">UNMAKEABLELOVE</a></p><p>作品中的六角形立体柱有六面背投式影幕，可由六个人同时操控手电筒聚光探索 3D 人物活动状况。当观众在操控手电筒投射屏幕观看时，会看到对面的观用者也在用手电筒投射，观看到的对方是真实人物经由红外线摄取影像呈现在屏幕，让观看者仿佛看到真实的另一观看者，让观看者之间在虚拟 3D人物动画的氛围情境内互动。</p><p>这个作品通过算法智能体，人工生命，虚拟社区，人机交互，增强虚拟，混合现实和多媒体表现的实践，以「参与身体的原始铭文」。它将 Beckett 的 “lost ones” 定位在一个虚拟空间中，这个虚拟空间代表着一种严重的身体限制状态，可能会唤起监狱，庇护，拘留营，甚至是「现实」的电视节目。</p><h3 id="The-Painting-Fool"><a href="#The-Painting-Fool" class="headerlink" title="The Painting Fool"></a>The Painting Fool</h3><p>2013 年 7 月，一名崭露头角的艺术家在巴黎 Galerie Oberkampf 举办了展览会。</p><p>展览会持续了一周时间，民众前来观看，新闻媒体广泛报道，一些作品花了多年时间创作，还有一些直接画在画廊上。无论怎么看，这都是一场典型的艺术展。唯一不同的是，这名艺术家不是真人，而是一个名叫 The Painting Fool 的电脑程序。</p><p><img src="http://www.thepaintingfool.com/commercial/tree.png" alt=""></p><p>The painting fool  是一个模块化的架构，包括：</p><ul><li>视觉系统</li><li>内存模块</li><li>一些自我评价系统</li><li>感知系统</li><li>情绪系统</li><li>一些渲染模块，例如 肖像模块</li><li>解释系统</li><li>概念生成模块</li></ul><p>The Painting Fool 是 Simon Colton 的作品。Colton 是伦敦大学金史密斯学院的计算机创作学教授，他认为要让程序创作，先要跨过一些与图灵测试不同的测试。图灵测试要求机器按人类的方式进行可以信服的交谈，Colton 却认为 AI 艺术家要让自己的行为变得「富有技巧」、「可以欣赏」、「富有想像力」才行。</p><p>到目前为止，Painting Fool 已经在这三个方面取得了进步。所谓的欣赏性，按 Colton 的意思就是对情绪作出反应。Painting Fool 的早期作品由图片拼成。程序先要扫描英国卫报一篇关于阿富汗战争的文章，从中提取关键字，比如“军队”和“英国人”，然后寻找与之相关的图片。找到之后程序用图片制作合成图，以反映报纸文章的内容和情绪。</p><h3 id="音乐智能体"><a href="#音乐智能体" class="headerlink" title="音乐智能体"></a>音乐智能体</h3><p>在音乐智能智能体方面，George E. Lewis 在 1983 完成了一个即兴的爵士演奏，是早期有智能智能体参与的例子：</p><div class="video-container"><iframe src="//www.youtube.com/embed/hO47LiHsFtc" frameborder="0" allowfullscreen></iframe></div><p><a href="https://www.youtube.com/watch?v=hO47LiHsFtc&amp;list=RDhO47LiHsFtc#t=12" target="_blank" rel="noopener">George E. Lewis – Voyager Duo 4 - YouTube</a></p><p>Arne Eigenfeldt 是加拿大作曲家，他创作互动和生成音乐系统。 Eigenfeldt 为当代舞蹈做了大量工作，特别是与编舞家Serge Bennathan合作。他的电子音乐主要用 Max/MSP 编写的软件中实时生成。 他最近的研究重点是将知识编码到智能性能系统中。 </p><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Arne_eigenfeldt_04_jpg.jpg/1200px-Arne_eigenfeldt_04_jpg.jpg" alt=""></p><div class="video-container"><iframe src="//www.youtube.com/embed/i7IP9d_KBzA" frameborder="0" allowfullscreen></iframe></div><p><a href="https://www.youtube.com/watch?v=i7IP9d_KBzA" target="_blank" rel="noopener">Moments: Time and Space - YouTube</a></p><p><a href="https://aeigenfeldt.wordpress.com/works/music-by-agents/" target="_blank" rel="noopener">Music by agents</a> 是 Arne Eigenfeldt 创建的实时作曲系统，由一组 BDI 智能体组成。智能体们协商各种参数，实现和谐的实时作曲。</p><p><a href="http://metacreation.net/?page_id=443" target="_blank" rel="noopener">James Maxwell</a>, <a href="http://metacreation.net/?page_id=479" target="_blank" rel="noopener">Arne Eigenfeldt</a>, <a href="http://metacreation.net/?page_id=482" target="_blank" rel="noopener">Philippe Pasquier</a>开发的 <a href="http://metacreation.net/musicogmanuscore/" target="_blank" rel="noopener">MusiCOG</a> 是一个用于单声道音乐信息的识别，生成，延续和模式编辑的系统模型。</p><blockquote><p>Music composition is an intellectually demanding human activity that engages a wide range of cognitive faculties. In designing MusiCOG, we wanted to bring forward ideas from our previous work, and combine these with principles from the fields of music perception and cognition and ICA design, in an initial attempt at an integrated model. </p></blockquote><p>为音乐理解和分类设计的 MusiCog 是认知智能体中，处理领域特定知识的智能体。音乐认知智能体一般会参与以下活动：</p><ul><li>自己演奏</li><li>与人类一起演奏</li><li>帮助人类创作新材料</li></ul><p>MUME 是一个汇集了对开发系统感兴趣的艺术家、从业者和研究人员的组织，研究可以自主地识别、学习、表现、编写、完成、陪伴或解释音乐的系统。Metacreation 涉及使用人工智能，人工生命和机器学习的工具和技术，它们本身通常受到认知和生命科学的启发。其中有一个项目叫做 Musebot。</p><p><img src="http://img.viz.mobi/mume_logo-e1544125760113.png" alt=""></p><p>Musebot 项目的目标是建立一个有趣和实验性的研究，教育和制作平台。它是一个协作性的创造性实验：共同制作自主软件智能体，共同制作原创音乐。这些软件智能体将在一个计算机网络上运行。每个软件智能体大致对应于一段音乐中的单个乐器部分，如贝斯或鼓点。</p><p>Musebot 可以与其他 Musebot 一起自动生成音乐。Musebot 协议传递实时数据，但不是具体数据，而是更高层次的音乐概念。</p><h3 id="会话智能体，虚拟智能体，游戏智能体"><a href="#会话智能体，虚拟智能体，游戏智能体" class="headerlink" title="会话智能体，虚拟智能体，游戏智能体"></a>会话智能体，虚拟智能体，游戏智能体</h3><p>会话智能体是相对成熟的智能智能体研究领域，一些典型的智能体包括：</p><ul><li><p>ELIZA, Joseph Weizenbaum, 1964</p></li><li><p>PARRY, Kenneth Colby, 1972</p></li><li><p>SmarterChild, ActiveBuddy, 2001</p></li><li><p>Eugene Goostman, 2001</p></li></ul><p>虚拟智能体</p><p><a href="http://stelarc.org/?catID=20241" target="_blank" rel="noopener">STELARC | PROSTHETIC HEAD</a> (Stelarc, 2003) 是基于认知智能体体系结构的互动作品。智能体可以感知环境，通过检测颜色的超声波传感器来感知观众的服装颜色和基本的运动及行为：<br><img src="http://stelarc.org/media/img/pro-head/head-animation-on-white.gif" alt=""></p><p>游戏中存在许多认知智能体，它们通常不是游戏玩家，而是执行一些需要自动化的任务。这些互动叙事中的智能体行为，可能是预先编写好的，也可能是由程序自动生成的（比如 intelligent drama/story/manager 或 procedural simulation）。</p><h2 id="智能体通信"><a href="#智能体通信" class="headerlink" title="智能体通信"></a>智能体通信</h2><p>认知智能体通过智能体消息和智能体通信协议进行交流，也可能使用 Agent communication language(ACL) 交流，常用的 ACL 有 KQML，FIPA ACL。</p><p>言语行为类型：</p><ul><li>自信：speaker 表达世界表现（告知，断言，……）</li><li>指令：speaker 要求其他人（订单，问题，请求……）</li><li>承诺：speaker 承诺（承诺）</li><li>表达：speaker 表达感受（爱情宣言，…）</li><li>陈述：speaker 根据情境行事（开除，祝福，结婚……）</li></ul><p>消息类型语义：言语行为，前提条件，后置条件。</p><p>智能体之间的通讯过程也涉及到复杂的感知、解释、推理、评估、行动等过程：</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/4-cognitive-agents-and-multiagent-systems/conversational%20agents.png" alt="conversational agents"></p><p>智能体通讯协议帮助结构化智能体之间的对话，提高通讯效率：</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/4-cognitive-agents-and-multiagent-systems/agent%20communication%20protocals.png" alt="agent communication protocals"></p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.wikiwand.com/en/Intelligent_agent" target="_blank" rel="noopener">Intelligent agent - Wikiwand</a></li><li><a href="https://www.wikiwand.com/en/Belief%E2%80%93desire%E2%80%93intention_software_model" target="_blank" rel="noopener">Belief–desire–intention software model - Wikiwand</a></li><li><a href="https://www.kadenze.com/courses/generative-art-and-computational-creativity-i/sessions/cognitive-agents-and-multiagent-systems" target="_blank" rel="noopener">Cognitive Agents And Multiagent Systems | Kadenze</a></li><li><a href="http://musicalmetacreation.org/musebots/musebot-getting-started/" target="_blank" rel="noopener">Musebot Getting Started | Musical Metacreation</a></li><li><a href="https://www.doc.ic.ac.uk/project/examples/2005/163/g0516334/" target="_blank" rel="noopener">Topics in AI : AGENTS</a></li><li><a href="http://www.thepaintingfool.com/index.html" target="_blank" rel="noopener">The Painting Fool - A Computer Artist</a></li><li><a href="https://www.researchgate.net/profile/Philippe_Pasquier/publication/220982337_Shadow_agent_a_new_type_of_virtual_agent/links/0912f510ac2bea76ef000000.pdf" target="_blank" rel="noopener">Shadow agent: a new type of virtual agent</a></li><li><a href="https://aeigenfeldt.wordpress.com/works/music-by-agents/" target="_blank" rel="noopener">music by agents – arne eigenfeldt</a></li><li><a href="http://metacreation.net/musicogmanuscore/" target="_blank" rel="noopener">MusiCOG &amp; ManuScore |</a></li><li><a href="https://www.jiqizhixin.com/articles/2016-10-28-4" target="_blank" rel="noopener">40年认知架构研究概览：实现通用人工智能的道路上我们已走了多远？ | 机器之心</a></li><li><a href="https://www.leiphone.com/news/201602/W3R5gl8rWGCV7xDL.html" target="_blank" rel="noopener">机器学徒：AI有可能变成画家吗？ | 雷锋网</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/CC-blogtitle.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
+    
+      <category term="Computational Creativity" scheme="http://uegeek.com/tags/Computational-Creativity/"/>
+    
+      <category term="创意" scheme="http://uegeek.com/tags/%E5%88%9B%E6%84%8F/"/>
+    
+      <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
+    
+      <category term="Agent" scheme="http://uegeek.com/tags/Agent/"/>
+    
+      <category term="智能体" scheme="http://uegeek.com/tags/%E6%99%BA%E8%83%BD%E4%BD%93/"/>
+    
+      <category term="认知智能体" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5%E6%99%BA%E8%83%BD%E4%BD%93/"/>
+    
+      <category term="BDI" scheme="http://uegeek.com/tags/BDI/"/>
+    
+  </entry>
   
   <entry>
     <title>生成式艺术和算法创作08-马尔可夫模型</title>
@@ -36,9 +80,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -76,9 +120,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -116,9 +160,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -154,9 +198,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -228,9 +272,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -264,9 +308,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -300,9 +344,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -342,9 +386,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -382,9 +426,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -396,11 +440,11 @@
     
       <category term="随机" scheme="http://uegeek.com/tags/%E9%9A%8F%E6%9C%BA/"/>
     
+      <category term="MaxMSP" scheme="http://uegeek.com/tags/MaxMSP/"/>
+    
       <category term="巴纳姆效应" scheme="http://uegeek.com/tags/%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94/"/>
     
       <category term="星座" scheme="http://uegeek.com/tags/%E6%98%9F%E5%BA%A7/"/>
-    
-      <category term="MaxMSP" scheme="http://uegeek.com/tags/MaxMSP/"/>
     
   </entry>
   
@@ -424,9 +468,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -464,9 +508,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -502,11 +546,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -536,11 +580,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -570,11 +614,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -604,11 +648,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -638,11 +682,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -672,11 +716,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
   </entry>
   
@@ -704,47 +748,13 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Max/MSP/Jitter 官方教程翻译13 - 列表和矩阵</title>
-    <link href="http://uegeek.com/180906-jitter-13.html"/>
-    <id>http://uegeek.com/180906-jitter-13.html</id>
-    <published>2018-09-06T10:54:22.000Z</published>
-    <updated>2018-09-25T07:38:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/Max-title-4.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180903-jitter-11.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 11 - 矩阵混合</a></li><li><a href="https://www.uegeek.com/180904-jitter-12.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 12 - Chromakeying</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter11" target="_blank" rel="noopener">Tutorial 11: Lists and Matrices</a></p></blockquote><p>本教程讲解如何用 Max 列表和 <code>jit.fill</code> 对象来填充（部分）矩阵，以及如何用 <code>jit.spill</code> 检索（部分）矩阵内容作为列表。还将演示通过矩阵名称远程访问矩阵内容。</p><h2 id="矩阵名称"><a href="#矩阵名称" class="headerlink" title="矩阵名称"></a>矩阵名称</h2><p>patch 左侧有一个蓝色的 <code>jit.matrix</code>。第一个参数是矩阵的名称 smallbox。其他参数表示矩阵有 1 个 char 平面，包含一维 12 个单元格。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter11a.png" alt=""><br>矩阵唯一名称：smallbox</p><p><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">教程 4</a> 介绍过，每个矩阵都有一个名称。如果没有另外指定，Jitter 将自动命名（类似 “u040000114” 奇怪的唯一名称）。名称表示存储矩阵的内存位置。为什么要另外给矩阵命名呢？这样可以告诉其他对象如何找到矩阵的内容。引用矩阵的名称，对象之间可以共享数据，无需接收 jit_matrix 消息就可以远程访问矩阵的内容。</p><blockquote><p>Jitter 使用矩阵名称来指代内存位置，这跟 Max 的 <code>value</code> 对象类似。名称相同的对象可以有多个，只在其中一个中存储数值，其他对象就可以检索这个值。该名称实际上只有一个内存位置，它们共享相同的数据。同样，可以有多个名称相同的 <code>jit.matrix</code> 对象，它们共享相同的数据。其他对象（例如 <code>jit.fill</code>）只需知道名称即可访问矩阵内容。</p></blockquote><h2 id="jit-fill"><a href="#jit-fill" class="headerlink" title="jit.fill"></a>jit.fill</h2><p><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">教程 4</a> 展示了在矩阵特定位置指定数值的 <code>setcell</code>消息，以及检索位置内容的 <code>getcell</code> 消息。现在来看看如何使用 <code>jit.fill</code> 对象将一个值列表存入矩阵中。（本章后面还将展示如何从矩阵中一次检索多个值）</p><p>在 patch 的左上角有一个包含  12 个数值列表的消息框。它连接到 <code>jit.fill smallbox</code> 对象。矩阵名字是 smallBox。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter11b.png" alt=""><br> <code>jit.fill</code> 在命名矩阵中存储一个值列表</p><p>单击消息框将列表发送到 <code>jit.fill smallbox</code>。对象在名为 “smallBox” 的矩阵存储这些值。单击 <code>jit.matrix smallbox</code> 上方的按钮显示 smallbox 矩阵的内容来验证。这些值由 <code>jit.print</code> 打印在 Max Console 中，并在狭长的 <code>jit.pwindow</code> 中显示为灰阶。</p><p>这个例子的列表长度恰好可以填充整个矩阵。这不是必须的。可以在 1D 或 2D 矩阵的任意连续部分中放置任何长度的列表。</p><h2 id="偏移属性"><a href="#偏移属性" class="headerlink" title="偏移属性"></a>偏移属性</h2><p>双击打开 <code>random_lists</code> 子 patch。</p><p>默认情况下，<code>jit.fill</code> 将值列表放在矩阵最开头。也可以设置 <code>jit.fill</code> 的 <code>offset</code> 属性将列表指定到矩阵中的任何位置。这里演示如何使用 offset。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter11c.png" alt=""><br>首先指定偏移量，后跟列表</p><p>上面的例子随机选择单元格索引作为 <code>jit.fill</code> offset 消息的参数，然后向 randbox 矩阵中的该索引处，发送要存储的 16 个元素的列表。</p><p>点击开关启动 <code>metro</code>。每隔半秒，16 个元素的列表被写入 randbox 矩阵中的新位置。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter11d.png" alt=""></p><p>用 <code>clear</code> 消息清除 randbox 矩阵的内容，然后观察 <code>metro</code> 将列表写入新的随机位置。<code>metro</code> 也正在触发 <code>jit.matrix randbox</code> 将其内容发送到 <code>jit.pwindow</code> 显示。</p><h2 id="使用-multislider"><a href="#使用-multislider" class="headerlink" title="使用 multislider"></a>使用 multislider</h2><p>打开 draw_list 子 patch。</p><p>现在我们知道如何将预先定义的值列表存到矩阵中。如果要在 Max 中交互式生成列表并实时放置在矩阵中，需要用构建列表的对象比如  <code>multislider</code> 和 <code>zl</code>。</p><p><code>multislider</code> 对象包含一组 <code>slider</code>，并一次发送所有 slider 的值作为列表（slider 可以小到一个像素宽，这样它看起来更像一个图形而不是一组单独的控件）。在窗口中移动任何 slider 时会发送整个列表，释放鼠标按钮时再次发送列表。在 draw_list 子 patch，有一个包含 256 个滑块的 <code>multislider</code>，可发送从 0~255 的值，它恰好将 256 个 char 值发送给 <code>jit.fill graybox</code>  对象。</p><p>拖动鼠标在 <code>multislider</code> 中设置 256 个滑块。释放鼠标按钮时，256 个值的列表将发送到 <code>jit.fill graybox</code>。注意矩阵单元的亮度如何与滑块的高度相对应。</p><p>一旦 <code>jit.fill</code> 在入口处收到列表，就会写入指定的矩阵（offset 属性指定的）位置。完成时 <code>jit.fill</code> 会发出 bang。可以用它来触发另一个动作，例如显示矩阵。</p><blockquote><p>前两个例子故意不使用 <code>jit.fill</code>左侧出口的 bang，以便清楚看到，<code>jit.fill</code> 远程写入到指定命名的矩阵，而不是通过物理连接。当然 <code>jit.fill</code> 左侧出口的 bang 很方便，只要填充完就会触发矩阵的输出。</p></blockquote><h2 id="使用-zl"><a href="#使用-zl" class="headerlink" title="使用 zl"></a>使用 zl</h2><p>打开 collect_values 子 patch</p><p>某些情况下你可能想用矩阵来存储 patch 某处的数字消息：MIDI消息、来自 UI 对象的数字等。可以向 <code>jit.matrix</code> 发送 <code>setcell</code> 和 <code>getcell</code> 消息，也可以将消息收集到列表中，然后用 <code>jit.fill</code> 将它们一次性存到矩阵中。</p><p><code>zl</code> 是多功能的列表处理对象，由第一个参数指定模式和行为。当第一个参数是 group 时，它会收集左入口的消息直到一定数量，然后将这些数字作为单个列表发送出去（这些值按接收顺序分组）。在 collect_values 子 patch 中有一个 <code>zl group 256</code> 对象，每当它从左入口收集够 256 个值，就把这个列表发送到左出口（并清除内存）。</p><p>向上和向下移动 slider 为 <code>zl</code> 对象生成 256 个输入值。当 <code>zl</code> 收到 256 个数字时，它把这个列表发送到 <code>jit.fill midibox</code>，由它写入 midibox 矩阵，然后 bang <code>jit.matrix midibox 1 char 256</code> 对象以显示矩阵。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter11e.png" alt=""><br><code>zl</code> 将包含 256 个元素的列表发送到 midibox 矩阵，然后 bang <code>jit.matrix</code> 来显示结果</p><p>如果电脑连接了 MIDI 键盘，可以使用 MIDI 键盘的 modulation wheel 移动 slider。（MIDI 和 Jitter 的交互将在后面的教程中详细探讨）</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter11f.png" alt=""><br>值*2 获得 0~254 范围</p><p>可以用<code>list length</code>数字框向右入口发送新的值来更改 <code>zl</code>数据集的列表长度。用 <code>loacation</code> 数字框发送 <code>offset</code> 消息给 <code>jit.fill</code> 告诉它想要存储列表的位置。改变列表长度和位置，可以将任意数量的值放入矩阵的任何连续区域。</p><p>更改 <code>zl</code> 的 list length （如 100），设置 <code>jit.fill</code> 的 offset 属性（如 50），然后移动 slider 把值的列表存到矩阵中的指定位置。</p><h2 id="jit-fill-和多平面矩阵"><a href="#jit-fill-和多平面矩阵" class="headerlink" title="jit.fill 和多平面矩阵"></a>jit.fill 和多平面矩阵</h2><p>打开 <code>fill_separate_panes</code> 子 patch</p><p><code>jit.fill</code> 可用于多平面矩阵，但它一次只能填充一个平面。<code>jit.fill</code> 要处理哪个平面由 <code>@plane</code> 属性指定。在<code>fill_separate_panes</code> 子 patch 中创建了另一个名为 colorbox 的矩阵，这次有四个char 数据平面。设置了三个 <code>multislider</code> 和三个 <code>jit.fill</code> 对象，每个对象都对应 colorbox 框矩阵的不同颜色平面。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter11g.png" alt=""><br>各自填充每个平面</p><p>拖动三个彩色 <code>multislider</code> 填充三个颜色平面。</p><p>这样可以快捷生成矩阵中 RGB 平面不同强度的曲线。显示矩阵的 <code>jit.pwindow</code> 宽为 256 像素，所以矩阵 64 个单元格都显示为 4 像素宽的条带。如果打开 <code>jit.pwindow</code> 的 <code>interp</code> 属性，相邻频段之间的差值会被插值平滑。</p><p>单击 <code>interp $1</code> 消息框上方的开关，将消息发送到 <code>jit.pwindow</code>。（注意，这也会发送 bang 到 <code>jit.matrix</code> 重新显示内容）</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter11h.png" alt=""><br>与前一个示例相同，但打开了 <code>jit.pwindow</code> 的插值</p><h2 id="jit-fill-和二维矩阵"><a href="#jit-fill-和二维矩阵" class="headerlink" title="jit.fill 和二维矩阵"></a>jit.fill 和二维矩阵</h2><p>目前为止所有的例子都是一维矩阵。用列表（一维数组）通过 <code>jit.fill</code> 填充二维矩阵时会发生什么？<code>jit.fill</code> 对象在第一个维度里尽可能排列列表（尽量排满指定的行）然后绕到下一行继续排列。下面演示排列的过程。</p><p>单击标有 2D 的按钮，把 <code>jit.matrix colorbox</code> 对象变成 8x8 二维矩阵，<code>jit.pwindow</code> 也会调整为更合适的形状。无论何时更改矩阵尺寸，它都会清除之前的数据，所以需要再次单击三个 multislider 重新填充矩阵。仍向每个 <code>jit.fill</code> 对象发送 64 个元素的列表，并用 8 个元素填充矩阵的 8 行。</p><blockquote><p>要点：这里没有演示如何使用带有 offset 属性的 2D 矩阵，当 <code>jit.fill</code> 的 name 属性命名 2D 矩阵时，offset 属性需要两个参数： x 偏移量和 y 偏移量。</p><p><code>jit.fill</code>  仅适用于 1D 和 2D 矩阵。</p></blockquote><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter11i.png" alt=""><br>相同的例子，列表填充 8x8 矩阵（未插值）</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter11j.png" alt=""><br>开启插值</p><h2 id="jit-spill"><a href="#jit-spill" class="headerlink" title="jit.spill"></a>jit.spill</h2><p><code>jit.spill</code> 是 <code>jit.fill</code> 的补充。它在入口处接收 <code>jit_matrix</code> 消息，将矩阵值作为列表发送到左出口。当使用红色 <code>multislider</code> ，下面的 <code>jit.spill</code> 发送平面 1（红色）的值到左出口并在消息框显示内容。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter11k.png" alt=""><br>用列表显示 colorbox 矩阵的平面 1 的内容</p><blockquote><p><code>jit.spill</code> 也有 list length 和 offset 属性</p></blockquote><p>如果需要发送一系列单个数字消息而不是单个列表消息，<code>iter</code> 对象了解一下。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter11l.png" alt=""><br>从矩阵中获取一些值并分成不同的消息</p><h2 id="jit-iter"><a href="#jit-iter" class="headerlink" title="jit.iter"></a>jit.iter</h2><p>打开 individual_values 子 patch。</p><p><code>jit.iter</code> 对象可以检索矩阵中的每个值。当它收到 <code>jit_matrix</code> 消息时，会按矩阵中单元格的顺序发出消息序列：单元格索引（中间出口），然后是该单元格的值（左出口）。如果是一个大矩阵，会有一大堆消息试图在（Max’s scheduler）单个 tick 中发送出去，所以当它完成所有发送后，<code>jit.iter</code> 会向右出口发送一条完成的消息。</p><p>在 individual_values 子 patch 中有一个 <code>jit.iter</code> 对象，它接收来自 <code>jit.matrix readbox 1 char 256</code> 的矩阵信息。我们使用 <code>swap</code> 对象切换单元格索引的顺序（来自 <code>jit.iter</code> 中间出口）和单元格值（来自 <code>jit.iter</code> 左出口）。然后用该单元格的值作为想要存储在表对象中的 y 值，用单元格索引作为 x 轴索引。</p><p>点击 <code>multislider</code> 发送内容给 <code>jit.fill</code>（然后 bang  <code>jit.matrix</code> 并传达其内容给 <code>jit.iter</code>）。双击 <code>tabel</code> 对象打开图形窗口，看到它包含与 readbox 矩阵相同的值。</p><p>请注意，使用 <code>jit.iter</code> 填充表格的技巧适用于中等大小的一维单平面矩阵，因为表格是一维数组。但是像<code>jit.movi​​e</code> 对象的 2D 矩阵有四个平面，<code>jit.iter</code> 的中间（单元索引）出口输出双元素列表，左出口的值列表是四元素列表。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter11m.png" alt="">            </p><p>对于一维或小的 2D 矩阵，或者在较大矩阵中搜索特定值或模式， 用 <code>jit.iter</code> 扫描整个矩阵是很方便的。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>发送 <code>setcell</code> 和 <code>getcell</code> 消息给 <code>jit.matrix</code>，可以<strong>存储或检索矩阵中的单个值</strong>（如<a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">教程 4</a> 所示）。<strong>如果要存储或检索列表，就要用 <code>jit.fill</code> 和 <code>jit.spill</code>。</strong>它们可以检索 1D 或 2D 矩阵的任何平面，在任意起始单元位置存储任何长度的列表。</p><p><code>multislider</code> 和 <code>zl</code> 对象用于实时生成列表消息。用鼠标拖动 <code>multislider</code> 可以绘制列表。使用 <code>zl group</code> 收集多个单独的数值到一个列表中，然后一次性发送到 <code>jit.fill</code>。</p><p>可以设置 <code>jit.fill</code>（或 <code>jit.spill</code>）的 offset 属性来指定矩阵中的起始单元格位置。<code>jit.fill</code> 对象要设置名称属性（或者发送<code>name</code> 消息或输入[name]参数），指定它将填补的矩阵名称。它用这个名称访问矩阵，并且在列表写入矩阵完成时发出 bang。可以用它来触发其他操作。</p><p>发送矩阵给 <code>jit.iter</code>，可以输出整个矩阵中所有值。</p><hr><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://img.viz.mobi/maxgroup0825.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/Max-title-4.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
-    
-      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-      <category term="列表" scheme="http://uegeek.com/tags/%E5%88%97%E8%A1%A8/"/>
     
   </entry>
   

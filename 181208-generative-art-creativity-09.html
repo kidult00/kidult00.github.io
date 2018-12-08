@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="t1oNPvdeea" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="AI,ArtxCode,Creative Coding,艺术,Generative Art,Computational Creativity,创意,创造力,Agent,智能体,认知智能体,BDI," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="AI,ArtxCode,Creative Coding,艺术,Generative Art,Computational Creativity,创意,创造力,Agent,智能体,认知智能体,BDI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生成式艺术和算法创作09-人工智能体">
+<meta property="og:url" content="http://uegeek.com/181208-generative-art-creativity-09.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.viz.mobi/CC-blogtitle.png">
+<meta property="og:image" content="https://www.doc.ic.ac.uk/project/examples/2005/163/g0516334/images/sensorseniv.png">
+<meta property="og:image" content="http://www.inf.ufrgs.br/prosoft/bdi4jade/wp-content/uploads/bdiArch.jpg">
+<meta property="og:image" content="http://uegeek.com/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/4-cognitive-agents-and-multiagent-systems/BDI%20agent.png">
+<meta property="og:image" content="http://unmakeablelove.org/images/UML_main.png">
+<meta property="og:image" content="http://www.thepaintingfool.com/commercial/tree.png">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Arne_eigenfeldt_04_jpg.jpg/1200px-Arne_eigenfeldt_04_jpg.jpg">
+<meta property="og:image" content="http://img.viz.mobi/mume_logo-e1544125760113.png">
+<meta property="og:image" content="http://stelarc.org/media/img/pro-head/head-animation-on-white.gif">
+<meta property="og:image" content="http://uegeek.com/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/4-cognitive-agents-and-multiagent-systems/conversational%20agents.png">
+<meta property="og:image" content="http://uegeek.com/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/4-cognitive-agents-and-multiagent-systems/agent%20communication%20protocals.png">
+<meta property="og:updated_time" content="2018-12-08T11:46:03.928Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="生成式艺术和算法创作09-人工智能体">
+<meta name="twitter:image" content="http://img.viz.mobi/CC-blogtitle.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/181208-generative-art-creativity-09.html"/>
+
+
+
+
+
+  <title>生成式艺术和算法创作09-人工智能体 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/181208-generative-art-creativity-09.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">生成式艺术和算法创作09-人工智能体</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-08T19:43:54+08:00">
+                2018-12-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/181208-generative-art-creativity-09.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="181208-generative-art-creativity-09.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p>
+<a id="more"></a>
+<ul>
+<li><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></li>
+<li><a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">生成式艺术和算法创作02-随机和噪声</a></li>
+<li><a href="https://www.uegeek.com/181021-generative-art-creativity-03.html" target="_blank" rel="noopener">生成式艺术和算法创作03-混沌和分形</a></li>
+<li><a href="https://www.uegeek.com/181023-generative-art-creativity-04.html" target="_blank" rel="noopener">生成式艺术和算法创作04-规则系统</a></li>
+<li><a href="https://www.uegeek.com/181107-generative-art-creativity-05.html" target="_blank" rel="noopener">生成式艺术和算法创作05-Tessellation</a></li>
+<li><a href="https://www.uegeek.com/181120-generative-art-creativity-06.html" target="_blank" rel="noopener">生成式艺术和算法创作06-形状语法</a></li>
+<li><a href="https://www.uegeek.com/181123-generative-art-creativity-07.html" target="_blank" rel="noopener">生成式艺术和算法创作07-向自然致敬的 L-system</a></li>
+<li><a href="https://www.uegeek.com/181130-generative-art-creativity-08.html" target="_blank" rel="noopener">生成式艺术和算法创作08-马尔可夫模型</a></li>
+</ul>
+<h2 id="人工智能体"><a href="#人工智能体" class="headerlink" title="人工智能体"></a>人工智能体</h2><p>我们常看到 OOP - 面向对象的编程，对象是 Object。这篇文章则是关于智能体（agent）的综述。智能体和对象有什么区别呢？智能体是主动的，对象则不是。</p>
+<p>智能体的概念是计算机科学的核心，在认知科学中也很重要。因为它可以研究真实的主体，建模和在现实世界中模拟并观察智能群体。</p>
+<p>人工智能体是一个计算机系统，能够代表使用者或设计者自主运行。<strong>智能体可以形式化表达为从感知到行动的函数</strong>，它将每个可能的感知序列，映射到智能体可以执行的操作，或映射到影响最终操作的系数、反馈元素、函数或常量。软件和机器人都可视为智能体。</p>
+<p>人工智能体有以下特征：</p>
+<ul>
+<li>情境性（situatedness）：通过传感器感知环境，能够通过行动效果器（effectors）影响环境 </li>
+<li>自主和积极主动（Autonomy and pro-activity）: 行动没有外部干预，自己控制内部状态</li>
+<li>灵活性<ul>
+<li>可响应: 及时响应环境的变化</li>
+<li>社交性：与其他智能体或人类互动</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://www.doc.ic.ac.uk/project/examples/2005/163/g0516334/images/sensorseniv.png" alt=""></p>
+<p>智能体的结构</p>
+<ul>
+<li>认知（Cognitive）：维持内部符号表征（一般会有记忆），可能包含推理和规划的评估结构（deliberative architectures）</li>
+<li>反应（Reactive）：没有明确的环境表征，专注于行为规则<ul>
+<li>反射：没有内部状态（只是将输入映射到输出）</li>
+<li>反应：有内部状态（但不是认知）</li>
+</ul>
+</li>
+<li>混合（Hybrid）：混合反应和认知成分，以平衡反应性（reactiveness）和审慎性（deliberativeness）</li>
+</ul>
+<blockquote>
+<p>A first-order intentional system has beliefs and desires but no beliefs and desires about beliefs and desires.</p>
+<p>A second -order intentioal system has beliefs and desires about beliefs and desires both those of others and its own.</p>
+</blockquote>
+<p>一阶意向系统和二阶意向系统。</p>
+<h2 id="Belief–Desire–Intention-BDI-模型"><a href="#Belief–Desire–Intention-BDI-模型" class="headerlink" title="Belief–Desire–Intention BDI 模型"></a>Belief–Desire–Intention BDI 模型</h2><p>信念 - 愿望 - 意图模型（BDI）是智能体编程的软件模型。从表面看，它以智能体的信念、愿望和意图的实现为特征，使用这些概念来解决智能体编程中的特定问题。 实质上它提供了一种机制，将选择计划的活动与当前活动计划的执行分开。 因此，BDI 智能体能够平衡计划（选择做什么）和执行这些计划所花费的时间。</p>
+<p><img src="http://www.inf.ufrgs.br/prosoft/bdi4jade/wp-content/uploads/bdiArch.jpg" alt=""></p>
+<ul>
+<li>Beliefs：信息态度，表示状态和智能体的 know-how，可能是错误的，由 perception 和 reasoning 更新</li>
+<li>Desires：动机态度，评估是对欲望的过滤，决定哪个愿望可以提升为真正的意图</li>
+<li>Intertions：智能体致力于发生的愿望，它是一致的、不冲突的、可能达成的，比 Desires 要强</li>
+</ul>
+<p>确定性行动由以下元素表示：</p>
+<ul>
+<li>可能包含参数的名称</li>
+<li>前置条件列表：必须为真的要执行操作的事实列表</li>
+<li>删除列表：执行操作后不再为真的事实列表</li>
+<li>添加列表：通过执行操作使事实为真的列表</li>
+</ul>
+<p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/4-cognitive-agents-and-multiagent-systems/BDI%20agent.png" alt="BDI agent"></p>
+<p>Interpreter 主要做两个操作：</p>
+<ul>
+<li>根据当前的信念选择需要追求的意图</li>
+<li>Mean-end 推理生成或选择要执行的计划，以实现意图</li>
+</ul>
+<p>BDI 算法可以表达如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">(B,D,I): = Initialize-state();</span><br><span class="line"></span><br><span class="line">While(true):</span><br><span class="line"></span><br><span class="line">    update(B,D,I); //according to internal and external perceptions</span><br><span class="line"></span><br><span class="line">    Options: = option-generator(B,D,I)</span><br><span class="line"></span><br><span class="line">    Selected-options: = deliberate(B,D,I)</span><br><span class="line"></span><br><span class="line">    Update-intentions(selected-options, I)</span><br><span class="line"></span><br><span class="line">    Plan: = planning(I,B)</span><br><span class="line"></span><br><span class="line">    execute(plan);</span><br><span class="line"></span><br><span class="line">    Get-new-perceptions()</span><br><span class="line"></span><br><span class="line">end while</span><br></pre></td></tr></table></figure>
+<p>可以对基础 BDI 算法做很多调整，比如重新规划或意图再考虑。问题是，如果经常重新考虑，会花费太多时间来评估而没有足够时间采取行动；如果使用两种策略，不经常重新考虑，那么盲目执行可能会做出不相关的行动。</p>
+<p>真是经典的 exploration vs. exploitation (deliberation and action) tension 呢！</p>
+<h2 id="智能体在多个创作领域的应用"><a href="#智能体在多个创作领域的应用" class="headerlink" title="智能体在多个创作领域的应用"></a>智能体在多个创作领域的应用</h2><h3 id="UNMAKEABLE-LOVE"><a href="#UNMAKEABLE-LOVE" class="headerlink" title="UNMAKEABLE LOVE"></a>UNMAKEABLE LOVE</h3><p>UNMAKEABLE LOVE 是一个互动多媒体装置作品。此作品由多人操控，但观众无法操控 3D 动画影像，只能透过手电筒感应器的虚拟光束投射到背投式影幕，聚光探索 3D 人物动画的行为与影像。</p>
+<p><img src="http://unmakeablelove.org/images/UML_main.png" alt=""></p>
+<p><a href="http://unmakeablelove.org/" target="_blank" rel="noopener">UNMAKEABLELOVE</a></p>
+<p>作品中的六角形立体柱有六面背投式影幕，可由六个人同时操控手电筒聚光探索 3D 人物活动状况。当观众在操控手电筒投射屏幕观看时，会看到对面的观用者也在用手电筒投射，观看到的对方是真实人物经由红外线摄取影像呈现在屏幕，让观看者仿佛看到真实的另一观看者，让观看者之间在虚拟 3D人物动画的氛围情境内互动。</p>
+<p>这个作品通过算法智能体，人工生命，虚拟社区，人机交互，增强虚拟，混合现实和多媒体表现的实践，以「参与身体的原始铭文」。它将 Beckett 的 “lost ones” 定位在一个虚拟空间中，这个虚拟空间代表着一种严重的身体限制状态，可能会唤起监狱，庇护，拘留营，甚至是「现实」的电视节目。</p>
+<h3 id="The-Painting-Fool"><a href="#The-Painting-Fool" class="headerlink" title="The Painting Fool"></a>The Painting Fool</h3><p>2013 年 7 月，一名崭露头角的艺术家在巴黎 Galerie Oberkampf 举办了展览会。</p>
+<p>展览会持续了一周时间，民众前来观看，新闻媒体广泛报道，一些作品花了多年时间创作，还有一些直接画在画廊上。无论怎么看，这都是一场典型的艺术展。唯一不同的是，这名艺术家不是真人，而是一个名叫 The Painting Fool 的电脑程序。</p>
+<p><img src="http://www.thepaintingfool.com/commercial/tree.png" alt=""></p>
+<p>The painting fool  是一个模块化的架构，包括：</p>
+<ul>
+<li>视觉系统</li>
+<li>内存模块</li>
+<li>一些自我评价系统</li>
+<li>感知系统</li>
+<li>情绪系统</li>
+<li>一些渲染模块，例如 肖像模块</li>
+<li>解释系统</li>
+<li>概念生成模块</li>
+</ul>
+<p>The Painting Fool 是 Simon Colton 的作品。Colton 是伦敦大学金史密斯学院的计算机创作学教授，他认为要让程序创作，先要跨过一些与图灵测试不同的测试。图灵测试要求机器按人类的方式进行可以信服的交谈，Colton 却认为 AI 艺术家要让自己的行为变得「富有技巧」、「可以欣赏」、「富有想像力」才行。</p>
+<p>到目前为止，Painting Fool 已经在这三个方面取得了进步。所谓的欣赏性，按 Colton 的意思就是对情绪作出反应。Painting Fool 的早期作品由图片拼成。程序先要扫描英国卫报一篇关于阿富汗战争的文章，从中提取关键字，比如“军队”和“英国人”，然后寻找与之相关的图片。找到之后程序用图片制作合成图，以反映报纸文章的内容和情绪。</p>
+<h3 id="音乐智能体"><a href="#音乐智能体" class="headerlink" title="音乐智能体"></a>音乐智能体</h3><p>在音乐智能智能体方面，George E. Lewis 在 1983 完成了一个即兴的爵士演奏，是早期有智能智能体参与的例子：</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/hO47LiHsFtc" frameborder="0" allowfullscreen></iframe></div>
+<p><a href="https://www.youtube.com/watch?v=hO47LiHsFtc&amp;list=RDhO47LiHsFtc#t=12" target="_blank" rel="noopener">George E. Lewis – Voyager Duo 4 - YouTube</a></p>
+<p>Arne Eigenfeldt 是加拿大作曲家，他创作互动和生成音乐系统。 Eigenfeldt 为当代舞蹈做了大量工作，特别是与编舞家Serge Bennathan合作。他的电子音乐主要用 Max/MSP 编写的软件中实时生成。 他最近的研究重点是将知识编码到智能性能系统中。 </p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Arne_eigenfeldt_04_jpg.jpg/1200px-Arne_eigenfeldt_04_jpg.jpg" alt=""></p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/i7IP9d_KBzA" frameborder="0" allowfullscreen></iframe></div>
+<p><a href="https://www.youtube.com/watch?v=i7IP9d_KBzA" target="_blank" rel="noopener">Moments: Time and Space - YouTube</a></p>
+<p><a href="https://aeigenfeldt.wordpress.com/works/music-by-agents/" target="_blank" rel="noopener">Music by agents</a> 是 Arne Eigenfeldt 创建的实时作曲系统，由一组 BDI 智能体组成。智能体们协商各种参数，实现和谐的实时作曲。</p>
+<p><a href="http://metacreation.net/?page_id=443" target="_blank" rel="noopener">James Maxwell</a>, <a href="http://metacreation.net/?page_id=479" target="_blank" rel="noopener">Arne Eigenfeldt</a>, <a href="http://metacreation.net/?page_id=482" target="_blank" rel="noopener">Philippe Pasquier</a>开发的 <a href="http://metacreation.net/musicogmanuscore/" target="_blank" rel="noopener">MusiCOG</a> 是一个用于单声道音乐信息的识别，生成，延续和模式编辑的系统模型。</p>
+<blockquote>
+<p>Music composition is an intellectually demanding human activity that engages a wide range of cognitive faculties. In designing MusiCOG, we wanted to bring forward ideas from our previous work, and combine these with principles from the fields of music perception and cognition and ICA design, in an initial attempt at an integrated model. </p>
+</blockquote>
+<p>为音乐理解和分类设计的 MusiCog 是认知智能体中，处理领域特定知识的智能体。音乐认知智能体一般会参与以下活动：</p>
+<ul>
+<li>自己演奏</li>
+<li>与人类一起演奏</li>
+<li>帮助人类创作新材料</li>
+</ul>
+<p>MUME 是一个汇集了对开发系统感兴趣的艺术家、从业者和研究人员的组织，研究可以自主地识别、学习、表现、编写、完成、陪伴或解释音乐的系统。Metacreation 涉及使用人工智能，人工生命和机器学习的工具和技术，它们本身通常受到认知和生命科学的启发。其中有一个项目叫做 Musebot。</p>
+<p><img src="http://img.viz.mobi/mume_logo-e1544125760113.png" alt=""></p>
+<p>Musebot 项目的目标是建立一个有趣和实验性的研究，教育和制作平台。它是一个协作性的创造性实验：共同制作自主软件智能体，共同制作原创音乐。这些软件智能体将在一个计算机网络上运行。每个软件智能体大致对应于一段音乐中的单个乐器部分，如贝斯或鼓点。</p>
+<p>Musebot 可以与其他 Musebot 一起自动生成音乐。Musebot 协议传递实时数据，但不是具体数据，而是更高层次的音乐概念。</p>
+<h3 id="会话智能体，虚拟智能体，游戏智能体"><a href="#会话智能体，虚拟智能体，游戏智能体" class="headerlink" title="会话智能体，虚拟智能体，游戏智能体"></a>会话智能体，虚拟智能体，游戏智能体</h3><p>会话智能体是相对成熟的智能智能体研究领域，一些典型的智能体包括：</p>
+<ul>
+<li><p>ELIZA, Joseph Weizenbaum, 1964</p>
+</li>
+<li><p>PARRY, Kenneth Colby, 1972</p>
+</li>
+<li><p>SmarterChild, ActiveBuddy, 2001</p>
+</li>
+<li><p>Eugene Goostman, 2001</p>
+</li>
+</ul>
+<p>虚拟智能体</p>
+<p><a href="http://stelarc.org/?catID=20241" target="_blank" rel="noopener">STELARC | PROSTHETIC HEAD</a> (Stelarc, 2003) 是基于认知智能体体系结构的互动作品。智能体可以感知环境，通过检测颜色的超声波传感器来感知观众的服装颜色和基本的运动及行为：<br><img src="http://stelarc.org/media/img/pro-head/head-animation-on-white.gif" alt=""></p>
+<p>游戏中存在许多认知智能体，它们通常不是游戏玩家，而是执行一些需要自动化的任务。这些互动叙事中的智能体行为，可能是预先编写好的，也可能是由程序自动生成的（比如 intelligent drama/story/manager 或 procedural simulation）。</p>
+<h2 id="智能体通信"><a href="#智能体通信" class="headerlink" title="智能体通信"></a>智能体通信</h2><p>认知智能体通过智能体消息和智能体通信协议进行交流，也可能使用 Agent communication language(ACL) 交流，常用的 ACL 有 KQML，FIPA ACL。</p>
+<p>言语行为类型：</p>
+<ul>
+<li>自信：speaker 表达世界表现（告知，断言，……）</li>
+<li>指令：speaker 要求其他人（订单，问题，请求……）</li>
+<li>承诺：speaker 承诺（承诺）</li>
+<li>表达：speaker 表达感受（爱情宣言，…）</li>
+<li>陈述：speaker 根据情境行事（开除，祝福，结婚……）</li>
+</ul>
+<p>消息类型语义：言语行为，前提条件，后置条件。</p>
+<p>智能体之间的通讯过程也涉及到复杂的感知、解释、推理、评估、行动等过程：</p>
+<p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/4-cognitive-agents-and-multiagent-systems/conversational%20agents.png" alt="conversational agents"></p>
+<p>智能体通讯协议帮助结构化智能体之间的对话，提高通讯效率：</p>
+<p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/4-cognitive-agents-and-multiagent-systems/agent%20communication%20protocals.png" alt="agent communication protocals"></p>
+<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul>
+<li><a href="https://www.wikiwand.com/en/Intelligent_agent" target="_blank" rel="noopener">Intelligent agent - Wikiwand</a></li>
+<li><a href="https://www.wikiwand.com/en/Belief%E2%80%93desire%E2%80%93intention_software_model" target="_blank" rel="noopener">Belief–desire–intention software model - Wikiwand</a></li>
+<li><a href="https://www.kadenze.com/courses/generative-art-and-computational-creativity-i/sessions/cognitive-agents-and-multiagent-systems" target="_blank" rel="noopener">Cognitive Agents And Multiagent Systems | Kadenze</a></li>
+<li><a href="http://musicalmetacreation.org/musebots/musebot-getting-started/" target="_blank" rel="noopener">Musebot Getting Started | Musical Metacreation</a></li>
+<li><a href="https://www.doc.ic.ac.uk/project/examples/2005/163/g0516334/" target="_blank" rel="noopener">Topics in AI : AGENTS</a></li>
+<li><a href="http://www.thepaintingfool.com/index.html" target="_blank" rel="noopener">The Painting Fool - A Computer Artist</a></li>
+<li><a href="https://www.researchgate.net/profile/Philippe_Pasquier/publication/220982337_Shadow_agent_a_new_type_of_virtual_agent/links/0912f510ac2bea76ef000000.pdf" target="_blank" rel="noopener">Shadow agent: a new type of virtual agent</a></li>
+<li><a href="https://aeigenfeldt.wordpress.com/works/music-by-agents/" target="_blank" rel="noopener">music by agents – arne eigenfeldt</a></li>
+<li><a href="http://metacreation.net/musicogmanuscore/" target="_blank" rel="noopener">MusiCOG &amp; ManuScore |</a></li>
+<li><a href="https://www.jiqizhixin.com/articles/2016-10-28-4" target="_blank" rel="noopener">40年认知架构研究概览：实现通用人工智能的道路上我们已走了多远？ | 机器之心</a></li>
+<li><a href="https://www.leiphone.com/news/201602/W3R5gl8rWGCV7xDL.html" target="_blank" rel="noopener">机器学徒：AI有可能变成画家吗？ | 雷锋网</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果文章帮您节省时间或者解答疑问，不妨打个赏 :)</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    kidult00
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://uegeek.com/181208-generative-art-creativity-09.html" title="生成式艺术和算法创作09-人工智能体">http://uegeek.com/181208-generative-art-creativity-09.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/AI/" rel="tag"># AI</a>
+          
+            <a href="/tags/ArtxCode/" rel="tag"># ArtxCode</a>
+          
+            <a href="/tags/Creative-Coding/" rel="tag"># Creative Coding</a>
+          
+            <a href="/tags/艺术/" rel="tag"># 艺术</a>
+          
+            <a href="/tags/Generative-Art/" rel="tag"># Generative Art</a>
+          
+            <a href="/tags/Computational-Creativity/" rel="tag"># Computational Creativity</a>
+          
+            <a href="/tags/创意/" rel="tag"># 创意</a>
+          
+            <a href="/tags/创造力/" rel="tag"># 创造力</a>
+          
+            <a href="/tags/Agent/" rel="tag"># Agent</a>
+          
+            <a href="/tags/智能体/" rel="tag"># 智能体</a>
+          
+            <a href="/tags/认知智能体/" rel="tag"># 认知智能体</a>
+          
+            <a href="/tags/BDI/" rel="tag"># BDI</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/181130-generative-art-creativity-08.html" rel="next" title="生成式艺术和算法创作08-马尔可夫模型">
+                <i class="fa fa-chevron-left"></i> 生成式艺术和算法创作08-马尔可夫模型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">Designer / Maker / Learner</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">254</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">250</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://steemit.com/@kidult00/" target="_blank" title="Steemit">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Steemit
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#人工智能体"><span class="nav-number">1.</span> <span class="nav-text">人工智能体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Belief–Desire–Intention-BDI-模型"><span class="nav-number">2.</span> <span class="nav-text">Belief–Desire–Intention BDI 模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#智能体在多个创作领域的应用"><span class="nav-number">3.</span> <span class="nav-text">智能体在多个创作领域的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UNMAKEABLE-LOVE"><span class="nav-number">3.1.</span> <span class="nav-text">UNMAKEABLE LOVE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Painting-Fool"><span class="nav-number">3.2.</span> <span class="nav-text">The Painting Fool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音乐智能体"><span class="nav-number">3.3.</span> <span class="nav-text">音乐智能体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#会话智能体，虚拟智能体，游戏智能体"><span class="nav-number">3.4.</span> <span class="nav-text">会话智能体，虚拟智能体，游戏智能体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#智能体通信"><span class="nav-number">4.</span> <span class="nav-text">智能体通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ref"><span class="nav-number">5.</span> <span class="nav-text">Ref</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/181208-generative-art-creativity-09.html';
+          this.page.identifier = '181208-generative-art-creativity-09.html';
+          this.page.title = '生成式艺术和算法创作09-人工智能体';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
