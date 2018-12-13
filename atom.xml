@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2018-12-08T11:55:21.115Z</updated>
+  <updated>2018-12-13T11:48:38.390Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生成式艺术和算法创作10-响应式智能体和智能架构</title>
+    <link href="http://uegeek.com/181213-generative-art-creativity-10.html"/>
+    <id>http://uegeek.com/181213-generative-art-creativity-10.html</id>
+    <published>2018-12-13T11:45:46.000Z</published>
+    <updated>2018-12-13T11:48:38.390Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></li><li><a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">生成式艺术和算法创作02-随机和噪声</a></li><li><a href="https://www.uegeek.com/181021-generative-art-creativity-03.html" target="_blank" rel="noopener">生成式艺术和算法创作03-混沌和分形</a></li><li><a href="https://www.uegeek.com/181023-generative-art-creativity-04.html" target="_blank" rel="noopener">生成式艺术和算法创作04-规则系统</a></li><li><a href="https://www.uegeek.com/181107-generative-art-creativity-05.html" target="_blank" rel="noopener">生成式艺术和算法创作05-Tessellation</a></li><li><a href="https://www.uegeek.com/181120-generative-art-creativity-06.html" target="_blank" rel="noopener">生成式艺术和算法创作06-形状语法</a></li><li><a href="https://www.uegeek.com/181123-generative-art-creativity-07.html" target="_blank" rel="noopener">生成式艺术和算法创作07-向自然致敬的 L-system</a></li><li><p><a href="https://www.uegeek.com/181130-generative-art-creativity-08.html" target="_blank" rel="noopener">生成式艺术和算法创作08-马尔可夫模型</a></p></li><li><p><a href="https://www.uegeek.com/181208-generative-art-creativity-09.html" target="_blank" rel="noopener">生成式艺术和算法创作09-人工智能体</a></p></li></ul><p>## </p><p>上一篇我们了解了<a href="https://www.uegeek.com/181208-generative-art-creativity-09.html" target="_blank" rel="noopener">人工智能体的概念和在创作领域的应用</a>。今天我们来看看其中一种重要的智能体：响应式智能体。</p><h2 id="Langton’s-ant"><a href="#Langton’s-ant" class="headerlink" title="Langton’s ant"></a>Langton’s ant</h2><p>兰顿蚂蚁（Langton’s ant）是元胞自动机的例子。它由 Christopher Langton 在 1986 年提出，它由黑白格子和一只「蚂蚁」构成，是一个二维图灵机。</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/LangtonsAntAnimated.gif" alt=""></p><p>Animation of first 200 steps of Langton’s ant</p><p>兰顿蚂蚁的算法:</p><ul><li>第1步：向前迈出一步</li><li>步骤2：如果当前单元格为白色，将其变为黑色并向右旋转 90°</li><li>步骤3：如果当前单元格为黑色，则将其变为白色并向左转 90°</li></ul><p>兰顿蚂蚁拥有非常简单的逻辑和复杂的表现。在 2000 年，兰顿蚂蚁的图灵完备性被证明。兰顿蚂蚁的想法后来被推广，比如使用多种颜色。</p><p><img src="https://ai2-s2-public.s3.amazonaws.com/figures/2017-08-08/1bd77e59d60852dd135b541fa41b4492713c461b/3-Figure6-1.png" alt=""></p><p>兰顿蚂蚁其实就是一种响应式的架构。它有以下优点：</p><ul><li>简单</li><li>计算易处理</li><li>稳健性</li><li>模型优雅</li></ul><p>而缺点则包括：</p><ul><li>仅使用局部知识推动行动，无法将非局部或长期信息考虑在内</li><li>缺乏清晰的工程设计方法，难以调试</li><li>丧失透明度和可读性，与人类的互动很困难</li></ul><h2 id="智能体架构"><a href="#智能体架构" class="headerlink" title="智能体架构"></a>智能体架构</h2><p>典型的认知智能体由一系列过程组成。</p><p><img src="http://img.viz.mobi/robot%20layered%20control%20system.png" alt="cognitive agent arch"></p><p>智能体通过感应器感知世界。由一个感知模块提供信息给建模模块，更新世界的表征。然后由一个向智能体提供目标和关于世界的信念的规划模块，决定执行什么动作。最后，有一个马达控制模块执行动作，向促动器发送命令。</p><p>Rodney Brooks 提出的这个架构是任务完成行为的层次结构，较低层代表更原始的行为。 每种行为都是一种相当简单的规则结构，每种行为都与其他行为竞争，以控制智能体 。</p><p>Rodney Brooks 也提出过另外一种架构——不是基于一系列链接在一起的模块，而是在行为层次上彼此平行放置：</p><p><img src="http://img.viz.mobi/robot%20layered%20control%20system2.png" alt="reactive agents"></p><p>在子层级中，可以使用更灵活的结构：</p><p><img src="http://img.viz.mobi/subsumption%20architecture-modified.png" alt="subsumption arch"></p><p>Rodney Brooks 根据这些架构设计了机器人 Ghengis：</p><p><img src="http://www.ai.mit.edu/projects/genghis/genghis.jpg" alt=""></p><h2 id="混合架构"><a href="#混合架构" class="headerlink" title="混合架构"></a>混合架构</h2><p>混合架构设计中的关键问题，是各个子组件（响应组件和协商组件）之间交互的元控制。</p><p>多层架构：</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/5-reactive-agents-and-multiagent-systems/layered%20hybrid%20arch.png" alt="layered hybrid arch"></p><p>水平结构的例子：</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/5-reactive-agents-and-multiagent-systems/layering%20arch.png" alt="layering arch"></p><p>Touring Machines: Autonomous Agents with Attitudes (book, by Innes A. Ferguson, Publisher: IEEE Computer Society Press, Published Date: 01/10/2017)</p><p>垂直架构的例子：</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/5-reactive-agents-and-multiagent-systems/InteRRaP.png" alt="InteRRaP"></p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.wikiwand.com/en/Intelligent_agent" target="_blank" rel="noopener">Intelligent agent - Wikiwand</a></li><li>Rodney Brooks, A Robust Layered Control System for a Mobile Robot, AI Memo report, 1985</li><li><a href="https://www.wikiwand.com/en/Langton%27s_ant" target="_blank" rel="noopener">Langton’s ant - Wikiwand</a></li><li><a href="https://www.kadenze.com/courses/generative-art-and-computational-creativity-i" target="_blank" rel="noopener">Generative Art and Computational Creativity | Kadenze</a></li><li><a href="https://www.kadenze.com/courses/generative-art-and-computational-creativity-i/sessions/cognitive-agents-and-multiagent-systems" target="_blank" rel="noopener">Cognitive Agents And Multiagent Systems | Kadenze</a></li></ul><p>Robot art</p><p>CYSP1, Nicolas Schoffer, 1953</p><p><img src="https://www.olats.org/schoffer/archives/img/cysprd1.jpg" alt=""></p><p>Nenage, Norman White, 1974, multi-robot</p><p><img src="http://dada.compart-bremen.de/imageUploads/medium/11WhiteMenage74.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/CC-blogtitle.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
+    
+      <category term="Computational Creativity" scheme="http://uegeek.com/tags/Computational-Creativity/"/>
+    
+      <category term="创意" scheme="http://uegeek.com/tags/%E5%88%9B%E6%84%8F/"/>
+    
+      <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
+    
+      <category term="Agent" scheme="http://uegeek.com/tags/Agent/"/>
+    
+      <category term="智能体" scheme="http://uegeek.com/tags/%E6%99%BA%E8%83%BD%E4%BD%93/"/>
+    
+      <category term="认知智能体" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5%E6%99%BA%E8%83%BD%E4%BD%93/"/>
+    
+      <category term="BDI" scheme="http://uegeek.com/tags/BDI/"/>
+    
+  </entry>
   
   <entry>
     <title>生成式艺术和算法创作09-人工智能体</title>
@@ -38,9 +82,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -80,9 +124,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -120,9 +164,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -132,9 +176,9 @@
     
       <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
     
-      <category term="MaxMSP" scheme="http://uegeek.com/tags/MaxMSP/"/>
-    
       <category term="分形" scheme="http://uegeek.com/tags/%E5%88%86%E5%BD%A2/"/>
+    
+      <category term="MaxMSP" scheme="http://uegeek.com/tags/MaxMSP/"/>
     
       <category term="L-system" scheme="http://uegeek.com/tags/L-system/"/>
     
@@ -160,9 +204,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -198,9 +242,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -272,9 +316,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -308,9 +352,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -344,9 +388,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -386,9 +430,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -426,9 +470,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -468,9 +512,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -508,9 +552,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -546,11 +590,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -580,11 +624,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -614,11 +658,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -648,11 +692,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -682,11 +726,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
       <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
@@ -716,45 +760,11 @@
     
       <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
     
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Max/MSP/Jitter 官方教程翻译14 - 颜色查找表</title>
-    <link href="http://uegeek.com/180907-jitter-14.html"/>
-    <id>http://uegeek.com/180907-jitter-14.html</id>
-    <published>2018-09-07T11:57:41.000Z</published>
-    <updated>2018-09-25T07:38:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/Max-title-5.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180903-jitter-11.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 11 - 矩阵混合</a></li><li><a href="https://www.uegeek.com/180904-jitter-12.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 12 - Chromakeying 视频去背景合成</a></li><li><a href="https://www.uegeek.com/180906-jitter-13.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 13 - 列表和矩阵</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter12" target="_blank" rel="noopener">Tutorial 12: Color Lookup Tables</a></p></blockquote><p>本教程将讲解如何使用颜色查找表（lookup tables）重新映射 Jitter 矩阵内的数据。<code>jit.charmap</code> 对象是为此而设计的。我们还将研究生成查找表矩阵的不同策略，包括 <code>jit.gradient</code> 对象。</p><h2 id="查找过程"><a href="#查找过程" class="headerlink" title="查找过程"></a>查找过程</h2><p>查找表（通常称为传递函数/transfer functions）是一个数组，以数字为表的索引。检索存储在该索引（地址或位置）的数字来替换原数字。任何函数 graph - 每个 x 值（地址）有相应的 y 值（输出）- 都可以用作查找表。Max 对象如 <code>funbuff</code>，<code>table</code> 和 MSP <code>buffer~</code> 对象是常用的查找表。本教程将以类似的方式使用 Jitter 矩阵。</p><p>打开教程 patch 读取图像</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12a.png" alt="">            </p><p>patch 左上角有一个 <code>jit.movi​​e</code> 对象，读取两个文件。初始化对象（通过 loadbang）并加载文件 colorwheel.pct。也可以点击 <code>rain.mov</code> 消息加载视频。可以随意切换两个图像源。</p><p>单击 patch 顶部的开关启动 <code>metro</code>。色轮同时出现在顶部和底部的 <code>jit.pwindow</code>。底部第三个（矩形）<code>jit.pwindow</code> 中出现渐变。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12b.png" alt=""><br><code>jit.charmap</code> 的输出和查找表矩阵</p><p>patch 底部有一个<code>jit.charmap</code> 对象，用它来重新映射图像中的单元格值。对象有两个入口，左入口连接到顶部的 <code>jit.movi​​e</code>。右入口连接到 <code>jit.matrix colortable</code>。名为 colortable 的矩阵只有一维共 256 个单元，有四个 char 型数据平面。这是<code>jit.charmap</code> 用来重新映射左边矩阵中单元格的颜色查找表。带有名字 ctable 的<code>receive</code>（一般缩写为 <code>r</code>）对象从 patch 的其他位置接收数据并发送到 <code>jit.matrix</code>。打开顶部的开关发送一个 bang 到 <code>jit.matrix colortable</code>，它将矩阵消息发送到<code>jit.pwindow</code> 和 <code>jit.charmap</code>。</p><p><code>jit.charmap</code> 用输入（左）矩阵中的值，指向（右）矩阵中对应的位置并复制那里的值，生成输出矩阵。如果发送给<code>jit.charmap</code> 的矩阵包含一个在四个平面中值为 <code>100 50 35 20</code> 的单元格。如果查找表在平面 1 第 100 个单元格的值是 73，平面 2 第 50 个单元格的值是 25 ，平面 3 的第 35 个单元格的值是 0，平面 4 第 20 个单元格的值是 203，输出单元的值是 <code>73 25 0 203</code>。</p><p><code>jit.charmap</code> 查找表是有 256 个单元格的一维矩阵，其平面数量与要重新映射的矩阵相同。因为 char 矩阵的值范围是 0~255，因此需要 256 个数字来覆盖查找表。</p><h2 id="生成查找表"><a href="#生成查找表" class="headerlink" title="生成查找表"></a>生成查找表</h2><p>patch 的右上侧包含三个 <code>multislider</code>，可以设计 colortable 查找表矩阵 1-3 平面的传递函数：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12c.png" alt=""><br>用 multislider 的值填充查找表矩阵</p><p><code>multislider</code>（有 256个 整数 slider，范围为 0~255）把列表发送到下面的 <code>jit.fill</code>对象。它用 <code>multislider</code> 的值替换 colortable 矩阵当前存储在平面1-3（即红，绿和蓝）的值。当矩阵采用新值时，<code>jit.fill</code>发出 bang 到 patch 左边连接到 <code>jit.charmap</code> 右入口的 <code>jit.matrix</code>。这里忽略了平面 0，因为只有将 4 平面矩阵视为视频时，它才包含 Alpha 值。</p><p>patch 中的 <code>jit.matrix</code> 和 <code>jit.fill</code> 的名称相同（colortable）。这样两个对象从同一矩阵读取和写入，一个对象（<code>jit.fill</code>）生成另一个对象（<code>jit.matrix</code>）可读取的数据，而不必在两个矩阵之间复制数据。这跟许多 MSP 对象（例如 <code>peek~</code>，<code>play~</code>，<code>groove~</code>）可以共享存储在单个 <code>buffer~</code> 中的样本数据类似。关于命名矩阵请参见<a href="https://www.uegeek.com/180905-jitter-13.html" target="_blank" rel="noopener">教程 13</a>，18 和 19。</p><p>在 <code>multislider</code> 中随意绘制一些形状，看它如何影响查找表（较小的<code>jit.pwindow</code>）和 <code>jit.movi​​e</code> 的输出图像。可以来回切换两个图像源。</p><p>如果想重置任一平面为 <code>y = “x”</code> 传递函数（使所有值保持不变的固定斜率直线），可以单击相应 multislider 上的按钮。名为 <code>p clear</code> 的子 patch 用 <code>uzi</code> 初始化了 <code>multislider</code>。</p><blockquote><p>要点：与许多 Max 对象一样，Jitter 对象会保留存储在一个入口中的矩阵，即使另一个入口接收到了新矩阵。所以这个 patch 的 <code>metro</code> 只需要触发 <code>jit.movi​​e</code>。包含查找表<code>jit.charmap</code> 的<code>jit.matrix</code> 只需要在所存储的数据发生变化时输出值。</p></blockquote><p>以下是一些查找表及其结果：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12d.png" alt=""><br>三组 <code>multislider</code>及其生成的颜色查找表和输出颜色轮</p><p>例 1 中，红色和蓝色查找表调换而绿色正常。结果是输入图像中较大的红色和蓝色值在输出时变小，反之亦然。所以色轮的白色背景现在看起来是绿色的（单元格值 0 255 255 255 映射为 0 0 255 0）。</p><p>例 2 设置绿色平面为 0（查找表在整个输入值范围内设置为 0）。红色和蓝色平面如果超过阈值也设置为 0，这时值会突然上升（红色比蓝色上升得更明显）。结果是色轮大部分都是黑色的（特别是在绿色区域）。红色平面仅在非常高的值（即色轮背景中的品红色）中可见。</p><p>例 3 正常映射红色平面。绿色平面是抛物线形状，极值映射为高，中间阴影映射为低。蓝色平面除了中间调中被归零的范围，其余正常。这种非线性表现为贯穿彩色轮顶部和右侧的红色“断层线”。</p><p>有无数组合可以重新映射矩阵单元格的值。接下来研究另一个以更精确方式重新映射颜色值的对象。</p><h2 id="jit-gradient-对象"><a href="#jit-gradient-对象" class="headerlink" title="jit.gradient 对象"></a>jit.gradient 对象</h2><p>打开 Duotone 子 patch，它显示了使用 <code>jit.gradient</code> 生成查找表的方法：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12e.png" alt=""><br>使用 <code>jit.gradient</code> 对象</p><p><code>jit.gradient</code> 生成两个单元格的值之间平滑渐变的单维 char 矩阵。<code>start</code> 和 <code>stop</code> 属性是指定这些单元格的值列表。例如，start 属性 <code>0 0 0 0</code> 和 end 属性 <code>0 0.5 1.0 0.5</code> 将生成从黑色（矩阵中的单元格 0）到浅绿色（矩阵中最后一个单元格）的渐变。</p><p>我们已经用参数指定 <code>jit.gradient</code> 为 256 单元宽，这样当它改变时可以存储在 <code>jit.matrix colortable</code> 中。请注意， <code>jit.gradient</code> 在属性列表中使用浮点数来指定 char 值（即属性中用值 1.0 指定 char 值为 255）。</p><p>用 <code>swatch</code> 对象输出的 RGB 列表转换为 ARGB 浮点数来获得格式化属性。将属性发送到 <code>jit.gradient</code> 对象后，它接收触发对象发出的 bang，将矩阵输出到 patch 左侧的<code>jit.matrix</code>。</p><p>尝试在 <code>swatch</code> 中选择颜色。start 和 end 属性指定查找表的边界，所以输入图像的值表现为在两种颜色之间变化的双色调外观。patch 顶部的 <code>multislider</code> 将反映 <code>jit.gradient</code> 所生成的查找表。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12f.png" alt=""><br>使用颜色渐变作为查找表</p><p>例 1 是翻转的图像。查找表的 start 是白色（<code>start 0 1.0 1.0 1.0</code>），end 是黑色（<code>end 0. 0. 0. 0</code>）。结果是输入值 0 映射到 255，反之亦然（<code>y = 255 - x</code>）。</p><p>例 2 和 3 是双色调渐变，将色轮的光谱重新映射到红色和橙色（例 2）以及橄榄色和青色（例 3）之间。请注意，根据色轮中不同点的原始颜色，渐变曲线变得更陡峭或更和缓。</p><p><code>jit.gradient</code> 的另一个属性是 cheby，它指定在矩阵开始和结束值之间的变形曲线。cheby 属性的参数列表是浮点数。这些参数是 Chebyshev polynomials（见下文的切比雪夫多项式）不同阶数的振幅。使用查找表时，这些特殊功能曲线会产生不同的效果。patch 中设置 cheby 属性的 <code>multislider</code>，可以指定前 8 个 Chebyshev polynomials 曲线的相对振幅，形状如下（如果将它们视为从黑色到白色的过渡）：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12g.png" alt=""><br>用 Chebyshev orders 1-4（顶行）和 5-8（底行）生成的梯度</p><blockquote><p>技术说明：切比雪夫多项式通常用作数字合成算法中波形整形音频信号的查找表（它们的特殊属性可以将正弦波形扭曲成等效于不同阶数幅度的谐波频谱）。MSP <code>lookup~</code> 对象可以与加载到 <code>buffer~</code> 中的函数一起来完成音频信号处理（跟本教程中的图像处理类似）。更多内容请参阅 MSP 手册中的教程 12：综合波形整形。</p></blockquote><p>复位 gradient 中开始和结束点（单击上面的消息框），缓慢调整 <code>multislider</code>控制的 cheby 属性。观察颜色轮在颜色消失并在不同区域重新出现时如何变化。</p><p>在 <code>jit.gradient</code> 中使用 cheby 属性时，即使将渐变起点和终点保留为黑色和白色，也可以得到一些非常有趣的颜色变形效果。以下是视频剪辑 rain.mov 的一些例子：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter12h.png" alt=""><br>不同梯度曲线对雨水彩色频谱的影响</p><p>左边图像显示 rain.mov 中未处理的静止图像。中间图像显示了当使用二阶切比雪夫多项式（图像中最暗的区域现在位于色谱的中间）生成梯度时色谱的变化。右侧图像显示更复杂的梯度，色谱显示多个峰和谷。</p><p>patch 顶部的 <code>multislider</code>反映查找表的当前状态（由 <code>jit.gradient</code> 生成的矩阵被发送到 <code>p showit</code> 子 patch 中的 <code>jit.iter</code>，在那里数字被组合以设定 <code>multislider</code> 的状态）。尝试生成渐变，然后调整 multislider 手动修改查找表。这样 <code>jit.gradient</code> 就作为更复杂的查找表的起始点。</p><p><img src="http://img.viz.mobi/jitterchapter12i.png" alt=""></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>使用 <code>jit.charmap</code> 映射 char 矩阵中单元格的值。<code>jit.charmap</code> 的右入口接收 256 单元矩阵来定义要用于输入矩阵数据的查找表（或传递函数）。可以使用多种方法定义查找表，包括<strong>使用 <code>jit.fill</code>从 Max 列表生成矩阵，或使用 <code>jit.gradient</code> 对象根据 cheby 指定的曲线形状，在开始和结束单元格值之间生成颜色渐变属性。</strong></p><hr><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://img.viz.mobi/maxgroup0825.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/Max-title-5.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
-    
-      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
-    
       <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
   </entry>
   
