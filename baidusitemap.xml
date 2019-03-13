@@ -4,8 +4,100 @@
 
     
   <url>
+    <loc>http://uegeek.com/190313-df02-arduino-intro.html</loc>
+    <lastmod>2019-03-13T11:16:52.392Z</lastmod>
+    <data>
+        <display>
+        <title>数字制造讲义02-Arduino入门</title>
+        <pubTime>2019-03-13T11:02:31.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Creative Coding</tag>
+         
+        <tag>制造</tag>
+         
+        <tag>Maker</tag>
+         
+        <tag>Digital Fabrication</tag>
+         
+        <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
+         
+        <tag>单片机</tag>
+         
+        <tag>电路</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/190305-df01-digital-fabrication.html</loc>
+    <lastmod>2019-03-13T11:16:48.695Z</lastmod>
+    <data>
+        <display>
+        <title>数字制造讲义01-成为数字世界的建造者</title>
+        <pubTime>2019-03-05T11:01:46.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Creative Coding</tag>
+         
+        <tag>制造</tag>
+         
+        <tag>Maker</tag>
+         
+        <tag>Digital Fabrication</tag>
+         
+        <tag>Fab</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/190306-3d01-welcome-to-the-3d-world.html</loc>
+    <lastmod>2019-03-13T11:16:43.183Z</lastmod>
+    <data>
+        <display>
+        <title>三维制图讲义01 - 欢迎来到三维世界</title>
+        <pubTime>2019-03-06T11:02:11.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>3D</tag>
+         
+        <tag>Animation</tag>
+         
+        <tag>Modeling</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/181230-freedom-and-lost-2018.html</loc>
-    <lastmod>2019-01-05T14:53:59.779Z</lastmod>
+    <lastmod>2019-01-05T14:53:59.000Z</lastmod>
     <data>
         <display>
         <title>2018，敬自由和迷失</title>
@@ -1923,9 +2015,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -1947,9 +2039,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -1971,11 +2063,11 @@
         
         <tag>Note</tag>
          
-        <tag>Arduino</tag>
+        <tag>Maker</tag>
          
         <tag>Fab</tag>
          
-        <tag>Maker</tag>
+        <tag>Arduino</tag>
          
          
            
@@ -1997,9 +2089,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2041,11 +2133,11 @@
         
         <tag>Note</tag>
          
-        <tag>Arduino</tag>
+        <tag>Maker</tag>
          
         <tag>Fab</tag>
          
-        <tag>Maker</tag>
+        <tag>Arduino</tag>
          
          
            
@@ -2067,9 +2159,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2091,9 +2183,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2115,9 +2207,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2139,9 +2231,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2163,9 +2255,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2187,9 +2279,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2211,11 +2303,11 @@
         
         <tag>Note</tag>
          
-        <tag>Arduino</tag>
+        <tag>Maker</tag>
          
         <tag>Fab</tag>
          
-        <tag>Maker</tag>
+        <tag>Arduino</tag>
          
          
            
@@ -2237,9 +2329,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2261,9 +2353,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2285,11 +2377,11 @@
         
         <tag>Note</tag>
          
-        <tag>Arduino</tag>
+        <tag>Maker</tag>
          
         <tag>Fab</tag>
          
-        <tag>Maker</tag>
+        <tag>Arduino</tag>
          
          
            
@@ -2311,9 +2403,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2335,11 +2427,11 @@
         
         <tag>Note</tag>
          
-        <tag>Arduino</tag>
+        <tag>Maker</tag>
          
         <tag>Fab</tag>
          
-        <tag>Maker</tag>
+        <tag>Arduino</tag>
          
          
            
@@ -2361,9 +2453,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2385,9 +2477,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2409,9 +2501,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2433,9 +2525,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2457,9 +2549,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2481,9 +2573,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2505,9 +2597,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
         <tag>CAD</tag>
          
@@ -2531,9 +2623,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
         <tag>CAD</tag>
          
@@ -2557,9 +2649,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2581,9 +2673,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2605,9 +2697,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2629,9 +2721,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2653,9 +2745,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2677,9 +2769,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2701,9 +2793,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2725,9 +2817,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2749,9 +2841,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2773,9 +2865,9 @@
         
         <tag>Note</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Maker</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2797,11 +2889,11 @@
         
         <tag>Note</tag>
          
-        <tag>Arduino</tag>
+        <tag>Maker</tag>
          
         <tag>Fab</tag>
          
-        <tag>Maker</tag>
+        <tag>Arduino</tag>
          
          
            
@@ -2871,15 +2963,15 @@
         
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
          
-        <tag>捷克</tag>
+        <tag>中欧</tag>
          
         <tag>匈牙利</tag>
          
         <tag>奥地利</tag>
+         
+        <tag>捷克</tag>
          
         <tag>斯洛伐克</tag>
          
@@ -2903,9 +2995,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>人类简史</tag>
+         
+        <tag>历史</tag>
          
          
            
@@ -2929,9 +3021,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>捷克</tag>
          
@@ -2957,9 +3049,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>奥地利</tag>
          
@@ -2989,9 +3081,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>捷克</tag>
          
@@ -3017,9 +3109,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>东正教</tag>
          
@@ -3053,9 +3145,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>哥特式</tag>
          
@@ -4777,6 +4869,8 @@
          
         <tag>Max/MSP</tag>
          
+        <tag>EQ</tag>
+         
         <tag>Oscilator</tag>
          
         <tag>Filter</tag>
@@ -4784,8 +4878,6 @@
         <tag>LFO</tag>
          
         <tag>过滤器</tag>
-         
-        <tag>EQ</tag>
          
          
            

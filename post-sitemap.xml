@@ -7,8 +7,32 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/190313-df02-arduino-intro.html</loc>
+        <lastmod>2019-03-13T11:16:52.392Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/190305-df01-digital-fabrication.html</loc>
+        <lastmod>2019-03-13T11:16:48.695Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/190306-3d01-welcome-to-the-3d-world.html</loc>
+        <lastmod>2019-03-13T11:16:43.183Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://uegeek.com/181230-freedom-and-lost-2018.html</loc>
-        <lastmod>2019-01-05T14:53:59.779Z</lastmod>
+        <lastmod>2019-01-05T14:53:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

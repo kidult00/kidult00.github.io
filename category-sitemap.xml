@@ -42,15 +42,15 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/categories/%E6%95%99%E7%A8%8B/</loc>
-        <lastmod>2018-12-13T11:51:32.000Z</lastmod>
+        <loc>http://uegeek.com/categories/HackYourself/</loc>
+        <lastmod>2019-01-05T14:53:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/categories/HackYourself/</loc>
-        <lastmod>2019-01-05T14:53:59.779Z</lastmod>
+        <loc>http://uegeek.com/categories/%E6%95%99%E7%A8%8B/</loc>
+        <lastmod>2019-03-13T11:16:52.392Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
