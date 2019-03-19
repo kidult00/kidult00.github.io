@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2019-03-14T11:26:26.423Z</updated>
+  <updated>2019-03-19T14:48:37.368Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -17,11 +17,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>数字制造讲义03-电路基础</title>
+    <link href="http://uegeek.com/190319-df03-electronics-basic.html"/>
+    <id>http://uegeek.com/190319-df03-electronics-basic.html</id>
+    <published>2019-03-19T14:47:16.000Z</published>
+    <updated>2019-03-19T14:48:37.368Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/week7title.jpg" alt=""></p><a id="more"></a><p>上一节课，我们学习了时下最普及的单片机开发软硬件工具 Arduino。今天我们来了解 Arduino 开发板，以及其他电子元器件背后的基础——电路。</p><p>上次我们用 Arduino 和面包板搭了第一个简单的电路，了解到电路就是电流的通路，电流给电路中的负载输送能量，负载将电能转化为其他能量，比如💡亮起来。</p><p><img src="http://img.viz.mobi/circuitMetaphor.jpg" alt=""></p><h2 id="电路101"><a href="#电路101" class="headerlink" title="电路101"></a>电路101</h2><p>如果把电流比作水流，那么电路就有点像为水流提供通路的水渠。在没有人为干预的情况下，水从高处向地处流。如果想给不同高度的地方提供用水，就需要建造水塔，或者用水泵把水从 A 处运送到 B 处。</p><p>电流也是类似。电源是电位/电压的高点，接地点是电位的零基准点，电流由两点之间的电压差形成，从电压高的地方流量电压低的地方。</p><p><img src="http://img.viz.mobi/currentIllustration.jpg" alt=""></p><p>在流动的过程中，河床或水渠不可能绝对平整，而是会坑坑洼洼高低起伏，这样就对水流产生了一些阻碍作用。在电路中也是类似，电阻对电路产生阻力 (通过将电能转化为热能)。</p><p>简单来说，电路有三种状态：通路，开路（某处断开）和短路。</p><p><img src="http://img.viz.mobi/3typesofCircuits.png" alt=""></p><p>其中短路是指，电路中有很大电流流过，但不流过负载，负载不起作用。咳咳，也就是说，在电路中走捷径是有代价的（🤦‍♀️）。</p><p>下面这个视频，可以帮助我们形成对电路更直观的印象：</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=b0850foexnn" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/b0850foexnn.html" target="_blank" rel="noopener">Electric Circuits_腾讯视频</a></p><p>从电流/水流的类比中，我们总结出电路中几个基本的规律：</p><ul><li>电流趋向于电阻小的路径 (最小阻力原则)</li><li>电路始终要接地 (有始有终原则)</li><li>要防止短路 (有钱也不能任性原则)</li></ul><h2 id="电路102"><a href="#电路102" class="headerlink" title="电路102"></a>电路102</h2><h3 id="串联和并联"><a href="#串联和并联" class="headerlink" title="串联和并联"></a>串联和并联</h3><p>电路有两种基本类型：串联和并联。</p><p>为什么要学这个？因为它们是计算电路中电阻、电流等数值的基础知识。比如，要点亮多个 LED，需要多少伏的电源？</p><p>当多个元件串联（下图图二）时，会平均「瓜分」掉整段串联电路两端的电压，也就是起到分压作用。当多个元件并联时(下图图三)，「复制」了原本只有 1 个元件时的电压。</p><p><img src="http://img.viz.mobi/Series%20and%20Parallell%20Circuits.png" alt=""></p><p>via tinkercad.com</p><p>再仔细观察一下，对比图一，为什么图二中的 LED 几乎没有亮？图三的 LED 为什么稍微暗一点？(图中的电阻都是 60Ω)</p><p>在图一中，我们测到点亮 LED 所需的电压约为 2V。如果要在串联电路中点亮两个 LED，那么根据「瓜分」原理，就需要提供 4V 的电压。但是图二的电池只有 3V，所以灯就点不亮啦。</p><p>在图三中，如果用万用表测量 LED 两端的电压，会发现电压只稍微下降到 1.9x V，LED 只是稍微变暗一点，接入很多 LED 也可以点亮。</p><h3 id="欧姆定律"><a href="#欧姆定律" class="headerlink" title="欧姆定律"></a>欧姆定律</h3><blockquote><p>V = I * R</p><p>流过电阻的电流 I 与电阻两端电压 U 成正比，与电阻 R 成反比</p></blockquote><p>大家对欧姆定律都不陌生。那么知道欧姆定律在这门课中，最直接的应用是什么？它帮助我们计算电路中需要用多少阻值的电阻。</p><p>在前面一部分，我们讲过要防止短路。短路的本质就是电路中有很大的电流通过，这样会烧坏电路元件。电阻的作用是限制电流的大小，保护元件，保持电路正常运作。</p><p>比如一个 LED 的额定电流是 20 mA，我们手头只有一个 9V 电池。</p><p><img src="http://img.viz.mobi/shortCircuit.png" alt=""></p><p>如果要保证 LED 安全，电路的阻值应该为 <code>9V / 0.02A=450Ω</code> 。这样我们就知道应该选择多少阻值的电阻加入到电路中了。</p><h3 id="基尔霍夫定律"><a href="#基尔霍夫定律" class="headerlink" title="基尔霍夫定律"></a>基尔霍夫定律</h3><p>基尔霍夫定律？有什么用？</p><p>我们已经有欧姆定律了，为什么还需要多一个定律？因为电路也是会变得很复杂的嗯，比如有多个电池并联，比如要在电阻电路中加入电容(下一节会介绍)，那该怎么计算其中的电流与电压？</p><p>19世纪，德国物理学家基尔霍夫扩展了欧姆定律，提出基尔霍夫定律：</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=g0359uuom6b" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/g0359uuom6b.html" target="_blank" rel="noopener">Crash Course Physics 31_腾讯视频</a></p><p>基尔霍夫第一定律(电流定律) </p><blockquote><p>在任何一个节点电路，流入该节点的总和电流，等于流出该节点的电流的总和，或：所有进入某节点的电流总和,等于所有离开这节点的电流总和。</p><p>power: P = I<sup>2</sup> , R = I V</p></blockquote><p>基尔霍夫第二定律(电压定律)</p><blockquote><p>沿着闭合回路所有元件两端的电势差（电压）的代数和等于零。或者，所有电动势的代数和，等于所有电压降的代数和。</p></blockquote><h2 id="基本电路元件"><a href="#基本电路元件" class="headerlink" title="基本电路元件"></a>基本电路元件</h2><p><img src="http://img.viz.mobi/basicElectronicParts.jpg" alt=""></p><p>它们在电路图中的表示方法：</p><p><img src="https://i1.wp.com/www.makerspaces.com/wp-content/uploads/2017/05/electronic-symbols2.jpg?resize=673%2C800&amp;ssl=1" alt=""></p><h3 id="电阻"><a href="#电阻" class="headerlink" title="电阻"></a>电阻</h3><p>电阻的主要作用是限制电流。</p><p>不同的电路需要选择不同形态的电阻：DIP，SIP，SMD。</p><p>DIP（dual in-line package），两头都有引脚的电阻，是入门时使用的常见电阻。</p><p><img src="https://ae01.alicdn.com/kf/HTB1iEAaj1uSBuNjy1Xcq6AYjFXa5/Free-ship-with-track-brand-new-200pcs-2R-2W-DIP-Resistors-carbon-Resisters-2W-2ohm-5.jpg" alt=""></p><p>这种电阻的阻值一般通过彩色的色环识别。有 4 环和 5 环两种标记方法，一般是记不住的，手头备一张色环卡比较实在：</p><p><img src="https://www.digikey.com/-/media/Images/Marketing/Resources/Calculators/resistor-color-chart.png?ts=e802ab48-1ea0-4745-babf-9a21accec5c2&amp;la=en-US" alt=""></p><p>第一、二环是读数，第三环(五环的话是第四环)是乘数，比如 红-红-棕 表示 220 V。</p><p>SIP (single in-line package)，一头有引脚的电阻：</p><p><img src="https://images-na.ssl-images-amazon.com/images/I/310RCcbsdbL._SX342_.jpg" alt=""></p><p>SMD (Surface Mounted Device)，贴片电阻，用于常见的 PCB 电路板：</p><p><img src="https://leetechbd.com/wp-content/uploads/2017/12/SMD-Resistor.jpg" alt=""></p><h3 id="电容"><a href="#电容" class="headerlink" title="电容"></a>电容</h3><p>电容又是什么？</p><p>顾名思义，可以作为电荷容器的一种元件。</p><ul><li>充放电特性：电容将电路中的电荷收集起来，然后在电压变化时放电。</li><li>阻直通交特性：阻止直流电流通过，允许交流电流通过(像个交警)</li></ul><p>电容试图抵抗电路内的电压变化。因此，电容通常连接在电源和地之间，以保持稳定的电源并滤除间歇性的电压尖峰和下降。</p><p><img src="https://cdn.instructables.com/FIA/1QHW/IQU11IWI/FIA1QHWIQU11IWI.LARGE.jpg?auto=webp" alt=""></p><p>其他元件就不继续一一介绍了。元件外型可以到 <a href="https://library.io/explore/3dmodels" target="_blank" rel="noopener">Explore/3DModels | library.io</a> 查看，元件的参数可以找到对应的 datasheet 查看。</p><h2 id="电路图"><a href="#电路图" class="headerlink" title="电路图"></a>电路图</h2><p>电路图就是将各种元件连接起来组成完整电路的图示。</p><p>运用前面学过的知识，我们可以开始搭建电路图。在实际接线之前，建议先用工具画出接线图，可以帮助我们理清电路的功能和部件。推荐使用 Tinkercad 的 circuit 模块，网站上提供了一些常用的电路元件，方便快速搭建出虚拟电路。</p><p><img src="https://csg.tinkercad.com/things/gw3hgGtVAdR/t725.png?rev=1517977820936000000&amp;s=ff528d92add92115be11517f8d5f191d&amp;v=1&amp;type=circuits" alt=""></p><p>更棒的是，它还提供了电路模拟运行的功能，分析电路中可能出现的问题，尤其是存在短路时会明确提示。这样就再也不用担心电路接不好会频繁烧坏元件了！✌️</p><p><img src="https://cdn.instructables.com/F4A/OTSY/J1CEMMNL/F4AOTSYJ1CEMMNL.ANIMATED.SMALL.gif" alt=""></p><p>更让人开心的是，还集成了 Arduino 的模块功能，让没有编程基础的使用者，也能快速上手编写简易程序：</p><p><img src="https://www.tinkercad.com/img/electronics/circuits-editor.gif" alt=""></p><p>去试试看吧~ 👀</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/week7title.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="制造" scheme="http://uegeek.com/tags/%E5%88%B6%E9%80%A0/"/>
+    
+      <category term="Maker" scheme="http://uegeek.com/tags/Maker/"/>
+    
+      <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
+    
+      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
+    
+      <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
+    
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
+    
+      <category term="基尔霍夫定律" scheme="http://uegeek.com/tags/%E5%9F%BA%E5%B0%94%E9%9C%8D%E5%A4%AB%E5%AE%9A%E5%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>三维制图讲义02 - 三维制作流程</title>
     <link href="http://uegeek.com/190314-3d02-workflow.html"/>
     <id>http://uegeek.com/190314-3d02-workflow.html</id>
     <published>2019-03-14T11:25:06.000Z</published>
-    <updated>2019-03-14T11:26:26.423Z</updated>
+    <updated>2019-03-14T11:35:35.349Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/3d_course_title.jpg" alt=""></p><a id="more"></a><p>在进入三维软件的学习之前，我们先来了解一下在这方面应用最为成熟的产业之一：三维动画影视制作。</p><p>下面是 3D Production Pipeline 的流程图，很好地总结了一部完整的动画影片的制作过程。</p><p><img src="http://img.viz.mobi/3d_production_timelines.jpg" alt=""></p><p>我们在这个学期从零基础学起，主要涉及到的是 Modeling 建模和 Texturing 材质贴图部分，也会简单应用一些 Lighting 灯光和 Rendering 渲染的知识。</p><p>在整个制作流程中，会涉及很多工具。下面是以 Blender 为例的 workflow（<a href="http://www.bgteach.com/article/9" target="_blank" rel="noopener">来源</a>）：</p><p><img src="http://www.bgteach.com/files/default/2017/10-17/17124088c083968322.png" alt=""></p><p>在新年期间上映的「流浪地球」，已经充分展示出国内影视技术的实力。<a href="https://mp.weixin.qq.com/s/O8Zp7ok0JpPuFkofnQ7UaQ" target="_blank" rel="noopener">这篇访谈</a>介绍了大量的前期概念设计，涉及人物、场景、装备等等，推荐感兴趣的同学看一看。</p><p>相信绝大部分同学都看过皮克斯出品的动画：玩具总动员、海底总动员、超人总动员、机器人总动员、飞屋环游记、头脑特工队……每一部都是传奇般的经典。皮克斯不但连续制作出高水准的作品，而且为行业积累了大量实践经验，推动着影视动画制作向前发展。而且，皮克斯还推出了一套非常系统的动画制作入门课程，包括故事、角色、场景、材质、动效、灯光等等制作环节，制作精良，墙裂推荐大家观看。</p><p>下面的视频会对整个课程做一个导览：</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=w0527u1xhcs" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/w0527u1xhcs.html" target="_blank" rel="noopener">Pixar in Box_腾讯视频</a></p><h2 id="三维制作-3-1"><a href="#三维制作-3-1" class="headerlink" title="三维制作 3+1"></a>三维制作 3+1</h2><p>通过皮克斯的介绍视频，大家对整个制作过程有了一定了解。</p><p>在这么复杂的过程中，有三样东西是必不可少的。这三样东西也是我们打开 Blender 软件后，在视图区看到的东西：</p><p><img src="http://img.viz.mobi/blenderDefault.jpg" alt=""></p><p>那么 3+1 的 1 又是什么呢？有了几何体、灯光和镜头，我们还需要渲染，才能生成最终的图像。下面对 3+1 分别做简单的介绍。</p><h3 id="几何体"><a href="#几何体" class="headerlink" title="几何体"></a>几何体</h3><p>点线面是最基本的造型单位。在三维建模中，点线面有另外的名字：</p><ul><li>顶点-vertices：在几何体角落上的点</li><li>边-edges：连接顶点的线</li><li>面-faces：由若干条边围成的填充区域</li></ul><p><img src="http://img.viz.mobi/720px-Mesh_overview.svg.png" alt=""></p><p>任何的几何体，再复杂的模型，无非都是反复增删、调整顶点、边和面而形成的。</p><p>如果说点、线、面是基本的操作对象，那么平移（translation）、缩放（scale）、旋转（rotation）就是基本的操作方式。这些是我们在三维设计建模过程中主要的工作。</p><h3 id="材质-灯光"><a href="#材质-灯光" class="headerlink" title="材质/灯光"></a>材质/灯光</h3><p>材质和灯光决定了一个物体看起来是什么样的。</p><p>材质涉及到纹理、粗糙度、反射率、亮度等等复杂的参数。</p><p><img src="https://cdnb.artstation.com/p/assets/images/images/001/809/163/large/ania-przybylko-kostki.jpg?1453072206" alt=""></p><p>而灯光需要根据物体在真实光照环境下，对光线的反射规律来计算并呈现。在一个模型的表面，有许多多边形，每一个多边形接收和反射的光并不一样，这与人眼识别立体物体的原理有关。</p><p><img src="http://img.viz.mobi/$flatshading.png" alt=""></p><p>材质结合光照，组成了千变万化的组合，也给三维世界带来了无数的可能性。</p><p><img src="http://img.viz.mobi/materialWithLights.jpg" alt=""></p><h2 id="镜头"><a href="#镜头" class="headerlink" title="镜头"></a>镜头</h2><p>镜头是大家相对陌生的领域。因为我们天然就有着两个镜头——眼睛。看向哪里、怎么看，几乎不需要经过思考和反应，所以我们感觉不到自己身上这个「镜头」的存在。</p><p>但是在虚拟的三维世界中，镜头决定了场景的呈现。</p><p><a href="https://www.khanacademy.org/partner-content/pixar/sets/sets1/v/sets-overview" target="_blank" rel="noopener">Introduction to geometric transformations (video) | Khan Academy</a></p><p>在影视动画中，镜头是叙事的关键要素之一。如何设置镜头相关的参数，获得我们想要的渲染结果，会在后续的课程中涉及到。</p><h2 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h2><p>可以说，渲染是一个令人头疼的词。它意味着费时费力（主要是费计算机的算力）。</p><p>为什么需要渲染？相比手绘图像，三维图像其实不是被「画」出来的，而是由很多参数计算并自动绘制出来的成果。渲染就是计算机根据参数计算最终展示结果的过程。</p><p>计算机成像有不同的渲染方式。光栅化和光线追踪是常见的两种。</p><ul><li>光栅化（Rasterization）是把顶点转换为片元的过程，也就是将图转化为一个个栅格组成的图象，特点是每个元素对应帧缓冲区中的一个像素。  </li><li>光线追踪（Ray tracing）是三维计算机图形学中的特殊渲染算法，跟踪从眼睛发出的光线而不是光源发出的光线，生成编排好的场景的数学模型显现出来。</li></ul><p><img src="http://img.viz.mobi/HybridRendering.jpg" alt=""></p><p>在后续的课程中我们还会来讲解。</p><h2 id="补充知识：三维投影"><a href="#补充知识：三维投影" class="headerlink" title="补充知识：三维投影"></a>补充知识：三维投影</h2><p>计算机是二维屏幕，如何表示三维的物体和世界呢？</p><p>这里要借助三维投影的概念。</p><p><img src="http://img.viz.mobi/wireframeRendering.jpg" alt=""></p><p>从字面理解，投影就是物体被光照后投射到一个平面上的影像。计算机图形学里有大量关于光线和投影的研究。</p><p>在三维设计中，会经常接触到两种投影：透视投影（Perspective Projection）和正射投影（Orthographic Projection）。</p><p>下图可以帮助我们理解两者的区别：</p><p><img src="http://img.viz.mobi/projection_example.gif" alt=""></p>]]></content>
     
@@ -78,13 +116,13 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
-    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="单片机" scheme="http://uegeek.com/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
+    
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
   </entry>
   
@@ -209,9 +247,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -253,9 +291,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -295,9 +333,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -335,9 +373,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -375,9 +413,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -413,9 +451,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -487,9 +525,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -523,9 +561,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -559,9 +597,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -601,9 +639,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -641,9 +679,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -683,9 +721,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -723,9 +761,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -734,40 +772,6 @@
       <category term="创意" scheme="http://uegeek.com/tags/%E5%88%9B%E6%84%8F/"/>
     
       <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Max/MSP/ Jitter 官方教程翻译20 - 迭代和矩阵重采样</title>
-    <link href="http://uegeek.com/180930-jitter-20.html"/>
-    <id>http://uegeek.com/180930-jitter-20.html</id>
-    <published>2018-09-30T10:19:02.000Z</published>
-    <updated>2018-09-30T10:20:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/Max-title-2.jpg" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/180903-jitter-11.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 11 - 矩阵混合</a></li><li><a href="https://www.uegeek.com/180904-jitter-12.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 12 - Chromakeying 视频去背景合成</a></li><li><a href="https://www.uegeek.com/180906-jitter-13.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 13 - 列表和矩阵</a></li><li><a href="https://www.uegeek.com/180907-jitter-14.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 14 - 颜色查找表</a></li><li><a href="https://www.uegeek.com/180908-jitter-15.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 15 - 剪刀和胶水</a></li><li><a href="https://www.uegeek.com/180909-jitter-16.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 16 - 矩阵定位</a></li><li><a href="https://www.uegeek.com/180915-jitter-17.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 17 - 图像旋转</a></li><li><a href="https://www.uegeek.com/180917-jitter-18.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程18 - 使用已命名的矩阵</a></li><li><a href="https://www.uegeek.com/180924-jitter-19.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程19 - 使用已命名矩阵的反馈</a></li></ul><blockquote><p>00 翻译自 Cycling74 的 Max/MSP/Jitter 官方文档：<a href="https://docs.cycling74.com/max7/tutorials/jitterchapter18" target="_blank" rel="noopener">Tutorial 18: Iterative Processes and Matrix Re-Sampling</a></p></blockquote><p>本教程演示何时应该使用已命名 <code>jit.matrix</code> 对象的更复杂示例，以及如何使用 <code>jit.matrix</code> 对图像增采样（upsampling）和减采样（downsampling）。</p><p>patch 左上角包含一个 <code>jit.movi​e</code>，patch 打开时会加载一个静止图像 fuzz_circle.jpg。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18a.png" alt="">            </p><p>单击开关启动 <code>metro</code>。图像出现在 patch 右下角的 <code>jit.pwindow</code> 中：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18b.png" alt=""></p><p>fuzz_circle.jpg 包含一个白色圆圈与黑色背景，在最终矩阵里尺寸被缩放为小的圆形。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18c.png" alt=""></p><h2 id="Getting-Drunk"><a href="#Getting-Drunk" class="headerlink" title="Getting Drunk"></a>Getting Drunk</h2><p> patch 顶部将 <code>jit.movi​​e</code> 中的图像写入链条中的第一个 <code>jit.matrix</code>。<code>bangbang</code> 对象发出的 bang 用 <code>drunk</code> 对象随机变化坐标，来改变 <code>jit.matrix</code> 每一帧的 dstdimstart 和 dstdimend 属性。请注意第一个 <code>jit.matrix</code> 的 usedstdim 属性为 1，它将缩放输入矩阵：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18d.png" alt=""></p><p>第一个 <code>jit.matrix</code> 只是用来缩放圆形图像以适应输出矩阵的 80 x 60 区域。请注意，格式化缩放图像坐标的消息框，也会逐帧清除矩阵（用 <code>clear</code> 消息），这样就不会残留之前的图像。<code>drunk</code> 改变了圆圈的位置，让它四处抖动。</p><p>单击 patch 右下角 <code>jit.pwindow</code> 中的某个位置。圆圈将跳到单击的位置，并从那里开始移动。</p><p>在 <code>jit.pwindow</code> 中单击鼠标的结果将发送到 <code>r winclick</code> 对象。<code>route</code> 对象将 <code>mouse</code> 相关的信息抽出来，用 <code>unpack</code> 对象提取前两个元素（鼠标单击的 x 和 y 位置）。然后使用来设置 <code>drunk</code> 对象的新原点。</p><h2 id="反馈网络"><a href="#反馈网络" class="headerlink" title="反馈网络"></a>反馈网络</h2><p>一旦圆圈图像已被缩放并由 <code>jit.matrix</code> 放置好，patch 流程就进入一对名为 blurry 的 <code>jit.matrix</code> 反馈链：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18e.png" alt=""><br>反馈循环</p><p>这一部分包含四个 <code>jit.matrix</code>（不包括顶部的一个缩小圆形图像的对象）。其中两个对象同名（blurry），仅用于存储和检索由 patch 的其余部分之前生成的矩阵。最上面的 <code>jit.matrix</code> 将矩阵发送到第一个 <code>jit.op</code> 的右入口。此外，它用 <code>bangbang</code> 发送 bang 到第一个 <code>jit.matrix blurry</code> 让它输出矩阵。该矩阵最终到达 <code>jit.op</code> 的左入口，然后显示（通过 <code>jit.pwindow</code>）并乘以标量（第二个 <code>jit.op</code> 对象）。它最终会覆盖先前的矩阵（进入下面的 <code>jit.matrix blurry</code>）。先不管中间一些对象，可以看到 blurry 矩阵将保留圆形图像前一“帧”的某个版本：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18f.png" alt="">            </p><p>第一个 <code>jit.op @op max</code> 组合新旧图像。@op max 比较两个矩阵中每个单元并保留值较高的那个单元。第二个 <code>jit.op @op *</code> 对象乘以标量（由 patch 右侧的数字框发送到 <code>s fb</code>）使图像变暗：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18g.png" alt=""><br>反馈量指定图像在存储之前变暗的程度</p><p>在 patch 的蓝色区域中用标记为 <code>Feedback</code> 的数字框来更改反馈量。单击 <code>jit.pwindow</code> 移动圆圈时，注意圆圈后的轨迹如何增加或减少，这取决于所设置的反馈量。</p><h2 id="增采样和减采样"><a href="#增采样和减采样" class="headerlink" title="增采样和减采样"></a>增采样和减采样</h2><p>图像处理算法的最后一步，涉及这两个对象之间的区域：发送前一帧中保留的矩阵的第一个 <code>jit.matrix blurry</code>，以及合成前后两个矩阵的 <code>jit.op</code>：</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18h.png" alt=""><br>用 <code>jit.matrix</code> 重新采样图像</p><p>教程 patch 中两个绿色 <code>jit.matrix</code> 重新采样上方的 <code>jit.matrix</code> 的模糊图像矩阵。两个 <code>jit.matrix</code> 中的第一个将 dim 的属性设置为 4 x 4。可以用蓝色区域中标记为 Pixelation 的数字框来更改。这个数字被发送到 <code>jit.matrix</code> 上方的 <code>s dim</code>   对象。</p><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18i.png" alt="">            </p><p>在教程 patch 的蓝色区域中，更改标记为 Pixelation 的数字框。注意圆形轨迹如何变化。</p><p>对图像矩阵减采样，<code>jit.matrix</code> 将 320 x 240 矩阵从其输入复制到一个小得多的矩阵中，舍弃多余的数据。得到像素化的图像，可以用矩阵的 dim 控制。</p><p>第二个 <code>jit.matrix</code> 将矩阵增采样回到 320 x 240 大小。当后续的对象处理矩阵时，它们有全分辨率图像并将输出全分辨率矩阵。</p><p><code>jit.streak</code> 对象通过随机复制到相邻单元得到好看的像素化轨迹效果。<code>jit.streak</code> 的 prob 属性控制矩阵中任何给定单元格被复制到相邻单元格的可能性。这里的 prob 为 0.5，任何给定单元格都有 50％ 的可能性。</p><blockquote><p>技术细节：默认情况下 <code>jit.streak</code> 将单元格复制到左侧。更改  direction 属性将改变此行为。还有一个 scale 属性可以指定被复制的单元格与其原始值的亮度比值。<code>jit.streak</code> 的帮助文档有更具体的信息。</p></blockquote><p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter18j.png" alt="">            </p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>成对命名 <code>jit.matrix</code> 可以有效地存储先前迭代。这些技术可以用合成对象（例如 <code>jit.op</code>）组合先前矩阵与当前矩阵来生成视频延迟效果。还可以使用 <code>jit.matrix</code> 重新采样图像（使用 dim 属性）以更有效地执行算法（矩阵越小，图像处理得越快）并创建像素化效果。<code>jit.streak</code> 对象根据概率因子（prob 属性）随机复制单元格到相邻单元格。</p><hr><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://img.viz.mobi/maxgroup0825.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/Max-title-2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Max/MSP" scheme="http://uegeek.com/tags/Max-MSP/"/>
-    
-      <category term="Jitter" scheme="http://uegeek.com/tags/Jitter/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="教程" scheme="http://uegeek.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="矩阵" scheme="http://uegeek.com/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-      <category term="图像" scheme="http://uegeek.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
   </entry>
   

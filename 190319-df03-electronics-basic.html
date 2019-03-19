@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="t1oNPvdeea" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ArtxCode,Creative Coding,制造,Maker,Digital Fabrication,Arduino,电路,Fab,基尔霍夫定律," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="ArtxCode,Creative Coding,制造,Maker,Digital Fabrication,Arduino,电路,Fab,基尔霍夫定律">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字制造讲义03-电路基础">
+<meta property="og:url" content="http://uegeek.com/190319-df03-electronics-basic.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.viz.mobi/week7title.jpg">
+<meta property="og:image" content="http://img.viz.mobi/circuitMetaphor.jpg">
+<meta property="og:image" content="http://img.viz.mobi/currentIllustration.jpg">
+<meta property="og:image" content="http://img.viz.mobi/3typesofCircuits.png">
+<meta property="og:image" content="http://img.viz.mobi/Series%20and%20Parallell%20Circuits.png">
+<meta property="og:image" content="http://img.viz.mobi/shortCircuit.png">
+<meta property="og:image" content="http://img.viz.mobi/basicElectronicParts.jpg">
+<meta property="og:image" content="https://i1.wp.com/www.makerspaces.com/wp-content/uploads/2017/05/electronic-symbols2.jpg?resize=673%2C800&ssl=1">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/HTB1iEAaj1uSBuNjy1Xcq6AYjFXa5/Free-ship-with-track-brand-new-200pcs-2R-2W-DIP-Resistors-carbon-Resisters-2W-2ohm-5.jpg">
+<meta property="og:image" content="https://www.digikey.com/-/media/Images/Marketing/Resources/Calculators/resistor-color-chart.png?ts=e802ab48-1ea0-4745-babf-9a21accec5c2&la=en-US">
+<meta property="og:image" content="https://images-na.ssl-images-amazon.com/images/I/310RCcbsdbL._SX342_.jpg">
+<meta property="og:image" content="https://leetechbd.com/wp-content/uploads/2017/12/SMD-Resistor.jpg">
+<meta property="og:image" content="https://cdn.instructables.com/FIA/1QHW/IQU11IWI/FIA1QHWIQU11IWI.LARGE.jpg?auto=webp">
+<meta property="og:image" content="https://csg.tinkercad.com/things/gw3hgGtVAdR/t725.png?rev=1517977820936000000&s=ff528d92add92115be11517f8d5f191d&v=1&type=circuits">
+<meta property="og:image" content="https://cdn.instructables.com/F4A/OTSY/J1CEMMNL/F4AOTSYJ1CEMMNL.ANIMATED.SMALL.gif">
+<meta property="og:image" content="https://www.tinkercad.com/img/electronics/circuits-editor.gif">
+<meta property="og:updated_time" content="2019-03-19T14:48:37.368Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数字制造讲义03-电路基础">
+<meta name="twitter:image" content="http://img.viz.mobi/week7title.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/190319-df03-electronics-basic.html"/>
+
+
+
+
+
+  <title>数字制造讲义03-电路基础 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/190319-df03-electronics-basic.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数字制造讲义03-电路基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-19T22:47:16+08:00">
+                2019-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/190319-df03-electronics-basic.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="190319-df03-electronics-basic.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.viz.mobi/week7title.jpg" alt=""></p>
+<a id="more"></a>
+<p>上一节课，我们学习了时下最普及的单片机开发软硬件工具 Arduino。今天我们来了解 Arduino 开发板，以及其他电子元器件背后的基础——电路。</p>
+<p>上次我们用 Arduino 和面包板搭了第一个简单的电路，了解到电路就是电流的通路，电流给电路中的负载输送能量，负载将电能转化为其他能量，比如💡亮起来。</p>
+<p><img src="http://img.viz.mobi/circuitMetaphor.jpg" alt=""></p>
+<h2 id="电路101"><a href="#电路101" class="headerlink" title="电路101"></a>电路101</h2><p>如果把电流比作水流，那么电路就有点像为水流提供通路的水渠。在没有人为干预的情况下，水从高处向地处流。如果想给不同高度的地方提供用水，就需要建造水塔，或者用水泵把水从 A 处运送到 B 处。</p>
+<p>电流也是类似。电源是电位/电压的高点，接地点是电位的零基准点，电流由两点之间的电压差形成，从电压高的地方流量电压低的地方。</p>
+<p><img src="http://img.viz.mobi/currentIllustration.jpg" alt=""></p>
+<p>在流动的过程中，河床或水渠不可能绝对平整，而是会坑坑洼洼高低起伏，这样就对水流产生了一些阻碍作用。在电路中也是类似，电阻对电路产生阻力 (通过将电能转化为热能)。</p>
+<p>简单来说，电路有三种状态：通路，开路（某处断开）和短路。</p>
+<p><img src="http://img.viz.mobi/3typesofCircuits.png" alt=""></p>
+<p>其中短路是指，电路中有很大电流流过，但不流过负载，负载不起作用。咳咳，也就是说，在电路中走捷径是有代价的（🤦‍♀️）。</p>
+<p>下面这个视频，可以帮助我们形成对电路更直观的印象：</p>
+<iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=b0850foexnn" allowfullscreen="true"></iframe>
+
+<p><a href="https://v.qq.com/x/page/b0850foexnn.html" target="_blank" rel="noopener">Electric Circuits_腾讯视频</a></p>
+<p>从电流/水流的类比中，我们总结出电路中几个基本的规律：</p>
+<ul>
+<li>电流趋向于电阻小的路径 (最小阻力原则)</li>
+<li>电路始终要接地 (有始有终原则)</li>
+<li>要防止短路 (有钱也不能任性原则)</li>
+</ul>
+<h2 id="电路102"><a href="#电路102" class="headerlink" title="电路102"></a>电路102</h2><h3 id="串联和并联"><a href="#串联和并联" class="headerlink" title="串联和并联"></a>串联和并联</h3><p>电路有两种基本类型：串联和并联。</p>
+<p>为什么要学这个？因为它们是计算电路中电阻、电流等数值的基础知识。比如，要点亮多个 LED，需要多少伏的电源？</p>
+<p>当多个元件串联（下图图二）时，会平均「瓜分」掉整段串联电路两端的电压，也就是起到分压作用。当多个元件并联时(下图图三)，「复制」了原本只有 1 个元件时的电压。</p>
+<p><img src="http://img.viz.mobi/Series%20and%20Parallell%20Circuits.png" alt=""></p>
+<p>via tinkercad.com</p>
+<p>再仔细观察一下，对比图一，为什么图二中的 LED 几乎没有亮？图三的 LED 为什么稍微暗一点？(图中的电阻都是 60Ω)</p>
+<p>在图一中，我们测到点亮 LED 所需的电压约为 2V。如果要在串联电路中点亮两个 LED，那么根据「瓜分」原理，就需要提供 4V 的电压。但是图二的电池只有 3V，所以灯就点不亮啦。</p>
+<p>在图三中，如果用万用表测量 LED 两端的电压，会发现电压只稍微下降到 1.9x V，LED 只是稍微变暗一点，接入很多 LED 也可以点亮。</p>
+<h3 id="欧姆定律"><a href="#欧姆定律" class="headerlink" title="欧姆定律"></a>欧姆定律</h3><blockquote>
+<p>V = I * R</p>
+<p>流过电阻的电流 I 与电阻两端电压 U 成正比，与电阻 R 成反比</p>
+</blockquote>
+<p>大家对欧姆定律都不陌生。那么知道欧姆定律在这门课中，最直接的应用是什么？它帮助我们计算电路中需要用多少阻值的电阻。</p>
+<p>在前面一部分，我们讲过要防止短路。短路的本质就是电路中有很大的电流通过，这样会烧坏电路元件。电阻的作用是限制电流的大小，保护元件，保持电路正常运作。</p>
+<p>比如一个 LED 的额定电流是 20 mA，我们手头只有一个 9V 电池。</p>
+<p><img src="http://img.viz.mobi/shortCircuit.png" alt=""></p>
+<p>如果要保证 LED 安全，电路的阻值应该为 <code>9V / 0.02A=450Ω</code> 。这样我们就知道应该选择多少阻值的电阻加入到电路中了。</p>
+<h3 id="基尔霍夫定律"><a href="#基尔霍夫定律" class="headerlink" title="基尔霍夫定律"></a>基尔霍夫定律</h3><p>基尔霍夫定律？有什么用？</p>
+<p>我们已经有欧姆定律了，为什么还需要多一个定律？因为电路也是会变得很复杂的嗯，比如有多个电池并联，比如要在电阻电路中加入电容(下一节会介绍)，那该怎么计算其中的电流与电压？</p>
+<p>19世纪，德国物理学家基尔霍夫扩展了欧姆定律，提出基尔霍夫定律：</p>
+<iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=g0359uuom6b" allowfullscreen="true"></iframe>
+
+<p><a href="https://v.qq.com/x/page/g0359uuom6b.html" target="_blank" rel="noopener">Crash Course Physics 31_腾讯视频</a></p>
+<p>基尔霍夫第一定律(电流定律) </p>
+<blockquote>
+<p>在任何一个节点电路，流入该节点的总和电流，等于流出该节点的电流的总和，或：所有进入某节点的电流总和,等于所有离开这节点的电流总和。</p>
+<p>power: P = I<sup>2</sup> , R = I V</p>
+</blockquote>
+<p>基尔霍夫第二定律(电压定律)</p>
+<blockquote>
+<p>沿着闭合回路所有元件两端的电势差（电压）的代数和等于零。或者，所有电动势的代数和，等于所有电压降的代数和。</p>
+</blockquote>
+<h2 id="基本电路元件"><a href="#基本电路元件" class="headerlink" title="基本电路元件"></a>基本电路元件</h2><p><img src="http://img.viz.mobi/basicElectronicParts.jpg" alt=""></p>
+<p>它们在电路图中的表示方法：</p>
+<p><img src="https://i1.wp.com/www.makerspaces.com/wp-content/uploads/2017/05/electronic-symbols2.jpg?resize=673%2C800&amp;ssl=1" alt=""></p>
+<h3 id="电阻"><a href="#电阻" class="headerlink" title="电阻"></a>电阻</h3><p>电阻的主要作用是限制电流。</p>
+<p>不同的电路需要选择不同形态的电阻：DIP，SIP，SMD。</p>
+<p>DIP（dual in-line package），两头都有引脚的电阻，是入门时使用的常见电阻。</p>
+<p><img src="https://ae01.alicdn.com/kf/HTB1iEAaj1uSBuNjy1Xcq6AYjFXa5/Free-ship-with-track-brand-new-200pcs-2R-2W-DIP-Resistors-carbon-Resisters-2W-2ohm-5.jpg" alt=""></p>
+<p>这种电阻的阻值一般通过彩色的色环识别。有 4 环和 5 环两种标记方法，一般是记不住的，手头备一张色环卡比较实在：</p>
+<p><img src="https://www.digikey.com/-/media/Images/Marketing/Resources/Calculators/resistor-color-chart.png?ts=e802ab48-1ea0-4745-babf-9a21accec5c2&amp;la=en-US" alt=""></p>
+<p>第一、二环是读数，第三环(五环的话是第四环)是乘数，比如 红-红-棕 表示 220 V。</p>
+<p>SIP (single in-line package)，一头有引脚的电阻：</p>
+<p><img src="https://images-na.ssl-images-amazon.com/images/I/310RCcbsdbL._SX342_.jpg" alt=""></p>
+<p>SMD (Surface Mounted Device)，贴片电阻，用于常见的 PCB 电路板：</p>
+<p><img src="https://leetechbd.com/wp-content/uploads/2017/12/SMD-Resistor.jpg" alt=""></p>
+<h3 id="电容"><a href="#电容" class="headerlink" title="电容"></a>电容</h3><p>电容又是什么？</p>
+<p>顾名思义，可以作为电荷容器的一种元件。</p>
+<ul>
+<li>充放电特性：电容将电路中的电荷收集起来，然后在电压变化时放电。</li>
+<li>阻直通交特性：阻止直流电流通过，允许交流电流通过(像个交警)</li>
+</ul>
+<p>电容试图抵抗电路内的电压变化。因此，电容通常连接在电源和地之间，以保持稳定的电源并滤除间歇性的电压尖峰和下降。</p>
+<p><img src="https://cdn.instructables.com/FIA/1QHW/IQU11IWI/FIA1QHWIQU11IWI.LARGE.jpg?auto=webp" alt=""></p>
+<p>其他元件就不继续一一介绍了。元件外型可以到 <a href="https://library.io/explore/3dmodels" target="_blank" rel="noopener">Explore/3DModels | library.io</a> 查看，元件的参数可以找到对应的 datasheet 查看。</p>
+<h2 id="电路图"><a href="#电路图" class="headerlink" title="电路图"></a>电路图</h2><p>电路图就是将各种元件连接起来组成完整电路的图示。</p>
+<p>运用前面学过的知识，我们可以开始搭建电路图。在实际接线之前，建议先用工具画出接线图，可以帮助我们理清电路的功能和部件。推荐使用 Tinkercad 的 circuit 模块，网站上提供了一些常用的电路元件，方便快速搭建出虚拟电路。</p>
+<p><img src="https://csg.tinkercad.com/things/gw3hgGtVAdR/t725.png?rev=1517977820936000000&amp;s=ff528d92add92115be11517f8d5f191d&amp;v=1&amp;type=circuits" alt=""></p>
+<p>更棒的是，它还提供了电路模拟运行的功能，分析电路中可能出现的问题，尤其是存在短路时会明确提示。这样就再也不用担心电路接不好会频繁烧坏元件了！✌️</p>
+<p><img src="https://cdn.instructables.com/F4A/OTSY/J1CEMMNL/F4AOTSYJ1CEMMNL.ANIMATED.SMALL.gif" alt=""></p>
+<p>更让人开心的是，还集成了 Arduino 的模块功能，让没有编程基础的使用者，也能快速上手编写简易程序：</p>
+<p><img src="https://www.tinkercad.com/img/electronics/circuits-editor.gif" alt=""></p>
+<p>去试试看吧~ 👀</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果文章帮您节省时间或者解答疑问，不妨打个赏 :)</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    kidult00
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://uegeek.com/190319-df03-electronics-basic.html" title="数字制造讲义03-电路基础">http://uegeek.com/190319-df03-electronics-basic.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArtxCode/" rel="tag"># ArtxCode</a>
+          
+            <a href="/tags/Creative-Coding/" rel="tag"># Creative Coding</a>
+          
+            <a href="/tags/制造/" rel="tag"># 制造</a>
+          
+            <a href="/tags/Maker/" rel="tag"># Maker</a>
+          
+            <a href="/tags/Digital-Fabrication/" rel="tag"># Digital Fabrication</a>
+          
+            <a href="/tags/Arduino/" rel="tag"># Arduino</a>
+          
+            <a href="/tags/电路/" rel="tag"># 电路</a>
+          
+            <a href="/tags/Fab/" rel="tag"># Fab</a>
+          
+            <a href="/tags/基尔霍夫定律/" rel="tag"># 基尔霍夫定律</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/190314-3d02-workflow.html" rel="next" title="三维制图讲义02 - 三维制作流程">
+                <i class="fa fa-chevron-left"></i> 三维制图讲义02 - 三维制作流程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">Designer / Maker / Learner</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">261</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">266</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://steemit.com/@kidult00/" target="_blank" title="Steemit">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Steemit
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#电路101"><span class="nav-number">1.</span> <span class="nav-text">电路101</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电路102"><span class="nav-number">2.</span> <span class="nav-text">电路102</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#串联和并联"><span class="nav-number">2.1.</span> <span class="nav-text">串联和并联</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#欧姆定律"><span class="nav-number">2.2.</span> <span class="nav-text">欧姆定律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基尔霍夫定律"><span class="nav-number">2.3.</span> <span class="nav-text">基尔霍夫定律</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本电路元件"><span class="nav-number">3.</span> <span class="nav-text">基本电路元件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#电阻"><span class="nav-number">3.1.</span> <span class="nav-text">电阻</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#电容"><span class="nav-number">3.2.</span> <span class="nav-text">电容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电路图"><span class="nav-number">4.</span> <span class="nav-text">电路图</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/190319-df03-electronics-basic.html';
+          this.page.identifier = '190319-df03-electronics-basic.html';
+          this.page.title = '数字制造讲义03-电路基础';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
