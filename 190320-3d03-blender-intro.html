@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="t1oNPvdeea" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ArtxCode,3D,Modeling,Blender," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="ArtxCode,3D,Modeling,Blender">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三维制图讲义03 - 三维软件和Blender介绍">
+<meta property="og:url" content="http://uegeek.com/190320-3d03-blender-intro.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.viz.mobi/3d_course_title.jpg">
+<meta property="og:image" content="http://img.viz.mobi/3D_softwares.jpg">
+<meta property="og:image" content="http://img.viz.mobi/3D_software_price.jpg">
+<meta property="og:image" content="http://img.viz.mobi/Blender_language.png">
+<meta property="og:image" content="http://img.viz.mobi/Blender_move.jpg">
+<meta property="og:updated_time" content="2019-03-20T16:12:25.430Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="三维制图讲义03 - 三维软件和Blender介绍">
+<meta name="twitter:image" content="http://img.viz.mobi/3d_course_title.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/190320-3d03-blender-intro.html"/>
+
+
+
+
+
+  <title>三维制图讲义03 - 三维软件和Blender介绍 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/190320-3d03-blender-intro.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">三维制图讲义03 - 三维软件和Blender介绍</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-20T23:11:06+08:00">
+                2019-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/190320-3d03-blender-intro.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="190320-3d03-blender-intro.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.viz.mobi/3d_course_title.jpg" alt=""></p>
+<a id="more"></a>
+<p>三维软件实在太多了，到底该选哪一个？</p>
+<p><img src="http://img.viz.mobi/3D_softwares.jpg" alt=""></p>
+<p>我并不是资深从业者，用过的三维软件并不多。我只从个人需求出发：</p>
+<ul>
+<li>不贵，安装和维护简单</li>
+<li>功能足够强大(不特别偏向工程制图/动画/三维雕塑)</li>
+<li>软件还在持续改进中</li>
+</ul>
+<p>Blender 是比较理想的选择。开源、功能完善，安装和使用都比较轻巧，关键是，免费用正版啊：</p>
+<p><img src="http://img.viz.mobi/3D_software_price.jpg" alt=""></p>
+<p>如果是专业人士请直接忽略本文。或者移步 all3dp.com 在年初发布的一篇文章，介绍和比较了 30 款软件，其中 15 款为免费软件：</p>
+<p><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#solidworks" target="_blank" rel="noopener">Best 3D Design/3D Modeling Software 2019 (15 of 30 are Free) | All3DP</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Level</th>
+<th style="text-align:left">OS</th>
+<th style="text-align:left">Price</th>
+<th style="text-align:left">Formats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#3d-slash" target="_blank" rel="noopener">3D Slash</a></td>
+<td style="text-align:left">Beginner</td>
+<td style="text-align:left">Windows, Mac, Linux, Raspberry Pi or Browser</td>
+<td style="text-align:left">Free, 24$/year Premium</td>
+<td style="text-align:left">3dslash, obj, stl</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#librecad" target="_blank" rel="noopener">LibreCAD</a></td>
+<td style="text-align:left">Beginner</td>
+<td style="text-align:left">Windows, macOS and Linux</td>
+<td style="text-align:left">Free</td>
+<td style="text-align:left">dxf, dwg</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#photoshop-cc" target="_blank" rel="noopener">Photoshop CC</a></td>
+<td style="text-align:left">Beginner</td>
+<td style="text-align:left">Windows and Mac</td>
+<td style="text-align:left">142€/year</td>
+<td style="text-align:left">3ds, dae, kmz, obj, psd, stl, u3d</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#sculptgl" target="_blank" rel="noopener">SculptGL</a></td>
+<td style="text-align:left">Beginner</td>
+<td style="text-align:left">Browser</td>
+<td style="text-align:left">Free</td>
+<td style="text-align:left">obj, ply, sgl, stl</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#selfcad" target="_blank" rel="noopener">SelfCAD</a></td>
+<td style="text-align:left">Beginner</td>
+<td style="text-align:left">Browser</td>
+<td style="text-align:left">Free 30-day trial, 9.99$/month</td>
+<td style="text-align:left">stl, mtl, ply, dae, svg</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#tinkercad" target="_blank" rel="noopener">TinkerCAD</a></td>
+<td style="text-align:left">Beginner</td>
+<td style="text-align:left">Browser</td>
+<td style="text-align:left">Free</td>
+<td style="text-align:left">123dx, 3ds, c4d, mb, obj, svg, stl</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#clara-io" target="_blank" rel="noopener">Clara.io</a></td>
+<td style="text-align:left">Intermediate</td>
+<td style="text-align:left">Browser</td>
+<td style="text-align:left">Free, Premium features from 100$/year</td>
+<td style="text-align:left">3dm, 3ds, cd, dae, dgn, dwg, emf, fbx, gf, gdf, gts, igs, kmz, lwo, rws, obj, off, ply, pm, sat, scn, skp, slc, sldprt, stp, stl, x3dv, xaml, vda, vrml, x_t, x, xgl, zpr</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#designspark" target="_blank" rel="noopener">DesignSpark</a></td>
+<td style="text-align:left">Intermediate</td>
+<td style="text-align:left">Windows</td>
+<td style="text-align:left">Freemium, 835$ (All Addons)</td>
+<td style="text-align:left">rsdoc, dxf, ecad, idf, idb, emn, obj, skp, STL, iges, step</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#freecad" target="_blank" rel="noopener">FreeCAD</a></td>
+<td style="text-align:left">Intermediate</td>
+<td style="text-align:left">Windows, Mac and Linux</td>
+<td style="text-align:left">Free</td>
+<td style="text-align:left">step, iges, obj, stl, dxf, svg, dae, ifc, off, nastran, Fcstd</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#makehuman" target="_blank" rel="noopener">MakeHuman</a></td>
+<td style="text-align:left">Intermediate</td>
+<td style="text-align:left">Windows, Mac, Linux</td>
+<td style="text-align:left">Free</td>
+<td style="text-align:left">dae, fbx, obj, STL</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#meshmixer" target="_blank" rel="noopener">Meshmixer</a></td>
+<td style="text-align:left">Intermediate</td>
+<td style="text-align:left">Windows, Mac and Linux</td>
+<td style="text-align:left">Free</td>
+<td style="text-align:left">amf, mix, obj, off, stl</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#moment-of-inspiration-moi" target="_blank" rel="noopener">Moment of Inspiration (MoI)</a></td>
+<td style="text-align:left">Intermediate</td>
+<td style="text-align:left">Windows and Mac</td>
+<td style="text-align:left">266€</td>
+<td style="text-align:left">3ds, 3dm, dxf, fbx, igs, lwo, obj, skp, stl, stp and sat</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#nanocad" target="_blank" rel="noopener">nanoCAD</a></td>
+<td style="text-align:left">Intermediate</td>
+<td style="text-align:left">Windows</td>
+<td style="text-align:left">Freemium, 180$/year</td>
+<td style="text-align:left">sat, step, igs, iges, sldprt, STL, 3dm, dae, dfx, dwg, dwt, pdf, x_t, x_b, xxm_txt, ssm_bin</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#openscad" target="_blank" rel="noopener">OpenSCAD</a></td>
+<td style="text-align:left">Intermediate</td>
+<td style="text-align:left">Windows, Mac and Linux</td>
+<td style="text-align:left">Free</td>
+<td style="text-align:left">dxf, off, stl</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#sculptris" target="_blank" rel="noopener">Sculptris</a></td>
+<td style="text-align:left">Intermediate</td>
+<td style="text-align:left">Windows and Mac</td>
+<td style="text-align:left">Free</td>
+<td style="text-align:left">obj, goz</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#sketchup" target="_blank" rel="noopener">SketchUp</a></td>
+<td style="text-align:left">Intermediate</td>
+<td style="text-align:left">Windows and Mac</td>
+<td style="text-align:left">Free, 240$ Pro</td>
+<td style="text-align:left">dwg, dxf, 3ds, dae, dem, def, ifc, kmz, stl</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#3ds-max" target="_blank" rel="noopener">3ds Max</a></td>
+<td style="text-align:left">Professional</td>
+<td style="text-align:left">Windows</td>
+<td style="text-align:left">1505$/year, Educational licenses available</td>
+<td style="text-align:left">stl, 3ds, ai, abc, ase, asm, catproduct, catpart, dem, dwg, dxf, dwf, flt, iges, ipt, jt, nx, obj, prj, prt, rvt, sat, skp, sldprt, sldasm, stp, vrml, w3d xml</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#autocad" target="_blank" rel="noopener">AutoCAD</a></td>
+<td style="text-align:left">Professional</td>
+<td style="text-align:left">Windows and Mac</td>
+<td style="text-align:left">1575$/year</td>
+<td style="text-align:left">dwg, dxf, pdf</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#blender" target="_blank" rel="noopener">Blender</a></td>
+<td style="text-align:left">Professional</td>
+<td style="text-align:left">Windows, Mac and Linux</td>
+<td style="text-align:left">Free</td>
+<td style="text-align:left">3ds, dae, fbx, dxf, obj, x, lwo, svg, ply, stl, vrml, vrml97, x3d</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#cinema-4d" target="_blank" rel="noopener">Cinema 4D</a></td>
+<td style="text-align:left">Professional</td>
+<td style="text-align:left">Windows, macOS</td>
+<td style="text-align:left">3695$</td>
+<td style="text-align:left">3ds, dae, dem, dxf, dwg, x, fbx, iges, lwf, rib, skp, stl, wrl, obj</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#modo" target="_blank" rel="noopener">modo</a></td>
+<td style="text-align:left">Professionals</td>
+<td style="text-align:left">Windows, macOS, Linux</td>
+<td style="text-align:left">1799$</td>
+<td style="text-align:left">lwo, abc, obj, pdb, 3dm, dae, fbx, dxf, x3d, geo, stl</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#mudbox" target="_blank" rel="noopener">Mudbox</a></td>
+<td style="text-align:left">Professional</td>
+<td style="text-align:left">Windows and Mac</td>
+<td style="text-align:left">85€/year</td>
+<td style="text-align:left">fbx, mud, obj</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#onshape" target="_blank" rel="noopener">Onshape</a></td>
+<td style="text-align:left">Professional</td>
+<td style="text-align:left">Windows, Mac, Linux, iOS, Android</td>
+<td style="text-align:left">2400€/year, free and price reduced business version available</td>
+<td style="text-align:left">sat, step, igs, iges, sldprt, stl, 3dm, dae, dfx, dwg, dwt, pdf, x_t, x_b, xxm_txt, ssm_bin</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#poser" target="_blank" rel="noopener">Poser</a></td>
+<td style="text-align:left">Professionals</td>
+<td style="text-align:left">Windows, Mac</td>
+<td style="text-align:left">Standard 129.99$, Pro 349.99$</td>
+<td style="text-align:left">cr2, obj, pz2</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#rhino3d" target="_blank" rel="noopener">Rhino3D</a></td>
+<td style="text-align:left">Professional</td>
+<td style="text-align:left">Windows and Mac</td>
+<td style="text-align:left">495€ Educational, 995€ Commercial</td>
+<td style="text-align:left">3dm, 3ds, cd, dae, dgn, dwg, emf, fbx, gf, gdf, gts, igs, kmz, lwo, rws, obj, off, ply, pm, sat, scn, skp, slc, sldprt, stp, stl, x3dv, xaml, vda, vrml, x_t, x, xgl, zpr</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#zbrush" target="_blank" rel="noopener">ZBrush</a></td>
+<td style="text-align:left">Professional</td>
+<td style="text-align:left">Windows and Mac</td>
+<td style="text-align:left">400€ Educational License, 720€ Single User License</td>
+<td style="text-align:left">dxf, goz, ma, obj, stl, vrml, x3d</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#catia" target="_blank" rel="noopener">CATIA</a></td>
+<td style="text-align:left">Industrial</td>
+<td style="text-align:left">Windows</td>
+<td style="text-align:left">7180€; Educational licenses available</td>
+<td style="text-align:left">3dxml, catpart, igs, pdf, stp, stl, vrml</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#fusion-360" target="_blank" rel="noopener">Fusion 360</a></td>
+<td style="text-align:left">Industrial</td>
+<td style="text-align:left">Windows and Mac</td>
+<td style="text-align:left">499.80€/year, Educational licenses available</td>
+<td style="text-align:left">catpart, dwg, dxf, f3d, igs, obj, pdf, sat, sldprt, stp</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#inventor" target="_blank" rel="noopener">Inventor</a></td>
+<td style="text-align:left">Industrial</td>
+<td style="text-align:left">Windows and Mac</td>
+<td style="text-align:left">1935$/year</td>
+<td style="text-align:left">3dm, igs, ipt, nx, obj, prt, rvt, sldprt, stl, stp, x_b, xgl</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://all3dp.com/1/best-free-3d-modeling-software-3d-cad-3d-design-software/#solidworks" target="_blank" rel="noopener">Solidworks</a></td>
+<td style="text-align:left">Industrial</td>
+<td style="text-align:left">Windows</td>
+<td style="text-align:left">9950€, Educational licenses available</td>
+<td style="text-align:left">3dxml, 3dm, 3ds, 3mf, amf, dwg, dxf, idf, ifc, obj, pdf, sldprt, stp, stl, vrml</td>
+</tr>
+</tbody>
+</table>
+<p>下载 Blender 请到官网 blender.org 选择 2.80 版本。不推荐之前的版本，是因为 2.8 版本的调整实在太大了，几乎对整个软件各方面都做了一些重构。尤其是加入了实时渲染的 eevee 引擎，用上就已经回不去之前的版本了……</p>
+<p>Blender 官网每天会发布新的测试版(迭代速度真的飞快)。下载后找到应用程序直接打开就可以使用。</p>
+<p>打开软件后，可以先按需做一些设置，比如显示中文菜单、修改小键盘相关的快捷键：</p>
+<ul>
+<li>语言选择：顶部菜单-Edit-Preferences-Interface-Translation</li>
+<li>鼠标/键盘快捷键设置：顶部菜单-Edit-Preferences-Keymap</li>
+</ul>
+<p><img src="http://img.viz.mobi/Blender_language.png" alt=""></p>
+<p>学习 Blender，最重要的是反复练习。在这个系列课程讲义中，我不会详细讲解怎么使用软件，网上已经有相当多很棒的视频教程了。</p>
+<p>我会尝试提供一些基本的练习清单，也就是帮助大家去拆解需要训练的技能。</p>
+<p>这一周涉及的技能模块是最基础也是最重要的，因为它们的组合构成了 Blender (包括在其他三维软件里) 大部分的操作。</p>
+<h3 id="视图浏览"><a href="#视图浏览" class="headerlink" title="视图浏览"></a>视图浏览</h3><p>围绕着兴趣点旋转视图：按下鼠标中键并移动</p>
+<p>缩放视图：滚轮鼠标中键</p>
+<p>平移视图：Shift+按下鼠标中键</p>
+<p>正/右/顶视图切换：如果没有小键盘，需要先在设置中修改快捷键，比如我一般设置 Alt 1 / Alt3 / Alt7 为正/右/顶视图</p>
+<h3 id="物体移动-旋转-缩放"><a href="#物体移动-旋转-缩放" class="headerlink" title="物体移动+旋转+缩放"></a>物体移动+旋转+缩放</h3><p>非快捷键操作：先选中物体，然后在左侧工具栏选择 移动/选择/缩放 工具，然后操作</p>
+<p><img src="http://img.viz.mobi/Blender_move.jpg" alt=""></p>
+<p>快捷键操作：先选中物体，然后按一下 G 键，移动鼠标就会看到物体会跟随移动。移到目标位置后，点鼠标左键，物体就确认移动。</p>
+<p>但是在移动时，我们经常需要只沿着某个轴(x轴辅助线为红色，y轴辅助线为绿色，z轴辅助线为蓝色)移动。</p>
+<p>这个操作又有两种做法</p>
+<ul>
+<li>按一下 G/R/S 键后，再按一下需要沿着哪个轴移动，比如沿着 x 轴就按下 x 键，然后移动物体；</li>
+<li>或者配合鼠标中键使用：按下 G 键后，按住鼠标中键，沿着坐标轴参考线移动，物体就会只沿着这条坐标轴移动</li>
+</ul>
+<p>确认移动都是点击鼠标左键。</p>
+<p>沿着某个轴旋转和缩放也是类似的操作。</p>
+<ul>
+<li>比如，沿 x 轴旋转：r - x - 移动鼠标 - 按鼠标左键确认</li>
+<li>比如，沿 z 轴缩放：s - z - 移动鼠标 - 按鼠标左键确认</li>
+</ul>
+<p>以上就是这节课的主要练习：用不同的视图查看物体，移动/旋转/缩放物体。</p>
+<p>记得多练习几次哦，下周见~</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果文章帮您节省时间或者解答疑问，不妨打个赏 :)</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    kidult00
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://uegeek.com/190320-3d03-blender-intro.html" title="三维制图讲义03 - 三维软件和Blender介绍">http://uegeek.com/190320-3d03-blender-intro.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArtxCode/" rel="tag"># ArtxCode</a>
+          
+            <a href="/tags/3D/" rel="tag"># 3D</a>
+          
+            <a href="/tags/Modeling/" rel="tag"># Modeling</a>
+          
+            <a href="/tags/Blender/" rel="tag"># Blender</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/190319-df03-electronics-basic.html" rel="next" title="数字制造讲义03-电路基础">
+                <i class="fa fa-chevron-left"></i> 数字制造讲义03-电路基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">Designer / Maker / Learner</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">262</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">267</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://steemit.com/@kidult00/" target="_blank" title="Steemit">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Steemit
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#视图浏览"><span class="nav-number">1.</span> <span class="nav-text">视图浏览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#物体移动-旋转-缩放"><span class="nav-number">2.</span> <span class="nav-text">物体移动+旋转+缩放</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/190320-3d03-blender-intro.html';
+          this.page.identifier = '190320-3d03-blender-intro.html';
+          this.page.title = '三维制图讲义03 - 三维软件和Blender介绍';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

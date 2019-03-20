@@ -4,8 +4,34 @@
 
     
   <url>
+    <loc>http://uegeek.com/190320-3d03-blender-intro.html</loc>
+    <lastmod>2019-03-20T16:12:25.430Z</lastmod>
+    <data>
+        <display>
+        <title>三维制图讲义03 - 三维软件和Blender介绍</title>
+        <pubTime>2019-03-20T15:11:06.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>3D</tag>
+         
+        <tag>Modeling</tag>
+         
+        <tag>Blender</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/190319-df03-electronics-basic.html</loc>
-    <lastmod>2019-03-19T14:48:37.368Z</lastmod>
+    <lastmod>2019-03-19T15:11:34.114Z</lastmod>
     <data>
         <display>
         <title>数字制造讲义03-电路基础</title>
@@ -21,11 +47,11 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
         <tag>基尔霍夫定律</tag>
          
@@ -89,13 +115,13 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>单片机</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
          
            
@@ -2133,9 +2159,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -2203,9 +2229,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -2373,9 +2399,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -2447,9 +2473,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -2497,9 +2523,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -2959,9 +2985,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -3029,9 +3055,9 @@
         <title>中欧四国扫(ba)盲(gua)帖之一：“中欧”还是“东欧”？</title>
         <pubTime>2015-09-18T13:37:38.000Z</pubTime>
         
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -3087,9 +3113,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -3115,9 +3141,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -3147,9 +3173,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -3175,9 +3201,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -3211,9 +3237,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>历史</tag>
          
         <tag>中欧</tag>
          
@@ -3467,9 +3493,9 @@
          
         <tag>设计</tag>
          
-        <tag>service design</tag>
-         
         <tag>服务设计</tag>
+         
+        <tag>service design</tag>
          
          
            
@@ -5775,9 +5801,9 @@
         
         <tag>IxD</tag>
          
-        <tag>Note</tag>
-         
         <tag>交互设计</tag>
+         
+        <tag>Note</tag>
          
          
            
@@ -5823,9 +5849,9 @@
         
         <tag>Design</tag>
          
-        <tag>Note</tag>
-         
         <tag>交互设计</tag>
+         
+        <tag>Note</tag>
          
         <tag>Interface</tag>
          
@@ -5851,9 +5877,9 @@
         
         <tag>IxD</tag>
          
-        <tag>Note</tag>
-         
         <tag>交互设计</tag>
+         
+        <tag>Note</tag>
          
          
            
@@ -6501,9 +6527,9 @@
         <title>读书笔记-如何阅读一本书</title>
         <pubTime>2010-08-07T16:20:35.000Z</pubTime>
         
-        <tag>Note</tag>
-         
         <tag>Reading</tag>
+         
+        <tag>Note</tag>
          
          
            
