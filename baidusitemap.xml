@@ -4,8 +4,44 @@
 
     
   <url>
+    <loc>http://uegeek.com/190326-df04-input-and-output.html</loc>
+    <lastmod>2019-03-26T14:35:06.137Z</lastmod>
+    <data>
+        <display>
+        <title>数字制造讲义04-负责输入和输出的智能元件</title>
+        <pubTime>2019-03-26T14:32:56.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Creative Coding</tag>
+         
+        <tag>制造</tag>
+         
+        <tag>Maker</tag>
+         
+        <tag>Digital Fabrication</tag>
+         
+        <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
+         
+        <tag>电路</tag>
+         
+        <tag>传感器</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/190320-3d03-blender-intro.html</loc>
-    <lastmod>2019-03-20T16:12:25.430Z</lastmod>
+    <lastmod>2019-03-20T16:14:27.040Z</lastmod>
     <data>
         <display>
         <title>三维制图讲义03 - 三维软件和Blender介绍</title>
@@ -119,9 +155,9 @@
          
         <tag>Arduino</tag>
          
-        <tag>单片机</tag>
-         
         <tag>电路</tag>
+         
+        <tag>单片机</tag>
          
          
            
@@ -3057,11 +3093,11 @@
         
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
          
         <tag>匈牙利</tag>
+         
+        <tag>历史</tag>
          
         <tag>奥地利</tag>
          
@@ -3089,9 +3125,9 @@
         
         <tag>Note</tag>
          
-        <tag>人类简史</tag>
-         
         <tag>历史</tag>
+         
+        <tag>人类简史</tag>
          
          
            
@@ -3115,9 +3151,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>捷克</tag>
          
@@ -3143,9 +3179,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>奥地利</tag>
          
@@ -3175,9 +3211,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>捷克</tag>
          
@@ -3203,9 +3239,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>东正教</tag>
          
@@ -3239,9 +3275,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>哥特式</tag>
          
@@ -3493,9 +3529,9 @@
          
         <tag>设计</tag>
          
-        <tag>服务设计</tag>
-         
         <tag>service design</tag>
+         
+        <tag>服务设计</tag>
          
          
            
@@ -5801,9 +5837,9 @@
         
         <tag>IxD</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>Note</tag>
+         
+        <tag>交互设计</tag>
          
          
            
@@ -5849,9 +5885,9 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>Note</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>Interface</tag>
          
@@ -5877,9 +5913,9 @@
         
         <tag>IxD</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>Note</tag>
+         
+        <tag>交互设计</tag>
          
          
            
@@ -6527,9 +6563,9 @@
         <title>读书笔记-如何阅读一本书</title>
         <pubTime>2010-08-07T16:20:35.000Z</pubTime>
         
-        <tag>Reading</tag>
-         
         <tag>Note</tag>
+         
+        <tag>Reading</tag>
          
          
            

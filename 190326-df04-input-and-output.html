@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="t1oNPvdeea" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ArtxCode,Creative Coding,制造,Maker,Digital Fabrication,Fab,Arduino,电路,传感器," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="ArtxCode,Creative Coding,制造,Maker,Digital Fabrication,Fab,Arduino,电路,传感器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字制造讲义04-负责输入和输出的智能元件">
+<meta property="og:url" content="http://uegeek.com/190326-df04-input-and-output.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.viz.mobi/week7title.jpg">
+<meta property="og:image" content="http://img.viz.mobi/3typesofCircuits.png">
+<meta property="og:image" content="https://i0.wp.com/www.makerspaces.com/wp-content/uploads/2017/05/led-switch-schematic-diagram.jpg?zoom=2&resize=563%2C477&ssl=1">
+<meta property="og:image" content="https://www.saysyou.net/wp-content/uploads/2017/06/AM-FM-gif.gif">
+<meta property="og:image" content="https://www.st-andrews.ac.uk/~www_pa/Scots_Guide/RadCom/part9/fig2.gif">
+<meta property="og:image" content="http://designer.mech.yzu.edu.tw/articlesystem/article/compressedfile/(2003-01-05">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Op-amp_symbol.svg/400px-Op-amp_symbol.svg.png">
+<meta property="og:image" content="http://wiki.jikexueyuan.com/project/mcu-tutorial-one/images/59.png">
+<meta property="og:image" content="http://www.teachhub.com/sites/default/files/field/image/technology-in-the-classroom-human-body-websites.jpg">
+<meta property="og:image" content="http://img.viz.mobi/8-parts-switch.jpg">
+<meta property="og:image" content="http://img.viz.mobi/9-15219.jpg">
+<meta property="og:image" content="https://www.allelectronics.com/mas_assets/cache/image/3/b/5/5/480x480-15189.Jpg">
+<meta property="og:image" content="http://img.viz.mobi/11-parts-Thermistors.jpg">
+<meta property="og:image" content="http://img.viz.mobi/12-parts-Photoresistors.jpg">
+<meta property="og:image" content="https://www.circuitspecialists.com/content/448097/CAMERA-MICRO-0.jpg">
+<meta property="og:image" content="https://www.circuitspecialists.com/content/172210/color-01-1.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/c/c4/SchemaPiezo.gif">
+<meta property="og:image" content="http://img.viz.mobi/16-16808.jpg">
+<meta property="og:image" content="http://img.viz.mobi/17-NEODYMIUM_MAGNET.jpg">
+<meta property="og:image" content="https://www.allelectronics.com/mas_assets/cache/image/4/1/e/8/480x480-16872.Jpg">
+<meta property="og:image" content="https://www.allelectronics.com/mas_assets/cache/image/3/b/8/a/480x480-15242.Jpg">
+<meta property="og:image" content="http://img.viz.mobi/20-StrainGage.jpg">
+<meta property="og:image" content="http://img.viz.mobi/21-part-ACCELEROMETER.jpg">
+<meta property="og:image" content="http://img.viz.mobi/22-pry-wiimote.gif">
+<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0803/9211/products/web-new-cam-v2-angle_grande.jpg?v=1479601839">
+<meta property="og:image" content="http://uegeek.com/![](https://pixycam.com/wp-content/uploads/2018/05/IMG_5269_result.jpg">
+<meta property="og:image" content="http://img.viz.mobi/25-part-LEDdisplay.jpg">
+<meta property="og:image" content="http://img.viz.mobi/26-part-LCD.jpg">
+<meta property="og:image" content="http://img.viz.mobi/27-part-speaker.jpg">
+<meta property="og:image" content="http://www.tedmotors.com/Archive/_cn/products/G0228/1607185816.jpg">
+<meta property="og:image" content="https://www.allelectronics.com/mas_assets/cache/image/4/2/5/5/480x480-16981.Jpg">
+<meta property="og:image" content="https://www.allelectronics.com/mas_assets/cache/image/4/5/b/1/480x480-17841.Jpg">
+<meta property="og:image" content="http://blog.codebender.cc/wp-content/uploads/2014/03/intro__zps2d47d1b6.png">
+<meta property="og:updated_time" content="2019-03-26T14:35:06.137Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数字制造讲义04-负责输入和输出的智能元件">
+<meta name="twitter:image" content="http://img.viz.mobi/week7title.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/190326-df04-input-and-output.html"/>
+
+
+
+
+
+  <title>数字制造讲义04-负责输入和输出的智能元件 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/190326-df04-input-and-output.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数字制造讲义04-负责输入和输出的智能元件</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-26T22:32:56+08:00">
+                2019-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/190326-df04-input-and-output.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="190326-df04-input-and-output.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.viz.mobi/week7title.jpg" alt=""></p>
+<a id="more"></a>
+<p><a href="https://www.uegeek.com/190305-df01-digital-fabrication.html" target="_blank" rel="noopener">数字制造讲义01-成为数字世界的建造者</a><br><a href="https://www.uegeek.com/190313-df02-arduino-intro.html" target="_blank" rel="noopener">数字制造讲义02-Arduino入门</a><br><a href="https://www.uegeek.com/190319-df03-electronics-basic.html" target="_blank" rel="noopener">数字制造讲义03-电路基础</a></p>
+<h2 id="快速回顾"><a href="#快速回顾" class="headerlink" title="快速回顾"></a>快速回顾</h2><p>让我们先回顾<a href="https://www.uegeek.com/190319-df03-electronics-basic.html" target="_blank" rel="noopener">上节课的内容</a>。</p>
+<p>电路是由导体和元件组成的回路，电流可以在其中流动。电路有三种状态：通路，开路（某处断开）和短路。</p>
+<p><img src="http://img.viz.mobi/3typesofCircuits.png" alt=""></p>
+<p>闭合回路在同一点开始和结束，形成一个完整的循环，允许电力不间断地从（+）电源流到（ - ）地。短路是指，电路中有很大电流流过，但不流过负载，负载不起作用。</p>
+<p><img src="https://i0.wp.com/www.makerspaces.com/wp-content/uploads/2017/05/led-switch-schematic-diagram.jpg?zoom=2&amp;resize=563%2C477&amp;ssl=1" alt=""></p>
+<p>电路图通过符号表示电子元件及其位置。</p>
+<p>电阻器通常用于限流，我们用欧姆定律计算电路中所需电阻阻值。更复杂的电路则需要用基尔霍夫定律。</p>
+<h2 id="电路类型"><a href="#电路类型" class="headerlink" title="电路类型"></a>电路类型</h2><p>有了基本的电路元件，我们可以构建出不同类型的电路。除了通路、开路和短路，电路还有其他的分类方法。</p>
+<p>比如，从构成来分，可以分为电气电路和电子电路两大类。电气电路由电阻、线圈、电容组成。电子电路除了电阻、线圈和电容之外，还包括晶体管和二极管等半导体元件。</p>
+<p>按照功能来分，又分为以下类型的电路：</p>
+<p><strong>放大电路</strong>：用于增大输入信号并且输出，例如常见的 Amplifier/功放</p>
+<p><strong>振荡电路</strong>：使电路在没有输入信号时也能产生交流信号</p>
+<p><strong>调制电路</strong>：可以调制振幅大小(AM)或频率(FM)的电路</p>
+<p><img src="https://www.saysyou.net/wp-content/uploads/2017/06/AM-FM-gif.gif" alt=""></p>
+<p><strong>检波电路</strong>：从信号中提取声音等（调幅波解调）</p>
+<p><img src="https://www.st-andrews.ac.uk/~www_pa/Scots_Guide/RadCom/part9/fig2.gif" alt=""></p>
+<p><strong>滤波器</strong>：提取指定频段的信号</p>
+<p><img src="http://designer.mech.yzu.edu.tw/articlesystem/article/compressedfile/(2003-01-05" alt="">%20%E6%BF%BE%E6%B3%A2%E6%8A%80%E8%A1%93%E7%B0%A1%E4%BB%8B.files/image005.gif)</p>
+<p><strong><a href="https://www.wikiwand.com/zh/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8" target="_blank" rel="noopener">运算放大器</a></strong>：能产生一个比输入端电势差大数十万倍的输出电势（对地而言）。集成电路的一种，输入输出互不影响。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Op-amp_symbol.svg/400px-Op-amp_symbol.svg.png" alt=""></p>
+<p><strong>逻辑电路</strong>：计算加法、乘法、记忆数字/文字</p>
+<p><img src="http://wiki.jikexueyuan.com/project/mcu-tutorial-one/images/59.png" alt=""></p>
+<p><strong>电源电路</strong>：交流直流电转换</p>
+<h2 id="我有千里眼，你有顺风耳吗？"><a href="#我有千里眼，你有顺风耳吗？" class="headerlink" title="我有千里眼，你有顺风耳吗？"></a>我有千里眼，你有顺风耳吗？</h2><p>在初学电子电路知识时，很容易被种类繁多的电子元件搞晕。想要一种一种元件学习，不是不可能，但是没必要。我们需要提醒自己，学习电路的目标是做出自己需要的东西，带有功能和互动的装置。</p>
+<p>电子元件虽然名目繁多，但是从用途来分，除了上节课介绍过的基本元件，接下来就是这节课要学习的两大类：输入类和输出类。</p>
+<p><strong>输入类元件帮助我们感知和获取环境中的信息/状态，输出类元件负责向环境施加影响</strong>，例如展示数字/图像、移动物体等等。</p>
+<p><img src="http://www.teachhub.com/sites/default/files/field/image/technology-in-the-classroom-human-body-websites.jpg" alt=""></p>
+<p>想象一下人体，可以类比为装备着强大输入输出设备的智能体。输入设备包括眼睛、鼻子、耳朵、皮肤等，可以感知并接收图像、运动物体、声音、气味、压力等等复杂多样的信息。而输出设备包括嘴巴、身体关节和肌肉等，可以发出声音、做动作、移动物体等等。</p>
+<p>当然，电子元件能够做的事情就更多了，比如，测量土壤湿度、测量脉搏、获取蓝牙信号等等。这些由各显神通的元器件来实现。</p>
+<h2 id="输入设备"><a href="#输入设备" class="headerlink" title="输入设备"></a>输入设备</h2><p>我们借助输入设备，实时获取环境中的各种信息。</p>
+<h3 id="开关"><a href="#开关" class="headerlink" title="开关"></a>开关</h3><p>开关也是一种设备？没错，电路本身就是一个小环境，这个小环境最重要的状态之一，就是电路是否形成通路。(聪明的你应该意识到，开关同时也是一种输出设备)</p>
+<p>不要小看了开关，它有多种类型，可以控制多种状态。比如有按钮类型的，toggle 类型的，还有开关组：</p>
+<p><img src="http://img.viz.mobi/8-parts-switch.jpg" alt=""></p>
+<h3 id="声音"><a href="#声音" class="headerlink" title="声音"></a>声音</h3><p>检测环境中声音大小的元件(更高级一些的可以提取声音包络，或者做语音识别)。猜猜看，这类元件价格是多少？</p>
+<p><img src="http://img.viz.mobi/9-15219.jpg" alt=""></p>
+<h3 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h3><p>超声波传感器的本领，是不断发出探测距离的超声波，计算并报告元件距离目标物体(障碍)的距离：</p>
+<p><img src="https://www.allelectronics.com/mas_assets/cache/image/3/b/5/5/480x480-15189.Jpg" alt=""></p>
+<h3 id="温度"><a href="#温度" class="headerlink" title="温度"></a>温度</h3><p>测量温度的元件大多数都是热敏电阻，也就是阻值随着温度发生变化。</p>
+<p><img src="http://img.viz.mobi/11-parts-Thermistors.jpg" alt=""></p>
+<h3 id="光照"><a href="#光照" class="headerlink" title="光照"></a>光照</h3><p>测量光照亮度的元件大多数都是光敏电阻，也就是阻值随着亮度发生变化。</p>
+<p><img src="http://img.viz.mobi/12-parts-Photoresistors.jpg" alt=""></p>
+<h3 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h3><p>想要识别物体，首先要获取图像。摄像头就是最常见的设备。现在的摄像头已经做到体积微小、成像高清。</p>
+<p><img src="https://www.circuitspecialists.com/content/448097/CAMERA-MICRO-0.jpg" alt=""></p>
+<p>另外一种传感器可以专门检测 RGB 的颜色值：</p>
+<p><img src="https://www.circuitspecialists.com/content/172210/color-01-1.jpg" alt=""></p>
+<h3 id="压力"><a href="#压力" class="headerlink" title="压力"></a>压力</h3><p>压电传感器用来检测振动或敲击。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/SchemaPiezo.gif" alt=""></p>
+<p><img src="http://img.viz.mobi/16-16808.jpg" alt=""></p>
+<h3 id="磁场"><a href="#磁场" class="headerlink" title="磁场"></a>磁场</h3><p>我们常见的磁铁也是一种电子元件哦~</p>
+<p><img src="http://img.viz.mobi/17-NEODYMIUM_MAGNET.jpg" alt=""></p>
+<p>霍尔效应传感器也称霍尔传感器，是一个换能器，将变化的磁场转化为输出电压的变化。</p>
+<p><img src="https://www.allelectronics.com/mas_assets/cache/image/4/1/e/8/480x480-16872.Jpg" alt=""></p>
+<h3 id="红外"><a href="#红外" class="headerlink" title="红外"></a>红外</h3><p>互动装置总是少不了人的参与，其中经常会用到的一个元件，是检测某个距离内是否有人出现的红外传感器。</p>
+<p><img src="https://www.allelectronics.com/mas_assets/cache/image/3/b/8/a/480x480-15242.Jpg" alt=""></p>
+<h3 id="应变计"><a href="#应变计" class="headerlink" title="应变计"></a>应变计</h3><p>应变计是电阻随作用力变化的传感器；它将力、压力、张力、重量等物理量转化为电阻的变化，从而测量这些物理量。当外力作用于固定物体时，就会产生应力和应变。物体内部产生的（对外力的）反作用力即为应力，产生的位移和形变即为应变。</p>
+<p><img src="http://img.viz.mobi/20-StrainGage.jpg" alt=""></p>
+<p>例如基于应变计的称重传感器，将力转换为可测量的电信号输出的传感器。</p>
+<h3 id="加速计"><a href="#加速计" class="headerlink" title="加速计"></a>加速计</h3><p>加速计（accelerometer）也叫重力感应器，是测量加速度的装置。相对于远距感测的装置，它测量的是自身组件在某个轴向的受力情况，表现形式为轴向的加速度大小和方向（XYZ）。这有点类似于陀螺仪，但陀螺仪的更多关注自身旋转情况，加速计则主要是测量受力情况，也就是三轴运动情况，更适合用于空间运动判断。</p>
+<p><img src="http://img.viz.mobi/21-part-ACCELEROMETER.jpg" alt=""></p>
+<p>陀螺仪（gyroscope）是一种基于角动量守恒理论感测与维持方向的装置。三轴陀螺仪的工作原理，是通过测量三维坐标系内陀螺转子的垂直轴与设备之间的夹角，并计算角速度，通过夹角和角速度来判别物体在三维空间的运动状态。三轴陀螺仪可以同时测定上、下、左、右、前、后等6个方向，最终可判断出设备的移动轨迹和加速度。</p>
+<p>常见的体感游戏机、手机里都有这种元件。</p>
+<p><img src="http://img.viz.mobi/22-pry-wiimote.gif" alt=""></p>
+<h3 id="机器视觉"><a href="#机器视觉" class="headerlink" title="机器视觉"></a>机器视觉</h3><p>前面提到了获取图像的元件，也就是常见的摄像头。不过我们更常见的需求是用摄像头识别某些东西，比如人脸、比如让机器人拥有视力。所以，机器视觉相关的硬件和软件也是我们可能会用到的工具。</p>
+<p>机器视觉是人工智能中一个重要的研究领域，相关的算法一直在改进。<a href="https://opencv.org/" target="_blank" rel="noopener">OpenCV</a> 就是使用最为广泛的机器视觉开源库，它提供了实时识别形状和物体的能力，许多机器视觉的应用都是在它的基础上改进实现的。</p>
+<p>当然，也有一些硬件已经集成了特定的视觉能力。</p>
+<p>比如 <a href="https://openmv.io/" target="_blank" rel="noopener">OpenMV</a> 项目提供低成本、可扩展、支持 Python 的机器视觉模块，成为「机器视觉的 Arduino」：</p>
+<p><img src="https://cdn.shopify.com/s/files/1/0803/9211/products/web-new-cam-v2-angle_grande.jpg?v=1479601839" alt=""></p>
+<p>又比如 Pixy2 摄像头，能通过简单的训练快速识别物体：</p>
+<p><img src="![](https://pixycam.com/wp-content/uploads/2018/05/IMG_5269_result.jpg" alt="">)</p>
+<iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=s0753ulknzo" allowfullscreen="true"></iframe>
+
+<p><a href="https://v.qq.com/x/page/s0753ulknzo.html" target="_blank" rel="noopener">Pixy2摄像头图像识别</a></p>
+<h2 id="输出设备"><a href="#输出设备" class="headerlink" title="输出设备"></a>输出设备</h2><p>看了这么多输入元件，是不是觉得人对环境的感知能力得到极大的扩展？这样我们可以收集无数来自环境的实时信息。接着，我们处理这些信息，或者设定一些规则，达到某些条件的时候，就自动去做某些事情。这就是智能硬件的基本原理。并不难，对吧？</p>
+<p>接下来我们就了解一下输出设备，看看如果要对环境施加影响，我们都有哪些能力可以使用。</p>
+<h3 id="LED"><a href="#LED" class="headerlink" title="LED"></a>LED</h3><p>严格来说，单个 LED 不算一类输出设备。但是它实在太常用了，而且多个 LED 组合起来，就可以成为可能性无穷的输出显示屏。</p>
+<p><img src="http://img.viz.mobi/25-part-LEDdisplay.jpg" alt=""></p>
+<h3 id="LCD"><a href="#LCD" class="headerlink" title="LCD"></a>LCD</h3><p>跟 LED 对应的还有另外一种专门用于显示的屏幕——LCD (Liquid Crystal Displays)。</p>
+<p><img src="http://img.viz.mobi/26-part-LCD.jpg" alt=""></p>
+<h3 id="扬声器"><a href="#扬声器" class="headerlink" title="扬声器"></a>扬声器</h3><p>视觉的输出设备有了，接下来是听觉。那就是各种扬声器，也就是喇叭了。</p>
+<p><img src="http://img.viz.mobi/27-part-speaker.jpg" alt=""></p>
+<h3 id="电机-马达"><a href="#电机-马达" class="headerlink" title="电机/马达"></a>电机/马达</h3><p>听和看都有了，那么接下来就是运动了。运动涉及到物理位移，我们需要借助电机来完成。</p>
+<p>电机有非常多种，分类也各不相同，比如<a href="https://www.zhihu.com/question/24086069" target="_blank" rel="noopener">直流电机（DC Moter）和交流电机</a>。</p>
+<p>在 DIY 装置中，常用到伺服电机、步进电机和舵机这几种。</p>
+<p><strong>伺服电机</strong>：闭环控制，即通过传感器实时反馈电机的运行状态，由控制芯片进行实时调节。</p>
+<p><img src="http://www.tedmotors.com/Archive/_cn/products/G0228/1607185816.jpg" alt=""></p>
+<p><strong>步进电机</strong>：开环控制，接收的是电脉冲信号，根据信号数量转过相应的步距角（角位移）。</p>
+<p><img src="https://www.allelectronics.com/mas_assets/cache/image/4/2/5/5/480x480-16981.Jpg" alt=""></p>
+<p><strong>舵机</strong>：是伺服电机在航模、小型机器人等领域下常用的一个特殊版本</p>
+<p><img src="https://www.allelectronics.com/mas_assets/cache/image/4/5/b/1/480x480-17841.Jpg" alt=""></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>今天我们认识了很多新伙伴。你可能眼有点花，头有点昏。不要紧，在动手实践过程中会慢慢加深了解的。</p>
+<p>现在，你已经踏上了自己折腾的旅程——有那么多好玩的东西等着你去搭建呢！</p>
+<p><code>输入+Arduino+输出</code> 可以实现无数的组合，只要你愿意细心查看元件的说明，按照电路的原理去设计接线，使用 tinkercad 等工具来模拟和检查电路，并且编写一些 Arduino 代码，理论上就可以做出许许多多好玩的东西。</p>
+<p><img src="http://blog.codebender.cc/wp-content/uploads/2014/03/intro__zps2d47d1b6.png" alt=""></p>
+<p>嗯，理论只是理论。在实际动手的过程中，我们还会遇到这样那样的问题，可能是搞不懂某个元件的工作原理，可能电路总是出问题，可能是编程很吃力。这些都是成为 Maker 的过程中必不可少的锻炼。别忘记，我们还有 instructables、Arduino 等网站和社区，上面有海量的例子、项目和资料，是我们折腾路上很好的陪伴。</p>
+<p>接下来就开始扑腾吧！享受淹没在新知中的缺氧感，享受遇到问题解决问题的痛苦，享受打完大小 boss 通关后的成就感。不要忘记跟大家分享你的点滴心得~</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果文章帮您节省时间或者解答疑问，不妨打个赏 :)</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    kidult00
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://uegeek.com/190326-df04-input-and-output.html" title="数字制造讲义04-负责输入和输出的智能元件">http://uegeek.com/190326-df04-input-and-output.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArtxCode/" rel="tag"># ArtxCode</a>
+          
+            <a href="/tags/Creative-Coding/" rel="tag"># Creative Coding</a>
+          
+            <a href="/tags/制造/" rel="tag"># 制造</a>
+          
+            <a href="/tags/Maker/" rel="tag"># Maker</a>
+          
+            <a href="/tags/Digital-Fabrication/" rel="tag"># Digital Fabrication</a>
+          
+            <a href="/tags/Fab/" rel="tag"># Fab</a>
+          
+            <a href="/tags/Arduino/" rel="tag"># Arduino</a>
+          
+            <a href="/tags/电路/" rel="tag"># 电路</a>
+          
+            <a href="/tags/传感器/" rel="tag"># 传感器</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/190320-3d03-blender-intro.html" rel="next" title="三维制图讲义03 - 三维软件和Blender介绍">
+                <i class="fa fa-chevron-left"></i> 三维制图讲义03 - 三维软件和Blender介绍
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">Designer / Maker / Learner</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">263</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">268</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://steemit.com/@kidult00/" target="_blank" title="Steemit">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Steemit
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#快速回顾"><span class="nav-number">1.</span> <span class="nav-text">快速回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电路类型"><span class="nav-number">2.</span> <span class="nav-text">电路类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我有千里眼，你有顺风耳吗？"><span class="nav-number">3.</span> <span class="nav-text">我有千里眼，你有顺风耳吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入设备"><span class="nav-number">4.</span> <span class="nav-text">输入设备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开关"><span class="nav-number">4.1.</span> <span class="nav-text">开关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声音"><span class="nav-number">4.2.</span> <span class="nav-text">声音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#距离"><span class="nav-number">4.3.</span> <span class="nav-text">距离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#温度"><span class="nav-number">4.4.</span> <span class="nav-text">温度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光照"><span class="nav-number">4.5.</span> <span class="nav-text">光照</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图像"><span class="nav-number">4.6.</span> <span class="nav-text">图像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压力"><span class="nav-number">4.7.</span> <span class="nav-text">压力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁场"><span class="nav-number">4.8.</span> <span class="nav-text">磁场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#红外"><span class="nav-number">4.9.</span> <span class="nav-text">红外</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应变计"><span class="nav-number">4.10.</span> <span class="nav-text">应变计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加速计"><span class="nav-number">4.11.</span> <span class="nav-text">加速计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#机器视觉"><span class="nav-number">4.12.</span> <span class="nav-text">机器视觉</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出设备"><span class="nav-number">5.</span> <span class="nav-text">输出设备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LED"><span class="nav-number">5.1.</span> <span class="nav-text">LED</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LCD"><span class="nav-number">5.2.</span> <span class="nav-text">LCD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扬声器"><span class="nav-number">5.3.</span> <span class="nav-text">扬声器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#电机-马达"><span class="nav-number">5.4.</span> <span class="nav-text">电机/马达</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">6.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/190326-df04-input-and-output.html';
+          this.page.identifier = '190326-df04-input-and-output.html';
+          this.page.title = '数字制造讲义04-负责输入和输出的智能元件';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

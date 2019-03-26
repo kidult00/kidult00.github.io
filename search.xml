@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数字制造讲义04-负责输入和输出的智能元件]]></title>
+    <url>%2F190326-df04-input-and-output.html</url>
+    <content type="text"><![CDATA[数字制造讲义01-成为数字世界的建造者数字制造讲义02-Arduino入门数字制造讲义03-电路基础 快速回顾让我们先回顾上节课的内容。 电路是由导体和元件组成的回路，电流可以在其中流动。电路有三种状态：通路，开路（某处断开）和短路。 闭合回路在同一点开始和结束，形成一个完整的循环，允许电力不间断地从（+）电源流到（ - ）地。短路是指，电路中有很大电流流过，但不流过负载，负载不起作用。 电路图通过符号表示电子元件及其位置。 电阻器通常用于限流，我们用欧姆定律计算电路中所需电阻阻值。更复杂的电路则需要用基尔霍夫定律。 电路类型有了基本的电路元件，我们可以构建出不同类型的电路。除了通路、开路和短路，电路还有其他的分类方法。 比如，从构成来分，可以分为电气电路和电子电路两大类。电气电路由电阻、线圈、电容组成。电子电路除了电阻、线圈和电容之外，还包括晶体管和二极管等半导体元件。 按照功能来分，又分为以下类型的电路： 放大电路：用于增大输入信号并且输出，例如常见的 Amplifier/功放 振荡电路：使电路在没有输入信号时也能产生交流信号 调制电路：可以调制振幅大小(AM)或频率(FM)的电路 检波电路：从信号中提取声音等（调幅波解调） 滤波器：提取指定频段的信号 %20%E6%BF%BE%E6%B3%A2%E6%8A%80%E8%A1%93%E7%B0%A1%E4%BB%8B.files/image005.gif) 运算放大器：能产生一个比输入端电势差大数十万倍的输出电势（对地而言）。集成电路的一种，输入输出互不影响。 逻辑电路：计算加法、乘法、记忆数字/文字 电源电路：交流直流电转换 我有千里眼，你有顺风耳吗？在初学电子电路知识时，很容易被种类繁多的电子元件搞晕。想要一种一种元件学习，不是不可能，但是没必要。我们需要提醒自己，学习电路的目标是做出自己需要的东西，带有功能和互动的装置。 电子元件虽然名目繁多，但是从用途来分，除了上节课介绍过的基本元件，接下来就是这节课要学习的两大类：输入类和输出类。 输入类元件帮助我们感知和获取环境中的信息/状态，输出类元件负责向环境施加影响，例如展示数字/图像、移动物体等等。 想象一下人体，可以类比为装备着强大输入输出设备的智能体。输入设备包括眼睛、鼻子、耳朵、皮肤等，可以感知并接收图像、运动物体、声音、气味、压力等等复杂多样的信息。而输出设备包括嘴巴、身体关节和肌肉等，可以发出声音、做动作、移动物体等等。 当然，电子元件能够做的事情就更多了，比如，测量土壤湿度、测量脉搏、获取蓝牙信号等等。这些由各显神通的元器件来实现。 输入设备我们借助输入设备，实时获取环境中的各种信息。 开关开关也是一种设备？没错，电路本身就是一个小环境，这个小环境最重要的状态之一，就是电路是否形成通路。(聪明的你应该意识到，开关同时也是一种输出设备) 不要小看了开关，它有多种类型，可以控制多种状态。比如有按钮类型的，toggle 类型的，还有开关组： 声音检测环境中声音大小的元件(更高级一些的可以提取声音包络，或者做语音识别)。猜猜看，这类元件价格是多少？ 距离超声波传感器的本领，是不断发出探测距离的超声波，计算并报告元件距离目标物体(障碍)的距离： 温度测量温度的元件大多数都是热敏电阻，也就是阻值随着温度发生变化。 光照测量光照亮度的元件大多数都是光敏电阻，也就是阻值随着亮度发生变化。 图像想要识别物体，首先要获取图像。摄像头就是最常见的设备。现在的摄像头已经做到体积微小、成像高清。 另外一种传感器可以专门检测 RGB 的颜色值： 压力压电传感器用来检测振动或敲击。 磁场我们常见的磁铁也是一种电子元件哦~ 霍尔效应传感器也称霍尔传感器，是一个换能器，将变化的磁场转化为输出电压的变化。 红外互动装置总是少不了人的参与，其中经常会用到的一个元件，是检测某个距离内是否有人出现的红外传感器。 应变计应变计是电阻随作用力变化的传感器；它将力、压力、张力、重量等物理量转化为电阻的变化，从而测量这些物理量。当外力作用于固定物体时，就会产生应力和应变。物体内部产生的（对外力的）反作用力即为应力，产生的位移和形变即为应变。 例如基于应变计的称重传感器，将力转换为可测量的电信号输出的传感器。 加速计加速计（accelerometer）也叫重力感应器，是测量加速度的装置。相对于远距感测的装置，它测量的是自身组件在某个轴向的受力情况，表现形式为轴向的加速度大小和方向（XYZ）。这有点类似于陀螺仪，但陀螺仪的更多关注自身旋转情况，加速计则主要是测量受力情况，也就是三轴运动情况，更适合用于空间运动判断。 陀螺仪（gyroscope）是一种基于角动量守恒理论感测与维持方向的装置。三轴陀螺仪的工作原理，是通过测量三维坐标系内陀螺转子的垂直轴与设备之间的夹角，并计算角速度，通过夹角和角速度来判别物体在三维空间的运动状态。三轴陀螺仪可以同时测定上、下、左、右、前、后等6个方向，最终可判断出设备的移动轨迹和加速度。 常见的体感游戏机、手机里都有这种元件。 机器视觉前面提到了获取图像的元件，也就是常见的摄像头。不过我们更常见的需求是用摄像头识别某些东西，比如人脸、比如让机器人拥有视力。所以，机器视觉相关的硬件和软件也是我们可能会用到的工具。 机器视觉是人工智能中一个重要的研究领域，相关的算法一直在改进。OpenCV 就是使用最为广泛的机器视觉开源库，它提供了实时识别形状和物体的能力，许多机器视觉的应用都是在它的基础上改进实现的。 当然，也有一些硬件已经集成了特定的视觉能力。 比如 OpenMV 项目提供低成本、可扩展、支持 Python 的机器视觉模块，成为「机器视觉的 Arduino」： 又比如 Pixy2 摄像头，能通过简单的训练快速识别物体： ) Pixy2摄像头图像识别 输出设备看了这么多输入元件，是不是觉得人对环境的感知能力得到极大的扩展？这样我们可以收集无数来自环境的实时信息。接着，我们处理这些信息，或者设定一些规则，达到某些条件的时候，就自动去做某些事情。这就是智能硬件的基本原理。并不难，对吧？ 接下来我们就了解一下输出设备，看看如果要对环境施加影响，我们都有哪些能力可以使用。 LED严格来说，单个 LED 不算一类输出设备。但是它实在太常用了，而且多个 LED 组合起来，就可以成为可能性无穷的输出显示屏。 LCD跟 LED 对应的还有另外一种专门用于显示的屏幕——LCD (Liquid Crystal Displays)。 扬声器视觉的输出设备有了，接下来是听觉。那就是各种扬声器，也就是喇叭了。 电机/马达听和看都有了，那么接下来就是运动了。运动涉及到物理位移，我们需要借助电机来完成。 电机有非常多种，分类也各不相同，比如直流电机（DC Moter）和交流电机。 在 DIY 装置中，常用到伺服电机、步进电机和舵机这几种。 伺服电机：闭环控制，即通过传感器实时反馈电机的运行状态，由控制芯片进行实时调节。 步进电机：开环控制，接收的是电脉冲信号，根据信号数量转过相应的步距角（角位移）。 舵机：是伺服电机在航模、小型机器人等领域下常用的一个特殊版本 小结今天我们认识了很多新伙伴。你可能眼有点花，头有点昏。不要紧，在动手实践过程中会慢慢加深了解的。 现在，你已经踏上了自己折腾的旅程——有那么多好玩的东西等着你去搭建呢！ 输入+Arduino+输出 可以实现无数的组合，只要你愿意细心查看元件的说明，按照电路的原理去设计接线，使用 tinkercad 等工具来模拟和检查电路，并且编写一些 Arduino 代码，理论上就可以做出许许多多好玩的东西。 嗯，理论只是理论。在实际动手的过程中，我们还会遇到这样那样的问题，可能是搞不懂某个元件的工作原理，可能电路总是出问题，可能是编程很吃力。这些都是成为 Maker 的过程中必不可少的锻炼。别忘记，我们还有 instructables、Arduino 等网站和社区，上面有海量的例子、项目和资料，是我们折腾路上很好的陪伴。 接下来就开始扑腾吧！享受淹没在新知中的缺氧感，享受遇到问题解决问题的痛苦，享受打完大小 boss 通关后的成就感。不要忘记跟大家分享你的点滴心得~]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>ArtxCode</tag>
+        <tag>Creative Coding</tag>
+        <tag>制造</tag>
+        <tag>Maker</tag>
+        <tag>Digital Fabrication</tag>
+        <tag>Fab</tag>
+        <tag>Arduino</tag>
+        <tag>电路</tag>
+        <tag>传感器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[三维制图讲义03 - 三维软件和Blender介绍]]></title>
     <url>%2F190320-3d03-blender-intro.html</url>
-    <content type="text"><![CDATA[三维软件实在太多了，到底该选哪一个？ 我并不是资深从业者，用过的三维软件并不多。我只从个人需求出发： 不贵，安装和维护简单 功能足够强大(不特别偏向工程制图/动画/三维雕塑) 软件还在持续改进中 Blender 是比较理想的选择。开源、功能完善，安装和使用都比较轻巧，关键是，免费用正版啊： 如果是专业人士请直接忽略本文。或者移步 all3dp.com 在年初发布的一篇文章，介绍和比较了 30 款软件，其中 15 款为免费软件： Best 3D Design/3D Modeling Software 2019 (15 of 30 are Free) | All3DP Name Level OS Price Formats 3D Slash Beginner Windows, Mac, Linux, Raspberry Pi or Browser Free, 24$/year Premium 3dslash, obj, stl LibreCAD Beginner Windows, macOS and Linux Free dxf, dwg Photoshop CC Beginner Windows and Mac 142€/year 3ds, dae, kmz, obj, psd, stl, u3d SculptGL Beginner Browser Free obj, ply, sgl, stl SelfCAD Beginner Browser Free 30-day trial, 9.99$/month stl, mtl, ply, dae, svg TinkerCAD Beginner Browser Free 123dx, 3ds, c4d, mb, obj, svg, stl Clara.io Intermediate Browser Free, Premium features from 100$/year 3dm, 3ds, cd, dae, dgn, dwg, emf, fbx, gf, gdf, gts, igs, kmz, lwo, rws, obj, off, ply, pm, sat, scn, skp, slc, sldprt, stp, stl, x3dv, xaml, vda, vrml, x_t, x, xgl, zpr DesignSpark Intermediate Windows Freemium, 835$ (All Addons) rsdoc, dxf, ecad, idf, idb, emn, obj, skp, STL, iges, step FreeCAD Intermediate Windows, Mac and Linux Free step, iges, obj, stl, dxf, svg, dae, ifc, off, nastran, Fcstd MakeHuman Intermediate Windows, Mac, Linux Free dae, fbx, obj, STL Meshmixer Intermediate Windows, Mac and Linux Free amf, mix, obj, off, stl Moment of Inspiration (MoI) Intermediate Windows and Mac 266€ 3ds, 3dm, dxf, fbx, igs, lwo, obj, skp, stl, stp and sat nanoCAD Intermediate Windows Freemium, 180$/year sat, step, igs, iges, sldprt, STL, 3dm, dae, dfx, dwg, dwt, pdf, x_t, x_b, xxm_txt, ssm_bin OpenSCAD Intermediate Windows, Mac and Linux Free dxf, off, stl Sculptris Intermediate Windows and Mac Free obj, goz SketchUp Intermediate Windows and Mac Free, 240$ Pro dwg, dxf, 3ds, dae, dem, def, ifc, kmz, stl 3ds Max Professional Windows 1505$/year, Educational licenses available stl, 3ds, ai, abc, ase, asm, catproduct, catpart, dem, dwg, dxf, dwf, flt, iges, ipt, jt, nx, obj, prj, prt, rvt, sat, skp, sldprt, sldasm, stp, vrml, w3d xml AutoCAD Professional Windows and Mac 1575$/year dwg, dxf, pdf Blender Professional Windows, Mac and Linux Free 3ds, dae, fbx, dxf, obj, x, lwo, svg, ply, stl, vrml, vrml97, x3d Cinema 4D Professional Windows, macOS 3695$ 3ds, dae, dem, dxf, dwg, x, fbx, iges, lwf, rib, skp, stl, wrl, obj modo Professionals Windows, macOS, Linux 1799$ lwo, abc, obj, pdb, 3dm, dae, fbx, dxf, x3d, geo, stl Mudbox Professional Windows and Mac 85€/year fbx, mud, obj Onshape Professional Windows, Mac, Linux, iOS, Android 2400€/year, free and price reduced business version available sat, step, igs, iges, sldprt, stl, 3dm, dae, dfx, dwg, dwt, pdf, x_t, x_b, xxm_txt, ssm_bin Poser Professionals Windows, Mac Standard 129.99$, Pro 349.99$ cr2, obj, pz2 Rhino3D Professional Windows and Mac 495€ Educational, 995€ Commercial 3dm, 3ds, cd, dae, dgn, dwg, emf, fbx, gf, gdf, gts, igs, kmz, lwo, rws, obj, off, ply, pm, sat, scn, skp, slc, sldprt, stp, stl, x3dv, xaml, vda, vrml, x_t, x, xgl, zpr ZBrush Professional Windows and Mac 400€ Educational License, 720€ Single User License dxf, goz, ma, obj, stl, vrml, x3d CATIA Industrial Windows 7180€; Educational licenses available 3dxml, catpart, igs, pdf, stp, stl, vrml Fusion 360 Industrial Windows and Mac 499.80€/year, Educational licenses available catpart, dwg, dxf, f3d, igs, obj, pdf, sat, sldprt, stp Inventor Industrial Windows and Mac 1935$/year 3dm, igs, ipt, nx, obj, prt, rvt, sldprt, stl, stp, x_b, xgl Solidworks Industrial Windows 9950€, Educational licenses available 3dxml, 3dm, 3ds, 3mf, amf, dwg, dxf, idf, ifc, obj, pdf, sldprt, stp, stl, vrml 下载 Blender 请到官网 blender.org 选择 2.80 版本。不推荐之前的版本，是因为 2.8 版本的调整实在太大了，几乎对整个软件各方面都做了一些重构。尤其是加入了实时渲染的 eevee 引擎，用上就已经回不去之前的版本了…… Blender 官网每天会发布新的测试版(迭代速度真的飞快)。下载后找到应用程序直接打开就可以使用。 打开软件后，可以先按需做一些设置，比如显示中文菜单、修改小键盘相关的快捷键： 语言选择：顶部菜单-Edit-Preferences-Interface-Translation 鼠标/键盘快捷键设置：顶部菜单-Edit-Preferences-Keymap 学习 Blender，最重要的是反复练习。在这个系列课程讲义中，我不会详细讲解怎么使用软件，网上已经有相当多很棒的视频教程了。 我会尝试提供一些基本的练习清单，也就是帮助大家去拆解需要训练的技能。 这一周涉及的技能模块是最基础也是最重要的，因为它们的组合构成了 Blender (包括在其他三维软件里) 大部分的操作。 视图浏览围绕着兴趣点旋转视图：按下鼠标中键并移动 缩放视图：滚轮鼠标中键 平移视图：Shift+按下鼠标中键 正/右/顶视图切换：如果没有小键盘，需要先在设置中修改快捷键，比如我一般设置 Alt 1 / Alt3 / Alt7 为正/右/顶视图 物体移动+旋转+缩放非快捷键操作：先选中物体，然后在左侧工具栏选择 移动/选择/缩放 工具，然后操作 快捷键操作：先选中物体，然后按一下 G 键，移动鼠标就会看到物体会跟随移动。移到目标位置后，点鼠标左键，物体就确认移动。 但是在移动时，我们经常需要只沿着某个轴(x轴辅助线为红色，y轴辅助线为绿色，z轴辅助线为蓝色)移动。 这个操作又有两种做法 按一下 G/R/S 键后，再按一下需要沿着哪个轴移动，比如沿着 x 轴就按下 x 键，然后移动物体； 或者配合鼠标中键使用：按下 G 键后，按住鼠标中键，沿着坐标轴参考线移动，物体就会只沿着这条坐标轴移动 确认移动都是点击鼠标左键。 沿着某个轴旋转和缩放也是类似的操作。 比如，沿 x 轴旋转：r - x - 移动鼠标 - 按鼠标左键确认 比如，沿 z 轴缩放：s - z - 移动鼠标 - 按鼠标左键确认 以上就是这节课的主要练习：用不同的视图查看物体，移动/旋转/缩放物体。 记得多练习几次哦，下周见~]]></content>
+    <content type="text"><![CDATA[三维制图讲义01 - 欢迎来到三维世界 三维制图讲义02 - 三维制作流程 三维软件实在太多了，到底该选哪一个？ 我并不是资深从业者，用过的三维软件并不多。我只从个人需求出发： 不贵，安装和维护简单 功能足够强大(不特别偏向工程制图/动画/三维雕塑) 软件还在持续改进中 Blender 是比较理想的选择。开源、功能完善，安装和使用都比较轻巧，关键是，免费用正版啊： 如果是专业人士请直接忽略本文。或者移步 all3dp.com 在年初发布的一篇文章，介绍和比较了 30 款软件，其中 15 款为免费软件： Best 3D Design/3D Modeling Software 2019 (15 of 30 are Free) | All3DP Name Level OS Price Formats 3D Slash Beginner Windows, Mac, Linux, Raspberry Pi or Browser Free, 24$/year Premium 3dslash, obj, stl LibreCAD Beginner Windows, macOS and Linux Free dxf, dwg Photoshop CC Beginner Windows and Mac 142€/year 3ds, dae, kmz, obj, psd, stl, u3d SculptGL Beginner Browser Free obj, ply, sgl, stl SelfCAD Beginner Browser Free 30-day trial, 9.99$/month stl, mtl, ply, dae, svg TinkerCAD Beginner Browser Free 123dx, 3ds, c4d, mb, obj, svg, stl Clara.io Intermediate Browser Free, Premium features from 100$/year 3dm, 3ds, cd, dae, dgn, dwg, emf, fbx, gf, gdf, gts, igs, kmz, lwo, rws, obj, off, ply, pm, sat, scn, skp, slc, sldprt, stp, stl, x3dv, xaml, vda, vrml, x_t, x, xgl, zpr DesignSpark Intermediate Windows Freemium, 835$ (All Addons) rsdoc, dxf, ecad, idf, idb, emn, obj, skp, STL, iges, step FreeCAD Intermediate Windows, Mac and Linux Free step, iges, obj, stl, dxf, svg, dae, ifc, off, nastran, Fcstd MakeHuman Intermediate Windows, Mac, Linux Free dae, fbx, obj, STL Meshmixer Intermediate Windows, Mac and Linux Free amf, mix, obj, off, stl Moment of Inspiration (MoI) Intermediate Windows and Mac 266€ 3ds, 3dm, dxf, fbx, igs, lwo, obj, skp, stl, stp and sat nanoCAD Intermediate Windows Freemium, 180$/year sat, step, igs, iges, sldprt, STL, 3dm, dae, dfx, dwg, dwt, pdf, x_t, x_b, xxm_txt, ssm_bin OpenSCAD Intermediate Windows, Mac and Linux Free dxf, off, stl Sculptris Intermediate Windows and Mac Free obj, goz SketchUp Intermediate Windows and Mac Free, 240$ Pro dwg, dxf, 3ds, dae, dem, def, ifc, kmz, stl 3ds Max Professional Windows 1505$/year, Educational licenses available stl, 3ds, ai, abc, ase, asm, catproduct, catpart, dem, dwg, dxf, dwf, flt, iges, ipt, jt, nx, obj, prj, prt, rvt, sat, skp, sldprt, sldasm, stp, vrml, w3d xml AutoCAD Professional Windows and Mac 1575$/year dwg, dxf, pdf Blender Professional Windows, Mac and Linux Free 3ds, dae, fbx, dxf, obj, x, lwo, svg, ply, stl, vrml, vrml97, x3d Cinema 4D Professional Windows, macOS 3695$ 3ds, dae, dem, dxf, dwg, x, fbx, iges, lwf, rib, skp, stl, wrl, obj modo Professionals Windows, macOS, Linux 1799$ lwo, abc, obj, pdb, 3dm, dae, fbx, dxf, x3d, geo, stl Mudbox Professional Windows and Mac 85€/year fbx, mud, obj Onshape Professional Windows, Mac, Linux, iOS, Android 2400€/year, free and price reduced business version available sat, step, igs, iges, sldprt, stl, 3dm, dae, dfx, dwg, dwt, pdf, x_t, x_b, xxm_txt, ssm_bin Poser Professionals Windows, Mac Standard 129.99$, Pro 349.99$ cr2, obj, pz2 Rhino3D Professional Windows and Mac 495€ Educational, 995€ Commercial 3dm, 3ds, cd, dae, dgn, dwg, emf, fbx, gf, gdf, gts, igs, kmz, lwo, rws, obj, off, ply, pm, sat, scn, skp, slc, sldprt, stp, stl, x3dv, xaml, vda, vrml, x_t, x, xgl, zpr ZBrush Professional Windows and Mac 400€ Educational License, 720€ Single User License dxf, goz, ma, obj, stl, vrml, x3d CATIA Industrial Windows 7180€; Educational licenses available 3dxml, catpart, igs, pdf, stp, stl, vrml Fusion 360 Industrial Windows and Mac 499.80€/year, Educational licenses available catpart, dwg, dxf, f3d, igs, obj, pdf, sat, sldprt, stp Inventor Industrial Windows and Mac 1935$/year 3dm, igs, ipt, nx, obj, prt, rvt, sldprt, stl, stp, x_b, xgl Solidworks Industrial Windows 9950€, Educational licenses available 3dxml, 3dm, 3ds, 3mf, amf, dwg, dxf, idf, ifc, obj, pdf, sldprt, stp, stl, vrml 下载 Blender 请到官网 blender.org 选择 2.80 版本。不推荐之前的版本，是因为 2.8 版本的调整实在太大了，几乎对整个软件各方面都做了一些重构。尤其是加入了实时渲染的 eevee 引擎，用上就已经回不去之前的版本了…… Blender 官网每天会发布新的测试版(迭代速度真的飞快)。下载后找到应用程序直接打开就可以使用。 打开软件后，可以先按需做一些设置，比如显示中文菜单、修改小键盘相关的快捷键： 语言选择：顶部菜单-Edit-Preferences-Interface-Translation 鼠标/键盘快捷键设置：顶部菜单-Edit-Preferences-Keymap 学习 Blender，最重要的是反复练习。在这个系列课程讲义中，我不会详细讲解怎么使用软件，网上已经有相当多很棒的视频教程了。 我会尝试提供一些基本的练习清单，也就是帮助大家去拆解需要训练的技能。 这一周涉及的技能模块是最基础也是最重要的，因为它们的组合构成了 Blender (包括在其他三维软件里) 大部分的操作。 视图浏览围绕着兴趣点旋转视图：按下鼠标中键并移动 缩放视图：滚轮鼠标中键 平移视图：Shift+按下鼠标中键 正/右/顶视图切换：如果没有小键盘，需要先在设置中修改快捷键，比如我一般设置 Alt 1 / Alt3 / Alt7 为正/右/顶视图 物体移动+旋转+缩放非快捷键操作：先选中物体，然后在左侧工具栏选择 移动/选择/缩放 工具，然后操作 快捷键操作：先选中物体，然后按一下 G 键，移动鼠标就会看到物体会跟随移动。移到目标位置后，点鼠标左键，物体就确认移动。 但是在移动时，我们经常需要只沿着某个轴(x轴辅助线为红色，y轴辅助线为绿色，z轴辅助线为蓝色)移动。 这个操作又有两种做法 按一下 G/R/S 键后，再按一下需要沿着哪个轴移动，比如沿着 x 轴就按下 x 键，然后移动物体； 或者配合鼠标中键使用：按下 G 键后，按住鼠标中键，沿着坐标轴参考线移动，物体就会只沿着这条坐标轴移动 确认移动都是点击鼠标左键。 沿着某个轴旋转和缩放也是类似的操作。 比如，沿 x 轴旋转：r - x - 移动鼠标 - 按鼠标左键确认 比如，沿 z 轴缩放：s - z - 移动鼠标 - 按鼠标左键确认 以上就是这节课的主要练习：用不同的视图查看物体，移动/旋转/缩放物体。 记得多练习几次哦，下周见~]]></content>
       <categories>
         <category>教程</category>
       </categories>
@@ -65,8 +84,8 @@
         <tag>Digital Fabrication</tag>
         <tag>Fab</tag>
         <tag>Arduino</tag>
-        <tag>单片机</tag>
         <tag>电路</tag>
+        <tag>单片机</tag>
       </tags>
   </entry>
   <entry>
@@ -2493,8 +2512,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>哥特式</tag>
         <tag>巴洛克</tag>
         <tag>布拉格</tag>
@@ -2513,8 +2532,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>东正教</tag>
         <tag>基督教</tag>
         <tag>天主教</tag>
@@ -2532,8 +2551,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
       </tags>
   </entry>
@@ -2547,8 +2566,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>奥地利</tag>
         <tag>哈布斯堡王朝</tag>
         <tag>维也纳</tag>
@@ -2564,8 +2583,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
       </tags>
   </entry>
@@ -2578,9 +2597,9 @@
       </categories>
       <tags>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
         <tag>匈牙利</tag>
+        <tag>历史</tag>
         <tag>奥地利</tag>
         <tag>捷克</tag>
         <tag>斯洛伐克</tag>
@@ -2595,8 +2614,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>人类简史</tag>
         <tag>历史</tag>
+        <tag>人类简史</tag>
       </tags>
   </entry>
   <entry>
@@ -2846,8 +2865,8 @@
       <tags>
         <tag>Design</tag>
         <tag>设计</tag>
-        <tag>服务设计</tag>
         <tag>service design</tag>
+        <tag>服务设计</tag>
       </tags>
   </entry>
   <entry>
@@ -2972,8 +2991,8 @@
       </categories>
       <tags>
         <tag>IxD</tag>
-        <tag>交互设计</tag>
         <tag>Note</tag>
+        <tag>交互设计</tag>
       </tags>
   </entry>
   <entry>
@@ -3282,8 +3301,8 @@
       </categories>
       <tags>
         <tag>IxD</tag>
-        <tag>交互设计</tag>
         <tag>Note</tag>
+        <tag>交互设计</tag>
       </tags>
   </entry>
   <entry>
@@ -3308,8 +3327,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>交互设计</tag>
         <tag>Note</tag>
+        <tag>交互设计</tag>
         <tag>Interface</tag>
         <tag>Pattern</tag>
       </tags>
@@ -3374,8 +3393,8 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>Reading</tag>
         <tag>Note</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
