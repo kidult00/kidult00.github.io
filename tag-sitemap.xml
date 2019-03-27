@@ -954,6 +954,13 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
+        <lastmod>2018-09-25T08:07:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://uegeek.com/tags/%E4%B8%AD%E6%AC%A7/</loc>
         <lastmod>2018-09-25T08:07:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -962,13 +969,6 @@
 
     <url>
         <loc>http://uegeek.com/tags/%E5%8C%88%E7%89%99%E5%88%A9/</loc>
-        <lastmod>2018-09-25T08:07:26.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
         <lastmod>2018-09-25T08:07:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1794,34 +1794,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/3D/</loc>
-        <lastmod>2019-03-20T16:14:27.040Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/Modeling/</loc>
-        <lastmod>2019-03-20T16:14:27.040Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/Blender/</loc>
-        <lastmod>2019-03-20T16:14:27.040Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/ArtxCode/</loc>
-        <lastmod>2019-03-26T14:35:06.137Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/tags/Creative-Coding/</loc>
         <lastmod>2019-03-26T14:35:06.137Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1873,6 +1845,41 @@
     <url>
         <loc>http://uegeek.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/</loc>
         <lastmod>2019-03-26T14:35:06.137Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/ArtxCode/</loc>
+        <lastmod>2019-03-27T06:55:10.907Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/3D/</loc>
+        <lastmod>2019-03-27T06:55:10.907Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Modeling/</loc>
+        <lastmod>2019-03-27T06:55:10.907Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Blender/</loc>
+        <lastmod>2019-03-27T06:55:10.907Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Geometry/</loc>
+        <lastmod>2019-03-27T06:55:10.907Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

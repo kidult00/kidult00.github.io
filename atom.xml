@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2019-03-26T14:35:06.137Z</updated>
+  <updated>2019-03-27T06:55:10.907Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>三维制图讲义04 - 基础几何体</title>
+    <link href="http://uegeek.com/190327-3d04-basic-geometry.html"/>
+    <id>http://uegeek.com/190327-3d04-basic-geometry.html</id>
+    <published>2019-03-27T06:54:02.000Z</published>
+    <updated>2019-03-27T06:55:10.907Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/3d_course_title.jpg" alt=""></p><a id="more"></a><p><a href="https://www.uegeek.com/190306-3d01-welcome-to-the-3d-world.html" target="_blank" rel="noopener">三维制图讲义01 - 欢迎来到三维世界</a></p><p><a href="https://www.uegeek.com/190314-3d02-workflow.html" target="_blank" rel="noopener">三维制图讲义02 - 三维制作流程</a></p><p><a href="https://www.uegeek.com/190320-3d03-blender-intro.html" target="_blank" rel="noopener">三维制图讲义03 - 三维软件和Blender介绍</a></p><h2 id="快速回顾"><a href="#快速回顾" class="headerlink" title="快速回顾"></a>快速回顾</h2><p>上一节课，我们介绍了 Blender 软件的下载、安装、设置和基本界面组成。</p><p>接着练习了视图的变换：</p><ul><li>围绕着兴趣点旋转视图：按下鼠标中键并移动</li><li>缩放视图：滚轮鼠标中键</li><li>平移视图：Shift+按下鼠标中键</li><li>正/右/顶视图切换：如果没有小键盘，需要先在设置中修改快捷键，比如我一般设置 Alt 1 / Alt3 / Alt7 为正/右/顶视图</li></ul><p>然后练习了最基本的几何体操作：位移、旋转和缩放（TRS）。</p><p><img src="http://img.viz.mobi/Blender_move.jpg" alt=""></p><p>特别需要练习的是，沿着某个轴做以上操作。当我们熟练使用界面中的辅助手柄来移动、旋转和缩放以后，还可以进一步使用鼠标来加速操作，毕竟这是最常使用的操作：</p><ul><li>按一下 G/R/S 键后，再按一下需要沿着哪个轴移动，比如沿着 x 轴就按下 x 键，然后移动物体；</li><li>或者配合鼠标中键使用：按下 G 键后，按住鼠标中键，沿着坐标轴参考线移动，物体就会只沿着这条坐标轴移动</li></ul><p>在这个基础上，我们加入<strong>复制并移动的练习</strong>：</p><ul><li>选中几何体(非编辑状态)</li><li>按 shift+D 复制一个一模一样的几何体</li><li>沿坐标轴移动到某处(配合鼠标中键使用)</li><li>需要对齐多个几何体时，需要切换为正/侧/顶视图查看</li><li>将几何体 translate 到合适的地方</li></ul><h2 id="几何体"><a href="#几何体" class="headerlink" title="几何体"></a>几何体</h2><p>当我们第一次打开 Blender 软件的时候，会看到编辑视图中央有一个立方体。如果我们按下 shift+A，会弹出添加菜单，在 mesh 选项里面，会有一系列选项，它们就是最最基本的几何体：平面、立方体、圆形、球体、圆柱体、圆锥体、圆环。</p><p><img src="http://jayanam.com/wp-content/uploads/2015/05/add_torus.jpg" alt=""></p><p>万丈高楼平地起。基础几何体就是万丈高楼的基本模块。</p><p>观察下面的几何体，想想在日常生活中，能见到哪些物品拥有类似的形状：</p><p><img src="http://img.viz.mobi/85715889-set-of-basic-3d-geometric-shapes-geometric-solids-vector-isolated-on-a-white-background-.jpg" alt=""></p><p>用不同的基础几何体组合，几乎可以搭出任意的形状。乐高就是最好的例子：</p><p><img src="http://img.viz.mobi/lego_bricks_pieces_02.jpg" alt=""></p><p>乐器？没问题啊~</p><p><img src="https://aintbaroque.files.wordpress.com/2012/11/nanoblocks.jpg" alt=""></p><p>练习观察几何体的构成，可以从方方正正的物体开始。比如上面的乐高钢琴，是由哪几部分组成的？不规则的形状可以由哪些比较规则的形状拼接而成？</p><p>除了观察，还可以通过游戏来训练三维的想象力和直觉！比如，三维俄罗斯方块，二维玩得再溜，刚接触三维版本也会觉得自己手残：</p><p><img src="https://www.androidsis.com/wp-content/uploads/2016/12/kubik-juego.jpg" alt=""></p><p>以后再玩跳一跳、纪念碑谷游戏，尤其是后者，记得仔细观察精美场景中的三维构造哦！</p><p><img src="http://n.sinaimg.cn/tech/crawl/w550h488/20180102/xZKm-fyqefvx0379699.jpg" alt=""></p><p><img src="http://www.domarketing.cn/uploadfile/2017/1120/20171120113509137.jpg" alt=""></p><p>而且，在现实世界中看到好玩有趣的物品，要留意它的不同侧面都长什么样子：</p><p><img src="http://img.viz.mobi/b23af8da78874d7d920823b86e2cb1f3.jpg" alt=""></p><h2 id="Blender-练习"><a href="#Blender-练习" class="headerlink" title="Blender 练习"></a>Blender 练习</h2><p>编辑模式点线面选择切换。</p><p>选中几何体后，按快捷键 Tab 进入编辑模式。这时候会看到物体变为橙色，顶点、边和面都跟物体状态时不太一样。</p><p>在编辑状态下，按键盘 1、2、3 键（或者点界面中模式选择右边的三个图标），可以切换为 点选择、边选择、面选择状态。</p><p>点选择（编辑模式下按1键）：</p><p><img src="http://img.viz.mobi/Blender_point_select.jpg" alt=""></p><p>面选择（编辑模式下按3键）：</p><p><img src="http://img.viz.mobi/Blender_face_select.jpg" alt=""></p><p>接下来，我们可以将点、线、面选择，跟位移、旋转、缩放结合起来练习：</p><ul><li>切换到点选择模式（编辑模式下按 1 键），选中点，进行移动（G）(包括沿轴的操作)</li><li>切换到边选择模式（编辑模式下按 2 键），选中多条边，进行旋转（R）(包括沿轴的操作)</li><li>切换到面选择模式（编辑模式下按 3 键），选中多个面，进行缩放（S）(包括沿轴的操作)</li></ul><p><img src="http://img.viz.mobi/Blender_edit.jpg" alt=""></p><p>完成了立方体的修改以后，再结合上一节的知识，用三个形状不一样的几何体，做成 3X3X3 的几何体矩阵，并且截下正/侧/斜面三张图，记录过程中的心得。</p><p>你已经开始创造属于自己的作品了 😀，加油~</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/3d_course_title.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
+    
+      <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
+    
+      <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
+    
+      <category term="Geometry" scheme="http://uegeek.com/tags/Geometry/"/>
+    
+  </entry>
   
   <entry>
     <title>数字制造讲义04-负责输入和输出的智能元件</title>
@@ -186,9 +216,9 @@
     
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
-      <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
-    
       <category term="单片机" scheme="http://uegeek.com/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+      <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
     
   </entry>
   
@@ -313,9 +343,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -357,9 +387,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -399,9 +429,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -439,9 +469,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -479,9 +509,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -517,9 +547,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -591,9 +621,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -627,9 +657,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -663,9 +693,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -705,9 +735,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
     
@@ -720,48 +750,6 @@
       <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
     
       <category term="随机" scheme="http://uegeek.com/tags/%E9%9A%8F%E6%9C%BA/"/>
-    
-      <category term="MaxMSP" scheme="http://uegeek.com/tags/MaxMSP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法创作实战01 - 巴纳姆效应之随机星座实验</title>
-    <link href="http://uegeek.com/181017-computational-creativity-in-maxmsp-01.html"/>
-    <id>http://uegeek.com/181017-computational-creativity-in-maxmsp-01.html</id>
-    <published>2018-10-17T10:22:16.000Z</published>
-    <updated>2018-10-17T11:37:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-title1.jpg" alt=""></p><a id="more"></a><p>在「生成式艺术和算法创作」系列第二篇中，00 <a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">介绍了随机和噪声在算法创作中的应用</a>。</p><p>今天我们一起来用 Max/MSP 实现一个半（hu）仙（shuo）算（ba）命（dao）小应用，加深对 Max/MSP 中 <code>random</code> 对象的了解，并且学习如何使用 <code>coll</code> 对象。</p><blockquote><p>名称：麦克斯半仙儿（又名 Random Bullshit）</p><p>主要使用的对象：random, coll, route, jit.cellblock, fpic</p><p>难度系数：★☆☆☆☆</p></blockquote><h2 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h2><p><a href="https://www.wikiwand.com/zh-hans/%E5%B7%B4%E7%B4%8D%E5%A7%86%E6%95%88%E6%87%89" target="_blank" rel="noopener">巴纳姆效应（Barnum effect）</a>是 1948 年由心理学家伯特伦·福勒通过试验提出的一种心理学现象，以杂技师巴纳姆的名字命名。巴纳姆效应是一种心理现象，人们会对他们认为是为自己量身订做的一些人格描述，给予高度准确的评价，而这些描述往往十分模糊及普遍，以致能够放诸四海皆准适用于很多人身上。</p><p>据说巴纳姆的成功秘诀是：「永远要让每一个观众都感到自己若有所获」。意思如果要让每一个人都能感到对自己个性的描述是准确的，就要去提供一些放之四海而皆准的描述。看手相、算命、占星术及其他伪心理学经常利用这种效应，怎么说都能让你听着有点儿道理。于是有人将十二星座的描述随机排列，发现不同星座的描述基本上可以适用于其他星座。</p><p>所以今天我们来实践一下这个想法，看看程序随机给出的星座描述，有没有戳中你 🌝。</p><h2 id="任务拆解"><a href="#任务拆解" class="headerlink" title="任务拆解"></a>任务拆解</h2><p>这个程序叫麦克斯半仙儿，用户选择自己的星座后，程序给出描述。最后的成果是这样：</p><p><img src="http://img.viz.mobi/BarnumEffectDemo.gif" alt=""></p><p>首先来拆解需要干的事儿：</p><ul><li>收集十二星座的简短描述和图标</li><li>存储文本，方便随机调用</li><li>12 星座的选择控件</li><li>显示结果（包括加载默认值）</li></ul><p>开始动手前，请复习 Max/MSP 文档中 random, coll, route, jit.cellblock, fpic 等对象的说明。</p><h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><p>这个小程序的核心是用 <code>random</code> 对象随机显示 <code>coll</code> 对象中存储的内容。<code>coll</code> 即 collection，用来存储一个列表，列表中每一项都包含 key 和 value（中间用 ， 隔开），可以通过 key 获取对应的 value。value 可以是单个值，也可以是以空格分隔的多个值。</p><p>在 Max 中新建名字为 blah 的 <code>coll</code> 对象，双击（或者 cmd+点击）打开，填入我们在网上找到的十二星座描述内容，格式如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0, 你大方、明朗，全身充滿活力……;</span><br><span class="line">1, 你不但好學、知識豐富，還很……;</span><br><span class="line">2, 嗯，你善於說服別人，還是個……;</span><br><span class="line">……</span><br></pre></td></tr></table></figure><p>十二个星座描述的索引是从 0~11，所以在 <code>coll</code> 前用一个 <code>random</code> 对象随机选取其中一个星座的描述，然后从 <code>coll</code> 的左出口输出。因为我们存储的是文本内容（symbol），所以需要用一个 <code>route</code> 对象读取 symbol 内容，并发送到显示区域。</p><p><img src="http://img.viz.mobi/BarnumEffect-coll.png" alt=""></p><p>如果不想每次双击打开 <code>coll</code> 查看，可以用 <code>refer 名字</code> 消息连接一个 <code>jit.cellblock</code> 查看 <code>coll</code> 里面的内容。</p><p>随机调用的内容准备就绪后，接下来是选择星座的界面：</p><p><img src="http://img.viz.mobi/BarnumEffect-ui.png" alt=""></p><p>用 <code>fpic</code> 显示星座图标，在上面覆盖一个 <code>button</code> 对象，将按钮背景设置为透明。然后将按钮连接到 <code>random</code> 对象，读取 <code>coll</code> 的内容。</p><p>因为想显示每次选择的星座名称，所以每个按钮连接了一个包含对应星座名称的 <code>message</code> ，点击按钮时可以触发显示在内容区域。其实用 <code>radio group</code> 对象能更好实现，但是它的 UI 不好自定义，就放弃了。</p><p>完整的 patch 如下：</p><p><img src="http://img.viz.mobi/BarnumEffectPatch.png" alt=""></p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>程序做好以后，随机生成了几个描述，发到朋友圈，让大家猜这些描述原本对应的是什么星座。</p><p>结果是——没有全部猜对的，哈哈哈！应该给撰写星座描述的小编加🍗~</p><p>下一期实战见~</p><hr><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://img.viz.mobi/maxgroup0825.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/CC-title1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
-    
-      <category term="Computational Creativity" scheme="http://uegeek.com/tags/Computational-Creativity/"/>
-    
-      <category term="创意" scheme="http://uegeek.com/tags/%E5%88%9B%E6%84%8F/"/>
-    
-      <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
-    
-      <category term="随机" scheme="http://uegeek.com/tags/%E9%9A%8F%E6%9C%BA/"/>
-    
-      <category term="巴纳姆效应" scheme="http://uegeek.com/tags/%E5%B7%B4%E7%BA%B3%E5%A7%86%E6%95%88%E5%BA%94/"/>
-    
-      <category term="星座" scheme="http://uegeek.com/tags/%E6%98%9F%E5%BA%A7/"/>
     
       <category term="MaxMSP" scheme="http://uegeek.com/tags/MaxMSP/"/>
     
