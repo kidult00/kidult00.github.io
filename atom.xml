@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2019-03-27T06:55:10.907Z</updated>
+  <updated>2019-04-02T15:24:40.466Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数字制造讲义05-软硬件数据通信</title>
+    <link href="http://uegeek.com/190402-df05-communication.html"/>
+    <id>http://uegeek.com/190402-df05-communication.html</id>
+    <published>2019-04-02T14:20:20.000Z</published>
+    <updated>2019-04-02T15:24:40.466Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/week7title.jpg" alt=""></p><a id="more"></a><p><a href="https://www.uegeek.com/190305-df01-digital-fabrication.html" target="_blank" rel="noopener">数字制造讲义01-成为数字世界的建造者</a></p><p><a href="https://www.uegeek.com/190313-df02-arduino-intro.html" target="_blank" rel="noopener">数字制造讲义02-Arduino入门</a></p><p><a href="https://www.uegeek.com/190319-df03-electronics-basic.html" target="_blank" rel="noopener">数字制造讲义03-电路基础</a></p><p><a href="https://www.uegeek.com/190326-df04-input-and-output.html" target="_blank" rel="noopener">数字制造讲义04-负责输入和输出的智能元件</a></p><h2 id="Connect-Everything"><a href="#Connect-Everything" class="headerlink" title="Connect Everything"></a>Connect Everything</h2><p><img src="https://target.scene7.com/is/image/Target/GUEST_35ece802-7780-4243-b78a-c94cc6f7f682?wid=488&amp;hei=488&amp;fmt=pjpeg" alt=""></p><p>玩过乐高的同学都知道，乐高积木非常容易上手，只需要把积木拼在一起——它们总是能拼在一起，不管是什么大小和形状，所以它成为了经典的儿童益智玩具。</p><p>在我们制造东西的时候，目标也是把不同的物体和元件拼接成一个完整的、具有一定功能的物品。但是我们会面对一个比乐高困难得多的问题：不同的元件出身和禀赋可能天差地别，想要把它们连接到一起，得想出各种办法。</p><p>比如，我想做一个薯片罐头打击乐器，敲击罐头，就可以让 iPad 里面的乐器发出对应的声响。</p><p><img src="https://cdn.instructables.com/FO1/LDW4/IUSLP51T/FO1LDW4IUSLP51T.LARGE.jpg?auto=webp&amp;width=700" alt=""></p><p>想想看，我们要把哪些东西连接起来？</p><p>我们要连接敲击的平面和 iPad 中的 APP。可是并不存在这样的接口。怎么办？</p><p>一段电线连不起来，那我们用两段。可以先用 Arduino 帮我们收集敲击的信号，然后作为中转，再传给 APP。</p><p>可是， Arduino 怎么连接 iPad 呢？</p><p>你可能会说，可以用数据线呀！没错，不过，要用什么样的数据线呢？这取决于我们要传输什么样的数据。我们想要控制 APP 中的乐器，就需要包含 MIDI 信息的数据，于是要用 MIDI 数据线来传递。</p><p>所以，我们的问题拆分成了好几个：</p><ul><li>如何连接敲击面和 Arduino (电路)</li><li>如何连接 Arduino 和 iPad(一头必需是 iPad 支持的端口，如 type-c)</li><li>如何从 Arduino 传输 MIDI 数据到 APP(一头必需是 MIDI 数据线)</li></ul><h2 id="条条小路通骡马"><a href="#条条小路通骡马" class="headerlink" title="条条小路通骡马"></a>条条小路通骡马</h2><p>这节课我们学习有哪些方式把不同的东西连接在一起，让它们之间可以传递数据，完成一定的功能。</p><p>硬件和硬件、软件和硬件、软件和软件的数据通信，主要可以分为两大类型：有线和无线。</p><p>想要跟硬件沟通，需要用某种它能听懂的「语言」。但是这种语言在人类看来简直像天书，它是机器专用的代码——汇编语言（assembly language），是一种用于电子计算机、微处理器、微控制器，或其他可编程器件的低级语言。</p><h3 id="有线"><a href="#有线" class="headerlink" title="有线"></a>有线</h3><p>串口通信(Serial Communication)， 是最常见的通信方式。它是指外接设备和计算机之间，通过数据信号线、地线、控制线等，按位进行传输数据的一种通讯方式。 这种通信方式使用的数据线少，在远距离通信中可以节约通信成本，但其传输速度比并行传输低。</p><p>串口的概念跟并口相对应：</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Parallel_and_Serial_Transmission.gif" alt=""></p><p>因为要跟机器直接打交道的语言（低级别的语言）比较难掌握，所以有许多更高级别的语言(近似人类语言)的库可以帮助我们通过串口跟机器沟通，例如 Python 语言的 <a href="https://github.com/pyserial/pyserial" target="_blank" rel="noopener">pySerial</a>。</p><p>Arduino 也是靠串口跟计算机通信。</p><p><img src="https://cdn.sparkfun.com/assets/learn_tutorials/1/8/1/Arduino_IDE_serial_port.png" alt=""></p><p>在我们上传程序到板子之前，就需要选择用哪个串口通信。在 Port 选项上方，还有 Serial Monitor 工具（IDE右上角放大镜图标也可以），我们常常在调试程序时，打开串口监视器并查看里面的数据。</p><p>那么，Arduino 用什么数据线跟电脑的串口连接呢？</p><p>最常见就是 USB 数据线了。USB 是 Universal Serial BUS 的缩写，从名字可见其野心(不过讲真，数据接口类型太多，真的让人头疼死……)</p><p>来认认 USB 接口们，哪些是平常经常会见到的：</p><p><img src="http://www.l-com.com/images/usb-tutorial_connectors.gif" alt=""></p><p>备受关注的 USB 4.0 就要来了，但是现实比较骨干，我们仍然需要跟各种各样的数据接口和数据线打交道，尤其是音频和视频的数据线，还远未到 USB 一统天下的时候。</p><p>这张图汇总了大部分音视频数据接口的长相，总有一款适合你：</p><p><img src="http://www.conceptdraw.com/How-To-Guide/picture/Vector-stencils--Audio-video-connectors.png" alt=""></p><p>USB 没有办法替代这么多的数据接口和数据线，其中很重要的一个原因是连接距离。音视频的连接长度常常跨越几米甚至上百米，这时候 USB 就傻眼了。</p><p>在远距离传输的场景下，互联网（广域网/局域网）就可以大显身手。在有线互联网中，我们通过 IP 地址访问和联通计算机。</p><p>IPv4地址分为 A、B、C、D、E 五类，出去特殊作用的 D、E 两类，剩下的 A、B、C 三类地址是常见的 IP 地址段。A 类地址的容量最大，可以容纳 16,777,214 个主机，B 类地址可以容纳 65,534 个主机，C 类地址可以容纳 254 个主机。</p><ul><li>A类地址：10.0.0.0–10.255.255.255</li><li>B类地址：172.16.0.0–172.31.255.255</li><li>C类地址：192.168.0.0–192.168.255.255</li></ul><h3 id="无线"><a href="#无线" class="headerlink" title="无线"></a>无线</h3><p>基于无线的连接越来越普遍，也越来越重要了。</p><p>为啥？</p><p><img src="http://debangw.com/img/aHR0cDovL2ltZzIuaW1ndG4uYmRpbWcuY29tL2l0L3U9Mzg3NDAzNjc4OSwxODk1NTY0MjI1JmZtPTI2JmdwPTAuanBn.jpg" alt=""></p><p>尤其在制作互动装置时，我们不希望被太多连线所缠绕和局限活动范围，所以需要借助无线连接的方式。</p><p>而且，多种多样的无线数据传输，也是 IOT(Internet of Things 物联网)的基础设施。</p><p><img src="https://taazaa.com/wp-content/uploads/2017/05/IoT-3.3.png" alt=""></p><p>那么蓝牙呢？蓝牙的应用也越来越普遍了。</p><p>蓝牙是一种点对点的通信方式，主要目的是服务移动设备。蓝牙的功耗以及成本比 wifi 低一些，但是传输距离很短，一般用于近距离设备的通信，例如耳机和手机。</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=a05428d2mlx" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/a05428d2mlx.html" target="_blank" rel="noopener">科技情报局：NFC、蓝牙和 WiFi 有什么区别？_腾讯视频</a></p><p>除了 wifi 和蓝牙，还有 ZigBee、RF、WiMax 等等传输方式，我们不太会接触到，这里就略过了。</p><h2 id="传输音乐数据"><a href="#传输音乐数据" class="headerlink" title="传输音乐数据"></a>传输音乐数据</h2><p>音乐和乐器是我们不变的主题。那么我们要深入了解一下如何传输音乐相关的数据。</p><h3 id="MIDI"><a href="#MIDI" class="headerlink" title="MIDI"></a>MIDI</h3><p>音乐数字接口（Musical Instrument Digital Interface，简称 MIDI ）是一个工业标准的电子通讯协议，为电子乐器等演奏装置（如合成器）定义各种音符或弹奏码，让电子乐器、电脑、手机或其它的舞台演出配备彼此连接，调整和同步，可以即时交换音乐数据。  MIDI 不传送声音，只传送包括音调和音乐强度的数据、音量、颤音和相位等参数，还有设定节奏的时钟信号。在不同的电脑上，输出的声音也因音源器不同而有差异。</p><p>回顾 MIDI 的历史，简直就像回顾数字时代的陈年往事：</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=n08561s7vij" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/n08561s7vij.html" target="_blank" rel="noopener">WHAT IS MIDI 什么是 MIDI_腾讯视频</a></p><p>MIDI 1.0 于 1983 年 8 月发布。35 年过去了，MIDI 终于在今年 1 月迎来了 2.0 版本。</p><p><img src="https://static.bhphotovideo.com/explora/sites/default/files/4_112.jpg" alt=""></p><p>当然，现阶段我们常用的还是 5 脚的 MIDI 数据线，和 0~127 的整数型数字：</p><p><img src="https://cdn.sparkfun.com/r/600-600/assets/learn_tutorials/4/0/8/midi-cable.jpg" alt=""></p><table><thead><tr><th><strong>MIDI Cable Wiring</strong></th><th></th><th></th></tr></thead><tbody><tr><td><strong>First Connector</strong></td><td><strong>Cable</strong></td><td><strong>Second Connector</strong></td></tr><tr><td>Pin 1</td><td>No Connection</td><td>Pin 1</td></tr><tr><td>Pin 2</td><td>Shield</td><td>Pin 2</td></tr><tr><td>Pin 3</td><td>No Connection</td><td>Pin 3</td></tr><tr><td>Pin 4</td><td>Voltage Reference Line</td><td>Pin 4</td></tr><tr><td>Pin 5</td><td>Data Line</td><td>Pin 5</td></tr></tbody></table><p>课上演示的从 MAX 发送 MIDI 数据给 Ableton，记得自己动手试一试哦！</p><p>从移动端发送 MIDI 数据给其他设备，可以使用类似 KnobLab 的 APP，它支持多种传输方式：</p><p><img src="http://img.viz.mobi/KnobLab.jpg" alt=""></p><h3 id="OSC"><a href="#OSC" class="headerlink" title="OSC"></a>OSC</h3><p><a href="http://opensoundcontrol.org/" target="_blank" rel="noopener">OSC</a>（Open Sound Control）是用于连接声音合成器、计算机和其他多媒体设备的协议，用于辅助音乐表演或节目控制之类（共享音乐表现数据如手势、参数和音符序列）的目的。OSC 的优势包括互动性，准确性，灵活性等。</p><p>来听听看 OSC 的作者之一 Matt Wright 是如何介绍它的：</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=f08563i3n66" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/f08563i3n66.html" target="_blank" rel="noopener">Open Sound Control OSC intro_腾讯视频</a></p><p>OSC 常常用来替代 MIDI，因为它的分辨率更高、可传递的参数更丰富。OSC 消息使用 UDP / IP 和以太网通过 Internet和局域网传输。</p><p><img src="http://img.viz.mobi/MIDIvsOSC.jpg" alt=""></p><p>OSC 已广泛应用于音乐表演、机器人、视频性能接口、分布式音乐系统和进程间通信等领域，在实验音乐控制器中更是必不可少。</p><p>那么怎么使用 OSC 传输数据呢？</p><p>在触摸设备如 iOS 上，用 <a href="https://hexler.net/software/touchosc" target="_blank" rel="noopener">TouchOSC</a> 最方便不过了(不过要收费)。</p><p><img src="https://hexler.net/gfx/_software/touchosc-11.png" alt=""></p><p>在移动端下载 TouchOSC，在桌面端下载编辑器，在编辑器里面可以创建自定义的操作面板。然后在移动端设置输入和输出端口。接下来就可以在 Max/MSP 里面接收和发送 OSC 数据了。因为 OSC 通过 UDP 协议传输，所以使用 <code>udpsend</code> 和 <code>udpreceive</code> 对象：</p><p><img src="http://img.viz.mobi/touchOSC2Max.jpg" alt=""></p><p>Max 接收到数据后，可以看到 OSC 的数据格式类似文件路径 URI：<code>/{序号}/{参数名} {参数值}</code>。</p><p>这样我们就把手机和电脑连接起来，并且在手机上实现个性化的控制。</p><p>除了移动端的 TouchOSC，<a href="https://osculator.net/" target="_blank" rel="noopener">OSCulator</a> 也是一款好用的 OSC 控制器，感兴趣的同学可以自行研究一下。</p><p>当然，Arduino 和 Max 也是可以方便地勾搭上的：</p><p><img src="http://img.viz.mobi/ardumax-demo.jpg" alt=""></p><p>本周的作业，是研究 Arduino 如何触发 Ableton 或 Max 里面的声音采样，以及<a href="https://github.com/CNMAT/OSC" target="_blank" rel="noopener">如何使用 OSC 跟 Arduino 通信</a>。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/week7title.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="制造" scheme="http://uegeek.com/tags/%E5%88%B6%E9%80%A0/"/>
+    
+      <category term="Maker" scheme="http://uegeek.com/tags/Maker/"/>
+    
+      <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
+    
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
+    
+      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
+    
+      <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
+    
+      <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
+    
+      <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
+    
+      <category term="OSC" scheme="http://uegeek.com/tags/OSC/"/>
+    
+      <category term="Max" scheme="http://uegeek.com/tags/Max/"/>
+    
+  </entry>
   
   <entry>
     <title>三维制图讲义04 - 基础几何体</title>
@@ -38,9 +82,9 @@
     
       <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
     
-      <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
-    
       <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
+    
+      <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
     
       <category term="Geometry" scheme="http://uegeek.com/tags/Geometry/"/>
     
@@ -106,9 +150,9 @@
     
       <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
     
-      <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
-    
       <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
+    
+      <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
     
   </entry>
   
@@ -172,9 +216,9 @@
     
       <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
     
-      <category term="Animation" scheme="http://uegeek.com/tags/Animation/"/>
-    
       <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
+    
+      <category term="Animation" scheme="http://uegeek.com/tags/Animation/"/>
     
       <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
     
@@ -244,9 +288,9 @@
     
       <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
     
-      <category term="Animation" scheme="http://uegeek.com/tags/Animation/"/>
-    
       <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
+    
+      <category term="Animation" scheme="http://uegeek.com/tags/Animation/"/>
     
   </entry>
   
@@ -343,9 +387,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -387,9 +431,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -429,9 +473,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -469,9 +513,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -509,9 +553,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -547,9 +591,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -621,9 +665,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -657,9 +701,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -693,9 +737,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -712,46 +756,6 @@
       <category term="Chaotic" scheme="http://uegeek.com/tags/Chaotic/"/>
     
       <category term="Fractal" scheme="http://uegeek.com/tags/Fractal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法创作实战02 - 用 MaxMSP 生成随机颜色</title>
-    <link href="http://uegeek.com/181021-computational-creativity-in-maxmsp-02.html"/>
-    <id>http://uegeek.com/181021-computational-creativity-in-maxmsp-02.html</id>
-    <published>2018-10-21T11:13:58.000Z</published>
-    <updated>2018-10-21T11:15:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-title1.jpg" alt=""></p><a id="more"></a><p>在「生成式艺术和算法创作」系列第二篇中，00 <a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">介绍了随机和噪声在算法创作中的应用</a>。上一篇我们<a href="https://www.uegeek.com/181017-computational-creativity-in-maxmsp-01.html" target="_blank" rel="noopener">用 Max/MSP 做了一个随机生成星座描述的小应用</a>，切身实践和感受了巴纳姆效应。</p><p>今天我们一起来用 Max/MSP 实现简单的随机颜色生成器，加深对 Max/MSP 中 <code>random</code> 对象的了解。</p><blockquote><p>名称：Random Color</p><p>主要使用的对象：random, send, receive, uzi, pack, jit.matrix, jit.pwindow</p><p>难度系数：★☆☆☆☆</p></blockquote><p>这个程序叫 Random Color，可以指定行（y）和列（x）的数量，然后用随机颜色填充，可以手动生成新的图像，也可以自动连续生成。生成的图像可以导出成图片。最后的成果是这样：</p><p><img src="http://img.viz.mobi/RandomColor.png" alt=""></p><p>首先来拆解需要实现的功能：</p><ul><li>手动生成或者自动连续生成</li><li>指定图像的尺寸(dim)</li><li>生成随机颜色</li><li>自动填充每一个单元格</li><li>显示图像</li><li>导出图片</li></ul><p>开始动手前，请复习 Max/MSP 文档中 random, send, receive, uzi, pack, jit.matrix, jit.pwindow 等对象的说明。</p><p>准备就绪后，我们先来看前两步如何实现：</p><p><img src="http://img.viz.mobi/RandomColorPatch-1.png" alt=""></p><p><strong>1.手动生成或者自动连续生成</strong></p><p>用 <code>button</code> 触发生成事件，前面加上 <code>metro</code> 对象并指定时间间隔就可以自动连续触发生成事件。</p><p><strong>2.指定图像的尺寸(dim)</strong></p><p>设置两个整数数字框，可以输入水平和垂直维度的数量，来指定图像的尺寸。</p><p>生成事件的 bang、x 和 y 的数值，都通过 <code>send</code>(简写为 s) 对象传递到后面的步骤。</p><p>接下来是关键的部分，用随机颜色自动填充每一个单元格：</p><p><img src="http://img.viz.mobi/RandomColorPatch-2.png" alt=""></p><p><strong>3.生成随机颜色</strong></p><p>用 3 个<code>random</code> 对象分别生成 R G B 三个颜色值，然后用 <code>pack</code> 对象打包起来。因为最后需要用 <code>jit.pwindow</code> 显示图像，它需要接收 ARGB 颜色，所以我们还需要用 <code>setcell</code> 消息指定需要填充的单元格，并且传递 255 作为 ARGB 的 Alpha 值。于是，pack 对象的参数需要写成：<code>pack setcell 0 0 val 255 0 0 0</code>。其中，前面两个 0  会传入之前通过数字框输入的 x 和 y 的垂直和水平 dim 值，后面 3 个 0 会传入由 <code>random</code> 对象生成的 GRB 值。</p><p><strong>4.自动填充每一个单元格</strong></p><p>编程中经常使用 for 循环来实现矩阵的填充，在 MaxMSP 里常用 <code>uzi</code> 对象来实现简单的循环效果。（当然，如果是 modern 的矩阵处理和运算，会用 jit 提供的丰富的矩阵功能；这里我们怀旧一下用 uzi）<code>uzi</code> 的作用是连续发出 bang，左入口接收触发命令，右入口接收连续 bang 的数量；左出口输出 bang，中出口输出完成所有 bang 后的消息，右出口输出当前是第几个 bang。</p><p>首先接收 y 维度的值，用 1 个 <code>uzi</code> 作为外层循环。因为 <code>uzi</code> 对象从 1 开始计数，所以需要减去 1 再传给 <code>setcell</code>，因为矩阵单元格从 0  开始计数。然后接收 x 维度的值，作为内层循环（同样要减去 1）。</p><p><code>uzi</code> 和 <code>random</code> 生成的矩阵单元格位置和颜色都传给 <code>pack</code> 对象打包。</p><p>最后是显示和导出图像：</p><p><img src="http://img.viz.mobi/RandomColorPatch-3.png" alt=""></p><p><strong>5.显示图像</strong></p><p>使用 <code>jit.matrix</code> 存储并显示矩阵，更多 <code>jit.matrix</code> 的用法请参考 <a href="https://www.uegeek.com/tags/Max-MSP/" target="_blank" rel="noopener">00  翻译的 Max/MSP/Jitter 官方教程系列</a>。</p><p>指定矩阵为 4 个平面（plane），用 <code>receive</code> 对象（简写为 r）接受 x 和 y 维度的值。为了实时响应维度修改的操作，这里用 <code>pak</code> 对象而不是 <code>pack</code> 对象。<code>pak</code> 对象响应任一一个输入的变化，而 <code>pack</code> 对象需要由 bang 触发何时响应。</p><p>另外，使用一直开启的 <code>qmetro</code> 对象（@active 属性为 1）来监控矩阵的变化，以便随时更新，将矩阵值通过 <code>send</code> 对象发送给 <code>jit.pwindow</code> 中显示。</p><p><strong>6.导出图片</strong></p><p>用 <code>exportimage</code> 消息可以触发 <code>jit.matrix</code> 导出图像保存。因为矩阵的初始尺寸是 10x10，所以最后用了一个 <code>jit.matrix 4 char 400 400</code> 将矩阵扩大为 400x400 的尺寸，这样导出的图像大小就是 400x400 像素。</p><p><img src="http://img.viz.mobi/randomColorExport.png" alt=""></p><p>完整的 patch 如下：</p><p><img src="http://img.viz.mobi/RandomColorPatch.png" alt=""></p><hr><ul><li><a href="https://www.uegeek.com/180821-jitter-01.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 01 - 什么是矩阵？</a></li><li><a href="https://www.uegeek.com/180822-jitter-02.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 02 - Jitter 对象的属性</a></li><li><a href="https://www.uegeek.com/180825-jitter-03.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 03 - 播放 QuickTime 视频</a></li><li><a href="https://www.uegeek.com/180826-jitter-04.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 04 - 创建矩阵</a></li><li><a href="https://www.uegeek.com/180828-jitter-05.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 05 - 矩阵的数学运算</a></li><li><a href="https://www.uegeek.com/180829-jitter-06.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 06 - 控制视频播放</a></li><li><a href="https://www.uegeek.com/180830-jitter-07.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 07 - ARGB 颜色</a></li><li><a href="https://www.uegeek.com/180831-jitter-08.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 08 - 调整颜色</a></li><li><a href="https://www.uegeek.com/180901-jitter-09.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 09 - 调整图像颜色</a></li><li><a href="https://www.uegeek.com/180902-jitter-10.html" target="_blank" rel="noopener">Max/MSP/Jitter 教程 10 - 简单混合</a></li></ul><hr><blockquote><p>友情提示：独自折腾 Max 易患上癔症……不妨入群互助 </p></blockquote><p>👇👇👇</p><p><img src="http://img.viz.mobi/maxgroup0825.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/CC-title1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
-      <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
-    
-      <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
-    
-      <category term="Computational Creativity" scheme="http://uegeek.com/tags/Computational-Creativity/"/>
-    
-      <category term="创意" scheme="http://uegeek.com/tags/%E5%88%9B%E6%84%8F/"/>
-    
-      <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
-    
-      <category term="随机" scheme="http://uegeek.com/tags/%E9%9A%8F%E6%9C%BA/"/>
-    
-      <category term="MaxMSP" scheme="http://uegeek.com/tags/MaxMSP/"/>
     
   </entry>
   

@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="t1oNPvdeea" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ArtxCode,Creative Coding,制造,Maker,Digital Fabrication,Fab,Arduino,电路,通信,MIDI,OSC,Max," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="ArtxCode,Creative Coding,制造,Maker,Digital Fabrication,Fab,Arduino,电路,通信,MIDI,OSC,Max">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字制造讲义05-软硬件数据通信">
+<meta property="og:url" content="http://uegeek.com/190402-df05-communication.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.viz.mobi/week7title.jpg">
+<meta property="og:image" content="https://target.scene7.com/is/image/Target/GUEST_35ece802-7780-4243-b78a-c94cc6f7f682?wid=488&hei=488&fmt=pjpeg">
+<meta property="og:image" content="https://cdn.instructables.com/FO1/LDW4/IUSLP51T/FO1LDW4IUSLP51T.LARGE.jpg?auto=webp&width=700">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/a/a6/Parallel_and_Serial_Transmission.gif">
+<meta property="og:image" content="https://cdn.sparkfun.com/assets/learn_tutorials/1/8/1/Arduino_IDE_serial_port.png">
+<meta property="og:image" content="http://www.l-com.com/images/usb-tutorial_connectors.gif">
+<meta property="og:image" content="http://www.conceptdraw.com/How-To-Guide/picture/Vector-stencils--Audio-video-connectors.png">
+<meta property="og:image" content="http://debangw.com/img/aHR0cDovL2ltZzIuaW1ndG4uYmRpbWcuY29tL2l0L3U9Mzg3NDAzNjc4OSwxODk1NTY0MjI1JmZtPTI2JmdwPTAuanBn.jpg">
+<meta property="og:image" content="https://taazaa.com/wp-content/uploads/2017/05/IoT-3.3.png">
+<meta property="og:image" content="https://static.bhphotovideo.com/explora/sites/default/files/4_112.jpg">
+<meta property="og:image" content="https://cdn.sparkfun.com/r/600-600/assets/learn_tutorials/4/0/8/midi-cable.jpg">
+<meta property="og:image" content="http://img.viz.mobi/KnobLab.jpg">
+<meta property="og:image" content="http://img.viz.mobi/MIDIvsOSC.jpg">
+<meta property="og:image" content="https://hexler.net/gfx/_software/touchosc-11.png">
+<meta property="og:image" content="http://img.viz.mobi/touchOSC2Max.jpg">
+<meta property="og:image" content="http://img.viz.mobi/ardumax-demo.jpg">
+<meta property="og:updated_time" content="2019-04-02T15:24:40.466Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数字制造讲义05-软硬件数据通信">
+<meta name="twitter:image" content="http://img.viz.mobi/week7title.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/190402-df05-communication.html"/>
+
+
+
+
+
+  <title>数字制造讲义05-软硬件数据通信 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/190402-df05-communication.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数字制造讲义05-软硬件数据通信</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-02T22:20:20+08:00">
+                2019-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/190402-df05-communication.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="190402-df05-communication.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.viz.mobi/week7title.jpg" alt=""></p>
+<a id="more"></a>
+<p><a href="https://www.uegeek.com/190305-df01-digital-fabrication.html" target="_blank" rel="noopener">数字制造讲义01-成为数字世界的建造者</a></p>
+<p><a href="https://www.uegeek.com/190313-df02-arduino-intro.html" target="_blank" rel="noopener">数字制造讲义02-Arduino入门</a></p>
+<p><a href="https://www.uegeek.com/190319-df03-electronics-basic.html" target="_blank" rel="noopener">数字制造讲义03-电路基础</a></p>
+<p><a href="https://www.uegeek.com/190326-df04-input-and-output.html" target="_blank" rel="noopener">数字制造讲义04-负责输入和输出的智能元件</a></p>
+<h2 id="Connect-Everything"><a href="#Connect-Everything" class="headerlink" title="Connect Everything"></a>Connect Everything</h2><p><img src="https://target.scene7.com/is/image/Target/GUEST_35ece802-7780-4243-b78a-c94cc6f7f682?wid=488&amp;hei=488&amp;fmt=pjpeg" alt=""></p>
+<p>玩过乐高的同学都知道，乐高积木非常容易上手，只需要把积木拼在一起——它们总是能拼在一起，不管是什么大小和形状，所以它成为了经典的儿童益智玩具。</p>
+<p>在我们制造东西的时候，目标也是把不同的物体和元件拼接成一个完整的、具有一定功能的物品。但是我们会面对一个比乐高困难得多的问题：不同的元件出身和禀赋可能天差地别，想要把它们连接到一起，得想出各种办法。</p>
+<p>比如，我想做一个薯片罐头打击乐器，敲击罐头，就可以让 iPad 里面的乐器发出对应的声响。</p>
+<p><img src="https://cdn.instructables.com/FO1/LDW4/IUSLP51T/FO1LDW4IUSLP51T.LARGE.jpg?auto=webp&amp;width=700" alt=""></p>
+<p>想想看，我们要把哪些东西连接起来？</p>
+<p>我们要连接敲击的平面和 iPad 中的 APP。可是并不存在这样的接口。怎么办？</p>
+<p>一段电线连不起来，那我们用两段。可以先用 Arduino 帮我们收集敲击的信号，然后作为中转，再传给 APP。</p>
+<p>可是， Arduino 怎么连接 iPad 呢？</p>
+<p>你可能会说，可以用数据线呀！没错，不过，要用什么样的数据线呢？这取决于我们要传输什么样的数据。我们想要控制 APP 中的乐器，就需要包含 MIDI 信息的数据，于是要用 MIDI 数据线来传递。</p>
+<p>所以，我们的问题拆分成了好几个：</p>
+<ul>
+<li>如何连接敲击面和 Arduino (电路)</li>
+<li>如何连接 Arduino 和 iPad(一头必需是 iPad 支持的端口，如 type-c)</li>
+<li>如何从 Arduino 传输 MIDI 数据到 APP(一头必需是 MIDI 数据线)</li>
+</ul>
+<h2 id="条条小路通骡马"><a href="#条条小路通骡马" class="headerlink" title="条条小路通骡马"></a>条条小路通骡马</h2><p>这节课我们学习有哪些方式把不同的东西连接在一起，让它们之间可以传递数据，完成一定的功能。</p>
+<p>硬件和硬件、软件和硬件、软件和软件的数据通信，主要可以分为两大类型：有线和无线。</p>
+<p>想要跟硬件沟通，需要用某种它能听懂的「语言」。但是这种语言在人类看来简直像天书，它是机器专用的代码——汇编语言（assembly language），是一种用于电子计算机、微处理器、微控制器，或其他可编程器件的低级语言。</p>
+<h3 id="有线"><a href="#有线" class="headerlink" title="有线"></a>有线</h3><p>串口通信(Serial Communication)， 是最常见的通信方式。它是指外接设备和计算机之间，通过数据信号线、地线、控制线等，按位进行传输数据的一种通讯方式。 这种通信方式使用的数据线少，在远距离通信中可以节约通信成本，但其传输速度比并行传输低。</p>
+<p>串口的概念跟并口相对应：</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Parallel_and_Serial_Transmission.gif" alt=""></p>
+<p>因为要跟机器直接打交道的语言（低级别的语言）比较难掌握，所以有许多更高级别的语言(近似人类语言)的库可以帮助我们通过串口跟机器沟通，例如 Python 语言的 <a href="https://github.com/pyserial/pyserial" target="_blank" rel="noopener">pySerial</a>。</p>
+<p>Arduino 也是靠串口跟计算机通信。</p>
+<p><img src="https://cdn.sparkfun.com/assets/learn_tutorials/1/8/1/Arduino_IDE_serial_port.png" alt=""></p>
+<p>在我们上传程序到板子之前，就需要选择用哪个串口通信。在 Port 选项上方，还有 Serial Monitor 工具（IDE右上角放大镜图标也可以），我们常常在调试程序时，打开串口监视器并查看里面的数据。</p>
+<p>那么，Arduino 用什么数据线跟电脑的串口连接呢？</p>
+<p>最常见就是 USB 数据线了。USB 是 Universal Serial BUS 的缩写，从名字可见其野心(不过讲真，数据接口类型太多，真的让人头疼死……)</p>
+<p>来认认 USB 接口们，哪些是平常经常会见到的：</p>
+<p><img src="http://www.l-com.com/images/usb-tutorial_connectors.gif" alt=""></p>
+<p>备受关注的 USB 4.0 就要来了，但是现实比较骨干，我们仍然需要跟各种各样的数据接口和数据线打交道，尤其是音频和视频的数据线，还远未到 USB 一统天下的时候。</p>
+<p>这张图汇总了大部分音视频数据接口的长相，总有一款适合你：</p>
+<p><img src="http://www.conceptdraw.com/How-To-Guide/picture/Vector-stencils--Audio-video-connectors.png" alt=""></p>
+<p>USB 没有办法替代这么多的数据接口和数据线，其中很重要的一个原因是连接距离。音视频的连接长度常常跨越几米甚至上百米，这时候 USB 就傻眼了。</p>
+<p>在远距离传输的场景下，互联网（广域网/局域网）就可以大显身手。在有线互联网中，我们通过 IP 地址访问和联通计算机。</p>
+<p>IPv4地址分为 A、B、C、D、E 五类，出去特殊作用的 D、E 两类，剩下的 A、B、C 三类地址是常见的 IP 地址段。A 类地址的容量最大，可以容纳 16,777,214 个主机，B 类地址可以容纳 65,534 个主机，C 类地址可以容纳 254 个主机。</p>
+<ul>
+<li>A类地址：10.0.0.0–10.255.255.255</li>
+<li>B类地址：172.16.0.0–172.31.255.255</li>
+<li>C类地址：192.168.0.0–192.168.255.255</li>
+</ul>
+<h3 id="无线"><a href="#无线" class="headerlink" title="无线"></a>无线</h3><p>基于无线的连接越来越普遍，也越来越重要了。</p>
+<p>为啥？</p>
+<p><img src="http://debangw.com/img/aHR0cDovL2ltZzIuaW1ndG4uYmRpbWcuY29tL2l0L3U9Mzg3NDAzNjc4OSwxODk1NTY0MjI1JmZtPTI2JmdwPTAuanBn.jpg" alt=""></p>
+<p>尤其在制作互动装置时，我们不希望被太多连线所缠绕和局限活动范围，所以需要借助无线连接的方式。</p>
+<p>而且，多种多样的无线数据传输，也是 IOT(Internet of Things 物联网)的基础设施。</p>
+<p><img src="https://taazaa.com/wp-content/uploads/2017/05/IoT-3.3.png" alt=""></p>
+<p>那么蓝牙呢？蓝牙的应用也越来越普遍了。</p>
+<p>蓝牙是一种点对点的通信方式，主要目的是服务移动设备。蓝牙的功耗以及成本比 wifi 低一些，但是传输距离很短，一般用于近距离设备的通信，例如耳机和手机。</p>
+<iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=a05428d2mlx" allowfullscreen="true"></iframe>
+
+<p><a href="https://v.qq.com/x/page/a05428d2mlx.html" target="_blank" rel="noopener">科技情报局：NFC、蓝牙和 WiFi 有什么区别？_腾讯视频</a></p>
+<p>除了 wifi 和蓝牙，还有 ZigBee、RF、WiMax 等等传输方式，我们不太会接触到，这里就略过了。</p>
+<h2 id="传输音乐数据"><a href="#传输音乐数据" class="headerlink" title="传输音乐数据"></a>传输音乐数据</h2><p>音乐和乐器是我们不变的主题。那么我们要深入了解一下如何传输音乐相关的数据。</p>
+<h3 id="MIDI"><a href="#MIDI" class="headerlink" title="MIDI"></a>MIDI</h3><p>音乐数字接口（Musical Instrument Digital Interface，简称 MIDI ）是一个工业标准的电子通讯协议，为电子乐器等演奏装置（如合成器）定义各种音符或弹奏码，让电子乐器、电脑、手机或其它的舞台演出配备彼此连接，调整和同步，可以即时交换音乐数据。  MIDI 不传送声音，只传送包括音调和音乐强度的数据、音量、颤音和相位等参数，还有设定节奏的时钟信号。在不同的电脑上，输出的声音也因音源器不同而有差异。</p>
+<p>回顾 MIDI 的历史，简直就像回顾数字时代的陈年往事：</p>
+<iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=n08561s7vij" allowfullscreen="true"></iframe>
+
+<p><a href="https://v.qq.com/x/page/n08561s7vij.html" target="_blank" rel="noopener">WHAT IS MIDI 什么是 MIDI_腾讯视频</a></p>
+<p>MIDI 1.0 于 1983 年 8 月发布。35 年过去了，MIDI 终于在今年 1 月迎来了 2.0 版本。</p>
+<p><img src="https://static.bhphotovideo.com/explora/sites/default/files/4_112.jpg" alt=""></p>
+<p>当然，现阶段我们常用的还是 5 脚的 MIDI 数据线，和 0~127 的整数型数字：</p>
+<p><img src="https://cdn.sparkfun.com/r/600-600/assets/learn_tutorials/4/0/8/midi-cable.jpg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th><strong>MIDI Cable Wiring</strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>First Connector</strong></td>
+<td><strong>Cable</strong></td>
+<td><strong>Second Connector</strong></td>
+</tr>
+<tr>
+<td>Pin 1</td>
+<td>No Connection</td>
+<td>Pin 1</td>
+</tr>
+<tr>
+<td>Pin 2</td>
+<td>Shield</td>
+<td>Pin 2</td>
+</tr>
+<tr>
+<td>Pin 3</td>
+<td>No Connection</td>
+<td>Pin 3</td>
+</tr>
+<tr>
+<td>Pin 4</td>
+<td>Voltage Reference Line</td>
+<td>Pin 4</td>
+</tr>
+<tr>
+<td>Pin 5</td>
+<td>Data Line</td>
+<td>Pin 5</td>
+</tr>
+</tbody>
+</table>
+<p>课上演示的从 MAX 发送 MIDI 数据给 Ableton，记得自己动手试一试哦！</p>
+<p>从移动端发送 MIDI 数据给其他设备，可以使用类似 KnobLab 的 APP，它支持多种传输方式：</p>
+<p><img src="http://img.viz.mobi/KnobLab.jpg" alt=""></p>
+<h3 id="OSC"><a href="#OSC" class="headerlink" title="OSC"></a>OSC</h3><p><a href="http://opensoundcontrol.org/" target="_blank" rel="noopener">OSC</a>（Open Sound Control）是用于连接声音合成器、计算机和其他多媒体设备的协议，用于辅助音乐表演或节目控制之类（共享音乐表现数据如手势、参数和音符序列）的目的。OSC 的优势包括互动性，准确性，灵活性等。</p>
+<p>来听听看 OSC 的作者之一 Matt Wright 是如何介绍它的：</p>
+<iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=f08563i3n66" allowfullscreen="true"></iframe>
+
+<p><a href="https://v.qq.com/x/page/f08563i3n66.html" target="_blank" rel="noopener">Open Sound Control OSC intro_腾讯视频</a></p>
+<p>OSC 常常用来替代 MIDI，因为它的分辨率更高、可传递的参数更丰富。OSC 消息使用 UDP / IP 和以太网通过 Internet和局域网传输。</p>
+<p><img src="http://img.viz.mobi/MIDIvsOSC.jpg" alt=""></p>
+<p>OSC 已广泛应用于音乐表演、机器人、视频性能接口、分布式音乐系统和进程间通信等领域，在实验音乐控制器中更是必不可少。</p>
+<p>那么怎么使用 OSC 传输数据呢？</p>
+<p>在触摸设备如 iOS 上，用 <a href="https://hexler.net/software/touchosc" target="_blank" rel="noopener">TouchOSC</a> 最方便不过了(不过要收费)。</p>
+<p><img src="https://hexler.net/gfx/_software/touchosc-11.png" alt=""></p>
+<p>在移动端下载 TouchOSC，在桌面端下载编辑器，在编辑器里面可以创建自定义的操作面板。然后在移动端设置输入和输出端口。接下来就可以在 Max/MSP 里面接收和发送 OSC 数据了。因为 OSC 通过 UDP 协议传输，所以使用 <code>udpsend</code> 和 <code>udpreceive</code> 对象：</p>
+<p><img src="http://img.viz.mobi/touchOSC2Max.jpg" alt=""></p>
+<p>Max 接收到数据后，可以看到 OSC 的数据格式类似文件路径 URI：<code>/{序号}/{参数名} {参数值}</code>。</p>
+<p>这样我们就把手机和电脑连接起来，并且在手机上实现个性化的控制。</p>
+<p>除了移动端的 TouchOSC，<a href="https://osculator.net/" target="_blank" rel="noopener">OSCulator</a> 也是一款好用的 OSC 控制器，感兴趣的同学可以自行研究一下。</p>
+<p>当然，Arduino 和 Max 也是可以方便地勾搭上的：</p>
+<p><img src="http://img.viz.mobi/ardumax-demo.jpg" alt=""></p>
+<p>本周的作业，是研究 Arduino 如何触发 Ableton 或 Max 里面的声音采样，以及<a href="https://github.com/CNMAT/OSC" target="_blank" rel="noopener">如何使用 OSC 跟 Arduino 通信</a>。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果文章帮您节省时间或者解答疑问，不妨打个赏 :)</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    kidult00
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://uegeek.com/190402-df05-communication.html" title="数字制造讲义05-软硬件数据通信">http://uegeek.com/190402-df05-communication.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArtxCode/" rel="tag"># ArtxCode</a>
+          
+            <a href="/tags/Creative-Coding/" rel="tag"># Creative Coding</a>
+          
+            <a href="/tags/制造/" rel="tag"># 制造</a>
+          
+            <a href="/tags/Maker/" rel="tag"># Maker</a>
+          
+            <a href="/tags/Digital-Fabrication/" rel="tag"># Digital Fabrication</a>
+          
+            <a href="/tags/Fab/" rel="tag"># Fab</a>
+          
+            <a href="/tags/Arduino/" rel="tag"># Arduino</a>
+          
+            <a href="/tags/电路/" rel="tag"># 电路</a>
+          
+            <a href="/tags/通信/" rel="tag"># 通信</a>
+          
+            <a href="/tags/MIDI/" rel="tag"># MIDI</a>
+          
+            <a href="/tags/OSC/" rel="tag"># OSC</a>
+          
+            <a href="/tags/Max/" rel="tag"># Max</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/190327-3d04-basic-geometry.html" rel="next" title="三维制图讲义04 - 基础几何体">
+                <i class="fa fa-chevron-left"></i> 三维制图讲义04 - 基础几何体
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">Designer / Maker / Learner</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">265</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">273</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://steemit.com/@kidult00/" target="_blank" title="Steemit">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Steemit
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Connect-Everything"><span class="nav-number">1.</span> <span class="nav-text">Connect Everything</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条条小路通骡马"><span class="nav-number">2.</span> <span class="nav-text">条条小路通骡马</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有线"><span class="nav-number">2.1.</span> <span class="nav-text">有线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无线"><span class="nav-number">2.2.</span> <span class="nav-text">无线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传输音乐数据"><span class="nav-number">3.</span> <span class="nav-text">传输音乐数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MIDI"><span class="nav-number">3.1.</span> <span class="nav-text">MIDI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSC"><span class="nav-number">3.2.</span> <span class="nav-text">OSC</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/190402-df05-communication.html';
+          this.page.identifier = '190402-df05-communication.html';
+          this.page.title = '数字制造讲义05-软硬件数据通信';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
