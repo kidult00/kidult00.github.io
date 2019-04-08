@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2019-04-02T15:24:40.466Z</updated>
+  <updated>2019-04-08T11:16:20.557Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ableton Live 连接 Arduino 教程</title>
+    <link href="http://uegeek.com/190408-Ableton-Arduino.html"/>
+    <id>http://uegeek.com/190408-Ableton-Arduino.html</id>
+    <published>2019-04-08T11:14:46.000Z</published>
+    <updated>2019-04-08T11:16:20.557Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn-resources.ableton.com/resources/filer_thumbnails/fd/d4/fdd4707d-fbcb-441a-a07d-f6e58c9e717d/connkit_artwork_1000x1000.jpg__600x600_q85_crop_subsampling-2_upscale.jpg" alt=""></p><a id="more"></a><p>你有没有想过，用 Arduino 做一个简单的 MIDI controller，控制 Ableton Live 中的参数？</p><p>如果想实现两者的连接，以前的解决方案比较复杂，需要基于 Max/MSP，用 <a href="http://www.maxuino.org/" target="_blank" rel="noopener">Maxuino</a> 实现，还需要在 Arduino 上安装对应的固件。</p><p>有没有更简单的方法呢？</p><h2 id="Connection-Kit"><a href="#Connection-Kit" class="headerlink" title="Connection Kit"></a>Connection Kit</h2><p>好消息是，Ableton 已经提供了官方的 <a href="https://www.ableton.com/en/packs/connection-kit/" target="_blank" rel="noopener">Connection Kit</a>，其中包含了与流行的外接设备的连接工具如 Arduino、OSC、LEGO Mindstorms 等。</p><p>介绍视频真是帅炸了~</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=h0190wbyt6w" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/h0190wbyt6w.html" target="_blank" rel="noopener">Max for Live Connection Kit_腾讯视频</a></p><p>如果你已经购买了 Ableton Live 10 Suit，可以在<a href="https://www.ableton.com/en/packs/connection-kit/" target="_blank" rel="noopener">官网直接下载这个 Pack</a>。如果不能直接下载，这个 Pack 的源文件也可以在 github 找到：<a href="https://github.com/Ableton/m4l-connection-kit" target="_blank" rel="noopener">Ableton/m4l-connection-kit: Max for Live Connection Kit</a>。下载后，将文件夹复制到 Documents-Ableton-Third-Party Packs。打开软件后，就可以在左侧找到 Arduino.amxd：</p><p><img src="http://img.viz.mobi/Ableton-connection-kit-pack.jpg" alt=""></p><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>开始连接之前，让我们看看<a href="https://github.com/Ableton/m4l-connection-kit/tree/master/Arduino" target="_blank" rel="noopener">使用说明</a>。</p><blockquote><p>The Arduino Max4Live device connects an Arduino Uno to Live using its serial port via USB and allows access to its analog inputs as well as its digital GPIOs. The device enables you to receive sensor data like switches, potentiometers or light-dependent resistors as well as sending Live parameter values to LEDs or servo motors. So far you may only connect sensors and other periphals to it directly as we do not yet support I2Cs and other periphals via the Serial Periphal Interface (SPI).</p></blockquote><p>目前应该只支持 Uno 板，由 USB 串口连接。</p><p>因为 Max4Live 需要特定的固件支持，所以我们先上传程序到 Arduino 板。上传的程序在 Arduino IDE 里面就有：File-&gt;Examples-&gt;Firmata-&gt;StandardFirmata。打开文件后(至少是 2.5 版本)，上传到板子。</p><p>接着我们可以在 Ableton 里面编辑一段 clip，双击 Arduino.amxd 加入到 device viewer 里。</p><p><img src="http://img.viz.mobi/addArduino2Ableton.jpg" alt=""></p><h2 id="连接测试电路"><a href="#连接测试电路" class="headerlink" title="连接测试电路"></a>连接测试电路</h2><p>回到 Arduino，接一个最简单的电路。找一个电位计，正极接 Uno 板的 5V 口，负极接 GND，中间的信号接 A0 模拟端口。</p><p><img src="http://img.viz.mobi/potentiometer2arduino.png" alt=""></p><p>上传以下程序，然后打开串口监视器，查看是否可以正常读取旋钮的值：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">// initialize serial communication at 9600 bits per second:</span></span><br><span class="line">  Serial.begin(<span class="number">9600</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the loop routine runs over and over again forever:</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">// read the input on analog pin 0:</span></span><br><span class="line">  <span class="keyword">int</span> sensorValue = analogRead(A0);</span><br><span class="line">  <span class="comment">// print out the value you read:</span></span><br><span class="line">  Serial.println(sensorValue);</span><br><span class="line">  delay(<span class="number">20</span>);        <span class="comment">// delay in between reads for stability</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>成功后，关闭串口监视器。</p><h2 id="Ableton-Mapping"><a href="#Ableton-Mapping" class="headerlink" title="Ableton Mapping"></a>Ableton Mapping</h2><p>然后到 Ableton 中，选择 port 为 usbmodemxxxx。切换到 Analog tab，点 A0 右侧的 Map 按钮，选择已经编辑的那个 track 的 Track Volume。</p><p>做好这一步映射后，可以看到 A0 旁边小小的蓝色指示条已经开始跳动。旋转电位计，会看到 Track 的音量产生了变化。</p><p>可是，这里的变化不太符合我们的预期：扭动旋钮停止后，音量还是会变化，甚至产生随机的爆音。</p><p>这是因为电位计产生了抖动。再打开 Arduino 串口监视器，可以观察到 A0 端口接收到的不是平滑的值，而是夹杂着很多不稳定的波动值。</p><p><img src="http://img.viz.mobi/ArduinoSerialMonitor.png" alt=""></p><h3 id="消抖处理"><a href="#消抖处理" class="headerlink" title="消抖处理"></a>消抖处理</h3><p>最简单的办法是在 kit 里面设置 Smooth 的值：</p><p><img src="http://img.viz.mobi/ableton-arduino-smooth.png" alt=""></p><p>但是这样做，误差会较大。我们可以进一步尝试在代码里消抖，或者在电路中加入电容消抖。可以参考这篇文章 <a href="https://www.instructables.com/id/Smooth-Potentiometer-Input/" target="_blank" rel="noopener">Smooth Potentiometer Input</a>。</p><p>进一步的消抖还需要参考一些资料继续研究。</p><ul><li><a href="http://forum.arduino.cc/index.php?topic=216582.0" target="_blank" rel="noopener">Debouncing a potentiometer</a></li><li><a href="https://forum.arduino.cc/index.php?topic=210348.0" target="_blank" rel="noopener">Writing an analog pot debounce as a function</a></li><li><a href="https://forum.arduino.cc/index.php?topic=75946.0" target="_blank" rel="noopener">Debounce a Potentiometer?</a></li><li><a href="https://www.jianshu.com/p/99d861de03e0" target="_blank" rel="noopener">arduino按钮传感器常见的几种消抖方法 - 简书</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://cdn-resources.ableton.com/resources/filer_thumbnails/fd/d4/fdd4707d-fbcb-441a-a07d-f6e58c9e717d/connkit_artwork_1000x1000.jpg__600x600_q85_crop_subsampling-2_upscale.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Music" scheme="http://uegeek.com/tags/Music/"/>
+    
+      <category term="Ableton Live" scheme="http://uegeek.com/tags/Ableton-Live/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="Maker" scheme="http://uegeek.com/tags/Maker/"/>
+    
+      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
+    
+      <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三维制图讲义05 - 几何体编辑：拉伸和环切</title>
+    <link href="http://uegeek.com/190403-3d05-basic-geometry-edit.html"/>
+    <id>http://uegeek.com/190403-3d05-basic-geometry-edit.html</id>
+    <published>2019-04-03T11:20:46.000Z</published>
+    <updated>2019-04-03T11:22:24.063Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/3d_course_title.jpg" alt=""></p><a id="more"></a><p><a href="https://www.uegeek.com/190306-3d01-welcome-to-the-3d-world.html" target="_blank" rel="noopener">三维制图讲义01 - 欢迎来到三维世界</a></p><p><a href="https://www.uegeek.com/190314-3d02-workflow.html" target="_blank" rel="noopener">三维制图讲义02 - 三维制作流程</a></p><p><a href="https://www.uegeek.com/190320-3d03-blender-intro.html" target="_blank" rel="noopener">三维制图讲义03 - 三维软件和Blender介绍</a></p><p><a href="https://www.uegeek.com/190327-3d04-basic-geometry.html" target="_blank" rel="noopener">三维制图讲义04 - 基础几何体</a></p><h2 id="快速回顾"><a href="#快速回顾" class="headerlink" title="快速回顾"></a>快速回顾</h2><p>上一节课我们练习了编辑模式下，点线面的切换和移动、旋转、缩放。</p><p>选中几何体后，按快捷键 Tab 进入编辑模式。这时候按键盘 1、2、3 键（或者点界面中模式选择右边的三个图标），可以切换为 点选择、边选择、面选择状态。</p><p>将点、线、面选择，跟位移、旋转、缩放结合起来练习：</p><ul><li>切换到点选择模式（编辑模式下按 1 键），选中点，进行移动（G）(包括沿轴的操作)</li><li>切换到边选择模式（编辑模式下按 2 键），选中多条边，进行旋转（R）(包括沿轴的操作)</li><li>切换到面选择模式（编辑模式下按 3 键），选中多个面，进行缩放（S）(包括沿轴的操作)</li></ul><p><img src="http://img.viz.mobi/Blender_edit.jpg" alt=""></p><h2 id="拉伸-Extrude"><a href="#拉伸-Extrude" class="headerlink" title="拉伸 Extrude"></a>拉伸 Extrude</h2><p>拉伸(Extrude)是重要的基本操作，也是这一节课的练习重点。</p><p>什么是拉伸？就是拉着一个点/边/面走：</p><p><img src="https://thumbs.gfycat.com/ThunderousHandyBeagle-size_restricted.gif" alt=""></p><p>拉伸操作需要在编辑模式下进行。</p><p>操作顺序是：<strong>选中物体，tab 键进入编辑模式，然后按 e 进入拉伸状态</strong>。</p><p>你可能会问，拉伸 (e) 跟移动 (g) 有什么不同呢？</p><p>注意观察上面的动画，在拉伸时，是在原有面的基础上，增加了一个面，然后沿着这个面的四条边移动。而单纯的移动（选中点线面后按 g），则不会增加面。</p><p>拉伸为什么重要？</p><p>它是三维物体成型最基本的方式之一。甚至只用 extrude 这个基本操作加上点/边/面的 TRS，就可以建出复杂的模型：</p><p><img src="https://raw.githubusercontent.com/a1studmuffin/SpaceshipGenerator/master/screenshots/step-by-step-animation.gif" alt=""></p><h2 id="环切-Loop-Cut"><a href="#环切-Loop-Cut" class="headerlink" title="环切 Loop Cut"></a>环切 Loop Cut</h2><p>环切/Loop Cut 功能可以说是金手指级的作弊型基础功能。它帮助我们快速切分连续的边和面，获得更多的调节节点。</p><p>比如，把一个圆柱体修改成复杂一点的造型，借助环切可以秒完成：</p><p><img src="https://www.plejadium.de/wp-content/uploads/2015/05/blender-loop-cut-and-slide.gif" alt=""></p><p>环切也需要在编辑模式中使用。可以在左侧工具栏中找到：</p><p><img src="http://img.viz.mobi/blander-loopcup-menu.jpg" alt=""></p><p>使用快捷键的操作步骤：</p><ul><li>选择物体，按 tab 进入编辑模式</li><li>按快捷键 ctrl+r，将鼠标移到物体上，会出现环状的指示线(如果想退出环切状态，可以鼠标右键或者按 esc 键)</li><li>移动鼠标到想要的面(指示线只会出现在中点连接线)</li><li>按下鼠标左键，确定 Loop Cut</li></ul><p><img src="https://blenderartists.org/uploads/default/original/4X/8/c/7/8c70cbda30e9fc2a6d84539be6508614756f8e12.gif" alt=""></p><p>然后问题来了：</p><blockquote><p>如果移动环的时候，没有移到对的位置，就不小心点了鼠标左键，环就不动了，怎么办？</p></blockquote><p>没事，毕竟是作弊级别的常用功能，就算已经切了，也还是可以调整位置。</p><ul><li>先选中要调整的 Loop Cut：按住 alt 键点左键，可以选中连续的边或者面</li><li>然后按 g，进行移动</li></ul><p>咦？这时候的移动没有限制轴线，一动 Loop Cut 就歪了……</p><p><img src="http://img.viz.mobi/2019-04-02%2011.47.39.gif" alt=""></p><blockquote><p>如果想沿原来的边缘移动 Loop cut，怎么办？</p></blockquote><p>可以在选择 loop 以后，按两次 g，然后移动到合适的位置。</p><p><img src="http://img.viz.mobi/blender-loopcut-gg.gif" alt=""></p><blockquote><p>问题2：如果想一次性添加多个环切怎么办？</p></blockquote><p>Easy Peasy</p><p>在按 ctrl+r 后，移动到合适的面上，然后<strong>滚动鼠标中键或者按对应的数字键</strong>，就可以指定切割的数量了。</p><h2 id="组合练习"><a href="#组合练习" class="headerlink" title="组合练习"></a>组合练习</h2><p>好了，目前为止，Blender 的基础大招你都已经学过了：</p><ul><li>调整视图和切换正/侧/顶视图</li><li>进入编辑模式</li><li>移动（g）/旋转（r）/缩放（s）物体或者点/线/面</li><li>拉伸(e)</li><li>环切(ctrl+r)</li></ul><p>可以说，你已经可以造出 90% 的基础造型。下面就进入探索和练习时间吧！</p><p><img src="https://blenderartists.org/uploads/default/original/4X/6/9/e/69ec27d84baf0f5f30d46aa956887320da4d182f.gif" alt=""></p><p><img src="https://polygoniq.com/sites/default/files/2018-10/03C_d.gif" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/3d_course_title.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
+    
+      <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
+    
+      <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
+    
+      <category term="Geometry" scheme="http://uegeek.com/tags/Geometry/"/>
+    
+      <category term="Loop Cut" scheme="http://uegeek.com/tags/Loop-Cut/"/>
+    
+  </entry>
   
   <entry>
     <title>数字制造讲义05-软硬件数据通信</title>
@@ -82,9 +148,9 @@
     
       <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
     
-      <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
-    
       <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
+    
+      <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
     
       <category term="Geometry" scheme="http://uegeek.com/tags/Geometry/"/>
     
@@ -150,9 +216,9 @@
     
       <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
     
-      <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
-    
       <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
+    
+      <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
     
   </entry>
   
@@ -216,9 +282,9 @@
     
       <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
     
-      <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
-    
       <category term="Animation" scheme="http://uegeek.com/tags/Animation/"/>
+    
+      <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
     
       <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
     
@@ -288,9 +354,9 @@
     
       <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
     
-      <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
-    
       <category term="Animation" scheme="http://uegeek.com/tags/Animation/"/>
+    
+      <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
     
   </entry>
   
@@ -678,84 +744,6 @@
       <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
     
       <category term="Tessellation" scheme="http://uegeek.com/tags/Tessellation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>生成式艺术和算法创作04-规则系统</title>
-    <link href="http://uegeek.com/181023-generative-art-creativity-04.html"/>
-    <id>http://uegeek.com/181023-generative-art-creativity-04.html</id>
-    <published>2018-10-23T11:32:35.000Z</published>
-    <updated>2018-10-23T11:36:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></li><li><a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">生成式艺术和算法创作02-随机和噪声</a></li><li><a href="https://www.uegeek.com/181021-generative-art-creativity-03.html" target="_blank" rel="noopener">生成式艺术和算法创作03-混沌和分形</a></li></ul><h2 id="规则系统"><a href="#规则系统" class="headerlink" title="规则系统"></a>规则系统</h2><blockquote><p>In computer science, rule-based systems are used as a way to store and manipulate knowledge to interpret information in a useful way. –Wiki</p></blockquote><p>规则系统（rule-based systems）的类型：</p><ul><li>生成语法和乔姆斯基等级（乔姆斯基在20世纪50年代提出）</li><li>形式逻辑系统和逻辑程序：推理规则，定理求解程序，论证系统，案例推理系统</li><li>专家系统：将特定领域的专业知识，编码在可以执行演绎和归纳的框架中</li><li>跃迁过程网络（Transition-based networks）：有限状态自动机（finite state automata）和扩展随机系统（extension stochastic systems）如马尔可夫模型，马尔可夫链，以及隐马尔可夫模型</li></ul><p><img src="https://cdn-ed.haymarketbooks.org/images/000001/149/Noam_Chomsky_(c" alt="">_Don_Usner-f_large-863c2ffef0e17c5b6fa999586cc0419d.jpg)</p><p>乔姆斯基（C.Chomsky）最初从产生语言的角度研究语言；他将语言 L 形式地定义为由一个字母表中的字母 ∑ 组成的一些串的集合 <img src="https://www.zhihu.com/equation?tex=%5Cforall+L%2C+%5Cexists+%5CSigma%2C+L%5Csubseteq+%5CSigma%5E%2A" alt="\forall L, \exists \Sigma, L\subseteq \Sigma^*"> ，可以在字母表上按照一定的规则定义一个方法，该文法产生的所有句子组成的集合，就是该文法产生的语言。形式语言是模拟这些语言的一类数学语言，它采用数学符号，按照严格的语法规则构成。</p><p>那么，到底什么是规则呢？</p><blockquote><p>α→β</p></blockquote><p>α 和 β 是由终结符（terminal symbol 如名词、动词等）或非终结符（如句子、动词短语、名词短语等）组成的表达式。</p><h2 id="生成文法"><a href="#生成文法" class="headerlink" title="生成文法"></a>生成文法</h2><p>生成文法（generative grammar）尝试给出一套规则，能正确的预测在一种语言中怎样的词汇组合能成为正确的句子，这些规则通常也能预测句子中的构词法。生成文法可以借助<a href="https://www.wikiwand.com/en/Chomsky_hierarchy" target="_blank" rel="noopener">乔姆斯基等级</a>来描述和比较。</p><p>文法 G 是一个四元组：G =（V, T, P, S）</p><ul><li>V：变量/非终结符号的非空有穷集；</li><li>T：终结符的非空有穷集，V∩T=Ø；</li><li>P：生成式的非空有穷集合；</li><li>S：开始符号，S 是 V 中的元素。</li></ul><p>P 生成式的基本形式是 α→β，这里 α 和 β 都是（V∪T）中的元素，即它们都是由变元和终结符组成的符号串，但要求 α 至少含有一个非终结符；在形式文法定义中 P 至关重要，它决定了语言是如何构造出来的。</p><p>根据 P 中生成式 α→β 的特点，可以将形式文法及其产生的形式语言分类，构成形式语言谱系，对应四种自动机：</p><ul><li><p>0 型文法，又称为短语文法：对生成式 α→β 不作特殊限制，α 和 β 可以是任意的文法符号串，当然 α 不能是空字符串；0 型文法是形式语言谱系中最大的文法类，是图灵机所识别的语言类，即递归可枚举语言。</p></li><li><p>1 型文法，又称为上下文有关文法：要求生成式 α→β 满足 |α|≤|β|，即 β 要至少和 α 一样长；由 1 型文法产生的语言称为 1 型语言或上下文有关语言，是非确定型线性有界自动机所识别的语言类。</p></li><li><p>2 型文法，又称为上下文无关文法（context-free grammars ）：要求生成式 α→β 中的 α 必须是变元；由 2 型文法产生的语言称为 2 型语言或上下文无关语言，是由下推自动机所识别的语言类。</p></li><li><p>3 型文法，又称为正则文法，这种文法分为两种类型：生成式的形式必须是 A→ωB 或 A→ω，其中 A，B 都是变元，ω 是终结符串（可以是空串），这种特殊的正则文法称为右线性文法；第二类正则文法称为左线性文法，它要求生成式必须是 A→Bω，或 A→ω 的形式。由正则文法生成的语言称为正则语言，它是有穷自动机所识别的语言类。</p></li></ul><p>上述定义的 4 种语言类具有依次包含关系，即对于 i＝0，1，2，在不考虑空字符串时，i 型语言都真包含 i＋1 型语言。</p><p>通过这种语法推导出的句子可以用派生树描述。相邻的单词被组合成成分，可以进一步与其他单词或成分组合以创建分层树结构。</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Basic_english_syntax_tree.svg/300px-Basic_english_syntax_tree.svg.png" alt=""></p><p>看着很晕吧？…… 我们还是来看一些艺术创作领域的例子吧！</p><p>法国诗人雷蒙·格诺 (Raymond Queneau) 是国际文学团体乌力波（Oulipo, Ouvroir de littérature potentielle, 潜在文学工场）的创始人，其会员中名气较大的有意大利作家卡尔维诺（Italo Calvino），法国作家乔治·佩雷克（Georges Perec），此外还有一些成员是和文学不搭边的数学家。</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Ambigramme_Oulipo_%28bold_pencil%29.png/300px-Ambigramme_Oulipo_%28bold_pencil%29.png" alt=""></p><p>Raymond Queneau 的诗集「百万亿首诗」(Cent mille milliards de poèmes) 是一本不寻常的诗集：表面上看这本书是由 10 首十四行诗构成，10 首诗的同一行都押同一个韵，实际上它能排列组合成一百万亿首诗。首行诗句有 10 种选择，第二行诗句也有 10 种选择，十四行诗组合在一起也就得到了 10 的 14 次方首各不相同的诗了。</p><p>诗集的设计也很特别，每一行都被剪成纸条，读完第一首诗的第一行，然后把第二行的纸条折过去读第二首诗的第二行，以此类推……这便是一个语法生成系统了。</p><p><img src="http://www.greenchairpress.com/blog/wp-content/uploads/2014/08/queneau.png" alt=""></p><h2 id="自动机"><a href="#自动机" class="headerlink" title="自动机"></a>自动机</h2><p>最简单的来说，自动机（Automaton）就是具有离散输入输出的数学模型，接受一定的输入，执行一定的动作，产生一定的结果。</p><p>状态是一个标识，能区分自动机在不同时刻的状况。可以使用状态迁移描述整个工作过程。有限状态系统具有任意有限数目的内部状态。自动机的本质是，<strong>根据状态、输入和规则决定下一个状态，即</strong></p><blockquote><p>状态 ＋ 输入（激励）＋ 规则 → 状态迁移</p></blockquote><p>可能的状态、运行的规则都是事先确定的。一旦开始运行，就按照事先确定的规则工作，因此叫自动机。</p><p>根据结构不同，自动机又可分为：</p><ul><li>有限自动机，可以认为是由一个带有读头的有限控制器和一条写有字符的输入带组成；</li><li>下推自动机，可以看作是由一条输入带、一个有限控制器和一个下推栈组成；</li><li>基本图灵机，由一个具有读写头的有限控制器和一条无限带组成</li></ul><p>在这个系列的后续文章中，还会单独来讲讲元胞自动机。</p><h2 id="Transition-network"><a href="#Transition-network" class="headerlink" title="Transition network"></a>Transition network</h2><p>Transition Networks 是一系列有限状态自动机。</p><p>如果用有向图表示，节点表示状态，边缘表示转换过程。每一个自动机表示一个非终结符；每一个转换过程产生一个非终结符或终结符。</p><p><img src="http://img.viz.mobi/eg-transition-network.png" style="zoom:50%"></p><p>Augmented transition networks (ATN) 是一种形式语言操作化定义的图论结构。ATN 建立在使用有限状态机来解析句子的基础上，它理论上可以分析任何句子的结构，无论多么复杂。ATN 的一个优点是延迟决策——当模糊性出现时，许多语法会在对句子的了解还不够时进行猜测。而 ATN 使用递归来推迟决定，直到对句子了解得更多。</p><p>算法作曲的先驱 David Cope 创作的 EMI 是著名的和开创新的系统。EMI 使用了 ATN，由系统分析和分割给定的语料库，然后重新组合元素。<br><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/David%20Cope%20EMI%20ATN.png" alt="David Cope EMI ATN"></p><p>在这里，终结符是各种音乐片段，非终结符元素则捕捉各种层级的片段结构。</p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.wikiwand.com/en/Rule-based_system" target="_blank" rel="noopener">Rule-based system - Wikiwand</a></li><li><a href="https://www.wikiwand.com/en/Generative_grammar" target="_blank" rel="noopener">Generative grammar - Wikiwand</a></li><li><a href="https://www.wikiwand.com/en/Context-free_grammar" target="_blank" rel="noopener">Context-free grammar - Wikiwand</a></li><li><a href="https://www.wikiwand.com/en/Oulipo" target="_blank" rel="noopener">Oulipo - Wikiwand</a></li><li><a href="https://www.wikiwand.com/en/Automaton" target="_blank" rel="noopener">Automaton - Wikiwand</a></li><li><a href="https://book.douban.com/subject/24089566/" target="_blank" rel="noopener">乌力波（2） (豆瓣)</a></li><li><a href="https://zhuanlan.zhihu.com/p/28624160" target="_blank" rel="noopener">形式语言与自动机</a></li><li><a href="http://artsites.ucsc.edu/faculty/cope/experiments.htm" target="_blank" rel="noopener">EMI</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/CC-blogtitle.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
-    
-      <category term="Computational Creativity" scheme="http://uegeek.com/tags/Computational-Creativity/"/>
-    
-      <category term="创意" scheme="http://uegeek.com/tags/%E5%88%9B%E6%84%8F/"/>
-    
-      <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
-    
-      <category term="规则系统" scheme="http://uegeek.com/tags/%E8%A7%84%E5%88%99%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>生成式艺术和算法创作03-混沌和分形</title>
-    <link href="http://uegeek.com/181021-generative-art-creativity-03.html"/>
-    <id>http://uegeek.com/181021-generative-art-creativity-03.html</id>
-    <published>2018-10-21T12:11:30.000Z</published>
-    <updated>2018-10-21T12:20:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p><a id="more"></a><p><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></p><p><a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">生成式艺术和算法创作02-随机和噪声</a></p><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Lorenz_attractor_yb.svg/800px-Lorenz_attractor_yb.svg.png?1538707261695" style="zoom:50%"></p><h2 id="动态系统"><a href="#动态系统" class="headerlink" title="动态系统"></a>动态系统</h2><p>动态系统（dynamical system）是数学上的一个概念，是一种固定的规则，它描述一个给定空间中所有点随着时间变化的情况，例如运动的钟摆、弹跳的球、管道中水的流动等。</p><p>动态系统的行为可以分为四类：</p><ul><li>Fixed point behavior (equilibrium)：固定（平衡）行为</li><li>Limit cycle or periodic behavior：循环或周期行为</li><li>Quasi-periodic behavior：准周期行为</li><li>Chaotic behavior：混沌行为</li></ul><p><strong>虽然动态系统是可以确定的，但是一旦输入发生微小改变，结果都会变得难以预测。混沌系统短期、局部可预测，长期、全局不可预测的特点，让它成为算法创作中常用的手段。</strong></p><p><img src="http://sprott.physics.wisc.edu/pubs/354fig01.gif" alt=""></p><p>via Generalization of the simplest autonomous chaotic system</p><p>单峰映象（logistic map）是一个二次的多项式映射，是由简单非线性方程式产生<a href="https://www.wikiwand.com/zh/%E6%B7%B7%E6%B2%8C%E7%90%86%E8%AE%BA" target="_blank" rel="noopener">混沌</a>现象的经典范例。</p><p>这种映射因生物学家 Robert May 在 1976 年发表的一篇论文而著名。公式为 $$x_{n+1}=rx_n(1-x_n)$$。对于任一个 r 值，最多只有一个稳定的极限环，若稳定极限环存在，几乎所有的点最后都会趋近极限。这些情况可用分枝图表示，分枝图中的横轴是 r 的数值，纵轴中显示大部份初值下稳态可能的 x 值，若数值在 2 个值中震荡，分枝图上对应的数值就会有 2 个点。若某 r 值已无法明确有几个对应的点，系统可能已经处于混沌状态。</p><p>分枝图有自相似的特性。若将分枝图中 r=3.82 的部份展开，只取三个分支中的一个，图形会好像是原分枝图缩放及扭曲后的结果。所有非混沌的参数 r 都有此一特性。可以看出混沌和分形的关系。</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/LogisticMap_BifurcationDiagram.png" alt=""></p><p>吸引子（attractor）是微积分和系统科学论中的一个概念。一个系统有朝某个稳态发展的趋势，这个稳态就叫做吸引子。</p><p>吸引子分为平庸吸引子和奇异吸引子。例如一个钟摆系统有一个平庸吸引子，这个吸引子使钟摆系统向停止晃动的稳态发展。平庸吸引子有不动点（平衡）、极限环（周期运动）和整数维环面（概周期运动）三种模式。不属于平庸的吸引子的都称为奇异吸引子，它表现了混沌系统中非周期性，无序的系统状态，例如天气系统。目前吸引子在学术上还没有完善的定义，奇异吸引子对于<a href="https://www.wikiwand.com/zh/%E6%B7%B7%E6%B2%8C%E7%90%86%E8%AE%BA" target="_blank" rel="noopener">混沌系统</a>的研究意义重大。</p><p>混沌理论的思想也从上世纪后半叶开始，逐渐渗入到音乐和作曲领域。</p><p>1960 年 George Brecht 在滴水事件（drip event）中，使不同来源的水，滴进所有空的容器。这个作品可以被视为音乐、剧场、或者是动态雕塑。</p><p><img src="https://www.moma.org/media/W1siZiIsIjMwNDk2NSJdLFsicCIsImNvbnZlcnQiLCItcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=74b38f4f98552501" alt=""></p><p>Brecht 的极简主义艺术活动是神秘费解、令人困惑的，这些作品及其配乐为观众设计成仅在想象的范围内可被解读与激活。滴水音乐（drip music）由此形成，指可由单个或多个表演者演出单一滴水水源与一个空的容器，通过设置使水滴入容器中。Drip music 很快就成为激浪派（fluxus）的标志，flux 一词本身不仅指持续的运动与改变，也指流体与流动，或更精确的是一个流体的流动速度。</p><p>80 年代，混沌理论开始被应用在作曲中。它适用于音高、持续时间、动态范围和编排。它们很容易产生重复，以及周期性/准周期性模型变化，或者在混沌模式下产生更多不可预测的行为，而重复、变化、convergence 和 divergence 是音乐作曲里的关键要素。</p><h2 id="分形"><a href="#分形" class="headerlink" title="分形"></a>分形</h2><p>分形是一个可以分成数个部分的几何形状，且每一部分都（至少近似地）是整体缩小后的形狀，即具有<a href="https://www.wikiwand.com/zh/%E8%87%AA%E7%9B%B8%E4%BC%BC" target="_blank" rel="noopener">自相似</a>的性质。分形也被称为扩展对称或展开对称。如果在每次放大后，形状的重复是完全相同的，被称为自相似。作为一个数学函数，分形通常是处处不可微的。无穷分形曲线可以理解为一条一维的曲线在空间中绕行。</p><blockquote><p>Fractals are mathematical dynamic systems represented by iterative equations that develop curves and geometrical shapes that have property of self-similarity. </p></blockquote><p>Sierpinski 三角是典型的自相似分形图形。1915 年由波兰数学家 Wacław Franciszek Sierpiński 提出。</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Sierpinski_triangle_%28blue%29.jpg" alt=""></p><p>算法：</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Sierpinski_triangle_evolution.svg/1024px-Sierpinski_triangle_evolution.svg.png" alt=""></p><ol><li>取一个实心的三角形（多数使用等边三角形）</li><li>沿三边中点的连线，将它分成四个小三角形</li><li>去掉中间的那一个小三角形</li><li>对其余三个小三角形重复第 1 步</li></ol><p>Sierpinski 三角可由分型树产生：</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Fractal_tree.gif" alt=""></p><p>分形算法已经被广泛用于生成式艺术创作中。</p><p>Bogdan Soban 是斯洛文尼亚的信息学专家和软件开发者，退休后作为自由艺术家从事创作。他从 1999 年开始接触生成式艺术，开始编写基于算法的生成式艺术软件用于创作。</p><p><img src="http://www.soban-art.com/images/naslovnica.jpg" alt=""></p><p>Paul DeCelle 用 Frederik Slijkerman 开发的 <a href="http://www.ultrafractal.com/" target="_blank" rel="noopener">Ultra Fractal</a> 创作了一些列作品：</p><p><img src="http://www.submit.manscostyle.com/submit/130_Image9.jpg" alt=""></p><p><img src="https://www.fractalus.com/paul/20071022-kesius.jpg" alt=""></p><p>Etienne Saint Amant 是来自加拿大魁北克省舍布鲁克的艺术家。他专注于用数学语言设计和描述的大幅艺术品，致力于概念研究和当代艺术创作。</p><p><img src="https://t00.deviantart.net/AIQ7rP3wX0CLZ0sC29rhgA1QBZE=/fit-in/700x350/filters:fixed_height(100,100" alt="">:origin()/pre00/ae50/th/pre/i/2005/136/1/4/rakis_by_etiennesaintamant.jpg)</p><p><img src="https://chaoscopia.com/artworks/m20180926-13.jpg" alt=""></p><p>一些分形艺术的软件：</p><ul><li><a href="https://www.ultrafractal.com/" target="_blank" rel="noopener">Ultra Fractal: Advanced Fractal Software for Windows and macOS</a></li><li><a href="http://fract.al/" target="_blank" rel="noopener">Frax - Immerse, Create, Inspire</a> </li><li><a href="https://mandelbulber.com/" target="_blank" rel="noopener">Laravel</a></li><li><a href="http://www.fractal-explorer.com/" target="_blank" rel="noopener">Fractal Explorer</a></li><li><a href="http://www.apophysis.org/" target="_blank" rel="noopener">Apophysis.org</a></li></ul><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.wikiwand.com/en/Dynamical_system" target="_blank" rel="noopener">Dynamical system - Wikiwand</a></li><li><a href="https://www.wikiwand.com/en/Attractor" target="_blank" rel="noopener">Attractor - Wikiwand</a></li><li><a href="https://www.wikiwand.com/en/Logistic_map" target="_blank" rel="noopener">Logistic map - Wikiwand</a></li><li><a href="https://www.wikiwand.com/zh/%E5%88%86%E5%BD%A2" target="_blank" rel="noopener">分形 - Wikiwand</a></li><li><a href="https://www.wikiwand.com/en/Sierpinski_triangle" target="_blank" rel="noopener">Sierpinski triangle - Wikiwand</a></li><li><a href="http://sprott.physics.wisc.edu/pubs/paper354.htm" target="_blank" rel="noopener">Generalization of the Simplest Autonomous Chaotic System</a></li><li><a href="https://www.moma.org/collection/works/127310?artist_id=756&amp;locale=zh&amp;page=1&amp;sov_referrer=artist" target="_blank" rel="noopener">Poul Hansen, George Brecht, Dick Higgins. George Brecht’s Drip Music, performed by Dick Higgins during Fluxus/Musik og Anti-Musik/det Instrumentale Teater, Nikolai Kirke, Copenhagen, November 23, 1962. 1962 | MoMA</a></li><li><a href="http://www.soban-art.com/index-ang.asp" target="_blank" rel="noopener">Generative Art - generated, artificial, random, software</a></li><li><a href="https://www.fractalus.com/paul/" target="_blank" rel="noopener">Fractal Art by Paul DeCelle</a></li><li><a href="https://chaoscopia.com/nouveautes_en.html" target="_blank" rel="noopener">chaoscopia - news</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/CC-blogtitle.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
-    
-      <category term="Computational Creativity" scheme="http://uegeek.com/tags/Computational-Creativity/"/>
-    
-      <category term="创意" scheme="http://uegeek.com/tags/%E5%88%9B%E6%84%8F/"/>
-    
-      <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
-    
-      <category term="混沌" scheme="http://uegeek.com/tags/%E6%B7%B7%E6%B2%8C/"/>
-    
-      <category term="分形" scheme="http://uegeek.com/tags/%E5%88%86%E5%BD%A2/"/>
-    
-      <category term="Chaotic" scheme="http://uegeek.com/tags/Chaotic/"/>
-    
-      <category term="Fractal" scheme="http://uegeek.com/tags/Fractal/"/>
     
   </entry>
   

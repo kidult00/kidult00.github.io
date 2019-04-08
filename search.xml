@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ableton Live 连接 Arduino 教程]]></title>
+    <url>%2F190408-Ableton-Arduino.html</url>
+    <content type="text"><![CDATA[你有没有想过，用 Arduino 做一个简单的 MIDI controller，控制 Ableton Live 中的参数？ 如果想实现两者的连接，以前的解决方案比较复杂，需要基于 Max/MSP，用 Maxuino 实现，还需要在 Arduino 上安装对应的固件。 有没有更简单的方法呢？ Connection Kit好消息是，Ableton 已经提供了官方的 Connection Kit，其中包含了与流行的外接设备的连接工具如 Arduino、OSC、LEGO Mindstorms 等。 介绍视频真是帅炸了~ Max for Live Connection Kit_腾讯视频 如果你已经购买了 Ableton Live 10 Suit，可以在官网直接下载这个 Pack。如果不能直接下载，这个 Pack 的源文件也可以在 github 找到：Ableton/m4l-connection-kit: Max for Live Connection Kit。下载后，将文件夹复制到 Documents-Ableton-Third-Party Packs。打开软件后，就可以在左侧找到 Arduino.amxd： 初始化开始连接之前，让我们看看使用说明。 The Arduino Max4Live device connects an Arduino Uno to Live using its serial port via USB and allows access to its analog inputs as well as its digital GPIOs. The device enables you to receive sensor data like switches, potentiometers or light-dependent resistors as well as sending Live parameter values to LEDs or servo motors. So far you may only connect sensors and other periphals to it directly as we do not yet support I2Cs and other periphals via the Serial Periphal Interface (SPI). 目前应该只支持 Uno 板，由 USB 串口连接。 因为 Max4Live 需要特定的固件支持，所以我们先上传程序到 Arduino 板。上传的程序在 Arduino IDE 里面就有：File-&gt;Examples-&gt;Firmata-&gt;StandardFirmata。打开文件后(至少是 2.5 版本)，上传到板子。 接着我们可以在 Ableton 里面编辑一段 clip，双击 Arduino.amxd 加入到 device viewer 里。 连接测试电路回到 Arduino，接一个最简单的电路。找一个电位计，正极接 Uno 板的 5V 口，负极接 GND，中间的信号接 A0 模拟端口。 上传以下程序，然后打开串口监视器，查看是否可以正常读取旋钮的值： 12345678910111213void setup() &#123; // initialize serial communication at 9600 bits per second: Serial.begin(9600);&#125;// the loop routine runs over and over again forever:void loop() &#123; // read the input on analog pin 0: int sensorValue = analogRead(A0); // print out the value you read: Serial.println(sensorValue); delay(20); // delay in between reads for stability&#125; 成功后，关闭串口监视器。 Ableton Mapping然后到 Ableton 中，选择 port 为 usbmodemxxxx。切换到 Analog tab，点 A0 右侧的 Map 按钮，选择已经编辑的那个 track 的 Track Volume。 做好这一步映射后，可以看到 A0 旁边小小的蓝色指示条已经开始跳动。旋转电位计，会看到 Track 的音量产生了变化。 可是，这里的变化不太符合我们的预期：扭动旋钮停止后，音量还是会变化，甚至产生随机的爆音。 这是因为电位计产生了抖动。再打开 Arduino 串口监视器，可以观察到 A0 端口接收到的不是平滑的值，而是夹杂着很多不稳定的波动值。 消抖处理最简单的办法是在 kit 里面设置 Smooth 的值： 但是这样做，误差会较大。我们可以进一步尝试在代码里消抖，或者在电路中加入电容消抖。可以参考这篇文章 Smooth Potentiometer Input。 进一步的消抖还需要参考一些资料继续研究。 Debouncing a potentiometer Writing an analog pot debounce as a function Debounce a Potentiometer? arduino按钮传感器常见的几种消抖方法 - 简书]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>ArtxCode</tag>
+        <tag>Music</tag>
+        <tag>Ableton Live</tag>
+        <tag>Creative Coding</tag>
+        <tag>Maker</tag>
+        <tag>Arduino</tag>
+        <tag>MIDI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[三维制图讲义05 - 几何体编辑：拉伸和环切]]></title>
+    <url>%2F190403-3d05-basic-geometry-edit.html</url>
+    <content type="text"><![CDATA[三维制图讲义01 - 欢迎来到三维世界 三维制图讲义02 - 三维制作流程 三维制图讲义03 - 三维软件和Blender介绍 三维制图讲义04 - 基础几何体 快速回顾上一节课我们练习了编辑模式下，点线面的切换和移动、旋转、缩放。 选中几何体后，按快捷键 Tab 进入编辑模式。这时候按键盘 1、2、3 键（或者点界面中模式选择右边的三个图标），可以切换为 点选择、边选择、面选择状态。 将点、线、面选择，跟位移、旋转、缩放结合起来练习： 切换到点选择模式（编辑模式下按 1 键），选中点，进行移动（G）(包括沿轴的操作) 切换到边选择模式（编辑模式下按 2 键），选中多条边，进行旋转（R）(包括沿轴的操作) 切换到面选择模式（编辑模式下按 3 键），选中多个面，进行缩放（S）(包括沿轴的操作) 拉伸 Extrude拉伸(Extrude)是重要的基本操作，也是这一节课的练习重点。 什么是拉伸？就是拉着一个点/边/面走： 拉伸操作需要在编辑模式下进行。 操作顺序是：选中物体，tab 键进入编辑模式，然后按 e 进入拉伸状态。 你可能会问，拉伸 (e) 跟移动 (g) 有什么不同呢？ 注意观察上面的动画，在拉伸时，是在原有面的基础上，增加了一个面，然后沿着这个面的四条边移动。而单纯的移动（选中点线面后按 g），则不会增加面。 拉伸为什么重要？ 它是三维物体成型最基本的方式之一。甚至只用 extrude 这个基本操作加上点/边/面的 TRS，就可以建出复杂的模型： 环切 Loop Cut环切/Loop Cut 功能可以说是金手指级的作弊型基础功能。它帮助我们快速切分连续的边和面，获得更多的调节节点。 比如，把一个圆柱体修改成复杂一点的造型，借助环切可以秒完成： 环切也需要在编辑模式中使用。可以在左侧工具栏中找到： 使用快捷键的操作步骤： 选择物体，按 tab 进入编辑模式 按快捷键 ctrl+r，将鼠标移到物体上，会出现环状的指示线(如果想退出环切状态，可以鼠标右键或者按 esc 键) 移动鼠标到想要的面(指示线只会出现在中点连接线) 按下鼠标左键，确定 Loop Cut 然后问题来了： 如果移动环的时候，没有移到对的位置，就不小心点了鼠标左键，环就不动了，怎么办？ 没事，毕竟是作弊级别的常用功能，就算已经切了，也还是可以调整位置。 先选中要调整的 Loop Cut：按住 alt 键点左键，可以选中连续的边或者面 然后按 g，进行移动 咦？这时候的移动没有限制轴线，一动 Loop Cut 就歪了…… 如果想沿原来的边缘移动 Loop cut，怎么办？ 可以在选择 loop 以后，按两次 g，然后移动到合适的位置。 问题2：如果想一次性添加多个环切怎么办？ Easy Peasy 在按 ctrl+r 后，移动到合适的面上，然后滚动鼠标中键或者按对应的数字键，就可以指定切割的数量了。 组合练习好了，目前为止，Blender 的基础大招你都已经学过了： 调整视图和切换正/侧/顶视图 进入编辑模式 移动（g）/旋转（r）/缩放（s）物体或者点/线/面 拉伸(e) 环切(ctrl+r) 可以说，你已经可以造出 90% 的基础造型。下面就进入探索和练习时间吧！]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>ArtxCode</tag>
+        <tag>3D</tag>
+        <tag>Modeling</tag>
+        <tag>Blender</tag>
+        <tag>Geometry</tag>
+        <tag>Loop Cut</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数字制造讲义05-软硬件数据通信]]></title>
     <url>%2F190402-df05-communication.html</url>
     <content type="text"><![CDATA[数字制造讲义01-成为数字世界的建造者 数字制造讲义02-Arduino入门 数字制造讲义03-电路基础 数字制造讲义04-负责输入和输出的智能元件 Connect Everything 玩过乐高的同学都知道，乐高积木非常容易上手，只需要把积木拼在一起——它们总是能拼在一起，不管是什么大小和形状，所以它成为了经典的儿童益智玩具。 在我们制造东西的时候，目标也是把不同的物体和元件拼接成一个完整的、具有一定功能的物品。但是我们会面对一个比乐高困难得多的问题：不同的元件出身和禀赋可能天差地别，想要把它们连接到一起，得想出各种办法。 比如，我想做一个薯片罐头打击乐器，敲击罐头，就可以让 iPad 里面的乐器发出对应的声响。 想想看，我们要把哪些东西连接起来？ 我们要连接敲击的平面和 iPad 中的 APP。可是并不存在这样的接口。怎么办？ 一段电线连不起来，那我们用两段。可以先用 Arduino 帮我们收集敲击的信号，然后作为中转，再传给 APP。 可是， Arduino 怎么连接 iPad 呢？ 你可能会说，可以用数据线呀！没错，不过，要用什么样的数据线呢？这取决于我们要传输什么样的数据。我们想要控制 APP 中的乐器，就需要包含 MIDI 信息的数据，于是要用 MIDI 数据线来传递。 所以，我们的问题拆分成了好几个： 如何连接敲击面和 Arduino (电路) 如何连接 Arduino 和 iPad(一头必需是 iPad 支持的端口，如 type-c) 如何从 Arduino 传输 MIDI 数据到 APP(一头必需是 MIDI 数据线) 条条小路通骡马这节课我们学习有哪些方式把不同的东西连接在一起，让它们之间可以传递数据，完成一定的功能。 硬件和硬件、软件和硬件、软件和软件的数据通信，主要可以分为两大类型：有线和无线。 想要跟硬件沟通，需要用某种它能听懂的「语言」。但是这种语言在人类看来简直像天书，它是机器专用的代码——汇编语言（assembly language），是一种用于电子计算机、微处理器、微控制器，或其他可编程器件的低级语言。 有线串口通信(Serial Communication)， 是最常见的通信方式。它是指外接设备和计算机之间，通过数据信号线、地线、控制线等，按位进行传输数据的一种通讯方式。 这种通信方式使用的数据线少，在远距离通信中可以节约通信成本，但其传输速度比并行传输低。 串口的概念跟并口相对应： 因为要跟机器直接打交道的语言（低级别的语言）比较难掌握，所以有许多更高级别的语言(近似人类语言)的库可以帮助我们通过串口跟机器沟通，例如 Python 语言的 pySerial。 Arduino 也是靠串口跟计算机通信。 在我们上传程序到板子之前，就需要选择用哪个串口通信。在 Port 选项上方，还有 Serial Monitor 工具（IDE右上角放大镜图标也可以），我们常常在调试程序时，打开串口监视器并查看里面的数据。 那么，Arduino 用什么数据线跟电脑的串口连接呢？ 最常见就是 USB 数据线了。USB 是 Universal Serial BUS 的缩写，从名字可见其野心(不过讲真，数据接口类型太多，真的让人头疼死……) 来认认 USB 接口们，哪些是平常经常会见到的： 备受关注的 USB 4.0 就要来了，但是现实比较骨干，我们仍然需要跟各种各样的数据接口和数据线打交道，尤其是音频和视频的数据线，还远未到 USB 一统天下的时候。 这张图汇总了大部分音视频数据接口的长相，总有一款适合你： USB 没有办法替代这么多的数据接口和数据线，其中很重要的一个原因是连接距离。音视频的连接长度常常跨越几米甚至上百米，这时候 USB 就傻眼了。 在远距离传输的场景下，互联网（广域网/局域网）就可以大显身手。在有线互联网中，我们通过 IP 地址访问和联通计算机。 IPv4地址分为 A、B、C、D、E 五类，出去特殊作用的 D、E 两类，剩下的 A、B、C 三类地址是常见的 IP 地址段。A 类地址的容量最大，可以容纳 16,777,214 个主机，B 类地址可以容纳 65,534 个主机，C 类地址可以容纳 254 个主机。 A类地址：10.0.0.0–10.255.255.255 B类地址：172.16.0.0–172.31.255.255 C类地址：192.168.0.0–192.168.255.255 无线基于无线的连接越来越普遍，也越来越重要了。 为啥？ 尤其在制作互动装置时，我们不希望被太多连线所缠绕和局限活动范围，所以需要借助无线连接的方式。 而且，多种多样的无线数据传输，也是 IOT(Internet of Things 物联网)的基础设施。 那么蓝牙呢？蓝牙的应用也越来越普遍了。 蓝牙是一种点对点的通信方式，主要目的是服务移动设备。蓝牙的功耗以及成本比 wifi 低一些，但是传输距离很短，一般用于近距离设备的通信，例如耳机和手机。 科技情报局：NFC、蓝牙和 WiFi 有什么区别？_腾讯视频 除了 wifi 和蓝牙，还有 ZigBee、RF、WiMax 等等传输方式，我们不太会接触到，这里就略过了。 传输音乐数据音乐和乐器是我们不变的主题。那么我们要深入了解一下如何传输音乐相关的数据。 MIDI音乐数字接口（Musical Instrument Digital Interface，简称 MIDI ）是一个工业标准的电子通讯协议，为电子乐器等演奏装置（如合成器）定义各种音符或弹奏码，让电子乐器、电脑、手机或其它的舞台演出配备彼此连接，调整和同步，可以即时交换音乐数据。 MIDI 不传送声音，只传送包括音调和音乐强度的数据、音量、颤音和相位等参数，还有设定节奏的时钟信号。在不同的电脑上，输出的声音也因音源器不同而有差异。 回顾 MIDI 的历史，简直就像回顾数字时代的陈年往事： WHAT IS MIDI 什么是 MIDI_腾讯视频 MIDI 1.0 于 1983 年 8 月发布。35 年过去了，MIDI 终于在今年 1 月迎来了 2.0 版本。 当然，现阶段我们常用的还是 5 脚的 MIDI 数据线，和 0~127 的整数型数字： MIDI Cable Wiring First Connector Cable Second Connector Pin 1 No Connection Pin 1 Pin 2 Shield Pin 2 Pin 3 No Connection Pin 3 Pin 4 Voltage Reference Line Pin 4 Pin 5 Data Line Pin 5 课上演示的从 MAX 发送 MIDI 数据给 Ableton，记得自己动手试一试哦！ 从移动端发送 MIDI 数据给其他设备，可以使用类似 KnobLab 的 APP，它支持多种传输方式： OSCOSC（Open Sound Control）是用于连接声音合成器、计算机和其他多媒体设备的协议，用于辅助音乐表演或节目控制之类（共享音乐表现数据如手势、参数和音符序列）的目的。OSC 的优势包括互动性，准确性，灵活性等。 来听听看 OSC 的作者之一 Matt Wright 是如何介绍它的： Open Sound Control OSC intro_腾讯视频 OSC 常常用来替代 MIDI，因为它的分辨率更高、可传递的参数更丰富。OSC 消息使用 UDP / IP 和以太网通过 Internet和局域网传输。 OSC 已广泛应用于音乐表演、机器人、视频性能接口、分布式音乐系统和进程间通信等领域，在实验音乐控制器中更是必不可少。 那么怎么使用 OSC 传输数据呢？ 在触摸设备如 iOS 上，用 TouchOSC 最方便不过了(不过要收费)。 在移动端下载 TouchOSC，在桌面端下载编辑器，在编辑器里面可以创建自定义的操作面板。然后在移动端设置输入和输出端口。接下来就可以在 Max/MSP 里面接收和发送 OSC 数据了。因为 OSC 通过 UDP 协议传输，所以使用 udpsend 和 udpreceive 对象： Max 接收到数据后，可以看到 OSC 的数据格式类似文件路径 URI：/{序号}/{参数名} {参数值}。 这样我们就把手机和电脑连接起来，并且在手机上实现个性化的控制。 除了移动端的 TouchOSC，OSCulator 也是一款好用的 OSC 控制器，感兴趣的同学可以自行研究一下。 当然，Arduino 和 Max 也是可以方便地勾搭上的： 本周的作业，是研究 Arduino 如何触发 Ableton 或 Max 里面的声音采样，以及如何使用 OSC 跟 Arduino 通信。]]></content>
@@ -32,8 +65,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Blender</tag>
         <tag>Modeling</tag>
+        <tag>Blender</tag>
         <tag>Geometry</tag>
       </tags>
   </entry>
@@ -66,8 +99,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Blender</tag>
         <tag>Modeling</tag>
+        <tag>Blender</tag>
       </tags>
   </entry>
   <entry>
@@ -99,8 +132,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Modeling</tag>
         <tag>Animation</tag>
+        <tag>Modeling</tag>
         <tag>Texture</tag>
         <tag>Camera</tag>
         <tag>Lighting</tag>
@@ -135,8 +168,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Modeling</tag>
         <tag>Animation</tag>
+        <tag>Modeling</tag>
       </tags>
   </entry>
   <entry>
@@ -2549,8 +2582,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>哥特式</tag>
         <tag>巴洛克</tag>
         <tag>布拉格</tag>
@@ -2569,8 +2602,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>东正教</tag>
         <tag>基督教</tag>
         <tag>天主教</tag>
@@ -2588,8 +2621,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>捷克</tag>
       </tags>
   </entry>
@@ -2603,8 +2636,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>奥地利</tag>
         <tag>哈布斯堡王朝</tag>
         <tag>维也纳</tag>
@@ -2620,8 +2653,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>捷克</tag>
       </tags>
   </entry>
@@ -2634,11 +2667,11 @@
       </categories>
       <tags>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
-        <tag>捷克</tag>
+        <tag>中欧</tag>
         <tag>匈牙利</tag>
         <tag>奥地利</tag>
+        <tag>捷克</tag>
         <tag>斯洛伐克</tag>
       </tags>
   </entry>
@@ -2651,8 +2684,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>历史</tag>
         <tag>人类简史</tag>
+        <tag>历史</tag>
       </tags>
   </entry>
   <entry>
@@ -2991,8 +3024,8 @@
       <tags>
         <tag>Design</tag>
         <tag>交互设计</tag>
-        <tag>Guideline</tag>
         <tag>iOS</tag>
+        <tag>Guideline</tag>
         <tag>规范</tag>
       </tags>
   </entry>
