@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数字制造讲义06-MIDI 和 OSC 数据传输练习]]></title>
+    <url>%2F190409-df06-midi-osc-practice.html</url>
+    <content type="text"><![CDATA[数字制造讲义01-成为数字世界的建造者数字制造讲义02-Arduino入门数字制造讲义03-电路基础数字制造讲义04-负责输入和输出的智能元件数字制造讲义05-软硬件数据通信 回顾上一节课，我们学习了有哪些方式把不同的软硬件连接在一起，让它们之间可以传递数据，完成一定的功能。 有线的方式主要使用数据线进行串口通信。在远距离传输的场景下，则常使用互联网（广域网/局域网）。基于无线的连接主要包括 Wifi 和蓝牙。 传输音乐数据最常用的协议包括 MIDI 和 OSC。OSC 的分辨率更高、可传递的参数更丰富，它使用 UDP / IP 和以太网通过 Internet和局域网传输。 OSC 已广泛应用于音乐表演、机器人、视频性能接口、分布式音乐系统和进程间通信等领域，在实验音乐控制器中更是必不可少。 下面我们就来实际操作几个例子。 Mobile MIDI 2 Max从移动端发送 MIDI 数据给其他设备，可以使用类似 KnobLab 的 APP，它支持多种传输方式： 首先下载 KnobLab App。 然后我们在 Max 里面建一个简单的 patch，接收 KnobLab 发过来的 midi 数据，然后传给键盘并且 makenote： 打开 Setting 里面 MaxOS 的 Wifi 连接说明： 打开电脑里的 Audio MIDI Setup，打开 MIDI Studio，点工具栏上的网络图标: 打开网络设置窗口，在 My Sessions 下面勾选 Session 1，然后在 Directory 里面可以看到自己的手机(电脑和手机需要在同一个 Wifi 网络下)。然后点 Connect。 这时候已经可以用 KnobLab 操作，向 Max 发送 MIDI 数据了。在 Max 里面，要注意选择 midiin 的来源，双击对象就可以看到 Session 1 的选项，选择后，Max 才开始接收数据。 在 KnobLab 的主界面上转动旋钮，Max 就会发出对应的 MIDI 音高。 Mobile OSC 2 Max在触摸设备如 iOS 上，用 TouchOSC 操作复杂的 MIDI Controller 非常方便。 首先，在移动端下载 TouchOSC，在桌面端下载编辑器。 在编辑器里面可以创建自定义的操作面板。我们也可以直接使用 TouchOSC 里面预设的面板。在设置页面的 Layout 项，点击进去即可选择面板。 连接的关键是设置 TouchOSC 的 IP 地址和输入输出端口。 确保电脑和手机处于同一个 Wifi 网络。然后我们查询电脑的 IP 地址。打开 Terminal，Windows 系统使用命令 ipconfig，MacOS 系统使用命令 ifconfig，回车后可以看到一长串的数据，仔细找到其中以 192.168 开头的局域网 IP 地址： 1234567en1: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500 ether 24:f6:77:08:87:04 inet6 fe80::81c:2c9b:50cf:8e39%en1 prefixlen 64 secured scopeid 0x7 inet 192.168.xx.xxx netmask 0xffffff00 broadcast 192.168.xxx.xxx nd6 options=201&lt;PERFORMNUD,DAD&gt; media: autoselect status: active broadcast 后面的 192.168.xxx.xxx 就是需要填入 TouchOSC 设置中的 IP 地址。 打开手机 APP 进入设置页面，在 Host 里面填入上面的的 IP地址。 设置输入端口 Port(outgoing) 为某个数值，如 8800。 接下来就可以在 Max/MSP 里面接收和发送 OSC 数据了。因为 OSC 通过 UDP 协议传输，所以使用 udpsend 和 udpreceive 对象： udpreceive 的 port 参数应该跟 TouchOSC 设置的输出端口一致，如上图的 8800。 Max 接收到数据后，可以看到 OSC 的数据格式类似文件路径 URI：/{序号}/{参数名} {参数值}。 这样我们就把手机和电脑连接起来。只要将 TouchOSC 里面所有的 controller 都映射到 Max 中，就可以在手机上实现效果丰富的个性化控制。 Arduino 2 MaxArduino 和 Max 也可以方便地勾搭上。我们试着做一个旋钮控制音高的小应用。 首先搭出最简单的电位计电路。电位计正极接 5V 端口，负极接 GND，数据脚接 A0 端口： Arduino 中的代码也非常简单： 1234567891011121314int sensor_pin = A0;int knobValue = 0;void setup()&#123; Serial.begin(9600); // open the arduino serial port&#125;void loop()&#123; knobValue = analogRead(sensor_pin); Serial.println(knobValue); delay(500); // pause&#125; 电路和 Arduino 发送数据已经准备好。接着我们处理 Max 接收数据的逻辑。 咦？为什么这么多接线？ 其实并没有看上去复杂。 我们转动电位计，打开 Arduino 的串口监视器查看是否可以正常读数。然后再观察 Max 中有哪些数据进来。 Max 中使用 serial 对象读取串口数据，不过它输出的是未经处理的原始格式。如果用 print 对象打印出来，会看到接收的数据会是以下格式： 123413541035 第一行的 13 和第三行的 10 都是标记，第二行和第四行才是串口数据，但是它是 ASCII 码，而不是直接可以使用的数字。所以还需要用 itoa 和 fromsymbol 对象将 ASCII 码转换为数字。因为电位计发送的模拟数据范围是 0~1023，所以接着我们用一个 scale 把数据映射到 MIDI 的数据范围 0~127，这样就可以发出音高了。 BonusArduino 能不能直接跟 Ableton 连接呢？当然是可以的。 Ableton 已经提供了 Package，跟 Arduino 连接后，可以做好多脑洞大开的酷炫应用： Max for Live Connection Kit_腾讯视频 具体教程，请查看：Ableton Live 连接 Arduino 教程。]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>ArtxCode</tag>
+        <tag>Ableton Live</tag>
+        <tag>Creative Coding</tag>
+        <tag>制造</tag>
+        <tag>Maker</tag>
+        <tag>Digital Fabrication</tag>
+        <tag>Fab</tag>
+        <tag>Arduino</tag>
+        <tag>通信</tag>
+        <tag>MIDI</tag>
+        <tag>OSC</tag>
+        <tag>Max</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ableton Live 连接 Arduino 教程]]></title>
     <url>%2F190408-Ableton-Arduino.html</url>
     <content type="text"><![CDATA[你有没有想过，用 Arduino 做一个简单的 MIDI controller，控制 Ableton Live 中的参数？ 如果想实现两者的连接，以前的解决方案比较复杂，需要基于 Max/MSP，用 Maxuino 实现，还需要在 Arduino 上安装对应的固件。 有没有更简单的方法呢？ Connection Kit好消息是，Ableton 已经提供了官方的 Connection Kit，其中包含了与流行的外接设备的连接工具如 Arduino、OSC、LEGO Mindstorms 等。 介绍视频真是帅炸了~ Max for Live Connection Kit_腾讯视频 如果你已经购买了 Ableton Live 10 Suit，可以在官网直接下载这个 Pack。如果不能直接下载，这个 Pack 的源文件也可以在 github 找到：Ableton/m4l-connection-kit: Max for Live Connection Kit。下载后，将文件夹复制到 Documents-Ableton-Third-Party Packs。打开软件后，就可以在左侧找到 Arduino.amxd： 初始化开始连接之前，让我们看看使用说明。 The Arduino Max4Live device connects an Arduino Uno to Live using its serial port via USB and allows access to its analog inputs as well as its digital GPIOs. The device enables you to receive sensor data like switches, potentiometers or light-dependent resistors as well as sending Live parameter values to LEDs or servo motors. So far you may only connect sensors and other periphals to it directly as we do not yet support I2Cs and other periphals via the Serial Periphal Interface (SPI). 目前应该只支持 Uno 板，由 USB 串口连接。 因为 Max4Live 需要特定的固件支持，所以我们先上传程序到 Arduino 板。上传的程序在 Arduino IDE 里面就有：File-&gt;Examples-&gt;Firmata-&gt;StandardFirmata。打开文件后(至少是 2.5 版本)，上传到板子。 接着我们可以在 Ableton 里面编辑一段 clip，双击 Arduino.amxd 加入到 device viewer 里。 连接测试电路回到 Arduino，接一个最简单的电路。找一个电位计，正极接 Uno 板的 5V 口，负极接 GND，中间的信号接 A0 模拟端口。 上传以下程序，然后打开串口监视器，查看是否可以正常读取旋钮的值： 12345678910111213void setup() &#123; // initialize serial communication at 9600 bits per second: Serial.begin(9600);&#125;// the loop routine runs over and over again forever:void loop() &#123; // read the input on analog pin 0: int sensorValue = analogRead(A0); // print out the value you read: Serial.println(sensorValue); delay(20); // delay in between reads for stability&#125; 成功后，关闭串口监视器。 Ableton Mapping然后到 Ableton 中，选择 port 为 usbmodemxxxx。切换到 Analog tab，点 A0 右侧的 Map 按钮，选择已经编辑的那个 track 的 Track Volume。 做好这一步映射后，可以看到 A0 旁边小小的蓝色指示条已经开始跳动。旋转电位计，会看到 Track 的音量产生了变化。 可是，这里的变化不太符合我们的预期：扭动旋钮停止后，音量还是会变化，甚至产生随机的爆音。 这是因为电位计产生了抖动。再打开 Arduino 串口监视器，可以观察到 A0 端口接收到的不是平滑的值，而是夹杂着很多不稳定的波动值。 消抖处理最简单的办法是在 kit 里面设置 Smooth 的值： 但是这样做，误差会较大。我们可以进一步尝试在代码里消抖，或者在电路中加入电容消抖。可以参考这篇文章 Smooth Potentiometer Input。 进一步的消抖还需要参考一些资料继续研究。 Debouncing a potentiometer Writing an analog pot debounce as a function Debounce a Potentiometer? arduino按钮传感器常见的几种消抖方法 - 简书]]></content>
@@ -820,7 +842,6 @@
         <category>设计</category>
       </categories>
       <tags>
-        <tag>交互设计</tag>
         <tag>AI</tag>
         <tag>ArtxCode</tag>
         <tag>Deisgn</tag>
@@ -828,6 +849,7 @@
         <tag>HCI</tag>
         <tag>人机交互</tag>
         <tag>人机共生</tag>
+        <tag>交互设计</tag>
         <tag>艺术</tag>
         <tag>跨界</tag>
         <tag>创新</tag>
@@ -1565,8 +1587,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -1578,8 +1600,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -1591,8 +1613,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -1604,8 +1626,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Reading</tag>
         <tag>设计师</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -2669,9 +2691,9 @@
         <tag>Travel</tag>
         <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>捷克</tag>
         <tag>匈牙利</tag>
         <tag>奥地利</tag>
-        <tag>捷克</tag>
         <tag>斯洛伐克</tag>
       </tags>
   </entry>

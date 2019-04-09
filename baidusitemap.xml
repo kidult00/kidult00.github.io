@@ -4,6 +4,48 @@
 
     
   <url>
+    <loc>http://uegeek.com/190409-df06-midi-osc-practice.html</loc>
+    <lastmod>2019-04-09T14:00:19.246Z</lastmod>
+    <data>
+        <display>
+        <title>数字制造讲义06-MIDI 和 OSC 数据传输练习</title>
+        <pubTime>2019-04-09T13:58:47.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Ableton Live</tag>
+         
+        <tag>Creative Coding</tag>
+         
+        <tag>制造</tag>
+         
+        <tag>Maker</tag>
+         
+        <tag>Digital Fabrication</tag>
+         
+        <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
+         
+        <tag>通信</tag>
+         
+        <tag>MIDI</tag>
+         
+        <tag>OSC</tag>
+         
+        <tag>Max</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/190408-Ableton-Arduino.html</loc>
     <lastmod>2019-04-08T11:16:20.557Z</lastmod>
     <data>
@@ -3229,11 +3271,11 @@
          
         <tag>中欧</tag>
          
+        <tag>捷克</tag>
+         
         <tag>匈牙利</tag>
          
         <tag>奥地利</tag>
-         
-        <tag>捷克</tag>
          
         <tag>斯洛伐克</tag>
          
@@ -3759,9 +3801,9 @@
         
         <tag>Design</tag>
          
-        <tag>Reading</tag>
-         
         <tag>设计师</tag>
+         
+        <tag>Reading</tag>
          
          
            
@@ -3807,9 +3849,9 @@
         
         <tag>Design</tag>
          
-        <tag>Reading</tag>
-         
         <tag>设计师</tag>
+         
+        <tag>Reading</tag>
          
          
            
@@ -3831,9 +3873,9 @@
         
         <tag>Design</tag>
          
-        <tag>Reading</tag>
-         
         <tag>设计师</tag>
+         
+        <tag>Reading</tag>
          
          
            
@@ -3855,9 +3897,9 @@
         
         <tag>Design</tag>
          
-        <tag>Reading</tag>
-         
         <tag>设计师</tag>
+         
+        <tag>Reading</tag>
          
          
            
@@ -5235,8 +5277,6 @@
         <title>破解 AI 时代的焦虑 —— 从人机交互到人机协同创作</title>
         <pubTime>2018-07-17T15:11:58.000Z</pubTime>
         
-        <tag>交互设计</tag>
-         
         <tag>AI</tag>
          
         <tag>ArtxCode</tag>
@@ -5250,6 +5290,8 @@
         <tag>人机交互</tag>
          
         <tag>人机共生</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>艺术</tag>
          
