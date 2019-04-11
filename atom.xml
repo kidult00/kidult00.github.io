@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2019-04-09T14:00:19.246Z</updated>
+  <updated>2019-04-11T03:41:34.126Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>190411-3d06-geometry-practice</title>
+    <link href="http://uegeek.com/190411-3d06-geometry-practice.html"/>
+    <id>http://uegeek.com/190411-3d06-geometry-practice.html</id>
+    <published>2019-04-11T03:40:11.000Z</published>
+    <updated>2019-04-11T03:41:34.126Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/3d_course_title.jpg" alt=""></p><a id="more"></a><h1 id="三维制图讲义06-基础几何体练习"><a href="#三维制图讲义06-基础几何体练习" class="headerlink" title="三维制图讲义06 - 基础几何体练习"></a>三维制图讲义06 - 基础几何体练习</h1><p><a href="https://www.uegeek.com/190306-3d01-welcome-to-the-3d-world.html" target="_blank" rel="noopener">三维制图讲义01 - 欢迎来到三维世界</a></p><p><a href="https://www.uegeek.com/190314-3d02-workflow.html" target="_blank" rel="noopener">三维制图讲义02 - 三维制作流程</a></p><p><a href="https://www.uegeek.com/190320-3d03-blender-intro.html" target="_blank" rel="noopener">三维制图讲义03 - 三维软件和Blender介绍</a></p><p><a href="https://www.uegeek.com/190327-3d04-basic-geometry.html" target="_blank" rel="noopener">三维制图讲义04 - 基础几何体</a></p><p><a href="https://www.uegeek.com/190403-3d05-basic-geometry-edit.html" target="_blank" rel="noopener">三维制图讲义05 - 几何体编辑：拉伸和环切</a></p><h2 id="快速回顾"><a href="#快速回顾" class="headerlink" title="快速回顾"></a>快速回顾</h2><p>上一节课我们讲解了编辑模式下两个基本的操作：拉伸(Extrude)和环切(Loop Cut)。</p><p>什么是拉伸？就是拉着一个点/边/面走：</p><p><img src="https://thumbs.gfycat.com/ThunderousHandyBeagle-size_restricted.gif" alt=""></p><p>操作顺序是：<strong>选中物体，tab 键进入编辑模式，然后按 e 进入拉伸状态</strong>。</p><p><img src="https://raw.githubusercontent.com/a1studmuffin/SpaceshipGenerator/master/screenshots/step-by-step-animation.gif" alt=""></p><p>环切/Loop Cut 则帮助我们快速切分连续的边和面，获得更多的调节节点。使用快捷键的操作步骤：</p><ul><li>选择物体，按 tab 进入编辑模式</li><li>按快捷键 ctrl+r，将鼠标移到物体上，会出现环状的指示线(如果想退出环切状态，可以鼠标右键或者按 esc 键)</li><li>移动鼠标到想要的面(指示线只会出现在中点连接线)</li><li>按下鼠标左键，确定 Loop Cut</li></ul><p><img src="https://blenderartists.org/uploads/default/original/4X/8/c/7/8c70cbda30e9fc2a6d84539be6508614756f8e12.gif" alt=""></p><h2 id="细分曲面"><a href="#细分曲面" class="headerlink" title="细分曲面"></a>细分曲面</h2><p>随着对 Blender 操作的熟悉，我们会开始塑造更加复杂的形状。</p><p>形状复杂意味着什么？意味着我们需要对一个平面切分为多个子平面，然后调整这些子平面来获得更精确的控制。这就是细分曲面(sub-division)的概念。</p><p>下面我们连着看三个 Pixar in a Box 的视频，形象地理解一下什么是细分曲面。</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=e0527y4lxf3" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/e0527y4lxf3.html" target="_blank" rel="noopener">Introduction to subdivision surfaces</a></p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=x0527k1vsqf" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/x0527k1vsqf.html" target="_blank" rel="noopener">第三课 Split vs. average_腾讯视频</a></p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=u0859bf0qse" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/u0859bf0qse.html" target="_blank" rel="noopener">Subdivision in 3D_腾讯视频</a></p><p>下面进入练习时间。通过 3 个练习，我们进一步巩固之前学过的操作，并且学习一些新的技能。</p><h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h3 id="内插面"><a href="#内插面" class="headerlink" title="内插面"></a>内插面</h3><p>这个练习我们会学习一个新的操作：内插面（insect faces）。</p><p>内插面就是在一个面里面切一块按比例缩小的面：</p><p><img src="https://i.stack.imgur.com/ccGXJ.gif" alt=""></p><p>内插面的快捷键是 i。</p><p><img src="http://img.viz.mobi/w6-shape1.jpg" alt=""></p><p>上面的几何体的操作顺序是：</p><ul><li>新建立方体</li><li>按 tab 键进入编辑模式，按 3 键进入面选择模式，选中顶部的面</li><li>按 i 然后移动鼠标，调整内插面的大小，然后点鼠标左键确定</li><li>按 e 沿 z 轴拉伸刚才新建的内插面</li><li>按 i 再建一个内插面</li><li>按 e 沿 z 轴反方向拉伸，做出内凹的形状</li></ul><h3 id="拉伸-缩放-vs-缩放-拉伸"><a href="#拉伸-缩放-vs-缩放-拉伸" class="headerlink" title="拉伸+缩放 vs 缩放+拉伸"></a>拉伸+缩放 vs 缩放+拉伸</h3><p><img src="http://img.viz.mobi/w6-shape2.jpg" alt=""></p><p>这个练习帮助我们理解 <code>先拉伸后缩放</code> 和 <code>先缩放后拉伸</code> 的区别。</p><p>操作顺序是：</p><ul><li>新建立方体</li><li>按 tab 键进入编辑模式，选中顶部的面，按 g 然后沿 z 轴压扁 (也可以不进入编辑模式，直接缩放立方体）</li><li>选中顶部的面，按 i 建一个内插面</li><li>按 e 拉伸内插面，拉伸完毕后，按 s 缩小内插面</li></ul><p><img src="http://img.viz.mobi/2019-04-11%2010.25.56.gif" alt=""></p><ul><li>按 i 再建一个内插面，然后按 e 拉伸出中间长长的柱体</li><li>顶部的面按 e 然后 s，放大</li><li>按 e 拉伸，然后按 s 放大这个面，最后再按 e 拉伸，完成柱体</li></ul><p><img src="http://img.viz.mobi/2019-04-11%2010.28.05.gif" alt=""></p><ul><li>在四个侧面，选中面然后做内插面，向内拉伸内插面</li></ul><h3 id="使用-Subdivision-Surfaces-修改器"><a href="#使用-Subdivision-Surfaces-修改器" class="headerlink" title="使用 Subdivision Surfaces 修改器"></a>使用 Subdivision Surfaces 修改器</h3><p><img src="http://img.viz.mobi/w6-shape3.jpg" alt=""></p><ul><li>新建圆柱体，按 tab 键进入编辑模式，选中顶部的面</li><li>按 e 沿 z 轴拉伸，然后按 s 缩小口径</li><li>再按 e 向上拉伸，然后 e → s 放大，拉出瓶口的底部</li><li>再按 e 向上拉伸出瓶口，然后建内插面，再把内插面向内拉伸形成瓶口的凹陷</li></ul><p><img src="http://img.viz.mobi/2019-04-11%2010.31.46.gif" alt=""></p><p>添加 Subdivision Surfaces 的操作如下：</p><p>首先添加修改器(Modifier) 表面细分 / Subdivision Surface，将视图的细分值改为 2。</p><p><img src="http://img.viz.mobi/blender-subSurface.jpg" alt=""></p><p>然后添加环切，平整细分表面的边缘：</p><p><img src="http://img.viz.mobi/2019-04-11%2010.45.38.gif" alt=""></p><p>仔细调整各边缘的弧度，并且调整瓶颈的形状(添加、选中环切线并缩放)，最后得到瓶子。</p><p><img src="http://img.viz.mobi/w6-shape3.jpg" alt=""></p><p>最后，可以选择 物体-光滑着色，把几何体的表面变得更光滑一些。</p><p><img src="http://img.viz.mobi/blender-smoothshading.jpg" alt=""></p><p>快去练习吧~</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/3d_course_title.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
+    
+      <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
+    
+      <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
+    
+      <category term="Geometry" scheme="http://uegeek.com/tags/Geometry/"/>
+    
+      <category term="Subdivision" scheme="http://uegeek.com/tags/Subdivision/"/>
+    
+  </entry>
   
   <entry>
     <title>数字制造讲义06-MIDI 和 OSC 数据传输练习</title>
@@ -46,13 +78,13 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
-    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
-      <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
       <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
+    
+      <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
     
       <category term="OSC" scheme="http://uegeek.com/tags/OSC/"/>
     
@@ -154,15 +186,15 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
-    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
     
-      <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
       <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
+    
+      <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
     
       <category term="OSC" scheme="http://uegeek.com/tags/OSC/"/>
     
@@ -228,11 +260,11 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
-    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
+    
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
       <category term="传感器" scheme="http://uegeek.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
     
@@ -294,11 +326,11 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
-    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
+    
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
       <category term="基尔霍夫定律" scheme="http://uegeek.com/tags/%E5%9F%BA%E5%B0%94%E9%9C%8D%E5%A4%AB%E5%AE%9A%E5%BE%8B/"/>
     
@@ -366,13 +398,13 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
-    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="单片机" scheme="http://uegeek.com/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
+    
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
   </entry>
   
@@ -497,9 +529,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -541,9 +573,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -583,9 +615,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -623,9 +655,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -663,9 +695,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -701,9 +733,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
       <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -716,42 +748,6 @@
       <category term="Shape Grammar" scheme="http://uegeek.com/tags/Shape-Grammar/"/>
     
       <category term="形状语法" scheme="http://uegeek.com/tags/%E5%BD%A2%E7%8A%B6%E8%AF%AD%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>兴趣多动症的自救指南 | 00 的 TEDx 演讲全文</title>
-    <link href="http://uegeek.com/181112TedxWumaStreet.html"/>
-    <id>http://uegeek.com/181112TedxWumaStreet.html</id>
-    <published>2018-11-12T15:54:05.000Z</published>
-    <updated>2018-11-12T16:25:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/TEDxWumaStreet.jpg" alt="TEDxWumaStreet"></p><blockquote><p>11 月 3 日，一场以「变」为主题的思想大会 TEDxWumaStreet 在温州开讲。12 位来自学术界、互联网、新闻界、文化产业、地产行业、设计领域的讲者，跨越山川湖海，共赴这场知识盛宴。 </p><p>尽管行业不同、背景各异，但他们都是自身领域中的思考者和实践者，都在用思想和行动 Remake 人生，讲述精彩故事。 </p></blockquote><p><img src="http://img.viz.mobi/TEDxWumaStreetSpeakers1.jpg" alt="TEDxWumaStreetSpeakers1"></p><p><img src="http://img.viz.mobi/TEDxWumaStreetSpeakers2.jpg" alt="TEDxWumaStreetSpeakers2"></p><p>00 有幸作为本年度 TedxWumaStreet 的受邀演讲者，以自己所经历的兴趣和职业之「变」为主题，分享了个人的 Remake 故事。</p><p>以下是演讲全文，也许你也能感受到这个颇受关注的议题的共鸣，欢迎参与讨论。</p><a id="more"></a><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.002.jpeg" alt="兴趣多动症的自救指南.002"></p><p>这是一则寻人启事。</p><p>请大家回忆一下，在自己的亲朋好友、同事同学里面，有没有这样一类人：他们兴趣广泛，每隔一段时间都会开辟一些新的爱好。比如，这个月是美食博主、下个月可能就玩起了电子音乐。可是，他们挖坑远比填坑快，很难有长久的兴趣。</p><p>你可以回想一下这个朋友的名字，又或者，那个人就是你自己。</p><p>那么，欢迎加入兴趣多动症大家庭。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.005.jpeg" alt=""></p><p>这个词是我编造的，我用它来称呼这样一群人，他们经常要面对一个来自灵魂的拷问：</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.006.jpeg" alt=""></p><p>兴趣太多，容易一事无成，怎么办？</p><p>我被这个问题困扰了很久，应该是一个资深的患者。</p><p>我是学地理出身的互联网产品设计师，曾经在微信、网易等团队做了多年的产品和人机交互设计，业余运营两个公众号 HackYourself 和 ArtxCode，是一名写得了代码、焊的了电路板的菜鸟创客。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.007.jpeg" alt=""></p><p>今天想跟大家分享的是，作为一个兴趣多动症患者，这十多年来我的困惑和领悟。</p><p>兴趣多动症，其实是一种长时间注意力缺乏的表现，做事容易三分钟热度。据我观察，患有这个病症的人群正在快速扩大，因为我们身处的时代，信息越来越丰富，而注意力越来越稀缺。</p><p>具体来说呢，这个病症主要有两个症状——多和动。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.010.jpeg" alt=""></p><p>这一群人很容易被有意思的事情所吸引，这也觉得新鲜，那也觉得好玩。兴趣广泛是好事，可是兴趣泛滥就很难收拾了。然后，他们不但爱胡思乱想，还喜欢比划两下。行动力强是好事，可是经常乱动，也许就是不规则的布朗运动了。</p><p>//</p><p>俗话说，久病成医。</p><p>因为跟这个病症斗争了许多年，我也慢慢开始学着自救。自救的第一步呢，是先给自己把把脉。</p><p>之所容易兴趣广泛变成兴趣泛滥、行动变成乱动，我认为是没有处理好三对主要矛盾：</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.012.jpeg" alt=""></p><p><strong>一个是深度和广度的矛盾。一个是探索和应用的矛盾，应该多探索不同的领域，还是应该尽可能地学以致用，提高投入产出比？还有一个矛盾是愉悦和成就。是满足自己的好奇心、追求新鲜刺激呢，还是应该潜下心来好好积累，成为专家？</strong></p><p>这一群人自然是会选择广度、探索和愉悦的。</p><p>那么，有没有可能，既顺应天性，又不需要去做两难的取舍呢？</p><p>我想应该是有的，前提是要从我们给自己设下的二元对立的陷阱中挣脱出来。</p><p>//</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.014.jpeg" alt=""></p><p>第一个矛盾是追求深度还是追求广度。</p><p>我小时候是个乖学生，但是发现我的同桌们，有一个解答难题最取巧的方法。那就是——直接看别人的答案。所以，我们也可以找出那些兴趣很多，但是样样精通的人，看看他们是如何做到的。</p><p>大家可以想象这样一个人吗？他既拿过奥斯卡奖，又得过奥运会冠军。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.015.jpeg" alt=""></p><p>赫伯特·西蒙就是这样一位神奇的人物，不过他不是奥斯卡影帝和奥运金牌得主，他是至今唯一一位既得过诺贝尔奖又得过图灵奖的学术泰斗。图灵奖就好比计算机科学里的奥斯卡奖。</p><p>对多数人而言，一辈子在一个领域有所成就已经非常幸运了，而西蒙一生一共拿了 9 个博士学位，在经济学、政治学、管理学、人工智能、心理学、认知科学等领域都是大师级的人物……这简直是开了挂的人生，他是怎么做到的呢？</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.016.jpeg" alt=""></p><p>西蒙那些看似庞杂的研究领域，其实是围绕一个大问题展开的：</p><blockquote><p>人类如何决策</p></blockquote><p>他意识到这是人类行为的中心问题，无法由单一学科来解答。他分别从政治学、经济学与管理学视角研究过组织行为以后，转向了心理学，提出有限理性理论。为了深入解释人类决策的机制，又尝试用计算机去模拟人的思维过程，于是成为人工智能的先驱之一。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.017.jpeg" alt=""></p><p>西蒙的例子告诉我们，如果由一个大的主题来驱动，庞杂的兴趣不是障碍，反而是优势。但是如果反过来，先任由兴趣蔓延，再尝试将它们有机结合起来，则要困难很多。</p><p>那么，要如何找到属于自己的主题呢？这也是我探索了多年的问题。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.019.jpeg" alt=""></p><p>我在大学学的是地理信息系统和旅游规划，却做了<a href="https://www.uegeek.com/tags/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/" target="_blank" rel="noopener">互联网产品</a>和<a href="https://www.uegeek.com/tags/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/" target="_blank" rel="noopener">交互设计</a>的工作。刚开始我觉得挺焦虑的，好像那么多年白费了，一切要从零开始。后来，当我尝试把学科和领域抽象出来，寻找它们的共性，就有了不一样的发现。</p><p>我学的专业是地理，地理学的核心问题是人地关系，对应的实践领域是 planning，规划。我的工作是人机交互设计，顾名思义就是要研究人和计算机的关系，对应的实践领域是 design，设计。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.020.jpeg" alt=""></p><p>其实规划和设计的相似远大于差异，只不过我研究的对象、还有问题的尺度发生了变化，从区域、城市、旅游景区的规划，变成了电脑和手机屏幕界面的设计。</p><p>这就是我对第一个矛盾的理解：<strong>当我们觉得自己的兴趣太多太杂的时候，不仿为它寻找一个主题。</strong></p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.021.jpeg" alt=""></p><p>//</p><p>第二个矛盾，探索和应用，我把它称为资本家的小算盘。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.022.jpeg" alt=""></p><p>试想一下，如果我们是一名淘金者，可能经常需要做这样的取舍：是继续找更大的金矿，还是先把已经找到的矿开采完？探索还是开采，是资源有限的情况下，经常会遇到的两难。当我们面对新的领域和知识，想尝试另外一种职业、另外一种身份，甚至另外一种人生的时候，这个主题就会反复出现。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.023.jpeg" alt=""></p><p>我认为，想种不同的果树、尝试不同的人生，没有问题。问题往往出在，果树还没有结出果实就把树砍了，一种人生的滋味还没有尝到就提前离席了。</p><p>兴趣太多，最容易遇上的尴尬就是从刚入门到秒放弃。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.025.jpeg" alt=""></p><p>比如我，高中开始学吉他，但是几乎每一次都是练到手指起茧刚开始有进步，就没有继续下去了。所以十多年来依然停留在高级入门水平。</p><p>任何兴趣，都需要一个生长期。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.026.jpeg" alt=""></p><p>深耕一个领域，一两年太短，十年又可能坐不住。<strong>那么不妨试着给兴趣分配一笔大额的预算，以两年或者四年为一个财政周期，就像重新读一次本科或者研究生，在开始时就选好课题，督促自己在这个周期内必需学有所成，交出像样的作品才能拿到毕业证。</strong></p><p>Tim Ferriss 也是一名兴趣多动症患者。他是企业家、畅销书作家、演员、武术和舞蹈爱好者，会 6 国语言，拿过中国散打全美冠军、保持着一项探戈舞吉尼斯世界记录。虽然涉猎广泛，但是他会在某一段时间内（比如说 3-6 个月）沉浸地学习某项新技能，直到学有所成，并且把学习经验整理出来出版。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.027.jpeg" alt=""></p><p>我觉得他的方法非常好。所以我也试着给我的兴趣至少半年的时间，并且记录自己的学习过程。</p><p>我一直对做东西感兴趣，所以参加了 <a href="https://www.uegeek.com/tags/Fab/" target="_blank" rel="noopener">MIT 麻省理工大学一个向全球开放的课程</a>，用半年的时间专门学习数字制造的各种技能，包括 3D 建模，3D 打印，电路设计，嵌入式开发等等。每周要去上课，在实验室里动手做作业。</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=t0312hw9hzn" allowfullscreen="true"></iframe><p>因为当时是在国内最早的一批学生，没有什么中文的资料，所以我把<a href="https://www.uegeek.com/tags/Fab/" target="_blank" rel="noopener">每一周的笔记和需要动手做出实物的作业</a>都写成了教程。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.029.jpeg" alt=""></p><p>半年里，看着自己一点一点地学着画图、操作机器、接电路板、编程，最终还通过了答辩拿到了毕业证，就会觉得从入门到没有放弃，这种感觉真是太鼓舞人心了。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.030.jpeg" alt=""></p><p>所以，<strong>面对探索和应用的矛盾，我们可以设定兴趣周期，在相对固定的时间框架内自由探索，并且形成积累，成为下一个阶段的储备。</strong></p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.031.jpeg" alt=""></p><p>//</p><p>第三个难题，是如何平衡愉悦和成就。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.032.jpeg" alt=""></p><p>多动症患者很喜欢 接触新课题时的感觉，喜欢即时满足，可能容易欺骗自己认为已经学到了，而对漫长、看似停滞的练习阶段缺乏耐心。可是如果不经过积累，哪来的成果和意义呢？</p><p>这个矛盾困扰了我很久。直到有一天，我突然反问自己，为什么愉悦和成就变成了矛盾呢？</p><blockquote><p>愉悦到底来自哪里？</p><p>什么样的愉悦是我们应该追求的？</p><p>怎样可以既愉悦又有所建树？</p></blockquote><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.034.jpeg" alt=""></p><p>村上春树在《我的职业是小说家》这本书里这样写到。在外人看来，村上的写作生活，规律到有点乏味，就像钟表一样分秒不差。每天 4 点起床，写作 5 小时，下午跑步 1 小时或游泳 1 个半小时，然后读书、听音乐，晚上 9 点睡觉。这样的作息，从他写长篇小说开始，几乎从未改变。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.035.jpeg" alt=""></p><p>愉悦和成就本来就不该是对立的，恰恰相反，在常人并没有什么感觉的事情上面，能体会到持续的愉悦，才容易做出不一般的成绩。我想，不论是写作还是跑步，村上应该都体验到了极强的心流。</p><p>心流是积极心理学的创始人之一，希斯赞特米哈伊提出的概念，它是指我们在做某些事情时，那种全神贯注、投入忘我的状态，甚至感觉不到时间的存在，而完成之后会有一种充满能量并且非常满足的感受。在做那些自己喜欢、擅长、有挑战的事情时，就容易体验到心流，比如写作、演奏乐器、玩游戏、运动等等。</p><p>所以，并不是所有的愉悦都值得追求。现在我常常会<strong>用一个标准来过滤兴趣，那就是看这件事情能否容易让我进入心流状态。</strong></p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.037.jpeg" alt=""></p><p>想要兼顾愉悦和成就，最简单有效的做法就是在心流中形成作品——不论是一篇文章，一个程序，还是一件物品。</p><p>//</p><p>以上就是我对兴趣多动症三个主要矛盾的自救策略。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.038.jpeg" alt=""></p><p><strong>深度和广度的矛盾，可以用主题来整合。探索和应用的矛盾，可以用兴趣周期来拆分。愉悦和成就的矛盾，可以用心流换作品，皆大欢喜。</strong></p><p>兴趣多动症是一种频发症状，这也是我给自己的三颗速效救心丸。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.039.jpeg" alt=""></p><p>在这些年的自救过程中，我曾经焦虑于自己的不专注，期望自己变成在兴趣上很专一的人。但是都失败了。因为那不是我。一个人最鲜明的特质，往往就是最大的缺点，也是最大的优点。<strong>找出那些自己能够以苦为乐的事情，不断地觉察、顺应、引导和锻炼天性，把它培养成优势，是我们每一个人真正的人生课题。</strong></p><p>所以我的多动症还在继续。</p><p>你看，因为想给这次演讲做一个小片头，我又新开了一个坑：学做 3D 动画。我跟着教程做了一个四处张望的多动的潜水艇。</p><p><img src="http://img.viz.mobi/HHD-TEDxWumaStreet.040.jpeg" alt=""></p><p>做完以后，我发现它更适合做片尾，因为这是我的第一个练习作品，前面有一个大坑等着我来填。</p><p>如果你跟我一样，曾经被兴趣太多而困扰，不妨试着善待自己本性，把天性塑造成独特的优势。</p><p>每个人都可以、并且应该成为自己的伯乐，为世界贡献一人份的多样性。</p><hr><p><img src="http://img.viz.mobi/TEDxWumaStreet-thanks.jpeg" alt=""></p><p>你也是兴趣多动症患者吗？欢迎在留言区吐槽和支招 ~</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/TEDxWumaStreet.jpg&quot; alt=&quot;TEDxWumaStreet&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;11 月 3 日，一场以「变」为主题的思想大会 TEDxWumaStreet 在温州开讲。12 位来自学术界、互联网、新闻界、文化产业、地产行业、设计领域的讲者，跨越山川湖海，共赴这场知识盛宴。 &lt;/p&gt;
-&lt;p&gt;尽管行业不同、背景各异，但他们都是自身领域中的思考者和实践者，都在用思想和行动 Remake 人生，讲述精彩故事。 &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/TEDxWumaStreetSpeakers1.jpg&quot; alt=&quot;TEDxWumaStreetSpeakers1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/TEDxWumaStreetSpeakers2.jpg&quot; alt=&quot;TEDxWumaStreetSpeakers2&quot;&gt;&lt;/p&gt;
-&lt;p&gt;00 有幸作为本年度 TedxWumaStreet 的受邀演讲者，以自己所经历的兴趣和职业之「变」为主题，分享了个人的 Remake 故事。&lt;/p&gt;
-&lt;p&gt;以下是演讲全文，也许你也能感受到这个颇受关注的议题的共鸣，欢迎参与讨论。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="HackYourself" scheme="http://uegeek.com/categories/HackYourself/"/>
-    
-    
-      <category term="TED" scheme="http://uegeek.com/tags/TED/"/>
-    
-      <category term="Speech" scheme="http://uegeek.com/tags/Speech/"/>
-    
-      <category term="演讲" scheme="http://uegeek.com/tags/%E6%BC%94%E8%AE%B2/"/>
-    
-      <category term="兴趣" scheme="http://uegeek.com/tags/%E5%85%B4%E8%B6%A3/"/>
     
   </entry>
   

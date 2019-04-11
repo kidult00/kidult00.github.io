@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[190411-3d06-geometry-practice]]></title>
+    <url>%2F190411-3d06-geometry-practice.html</url>
+    <content type="text"><![CDATA[三维制图讲义06 - 基础几何体练习三维制图讲义01 - 欢迎来到三维世界 三维制图讲义02 - 三维制作流程 三维制图讲义03 - 三维软件和Blender介绍 三维制图讲义04 - 基础几何体 三维制图讲义05 - 几何体编辑：拉伸和环切 快速回顾上一节课我们讲解了编辑模式下两个基本的操作：拉伸(Extrude)和环切(Loop Cut)。 什么是拉伸？就是拉着一个点/边/面走： 操作顺序是：选中物体，tab 键进入编辑模式，然后按 e 进入拉伸状态。 环切/Loop Cut 则帮助我们快速切分连续的边和面，获得更多的调节节点。使用快捷键的操作步骤： 选择物体，按 tab 进入编辑模式 按快捷键 ctrl+r，将鼠标移到物体上，会出现环状的指示线(如果想退出环切状态，可以鼠标右键或者按 esc 键) 移动鼠标到想要的面(指示线只会出现在中点连接线) 按下鼠标左键，确定 Loop Cut 细分曲面随着对 Blender 操作的熟悉，我们会开始塑造更加复杂的形状。 形状复杂意味着什么？意味着我们需要对一个平面切分为多个子平面，然后调整这些子平面来获得更精确的控制。这就是细分曲面(sub-division)的概念。 下面我们连着看三个 Pixar in a Box 的视频，形象地理解一下什么是细分曲面。 Introduction to subdivision surfaces 第三课 Split vs. average_腾讯视频 Subdivision in 3D_腾讯视频 下面进入练习时间。通过 3 个练习，我们进一步巩固之前学过的操作，并且学习一些新的技能。 练习内插面这个练习我们会学习一个新的操作：内插面（insect faces）。 内插面就是在一个面里面切一块按比例缩小的面： 内插面的快捷键是 i。 上面的几何体的操作顺序是： 新建立方体 按 tab 键进入编辑模式，按 3 键进入面选择模式，选中顶部的面 按 i 然后移动鼠标，调整内插面的大小，然后点鼠标左键确定 按 e 沿 z 轴拉伸刚才新建的内插面 按 i 再建一个内插面 按 e 沿 z 轴反方向拉伸，做出内凹的形状 拉伸+缩放 vs 缩放+拉伸 这个练习帮助我们理解 先拉伸后缩放 和 先缩放后拉伸 的区别。 操作顺序是： 新建立方体 按 tab 键进入编辑模式，选中顶部的面，按 g 然后沿 z 轴压扁 (也可以不进入编辑模式，直接缩放立方体） 选中顶部的面，按 i 建一个内插面 按 e 拉伸内插面，拉伸完毕后，按 s 缩小内插面 按 i 再建一个内插面，然后按 e 拉伸出中间长长的柱体 顶部的面按 e 然后 s，放大 按 e 拉伸，然后按 s 放大这个面，最后再按 e 拉伸，完成柱体 在四个侧面，选中面然后做内插面，向内拉伸内插面 使用 Subdivision Surfaces 修改器 新建圆柱体，按 tab 键进入编辑模式，选中顶部的面 按 e 沿 z 轴拉伸，然后按 s 缩小口径 再按 e 向上拉伸，然后 e → s 放大，拉出瓶口的底部 再按 e 向上拉伸出瓶口，然后建内插面，再把内插面向内拉伸形成瓶口的凹陷 添加 Subdivision Surfaces 的操作如下： 首先添加修改器(Modifier) 表面细分 / Subdivision Surface，将视图的细分值改为 2。 然后添加环切，平整细分表面的边缘： 仔细调整各边缘的弧度，并且调整瓶颈的形状(添加、选中环切线并缩放)，最后得到瓶子。 最后，可以选择 物体-光滑着色，把几何体的表面变得更光滑一些。 快去练习吧~]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>ArtxCode</tag>
+        <tag>3D</tag>
+        <tag>Modeling</tag>
+        <tag>Blender</tag>
+        <tag>Geometry</tag>
+        <tag>Subdivision</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数字制造讲义06-MIDI 和 OSC 数据传输练习]]></title>
     <url>%2F190409-df06-midi-osc-practice.html</url>
     <content type="text"><![CDATA[数字制造讲义01-成为数字世界的建造者数字制造讲义02-Arduino入门数字制造讲义03-电路基础数字制造讲义04-负责输入和输出的智能元件数字制造讲义05-软硬件数据通信 回顾上一节课，我们学习了有哪些方式把不同的软硬件连接在一起，让它们之间可以传递数据，完成一定的功能。 有线的方式主要使用数据线进行串口通信。在远距离传输的场景下，则常使用互联网（广域网/局域网）。基于无线的连接主要包括 Wifi 和蓝牙。 传输音乐数据最常用的协议包括 MIDI 和 OSC。OSC 的分辨率更高、可传递的参数更丰富，它使用 UDP / IP 和以太网通过 Internet和局域网传输。 OSC 已广泛应用于音乐表演、机器人、视频性能接口、分布式音乐系统和进程间通信等领域，在实验音乐控制器中更是必不可少。 下面我们就来实际操作几个例子。 Mobile MIDI 2 Max从移动端发送 MIDI 数据给其他设备，可以使用类似 KnobLab 的 APP，它支持多种传输方式： 首先下载 KnobLab App。 然后我们在 Max 里面建一个简单的 patch，接收 KnobLab 发过来的 midi 数据，然后传给键盘并且 makenote： 打开 Setting 里面 MaxOS 的 Wifi 连接说明： 打开电脑里的 Audio MIDI Setup，打开 MIDI Studio，点工具栏上的网络图标: 打开网络设置窗口，在 My Sessions 下面勾选 Session 1，然后在 Directory 里面可以看到自己的手机(电脑和手机需要在同一个 Wifi 网络下)。然后点 Connect。 这时候已经可以用 KnobLab 操作，向 Max 发送 MIDI 数据了。在 Max 里面，要注意选择 midiin 的来源，双击对象就可以看到 Session 1 的选项，选择后，Max 才开始接收数据。 在 KnobLab 的主界面上转动旋钮，Max 就会发出对应的 MIDI 音高。 Mobile OSC 2 Max在触摸设备如 iOS 上，用 TouchOSC 操作复杂的 MIDI Controller 非常方便。 首先，在移动端下载 TouchOSC，在桌面端下载编辑器。 在编辑器里面可以创建自定义的操作面板。我们也可以直接使用 TouchOSC 里面预设的面板。在设置页面的 Layout 项，点击进去即可选择面板。 连接的关键是设置 TouchOSC 的 IP 地址和输入输出端口。 确保电脑和手机处于同一个 Wifi 网络。然后我们查询电脑的 IP 地址。打开 Terminal，Windows 系统使用命令 ipconfig，MacOS 系统使用命令 ifconfig，回车后可以看到一长串的数据，仔细找到其中以 192.168 开头的局域网 IP 地址： 1234567en1: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500 ether 24:f6:77:08:87:04 inet6 fe80::81c:2c9b:50cf:8e39%en1 prefixlen 64 secured scopeid 0x7 inet 192.168.xx.xxx netmask 0xffffff00 broadcast 192.168.xxx.xxx nd6 options=201&lt;PERFORMNUD,DAD&gt; media: autoselect status: active broadcast 后面的 192.168.xxx.xxx 就是需要填入 TouchOSC 设置中的 IP 地址。 打开手机 APP 进入设置页面，在 Host 里面填入上面的的 IP地址。 设置输入端口 Port(outgoing) 为某个数值，如 8800。 接下来就可以在 Max/MSP 里面接收和发送 OSC 数据了。因为 OSC 通过 UDP 协议传输，所以使用 udpsend 和 udpreceive 对象： udpreceive 的 port 参数应该跟 TouchOSC 设置的输出端口一致，如上图的 8800。 Max 接收到数据后，可以看到 OSC 的数据格式类似文件路径 URI：/{序号}/{参数名} {参数值}。 这样我们就把手机和电脑连接起来。只要将 TouchOSC 里面所有的 controller 都映射到 Max 中，就可以在手机上实现效果丰富的个性化控制。 Arduino 2 MaxArduino 和 Max 也可以方便地勾搭上。我们试着做一个旋钮控制音高的小应用。 首先搭出最简单的电位计电路。电位计正极接 5V 端口，负极接 GND，数据脚接 A0 端口： Arduino 中的代码也非常简单： 1234567891011121314int sensor_pin = A0;int knobValue = 0;void setup()&#123; Serial.begin(9600); // open the arduino serial port&#125;void loop()&#123; knobValue = analogRead(sensor_pin); Serial.println(knobValue); delay(500); // pause&#125; 电路和 Arduino 发送数据已经准备好。接着我们处理 Max 接收数据的逻辑。 咦？为什么这么多接线？ 其实并没有看上去复杂。 我们转动电位计，打开 Arduino 的串口监视器查看是否可以正常读数。然后再观察 Max 中有哪些数据进来。 Max 中使用 serial 对象读取串口数据，不过它输出的是未经处理的原始格式。如果用 print 对象打印出来，会看到接收的数据会是以下格式： 123413541035 第一行的 13 和第三行的 10 都是标记，第二行和第四行才是串口数据，但是它是 ASCII 码，而不是直接可以使用的数字。所以还需要用 itoa 和 fromsymbol 对象将 ASCII 码转换为数字。因为电位计发送的模拟数据范围是 0~1023，所以接着我们用一个 scale 把数据映射到 MIDI 的数据范围 0~127，这样就可以发出音高了。 BonusArduino 能不能直接跟 Ableton 连接呢？当然是可以的。 Ableton 已经提供了 Package，跟 Arduino 连接后，可以做好多脑洞大开的酷炫应用： Max for Live Connection Kit_腾讯视频 具体教程，请查看：Ableton Live 连接 Arduino 教程。]]></content>
@@ -14,10 +30,10 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
-        <tag>通信</tag>
+        <tag>Fab</tag>
         <tag>MIDI</tag>
+        <tag>通信</tag>
         <tag>OSC</tag>
         <tag>Max</tag>
       </tags>
@@ -68,11 +84,11 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
-        <tag>通信</tag>
+        <tag>Fab</tag>
         <tag>MIDI</tag>
+        <tag>通信</tag>
         <tag>OSC</tag>
         <tag>Max</tag>
       </tags>
@@ -105,9 +121,9 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
         <tag>传感器</tag>
       </tags>
   </entry>
@@ -138,9 +154,9 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
         <tag>基尔霍夫定律</tag>
       </tags>
   </entry>
@@ -174,10 +190,10 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>单片机</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -236,8 +252,8 @@
       <tags>
         <tag>AI</tag>
         <tag>ArtxCode</tag>
-        <tag>艺术</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -258,8 +274,8 @@
       <tags>
         <tag>AI</tag>
         <tag>ArtxCode</tag>
-        <tag>艺术</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -279,8 +295,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>艺术</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -299,8 +315,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>艺术</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -319,8 +335,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>艺术</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -338,8 +354,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>艺术</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -371,8 +387,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>艺术</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -389,8 +405,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>艺术</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -407,8 +423,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>艺术</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -428,8 +444,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>艺术</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>颜色</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
@@ -448,8 +464,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>艺术</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -469,8 +485,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>艺术</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -489,8 +505,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>艺术</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -842,6 +858,7 @@
         <category>设计</category>
       </categories>
       <tags>
+        <tag>交互设计</tag>
         <tag>AI</tag>
         <tag>ArtxCode</tag>
         <tag>Deisgn</tag>
@@ -849,7 +866,6 @@
         <tag>HCI</tag>
         <tag>人机交互</tag>
         <tag>人机共生</tag>
-        <tag>交互设计</tag>
         <tag>艺术</tag>
         <tag>跨界</tag>
         <tag>创新</tag>
@@ -1587,8 +1603,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -1600,8 +1616,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -1613,8 +1629,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -1626,8 +1642,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -2012,8 +2028,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2065,8 +2081,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2092,8 +2108,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2145,8 +2161,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2196,8 +2212,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2275,8 +2291,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2603,9 +2619,9 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
+        <tag>Travel</tag>
         <tag>哥特式</tag>
         <tag>巴洛克</tag>
         <tag>布拉格</tag>
@@ -2623,9 +2639,9 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
+        <tag>Travel</tag>
         <tag>东正教</tag>
         <tag>基督教</tag>
         <tag>天主教</tag>
@@ -2642,10 +2658,10 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -2657,9 +2673,9 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
+        <tag>Travel</tag>
         <tag>奥地利</tag>
         <tag>哈布斯堡王朝</tag>
         <tag>维也纳</tag>
@@ -2674,10 +2690,10 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -2688,10 +2704,10 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
+        <tag>Travel</tag>
         <tag>匈牙利</tag>
         <tag>奥地利</tag>
         <tag>斯洛伐克</tag>
@@ -2706,8 +2722,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>人类简史</tag>
         <tag>历史</tag>
+        <tag>人类简史</tag>
       </tags>
   </entry>
   <entry>
