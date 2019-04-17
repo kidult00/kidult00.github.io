@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2019-04-11T03:41:34.126Z</updated>
+  <updated>2019-04-17T12:10:17.176Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数字制造讲义07-Arduino声音应用</title>
+    <link href="http://uegeek.com/190417-df07-arduino-sound.html"/>
+    <id>http://uegeek.com/190417-df07-arduino-sound.html</id>
+    <published>2019-04-17T12:08:53.000Z</published>
+    <updated>2019-04-17T12:10:17.176Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/week7title.jpg" alt=""></p><a id="more"></a><p># </p><p><a href="https://www.uegeek.com/190305-df01-digital-fabrication.html" target="_blank" rel="noopener">数字制造讲义01-成为数字世界的建造者</a></p><p><a href="https://www.uegeek.com/190313-df02-arduino-intro.html" target="_blank" rel="noopener">数字制造讲义02-Arduino入门</a></p><p><a href="https://www.uegeek.com/190319-df03-electronics-basic.html" target="_blank" rel="noopener">数字制造讲义03-电路基础</a></p><p><a href="https://www.uegeek.com/190326-df04-input-and-output.html" target="_blank" rel="noopener">数字制造讲义04-负责输入和输出的智能元件</a></p><p><a href="https://www.uegeek.com/190402-df05-communication.html" target="_blank" rel="noopener">数字制造讲义05-软硬件数据通信</a></p><p><a href="https://www.uegeek.com/190409-df06-midi-osc-practice.html" target="_blank" rel="noopener">数字制造讲义06-MIDI 和 OSC 数据传输练习</a></p><h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>上一节课，我们练习如何在不同软硬件设备（手机、Max、Arduino、Ableton Live）中传输 MIDI 和 OSC 数据。这些都是用软件发出声音。</p><p><img src="http://img.viz.mobi/Serial2Max.png" alt=""></p><p>这周我们继续通过实际的例子，学习如何用硬件发出声音。</p><h2 id="挑战1：让蜂鸣器发声"><a href="#挑战1：让蜂鸣器发声" class="headerlink" title="挑战1：让蜂鸣器发声"></a>挑战1：让蜂鸣器发声</h2><p>蜂鸣器是啥？</p><p>简单来说，它是一种一体化结构的电子讯响器，广泛应用于计算机、打印机、复印机、报警器、电子玩具、汽车电子设备、电话机、定时器等电子产品中，作发声器件。</p><p>蜂鸣器又可以分为有源蜂鸣器和无源蜂鸣器两种。</p><p><img src="http://img.viz.mobi/buzzer1.jpg" alt=""></p><p>它们的区别是什么？要如何区分呢？</p><ul><li>有源蜂鸣器内部集成有<strong>震荡源</strong>，只要提供直流电源就可以发声。无源蜂鸣器没有集成震荡源，需要接在音频输出电路中才可以发声。</li><li>无源蜂鸣器通的电路板通常是裸露的（如上图右），有源蜂鸣器的电路通常被黑胶覆盖</li><li>更精确的判断方法，用万用表电阻档 Rxl 档测试：用黑表笔接蜂鸣器 “+”引脚，红表笔在另一引脚上来回碰触，如果触发出咔、咔声的且电阻只有8Ω（或16Ω）的是无源蜂鸣器;如果能发出持续声音的，且电阻在几百欧以上的，是有源蜂鸣器。</li></ul><p>下面我们用到的是无源蜂鸣器。</p><p>在电路中连接蜂鸣器不需要增加额外的电阻，所以接线十分简单。在 Arduino 程序中，使用 <code>tone</code> 函数来指定蜂鸣器的频率和持续时间：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> buzzerPin = <span class="number">9</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  pinMode(buzzerPin, OUTPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  tone(buzzerPin, <span class="number">440</span>, <span class="number">500</span>);</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="挑战2：蜂鸣器发出交替的报警声"><a href="#挑战2：蜂鸣器发出交替的报警声" class="headerlink" title="挑战2：蜂鸣器发出交替的报警声"></a>挑战2：蜂鸣器发出交替的报警声</h2><p>完成挑战 1，我们已经基本理解蜂鸣器和 <code>tone()</code> 函数如何工作了。</p><p>在修改代码之前，建议在官方文档中查看 <code>tone()</code> 和 <code>noTone()</code> 的详细说明。</p><p>Syntax</p><blockquote><p>tone(pin, frequency)<br>tone(pin, frequency, duration)</p></blockquote><p>Parameters</p><blockquote><p>pin: the pin on which to generate the tone<br>frequency: the frequency of the tone in hertz - unsigned int<br>duration: the duration of the tone in milliseconds (optional) - unsigned long</p></blockquote><p>这个挑战只需要在代码上做一些调整，就可以实现双音高交替的报警器效果。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> buzzerPin = <span class="number">9</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  pinMode(buzzerPin, OUTPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  tone(buzzerPin, <span class="number">440</span>, <span class="number">500</span>);</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">  tone(buzzerPin, <span class="number">880</span>, <span class="number">500</span>);</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>tone() 的第二个参数是音高的频率，我们把第一个音高设为 440，第二个音高设为 880，它们各持续 500 毫秒，中间有 1 秒的间隔。这样就形成了双音高的警报声。</p><h2 id="挑战3：用按键触发声音"><a href="#挑战3：用按键触发声音" class="headerlink" title="挑战3：用按键触发声音"></a>挑战3：用按键触发声音</h2><p>现在我们有了可以发出不同音高的蜂鸣器。接着我们做一个按钮控制发声的小应用。</p><p>接线中使用的元件包括：蜂鸣器，按钮，220Ω 和 10kΩ 电阻。</p><p><img src="http://img.viz.mobi/w7-buttonBuzzer.jpg" alt=""></p><p>代码如下：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> button_pin = A0;</span><br><span class="line"><span class="keyword">int</span> buzzer_pin = <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  Serial.begin(<span class="number">9600</span>);</span><br><span class="line">  pinMode(button_pin, INPUT);</span><br><span class="line">  pinMode(buzzer_pin, OUTPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> buttonState = digitalRead(button_pin);</span><br><span class="line">  Serial.println(buttonState);</span><br><span class="line">  <span class="keyword">if</span> (buttonState == HIGH) &#123;</span><br><span class="line">    tone(<span class="number">8</span>, <span class="number">440</span>, <span class="number">200</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  delay(<span class="number">50</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在上面的练习中，建议大家一定要动手画电路图、从 0 开始写代码，并且对代码加上必要的注释。这些训练能帮助我们更快熟悉和应用所学的知识。越早练习，才可以越早简化一些步骤。</p><p>在练习中一定会越到这样那样的错误，比如元件正负极一不小心就接反了，比如 Arduino 上传程序时总是出错，甚至有时候不正确的接线烧坏了元件。</p><p>错误是学习中最宝贵的机会，它提醒我们「此处有知识薄弱点」或者「步骤可完善的地方」。详细记录步骤，本身就是发现和解决问题很好的方法。把错误们储蓄起来，时不时拿出来复习，就能减少错误发生，提高熟练程度和准确度。</p><p>所以，多动手，早犯错，乐于在错误中寻找成长的路径，是可以伴随我们一路的好方法。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/week7title.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
+    
+      <category term="Sound" scheme="http://uegeek.com/tags/Sound/"/>
+    
+      <category term="声音" scheme="http://uegeek.com/tags/%E5%A3%B0%E9%9F%B3/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
+    
+      <category term="制造" scheme="http://uegeek.com/tags/%E5%88%B6%E9%80%A0/"/>
+    
+      <category term="Maker" scheme="http://uegeek.com/tags/Maker/"/>
+    
+      <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
+    
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
+    
+      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
+    
+  </entry>
   
   <entry>
     <title>190411-3d06-geometry-practice</title>
@@ -78,13 +116,13 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
-    
       <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
-      <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
+      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
+    
+      <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
     
       <category term="OSC" scheme="http://uegeek.com/tags/OSC/"/>
     
@@ -186,15 +224,15 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
+    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
     
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
+      <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
     
       <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
-    
-      <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
     
       <category term="OSC" scheme="http://uegeek.com/tags/OSC/"/>
     
@@ -260,11 +298,11 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
+    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
-    
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
       <category term="传感器" scheme="http://uegeek.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
     
@@ -326,11 +364,11 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
+    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
-    
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
       <category term="基尔霍夫定律" scheme="http://uegeek.com/tags/%E5%9F%BA%E5%B0%94%E9%9C%8D%E5%A4%AB%E5%AE%9A%E5%BE%8B/"/>
     
@@ -398,13 +436,13 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
+    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="单片机" scheme="http://uegeek.com/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
-    
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
   </entry>
   
@@ -529,9 +567,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -573,9 +611,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -615,9 +653,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -655,9 +693,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -695,9 +733,9 @@
     
       <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
     
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
       <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
     
       <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
     
@@ -710,44 +748,6 @@
       <category term="分形" scheme="http://uegeek.com/tags/%E5%88%86%E5%BD%A2/"/>
     
       <category term="L-system" scheme="http://uegeek.com/tags/L-system/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>生成式艺术和算法创作06-形状语法</title>
-    <link href="http://uegeek.com/181120-generative-art-creativity-06.html"/>
-    <id>http://uegeek.com/181120-generative-art-creativity-06.html</id>
-    <published>2018-11-20T12:51:14.000Z</published>
-    <updated>2018-11-23T12:21:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></li><li><a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">生成式艺术和算法创作02-随机和噪声</a></li><li><a href="https://www.uegeek.com/181021-generative-art-creativity-03.html" target="_blank" rel="noopener">生成式艺术和算法创作03-混沌和分形</a></li><li><a href="https://www.uegeek.com/181023-generative-art-creativity-04.html" target="_blank" rel="noopener">生成式艺术和算法创作04-规则系统</a></li><li><a href="https://www.uegeek.com/181107-generative-art-creativity-05.html" target="_blank" rel="noopener">生成式艺术和算法创作05-Tessellation</a></li></ul><p>形状语法/形状文法（Shape grammars）是生成特定类别几何形状的生产系统。</p><p>1971年，<a href="https://www.wikiwand.com/en/George_Stiny" target="_blank" rel="noopener">George Stiny</a> 和 <a href="https://www.wikiwand.com/en/James_Gips" target="_blank" rel="noopener">James Gips</a> 在一篇开创性的文章中定义了形状语法的基础。形状语法是一种计算机辅助设计方法，是研究二维和三维语言的一种方式，它可以按照人们的设计思想和要求，按照一定的规则自动产生新形态。</p><p><img src="http://web.mit.edu/haldane/www/icerays/sm_iceray07.jpg" alt=""></p><p>具体来说，形状语法由形状规则（shape rules）和选择、处理规则的生成引擎（generation engine）组成。形状语法执行计算的两个主要步骤是：识别特定形状，用可能的形状替代。</p><p>形状规则定义如何转换现有形状，由两个部分组成，两个部分由从左到右指向的箭头分隔：</p><ul><li>箭头左侧的部分称为左侧（LHS），描绘形状和标记的条件。</li><li>箭头右侧的部分称为右侧（RHS），描述如何转换 LHS 形状以及标记的位置，标记有助于定位和定向新形状。</li></ul><p>形状语法最少由三个形状规则组成：<strong>起始规则，至少一个转换规则和终止规则</strong>。形状语法中的生产规则可以连续应用，类似 <a href="https://www.wikiwand.com/en/L-System" target="_blank" rel="noopener">L-Systems 中的</a> productions。</p><p>形状语法通常是一个四元组，SG＝（S, L, R, I）。其中 S 是形状的有限集合，L 是符号的有限集合，R 是规则的有限集合，I 是初始形状。形状文法产生的形状，都应通过形状规则由初始形状派生出来。</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/shape%20grammars%20in%20action.png" alt="shape grammars in action"></p><p><img src="https://d2w9rnfcy7mm78.cloudfront.net/2351379/display_c5bf667d63e6917a82a5163d65212a6d.jpg" alt=""></p><p>形状语法在一个小规模的、定义明确的生成问题（如住房布局和结构细化）时最有用。由于形状规则通常是在小形状上定义的，因此形状语法可以包含许多规则。</p><p>Mitchell 提出的 Palladian 别墅形状语法包含 69 个规则，这些规则适用于整个八个实施步骤。</p><p><img src="https://images.slideplayer.com/27/9112988/slides/slide_6.jpg" alt=""></p><p><img src="https://images.slideplayer.com/27/9112988/slides/slide_7.jpg" alt=""></p><p>Rules of Mughal garden：</p><p><img src="https://arch.gatech.edu/sites/default/files/03_mughal_production.jpg" alt=""></p><p>借助 CAD，形状语法可以节省人力、缩短设计周期、产生系列化方案，能很好地传承文脉，使设计内涵在新环境下得以保存和发展，受到了设计界尤其是建筑设计的高度重视。</p><p><img src="http://keyan.info/wp-content/uploads/2013/04/KeyanGrammar2.png" alt=""></p><p><img src="https://arch.gatech.edu/sites/default/files/08_98_cube_subgroups.jpg" alt=""></p><p>近几十年来，形状语法在计算机图形学中越来越重要。 </p><p>除了用于建筑物或城市的程序建模（例如电影或视频游戏），Shape Grammars 是许多开发系统的基础，它们使用生产规则来生成各种不同的 3D 模型。 使用 Shape Grammars 可以创建具有逼真外观的街道平面图，以及建筑物的外墙或内部空间。</p><p>运用形状语法生成的建筑模型和建筑设计：</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/3-rule-based-systems-grammars-and-markov-chains/architecture%20used%20shape%20grammars.png" alt="architecture used shape grammars"></p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.wikiwand.com/en/Shape_grammar" target="_blank" rel="noopener">Shape grammar - Wikiwand</a></li><li><a href="http://www.shapegrammar.org/" target="_blank" rel="noopener">Shape Grammars</a></li><li><a href="https://www.youtube.com/watch?v=pg1NpMmPv48" target="_blank" rel="noopener">The complex geometry of Islamic design - Eric Broug - YouTube</a></li><li><a href="http://users.metu.edu.tr/baykan/arch467/Readings/Stiny-Mitchell.pdf" target="_blank" rel="noopener">Stiny-Mitchell.pdf</a></li><li><a href="https://arch.gatech.edu/design-computation-1" target="_blank" rel="noopener">Design Computation | School of Architecture | Georgia Institute of Technology | Atlanta, GA</a></li><li><a href="https://slideplayer.com/slide/9522024/" target="_blank" rel="noopener">What is computation? What is a shape grammar? How are shape grammars used in design? How is a shape grammar developed? - ppt download</a></li><li><a href="https://www.youtube.com/watch?v=t-VUpX-xVo4" target="_blank" rel="noopener">Procedural Building Generation with Grammars - YouTube</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/CC-blogtitle.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
-      <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
-    
-      <category term="Computational Creativity" scheme="http://uegeek.com/tags/Computational-Creativity/"/>
-    
-      <category term="创意" scheme="http://uegeek.com/tags/%E5%88%9B%E6%84%8F/"/>
-    
-      <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
-    
-      <category term="Shape Grammar" scheme="http://uegeek.com/tags/Shape-Grammar/"/>
-    
-      <category term="形状语法" scheme="http://uegeek.com/tags/%E5%BD%A2%E7%8A%B6%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   

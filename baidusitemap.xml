@@ -4,6 +4,42 @@
 
     
   <url>
+    <loc>http://uegeek.com/190417-df07-arduino-sound.html</loc>
+    <lastmod>2019-04-17T12:10:17.176Z</lastmod>
+    <data>
+        <display>
+        <title>数字制造讲义07-Arduino声音应用</title>
+        <pubTime>2019-04-17T12:08:53.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Sound</tag>
+         
+        <tag>声音</tag>
+         
+        <tag>Creative Coding</tag>
+         
+        <tag>制造</tag>
+         
+        <tag>Maker</tag>
+         
+        <tag>Digital Fabrication</tag>
+         
+        <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/190411-3d06-geometry-practice.html</loc>
     <lastmod>2019-04-11T03:41:34.126Z</lastmod>
     <data>
@@ -53,13 +89,13 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
          
-        <tag>MIDI</tag>
+        <tag>Arduino</tag>
          
         <tag>通信</tag>
+         
+        <tag>MIDI</tag>
          
         <tag>OSC</tag>
          
@@ -155,15 +191,15 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
          
-        <tag>Fab</tag>
+        <tag>通信</tag>
          
         <tag>MIDI</tag>
-         
-        <tag>通信</tag>
          
         <tag>OSC</tag>
          
@@ -225,11 +261,11 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
         <tag>传感器</tag>
          
@@ -287,11 +323,11 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
         <tag>基尔霍夫定律</tag>
          
@@ -355,13 +391,13 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>单片机</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
          
            
@@ -471,9 +507,9 @@
          
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -513,9 +549,9 @@
          
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -553,9 +589,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -591,9 +627,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -629,9 +665,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -665,9 +701,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -727,9 +763,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -761,9 +797,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -795,9 +831,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -835,9 +871,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>颜色</tag>
          
@@ -873,9 +909,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -913,9 +949,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -945,9 +981,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -2399,9 +2435,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -2469,9 +2505,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -2639,9 +2675,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -2713,9 +2749,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -2763,9 +2799,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -3225,9 +3261,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -3295,17 +3331,17 @@
         <title>中欧四国扫(ba)盲(gua)帖之一：“中欧”还是“东欧”？</title>
         <pubTime>2015-09-18T13:37:38.000Z</pubTime>
         
-        <tag>中欧</tag>
-         
-        <tag>历史</tag>
-         
-        <tag>捷克</tag>
-         
         <tag>Travel</tag>
+         
+        <tag>中欧</tag>
          
         <tag>匈牙利</tag>
          
+        <tag>历史</tag>
+         
         <tag>奥地利</tag>
+         
+        <tag>捷克</tag>
          
         <tag>斯洛伐克</tag>
          
@@ -3353,13 +3389,13 @@
         
         <tag>Note</tag>
          
+        <tag>Travel</tag>
+         
         <tag>中欧</tag>
          
         <tag>历史</tag>
          
         <tag>捷克</tag>
-         
-        <tag>Travel</tag>
          
          
            
@@ -3381,11 +3417,11 @@
         
         <tag>Note</tag>
          
+        <tag>Travel</tag>
+         
         <tag>中欧</tag>
          
         <tag>历史</tag>
-         
-        <tag>Travel</tag>
          
         <tag>奥地利</tag>
          
@@ -3413,13 +3449,13 @@
         
         <tag>Note</tag>
          
+        <tag>Travel</tag>
+         
         <tag>中欧</tag>
          
         <tag>历史</tag>
          
         <tag>捷克</tag>
-         
-        <tag>Travel</tag>
          
          
            
@@ -3441,11 +3477,11 @@
         
         <tag>Note</tag>
          
+        <tag>Travel</tag>
+         
         <tag>中欧</tag>
          
         <tag>历史</tag>
-         
-        <tag>Travel</tag>
          
         <tag>东正教</tag>
          
@@ -3477,11 +3513,11 @@
         
         <tag>Note</tag>
          
+        <tag>Travel</tag>
+         
         <tag>中欧</tag>
          
         <tag>历史</tag>
-         
-        <tag>Travel</tag>
          
         <tag>哥特式</tag>
          
@@ -4751,9 +4787,9 @@
          
         <tag>Coding</tag>
          
-        <tag>编程</tag>
-         
         <tag>神经网络</tag>
+         
+        <tag>编程</tag>
          
         <tag>Backpro</tag>
          
@@ -4875,9 +4911,9 @@
          
         <tag>Coding</tag>
          
-        <tag>编程</tag>
-         
         <tag>神经网络</tag>
+         
+        <tag>编程</tag>
          
         <tag>Programming</tag>
          
@@ -4915,9 +4951,9 @@
          
         <tag>Coding</tag>
          
-        <tag>编程</tag>
-         
         <tag>神经网络</tag>
+         
+        <tag>编程</tag>
          
         <tag>Programming</tag>
          
