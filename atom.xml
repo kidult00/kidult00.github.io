@@ -48,20 +48,20 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
-    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
+    
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
   </entry>
   
   <entry>
-    <title>190411-3d06-geometry-practice</title>
+    <title>三维制图讲义06 - 基础几何体练习</title>
     <link href="http://uegeek.com/190411-3d06-geometry-practice.html"/>
     <id>http://uegeek.com/190411-3d06-geometry-practice.html</id>
     <published>2019-04-11T03:40:11.000Z</published>
-    <updated>2019-04-11T03:41:34.126Z</updated>
+    <updated>2019-04-17T12:46:02.789Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/3d_course_title.jpg" alt=""></p><a id="more"></a><h1 id="三维制图讲义06-基础几何体练习"><a href="#三维制图讲义06-基础几何体练习" class="headerlink" title="三维制图讲义06 - 基础几何体练习"></a>三维制图讲义06 - 基础几何体练习</h1><p><a href="https://www.uegeek.com/190306-3d01-welcome-to-the-3d-world.html" target="_blank" rel="noopener">三维制图讲义01 - 欢迎来到三维世界</a></p><p><a href="https://www.uegeek.com/190314-3d02-workflow.html" target="_blank" rel="noopener">三维制图讲义02 - 三维制作流程</a></p><p><a href="https://www.uegeek.com/190320-3d03-blender-intro.html" target="_blank" rel="noopener">三维制图讲义03 - 三维软件和Blender介绍</a></p><p><a href="https://www.uegeek.com/190327-3d04-basic-geometry.html" target="_blank" rel="noopener">三维制图讲义04 - 基础几何体</a></p><p><a href="https://www.uegeek.com/190403-3d05-basic-geometry-edit.html" target="_blank" rel="noopener">三维制图讲义05 - 几何体编辑：拉伸和环切</a></p><h2 id="快速回顾"><a href="#快速回顾" class="headerlink" title="快速回顾"></a>快速回顾</h2><p>上一节课我们讲解了编辑模式下两个基本的操作：拉伸(Extrude)和环切(Loop Cut)。</p><p>什么是拉伸？就是拉着一个点/边/面走：</p><p><img src="https://thumbs.gfycat.com/ThunderousHandyBeagle-size_restricted.gif" alt=""></p><p>操作顺序是：<strong>选中物体，tab 键进入编辑模式，然后按 e 进入拉伸状态</strong>。</p><p><img src="https://raw.githubusercontent.com/a1studmuffin/SpaceshipGenerator/master/screenshots/step-by-step-animation.gif" alt=""></p><p>环切/Loop Cut 则帮助我们快速切分连续的边和面，获得更多的调节节点。使用快捷键的操作步骤：</p><ul><li>选择物体，按 tab 进入编辑模式</li><li>按快捷键 ctrl+r，将鼠标移到物体上，会出现环状的指示线(如果想退出环切状态，可以鼠标右键或者按 esc 键)</li><li>移动鼠标到想要的面(指示线只会出现在中点连接线)</li><li>按下鼠标左键，确定 Loop Cut</li></ul><p><img src="https://blenderartists.org/uploads/default/original/4X/8/c/7/8c70cbda30e9fc2a6d84539be6508614756f8e12.gif" alt=""></p><h2 id="细分曲面"><a href="#细分曲面" class="headerlink" title="细分曲面"></a>细分曲面</h2><p>随着对 Blender 操作的熟悉，我们会开始塑造更加复杂的形状。</p><p>形状复杂意味着什么？意味着我们需要对一个平面切分为多个子平面，然后调整这些子平面来获得更精确的控制。这就是细分曲面(sub-division)的概念。</p><p>下面我们连着看三个 Pixar in a Box 的视频，形象地理解一下什么是细分曲面。</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=e0527y4lxf3" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/e0527y4lxf3.html" target="_blank" rel="noopener">Introduction to subdivision surfaces</a></p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=x0527k1vsqf" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/x0527k1vsqf.html" target="_blank" rel="noopener">第三课 Split vs. average_腾讯视频</a></p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=u0859bf0qse" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/u0859bf0qse.html" target="_blank" rel="noopener">Subdivision in 3D_腾讯视频</a></p><p>下面进入练习时间。通过 3 个练习，我们进一步巩固之前学过的操作，并且学习一些新的技能。</p><h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h3 id="内插面"><a href="#内插面" class="headerlink" title="内插面"></a>内插面</h3><p>这个练习我们会学习一个新的操作：内插面（insect faces）。</p><p>内插面就是在一个面里面切一块按比例缩小的面：</p><p><img src="https://i.stack.imgur.com/ccGXJ.gif" alt=""></p><p>内插面的快捷键是 i。</p><p><img src="http://img.viz.mobi/w6-shape1.jpg" alt=""></p><p>上面的几何体的操作顺序是：</p><ul><li>新建立方体</li><li>按 tab 键进入编辑模式，按 3 键进入面选择模式，选中顶部的面</li><li>按 i 然后移动鼠标，调整内插面的大小，然后点鼠标左键确定</li><li>按 e 沿 z 轴拉伸刚才新建的内插面</li><li>按 i 再建一个内插面</li><li>按 e 沿 z 轴反方向拉伸，做出内凹的形状</li></ul><h3 id="拉伸-缩放-vs-缩放-拉伸"><a href="#拉伸-缩放-vs-缩放-拉伸" class="headerlink" title="拉伸+缩放 vs 缩放+拉伸"></a>拉伸+缩放 vs 缩放+拉伸</h3><p><img src="http://img.viz.mobi/w6-shape2.jpg" alt=""></p><p>这个练习帮助我们理解 <code>先拉伸后缩放</code> 和 <code>先缩放后拉伸</code> 的区别。</p><p>操作顺序是：</p><ul><li>新建立方体</li><li>按 tab 键进入编辑模式，选中顶部的面，按 g 然后沿 z 轴压扁 (也可以不进入编辑模式，直接缩放立方体）</li><li>选中顶部的面，按 i 建一个内插面</li><li>按 e 拉伸内插面，拉伸完毕后，按 s 缩小内插面</li></ul><p><img src="http://img.viz.mobi/2019-04-11%2010.25.56.gif" alt=""></p><ul><li>按 i 再建一个内插面，然后按 e 拉伸出中间长长的柱体</li><li>顶部的面按 e 然后 s，放大</li><li>按 e 拉伸，然后按 s 放大这个面，最后再按 e 拉伸，完成柱体</li></ul><p><img src="http://img.viz.mobi/2019-04-11%2010.28.05.gif" alt=""></p><ul><li>在四个侧面，选中面然后做内插面，向内拉伸内插面</li></ul><h3 id="使用-Subdivision-Surfaces-修改器"><a href="#使用-Subdivision-Surfaces-修改器" class="headerlink" title="使用 Subdivision Surfaces 修改器"></a>使用 Subdivision Surfaces 修改器</h3><p><img src="http://img.viz.mobi/w6-shape3.jpg" alt=""></p><ul><li>新建圆柱体，按 tab 键进入编辑模式，选中顶部的面</li><li>按 e 沿 z 轴拉伸，然后按 s 缩小口径</li><li>再按 e 向上拉伸，然后 e → s 放大，拉出瓶口的底部</li><li>再按 e 向上拉伸出瓶口，然后建内插面，再把内插面向内拉伸形成瓶口的凹陷</li></ul><p><img src="http://img.viz.mobi/2019-04-11%2010.31.46.gif" alt=""></p><p>添加 Subdivision Surfaces 的操作如下：</p><p>首先添加修改器(Modifier) 表面细分 / Subdivision Surface，将视图的细分值改为 2。</p><p><img src="http://img.viz.mobi/blender-subSurface.jpg" alt=""></p><p>然后添加环切，平整细分表面的边缘：</p><p><img src="http://img.viz.mobi/2019-04-11%2010.45.38.gif" alt=""></p><p>仔细调整各边缘的弧度，并且调整瓶颈的形状(添加、选中环切线并缩放)，最后得到瓶子。</p><p><img src="http://img.viz.mobi/w6-shape3.jpg" alt=""></p><p>最后，可以选择 物体-光滑着色，把几何体的表面变得更光滑一些。</p><p><img src="http://img.viz.mobi/blender-smoothshading.jpg" alt=""></p><p>快去练习吧~</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/3d_course_title.jpg" alt=""></p><a id="more"></a><p># </p><p><a href="https://www.uegeek.com/190306-3d01-welcome-to-the-3d-world.html" target="_blank" rel="noopener">三维制图讲义01 - 欢迎来到三维世界</a></p><p><a href="https://www.uegeek.com/190314-3d02-workflow.html" target="_blank" rel="noopener">三维制图讲义02 - 三维制作流程</a></p><p><a href="https://www.uegeek.com/190320-3d03-blender-intro.html" target="_blank" rel="noopener">三维制图讲义03 - 三维软件和Blender介绍</a></p><p><a href="https://www.uegeek.com/190327-3d04-basic-geometry.html" target="_blank" rel="noopener">三维制图讲义04 - 基础几何体</a></p><p><a href="https://www.uegeek.com/190403-3d05-basic-geometry-edit.html" target="_blank" rel="noopener">三维制图讲义05 - 几何体编辑：拉伸和环切</a></p><h2 id="快速回顾"><a href="#快速回顾" class="headerlink" title="快速回顾"></a>快速回顾</h2><p>上一节课我们讲解了编辑模式下两个基本的操作：拉伸(Extrude)和环切(Loop Cut)。</p><p>什么是拉伸？就是拉着一个点/边/面走：</p><p><img src="https://thumbs.gfycat.com/ThunderousHandyBeagle-size_restricted.gif" alt=""></p><p>操作顺序是：<strong>选中物体，tab 键进入编辑模式，然后按 e 进入拉伸状态</strong>。</p><p><img src="https://raw.githubusercontent.com/a1studmuffin/SpaceshipGenerator/master/screenshots/step-by-step-animation.gif" alt=""></p><p>环切/Loop Cut 则帮助我们快速切分连续的边和面，获得更多的调节节点。使用快捷键的操作步骤：</p><ul><li>选择物体，按 tab 进入编辑模式</li><li>按快捷键 ctrl+r，将鼠标移到物体上，会出现环状的指示线(如果想退出环切状态，可以鼠标右键或者按 esc 键)</li><li>移动鼠标到想要的面(指示线只会出现在中点连接线)</li><li>按下鼠标左键，确定 Loop Cut</li></ul><p><img src="https://blenderartists.org/uploads/default/original/4X/8/c/7/8c70cbda30e9fc2a6d84539be6508614756f8e12.gif" alt=""></p><h2 id="细分曲面"><a href="#细分曲面" class="headerlink" title="细分曲面"></a>细分曲面</h2><p>随着对 Blender 操作的熟悉，我们会开始塑造更加复杂的形状。</p><p>形状复杂意味着什么？意味着我们需要对一个平面切分为多个子平面，然后调整这些子平面来获得更精确的控制。这就是细分曲面(sub-division)的概念。</p><p>下面我们连着看三个 Pixar in a Box 的视频，形象地理解一下什么是细分曲面。</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=e0527y4lxf3" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/e0527y4lxf3.html" target="_blank" rel="noopener">Introduction to subdivision surfaces</a></p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=x0527k1vsqf" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/x0527k1vsqf.html" target="_blank" rel="noopener">第三课 Split vs. average_腾讯视频</a></p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=u0859bf0qse" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/u0859bf0qse.html" target="_blank" rel="noopener">Subdivision in 3D_腾讯视频</a></p><p>下面进入练习时间。通过 3 个练习，我们进一步巩固之前学过的操作，并且学习一些新的技能。</p><h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h3 id="内插面"><a href="#内插面" class="headerlink" title="内插面"></a>内插面</h3><p>这个练习我们会学习一个新的操作：内插面（insect faces）。</p><p>内插面就是在一个面里面切一块按比例缩小的面：</p><p><img src="https://i.stack.imgur.com/ccGXJ.gif" alt=""></p><p>内插面的快捷键是 i。</p><p><img src="http://img.viz.mobi/w6-shape1.jpg" alt=""></p><p>上面的几何体的操作顺序是：</p><ul><li>新建立方体</li><li>按 tab 键进入编辑模式，按 3 键进入面选择模式，选中顶部的面</li><li>按 i 然后移动鼠标，调整内插面的大小，然后点鼠标左键确定</li><li>按 e 沿 z 轴拉伸刚才新建的内插面</li><li>按 i 再建一个内插面</li><li>按 e 沿 z 轴反方向拉伸，做出内凹的形状</li></ul><h3 id="拉伸-缩放-vs-缩放-拉伸"><a href="#拉伸-缩放-vs-缩放-拉伸" class="headerlink" title="拉伸+缩放 vs 缩放+拉伸"></a>拉伸+缩放 vs 缩放+拉伸</h3><p><img src="http://img.viz.mobi/w6-shape2.jpg" alt=""></p><p>这个练习帮助我们理解 <code>先拉伸后缩放</code> 和 <code>先缩放后拉伸</code> 的区别。</p><p>操作顺序是：</p><ul><li>新建立方体</li><li>按 tab 键进入编辑模式，选中顶部的面，按 g 然后沿 z 轴压扁 (也可以不进入编辑模式，直接缩放立方体）</li><li>选中顶部的面，按 i 建一个内插面</li><li>按 e 拉伸内插面，拉伸完毕后，按 s 缩小内插面</li></ul><p><img src="http://img.viz.mobi/2019-04-11%2010.25.56.gif" alt=""></p><ul><li>按 i 再建一个内插面，然后按 e 拉伸出中间长长的柱体</li><li>顶部的面按 e 然后 s，放大</li><li>按 e 拉伸，然后按 s 放大这个面，最后再按 e 拉伸，完成柱体</li></ul><p><img src="http://img.viz.mobi/2019-04-11%2010.28.05.gif" alt=""></p><ul><li>在四个侧面，选中面然后做内插面，向内拉伸内插面</li></ul><h3 id="使用-Subdivision-Surfaces-修改器"><a href="#使用-Subdivision-Surfaces-修改器" class="headerlink" title="使用 Subdivision Surfaces 修改器"></a>使用 Subdivision Surfaces 修改器</h3><p><img src="http://img.viz.mobi/w6-shape3.jpg" alt=""></p><ul><li>新建圆柱体，按 tab 键进入编辑模式，选中顶部的面</li><li>按 e 沿 z 轴拉伸，然后按 s 缩小口径</li><li>再按 e 向上拉伸，然后 e → s 放大，拉出瓶口的底部</li><li>再按 e 向上拉伸出瓶口，然后建内插面，再把内插面向内拉伸形成瓶口的凹陷</li></ul><p><img src="http://img.viz.mobi/2019-04-11%2010.31.46.gif" alt=""></p><p>添加 Subdivision Surfaces 的操作如下：</p><p>首先添加修改器(Modifier) 表面细分 / Subdivision Surface，将视图的细分值改为 2。</p><p><img src="http://img.viz.mobi/blender-subSurface.jpg" alt=""></p><p>然后添加环切，平整细分表面的边缘：</p><p><img src="http://img.viz.mobi/2019-04-11%2010.45.38.gif" alt=""></p><p>仔细调整各边缘的弧度，并且调整瓶颈的形状(添加、选中环切线并缩放)，最后得到瓶子。</p><p><img src="http://img.viz.mobi/w6-shape3.jpg" alt=""></p><p>最后，可以选择 物体-光滑着色，把几何体的表面变得更光滑一些。</p><p><img src="http://img.viz.mobi/blender-smoothshading.jpg" alt=""></p><p>快去练习吧~</p>]]></content>
     
     <summary type="html">
     
@@ -116,9 +116,9 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
-    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
+    
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
       <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
     
@@ -224,11 +224,11 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
-    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
+    
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
       <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
     
@@ -298,11 +298,11 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
-    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
+    
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
       <category term="传感器" scheme="http://uegeek.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
     
@@ -364,11 +364,11 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
-    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
+    
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
       <category term="基尔霍夫定律" scheme="http://uegeek.com/tags/%E5%9F%BA%E5%B0%94%E9%9C%8D%E5%A4%AB%E5%AE%9A%E5%BE%8B/"/>
     
@@ -436,13 +436,13 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
-    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="单片机" scheme="http://uegeek.com/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
+    
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
   </entry>
   

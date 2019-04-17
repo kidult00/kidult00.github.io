@@ -15,14 +15,14 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[190411-3d06-geometry-practice]]></title>
+    <title><![CDATA[三维制图讲义06 - 基础几何体练习]]></title>
     <url>%2F190411-3d06-geometry-practice.html</url>
-    <content type="text"><![CDATA[三维制图讲义06 - 基础几何体练习三维制图讲义01 - 欢迎来到三维世界 三维制图讲义02 - 三维制作流程 三维制图讲义03 - 三维软件和Blender介绍 三维制图讲义04 - 基础几何体 三维制图讲义05 - 几何体编辑：拉伸和环切 快速回顾上一节课我们讲解了编辑模式下两个基本的操作：拉伸(Extrude)和环切(Loop Cut)。 什么是拉伸？就是拉着一个点/边/面走： 操作顺序是：选中物体，tab 键进入编辑模式，然后按 e 进入拉伸状态。 环切/Loop Cut 则帮助我们快速切分连续的边和面，获得更多的调节节点。使用快捷键的操作步骤： 选择物体，按 tab 进入编辑模式 按快捷键 ctrl+r，将鼠标移到物体上，会出现环状的指示线(如果想退出环切状态，可以鼠标右键或者按 esc 键) 移动鼠标到想要的面(指示线只会出现在中点连接线) 按下鼠标左键，确定 Loop Cut 细分曲面随着对 Blender 操作的熟悉，我们会开始塑造更加复杂的形状。 形状复杂意味着什么？意味着我们需要对一个平面切分为多个子平面，然后调整这些子平面来获得更精确的控制。这就是细分曲面(sub-division)的概念。 下面我们连着看三个 Pixar in a Box 的视频，形象地理解一下什么是细分曲面。 Introduction to subdivision surfaces 第三课 Split vs. average_腾讯视频 Subdivision in 3D_腾讯视频 下面进入练习时间。通过 3 个练习，我们进一步巩固之前学过的操作，并且学习一些新的技能。 练习内插面这个练习我们会学习一个新的操作：内插面（insect faces）。 内插面就是在一个面里面切一块按比例缩小的面： 内插面的快捷键是 i。 上面的几何体的操作顺序是： 新建立方体 按 tab 键进入编辑模式，按 3 键进入面选择模式，选中顶部的面 按 i 然后移动鼠标，调整内插面的大小，然后点鼠标左键确定 按 e 沿 z 轴拉伸刚才新建的内插面 按 i 再建一个内插面 按 e 沿 z 轴反方向拉伸，做出内凹的形状 拉伸+缩放 vs 缩放+拉伸 这个练习帮助我们理解 先拉伸后缩放 和 先缩放后拉伸 的区别。 操作顺序是： 新建立方体 按 tab 键进入编辑模式，选中顶部的面，按 g 然后沿 z 轴压扁 (也可以不进入编辑模式，直接缩放立方体） 选中顶部的面，按 i 建一个内插面 按 e 拉伸内插面，拉伸完毕后，按 s 缩小内插面 按 i 再建一个内插面，然后按 e 拉伸出中间长长的柱体 顶部的面按 e 然后 s，放大 按 e 拉伸，然后按 s 放大这个面，最后再按 e 拉伸，完成柱体 在四个侧面，选中面然后做内插面，向内拉伸内插面 使用 Subdivision Surfaces 修改器 新建圆柱体，按 tab 键进入编辑模式，选中顶部的面 按 e 沿 z 轴拉伸，然后按 s 缩小口径 再按 e 向上拉伸，然后 e → s 放大，拉出瓶口的底部 再按 e 向上拉伸出瓶口，然后建内插面，再把内插面向内拉伸形成瓶口的凹陷 添加 Subdivision Surfaces 的操作如下： 首先添加修改器(Modifier) 表面细分 / Subdivision Surface，将视图的细分值改为 2。 然后添加环切，平整细分表面的边缘： 仔细调整各边缘的弧度，并且调整瓶颈的形状(添加、选中环切线并缩放)，最后得到瓶子。 最后，可以选择 物体-光滑着色，把几何体的表面变得更光滑一些。 快去练习吧~]]></content>
+    <content type="text"><![CDATA[# 三维制图讲义01 - 欢迎来到三维世界 三维制图讲义02 - 三维制作流程 三维制图讲义03 - 三维软件和Blender介绍 三维制图讲义04 - 基础几何体 三维制图讲义05 - 几何体编辑：拉伸和环切 快速回顾上一节课我们讲解了编辑模式下两个基本的操作：拉伸(Extrude)和环切(Loop Cut)。 什么是拉伸？就是拉着一个点/边/面走： 操作顺序是：选中物体，tab 键进入编辑模式，然后按 e 进入拉伸状态。 环切/Loop Cut 则帮助我们快速切分连续的边和面，获得更多的调节节点。使用快捷键的操作步骤： 选择物体，按 tab 进入编辑模式 按快捷键 ctrl+r，将鼠标移到物体上，会出现环状的指示线(如果想退出环切状态，可以鼠标右键或者按 esc 键) 移动鼠标到想要的面(指示线只会出现在中点连接线) 按下鼠标左键，确定 Loop Cut 细分曲面随着对 Blender 操作的熟悉，我们会开始塑造更加复杂的形状。 形状复杂意味着什么？意味着我们需要对一个平面切分为多个子平面，然后调整这些子平面来获得更精确的控制。这就是细分曲面(sub-division)的概念。 下面我们连着看三个 Pixar in a Box 的视频，形象地理解一下什么是细分曲面。 Introduction to subdivision surfaces 第三课 Split vs. average_腾讯视频 Subdivision in 3D_腾讯视频 下面进入练习时间。通过 3 个练习，我们进一步巩固之前学过的操作，并且学习一些新的技能。 练习内插面这个练习我们会学习一个新的操作：内插面（insect faces）。 内插面就是在一个面里面切一块按比例缩小的面： 内插面的快捷键是 i。 上面的几何体的操作顺序是： 新建立方体 按 tab 键进入编辑模式，按 3 键进入面选择模式，选中顶部的面 按 i 然后移动鼠标，调整内插面的大小，然后点鼠标左键确定 按 e 沿 z 轴拉伸刚才新建的内插面 按 i 再建一个内插面 按 e 沿 z 轴反方向拉伸，做出内凹的形状 拉伸+缩放 vs 缩放+拉伸 这个练习帮助我们理解 先拉伸后缩放 和 先缩放后拉伸 的区别。 操作顺序是： 新建立方体 按 tab 键进入编辑模式，选中顶部的面，按 g 然后沿 z 轴压扁 (也可以不进入编辑模式，直接缩放立方体） 选中顶部的面，按 i 建一个内插面 按 e 拉伸内插面，拉伸完毕后，按 s 缩小内插面 按 i 再建一个内插面，然后按 e 拉伸出中间长长的柱体 顶部的面按 e 然后 s，放大 按 e 拉伸，然后按 s 放大这个面，最后再按 e 拉伸，完成柱体 在四个侧面，选中面然后做内插面，向内拉伸内插面 使用 Subdivision Surfaces 修改器 新建圆柱体，按 tab 键进入编辑模式，选中顶部的面 按 e 沿 z 轴拉伸，然后按 s 缩小口径 再按 e 向上拉伸，然后 e → s 放大，拉出瓶口的底部 再按 e 向上拉伸出瓶口，然后建内插面，再把内插面向内拉伸形成瓶口的凹陷 添加 Subdivision Surfaces 的操作如下： 首先添加修改器(Modifier) 表面细分 / Subdivision Surface，将视图的细分值改为 2。 然后添加环切，平整细分表面的边缘： 仔细调整各边缘的弧度，并且调整瓶颈的形状(添加、选中环切线并缩放)，最后得到瓶子。 最后，可以选择 物体-光滑着色，把几何体的表面变得更光滑一些。 快去练习吧~]]></content>
       <categories>
         <category>教程</category>
       </categories>
@@ -49,8 +49,8 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
         <tag>通信</tag>
         <tag>MIDI</tag>
         <tag>OSC</tag>
@@ -103,9 +103,9 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
         <tag>通信</tag>
         <tag>MIDI</tag>
         <tag>OSC</tag>
@@ -140,9 +140,9 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
         <tag>传感器</tag>
       </tags>
   </entry>
@@ -173,9 +173,9 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
         <tag>基尔霍夫定律</tag>
       </tags>
   </entry>
@@ -209,10 +209,10 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>单片机</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2047,8 +2047,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2100,8 +2100,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2127,8 +2127,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2180,8 +2180,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2231,8 +2231,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2310,8 +2310,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -3118,8 +3118,8 @@
       </categories>
       <tags>
         <tag>IxD</tag>
-        <tag>Note</tag>
         <tag>交互设计</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -3428,8 +3428,8 @@
       </categories>
       <tags>
         <tag>IxD</tag>
-        <tag>Note</tag>
         <tag>交互设计</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -3454,8 +3454,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Note</tag>
         <tag>交互设计</tag>
+        <tag>Note</tag>
         <tag>Interface</tag>
         <tag>Pattern</tag>
       </tags>
@@ -3482,8 +3482,8 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>可视化</tag>
+        <tag>Note</tag>
         <tag>Information design</tag>
       </tags>
   </entry>
@@ -3520,8 +3520,8 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>Reading</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -3715,8 +3715,8 @@
       </categories>
       <tags>
         <tag>产品</tag>
-        <tag>用户</tag>
         <tag>UCD</tag>
+        <tag>用户</tag>
       </tags>
   </entry>
   <entry>

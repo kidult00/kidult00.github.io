@@ -4,6 +4,36 @@
 
     
   <url>
+    <loc>http://uegeek.com/190411-3d06-geometry-practice.html</loc>
+    <lastmod>2019-04-17T12:46:02.789Z</lastmod>
+    <data>
+        <display>
+        <title>三维制图讲义06 - 基础几何体练习</title>
+        <pubTime>2019-04-11T03:40:11.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>3D</tag>
+         
+        <tag>Modeling</tag>
+         
+        <tag>Blender</tag>
+         
+        <tag>Geometry</tag>
+         
+        <tag>Subdivision</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/190417-df07-arduino-sound.html</loc>
     <lastmod>2019-04-17T12:10:17.176Z</lastmod>
     <data>
@@ -25,39 +55,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
-         
-           
-             
-              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/190411-3d06-geometry-practice.html</loc>
-    <lastmod>2019-04-11T03:41:34.126Z</lastmod>
-    <data>
-        <display>
-        <title>190411-3d06-geometry-practice</title>
-        <pubTime>2019-04-11T03:40:11.000Z</pubTime>
-        
-        <tag>ArtxCode</tag>
-         
-        <tag>3D</tag>
-         
-        <tag>Modeling</tag>
-         
-        <tag>Blender</tag>
-         
-        <tag>Geometry</tag>
-         
-        <tag>Subdivision</tag>
+        <tag>Fab</tag>
          
          
            
@@ -89,9 +89,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
         <tag>通信</tag>
          
@@ -191,11 +191,11 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
          
         <tag>通信</tag>
          
@@ -261,11 +261,11 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
          
         <tag>传感器</tag>
          
@@ -323,11 +323,11 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
          
         <tag>基尔霍夫定律</tag>
          
@@ -391,13 +391,13 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
         <tag>单片机</tag>
          
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2435,9 +2435,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2505,9 +2505,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2675,9 +2675,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2749,9 +2749,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2799,9 +2799,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -3261,9 +3261,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -6077,9 +6077,9 @@
         
         <tag>IxD</tag>
          
-        <tag>Note</tag>
-         
         <tag>交互设计</tag>
+         
+        <tag>Note</tag>
          
          
            
@@ -6099,9 +6099,9 @@
         <title>读书笔记-信息设计</title>
         <pubTime>2010-12-26T15:10:45.000Z</pubTime>
         
-        <tag>Note</tag>
-         
         <tag>可视化</tag>
+         
+        <tag>Note</tag>
          
         <tag>Information design</tag>
          
@@ -6125,9 +6125,9 @@
         
         <tag>Design</tag>
          
-        <tag>Note</tag>
-         
         <tag>交互设计</tag>
+         
+        <tag>Note</tag>
          
         <tag>Interface</tag>
          
@@ -6153,9 +6153,9 @@
         
         <tag>IxD</tag>
          
-        <tag>Note</tag>
-         
         <tag>交互设计</tag>
+         
+        <tag>Note</tag>
          
          
            
@@ -6647,9 +6647,9 @@
         
         <tag>产品</tag>
          
-        <tag>用户</tag>
-         
         <tag>UCD</tag>
+         
+        <tag>用户</tag>
          
          
            
@@ -6803,9 +6803,9 @@
         <title>读书笔记-如何阅读一本书</title>
         <pubTime>2010-08-07T16:20:35.000Z</pubTime>
         
-        <tag>Note</tag>
-         
         <tag>Reading</tag>
+         
+        <tag>Note</tag>
          
          
            
