@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[三维制图讲义07 - 基础几何体练习2]]></title>
+    <url>%2F190418-3d07-basic-geometry.html</url>
+    <content type="text"><![CDATA[三维制图讲义01 - 欢迎来到三维世界 三维制图讲义02 - 三维制作流程 三维制图讲义03 - 三维软件和Blender介绍 三维制图讲义04 - 基础几何体 三维制图讲义05 - 几何体编辑：拉伸和环切 三维制图讲义06 - 基础几何体练习 上一节课我们通过实际例子讲解了内插面和 Subdivision Surfaces 的应用。 这周我们继续通过实际的例子来练习已经学过的知识，并且学习新的技巧。 练习一这个练习我们做一个底部是球状的瓶子。 首先是观察造型。这个瓶子跟上周练习的牛奶瓶有近似的部分，也有不同的地方。它的底部是一个球体，颈部弯曲比较平滑，瓶口也是跟牛奶瓶类似的形状。 所以思路是用一个球体，拉伸部分的曲面作为颈部，然后将顶部拉伸变形为瓶口的形状。 选中部分曲面拉伸并用环切调整选中部分曲面，可以用圈选操作来实现。也就是在面编辑模式下，按 c (circle的意思)，然后按下鼠标开始移动，在圆圈之内的面就会被选中。 选中要拉伸的部分(按shift选择可以取消选中)，按 e 拉伸。 然后需要将顶部的曲面整平：选中状态下按 s，然后按 z，按数字键 0。意思是沿 z 轴缩放，全部调整为 0(在同一个水平面)。 接下来的部分，可以复习上一周制作瓶子的技巧，也就是用环切、内插面、subdivision surfaces 等功能调整瓶子的形状了。 你也来试试吧！ 练习二 这个练习我们会学到一个常用的修改器：镜射 / Mirror。 从字面上理解，就是生成对称的部分。 因为大部分的物体都会有对称的部分，所以这个功能很实用，可以帮助我们节省（一半的）时间。 需要留意的是，Mirror modifier 可以对 x/y/z 轴分别做镜像，也可以选择几何体为镜像中心。 观察我们要做的几何体，它应该是以 z 轴为基准的上下镜像，所以我们在镜射的选项中要勾选 z 轴。 我们以中间为参考线，拉伸立方体形成中部的长方体，然后做两道环切，选中中间两个面拉伸两次，然后选择两个需要桥接的面，接合。 这里要注意勾选上 Mirror modifier 的 Clipping 选项，它会帮助我们把镜像接缝处合并而不会留下重合的部分。 接下来的部分就简单了，对顶面拉伸然后缩放出一个较大的平面，然后向上拉伸，就得到了最终的形状。]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>ArtxCode</tag>
+        <tag>3D</tag>
+        <tag>Modeling</tag>
+        <tag>Blender</tag>
+        <tag>Geometry</tag>
+        <tag>Mirror</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数字制造讲义07-Arduino声音应用]]></title>
     <url>%2F190417-df07-arduino-sound.html</url>
-    <content type="text"><![CDATA[# 数字制造讲义01-成为数字世界的建造者 数字制造讲义02-Arduino入门 数字制造讲义03-电路基础 数字制造讲义04-负责输入和输出的智能元件 数字制造讲义05-软硬件数据通信 数字制造讲义06-MIDI 和 OSC 数据传输练习 回顾上一节课，我们练习如何在不同软硬件设备（手机、Max、Arduino、Ableton Live）中传输 MIDI 和 OSC 数据。这些都是用软件发出声音。 这周我们继续通过实际的例子，学习如何用硬件发出声音。 挑战1：让蜂鸣器发声蜂鸣器是啥？ 简单来说，它是一种一体化结构的电子讯响器，广泛应用于计算机、打印机、复印机、报警器、电子玩具、汽车电子设备、电话机、定时器等电子产品中，作发声器件。 蜂鸣器又可以分为有源蜂鸣器和无源蜂鸣器两种。 它们的区别是什么？要如何区分呢？ 有源蜂鸣器内部集成有震荡源，只要提供直流电源就可以发声。无源蜂鸣器没有集成震荡源，需要接在音频输出电路中才可以发声。 无源蜂鸣器通的电路板通常是裸露的（如上图右），有源蜂鸣器的电路通常被黑胶覆盖 更精确的判断方法，用万用表电阻档 Rxl 档测试：用黑表笔接蜂鸣器 “+”引脚，红表笔在另一引脚上来回碰触，如果触发出咔、咔声的且电阻只有8Ω（或16Ω）的是无源蜂鸣器;如果能发出持续声音的，且电阻在几百欧以上的，是有源蜂鸣器。 下面我们用到的是无源蜂鸣器。 在电路中连接蜂鸣器不需要增加额外的电阻，所以接线十分简单。在 Arduino 程序中，使用 tone 函数来指定蜂鸣器的频率和持续时间： 12345678910int buzzerPin = 9;void setup() &#123; pinMode(buzzerPin, OUTPUT);&#125;void loop() &#123; tone(buzzerPin, 440, 500); delay(1000);&#125; 挑战2：蜂鸣器发出交替的报警声完成挑战 1，我们已经基本理解蜂鸣器和 tone() 函数如何工作了。 在修改代码之前，建议在官方文档中查看 tone() 和 noTone() 的详细说明。 Syntax tone(pin, frequency)tone(pin, frequency, duration) Parameters pin: the pin on which to generate the tonefrequency: the frequency of the tone in hertz - unsigned intduration: the duration of the tone in milliseconds (optional) - unsigned long 这个挑战只需要在代码上做一些调整，就可以实现双音高交替的报警器效果。 123456789101112int buzzerPin = 9;void setup() &#123; pinMode(buzzerPin, OUTPUT);&#125;void loop() &#123; tone(buzzerPin, 440, 500); delay(1000); tone(buzzerPin, 880, 500); delay(1000);&#125; tone() 的第二个参数是音高的频率，我们把第一个音高设为 440，第二个音高设为 880，它们各持续 500 毫秒，中间有 1 秒的间隔。这样就形成了双音高的警报声。 挑战3：用按键触发声音现在我们有了可以发出不同音高的蜂鸣器。接着我们做一个按钮控制发声的小应用。 接线中使用的元件包括：蜂鸣器，按钮，220Ω 和 10kΩ 电阻。 代码如下： 1234567891011121314151617int button_pin = A0;int buzzer_pin = 8;void setup() &#123; Serial.begin(9600); pinMode(button_pin, INPUT); pinMode(buzzer_pin, OUTPUT);&#125;void loop() &#123; int buttonState = digitalRead(button_pin); Serial.println(buttonState); if (buttonState == HIGH) &#123; tone(8, 440, 200); &#125; delay(50);&#125; 在上面的练习中，建议大家一定要动手画电路图、从 0 开始写代码，并且对代码加上必要的注释。这些训练能帮助我们更快熟悉和应用所学的知识。越早练习，才可以越早简化一些步骤。 在练习中一定会越到这样那样的错误，比如元件正负极一不小心就接反了，比如 Arduino 上传程序时总是出错，甚至有时候不正确的接线烧坏了元件。 错误是学习中最宝贵的机会，它提醒我们「此处有知识薄弱点」或者「步骤可完善的地方」。详细记录步骤，本身就是发现和解决问题很好的方法。把错误们储蓄起来，时不时拿出来复习，就能减少错误发生，提高熟练程度和准确度。 所以，多动手，早犯错，乐于在错误中寻找成长的路径，是可以伴随我们一路的好方法。]]></content>
+    <content type="text"><![CDATA[数字制造讲义01-成为数字世界的建造者 数字制造讲义02-Arduino入门 数字制造讲义03-电路基础 数字制造讲义04-负责输入和输出的智能元件 数字制造讲义05-软硬件数据通信 数字制造讲义06-MIDI 和 OSC 数据传输练习 回顾上一节课，我们练习如何在不同软硬件设备（手机、Max、Arduino、Ableton Live）中传输 MIDI 和 OSC 数据。这些都是用软件发出声音。 这周我们继续通过实际的例子，学习如何用硬件发出声音。 挑战1：让蜂鸣器发声蜂鸣器是啥？ 简单来说，它是一种一体化结构的电子讯响器，广泛应用于计算机、打印机、复印机、报警器、电子玩具、汽车电子设备、电话机、定时器等电子产品中，作发声器件。 蜂鸣器又可以分为有源蜂鸣器和无源蜂鸣器两种。 它们的区别是什么？要如何区分呢？ 有源蜂鸣器内部集成有震荡源，只要提供直流电源就可以发声。无源蜂鸣器没有集成震荡源，需要接在音频输出电路中才可以发声。 无源蜂鸣器通的电路板通常是裸露的（如上图右），有源蜂鸣器的电路通常被黑胶覆盖 更精确的判断方法，用万用表电阻档 Rxl 档测试：用黑表笔接蜂鸣器 “+”引脚，红表笔在另一引脚上来回碰触，如果触发出咔、咔声的且电阻只有8Ω（或16Ω）的是无源蜂鸣器;如果能发出持续声音的，且电阻在几百欧以上的，是有源蜂鸣器。 下面我们用到的是无源蜂鸣器。 在电路中连接蜂鸣器不需要增加额外的电阻，所以接线十分简单。在 Arduino 程序中，使用 tone 函数来指定蜂鸣器的频率和持续时间： 12345678910int buzzerPin = 9;void setup() &#123; pinMode(buzzerPin, OUTPUT);&#125;void loop() &#123; tone(buzzerPin, 440, 500); delay(1000);&#125; 挑战2：蜂鸣器发出交替的报警声完成挑战 1，我们已经基本理解蜂鸣器和 tone() 函数如何工作了。 在修改代码之前，建议在官方文档中查看 tone() 和 noTone() 的详细说明。 Syntax tone(pin, frequency)tone(pin, frequency, duration) Parameters pin: the pin on which to generate the tonefrequency: the frequency of the tone in hertz - unsigned intduration: the duration of the tone in milliseconds (optional) - unsigned long 这个挑战只需要在代码上做一些调整，就可以实现双音高交替的报警器效果。 123456789101112int buzzerPin = 9;void setup() &#123; pinMode(buzzerPin, OUTPUT);&#125;void loop() &#123; tone(buzzerPin, 440, 500); delay(1000); tone(buzzerPin, 880, 500); delay(1000);&#125; tone() 的第二个参数是音高的频率，我们把第一个音高设为 440，第二个音高设为 880，它们各持续 500 毫秒，中间有 1 秒的间隔。这样就形成了双音高的警报声。 挑战3：用按键触发声音现在我们有了可以发出不同音高的蜂鸣器。接着我们做一个按钮控制发声的小应用。 接线中使用的元件包括：蜂鸣器，按钮，220Ω 和 10kΩ 电阻。 代码如下： 1234567891011121314151617int button_pin = A0;int buzzer_pin = 8;void setup() &#123; Serial.begin(9600); pinMode(button_pin, INPUT); pinMode(buzzer_pin, OUTPUT);&#125;void loop() &#123; int buttonState = digitalRead(button_pin); Serial.println(buttonState); if (buttonState == HIGH) &#123; tone(8, 440, 200); &#125; delay(50);&#125; 在上面的练习中，建议大家一定要动手画电路图、从 0 开始写代码，并且对代码加上必要的注释。这些训练能帮助我们更快熟悉和应用所学的知识。越早练习，才可以越早简化一些步骤。 在练习中一定会越到这样那样的错误，比如元件正负极一不小心就接反了，比如 Arduino 上传程序时总是出错，甚至有时候不正确的接线烧坏了元件。 错误是学习中最宝贵的机会，它提醒我们「此处有知识薄弱点」或者「步骤可完善的地方」。详细记录步骤，本身就是发现和解决问题很好的方法。把错误们储蓄起来，时不时拿出来复习，就能减少错误发生，提高熟练程度和准确度。 所以，多动手，早犯错，乐于在错误中寻找成长的路径，是可以伴随我们一路的好方法。]]></content>
       <categories>
         <category>教程</category>
       </categories>
@@ -15,14 +31,14 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Arduino</tag>
         <tag>Fab</tag>
+        <tag>Arduino</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[三维制图讲义06 - 基础几何体练习]]></title>
     <url>%2F190411-3d06-geometry-practice.html</url>
-    <content type="text"><![CDATA[# 三维制图讲义01 - 欢迎来到三维世界 三维制图讲义02 - 三维制作流程 三维制图讲义03 - 三维软件和Blender介绍 三维制图讲义04 - 基础几何体 三维制图讲义05 - 几何体编辑：拉伸和环切 快速回顾上一节课我们讲解了编辑模式下两个基本的操作：拉伸(Extrude)和环切(Loop Cut)。 什么是拉伸？就是拉着一个点/边/面走： 操作顺序是：选中物体，tab 键进入编辑模式，然后按 e 进入拉伸状态。 环切/Loop Cut 则帮助我们快速切分连续的边和面，获得更多的调节节点。使用快捷键的操作步骤： 选择物体，按 tab 进入编辑模式 按快捷键 ctrl+r，将鼠标移到物体上，会出现环状的指示线(如果想退出环切状态，可以鼠标右键或者按 esc 键) 移动鼠标到想要的面(指示线只会出现在中点连接线) 按下鼠标左键，确定 Loop Cut 细分曲面随着对 Blender 操作的熟悉，我们会开始塑造更加复杂的形状。 形状复杂意味着什么？意味着我们需要对一个平面切分为多个子平面，然后调整这些子平面来获得更精确的控制。这就是细分曲面(sub-division)的概念。 下面我们连着看三个 Pixar in a Box 的视频，形象地理解一下什么是细分曲面。 Introduction to subdivision surfaces 第三课 Split vs. average_腾讯视频 Subdivision in 3D_腾讯视频 下面进入练习时间。通过 3 个练习，我们进一步巩固之前学过的操作，并且学习一些新的技能。 练习内插面这个练习我们会学习一个新的操作：内插面（insect faces）。 内插面就是在一个面里面切一块按比例缩小的面： 内插面的快捷键是 i。 上面的几何体的操作顺序是： 新建立方体 按 tab 键进入编辑模式，按 3 键进入面选择模式，选中顶部的面 按 i 然后移动鼠标，调整内插面的大小，然后点鼠标左键确定 按 e 沿 z 轴拉伸刚才新建的内插面 按 i 再建一个内插面 按 e 沿 z 轴反方向拉伸，做出内凹的形状 拉伸+缩放 vs 缩放+拉伸 这个练习帮助我们理解 先拉伸后缩放 和 先缩放后拉伸 的区别。 操作顺序是： 新建立方体 按 tab 键进入编辑模式，选中顶部的面，按 g 然后沿 z 轴压扁 (也可以不进入编辑模式，直接缩放立方体） 选中顶部的面，按 i 建一个内插面 按 e 拉伸内插面，拉伸完毕后，按 s 缩小内插面 按 i 再建一个内插面，然后按 e 拉伸出中间长长的柱体 顶部的面按 e 然后 s，放大 按 e 拉伸，然后按 s 放大这个面，最后再按 e 拉伸，完成柱体 在四个侧面，选中面然后做内插面，向内拉伸内插面 使用 Subdivision Surfaces 修改器 新建圆柱体，按 tab 键进入编辑模式，选中顶部的面 按 e 沿 z 轴拉伸，然后按 s 缩小口径 再按 e 向上拉伸，然后 e → s 放大，拉出瓶口的底部 再按 e 向上拉伸出瓶口，然后建内插面，再把内插面向内拉伸形成瓶口的凹陷 添加 Subdivision Surfaces 的操作如下： 首先添加修改器(Modifier) 表面细分 / Subdivision Surface，将视图的细分值改为 2。 然后添加环切，平整细分表面的边缘： 仔细调整各边缘的弧度，并且调整瓶颈的形状(添加、选中环切线并缩放)，最后得到瓶子。 最后，可以选择 物体-光滑着色，把几何体的表面变得更光滑一些。 快去练习吧~]]></content>
+    <content type="text"><![CDATA[三维制图讲义01 - 欢迎来到三维世界 三维制图讲义02 - 三维制作流程 三维制图讲义03 - 三维软件和Blender介绍 三维制图讲义04 - 基础几何体 三维制图讲义05 - 几何体编辑：拉伸和环切 快速回顾上一节课我们讲解了编辑模式下两个基本的操作：拉伸(Extrude)和环切(Loop Cut)。 什么是拉伸？就是拉着一个点/边/面走： 操作顺序是：选中物体，tab 键进入编辑模式，然后按 e 进入拉伸状态。 环切/Loop Cut 则帮助我们快速切分连续的边和面，获得更多的调节节点。使用快捷键的操作步骤： 选择物体，按 tab 进入编辑模式 按快捷键 ctrl+r，将鼠标移到物体上，会出现环状的指示线(如果想退出环切状态，可以鼠标右键或者按 esc 键) 移动鼠标到想要的面(指示线只会出现在中点连接线) 按下鼠标左键，确定 Loop Cut 细分曲面随着对 Blender 操作的熟悉，我们会开始塑造更加复杂的形状。 形状复杂意味着什么？意味着我们需要对一个平面切分为多个子平面，然后调整这些子平面来获得更精确的控制。这就是细分曲面(sub-division)的概念。 下面我们连着看三个 Pixar in a Box 的视频，形象地理解一下什么是细分曲面。 Introduction to subdivision surfaces 第三课 Split vs. average_腾讯视频 Subdivision in 3D_腾讯视频 下面进入练习时间。通过 3 个练习，我们进一步巩固之前学过的操作，并且学习一些新的技能。 练习内插面这个练习我们会学习一个新的操作：内插面（insect faces）。 内插面就是在一个面里面切一块按比例缩小的面： 内插面的快捷键是 i。 上面的几何体的操作顺序是： 新建立方体 按 tab 键进入编辑模式，按 3 键进入面选择模式，选中顶部的面 按 i 然后移动鼠标，调整内插面的大小，然后点鼠标左键确定 按 e 沿 z 轴拉伸刚才新建的内插面 按 i 再建一个内插面 按 e 沿 z 轴反方向拉伸，做出内凹的形状 拉伸+缩放 vs 缩放+拉伸 这个练习帮助我们理解 先拉伸后缩放 和 先缩放后拉伸 的区别。 操作顺序是： 新建立方体 按 tab 键进入编辑模式，选中顶部的面，按 g 然后沿 z 轴压扁 (也可以不进入编辑模式，直接缩放立方体） 选中顶部的面，按 i 建一个内插面 按 e 拉伸内插面，拉伸完毕后，按 s 缩小内插面 按 i 再建一个内插面，然后按 e 拉伸出中间长长的柱体 顶部的面按 e 然后 s，放大 按 e 拉伸，然后按 s 放大这个面，最后再按 e 拉伸，完成柱体 在四个侧面，选中面然后做内插面，向内拉伸内插面 使用 Subdivision Surfaces 修改器 新建圆柱体，按 tab 键进入编辑模式，选中顶部的面 按 e 沿 z 轴拉伸，然后按 s 缩小口径 再按 e 向上拉伸，然后 e → s 放大，拉出瓶口的底部 再按 e 向上拉伸出瓶口，然后建内插面，再把内插面向内拉伸形成瓶口的凹陷 添加 Subdivision Surfaces 的操作如下： 首先添加修改器(Modifier) 表面细分 / Subdivision Surface，将视图的细分值改为 2。 然后添加环切，平整细分表面的边缘： 仔细调整各边缘的弧度，并且调整瓶颈的形状(添加、选中环切线并缩放)，最后得到瓶子。 最后，可以选择 物体-光滑着色，把几何体的表面变得更光滑一些。 快去练习吧~]]></content>
       <categories>
         <category>教程</category>
       </categories>
@@ -49,8 +65,8 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Arduino</tag>
         <tag>Fab</tag>
+        <tag>Arduino</tag>
         <tag>通信</tag>
         <tag>MIDI</tag>
         <tag>OSC</tag>
@@ -103,9 +119,9 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
+        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
-        <tag>Fab</tag>
         <tag>通信</tag>
         <tag>MIDI</tag>
         <tag>OSC</tag>
@@ -140,9 +156,9 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
+        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
-        <tag>Fab</tag>
         <tag>传感器</tag>
       </tags>
   </entry>
@@ -173,9 +189,9 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
+        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
-        <tag>Fab</tag>
         <tag>基尔霍夫定律</tag>
       </tags>
   </entry>
@@ -209,10 +225,10 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Arduino</tag>
-        <tag>单片机</tag>
-        <tag>电路</tag>
         <tag>Fab</tag>
+        <tag>Arduino</tag>
+        <tag>电路</tag>
+        <tag>单片机</tag>
       </tags>
   </entry>
   <entry>
@@ -1097,8 +1113,8 @@
         <tag>ArtxCode</tag>
         <tag>DeepLearning</tag>
         <tag>Coding</tag>
-        <tag>神经网络</tag>
         <tag>编程</tag>
+        <tag>神经网络</tag>
         <tag>Programming</tag>
       </tags>
   </entry>
@@ -1116,8 +1132,8 @@
         <tag>ArtxCode</tag>
         <tag>DeepLearning</tag>
         <tag>Coding</tag>
-        <tag>神经网络</tag>
         <tag>编程</tag>
+        <tag>神经网络</tag>
         <tag>Programming</tag>
         <tag>AWS</tag>
         <tag>GPU</tag>
@@ -1182,8 +1198,8 @@
         <tag>ArtxCode</tag>
         <tag>DeepLearning</tag>
         <tag>Coding</tag>
-        <tag>神经网络</tag>
         <tag>编程</tag>
+        <tag>神经网络</tag>
         <tag>Backpro</tag>
         <tag>反向传播</tag>
         <tag>Programming</tag>
@@ -2047,8 +2063,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Arduino</tag>
         <tag>Fab</tag>
+        <tag>Arduino</tag>
       </tags>
   </entry>
   <entry>
@@ -2100,8 +2116,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Arduino</tag>
         <tag>Fab</tag>
+        <tag>Arduino</tag>
       </tags>
   </entry>
   <entry>
@@ -2127,8 +2143,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Arduino</tag>
         <tag>Fab</tag>
+        <tag>Arduino</tag>
       </tags>
   </entry>
   <entry>
@@ -2180,8 +2196,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Arduino</tag>
         <tag>Fab</tag>
+        <tag>Arduino</tag>
       </tags>
   </entry>
   <entry>
@@ -2231,8 +2247,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Arduino</tag>
         <tag>Fab</tag>
+        <tag>Arduino</tag>
       </tags>
   </entry>
   <entry>
@@ -2310,8 +2326,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Arduino</tag>
         <tag>Fab</tag>
+        <tag>Arduino</tag>
       </tags>
   </entry>
   <entry>
@@ -2638,9 +2654,9 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
         <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>Travel</tag>
         <tag>哥特式</tag>
         <tag>巴洛克</tag>
         <tag>布拉格</tag>
@@ -2658,9 +2674,9 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
         <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>Travel</tag>
         <tag>东正教</tag>
         <tag>基督教</tag>
         <tag>天主教</tag>
@@ -2677,10 +2693,10 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
         <tag>中欧</tag>
         <tag>历史</tag>
         <tag>捷克</tag>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -2692,9 +2708,9 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
         <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>Travel</tag>
         <tag>奥地利</tag>
         <tag>哈布斯堡王朝</tag>
         <tag>维也纳</tag>
@@ -2709,10 +2725,10 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Travel</tag>
         <tag>中欧</tag>
         <tag>历史</tag>
         <tag>捷克</tag>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -2723,12 +2739,12 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>Travel</tag>
         <tag>中欧</tag>
-        <tag>匈牙利</tag>
         <tag>历史</tag>
-        <tag>奥地利</tag>
         <tag>捷克</tag>
+        <tag>Travel</tag>
+        <tag>匈牙利</tag>
+        <tag>奥地利</tag>
         <tag>斯洛伐克</tag>
       </tags>
   </entry>
@@ -3118,8 +3134,8 @@
       </categories>
       <tags>
         <tag>IxD</tag>
-        <tag>交互设计</tag>
         <tag>Note</tag>
+        <tag>交互设计</tag>
       </tags>
   </entry>
   <entry>
@@ -3428,8 +3444,8 @@
       </categories>
       <tags>
         <tag>IxD</tag>
-        <tag>交互设计</tag>
         <tag>Note</tag>
+        <tag>交互设计</tag>
       </tags>
   </entry>
   <entry>
@@ -3454,8 +3470,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>交互设计</tag>
         <tag>Note</tag>
+        <tag>交互设计</tag>
         <tag>Interface</tag>
         <tag>Pattern</tag>
       </tags>
@@ -3482,8 +3498,8 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>可视化</tag>
         <tag>Note</tag>
+        <tag>可视化</tag>
         <tag>Information design</tag>
       </tags>
   </entry>
@@ -3520,8 +3536,8 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>Reading</tag>
         <tag>Note</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
@@ -3715,8 +3731,8 @@
       </categories>
       <tags>
         <tag>产品</tag>
-        <tag>UCD</tag>
         <tag>用户</tag>
+        <tag>UCD</tag>
       </tags>
   </entry>
   <entry>

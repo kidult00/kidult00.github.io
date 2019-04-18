@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/190418-3d07-basic-geometry.html</loc>
+        <lastmod>2019-04-18T14:27:32.833Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://uegeek.com/190411-3d06-geometry-practice.html</loc>
-        <lastmod>2019-04-17T12:46:02.789Z</lastmod>
+        <lastmod>2019-04-18T14:27:01.158Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +24,7 @@
 
     <url>
         <loc>http://uegeek.com/190417-df07-arduino-sound.html</loc>
-        <lastmod>2019-04-17T12:10:17.176Z</lastmod>
+        <lastmod>2019-04-17T12:48:00.983Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

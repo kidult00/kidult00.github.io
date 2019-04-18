@@ -4,8 +4,38 @@
 
     
   <url>
+    <loc>http://uegeek.com/190418-3d07-basic-geometry.html</loc>
+    <lastmod>2019-04-18T14:27:32.833Z</lastmod>
+    <data>
+        <display>
+        <title>三维制图讲义07 - 基础几何体练习2</title>
+        <pubTime>2019-04-18T14:26:32.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>3D</tag>
+         
+        <tag>Modeling</tag>
+         
+        <tag>Blender</tag>
+         
+        <tag>Geometry</tag>
+         
+        <tag>Mirror</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/190411-3d06-geometry-practice.html</loc>
-    <lastmod>2019-04-17T12:46:02.789Z</lastmod>
+    <lastmod>2019-04-18T14:27:01.158Z</lastmod>
     <data>
         <display>
         <title>三维制图讲义06 - 基础几何体练习</title>
@@ -35,7 +65,7 @@
     
   <url>
     <loc>http://uegeek.com/190417-df07-arduino-sound.html</loc>
-    <lastmod>2019-04-17T12:10:17.176Z</lastmod>
+    <lastmod>2019-04-17T12:48:00.983Z</lastmod>
     <data>
         <display>
         <title>数字制造讲义07-Arduino声音应用</title>
@@ -55,9 +85,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -89,9 +119,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
         <tag>通信</tag>
          
@@ -191,11 +221,11 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
         <tag>通信</tag>
          
@@ -261,11 +291,11 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
         <tag>传感器</tag>
          
@@ -323,11 +353,11 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
         <tag>基尔霍夫定律</tag>
          
@@ -391,13 +421,13 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Arduino</tag>
+        <tag>Fab</tag>
          
-        <tag>单片机</tag>
+        <tag>Arduino</tag>
          
         <tag>电路</tag>
          
-        <tag>Fab</tag>
+        <tag>单片机</tag>
          
          
            
@@ -2435,9 +2465,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -2505,9 +2535,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -2675,9 +2705,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -2749,9 +2779,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -2799,9 +2829,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -3261,9 +3291,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -3331,17 +3361,17 @@
         <title>中欧四国扫(ba)盲(gua)帖之一：“中欧”还是“东欧”？</title>
         <pubTime>2015-09-18T13:37:38.000Z</pubTime>
         
-        <tag>Travel</tag>
-         
         <tag>中欧</tag>
-         
-        <tag>匈牙利</tag>
          
         <tag>历史</tag>
          
-        <tag>奥地利</tag>
-         
         <tag>捷克</tag>
+         
+        <tag>Travel</tag>
+         
+        <tag>匈牙利</tag>
+         
+        <tag>奥地利</tag>
          
         <tag>斯洛伐克</tag>
          
@@ -3389,13 +3419,13 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>中欧</tag>
          
         <tag>历史</tag>
          
         <tag>捷克</tag>
+         
+        <tag>Travel</tag>
          
          
            
@@ -3417,11 +3447,11 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>中欧</tag>
          
         <tag>历史</tag>
+         
+        <tag>Travel</tag>
          
         <tag>奥地利</tag>
          
@@ -3449,13 +3479,13 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>中欧</tag>
          
         <tag>历史</tag>
          
         <tag>捷克</tag>
+         
+        <tag>Travel</tag>
          
          
            
@@ -3477,11 +3507,11 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>中欧</tag>
          
         <tag>历史</tag>
+         
+        <tag>Travel</tag>
          
         <tag>东正教</tag>
          
@@ -3513,11 +3543,11 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>中欧</tag>
          
         <tag>历史</tag>
+         
+        <tag>Travel</tag>
          
         <tag>哥特式</tag>
          
@@ -4787,9 +4817,9 @@
          
         <tag>Coding</tag>
          
-        <tag>神经网络</tag>
-         
         <tag>编程</tag>
+         
+        <tag>神经网络</tag>
          
         <tag>Backpro</tag>
          
@@ -4911,9 +4941,9 @@
          
         <tag>Coding</tag>
          
-        <tag>神经网络</tag>
-         
         <tag>编程</tag>
+         
+        <tag>神经网络</tag>
          
         <tag>Programming</tag>
          
@@ -4951,9 +4981,9 @@
          
         <tag>Coding</tag>
          
-        <tag>神经网络</tag>
-         
         <tag>编程</tag>
+         
+        <tag>神经网络</tag>
          
         <tag>Programming</tag>
          
@@ -6077,9 +6107,9 @@
         
         <tag>IxD</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>Note</tag>
+         
+        <tag>交互设计</tag>
          
          
            
@@ -6099,9 +6129,9 @@
         <title>读书笔记-信息设计</title>
         <pubTime>2010-12-26T15:10:45.000Z</pubTime>
         
-        <tag>可视化</tag>
-         
         <tag>Note</tag>
+         
+        <tag>可视化</tag>
          
         <tag>Information design</tag>
          
@@ -6125,9 +6155,9 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>Note</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>Interface</tag>
          
@@ -6153,9 +6183,9 @@
         
         <tag>IxD</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>Note</tag>
+         
+        <tag>交互设计</tag>
          
          
            
@@ -6647,9 +6677,9 @@
         
         <tag>产品</tag>
          
-        <tag>UCD</tag>
-         
         <tag>用户</tag>
+         
+        <tag>UCD</tag>
          
          
            
@@ -6803,9 +6833,9 @@
         <title>读书笔记-如何阅读一本书</title>
         <pubTime>2010-08-07T16:20:35.000Z</pubTime>
         
-        <tag>Reading</tag>
-         
         <tag>Note</tag>
+         
+        <tag>Reading</tag>
          
          
            
