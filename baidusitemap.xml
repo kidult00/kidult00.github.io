@@ -4,12 +4,80 @@
 
     
   <url>
+    <loc>http://uegeek.com/190425-3d08-boolean-modifier.html</loc>
+    <lastmod>2019-04-25T04:52:01.050Z</lastmod>
+    <data>
+        <display>
+        <title>三维制图讲义08 - 几何体组合和布尔操作</title>
+        <pubTime>2019-04-25T04:50:37.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>3D</tag>
+         
+        <tag>Modeling</tag>
+         
+        <tag>Blender</tag>
+         
+        <tag>Geometry</tag>
+         
+        <tag>Mirror</tag>
+         
+        <tag>Boolean</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/190423-df08-arduino-sound-2.html</loc>
-    <lastmod>2019-04-23T13:43:47.210Z</lastmod>
+    <lastmod>2019-04-23T13:51:18.348Z</lastmod>
     <data>
         <display>
         <title>数字制造讲义08-Arduino声音应用2</title>
         <pubTime>2019-04-23T13:42:52.000Z</pubTime>
+        
+        <tag>ArtxCode</tag>
+         
+        <tag>Sound</tag>
+         
+        <tag>声音</tag>
+         
+        <tag>Creative Coding</tag>
+         
+        <tag>制造</tag>
+         
+        <tag>Maker</tag>
+         
+        <tag>Digital Fabrication</tag>
+         
+        <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/190417-df07-arduino-sound.html</loc>
+    <lastmod>2019-04-23T13:51:11.528Z</lastmod>
+    <data>
+        <display>
+        <title>数字制造讲义07-Arduino声音应用</title>
+        <pubTime>2019-04-17T12:08:53.000Z</pubTime>
         
         <tag>ArtxCode</tag>
          
@@ -88,42 +156,6 @@
         <tag>Geometry</tag>
          
         <tag>Subdivision</tag>
-         
-         
-           
-             
-              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/190417-df07-arduino-sound.html</loc>
-    <lastmod>2019-04-17T12:48:00.983Z</lastmod>
-    <data>
-        <display>
-        <title>数字制造讲义07-Arduino声音应用</title>
-        <pubTime>2019-04-17T12:08:53.000Z</pubTime>
-        
-        <tag>ArtxCode</tag>
-         
-        <tag>Sound</tag>
-         
-        <tag>声音</tag>
-         
-        <tag>Creative Coding</tag>
-         
-        <tag>制造</tag>
-         
-        <tag>Maker</tag>
-         
-        <tag>Digital Fabrication</tag>
-         
-        <tag>Fab</tag>
-         
-        <tag>Arduino</tag>
          
          
            
@@ -707,9 +739,9 @@
          
         <tag>MaxMSP</tag>
          
-        <tag>L-system</tag>
-         
         <tag>分形</tag>
+         
+        <tag>L-system</tag>
          
          
            
@@ -743,9 +775,9 @@
          
         <tag>创造力</tag>
          
-        <tag>L-system</tag>
-         
         <tag>分形</tag>
+         
+        <tag>L-system</tag>
          
          
            
@@ -909,9 +941,9 @@
          
         <tag>创造力</tag>
          
-        <tag>分形</tag>
-         
         <tag>混沌</tag>
+         
+        <tag>分形</tag>
          
         <tag>Chaotic</tag>
          
@@ -1089,11 +1121,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>图像</tag>
          
@@ -3399,11 +3431,11 @@
         
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
          
         <tag>匈牙利</tag>
+         
+        <tag>历史</tag>
          
         <tag>奥地利</tag>
          
@@ -3431,9 +3463,9 @@
         
         <tag>Note</tag>
          
-        <tag>人类简史</tag>
-         
         <tag>历史</tag>
+         
+        <tag>人类简史</tag>
          
          
            
@@ -3457,9 +3489,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>捷克</tag>
          
@@ -3485,9 +3517,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>奥地利</tag>
          
@@ -3517,9 +3549,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>捷克</tag>
          
@@ -3545,9 +3577,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>东正教</tag>
          
@@ -3581,9 +3613,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>哥特式</tag>
          
@@ -4853,9 +4885,9 @@
          
         <tag>Coding</tag>
          
-        <tag>编程</tag>
-         
         <tag>神经网络</tag>
+         
+        <tag>编程</tag>
          
         <tag>Backpro</tag>
          
@@ -4977,9 +5009,9 @@
          
         <tag>Coding</tag>
          
-        <tag>编程</tag>
-         
         <tag>神经网络</tag>
+         
+        <tag>编程</tag>
          
         <tag>Programming</tag>
          
@@ -5017,9 +5049,9 @@
          
         <tag>Coding</tag>
          
-        <tag>编程</tag>
-         
         <tag>神经网络</tag>
+         
+        <tag>编程</tag>
          
         <tag>Programming</tag>
          
@@ -5457,11 +5489,11 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
          
            
@@ -5487,11 +5519,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>颜色</tag>
          
@@ -5521,9 +5553,9 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
          
          
            
@@ -5551,9 +5583,9 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
          
          
            
@@ -5579,11 +5611,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
          
            
@@ -5609,11 +5641,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>数学</tag>
          
@@ -5643,11 +5675,11 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
          
            
@@ -5673,11 +5705,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>颜色</tag>
          
@@ -5705,11 +5737,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>颜色</tag>
          
@@ -5739,11 +5771,11 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
          
            
@@ -5769,11 +5801,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>Math</tag>
          
@@ -5801,11 +5833,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>Chromakeying</tag>
          
@@ -5835,11 +5867,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>列表</tag>
          
@@ -5867,11 +5899,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>颜色</tag>
          
@@ -5899,11 +5931,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
          
            
@@ -5929,11 +5961,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>图像</tag>
          
@@ -5961,11 +5993,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>图像</tag>
          
@@ -5993,11 +6025,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>图像</tag>
          
@@ -6025,11 +6057,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>图像</tag>
          
@@ -6713,9 +6745,9 @@
         
         <tag>产品</tag>
          
-        <tag>用户</tag>
-         
         <tag>UCD</tag>
+         
+        <tag>用户</tag>
          
          
            

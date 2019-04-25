@@ -7,8 +7,24 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/190425-3d08-boolean-modifier.html</loc>
+        <lastmod>2019-04-25T04:52:01.050Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://uegeek.com/190423-df08-arduino-sound-2.html</loc>
-        <lastmod>2019-04-23T13:43:47.210Z</lastmod>
+        <lastmod>2019-04-23T13:51:18.348Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/190417-df07-arduino-sound.html</loc>
+        <lastmod>2019-04-23T13:51:11.528Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,14 +41,6 @@
     <url>
         <loc>http://uegeek.com/190411-3d06-geometry-practice.html</loc>
         <lastmod>2019-04-18T14:27:01.158Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/190417-df07-arduino-sound.html</loc>
-        <lastmod>2019-04-17T12:48:00.983Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
