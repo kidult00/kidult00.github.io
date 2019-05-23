@@ -275,9 +275,9 @@
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
         <tag>Arduino</tag>
-        <tag>单片机</tag>
         <tag>电路</tag>
         <tag>Fab</tag>
+        <tag>单片机</tag>
       </tags>
   </entry>
   <entry>
@@ -337,9 +337,9 @@
         <tag>AI</tag>
         <tag>ArtxCode</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
-        <tag>艺术</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>Agent</tag>
@@ -359,9 +359,9 @@
         <tag>AI</tag>
         <tag>ArtxCode</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
-        <tag>艺术</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>Agent</tag>
@@ -380,9 +380,9 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
-        <tag>艺术</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>Markov</tag>
@@ -400,9 +400,9 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
-        <tag>艺术</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>MaxMSP</tag>
@@ -420,9 +420,9 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
-        <tag>艺术</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>分形</tag>
@@ -439,9 +439,9 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
-        <tag>艺术</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>Shape Grammar</tag>
@@ -472,9 +472,9 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
-        <tag>艺术</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>Tessellation</tag>
@@ -490,9 +490,9 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
-        <tag>艺术</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>规则系统</tag>
@@ -508,9 +508,9 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
-        <tag>艺术</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>混沌</tag>
@@ -529,10 +529,10 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>颜色</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
-        <tag>艺术</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>随机</tag>
@@ -549,9 +549,9 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
-        <tag>艺术</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>随机</tag>
@@ -570,9 +570,9 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
-        <tag>艺术</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>随机</tag>
@@ -590,9 +590,9 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>Creative Coding</tag>
+        <tag>艺术</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
-        <tag>艺术</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
       </tags>
@@ -945,12 +945,12 @@
         <tag>交互设计</tag>
         <tag>AI</tag>
         <tag>ArtxCode</tag>
-        <tag>艺术</tag>
         <tag>Deisgn</tag>
         <tag>人工智能</tag>
         <tag>HCI</tag>
         <tag>人机交互</tag>
         <tag>人机共生</tag>
+        <tag>艺术</tag>
         <tag>跨界</tag>
         <tag>创新</tag>
       </tags>
@@ -2704,8 +2704,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>哥特式</tag>
         <tag>巴洛克</tag>
         <tag>布拉格</tag>
@@ -2724,8 +2724,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>东正教</tag>
         <tag>基督教</tag>
         <tag>天主教</tag>
@@ -2743,8 +2743,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
       </tags>
   </entry>
@@ -2758,8 +2758,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>奥地利</tag>
         <tag>哈布斯堡王朝</tag>
         <tag>维也纳</tag>
@@ -2775,8 +2775,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
       </tags>
   </entry>
@@ -2789,11 +2789,11 @@
       </categories>
       <tags>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
+        <tag>捷克</tag>
         <tag>匈牙利</tag>
         <tag>奥地利</tag>
-        <tag>捷克</tag>
         <tag>斯洛伐克</tag>
       </tags>
   </entry>
@@ -2806,8 +2806,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>人类简史</tag>
         <tag>历史</tag>
+        <tag>人类简史</tag>
       </tags>
   </entry>
   <entry>

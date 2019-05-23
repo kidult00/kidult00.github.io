@@ -926,6 +926,13 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/tags/%E4%B8%AD%E6%AC%A7/</loc>
+        <lastmod>2018-09-25T08:07:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
         <lastmod>2018-09-25T08:07:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -933,7 +940,7 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E4%B8%AD%E6%AC%A7/</loc>
+        <loc>http://uegeek.com/tags/%E6%8D%B7%E5%85%8B/</loc>
         <lastmod>2018-09-25T08:07:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -948,13 +955,6 @@
 
     <url>
         <loc>http://uegeek.com/tags/%E5%A5%A5%E5%9C%B0%E5%88%A9/</loc>
-        <lastmod>2018-09-25T08:07:26.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E6%8D%B7%E5%85%8B/</loc>
         <lastmod>2018-09-25T08:07:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1619,6 +1619,13 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/</loc>
+        <lastmod>2018-12-13T11:51:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://uegeek.com/tags/Generative-Art/</loc>
         <lastmod>2018-12-13T11:51:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1627,13 +1634,6 @@
 
     <url>
         <loc>http://uegeek.com/tags/Computational-Creativity/</loc>
-        <lastmod>2018-12-13T11:51:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/</loc>
         <lastmod>2018-12-13T11:51:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1942,21 +1942,21 @@
 
     <url>
         <loc>http://uegeek.com/tags/Alzheimer-s/</loc>
-        <lastmod>2019-05-23T09:35:55.405Z</lastmod>
+        <lastmod>2019-05-23T09:40:35.210Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E9%98%BF%E5%B0%94%E8%8C%A8%E6%B5%B7%E9%BB%98/</loc>
-        <lastmod>2019-05-23T09:35:55.405Z</lastmod>
+        <lastmod>2019-05-23T09:40:35.210Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2019-05-23T09:35:55.405Z</lastmod>
+        <lastmod>2019-05-23T09:40:35.210Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
