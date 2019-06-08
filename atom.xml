@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2019-05-23T09:40:35.210Z</updated>
+  <updated>2019-06-08T12:16:13.530Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一文看懂材质/纹理 Material, Texture, Shading, Shader 的区别</title>
+    <link href="http://uegeek.com/190608-material-texture-shaders.html"/>
+    <id>http://uegeek.com/190608-material-texture-shaders.html</id>
+    <published>2019-06-08T12:13:37.000Z</published>
+    <updated>2019-06-08T12:16:13.530Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><p>在计算机图形学和三维设计中，有几个容易混淆的概念。今天我们来一举拿下。</p><h2 id="概念整理"><a href="#概念整理" class="headerlink" title="概念整理"></a>概念整理</h2><table><thead><tr><th>英文</th><th>中文</th><th>本质</th><th>释义</th></tr></thead><tbody><tr><td><a href="https://www.wikiwand.com/en/Materials_system" target="_blank" rel="noopener">Material</a></td><td>材质</td><td>数据集</td><td>表现物体对光的交互，供渲染器读取的数据集，包括贴图纹理、光照算法等</td></tr><tr><td><a href="https://www.wikiwand.com/en/Texture_mapping" target="_blank" rel="noopener">Texture mapping</a></td><td><a href="[https://www.wikiwand.com/zh/%E6%9D%90%E8%B4%A8%E8%B4%B4%E5%9B%BE](https://www.wikiwand.com/zh/材质贴图">纹理贴图</a>)</td><td>图像映射规则</td><td>把存储在内存里的位图，通过 UV 坐标映射到渲染物体的表面</td></tr><tr><td>Shading</td><td>底纹、阴影</td><td>光影效果</td><td>根据表面法线、光照、视角等计算得出的光照结果</td></tr><tr><td><a href="https://www.wikiwand.com/en/Shader" target="_blank" rel="noopener">Shader</a></td><td><a href="[https://www.wikiwand.com/zh/%E7%9D%80%E8%89%B2%E5%99%A8](https://www.wikiwand.com/zh/着色器">着色器</a>)</td><td>程序</td><td>编写显卡渲染画面的算法来即时演算生成贴图的程序</td></tr><tr><td><a href="https://www.wikiwand.com/zh/GLSL" target="_blank" rel="noopener">GLSL</a></td><td></td><td>程序语言</td><td>OpenGL 着色语言</td></tr></tbody></table><p>可以这么总结：</p><blockquote><p>Material 是表现 Shading 的数据集。其他几个概念都是生成这一数据集的资源或者工具。</p></blockquote><p><img src="http://img.viz.mobi/MaterialConcepts.png" alt=""></p><p>这么多概念，无非是为了完成一个共同目标：<strong>用计算机表现真实可信的 Shading</strong>。</p><p>Shading 是真实世界中的光影效果，它是由物体表面材质、灯光、观察者的视角等多种因素共同决定的。要实现计算机的模拟生成，是一个非常复杂的过程。不过它的原理大概可以简化为一个函数：</p><blockquote><p>Intensity =  Material (Light, Eye)</p></blockquote><p>也就是说，光影的强度，是由 a.照在材质上的光  b.视线 共同决定的。</p><h2 id="如何制造-Shading-效果？"><a href="#如何制造-Shading-效果？" class="headerlink" title="如何制造 Shading 效果？"></a>如何制造 Shading 效果？</h2><p>万物看起来不尽相同，它们有各自的材质和纹理。</p><p>纹理（Texture）是什么？</p><blockquote><p>Texture is pattern or image applied to a surface to change its color, shininess or just about any other part of its appearance. —— <a href="https://classroom.udacity.com/courses/cs291/lessons/124106595/concepts/1703725970923#" target="_blank" rel="noopener">Texture introduction - Udacity</a></p></blockquote><p>纹理就是一段有规律、可重复的图像。利用纹理，我们可以非常取巧地让三维物体看起来更真实。</p><h3 id="方法一：贴上皮肤"><a href="#方法一：贴上皮肤" class="headerlink" title="方法一：贴上皮肤"></a>方法一：贴上皮肤</h3><p>贴图可以说是最简单的材质方法：</p><ul><li>选定物体表面的某些区域</li><li>更改这个区域的一些属性(如颜色、反光度、透明度等)</li></ul><p>那么 UV Mapping 又是什么？跟 Texture Mapping 有什么区别呢？</p><p>可以这么理解，Texture Mapping 是目标，把材质用一种规则映射到物体表面。而 UV Mapping 就是映射的规则。在这个规则中，给三维体每一个顶点增加两个值 U 和 V，它们记录了三维表面和二维表面的坐标对应关系：</p><p><img src="http://img.viz.mobi/textureUV.jpg" alt=""></p><p>via <a href="https://classroom.udacity.com/courses/cs291/lessons/124106595/concepts/1703725990923" target="_blank" rel="noopener">Texture UVs</a></p><p>有了映射关系，我们就可以分门别类地把影响光照的不同参数，都通过图片映射到三维几何体上。这些参数包括：</p><ul><li><p>Diffuse Map 漫反射：模拟一个发光物对物体的方向性影响(Directional Impact)。它是光照模型中最显著的组成部分</p><p><img src="https://downloads.intercomcdn.com/i/o/52646545/49dbc08cd3840bc2d7654bdf/file-YYtlQsfLg4.jpg" alt=""></p></li><li><p>Specular/Reflection Map 镜面：模拟有光泽物体上面出现的亮点，它的颜色更接近光而不是物体的颜色</p><p><img src="https://downloads.intercomcdn.com/i/o/52646559/173c8c8c729e2912d8d8ff20/file-qPzs8jkFjw.jpg" alt=""></p></li><li><p>Normal/Bump Map 法线：决定物体形状的垂直于它的法线向量，提供有关物体表面深度的细节。每一种颜色代表了不同的轴向，看起来类似这样：</p><p><img src="https://downloads.intercomcdn.com/i/o/52646553/fe98859890182904757a311a/file-UzyMUgLevF.jpg" alt=""></p></li><li><p>Displacement Map 位移：使用高度图将经过纹理化的表面的实际几何点位置，沿着表面法线根据保存在纹理中的数值进行移位。相比法线，位移贴图更多用于大规模的地形材质，包括悬崖、岩石等</p><p><img src="https://downloads.intercomcdn.com/i/o/52646556/ccdbd16e6f1ead8d59ac7273/file-L7LoPDZQxz.jpg" alt=""></p></li><li><p>Ambient Map 环境</p></li><li><p>Gloss/Roughness Map 光泽</p></li></ul><h3 id="方法二：长出皮肤"><a href="#方法二：长出皮肤" class="headerlink" title="方法二：长出皮肤"></a>方法二：长出皮肤</h3><p>贴上皮肤的方法虽好，但是局限也很明显。如果没有合适的图像，或者要创建真实世界中罕见的材质，皮肤就不好找了。这个时候需要让程序帮忙「生长」出新的皮肤。</p><p>我们把这种程序叫做 Shaders。</p><p>如果你还记得，Shading 是始终如一的终极目标，那么应该就能明白为什么实现这个目标的程序叫做 Shaders 了。</p><p><img src="https://unity3d.com/sites/default/files/learn/shaderintro01.png" alt=""></p><p>它实际上是一个程序片段、一系列的指令，可以将三维 Mesh(网格)以指定方式与颜色、贴图等组合，完成复杂的计算输出（渲染器可读取的点和颜色的对应关系），会对屏幕上的每个像素同时下达命令。也就是说，代码必须根据像素在屏幕上的不同位置执行不同的操作。就像活字印刷，你的程序就像一个 function（函数），输入位置信息，输出颜色信息，当它编译完之后会以相当快的速度运行。</p><p>为什么 Shaders 运行特别快？因为它们常常运行在专门为并行处理（parallel processing）而设计的 GPU 上面。</p><p>最后一个问题，用什么来写 shaders 程序呢？答案是 OpenGL 着色器语言 (GLSL) 。GLSL 是用类 C 语言写成的，它为图形计算量身定制，包含一些针对向量和矩阵操作的有用特性。</p><hr><p>好了，今天涉及到的概念实在太多了。希望对大家进入三维世界玩耍有所帮助。</p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://learnopengl-cn.readthedocs.io/zh/latest/02%20Lighting/02%20Basic%20Lighting/" target="_blank" rel="noopener">光照基础 - LearnOpenGL-CN</a></li><li><a href="https://classroom.udacity.com/courses/cs291/" target="_blank" rel="noopener">交互式 3D 图形 - Udacity</a></li><li><a href="https://www.zhihu.com/question/25745472" target="_blank" rel="noopener">贴图、纹理、材质的区别是什么？ - 知乎</a></li><li><a href="https://gameinstitute.qq.com/community/detail/115074" target="_blank" rel="noopener">【Shader科普】贴图、纹理、材质的区别-腾讯游戏学院</a></li><li><a href="https://help.poliigon.com/general-information/what-are-the-different-texture-maps-for" target="_blank" rel="noopener">What are the different texture maps for? | Poliigon Help Center</a></li><li><a href="https://learnopengl-cn.readthedocs.io/zh/latest/05%20Advanced%20Lighting/04%20Normal%20Mapping/" target="_blank" rel="noopener">法线贴图 - LearnOpenGL-CN</a></li><li><a href="https://www.wikiwand.com/zh/%E4%BD%8D%E7%A7%BB%E8%B4%B4%E5%9B%BE" target="_blank" rel="noopener">位移贴图 - Wikiwand</a></li><li><a href="https://unity3d.com/es/learn/tutorials/topics/graphics/gentle-introduction-shaders" target="_blank" rel="noopener">A Gentle Introduction to Shaders - Unity</a></li><li>[GLSL - Wikiwand](</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;在计算机图形学和三维设计中，有几个容易混淆的概念。今天我们来一举拿下。&lt;/p&gt;
+&lt;h2 id=&quot;概念整理&quot;&gt;&lt;a href=&quot;#概念整理&quot; class=&quot;headerlink&quot; title=&quot;概念整理&quot;&gt;&lt;/a&gt;概念整理&lt;/h2&gt;&lt;tab
+      
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
+    
+      <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
+    
+      <category term="OpenGL" scheme="http://uegeek.com/tags/OpenGL/"/>
+    
+      <category term="Material" scheme="http://uegeek.com/tags/Material/"/>
+    
+      <category term="Shader" scheme="http://uegeek.com/tags/Shader/"/>
+    
+      <category term="材质" scheme="http://uegeek.com/tags/%E6%9D%90%E8%B4%A8/"/>
+    
+      <category term="贴图" scheme="http://uegeek.com/tags/%E8%B4%B4%E5%9B%BE/"/>
+    
+      <category term="计算机图形" scheme="http://uegeek.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>在生命战场，请远离伪科普——医药科普类书籍避坑方法</title>
@@ -110,9 +151,9 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
-    
       <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
+    
+      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
   </entry>
   
@@ -180,9 +221,9 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
-    
       <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
+    
+      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
   </entry>
   
@@ -248,13 +289,13 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
-    
       <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
-      <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
+      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
+    
+      <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
     
       <category term="OSC" scheme="http://uegeek.com/tags/OSC/"/>
     
@@ -356,15 +397,15 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
+    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
     
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
+      <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
     
       <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
-    
-      <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
     
       <category term="OSC" scheme="http://uegeek.com/tags/OSC/"/>
     
@@ -430,11 +471,11 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
+    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
-    
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
       <category term="传感器" scheme="http://uegeek.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
     
@@ -496,11 +537,11 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
+      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
+    
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
-    
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
       <category term="基尔霍夫定律" scheme="http://uegeek.com/tags/%E5%9F%BA%E5%B0%94%E9%9C%8D%E5%A4%AB%E5%AE%9A%E5%BE%8B/"/>
     
@@ -568,13 +609,13 @@
     
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
-      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
-    
-      <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
-    
       <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
     
+      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
+    
       <category term="单片机" scheme="http://uegeek.com/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+      <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
     
   </entry>
   
@@ -674,50 +715,6 @@
       <category term="幸福" scheme="http://uegeek.com/tags/%E5%B9%B8%E7%A6%8F/"/>
     
       <category term="成长" scheme="http://uegeek.com/tags/%E6%88%90%E9%95%BF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>生成式艺术和算法创作10-响应式智能体和智能架构</title>
-    <link href="http://uegeek.com/181213-generative-art-creativity-10.html"/>
-    <id>http://uegeek.com/181213-generative-art-creativity-10.html</id>
-    <published>2018-12-13T11:45:46.000Z</published>
-    <updated>2018-12-13T11:51:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/CC-blogtitle.png" alt=""></p><a id="more"></a><ul><li><a href="https://www.uegeek.com/181009-generative-art-creativity-01.html" target="_blank" rel="noopener">生成式艺术和算法创作01-概述</a></li><li><a href="https://www.uegeek.com/181014-generative-art-creativity-02.html" target="_blank" rel="noopener">生成式艺术和算法创作02-随机和噪声</a></li><li><a href="https://www.uegeek.com/181021-generative-art-creativity-03.html" target="_blank" rel="noopener">生成式艺术和算法创作03-混沌和分形</a></li><li><a href="https://www.uegeek.com/181023-generative-art-creativity-04.html" target="_blank" rel="noopener">生成式艺术和算法创作04-规则系统</a></li><li><a href="https://www.uegeek.com/181107-generative-art-creativity-05.html" target="_blank" rel="noopener">生成式艺术和算法创作05-Tessellation</a></li><li><a href="https://www.uegeek.com/181120-generative-art-creativity-06.html" target="_blank" rel="noopener">生成式艺术和算法创作06-形状语法</a></li><li><a href="https://www.uegeek.com/181123-generative-art-creativity-07.html" target="_blank" rel="noopener">生成式艺术和算法创作07-向自然致敬的 L-system</a></li><li><a href="https://www.uegeek.com/181130-generative-art-creativity-08.html" target="_blank" rel="noopener">生成式艺术和算法创作08-马尔可夫模型</a></li><li><a href="https://www.uegeek.com/181208-generative-art-creativity-09.html" target="_blank" rel="noopener">生成式艺术和算法创作09-人工智能体</a></li></ul><p>上一篇我们了解了<a href="https://www.uegeek.com/181208-generative-art-creativity-09.html" target="_blank" rel="noopener">人工智能体的概念和在创作领域的应用</a>。今天我们来看看其中一种重要的智能体：响应式智能体。</p><h2 id="Langton’s-ant"><a href="#Langton’s-ant" class="headerlink" title="Langton’s ant"></a>Langton’s ant</h2><p>兰顿蚂蚁（Langton’s ant）是元胞自动机的例子。它由 Christopher Langton 在 1986 年提出，它由黑白格子和一只「蚂蚁」构成，是一个二维图灵机。</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/LangtonsAntAnimated.gif" alt=""></p><p>Animation of first 200 steps of Langton’s ant</p><p>兰顿蚂蚁的算法:</p><ul><li>第1步：向前迈出一步</li><li>步骤2：如果当前单元格为白色，将其变为黑色并向右旋转 90°</li><li>步骤3：如果当前单元格为黑色，则将其变为白色并向左转 90°</li></ul><p>兰顿蚂蚁拥有非常简单的逻辑和复杂的表现。在 2000 年，兰顿蚂蚁的图灵完备性被证明。兰顿蚂蚁的想法后来被推广，比如使用多种颜色。</p><p><img src="https://ai2-s2-public.s3.amazonaws.com/figures/2017-08-08/1bd77e59d60852dd135b541fa41b4492713c461b/3-Figure6-1.png" alt=""></p><p>兰顿蚂蚁其实就是一种响应式的架构。它有以下优点：</p><ul><li>简单</li><li>计算易处理</li><li>稳健性</li><li>模型优雅</li></ul><p>而缺点则包括：</p><ul><li>仅使用局部知识推动行动，无法将非局部或长期信息考虑在内</li><li>缺乏清晰的工程设计方法，难以调试</li><li>丧失透明度和可读性，与人类的互动很困难</li></ul><h2 id="智能体架构"><a href="#智能体架构" class="headerlink" title="智能体架构"></a>智能体架构</h2><p>典型的认知智能体由一系列过程组成。</p><p><img src="http://img.viz.mobi/robot%20layered%20control%20system.png" alt="cognitive agent arch"></p><p>智能体通过感应器感知世界。由一个感知模块提供信息给建模模块，更新世界的表征。然后由一个向智能体提供目标和关于世界的信念的规划模块，决定执行什么动作。最后，有一个马达控制模块执行动作，向促动器发送命令。</p><p>Rodney Brooks 提出的这个架构是任务完成行为的层次结构，较低层代表更原始的行为。 每种行为都是一种相当简单的规则结构，每种行为都与其他行为竞争，以控制智能体 。</p><p>Rodney Brooks 也提出过另外一种架构——不是基于一系列链接在一起的模块，而是在行为层次上彼此平行放置：</p><p><img src="http://img.viz.mobi/robot%20layered%20control%20system2.png" alt="reactive agents"></p><p>在子层级中，可以使用更灵活的结构：</p><p><img src="http://img.viz.mobi/subsumption%20architecture-modified.png" alt="subsumption arch"></p><p>Rodney Brooks 根据这些架构设计了机器人 Ghengis：</p><p><img src="http://www.ai.mit.edu/projects/genghis/genghis.jpg" alt=""></p><h2 id="混合架构"><a href="#混合架构" class="headerlink" title="混合架构"></a>混合架构</h2><p>混合架构设计中的关键问题，是各个子组件（响应组件和协商组件）之间交互的元控制。</p><p>多层架构：</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/5-reactive-agents-and-multiagent-systems/layered%20hybrid%20arch.png" alt="layered hybrid arch"></p><p>水平结构的例子：</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/5-reactive-agents-and-multiagent-systems/layering%20arch.png" alt="layering arch"></p><p>Touring Machines: Autonomous Agents with Attitudes (book, by Innes A. Ferguson, Publisher: IEEE Computer Society Press, Published Date: 01/10/2017)</p><p>垂直架构的例子：</p><p><img src="/Users/kidult00/Downloads/Courses/Kadenze/generative-art-and-computational-creativity-i/5-reactive-agents-and-multiagent-systems/InteRRaP.png" alt="InteRRaP"></p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.wikiwand.com/en/Intelligent_agent" target="_blank" rel="noopener">Intelligent agent - Wikiwand</a></li><li>Rodney Brooks, A Robust Layered Control System for a Mobile Robot, AI Memo report, 1985</li><li><a href="https://www.wikiwand.com/en/Langton%27s_ant" target="_blank" rel="noopener">Langton’s ant - Wikiwand</a></li><li><a href="https://www.kadenze.com/courses/generative-art-and-computational-creativity-i" target="_blank" rel="noopener">Generative Art and Computational Creativity | Kadenze</a></li><li><a href="https://www.kadenze.com/courses/generative-art-and-computational-creativity-i/sessions/cognitive-agents-and-multiagent-systems" target="_blank" rel="noopener">Cognitive Agents And Multiagent Systems | Kadenze</a></li></ul><p>Robot art</p><p>CYSP1, Nicolas Schoffer, 1953</p><p><img src="https://www.olats.org/schoffer/archives/img/cysprd1.jpg" alt=""></p><p>Nenage, Norman White, 1974, multi-robot</p><p><img src="http://dada.compart-bremen.de/imageUploads/medium/11WhiteMenage74.jpg" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/CC-blogtitle.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="AI" scheme="http://uegeek.com/tags/AI/"/>
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
-      <category term="Generative Art" scheme="http://uegeek.com/tags/Generative-Art/"/>
-    
-      <category term="Computational Creativity" scheme="http://uegeek.com/tags/Computational-Creativity/"/>
-    
-      <category term="创意" scheme="http://uegeek.com/tags/%E5%88%9B%E6%84%8F/"/>
-    
-      <category term="创造力" scheme="http://uegeek.com/tags/%E5%88%9B%E9%80%A0%E5%8A%9B/"/>
-    
-      <category term="Agent" scheme="http://uegeek.com/tags/Agent/"/>
-    
-      <category term="智能体" scheme="http://uegeek.com/tags/%E6%99%BA%E8%83%BD%E4%BD%93/"/>
-    
-      <category term="认知智能体" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5%E6%99%BA%E8%83%BD%E4%BD%93/"/>
-    
-      <category term="BDI" scheme="http://uegeek.com/tags/BDI/"/>
     
   </entry>
   
