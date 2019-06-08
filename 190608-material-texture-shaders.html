@@ -100,14 +100,13 @@
 
 
 
-<meta name="description" content="在计算机图形学和三维设计中，有几个容易混淆的概念。今天我们来一举拿下。 概念整理   英文 中文 本质 释义     Material 材质 数据集 表现物体对光的交互，供渲染器读取的数据集，包括贴图纹理、光照算法等   Texture mapping 纹理贴图) 图像映射规则 把存储在内存里的位图，通过 UV 坐标映射到渲染物体的表面   Shading 底纹、阴影 光影效果 根据表面法线、光">
 <meta name="keywords" content="3D,Texture,OpenGL,Material,Shader,材质,贴图,计算机图形">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一文看懂材质&#x2F;纹理 Material, Texture, Shading, Shader 的区别">
 <meta property="og:url" content="http://uegeek.com/190608-material-texture-shaders.html">
 <meta property="og:site_name" content="00&#39;s Adventure">
-<meta property="og:description" content="在计算机图形学和三维设计中，有几个容易混淆的概念。今天我们来一举拿下。 概念整理   英文 中文 本质 释义     Material 材质 数据集 表现物体对光的交互，供渲染器读取的数据集，包括贴图纹理、光照算法等   Texture mapping 纹理贴图) 图像映射规则 把存储在内存里的位图，通过 UV 坐标映射到渲染物体的表面   Shading 底纹、阴影 光影效果 根据表面法线、光">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.pinimg.com/150x150/c7/dc/3f/c7dc3f37515f0b4d200d85392c523fc4.jpg">
 <meta property="og:image" content="http://img.viz.mobi/MaterialConcepts.png">
 <meta property="og:image" content="http://img.viz.mobi/textureUV.jpg">
 <meta property="og:image" content="https://downloads.intercomcdn.com/i/o/52646545/49dbc08cd3840bc2d7654bdf/file-YYtlQsfLg4.jpg">
@@ -115,11 +114,10 @@
 <meta property="og:image" content="https://downloads.intercomcdn.com/i/o/52646553/fe98859890182904757a311a/file-UzyMUgLevF.jpg">
 <meta property="og:image" content="https://downloads.intercomcdn.com/i/o/52646556/ccdbd16e6f1ead8d59ac7273/file-L7LoPDZQxz.jpg">
 <meta property="og:image" content="https://unity3d.com/sites/default/files/learn/shaderintro01.png">
-<meta property="og:updated_time" content="2019-06-08T12:16:13.530Z">
+<meta property="og:updated_time" content="2019-06-08T12:29:28.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一文看懂材质&#x2F;纹理 Material, Texture, Shading, Shader 的区别">
-<meta name="twitter:description" content="在计算机图形学和三维设计中，有几个容易混淆的概念。今天我们来一举拿下。 概念整理   英文 中文 本质 释义     Material 材质 数据集 表现物体对光的交互，供渲染器读取的数据集，包括贴图纹理、光照算法等   Texture mapping 纹理贴图) 图像映射规则 把存储在内存里的位图，通过 UV 坐标映射到渲染物体的表面   Shading 底纹、阴影 光影效果 根据表面法线、光">
-<meta name="twitter:image" content="http://img.viz.mobi/MaterialConcepts.png">
+<meta name="twitter:image" content="https://i.pinimg.com/150x150/c7/dc/3f/c7dc3f37515f0b4d200d85392c523fc4.jpg">
 
 
 
@@ -450,7 +448,8 @@
       
 
       
-        <a id="more"></a>
+        <p><img src="https://i.pinimg.com/150x150/c7/dc/3f/c7dc3f37515f0b4d200d85392c523fc4.jpg" alt=""></p>
+<a id="more"></a>
 <p>在计算机图形学和三维设计中，有几个容易混淆的概念。今天我们来一举拿下。</p>
 <h2 id="概念整理"><a href="#概念整理" class="headerlink" title="概念整理"></a>概念整理</h2><table>
 <thead>
