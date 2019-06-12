@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2019-06-08T12:29:28.947Z</updated>
+  <updated>2019-06-12T08:55:16.453Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -17,13 +17,53 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Blender Principle BSDF shader 使用教程</title>
+    <link href="http://uegeek.com/190612-principled-bsdf.html"/>
+    <id>http://uegeek.com/190612-principled-bsdf.html</id>
+    <published>2019-06-12T08:53:17.000Z</published>
+    <updated>2019-06-12T08:55:16.453Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://docs.blender.org/manual/en/latest/_images/render_cycles_nodes_types_shaders_principled_example-1a.jpg" alt=""></p><a id="more"></a><p>Principle BSDF 是 Blender 默认的材质 shader 节点。</p><p>如果你刚接触 Blender ，或者对材质还不太了解，那么见到 Principled BSDF 的选项一定有点懵：</p><p><img src="https://docs.blender.org/manual/zh-hans/2.79/_images/render_cycles_nodes_types_shaders_principled_node.png" alt=""></p><p>这么多参数到底都是啥？要怎样调出想要的玻璃或泥土材质？</p><p>今天我们就来仔细了解一下这个「万能」材质shader。(如果你对 Material、shader、texture 还感到茫然，建议先看一下 <a href="https://www.uegeek.com/190608-material-texture-shaders.html" target="_blank" rel="noopener">一文看懂材质/纹理 Material, Texture, Shading, Shader 的区别</a>)</p><h2 id="什么是-Principled-BSDF？"><a href="#什么是-Principled-BSDF？" class="headerlink" title="什么是 Principled BSDF？"></a>什么是 Principled BSDF？</h2><blockquote><p>Principled BSDF 将多个层组合成一个易于使用的节点。 它基于迪士尼原理模型，也称为“PBR”着色器，使其与其他软件兼容，如皮克斯的 Renderman®和虚幻引擎®。 从 SubstancePainter® 等软件绘制或烘焙的图像纹理可以直接链接到此着色器中的相应参数。</p></blockquote><p>这是 Blender 官方文档中对 Principled BSDF 的说明。</p><p>可以说，这是一款综合型的材质生成着色器(shader)，跟时下普遍使用的 PBR (<a href="https://en.wikipedia.org/wiki/Physically_based_rendering" target="_blank" rel="noopener">Physically based rendering</a>) 是原理类似的技术。</p><p>那么，BSDF 又是什么？跟 BSDF 相似的还有一个 BRDF ：</p><blockquote><p>BRDF - Bidirectional reflectance distribution function</p><p>BSDF - Bidirectional scattering distribution function</p></blockquote><p>它们是 「双向 反射/散射」分布函数的缩写。</p><p>想要正确模拟真实世界中的光照，需要理解光遇到物体表面时发生的<a href="http://photorealizer.blogspot.com/2012/05/diffuse-and-specular-reflection.html" target="_blank" rel="noopener">反射和散射</a>。</p><p><img src="http://2.bp.blogspot.com/-6DFfNjFAq3Q/T4p0bf3wEoI/AAAAAAAAAa8/d7jB6gXN6aI/s320/Diffuse_reflection.gif" alt=""></p><blockquote><p>Non metals will exhibit both reflection and refraction. </p></blockquote><p><img src="http://img.viz.mobi/BSDF-img1.png" alt=""></p><blockquote><p>Metallic materials only have reflection. All refracted light is absorbed. </p></blockquote><p><img src="http://img.viz.mobi/BSDF-img2.png" alt=""></p><p>BSDF 就是帮助我们实现更逼真的光散射效果的函数。</p><p>在 Blender 的旧版本中，默认的材质节点是 emission。为什么后来改成了这个看似很复杂的 Principled BSDF 呢？Blender guru 在<a href="https://www.youtube.com/watch?v=4H5W6C_Mbck&amp;t=1669s" target="_blank" rel="noopener">这个视频</a> 中分析了 Principle BSDF 的优势，包括：</p><ul><li>默认处理 fresnel：渲染引擎自动处理物体边缘反光强于中心的光照效果</li><li>更合理的粗糙度：粗糙度增加，fresnel 相应减弱</li><li>金属和绝缘体的区分：金属反光有颜色，绝缘体没有</li><li>其他一些技术细节</li></ul><h2 id="Principled-BSDF-的参数"><a href="#Principled-BSDF-的参数" class="headerlink" title="Principled BSDF 的参数"></a>Principled BSDF 的参数</h2><p>大致了解了 Principled BSDF 之后，我们再来熟悉一下它哪些看似眼花缭乱的参数。</p><p>作为材质 shader 的头牌，它的能耐一定不容小觑。下面这张官方文档中的图，十分直观地展现了 Principled BSDF 的能力：</p><p><img src="https://docs.blender.org/manual/en/latest/_images/render_cycles_nodes_types_shaders_principled_example-1a.jpg" alt=""></p><p>图片左侧就是 BSDF 的主要参数，右侧展示了设置为0~1不同数值时材质的效果。</p><p>看似非常 overwhelming，对吧？别晕，我们仔细来观察一下，哪些行的最左侧和最右侧差别最大？</p><p>其实只有这几行：metallic，specular，roughness，transmission。</p><p>这个观察结果非常重要，它提示我们，BSDF 中最重要也是最常用的参数，其实只有几个：</p><ul><li>Base color</li><li>Metallic：大多数情况只取 0 或 1，绝缘体为0，金属为1，不需要取中间状态</li><li>Roughness</li><li>Normal(bump mapping)</li></ul><p><img src="http://img.viz.mobi/render_cycles_nodes_types_shaders_principled_node-zh.png" alt=""></p><p>为什么没有把 Specular（反光）列在里面？因为反光程度跟材质的关系很大。如果是金属，反光会较强，而非金属的反射较弱。所以一般不调 Specular，而是设置 Roughness 是 0 (非金属) 还是 1 (金属)。</p><p>更多的参数说明，可以参考<a href="https://docs.blender.org/manual/en/2.79/render/cycles/nodes/types/shaders/principled.html" target="_blank" rel="noopener">官方文档</a>。</p><h2 id="如何使用-Principled-BSDF？"><a href="#如何使用-Principled-BSDF？" class="headerlink" title="如何使用 Principled BSDF？"></a>如何使用 Principled BSDF？</h2><p>接下来以 Suzanne 为例，看看如何使用 Principled BSDF 调节材质。</p><p><img src="http://img.viz.mobi/190602bsdf.jpg" alt=""></p><p>首先，寻找并下载自己喜欢的材质包(图片分辨率最好2k以上)，将材质包中不同的图片连接到节点的对应参数。一般来说，图片（从文件名可以判断）对应的参数如下：</p><ul><li>Base color 基础色 —— 连接到 BSDF 中的 basecolor</li><li>Metallic 金属 —— 数据源为 Non-color data，连接到 BSDF 中的 metallic</li><li>Roughness 粗糙度—— 数据源为 Non-color data，连接到 BSDF 中的 roughness</li><li>Normal 法线 —— 数据源为 Non-color data，新建 Vector - normal map 节点，新建 Vector-bump node 节点，连接到 normal，再连接到 BSDF 中的 normal</li><li>Height/displacement 等高线 —— 数据源为 Non-color data，连接到 BSDF 中的 metallic</li><li>Ambient occlusion 环境光遮蔽—— Blender已经自动处理了，不过在游戏引擎里需要用到</li></ul><p>Node editor 的连线如下：</p><p><img src="http://img.viz.mobi/SuzanneBSDF.jpg" alt=""></p><p>在图片节点上游，还有两个用于修改贴图位置的节点</p><ul><li>Vector-mapping 节点，连接 vector 到导入的素材</li><li>Input-texture coordinates 节点，连接 uv 出口到 Mapping 的 Vector 入口</li></ul><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><p><a href="https://docs.blender.org/manual/en/2.79/render/cycles/nodes/types/shaders/principled.html" target="_blank" rel="noopener">Principled BSDF — Blender Manual</a></p><p><a href="https://blog.selfshadow.com/publications/s2015-shading-course/hoffman/s2015_pbs_physics_math_slides.pdf" target="_blank" rel="noopener">Physics and Math of Shading</a></p><p><a href="https://www.wikiwand.com/en/Bidirectional_scattering_distribution_function" target="_blank" rel="noopener">Bidirectional scattering distribution function - Wikiwand</a></p><p><a href="https://classroom.udacity.com/courses/cs291/lessons/124106597/concepts/1765858280923" target="_blank" rel="noopener">BSDF and BSSRDF - Udacity</a></p><p><a href="https://www.youtube.com/watch?v=QxBhZjG5CaI" target="_blank" rel="noopener">BSDF and BSSRDF - Interactive 3D Graphics - YouTube</a></p><p><a href="https://www.youtube.com/watch?v=a5KOdVft93E" target="_blank" rel="noopener">Blender 2.8 How to use PBR textures with principled bsdf Cycles/Eevee - YouTube</a></p><p><a href="https://www.youtube.com/watch?v=4H5W6C_Mbck" target="_blank" rel="noopener">How to Use Blender’s New “Ultimate” Shader: The Principled BSDF - YouTube</a></p><p><a href="https://blender.stackexchange.com/questions/46424/add-a-transparent-image-on-top-of-a-material/46447#46447" target="_blank" rel="noopener">cycles - Add a transparent image on top of a material - Blender Stack Exchange</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://docs.blender.org/manual/en/latest/_images/render_cycles_nodes_types_shaders_principled_example-1a.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
+    
+      <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
+    
+      <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
+    
+      <category term="OpenGL" scheme="http://uegeek.com/tags/OpenGL/"/>
+    
+      <category term="Material" scheme="http://uegeek.com/tags/Material/"/>
+    
+      <category term="Shader" scheme="http://uegeek.com/tags/Shader/"/>
+    
+      <category term="材质" scheme="http://uegeek.com/tags/%E6%9D%90%E8%B4%A8/"/>
+    
+      <category term="贴图" scheme="http://uegeek.com/tags/%E8%B4%B4%E5%9B%BE/"/>
+    
+      <category term="计算机图形" scheme="http://uegeek.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2/"/>
+    
+      <category term="Principled BSDF" scheme="http://uegeek.com/tags/Principled-BSDF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一文看懂材质/纹理 Material, Texture, Shading, Shader 的区别</title>
     <link href="http://uegeek.com/190608-material-texture-shaders.html"/>
     <id>http://uegeek.com/190608-material-texture-shaders.html</id>
     <published>2019-06-08T12:13:37.000Z</published>
-    <updated>2019-06-08T12:29:28.947Z</updated>
+    <updated>2019-06-08T12:32:21.529Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://i.pinimg.com/150x150/c7/dc/3f/c7dc3f37515f0b4d200d85392c523fc4.jpg" alt=""></p><a id="more"></a><p>在计算机图形学和三维设计中，有几个容易混淆的概念。今天我们来一举拿下。</p><h2 id="概念整理"><a href="#概念整理" class="headerlink" title="概念整理"></a>概念整理</h2><table><thead><tr><th>英文</th><th>中文</th><th>本质</th><th>释义</th></tr></thead><tbody><tr><td><a href="https://www.wikiwand.com/en/Materials_system" target="_blank" rel="noopener">Material</a></td><td>材质</td><td>数据集</td><td>表现物体对光的交互，供渲染器读取的数据集，包括贴图纹理、光照算法等</td></tr><tr><td><a href="https://www.wikiwand.com/en/Texture_mapping" target="_blank" rel="noopener">Texture mapping</a></td><td><a href="[https://www.wikiwand.com/zh/%E6%9D%90%E8%B4%A8%E8%B4%B4%E5%9B%BE](https://www.wikiwand.com/zh/材质贴图">纹理贴图</a>)</td><td>图像映射规则</td><td>把存储在内存里的位图，通过 UV 坐标映射到渲染物体的表面</td></tr><tr><td>Shading</td><td>底纹、阴影</td><td>光影效果</td><td>根据表面法线、光照、视角等计算得出的光照结果</td></tr><tr><td><a href="https://www.wikiwand.com/en/Shader" target="_blank" rel="noopener">Shader</a></td><td><a href="[https://www.wikiwand.com/zh/%E7%9D%80%E8%89%B2%E5%99%A8](https://www.wikiwand.com/zh/着色器">着色器</a>)</td><td>程序</td><td>编写显卡渲染画面的算法来即时演算生成贴图的程序</td></tr><tr><td><a href="https://www.wikiwand.com/zh/GLSL" target="_blank" rel="noopener">GLSL</a></td><td></td><td>程序语言</td><td>OpenGL 着色语言</td></tr></tbody></table><p>可以这么总结：</p><blockquote><p>Material 是表现 Shading 的数据集。其他几个概念都是生成这一数据集的资源或者工具。</p></blockquote><p><img src="http://img.viz.mobi/MaterialConcepts.png" alt=""></p><p>这么多概念，无非是为了完成一个共同目标：<strong>用计算机表现真实可信的 Shading</strong>。</p><p>Shading 是真实世界中的光影效果，它是由物体表面材质、灯光、观察者的视角等多种因素共同决定的。要实现计算机的模拟生成，是一个非常复杂的过程。不过它的原理大概可以简化为一个函数：</p><blockquote><p>Intensity =  Material (Light, Eye)</p></blockquote><p>也就是说，光影的强度，是由 a.照在材质上的光  b.视线 共同决定的。</p><h2 id="如何制造-Shading-效果？"><a href="#如何制造-Shading-效果？" class="headerlink" title="如何制造 Shading 效果？"></a>如何制造 Shading 效果？</h2><p>万物看起来不尽相同，它们有各自的材质和纹理。</p><p>纹理（Texture）是什么？</p><blockquote><p>Texture is pattern or image applied to a surface to change its color, shininess or just about any other part of its appearance. —— <a href="https://classroom.udacity.com/courses/cs291/lessons/124106595/concepts/1703725970923#" target="_blank" rel="noopener">Texture introduction - Udacity</a></p></blockquote><p>纹理就是一段有规律、可重复的图像。利用纹理，我们可以非常取巧地让三维物体看起来更真实。</p><h3 id="方法一：贴上皮肤"><a href="#方法一：贴上皮肤" class="headerlink" title="方法一：贴上皮肤"></a>方法一：贴上皮肤</h3><p>贴图可以说是最简单的材质方法：</p><ul><li>选定物体表面的某些区域</li><li>更改这个区域的一些属性(如颜色、反光度、透明度等)</li></ul><p>那么 UV Mapping 又是什么？跟 Texture Mapping 有什么区别呢？</p><p>可以这么理解，Texture Mapping 是目标，把材质用一种规则映射到物体表面。而 UV Mapping 就是映射的规则。在这个规则中，给三维体每一个顶点增加两个值 U 和 V，它们记录了三维表面和二维表面的坐标对应关系：</p><p><img src="http://img.viz.mobi/textureUV.jpg" alt=""></p><p>via <a href="https://classroom.udacity.com/courses/cs291/lessons/124106595/concepts/1703725990923" target="_blank" rel="noopener">Texture UVs</a></p><p>有了映射关系，我们就可以分门别类地把影响光照的不同参数，都通过图片映射到三维几何体上。这些参数包括：</p><ul><li><p>Diffuse Map 漫反射：模拟一个发光物对物体的方向性影响(Directional Impact)。它是光照模型中最显著的组成部分</p><p><img src="https://downloads.intercomcdn.com/i/o/52646545/49dbc08cd3840bc2d7654bdf/file-YYtlQsfLg4.jpg" alt=""></p></li><li><p>Specular/Reflection Map 镜面：模拟有光泽物体上面出现的亮点，它的颜色更接近光而不是物体的颜色</p><p><img src="https://downloads.intercomcdn.com/i/o/52646559/173c8c8c729e2912d8d8ff20/file-qPzs8jkFjw.jpg" alt=""></p></li><li><p>Normal/Bump Map 法线：决定物体形状的垂直于它的法线向量，提供有关物体表面深度的细节。每一种颜色代表了不同的轴向，看起来类似这样：</p><p><img src="https://downloads.intercomcdn.com/i/o/52646553/fe98859890182904757a311a/file-UzyMUgLevF.jpg" alt=""></p></li><li><p>Displacement Map 位移：使用高度图将经过纹理化的表面的实际几何点位置，沿着表面法线根据保存在纹理中的数值进行移位。相比法线，位移贴图更多用于大规模的地形材质，包括悬崖、岩石等</p><p><img src="https://downloads.intercomcdn.com/i/o/52646556/ccdbd16e6f1ead8d59ac7273/file-L7LoPDZQxz.jpg" alt=""></p></li><li><p>Ambient Map 环境</p></li><li><p>Gloss/Roughness Map 光泽</p></li></ul><h3 id="方法二：长出皮肤"><a href="#方法二：长出皮肤" class="headerlink" title="方法二：长出皮肤"></a>方法二：长出皮肤</h3><p>贴上皮肤的方法虽好，但是局限也很明显。如果没有合适的图像，或者要创建真实世界中罕见的材质，皮肤就不好找了。这个时候需要让程序帮忙「生长」出新的皮肤。</p><p>我们把这种程序叫做 Shaders。</p><p>如果你还记得，Shading 是始终如一的终极目标，那么应该就能明白为什么实现这个目标的程序叫做 Shaders 了。</p><p><img src="https://unity3d.com/sites/default/files/learn/shaderintro01.png" alt=""></p><p>它实际上是一个程序片段、一系列的指令，可以将三维 Mesh(网格)以指定方式与颜色、贴图等组合，完成复杂的计算输出（渲染器可读取的点和颜色的对应关系），会对屏幕上的每个像素同时下达命令。也就是说，代码必须根据像素在屏幕上的不同位置执行不同的操作。就像活字印刷，你的程序就像一个 function（函数），输入位置信息，输出颜色信息，当它编译完之后会以相当快的速度运行。</p><p>为什么 Shaders 运行特别快？因为它们常常运行在专门为并行处理（parallel processing）而设计的 GPU 上面。</p><p>最后一个问题，用什么来写 shaders 程序呢？答案是 OpenGL 着色器语言 (GLSL) 。GLSL 是用类 C 语言写成的，它为图形计算量身定制，包含一些针对向量和矩阵操作的有用特性。</p><hr><p>好了，今天涉及到的概念实在太多了。希望对大家进入三维世界玩耍有所帮助。</p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://learnopengl-cn.readthedocs.io/zh/latest/02%20Lighting/02%20Basic%20Lighting/" target="_blank" rel="noopener">光照基础 - LearnOpenGL-CN</a></li><li><a href="https://classroom.udacity.com/courses/cs291/" target="_blank" rel="noopener">交互式 3D 图形 - Udacity</a></li><li><a href="https://www.zhihu.com/question/25745472" target="_blank" rel="noopener">贴图、纹理、材质的区别是什么？ - 知乎</a></li><li><a href="https://gameinstitute.qq.com/community/detail/115074" target="_blank" rel="noopener">【Shader科普】贴图、纹理、材质的区别-腾讯游戏学院</a></li><li><a href="https://help.poliigon.com/general-information/what-are-the-different-texture-maps-for" target="_blank" rel="noopener">What are the different texture maps for? | Poliigon Help Center</a></li><li><a href="https://learnopengl-cn.readthedocs.io/zh/latest/05%20Advanced%20Lighting/04%20Normal%20Mapping/" target="_blank" rel="noopener">法线贴图 - LearnOpenGL-CN</a></li><li><a href="https://www.wikiwand.com/zh/%E4%BD%8D%E7%A7%BB%E8%B4%B4%E5%9B%BE" target="_blank" rel="noopener">位移贴图 - Wikiwand</a></li><li><a href="https://unity3d.com/es/learn/tutorials/topics/graphics/gentle-introduction-shaders" target="_blank" rel="noopener">A Gentle Introduction to Shaders - Unity</a></li><li>[GLSL - Wikiwand](</li></ul>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://i.pinimg.com/150x150/c7/dc/3f/c7dc3f37515f0b4d200d85392c523fc4.jpg" alt=""></p><a id="more"></a><p>在计算机图形学和三维设计中，有几个容易混淆的概念。今天我们来一举拿下。</p><h2 id="概念整理"><a href="#概念整理" class="headerlink" title="概念整理"></a>概念整理</h2><table><thead><tr><th>英文</th><th>中文</th><th>本质</th><th>释义</th></tr></thead><tbody><tr><td><a href="https://www.wikiwand.com/en/Materials_system" target="_blank" rel="noopener">Material</a></td><td>材质</td><td>数据集</td><td>表现物体对光的交互，供渲染器读取的数据集，包括贴图纹理、光照算法等</td></tr><tr><td><a href="https://www.wikiwand.com/en/Texture_mapping" target="_blank" rel="noopener">Texture mapping</a></td><td><a href="[https://www.wikiwand.com/zh/%E6%9D%90%E8%B4%A8%E8%B4%B4%E5%9B%BE](https://www.wikiwand.com/zh/材质贴图">纹理贴图</a>)</td><td>图像映射规则</td><td>把存储在内存里的位图，通过 UV 坐标映射到渲染物体的表面</td></tr><tr><td>Shading</td><td>底纹、阴影</td><td>光影效果</td><td>根据表面法线、光照、视角等计算得出的光照结果</td></tr><tr><td><a href="https://www.wikiwand.com/en/Shader" target="_blank" rel="noopener">Shader</a></td><td><a href="[https://www.wikiwand.com/zh/%E7%9D%80%E8%89%B2%E5%99%A8](https://www.wikiwand.com/zh/着色器">着色器</a>)</td><td>程序</td><td>编写显卡渲染画面的算法来即时演算生成贴图的程序</td></tr><tr><td><a href="https://www.wikiwand.com/zh/GLSL" target="_blank" rel="noopener">GLSL</a></td><td></td><td>程序语言</td><td>OpenGL 着色语言</td></tr></tbody></table><p>可以这么总结：</p><blockquote><p>Material 是表现 Shading 的数据集。其他几个概念都是生成这一数据集的资源或者工具。</p></blockquote><p><img src="http://img.viz.mobi/MaterialConcepts.png" alt=""></p><p>这么多概念，无非是为了完成一个共同目标：<strong>用计算机表现真实可信的 Shading</strong>。</p><p>Shading 是真实世界中的光影效果，它是由物体表面材质、灯光、观察者的视角等多种因素共同决定的。要实现计算机的模拟生成，是一个非常复杂的过程。不过它的原理大概可以简化为一个函数：</p><blockquote><p>Intensity =  Material (Light, Eye)</p></blockquote><p>也就是说，光影的强度，是由 a.照在材质上的光  b.视线 共同决定的。</p><h2 id="如何制造-Shading-效果？"><a href="#如何制造-Shading-效果？" class="headerlink" title="如何制造 Shading 效果？"></a>如何制造 Shading 效果？</h2><p>万物看起来不尽相同，它们有各自的材质和纹理。</p><p>纹理（Texture）是什么？</p><blockquote><p>Texture is pattern or image applied to a surface to change its color, shininess or just about any other part of its appearance. —— <a href="https://classroom.udacity.com/courses/cs291/lessons/124106595/concepts/1703725970923#" target="_blank" rel="noopener">Texture introduction - Udacity</a></p></blockquote><p>纹理就是一段有规律、可重复的图像。利用纹理，我们可以非常取巧地让三维物体看起来更真实。</p><h3 id="方法一：贴上皮肤"><a href="#方法一：贴上皮肤" class="headerlink" title="方法一：贴上皮肤"></a>方法一：贴上皮肤</h3><p>贴图可以说是最简单的材质方法：</p><ul><li>选定物体表面的某些区域</li><li>更改这个区域的一些属性(如颜色、反光度、透明度等)</li></ul><p>那么 UV Mapping 又是什么？跟 Texture Mapping 有什么区别呢？</p><p>可以这么理解，Texture Mapping 是目标，把材质用一种规则映射到物体表面。而 UV Mapping 就是映射的规则。在这个规则中，给三维体每一个顶点增加两个值 U 和 V，它们记录了三维表面和二维表面的坐标对应关系：</p><p><img src="http://img.viz.mobi/textureUV.jpg" alt=""></p><p>via <a href="https://classroom.udacity.com/courses/cs291/lessons/124106595/concepts/1703725990923" target="_blank" rel="noopener">Texture UVs</a></p><p>有了映射关系，我们就可以分门别类地把影响光照的不同参数，都通过图片映射到三维几何体上。这些参数包括：</p><ul><li><p>Diffuse Map 漫反射：模拟一个发光物对物体的方向性影响(Directional Impact)。它是光照模型中最显著的组成部分</p><p><img src="https://downloads.intercomcdn.com/i/o/52646545/49dbc08cd3840bc2d7654bdf/file-YYtlQsfLg4.jpg" alt=""></p></li><li><p>Specular/Reflection Map 镜面：模拟有光泽物体上面出现的亮点，它的颜色更接近光而不是物体的颜色</p><p><img src="https://downloads.intercomcdn.com/i/o/52646559/173c8c8c729e2912d8d8ff20/file-qPzs8jkFjw.jpg" alt=""></p></li><li><p>Normal/Bump Map 法线：决定物体形状的垂直于它的法线向量，提供有关物体表面深度的细节。每一种颜色代表了不同的轴向，看起来类似这样：</p><p><img src="https://downloads.intercomcdn.com/i/o/52646553/fe98859890182904757a311a/file-UzyMUgLevF.jpg" alt=""></p></li><li><p>Displacement Map 位移：使用高度图将经过纹理化的表面的实际几何点位置，沿着表面法线根据保存在纹理中的数值进行移位。相比法线，位移贴图更多用于大规模的地形材质，包括悬崖、岩石等</p><p><img src="https://downloads.intercomcdn.com/i/o/52646556/ccdbd16e6f1ead8d59ac7273/file-L7LoPDZQxz.jpg" alt=""></p></li><li><p>Ambient Map 环境</p></li><li><p>Gloss/Roughness Map 光泽</p></li></ul><h3 id="方法二：长出皮肤"><a href="#方法二：长出皮肤" class="headerlink" title="方法二：长出皮肤"></a>方法二：长出皮肤</h3><p>贴上皮肤的方法虽好，但是局限也很明显。如果没有合适的图像，或者要创建真实世界中罕见的材质，皮肤就不好找了。这个时候需要让程序帮忙「生长」出新的皮肤。</p><p>我们把这种程序叫做 Shaders。</p><p>如果你还记得，Shading 是始终如一的终极目标，那么应该就能明白为什么实现这个目标的程序叫做 Shaders 了。</p><p><img src="https://unity3d.com/sites/default/files/learn/shaderintro01.png" alt=""></p><p>它实际上是一个程序片段、一系列的指令，可以将三维 Mesh(网格)以指定方式与颜色、贴图等组合，完成复杂的计算输出（渲染器可读取的点和颜色的对应关系），会对屏幕上的每个像素同时下达命令。也就是说，代码必须根据像素在屏幕上的不同位置执行不同的操作。就像活字印刷，你的程序就像一个 function（函数），输入位置信息，输出颜色信息，当它编译完之后会以相当快的速度运行。</p><p>为什么 Shaders 运行特别快？因为它们常常运行在专门为并行处理（parallel processing）而设计的 GPU 上面。</p><p>最后一个问题，用什么来写 shaders 程序呢？答案是 OpenGL 着色器语言 (GLSL) 。GLSL 是用类 C 语言写成的，它为图形计算量身定制，包含一些针对向量和矩阵操作的有用特性。</p><hr><p>好了，今天涉及到的概念实在太多了。希望对大家进入三维世界玩耍有所帮助。</p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://learnopengl-cn.readthedocs.io/zh/latest/02%20Lighting/02%20Basic%20Lighting/" target="_blank" rel="noopener">光照基础 - LearnOpenGL-CN</a></li><li><a href="https://classroom.udacity.com/courses/cs291/" target="_blank" rel="noopener">交互式 3D 图形 - Udacity</a></li><li><a href="https://www.zhihu.com/question/25745472" target="_blank" rel="noopener">贴图、纹理、材质的区别是什么？ - 知乎</a></li><li><a href="https://gameinstitute.qq.com/community/detail/115074" target="_blank" rel="noopener">【Shader科普】贴图、纹理、材质的区别-腾讯游戏学院</a></li><li><a href="https://help.poliigon.com/general-information/what-are-the-different-texture-maps-for" target="_blank" rel="noopener">What are the different texture maps for? | Poliigon Help Center</a></li><li><a href="https://learnopengl-cn.readthedocs.io/zh/latest/05%20Advanced%20Lighting/04%20Normal%20Mapping/" target="_blank" rel="noopener">法线贴图 - LearnOpenGL-CN</a></li><li><a href="https://www.wikiwand.com/zh/%E4%BD%8D%E7%A7%BB%E8%B4%B4%E5%9B%BE" target="_blank" rel="noopener">位移贴图 - Wikiwand</a></li><li><a href="https://unity3d.com/es/learn/tutorials/topics/graphics/gentle-introduction-shaders" target="_blank" rel="noopener">A Gentle Introduction to Shaders - Unity</a></li><li><a href="https://www.wikiwand.com/zh/GLSL" target="_blank" rel="noopener">GLSL - Wikiwand</a></li></ul>]]></content>
     
     <summary type="html">
     
@@ -288,9 +328,9 @@
     
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
-      <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
-    
       <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
+    
+      <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
     
       <category term="OSC" scheme="http://uegeek.com/tags/OSC/"/>
     
@@ -398,9 +438,9 @@
     
       <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
     
-      <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
-    
       <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
+    
+      <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
     
       <category term="OSC" scheme="http://uegeek.com/tags/OSC/"/>
     
@@ -608,9 +648,9 @@
     
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
-      <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
-    
       <category term="单片机" scheme="http://uegeek.com/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+      <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
     
   </entry>
   
@@ -671,45 +711,6 @@
       <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
     
       <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2018，敬自由和迷失</title>
-    <link href="http://uegeek.com/181230-freedom-and-lost-2018.html"/>
-    <id>http://uegeek.com/181230-freedom-and-lost-2018.html</id>
-    <published>2018-12-30T14:44:15.000Z</published>
-    <updated>2019-01-05T14:53:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<a id="more"></a><p>今年是特别的一年，特别到在写年终总结的时候，如此不情愿为它画上句点。</p><p>整整一年，在远未实现财务自由的时候，就贸然送给自己一个长假。嗯，是奢侈的，是幸运的。</p><p>回顾这其实挺丧的一年，也还是收获不少：</p><ul><li>自由职业状态存活 1 年，完成设计项目若干，开了工作室</li><li>规划职业逃跑路线，努力更新知识体系和技术栈</li><li>做了 Max/MSP, Ableton Live, Arduino, TouchDesigner, Unreal Engine 等五门课的助教</li><li>HackYourself 和 ArtxCode 共发原创 72 篇约 17 万字；第一次做 TEDx speaker，外加线下分享会 3 次</li><li>继续单身，继续喜欢着一个人</li><li>读书 68 本，出游 3 次，看展和 Live 若干，没有宅出病</li><li>P2P 收益平稳，股市和币圈资产严重缩水……</li></ul><p>如果说去年的主题大概是认识自己、理解人心，那么今年的主题就更明确了：</p><blockquote><p>自由和迷失</p></blockquote><p>谁不向往自由呀，可是只有跟自由狭路相逢短兵相接时，才有机会近距离领教它的无情和凛冽。如果你对「生命中不能承受之轻」是怎样一种状态，感到好奇和困惑，那么给自己一年的自由，你会深刻理解它。</p><p>自由的代价很高昂。这几乎是一场甜蜜的、没有硝烟的战斗。</p><h2 id="自由即无序"><a href="#自由即无序" class="headerlink" title="自由即无序"></a>自由即无序</h2><p>产生这个想法的那一刻，大概是今年最佳的 「Aha moment」。</p><p>如果你愿意，现在就可以开始设想，如果自己自由了，接下来会发生什么。试着问自己，在每个周一早上醒来的时候，能否明确告诉自己，接下来要做什么。</p><p>“做什么不好呢？吃饭睡觉打豆豆，看剧发呆卖个萌。”</p><blockquote><p>然后呢？</p></blockquote><p>如果足够诚实，试着连续问自己 10 个「然后呢？」，就会看到我们在这简单的三个字面前，其实不堪一击。</p><blockquote><p>个人在新制度中发挥积极独立的作用，获得了积极意义上的自由。但他同时摆脱了曾给他安全感和归属感的纽带。由于人失去他在封闭社会里的固定位置，所以也找不到生活的意义所在。</p></blockquote><p>弗洛姆在「逃避自由」中写道。人为了逃避真正的自由，是什么事都干得出的。</p><p>自由意味着可以往任何方向去。没有既定的目的地，没有雀跃的欲求，没有明确的路径，甚至不再有对错、爱恨、意义、仪式、惯例和默契。一切坚固的东西都烟消云散了。</p><p>生命大概是一种反热力学第二定律的存在，是在万事万物趋于无序、死寂的洪流中，一个孤独的分支。布朗运动多自由啊！可是生命没有止步于无意义的死寂，生命就是生命所追求的终极秩序。</p><p>自由的代价，是要承受生命趋于无序时的惊慌失措。这可是一种跟死亡同源的恐慌啊！</p><p>人难以忍受自由之轻，因为它太重了。</p><h2 id="自由即责任"><a href="#自由即责任" class="headerlink" title="自由即责任"></a>自由即责任</h2><p>一个生命的基本意图，是维持生存状态，也就是维持对生命而言有序和有意义的状态。</p><p>如果我们获得了自由，同时也就不得不面对生命趋于耗散这个事实，于是就需要投入更多资源去维系生命的秩序。</p><p>自由好像确实只能以更大的自律来成就。这种自律，不是用命令、坚持、毅力堆砌成的行为规范，而是身处注意力摄魂怪无处不在的信息社会，如何葆有一种自觉、自洽又开放的知行准则，用这套准则推动个人的成长。</p><p>在不自由时，我们还可以轻而易举地遁逃到假想的自由空间。可是一旦身处自由的腹地，却发现无处可逃。这里是目标的真空，是自我的无限投射。从此不能再怨公司怨老板怨大环境，也不能再找没时间没力气没必要之类的借口。</p><p>不过，自由首先不是要负起责任，而是区分责任。</p><p>反思过去的诸多苦恼，发现很多困局都源于对自我责任缺乏清晰的界定，要么没有承担自己应付的责任，要么默许甚至期望别人担负属于自己的责任，要么去干涉、争抢原本属于他人的责任。这条界限的把握，是自我关系和人际关系的永恒难题。好在，在自由的议题下，我们有机会回归责任的本质，有两条准则会慢慢浮现：</p><blockquote><p>我不需要为任何一个人负责</p><p>我要对自己负起全部的责任</p></blockquote><p>什么？不需要为任何人负责？那工作怎么办？家庭怎么办？</p><p>只对自己负责。完不完成工作，怎样完成工作，怎样算负责，这个责任牵涉到哪些需要考虑的因素等等，界定这些本身就是自己责任的一部分。我们为自己定义的「负责」而负责，如果这种定义适应不良，造成了后果，那就由自己去承担这些后果，去决定要不要调整观念和行动。</p><p>不再为了老板负责、为了工资负责、为了所爱的人负责、为了事情本身负责、为了他人或社会文化强加在身的权利义务以及「应该不应该」负责，而是为自己那一整套为人处事的理念和行为结果负责。</p><p>去承担该承担的，去挣得应有的自由。</p><h2 id="自由即重建"><a href="#自由即重建" class="headerlink" title="自由即重建"></a>自由即重建</h2><p>自由的光鲜之下，逃不过一场可弱可强的自我崩塌。</p><p>自由带来了真空，而它吸引来的都是一些送命题：</p><blockquote><p>我想干什么？为什么要干这个？</p><p>我想成为什么样的人？</p><p>我存在的价值是什么？</p><p>当拿掉一个人的职位，抹去他的职业经历，他会是怎样一个人？</p><p>我要如何认识自己？别人会如何认识我？</p></blockquote><p>真空渴望被填补。</p><p>如果没有自发自觉的欲求，又没有主动探索和实现这些欲求的勇气，就需要别人来教导我们怎样去生活，怎么去行动和选择，要跟同事朋友交流什么，甚至是在朋友圈展示什么，根据运势今天又该穿什么。</p><p>我们所有的迷茫、不满、委屈，看似都来自于某个混乱的困局或气场不合的人，但是夜深人静扪心自问，问题的泉眼最终还是会指向自己：我到底想过一种什么样的生活，想获得什么样的成果，想成为什么样的人？</p><p>如果不去寻找这条串起人生意义的线索，而且每天反复提醒自己为何而战、开始去动手建设，那么真空一下子就会被千奇百怪的模因、价值观、媒体内容、口号、论战、广告、行动召唤、账单等等所填满。</p><p>坍塌不全是坏事。灾后总是要重建的。我们也终于有机会在碎成一片一片的瓦砾中，清除残余，重新建起带有自己印记的一砖一瓦。</p><p>这不是一件容易的事，我们可能已经把这个责任/权利让渡出去太久了。</p><p>还好，我还有需要挣的钱，有想探索的领域，有愿意珍惜和守护的人。慢慢的，它们汇聚成理想生活的图景，而我要做的，是放开与过去的纠缠，全身心地投入到这幅图景的建设当中。</p><h2 id="无关紧要是幸福的起点"><a href="#无关紧要是幸福的起点" class="headerlink" title="无关紧要是幸福的起点"></a>无关紧要是幸福的起点</h2><p>今年在自由里面迷失得太久了。这种迷失似乎是过去多年种种困惑的一个缩影，也是我始终难以交出答卷的人生课题。</p><p>我们早已生活在一个道理远比行动多的时代，卖道理已经成为产业，蔚为壮观。每当我们遇到难题，总是忍不住想去抓住一些「道理」来帮自己化险为夷。可是，道听途说的道理跟段子没有太大区别。想过一种富有意义的生活，靠的是从万千道理中，提炼出一种关于「我何以成为我」的信仰，并且亲测、调整再亲测，看看这种信仰能否经受行动和时间洪流的重重考验。</p><p>在与自由日夜斗争的这一年，有更多的机会、时间和耐心，来跟自己的自卑、自恋、幻想、贪欲、嫉妒、无助们对谈。出乎意料地，最大的收获不是进入一种向往的生活状态，而是慢慢习得一种「与我无关」的心态。这种心态，帮助我提高关于「自我」的分辨率，逐渐回撤那些投入在既与我无关、我也无法影响的人事物上的资源，重新投放在我可以也应该掌控的事情上面。</p><p>到底什么与我有关，到底什么真正要紧。</p><p>我相信，「与我无关」是专注的开始，是幸福的起点，也恰好就是人与人之间相互尊重的本源。</p><p>愿你我在来年，都能珍惜对的人，好好经营对的事情，将自己生命的印记，印刻在那些值得浪费的当下。</p><p>新年快乐。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;今年是特别的一年，特别到在写年终总结的时候，如此不情愿为它画上句点。&lt;/p&gt;
-&lt;p&gt;整整一年，在远未实现财务自由的时候，就贸然送给自己一个长假。嗯，是奢侈的，是幸运的。&lt;/p&gt;
-&lt;p&gt;回顾这其实挺丧的一年，也还是收获不少：&lt;/p&gt;
-&lt;ul
-      
-    
-    </summary>
-    
-      <category term="HackYourself" scheme="http://uegeek.com/categories/HackYourself/"/>
-    
-    
-      <category term="HackYourself" scheme="http://uegeek.com/tags/HackYourself/"/>
-    
-      <category term="2018" scheme="http://uegeek.com/tags/2018/"/>
-    
-      <category term="自由职业" scheme="http://uegeek.com/tags/%E8%87%AA%E7%94%B1%E8%81%8C%E4%B8%9A/"/>
-    
-      <category term="自由" scheme="http://uegeek.com/tags/%E8%87%AA%E7%94%B1/"/>
-    
-      <category term="幸福" scheme="http://uegeek.com/tags/%E5%B9%B8%E7%A6%8F/"/>
-    
-      <category term="成长" scheme="http://uegeek.com/tags/%E6%88%90%E9%95%BF/"/>
     
   </entry>
   

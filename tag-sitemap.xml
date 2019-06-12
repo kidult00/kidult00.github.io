@@ -940,14 +940,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E6%8D%B7%E5%85%8B/</loc>
+        <loc>http://uegeek.com/tags/%E5%A5%A5%E5%9C%B0%E5%88%A9/</loc>
         <lastmod>2018-09-25T08:07:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E5%A5%A5%E5%9C%B0%E5%88%A9/</loc>
+        <loc>http://uegeek.com/tags/%E6%8D%B7%E5%85%8B/</loc>
         <lastmod>2018-09-25T08:07:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1794,14 +1794,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/MIDI/</loc>
+        <loc>http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/</loc>
         <lastmod>2019-04-09T14:00:19.246Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/</loc>
+        <loc>http://uegeek.com/tags/MIDI/</loc>
         <lastmod>2019-04-09T14:00:19.246Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1899,13 +1899,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Blender/</loc>
-        <lastmod>2019-04-25T04:52:01.050Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/tags/Geometry/</loc>
         <lastmod>2019-04-25T04:52:01.050Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1949,56 +1942,70 @@
 
     <url>
         <loc>http://uegeek.com/tags/3D/</loc>
-        <lastmod>2019-06-08T12:29:28.947Z</lastmod>
+        <lastmod>2019-06-12T08:55:16.453Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Blender/</loc>
+        <lastmod>2019-06-12T08:55:16.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/Texture/</loc>
-        <lastmod>2019-06-08T12:29:28.947Z</lastmod>
+        <lastmod>2019-06-12T08:55:16.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/OpenGL/</loc>
-        <lastmod>2019-06-08T12:29:28.947Z</lastmod>
+        <lastmod>2019-06-12T08:55:16.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/Material/</loc>
-        <lastmod>2019-06-08T12:29:28.947Z</lastmod>
+        <lastmod>2019-06-12T08:55:16.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/Shader/</loc>
-        <lastmod>2019-06-08T12:29:28.947Z</lastmod>
+        <lastmod>2019-06-12T08:55:16.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E6%9D%90%E8%B4%A8/</loc>
-        <lastmod>2019-06-08T12:29:28.947Z</lastmod>
+        <lastmod>2019-06-12T08:55:16.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E8%B4%B4%E5%9B%BE/</loc>
-        <lastmod>2019-06-08T12:29:28.947Z</lastmod>
+        <lastmod>2019-06-12T08:55:16.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2/</loc>
-        <lastmod>2019-06-08T12:29:28.947Z</lastmod>
+        <lastmod>2019-06-12T08:55:16.453Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Principled-BSDF/</loc>
+        <lastmod>2019-06-12T08:55:16.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

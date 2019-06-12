@@ -4,8 +4,46 @@
 
     
   <url>
+    <loc>http://uegeek.com/190612-principled-bsdf.html</loc>
+    <lastmod>2019-06-12T08:55:16.453Z</lastmod>
+    <data>
+        <display>
+        <title>Blender Principle BSDF shader 使用教程</title>
+        <pubTime>2019-06-12T08:53:17.000Z</pubTime>
+        
+        <tag>3D</tag>
+         
+        <tag>Blender</tag>
+         
+        <tag>Texture</tag>
+         
+        <tag>OpenGL</tag>
+         
+        <tag>Material</tag>
+         
+        <tag>Shader</tag>
+         
+        <tag>材质</tag>
+         
+        <tag>贴图</tag>
+         
+        <tag>计算机图形</tag>
+         
+        <tag>Principled BSDF</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/190608-material-texture-shaders.html</loc>
-    <lastmod>2019-06-08T12:29:28.947Z</lastmod>
+    <lastmod>2019-06-08T12:32:21.529Z</lastmod>
     <data>
         <display>
         <title>一文看懂材质/纹理 Material, Texture, Shading, Shader 的区别</title>
@@ -249,9 +287,9 @@
          
         <tag>Arduino</tag>
          
-        <tag>MIDI</tag>
-         
         <tag>通信</tag>
+         
+        <tag>MIDI</tag>
          
         <tag>OSC</tag>
          
@@ -353,9 +391,9 @@
          
         <tag>电路</tag>
          
-        <tag>MIDI</tag>
-         
         <tag>通信</tag>
+         
+        <tag>MIDI</tag>
          
         <tag>OSC</tag>
          
@@ -551,9 +589,9 @@
          
         <tag>Arduino</tag>
          
-        <tag>电路</tag>
-         
         <tag>单片机</tag>
+         
+        <tag>电路</tag>
          
          
            
@@ -3493,9 +3531,9 @@
          
         <tag>中欧</tag>
          
-        <tag>捷克</tag>
-         
         <tag>奥地利</tag>
+         
+        <tag>捷克</tag>
          
         <tag>匈牙利</tag>
          
@@ -6233,9 +6271,9 @@
         
         <tag>IxD</tag>
          
-        <tag>Note</tag>
-         
         <tag>交互设计</tag>
+         
+        <tag>Note</tag>
          
          
            
@@ -6255,9 +6293,9 @@
         <title>读书笔记-信息设计</title>
         <pubTime>2010-12-26T15:10:45.000Z</pubTime>
         
-        <tag>Note</tag>
-         
         <tag>可视化</tag>
+         
+        <tag>Note</tag>
          
         <tag>Information design</tag>
          
@@ -6281,9 +6319,9 @@
         
         <tag>Design</tag>
          
-        <tag>Note</tag>
-         
         <tag>交互设计</tag>
+         
+        <tag>Note</tag>
          
         <tag>Interface</tag>
          
@@ -6309,9 +6347,9 @@
         
         <tag>IxD</tag>
          
-        <tag>Note</tag>
-         
         <tag>交互设计</tag>
+         
+        <tag>Note</tag>
          
          
            
@@ -6629,11 +6667,11 @@
         <title>Word2007如何转PDF(软件下载)</title>
         <pubTime>2007-05-20T10:49:50.000Z</pubTime>
         
-        <tag>Tip</tag>
-         
         <tag>PDF</tag>
          
         <tag>Software</tag>
+         
+        <tag>Tip</tag>
          
          
            
@@ -6739,9 +6777,9 @@
         <title>Excel中所有空格如何自动填入上一行相同数字或内容</title>
         <pubTime>2008-06-29T02:37:30.000Z</pubTime>
         
-        <tag>Office</tag>
-         
         <tag>Tip</tag>
+         
+        <tag>Office</tag>
          
          
            
@@ -6959,9 +6997,9 @@
         <title>读书笔记-如何阅读一本书</title>
         <pubTime>2010-08-07T16:20:35.000Z</pubTime>
         
-        <tag>Note</tag>
-         
         <tag>Reading</tag>
+         
+        <tag>Note</tag>
          
          
            

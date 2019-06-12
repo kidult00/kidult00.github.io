@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Blender Principle BSDF shader 使用教程]]></title>
+    <url>%2F190612-principled-bsdf.html</url>
+    <content type="text"><![CDATA[Principle BSDF 是 Blender 默认的材质 shader 节点。 如果你刚接触 Blender ，或者对材质还不太了解，那么见到 Principled BSDF 的选项一定有点懵： 这么多参数到底都是啥？要怎样调出想要的玻璃或泥土材质？ 今天我们就来仔细了解一下这个「万能」材质shader。(如果你对 Material、shader、texture 还感到茫然，建议先看一下 一文看懂材质/纹理 Material, Texture, Shading, Shader 的区别) 什么是 Principled BSDF？ Principled BSDF 将多个层组合成一个易于使用的节点。 它基于迪士尼原理模型，也称为“PBR”着色器，使其与其他软件兼容，如皮克斯的 Renderman®和虚幻引擎®。 从 SubstancePainter® 等软件绘制或烘焙的图像纹理可以直接链接到此着色器中的相应参数。 这是 Blender 官方文档中对 Principled BSDF 的说明。 可以说，这是一款综合型的材质生成着色器(shader)，跟时下普遍使用的 PBR (Physically based rendering) 是原理类似的技术。 那么，BSDF 又是什么？跟 BSDF 相似的还有一个 BRDF ： BRDF - Bidirectional reflectance distribution function BSDF - Bidirectional scattering distribution function 它们是 「双向 反射/散射」分布函数的缩写。 想要正确模拟真实世界中的光照，需要理解光遇到物体表面时发生的反射和散射。 Non metals will exhibit both reflection and refraction. Metallic materials only have reflection. All refracted light is absorbed. BSDF 就是帮助我们实现更逼真的光散射效果的函数。 在 Blender 的旧版本中，默认的材质节点是 emission。为什么后来改成了这个看似很复杂的 Principled BSDF 呢？Blender guru 在这个视频 中分析了 Principle BSDF 的优势，包括： 默认处理 fresnel：渲染引擎自动处理物体边缘反光强于中心的光照效果 更合理的粗糙度：粗糙度增加，fresnel 相应减弱 金属和绝缘体的区分：金属反光有颜色，绝缘体没有 其他一些技术细节 Principled BSDF 的参数大致了解了 Principled BSDF 之后，我们再来熟悉一下它哪些看似眼花缭乱的参数。 作为材质 shader 的头牌，它的能耐一定不容小觑。下面这张官方文档中的图，十分直观地展现了 Principled BSDF 的能力： 图片左侧就是 BSDF 的主要参数，右侧展示了设置为0~1不同数值时材质的效果。 看似非常 overwhelming，对吧？别晕，我们仔细来观察一下，哪些行的最左侧和最右侧差别最大？ 其实只有这几行：metallic，specular，roughness，transmission。 这个观察结果非常重要，它提示我们，BSDF 中最重要也是最常用的参数，其实只有几个： Base color Metallic：大多数情况只取 0 或 1，绝缘体为0，金属为1，不需要取中间状态 Roughness Normal(bump mapping) 为什么没有把 Specular（反光）列在里面？因为反光程度跟材质的关系很大。如果是金属，反光会较强，而非金属的反射较弱。所以一般不调 Specular，而是设置 Roughness 是 0 (非金属) 还是 1 (金属)。 更多的参数说明，可以参考官方文档。 如何使用 Principled BSDF？接下来以 Suzanne 为例，看看如何使用 Principled BSDF 调节材质。 首先，寻找并下载自己喜欢的材质包(图片分辨率最好2k以上)，将材质包中不同的图片连接到节点的对应参数。一般来说，图片（从文件名可以判断）对应的参数如下： Base color 基础色 —— 连接到 BSDF 中的 basecolor Metallic 金属 —— 数据源为 Non-color data，连接到 BSDF 中的 metallic Roughness 粗糙度—— 数据源为 Non-color data，连接到 BSDF 中的 roughness Normal 法线 —— 数据源为 Non-color data，新建 Vector - normal map 节点，新建 Vector-bump node 节点，连接到 normal，再连接到 BSDF 中的 normal Height/displacement 等高线 —— 数据源为 Non-color data，连接到 BSDF 中的 metallic Ambient occlusion 环境光遮蔽—— Blender已经自动处理了，不过在游戏引擎里需要用到 Node editor 的连线如下： 在图片节点上游，还有两个用于修改贴图位置的节点 Vector-mapping 节点，连接 vector 到导入的素材 Input-texture coordinates 节点，连接 uv 出口到 Mapping 的 Vector 入口 RefPrincipled BSDF — Blender Manual Physics and Math of Shading Bidirectional scattering distribution function - Wikiwand BSDF and BSSRDF - Udacity BSDF and BSSRDF - Interactive 3D Graphics - YouTube Blender 2.8 How to use PBR textures with principled bsdf Cycles/Eevee - YouTube How to Use Blender’s New “Ultimate” Shader: The Principled BSDF - YouTube cycles - Add a transparent image on top of a material - Blender Stack Exchange]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>3D</tag>
+        <tag>Blender</tag>
+        <tag>Texture</tag>
+        <tag>OpenGL</tag>
+        <tag>Material</tag>
+        <tag>Shader</tag>
+        <tag>材质</tag>
+        <tag>贴图</tag>
+        <tag>计算机图形</tag>
+        <tag>Principled BSDF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[一文看懂材质/纹理 Material, Texture, Shading, Shader 的区别]]></title>
     <url>%2F190608-material-texture-shaders.html</url>
-    <content type="text"><![CDATA[在计算机图形学和三维设计中，有几个容易混淆的概念。今天我们来一举拿下。 概念整理 英文 中文 本质 释义 Material 材质 数据集 表现物体对光的交互，供渲染器读取的数据集，包括贴图纹理、光照算法等 Texture mapping 纹理贴图) 图像映射规则 把存储在内存里的位图，通过 UV 坐标映射到渲染物体的表面 Shading 底纹、阴影 光影效果 根据表面法线、光照、视角等计算得出的光照结果 Shader 着色器) 程序 编写显卡渲染画面的算法来即时演算生成贴图的程序 GLSL 程序语言 OpenGL 着色语言 可以这么总结： Material 是表现 Shading 的数据集。其他几个概念都是生成这一数据集的资源或者工具。 这么多概念，无非是为了完成一个共同目标：用计算机表现真实可信的 Shading。 Shading 是真实世界中的光影效果，它是由物体表面材质、灯光、观察者的视角等多种因素共同决定的。要实现计算机的模拟生成，是一个非常复杂的过程。不过它的原理大概可以简化为一个函数： Intensity = Material (Light, Eye) 也就是说，光影的强度，是由 a.照在材质上的光 b.视线 共同决定的。 如何制造 Shading 效果？万物看起来不尽相同，它们有各自的材质和纹理。 纹理（Texture）是什么？ Texture is pattern or image applied to a surface to change its color, shininess or just about any other part of its appearance. —— Texture introduction - Udacity 纹理就是一段有规律、可重复的图像。利用纹理，我们可以非常取巧地让三维物体看起来更真实。 方法一：贴上皮肤贴图可以说是最简单的材质方法： 选定物体表面的某些区域 更改这个区域的一些属性(如颜色、反光度、透明度等) 那么 UV Mapping 又是什么？跟 Texture Mapping 有什么区别呢？ 可以这么理解，Texture Mapping 是目标，把材质用一种规则映射到物体表面。而 UV Mapping 就是映射的规则。在这个规则中，给三维体每一个顶点增加两个值 U 和 V，它们记录了三维表面和二维表面的坐标对应关系： via Texture UVs 有了映射关系，我们就可以分门别类地把影响光照的不同参数，都通过图片映射到三维几何体上。这些参数包括： Diffuse Map 漫反射：模拟一个发光物对物体的方向性影响(Directional Impact)。它是光照模型中最显著的组成部分 Specular/Reflection Map 镜面：模拟有光泽物体上面出现的亮点，它的颜色更接近光而不是物体的颜色 Normal/Bump Map 法线：决定物体形状的垂直于它的法线向量，提供有关物体表面深度的细节。每一种颜色代表了不同的轴向，看起来类似这样： Displacement Map 位移：使用高度图将经过纹理化的表面的实际几何点位置，沿着表面法线根据保存在纹理中的数值进行移位。相比法线，位移贴图更多用于大规模的地形材质，包括悬崖、岩石等 Ambient Map 环境 Gloss/Roughness Map 光泽 方法二：长出皮肤贴上皮肤的方法虽好，但是局限也很明显。如果没有合适的图像，或者要创建真实世界中罕见的材质，皮肤就不好找了。这个时候需要让程序帮忙「生长」出新的皮肤。 我们把这种程序叫做 Shaders。 如果你还记得，Shading 是始终如一的终极目标，那么应该就能明白为什么实现这个目标的程序叫做 Shaders 了。 它实际上是一个程序片段、一系列的指令，可以将三维 Mesh(网格)以指定方式与颜色、贴图等组合，完成复杂的计算输出（渲染器可读取的点和颜色的对应关系），会对屏幕上的每个像素同时下达命令。也就是说，代码必须根据像素在屏幕上的不同位置执行不同的操作。就像活字印刷，你的程序就像一个 function（函数），输入位置信息，输出颜色信息，当它编译完之后会以相当快的速度运行。 为什么 Shaders 运行特别快？因为它们常常运行在专门为并行处理（parallel processing）而设计的 GPU 上面。 最后一个问题，用什么来写 shaders 程序呢？答案是 OpenGL 着色器语言 (GLSL) 。GLSL 是用类 C 语言写成的，它为图形计算量身定制，包含一些针对向量和矩阵操作的有用特性。 好了，今天涉及到的概念实在太多了。希望对大家进入三维世界玩耍有所帮助。 Ref 光照基础 - LearnOpenGL-CN 交互式 3D 图形 - Udacity 贴图、纹理、材质的区别是什么？ - 知乎 【Shader科普】贴图、纹理、材质的区别-腾讯游戏学院 What are the different texture maps for? | Poliigon Help Center 法线贴图 - LearnOpenGL-CN 位移贴图 - Wikiwand A Gentle Introduction to Shaders - Unity [GLSL - Wikiwand](]]></content>
+    <content type="text"><![CDATA[在计算机图形学和三维设计中，有几个容易混淆的概念。今天我们来一举拿下。 概念整理 英文 中文 本质 释义 Material 材质 数据集 表现物体对光的交互，供渲染器读取的数据集，包括贴图纹理、光照算法等 Texture mapping 纹理贴图) 图像映射规则 把存储在内存里的位图，通过 UV 坐标映射到渲染物体的表面 Shading 底纹、阴影 光影效果 根据表面法线、光照、视角等计算得出的光照结果 Shader 着色器) 程序 编写显卡渲染画面的算法来即时演算生成贴图的程序 GLSL 程序语言 OpenGL 着色语言 可以这么总结： Material 是表现 Shading 的数据集。其他几个概念都是生成这一数据集的资源或者工具。 这么多概念，无非是为了完成一个共同目标：用计算机表现真实可信的 Shading。 Shading 是真实世界中的光影效果，它是由物体表面材质、灯光、观察者的视角等多种因素共同决定的。要实现计算机的模拟生成，是一个非常复杂的过程。不过它的原理大概可以简化为一个函数： Intensity = Material (Light, Eye) 也就是说，光影的强度，是由 a.照在材质上的光 b.视线 共同决定的。 如何制造 Shading 效果？万物看起来不尽相同，它们有各自的材质和纹理。 纹理（Texture）是什么？ Texture is pattern or image applied to a surface to change its color, shininess or just about any other part of its appearance. —— Texture introduction - Udacity 纹理就是一段有规律、可重复的图像。利用纹理，我们可以非常取巧地让三维物体看起来更真实。 方法一：贴上皮肤贴图可以说是最简单的材质方法： 选定物体表面的某些区域 更改这个区域的一些属性(如颜色、反光度、透明度等) 那么 UV Mapping 又是什么？跟 Texture Mapping 有什么区别呢？ 可以这么理解，Texture Mapping 是目标，把材质用一种规则映射到物体表面。而 UV Mapping 就是映射的规则。在这个规则中，给三维体每一个顶点增加两个值 U 和 V，它们记录了三维表面和二维表面的坐标对应关系： via Texture UVs 有了映射关系，我们就可以分门别类地把影响光照的不同参数，都通过图片映射到三维几何体上。这些参数包括： Diffuse Map 漫反射：模拟一个发光物对物体的方向性影响(Directional Impact)。它是光照模型中最显著的组成部分 Specular/Reflection Map 镜面：模拟有光泽物体上面出现的亮点，它的颜色更接近光而不是物体的颜色 Normal/Bump Map 法线：决定物体形状的垂直于它的法线向量，提供有关物体表面深度的细节。每一种颜色代表了不同的轴向，看起来类似这样： Displacement Map 位移：使用高度图将经过纹理化的表面的实际几何点位置，沿着表面法线根据保存在纹理中的数值进行移位。相比法线，位移贴图更多用于大规模的地形材质，包括悬崖、岩石等 Ambient Map 环境 Gloss/Roughness Map 光泽 方法二：长出皮肤贴上皮肤的方法虽好，但是局限也很明显。如果没有合适的图像，或者要创建真实世界中罕见的材质，皮肤就不好找了。这个时候需要让程序帮忙「生长」出新的皮肤。 我们把这种程序叫做 Shaders。 如果你还记得，Shading 是始终如一的终极目标，那么应该就能明白为什么实现这个目标的程序叫做 Shaders 了。 它实际上是一个程序片段、一系列的指令，可以将三维 Mesh(网格)以指定方式与颜色、贴图等组合，完成复杂的计算输出（渲染器可读取的点和颜色的对应关系），会对屏幕上的每个像素同时下达命令。也就是说，代码必须根据像素在屏幕上的不同位置执行不同的操作。就像活字印刷，你的程序就像一个 function（函数），输入位置信息，输出颜色信息，当它编译完之后会以相当快的速度运行。 为什么 Shaders 运行特别快？因为它们常常运行在专门为并行处理（parallel processing）而设计的 GPU 上面。 最后一个问题，用什么来写 shaders 程序呢？答案是 OpenGL 着色器语言 (GLSL) 。GLSL 是用类 C 语言写成的，它为图形计算量身定制，包含一些针对向量和矩阵操作的有用特性。 好了，今天涉及到的概念实在太多了。希望对大家进入三维世界玩耍有所帮助。 Ref 光照基础 - LearnOpenGL-CN 交互式 3D 图形 - Udacity 贴图、纹理、材质的区别是什么？ - 知乎 【Shader科普】贴图、纹理、材质的区别-腾讯游戏学院 What are the different texture maps for? | Poliigon Help Center 法线贴图 - LearnOpenGL-CN 位移贴图 - Wikiwand A Gentle Introduction to Shaders - Unity GLSL - Wikiwand]]></content>
       <categories>
         <category>教程</category>
       </categories>
@@ -134,8 +154,8 @@
         <tag>Digital Fabrication</tag>
         <tag>Fab</tag>
         <tag>Arduino</tag>
-        <tag>MIDI</tag>
         <tag>通信</tag>
+        <tag>MIDI</tag>
         <tag>OSC</tag>
         <tag>Max</tag>
       </tags>
@@ -189,8 +209,8 @@
         <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
-        <tag>MIDI</tag>
         <tag>通信</tag>
+        <tag>MIDI</tag>
         <tag>OSC</tag>
         <tag>Max</tag>
       </tags>
@@ -294,8 +314,8 @@
         <tag>Digital Fabrication</tag>
         <tag>Fab</tag>
         <tag>Arduino</tag>
-        <tag>电路</tag>
         <tag>单片机</tag>
+        <tag>电路</tag>
       </tags>
   </entry>
   <entry>
@@ -2809,8 +2829,8 @@
         <tag>Travel</tag>
         <tag>历史</tag>
         <tag>中欧</tag>
-        <tag>捷克</tag>
         <tag>奥地利</tag>
+        <tag>捷克</tag>
         <tag>匈牙利</tag>
         <tag>斯洛伐克</tag>
       </tags>
@@ -3201,8 +3221,8 @@
       </categories>
       <tags>
         <tag>IxD</tag>
-        <tag>Note</tag>
         <tag>交互设计</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -3511,8 +3531,8 @@
       </categories>
       <tags>
         <tag>IxD</tag>
-        <tag>Note</tag>
         <tag>交互设计</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -3537,8 +3557,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Note</tag>
         <tag>交互设计</tag>
+        <tag>Note</tag>
         <tag>Interface</tag>
         <tag>Pattern</tag>
       </tags>
@@ -3565,8 +3585,8 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>可视化</tag>
+        <tag>Note</tag>
         <tag>Information design</tag>
       </tags>
   </entry>
@@ -3603,8 +3623,8 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>Reading</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -3865,8 +3885,8 @@
         <category>动手</category>
       </categories>
       <tags>
-        <tag>Office</tag>
         <tag>Tip</tag>
+        <tag>Office</tag>
       </tags>
   </entry>
   <entry>
@@ -3933,9 +3953,9 @@
         <category>动手</category>
       </categories>
       <tags>
-        <tag>Tip</tag>
         <tag>PDF</tag>
         <tag>Software</tag>
+        <tag>Tip</tag>
       </tags>
   </entry>
 </search>
