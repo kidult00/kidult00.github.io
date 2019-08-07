@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://uegeek.com/190612-principled-bsdf.html</loc>
-    <lastmod>2019-06-12T08:55:16.453Z</lastmod>
+    <lastmod>2019-08-07T10:08:26.584Z</lastmod>
     <data>
         <display>
-        <title>Blender Principle BSDF shader 使用教程</title>
+        <title>Blender Principled BSDF shader 使用教程</title>
         <pubTime>2019-06-12T08:53:17.000Z</pubTime>
         
         <tag>3D</tag>
@@ -30,6 +30,42 @@
         <tag>计算机图形</tag>
          
         <tag>Principled BSDF</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/190807-design-immersive-exhibition-experience.html</loc>
+    <lastmod>2019-08-07T10:06:15.535Z</lastmod>
+    <data>
+        <display>
+        <title>设计沉浸式的展览体验</title>
+        <pubTime>2019-08-07T10:00:44.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>设计</tag>
+         
+        <tag>Exhibition</tag>
+         
+        <tag>Immersive</tag>
+         
+        <tag>Experience</tag>
+         
+        <tag>Guideline</tag>
+         
+        <tag>展览</tag>
+         
+        <tag>沉浸式</tag>
+         
+        <tag>体验</tag>
          
          
            
@@ -701,9 +737,9 @@
          
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -743,9 +779,9 @@
          
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -783,9 +819,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -821,9 +857,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -859,9 +895,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -895,9 +931,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -957,9 +993,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -991,9 +1027,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1025,9 +1061,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1065,9 +1101,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>颜色</tag>
          
@@ -1103,9 +1139,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1143,9 +1179,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1175,9 +1211,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1437,11 +1473,11 @@
          
         <tag>交互设计</tag>
          
+        <tag>体验</tag>
+         
         <tag>服务设计</tag>
          
         <tag>o2o</tag>
-         
-        <tag>体验</tag>
          
         <tag>场景</tag>
          
@@ -1469,11 +1505,11 @@
          
         <tag>交互设计</tag>
          
+        <tag>体验</tag>
+         
         <tag>服务设计</tag>
          
         <tag>o2o</tag>
-         
-        <tag>体验</tag>
          
         <tag>场景</tag>
          
@@ -1501,11 +1537,11 @@
          
         <tag>交互设计</tag>
          
+        <tag>体验</tag>
+         
         <tag>服务设计</tag>
          
         <tag>o2o</tag>
-         
-        <tag>体验</tag>
          
         <tag>场景</tag>
          
@@ -1533,11 +1569,11 @@
          
         <tag>交互设计</tag>
          
+        <tag>体验</tag>
+         
         <tag>服务设计</tag>
          
         <tag>o2o</tag>
-         
-        <tag>体验</tag>
          
         <tag>场景</tag>
          
@@ -2379,9 +2415,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>iOS</tag>
-         
         <tag>Guideline</tag>
+         
+        <tag>iOS</tag>
          
         <tag>规范</tag>
          
@@ -3525,19 +3561,19 @@
         <title>中欧四国扫(ba)盲(gua)帖之一：“中欧”还是“东欧”？</title>
         <pubTime>2015-09-18T13:37:38.000Z</pubTime>
         
-        <tag>Travel</tag>
-         
         <tag>历史</tag>
          
         <tag>中欧</tag>
+         
+        <tag>匈牙利</tag>
          
         <tag>奥地利</tag>
          
         <tag>捷克</tag>
          
-        <tag>匈牙利</tag>
-         
         <tag>斯洛伐克</tag>
+         
+        <tag>Travel</tag>
          
          
            
@@ -3583,13 +3619,13 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>历史</tag>
          
         <tag>中欧</tag>
          
         <tag>捷克</tag>
+         
+        <tag>Travel</tag>
          
          
            
@@ -3611,15 +3647,15 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>历史</tag>
          
         <tag>中欧</tag>
          
-        <tag>哈布斯堡王朝</tag>
-         
         <tag>奥地利</tag>
+         
+        <tag>Travel</tag>
+         
+        <tag>哈布斯堡王朝</tag>
          
         <tag>维也纳</tag>
          
@@ -3643,13 +3679,13 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>历史</tag>
          
         <tag>中欧</tag>
          
         <tag>捷克</tag>
+         
+        <tag>Travel</tag>
          
          
            
@@ -3671,11 +3707,11 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>历史</tag>
          
         <tag>中欧</tag>
+         
+        <tag>Travel</tag>
          
         <tag>东正教</tag>
          
@@ -3707,11 +3743,11 @@
         
         <tag>Note</tag>
          
-        <tag>Travel</tag>
-         
         <tag>历史</tag>
          
         <tag>中欧</tag>
+         
+        <tag>Travel</tag>
          
         <tag>哥特式</tag>
          
@@ -6271,9 +6307,9 @@
         
         <tag>IxD</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>Note</tag>
+         
+        <tag>交互设计</tag>
          
          
            
@@ -6293,9 +6329,9 @@
         <title>读书笔记-信息设计</title>
         <pubTime>2010-12-26T15:10:45.000Z</pubTime>
         
-        <tag>可视化</tag>
-         
         <tag>Note</tag>
+         
+        <tag>可视化</tag>
          
         <tag>Information design</tag>
          
@@ -6319,9 +6355,9 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>Note</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>Interface</tag>
          
@@ -6347,9 +6383,9 @@
         
         <tag>IxD</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>Note</tag>
+         
+        <tag>交互设计</tag>
          
          
            
@@ -6667,11 +6703,11 @@
         <title>Word2007如何转PDF(软件下载)</title>
         <pubTime>2007-05-20T10:49:50.000Z</pubTime>
         
+        <tag>Tip</tag>
+         
         <tag>PDF</tag>
          
         <tag>Software</tag>
-         
-        <tag>Tip</tag>
          
          
            
@@ -6777,9 +6813,9 @@
         <title>Excel中所有空格如何自动填入上一行相同数字或内容</title>
         <pubTime>2008-06-29T02:37:30.000Z</pubTime>
         
-        <tag>Tip</tag>
-         
         <tag>Office</tag>
+         
+        <tag>Tip</tag>
          
          
            
@@ -6997,9 +7033,9 @@
         <title>读书笔记-如何阅读一本书</title>
         <pubTime>2010-08-07T16:20:35.000Z</pubTime>
         
-        <tag>Reading</tag>
-         
         <tag>Note</tag>
+         
+        <tag>Reading</tag>
          
          
            

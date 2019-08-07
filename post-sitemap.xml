@@ -8,7 +8,15 @@
 
     <url>
         <loc>http://uegeek.com/190612-principled-bsdf.html</loc>
-        <lastmod>2019-06-12T08:55:16.453Z</lastmod>
+        <lastmod>2019-08-07T10:08:26.584Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/190807-design-immersive-exhibition-experience.html</loc>
+        <lastmod>2019-08-07T10:06:15.535Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
