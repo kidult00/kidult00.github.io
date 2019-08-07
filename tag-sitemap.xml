@@ -1913,69 +1913,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Design/</loc>
-        <lastmod>2019-08-07T10:06:15.535Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/</loc>
-        <lastmod>2019-08-07T10:06:15.535Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/Exhibition/</loc>
-        <lastmod>2019-08-07T10:06:15.535Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/Immersive/</loc>
-        <lastmod>2019-08-07T10:06:15.535Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/Experience/</loc>
-        <lastmod>2019-08-07T10:06:15.535Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/Guideline/</loc>
-        <lastmod>2019-08-07T10:06:15.535Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E5%B1%95%E8%A7%88/</loc>
-        <lastmod>2019-08-07T10:06:15.535Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F/</loc>
-        <lastmod>2019-08-07T10:06:15.535Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E4%BD%93%E9%AA%8C/</loc>
-        <lastmod>2019-08-07T10:06:15.535Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/tags/3D/</loc>
         <lastmod>2019-08-07T10:08:26.584Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -2041,6 +1978,69 @@
     <url>
         <loc>http://uegeek.com/tags/Principled-BSDF/</loc>
         <lastmod>2019-08-07T10:08:26.584Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Design/</loc>
+        <lastmod>2019-08-07T10:15:37.040Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/</loc>
+        <lastmod>2019-08-07T10:15:37.040Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Exhibition/</loc>
+        <lastmod>2019-08-07T10:15:37.040Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Immersive/</loc>
+        <lastmod>2019-08-07T10:15:37.040Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Experience/</loc>
+        <lastmod>2019-08-07T10:15:37.040Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Guideline/</loc>
+        <lastmod>2019-08-07T10:15:37.040Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E5%B1%95%E8%A7%88/</loc>
+        <lastmod>2019-08-07T10:15:37.040Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F/</loc>
+        <lastmod>2019-08-07T10:15:37.040Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E4%BD%93%E9%AA%8C/</loc>
+        <lastmod>2019-08-07T10:15:37.040Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
