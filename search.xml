@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Blender 的相机参数解析]]></title>
+    <url>%2F190908-blender-camera-setting.html</url>
+    <content type="text"><![CDATA[相机在三维软件中必不可少，它定义了渲染图像中的可见部分。 在 Blender 中，相机镜头相关的选项和参数有很多，它们共同决定了三维物体在二维图像中的呈现效果。 在刚开始接触镜头和渲染时，你可能会对这么多参数感到头秃。今天我们一起来整理一下。 Lens Type 投影方式透视（Perspective）和正交（Orthographic）是两种不同的镜头类型。 透视跟我们在现实世界中查看事物的方式类似。远处的物体看起来比眼前的物体小，平行线会在视线远处收敛到一个点。 跟透视对应的是正交镜头，即无论距离如何，始终显示实际尺寸。这意味着平行线看起来一直平行，不会像透视那样在远处相交。 如果选择了正交镜头，Orthographic Scale 参数可以控制投影在图像上物体的外观尺寸。 Focal Length 焦距焦距控制变焦程度（the amount of zoom），会影响场景在镜头中的可见范围。焦距越大，视场 FOV / Field of View 越小（more zoom），而焦距较短时，视场范围更大（less zoom）。 有点绕，看看下面这张图就明白了： 在 Blender 中，对同一场景设置不同的焦距，效果如下： 35mm 焦距 210mm 焦距 偏移调整消失点，即平行线会聚的位置。需要注意的是，偏移容易跟镜头旋转混淆。 水平镜头偏移 0.330，水平线保持不变 旋转镜头而不是使用偏移量，水平线有轻微偏斜 Clip start and end 物体直接可见的范围。此范围之外的物体仍会间接影响图像，因为 clip 范围之外的光照反射依然存在。 透视镜头下的 clip 正交镜头下的 clip Depth of field 景深 相机通过镜头传输光线，镜头将光束弯曲并聚焦到传感器上。光束聚集的区域称为焦点，可以使用数值或摄像机与物体之间的距离来设置。 焦点物体：选择某个物体将自动确定焦点 焦距（Focal Distance）：由数值指定。如果在后面的「视图显示」参数中勾选了 Limits，在视图区域中的焦距处会显示黄色十字。 提示：在 Blender 中，将鼠标悬停在“ 距离”属性上，然后按 E 开启“ 深度选择器”。单击 3D 视图中的一个点，就会采样从该点到相机的距离。 光圈 F-Stop 光圈影响景深。 从原理上讲，当镜头入光孔径越大，景深就越小，伴随背景模糊的效果。在拍摄人物、室内静物时常用大光圈。 不过，在参数设置上，最常用 F-stop 来调节光圈大小。在使用真实的相机时也是如此，AV 模式就是光圈优先模式，可以随意调节 F-stop 的大小，其他参数如 Speed 和 ISO 则由相机自动调节。 为了方便记忆，我们只需记得 F-stop 越大，景深也越大，画面中模糊的部分也会越少。 Blades：在现实摄影中并没有这个参数，这是三维软件特有的。用于调整渲染中用来模糊物体形状的多边形数量。 Rotation 旋转：沿着面轴旋转多边形 blade。 Ratio 比率：模拟变形散景效果（anamorphic bokeh effect）。1.0 表示没有失真，小于1.0 水平失真，大于 1.0 垂直失真。 相机 Size 传感器尺寸：此参数是控制焦距的另一种方法，将 Blender 中的相机与物理相机和镜头组合相匹配非常有用，例如用于 运动跟踪。 安全区域安全区域提供参考线，确保可以在屏幕上看到内容的主体。 不同的屏幕有不同数量的 overscan。边缘的部分图像可能会显示不全。后来，在电视中常常会设置两个区域：action safe and title safe，以确保内容显示完全。 现代 LCD /等离子屏幕其实没有 overscan 的问题，但安全区域仍被保留下来。在 Blender 中，可以在相机和序列视图中设置安全区域。 红线：Action safe；绿线：Title safe 另外，还可以指定安全区域的外边距（中心和渲染区域的百分比）。 Title Safe Margins X / Y：也称为图像安全。将所有重要信息（图形或文本）放在此区域内，以确保大多数观看者都能看到。 Action Safe Margins X / Y：确保镜头中任何重要动作或角色都在此区域内。 中心切割安全区域：中心切割是第二组安全区域，用于确保在不同宽高比的屏幕上正确显示内容。Blender 默认在宽屏比率 16:9 之内显示 4:3 区域 青线：Action center safe；蓝线：Title center safe 视图显示 相机视图中安全区域，传感器和名称 视图显示主要提供辅助的参考线和镜头信息。 尺寸：3D视图中摄像机可视化的大小。此设置对相机的渲染输出没有影响。还可以使用标准比例S变换键缩放相机可视化。 Limits 范围：显示 Start and End Clipping 值。 Mist 薄雾：显示为摄像机视线上的两个连接的白点。雾的其他选项在 世界环境 面板中的 烟雾部分 设置。 Sensor 传感器：在摄像机视图中显示虚线框。 Name 名称：在摄像机视图中打开和关闭名称显示。 Passepartout 边框：此选项会使摄像机视野外的区域变暗。 Composition Guides 参考线：覆盖到相机显示屏上，可以在构图时提供帮助。 Blender Principle BSDF shader 使用教程 一文看懂材质/纹理 Material, Texture, Shading, Shader 的区别]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Design</tag>
+        <tag>教程</tag>
+        <tag>3D</tag>
+        <tag>Camera</tag>
+        <tag>Blender</tag>
+        <tag>CG</tag>
+        <tag>Render</tag>
+        <tag>镜头</tag>
+        <tag>三维</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[设计沉浸式的展览体验]]></title>
     <url>%2F190807-design-immersive-exhibition-experience.html</url>
     <content type="text"><![CDATA[在知名研究机构 Gartner 的2019全球十大科技创新趋势报告中，沉浸式体验（Immersive Experience）是其中的一大趋势。 沉浸式体验是指通过技术手段完成模糊物理世界与数字或模拟世界之间的界限，从而营造出沉浸感的体验过程。 Gartner 预测，到 2022 年，70％ 的企业将尝试使用沉浸式技术进行消费和企业使用，25％ 将用于生产。 沉浸是一种什么感觉？从 iMax 电影到迪士尼乐园，从虚拟现实游戏到数字艺术展览，时下的消费体验已经越来越趋于「沉浸」。 沉浸的状态对每个人应该都不陌生。这是一种空间边界变得模糊、时间感消失、个体限制似乎被消解的神奇体验。有人会将它与「心流」的状态联系起来。心流状态一般产生于全身心投入，以完成某个明确目标的过程，目标带来的挑战与个体的能力相匹配，而且伴随及时的行为反馈，能让人拥有沉浸的愉悦感和意义感。 沉浸感的实现必然围绕「人的感受」。具体来说，可以拆解为几个方面： 多感官、较高强度的综合体验 —— 仅依靠视觉很难进入沉浸状态 展览内容和氛围的代入感 —— 沉浸与日常生活的体验有所区别 高参与度 —— 主动参与甚至操控环境与对象，是沉浸的重要特征 沉浸式体验是综合性的设计难题，设计师可以多从精于此道的行业偷师，包括舞台设计、主题乐园、嘉年华、音乐节、赌场、游戏、电影等等。 “Les Miserables” at Dallas Theater Center. (Photo by Karen Almond) 福布斯作者 Seth Porges 向一些作家、游戏设计师、沉浸式剧场生产者，以及其他前沿体验设计者问了这样一个问题：你认为什么才是创造一个沉浸式体验或世界的秘密？有 6 个秘密值得参考： 通过细节来扩大你的世界并使之有生机 明确你对观众的期望值 给观众一种身份感 将劣势转化为优势 让观众来做决定 创造一个人们能展现自我的空间 展览体验传统的博物馆和美术展览体验，多是静态和被动的，观展者按照既定的路线参观，展品陈列在橱窗中，仿佛接受朝拜的对象，无形中与观众直接形成了距离感。在这种展览中，很难获得沉浸式、身心愉悦以及富有教益的难忘体验。 我们走进博物馆，期望获得非同寻常的经历，获得那种好奇被激发，进而寻思谜题，感觉世界被打开的惊喜和微小的重生感。这跟走进电影院，经历一个充满笑和泪的故事、在制作精良的游戏中定义自我身份、到异国他乡感受迥异的文化，并没有本质的不同。 好的展览体验令人难忘，它在物质、智力和情感层面都让人感到满足。 Belaën（2003） 将展览分为三种类型： Reconstitution：重构并真实还原某个外部世界 Creation：创造某个并不真实存在的内源性世界 Interpretation：解释性地表达某些非常规尺度或现象 每一种类型都可以提供引人入胜的体验。这对策展人和设计师们提出了新的课题和挑战。 设计沉浸式展览体验体验始终关乎于人。 而展览体验要始于一个基本问题： 这个展览是关于什么的？ 向谁讲述什么故事，让他们理解和感受到什么，是体验的根基。 基本模式参观展览是一次综合性的活动，观众行走、驻足、观看、阅读、沉思、触摸、操作装置、记录……用什么方式组织内容并引导展览的进行，将为展览体验定下框架。 类比数字内容产品设计中的一个重要概念「信息架构」，受众与内容之间的抽象的互动模式可以是： 人不动，内容移动。这是基于屏幕的内容展示模式，例如电影、游戏。Matt Sundstrom 人移动，内容不动。这是典型的「检阅」模式，展览多采用这种模式。 人移动，内容也随之变化。 （也许还有其他的模式？检阅式的走马观花真的很无聊啊……） 展览的体验是全方位和富有层次的。更合理且有潜力的方式，应该是人移动，内容也随之变化，比如在一定区域内的内容，允许观众选择和互动。 MLL Design Lab 从物理、智力、情感三个层面给出了 Top 10 Tips to Great Museum Exhibit Design： 下面 00 从设计要素出发，重新整理一个沉浸式展览设计的框架，并初步讨论设计要素和关键问题。 I. Stage 场所/场景展览是一次对未知的体验。 进入展览的阶段，就像是一封邀请函，收信人根据邀请函决定要不要赴约。Achiam（2010） 将展览看做是一次跨越文化边界的体验，观众从日常生活进入到一个虚构的情境，也是进入到一种独特的文化当中。能否从熟悉的真实世界，平滑过渡到展览所营造的小世界，对沉浸的程度有很大影响。 不论展览是什么主题，一般都跟日常生活的场所有明显区别。如何让观众能暂时忘却现实生活，进入一个陌生的情境，甚至能够意识到自己将在展览中进行某种程度的「role play」？ 空间回想一下，当我们进入电影院、游乐场、赌场的时候，空间的光照和布局能够一下子让我们跟现实世界分离，忘记刚才从哪里来，以及前一分钟还挂念着的种种琐事。所以，在进入展馆时（甚至在这之前），就需要将空间逐渐调整到展览叙事的「频道」，按照那个世界的设定去营造氛围。比如，天文主题展览可能会模拟太空和宇宙，在一个黑暗、神秘的空间内展开；而动漫展览可能需要一个敞亮、富有活力而且梦幻般的空间。观众可能会注意到空间中出现了一些「非现实」但跟主题相关的元素。这时候，叙事已经开启。 身份除了空间布景，对观众做一些身份特征调整，也能帮助他们更快融入到环境和叙事中。比如，一些沉浸式戏剧会让观众带上面具，这种富有象征意义的设置，既可以激发好奇和参与感，又能推进互动。又比如，可以将观众分成几组并给予一些标识，让观众在一开始就对人物关系有所理解和期待，然后在展览中设计一些互动。 谜题谜题永远是激励人们进行探索的法宝。提出一个好问题，让观众带着问题进入展览。这个问题一般就是展览主题的一个有趣的表述。这么简单有效的方法，竟然很少见到有展览真正在用（或者是用了但是没用好），真是不可思议。 小结在设计时展览空间时可以重点考虑： 与外部世界的隔离，氛围营造 模糊原来的身份和特征 用问题/目标激发探索欲 II. Narrative 叙事想象力是人的独特能力。而最容易激起共鸣和想象的，就是故事。 看看电影行业，无论技术怎么发展，最经久不衰的，一定都是故事讲得最动人的影片。 内容组织要将展览内容串成故事绝非易事，尤其如果固守以展品为中心的策展思路的话。在策划之初，不妨重新思考一下，展览内容还有哪些可能的组织形式？是用时间线来组织吗？还是可以考虑划分主题？或者用几组呼应的概念来贯穿？是不是用逐渐深入的一组问题会更有层次感？ 故事要素故事的要素，包括人物、时间、地点、情节、冲突、关系变化等等。 在展览内容的叙事中，可以首先考虑希望观众扮演什么样的角色，这个角色的身份、视角和行为特点是怎样的，这些特征是否能够清楚传达给观众。有了对角色的预期（比如，模拟一个宇航员的角色），观众对内容就能有更多的理解和互动的愿望。 角色之后，是情节的展开。展览中所谓的故事情节，没办法像文字和影像媒体那样生动具象。如何让情节向前发展呢？一个办法是截取片段，比如宇航员的故事中，可以有儿时梦想、申请、训练、执行任务等几个「关卡化」了情节（甚至可以安排递进关系）。在情节中穿插一些任务，把不同关卡联系到一起。任务设计需要考虑减少认知和理解成本，提供及时、丰富的反馈，这样有助于情节的推进，更重要的是，这些任务往往就是「沉浸感」的重要来源。 小结展览叙事的设计，需要注意： 用有趣、有故事性的方式组织展览内容 从角色身份特征出发，设计有代入感的讲述（呈现）方式 安排具有一定主题和关卡特点的情节和任务 精简叙事对象，减少信息冗余，提供明确的指引和反馈 III. Sensation &amp; Interaction 感觉和互动有了前面叙事的铺垫，观众逐渐进入到角色和情节当中。如果我们能激发观众对内容的感受，鼓励与内容进行一些互动，沉浸的体验就能更进一层。 展示 展览内容如何被展示，决定了它如何被感知。所有的内容都需要合适的「舞台」。 传统展览绝大部分的展示方式，都是静态的安放，观众观看并离开。这跟在菜市场浏览摊档、在微博里刷时间线，还挺相似的…… 沉浸的前戏是吸引。让内容带有舞台中央主角般的光环，吸引目光的停留，号召注意力的投入，才有沉浸的可能。在设计内容展示时，可以参考具有「舞台感」的设计，毫不含糊地将视觉重点引导到主要信息上面，强化引导的层次，以便让探索渐进式地展开。 展览中一定会有不少让观众觉得陌生的内容，特别是科普性质的展览。为了减少认识和理解负担，设计师可以寻找目标人群所熟悉的东西，用类比和可视化的方式，在现实生活和新知之间架设起桥梁。 沉浸式的体验，不仅要求内容展示要足够明确和吸引，还需要进一步研究多感官的综合体验是如何发生的。视觉、听觉、触觉、嗅觉等，如何激发了想象，又是如何唤起种种情绪的。展览一定都有内容的主题，不妨试着再加入一条情绪的主线，看看它能带来哪些可能性。 互动 引人入胜的展示只是开始。它就像一封邀请函，调动起观众的好奇心，邀请他们探索更多。而承载这些探索最好的方式，是赋予观众主动权，去推进情节发生，去试验不同的可能性，并且在其中收获新的知识和体验。 日新月异的技术为我们提供了丰富而强大的工具。各种传感器可以收集环境和人的信息，屏幕、投影仪、声控设备、机械装置等等为交互结果和展示提供了数不尽的可能，而强大的控制中枢几乎可以通过编程实现各种各样的脑洞。互动不再是博物馆和展览中的奢侈体验，它已日渐成为主导的展览形式，将内容融入在互动过程中，实现沉浸的体验。 在故事线中安排互动，这些互动最好能围绕最初的谜题，然后把钥匙交到观众的手中，让他们去解锁，去庆贺小小的 A-ha moment。 现在有不少网红展览，特别注重拍照效果，让大家在过程中拍照传播。但是，这种展览往往没法达到沉浸的状态。当人们沉浸地探索有趣的事物，怎么会想到掏出手机来自拍呢？并不是说传播不重要，但是当下的探索和满足，应该比美美的自拍更值得追求。刹那的体验才是永恒。 小结感觉和互动是沉浸的关键环节，可以重点考虑： 为内容提供「舞台般」聚焦的展示，拉开信息层级的对比 运用类比和可视化，降低认知和理解负担 提供多种感官体验并激发想象和情绪（尝试设计情绪曲线） 围绕主题和问题设计互动方式，将内容融入互动中 用新的技术手段收集、处理、展示多维度的信息 IV. Resonance &amp; Reflection 共鸣和反思这道是加分题。 沉浸式体验已经非常不易，能不能更进一步升华？ 回顾我们所经历的深刻体验，为什么它们能历久弥新？我想，这些体验有一些共同的特点。一是在当下能激发强烈的共鸣，顿悟也好，敬畏感也好，超越极限的感动也好，都是在某些情感维度上产生共鸣，从而跟主题内容、跟作者建立了深层次的联结；第二个特点是基于这个经历，让我有了一些反思和洞察，它们引导我获得一次小小的认知更新甚至重生，让我对生活的某些面向，产生前所未有的理解和态度。也就是说，它让我成为了更好的我。 一次令人难忘的展览体验，既能让人在当下沉浸，获得深层次的情感共鸣，又能持续影响日常生活，引发自我的小小进化。我想，这就是策展人和设计师的终极目标了。 感谢阅读。如有展览、科普活动的合作，请联系 uegeek_at_gmail.com Ref Belaën, F. 2003. L’analyse de l’apparition d’un nouveau genre culturel dans les musées des sciences: les expositions d’immersion. Paper presented at the international cultural heritage informatics meeting, September 8􏰃12, in Paris, France. Achiam, M. (2010). Designing immersion exhibits as border-crossing environments. Museum Management and Curatorship, 25, 323–336. https://doi.org/10.1080/09647775.2010.498990 Gartner Top 10 Strategic Technology Trends for 2019 - Smarter With Gartner Flow (psychology) - Wikiwand) Museum Standards and Best Practices Top 10 Tips to Great Museum Exhibit Design How to Design for Virtual Reality | WIRED 设计沉浸式体验的6个秘密]]></content>
@@ -22,14 +41,14 @@
   <entry>
     <title><![CDATA[Blender Principled BSDF shader 使用教程]]></title>
     <url>%2F190612-principled-bsdf.html</url>
-    <content type="text"><![CDATA[Principle BSDF 是 Blender 默认的材质 shader 节点。 如果你刚接触 Blender ，或者对材质还不太了解，那么见到 Principled BSDF 的选项一定有点懵： 这么多参数到底都是啥？要怎样调出想要的玻璃或泥土材质？ 今天我们就来仔细了解一下这个「万能」材质shader。(如果你对 Material、shader、texture 还感到茫然，建议先看一下 一文看懂材质/纹理 Material, Texture, Shading, Shader 的区别) 什么是 Principled BSDF？ Principled BSDF 将多个层组合成一个易于使用的节点。 它基于迪士尼原理模型，也称为“PBR”着色器，使其与其他软件兼容，如皮克斯的 Renderman®和虚幻引擎®。 从 SubstancePainter® 等软件绘制或烘焙的图像纹理可以直接链接到此着色器中的相应参数。 这是 Blender 官方文档中对 Principled BSDF 的说明。 可以说，这是一款综合型的材质生成着色器(shader)，跟时下普遍使用的 PBR (Physically based rendering) 是原理类似的技术。 那么，BSDF 又是什么？跟 BSDF 相似的还有一个 BRDF ： BRDF - Bidirectional reflectance distribution function BSDF - Bidirectional scattering distribution function 它们是 「双向 反射/散射」分布函数的缩写。 想要正确模拟真实世界中的光照，需要理解光遇到物体表面时发生的反射和散射。 Non metals will exhibit both reflection and refraction. Metallic materials only have reflection. All refracted light is absorbed. BSDF 就是帮助我们实现更逼真的光散射效果的函数。 在 Blender 的旧版本中，默认的材质节点是 emission。为什么后来改成了这个看似很复杂的 Principled BSDF 呢？Blender guru 在这个视频 中分析了 Principle BSDF 的优势，包括： 默认处理 fresnel：渲染引擎自动处理物体边缘反光强于中心的光照效果 更合理的粗糙度：粗糙度增加，fresnel 相应减弱 金属和绝缘体的区分：金属反光有颜色，绝缘体没有 其他一些技术细节 Principled BSDF 的参数大致了解了 Principled BSDF 之后，我们再来熟悉一下它哪些看似眼花缭乱的参数。 作为材质 shader 的头牌，它的能耐一定不容小觑。下面这张官方文档中的图，十分直观地展现了 Principled BSDF 的能力： 图片左侧就是 BSDF 的主要参数，右侧展示了设置为0~1不同数值时材质的效果。 看似非常 overwhelming，对吧？别晕，我们仔细来观察一下，哪些行的最左侧和最右侧差别最大？ 其实只有这几行：metallic，specular，roughness，transmission。 这个观察结果非常重要，它提示我们，BSDF 中最重要也是最常用的参数，其实只有几个： Base color Metallic：大多数情况只取 0 或 1，绝缘体为0，金属为1，不需要取中间状态 Roughness Normal(bump mapping) 为什么没有把 Specular（反光）列在里面？因为反光程度跟材质的关系很大。如果是金属，反光会较强，而非金属的反射较弱。所以一般不调 Specular，而是设置 Roughness 是 0 (非金属) 还是 1 (金属)。 更多的参数说明，可以参考官方文档。 如何使用 Principled BSDF？接下来以 Suzanne 为例，看看如何使用 Principled BSDF 调节材质。 首先，寻找并下载自己喜欢的材质包(图片分辨率最好2k以上)，将材质包中不同的图片连接到节点的对应参数。一般来说，图片（从文件名可以判断）对应的参数如下： Base color 基础色 —— 连接到 BSDF 中的 basecolor Metallic 金属 —— 数据源为 Non-color data，连接到 BSDF 中的 metallic Roughness 粗糙度—— 数据源为 Non-color data，连接到 BSDF 中的 roughness Normal 法线 —— 数据源为 Non-color data，新建 Vector - normal map 节点，新建 Vector-bump node 节点，连接到 normal，再连接到 BSDF 中的 normal Height/displacement 等高线 —— 数据源为 Non-color data，连接到 BSDF 中的 metallic Ambient occlusion 环境光遮蔽—— Blender已经自动处理了，不过在游戏引擎里需要用到 Node editor 的连线如下： 在图片节点上游，还有两个用于修改贴图位置的节点 Vector-mapping 节点，连接 vector 到导入的素材 Input-texture coordinates 节点，连接 uv 出口到 Mapping 的 Vector 入口 RefPrincipled BSDF — Blender Manual Physics and Math of Shading Bidirectional scattering distribution function - Wikiwand BSDF and BSSRDF - Udacity BSDF and BSSRDF - Interactive 3D Graphics - YouTube Blender 2.8 How to use PBR textures with principled bsdf Cycles/Eevee - YouTube How to Use Blender’s New “Ultimate” Shader: The Principled BSDF - YouTube cycles - Add a transparent image on top of a material - Blender Stack Exchange]]></content>
+    <content type="text"><![CDATA[Principle BSDF 是 Blender 默认的材质 shader 节点。 如果你刚接触 Blender ，或者对材质还不太了解，那么见到 Principled BSDF 的选项一定有点懵： 这么多参数到底都是啥？要怎样调出想要的玻璃或泥土材质？ 今天我们就来仔细了解一下这个「万能」材质shader。(如果你对 Material、shader、texture 还感到茫然，建议先看一下 一文看懂材质/纹理 Material, Texture, Shading, Shader 的区别) 什么是 Principled BSDF？ Principled BSDF 将多个层组合成一个易于使用的节点。 它基于迪士尼原理模型，也称为“PBR”着色器，使其与其他软件兼容，如皮克斯的 Renderman®和虚幻引擎®。 从 SubstancePainter® 等软件绘制或烘焙的图像纹理可以直接链接到此着色器中的相应参数。 这是 Blender 官方文档中对 Principled BSDF 的说明。 可以说，这是一款综合型的材质生成着色器(shader)，跟时下普遍使用的 PBR (Physically based rendering) 是原理类似的技术。 那么，BSDF 又是什么？跟 BSDF 相似的还有一个 BRDF ： BRDF - Bidirectional reflectance distribution function BSDF - Bidirectional scattering distribution function 它们是 「双向 反射/散射」分布函数的缩写。 想要正确模拟真实世界中的光照，需要理解光遇到物体表面时发生的反射和散射。 Non metals will exhibit both reflection and refraction. Metallic materials only have reflection. All refracted light is absorbed. BSDF 就是帮助我们实现更逼真的光散射效果的函数。 在 Blender 的旧版本中，默认的材质节点是 emission。为什么后来改成了这个看似很复杂的 Principled BSDF 呢？Blender guru 在这个视频 中分析了 Principle BSDF 的优势，包括： 默认处理 fresnel：渲染引擎自动处理物体边缘反光强于中心的光照效果 更合理的粗糙度：粗糙度增加，fresnel 相应减弱 金属和绝缘体的区分：金属反光有颜色，绝缘体没有 其他一些技术细节 Principled BSDF 的参数大致了解了 Principled BSDF 之后，我们再来熟悉一下它哪些看似眼花缭乱的参数。 作为材质 shader 的头牌，它的能耐一定不容小觑。下面这张官方文档中的图，十分直观地展现了 Principled BSDF 的能力： 图片左侧就是 BSDF 的主要参数，右侧展示了设置为0~1不同数值时材质的效果。 看似非常 overwhelming，对吧？别晕，我们仔细来观察一下，哪些行的最左侧和最右侧差别最大？ 其实只有这几行：metallic，specular，roughness，transmission。 这个观察结果非常重要，它提示我们，BSDF 中最重要也是最常用的参数，其实只有几个： Base color Metallic：大多数情况只取 0 或 1，绝缘体为0，金属为1，不需要取中间状态 Roughness Normal(bump mapping) 为什么没有把 Specular（反光）列在里面？因为反光程度跟材质的关系很大。如果是金属，反光会较强，而非金属的反射较弱。所以一般不调 Specular，而是设置 Roughness 是 0 (金属) 还是 1 (非金属)。 更多的参数说明，可以参考官方文档。 如何使用 Principled BSDF？接下来以 Suzanne 为例，看看如何使用 Principled BSDF 调节材质。 首先，寻找并下载自己喜欢的材质包(图片分辨率最好2k以上)，将材质包中不同的图片连接到节点的对应参数。一般来说，图片（从文件名可以判断）对应的参数如下： Base color 基础色 —— 连接到 BSDF 中的 basecolor Metallic 金属 —— 数据源为 Non-color data，连接到 BSDF 中的 metallic Roughness 粗糙度—— 数据源为 Non-color data，连接到 BSDF 中的 roughness Normal 法线 —— 数据源为 Non-color data，新建 Vector - normal map 节点，新建 Vector-bump node 节点，连接到 normal，再连接到 BSDF 中的 normal Height/displacement 等高线 —— 数据源为 Non-color data，连接到 BSDF 中的 metallic Ambient occlusion 环境光遮蔽—— Blender已经自动处理了，不过在游戏引擎里需要用到 Node editor 的连线如下： 在图片节点上游，还有两个用于修改贴图位置的节点 Vector-mapping 节点，连接 vector 到导入的素材 Input-texture coordinates 节点，连接 uv 出口到 Mapping 的 Vector 入口 RefPrincipled BSDF — Blender Manual Physics and Math of Shading Bidirectional scattering distribution function - Wikiwand BSDF and BSSRDF - Udacity BSDF and BSSRDF - Interactive 3D Graphics - YouTube Blender 2.8 How to use PBR textures with principled bsdf Cycles/Eevee - YouTube How to Use Blender’s New “Ultimate” Shader: The Principled BSDF - YouTube cycles - Add a transparent image on top of a material - Blender Stack Exchange]]></content>
       <categories>
         <category>教程</category>
       </categories>
       <tags>
         <tag>3D</tag>
-        <tag>Blender</tag>
         <tag>Texture</tag>
+        <tag>Blender</tag>
         <tag>OpenGL</tag>
         <tag>Material</tag>
         <tag>Shader</tag>
@@ -1066,11 +1085,11 @@
         <tag>声音</tag>
         <tag>Ableton Live</tag>
         <tag>Max/MSP</tag>
+        <tag>EQ</tag>
         <tag>Oscilator</tag>
         <tag>Filter</tag>
         <tag>LFO</tag>
         <tag>过滤器</tag>
-        <tag>EQ</tag>
       </tags>
   </entry>
   <entry>
@@ -2761,8 +2780,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>哥特式</tag>
         <tag>巴洛克</tag>
         <tag>布拉格</tag>
@@ -2781,8 +2800,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>东正教</tag>
         <tag>基督教</tag>
         <tag>天主教</tag>
@@ -2800,8 +2819,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
       </tags>
   </entry>
@@ -2815,8 +2834,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>奥地利</tag>
         <tag>哈布斯堡王朝</tag>
         <tag>维也纳</tag>
@@ -2832,8 +2851,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
       </tags>
   </entry>
@@ -2846,9 +2865,9 @@
       </categories>
       <tags>
         <tag>Travel</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
         <tag>匈牙利</tag>
+        <tag>历史</tag>
         <tag>奥地利</tag>
         <tag>捷克</tag>
         <tag>斯洛伐克</tag>
@@ -2863,8 +2882,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>人类简史</tag>
         <tag>历史</tag>
+        <tag>人类简史</tag>
       </tags>
   </entry>
   <entry>

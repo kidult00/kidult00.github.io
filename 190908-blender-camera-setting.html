@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="25InLB4z-lcgUPp1i4Bq6PLaiiF9ntGvLioTu-1Yp3Y" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="t1oNPvdeea" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Design,教程,3D,Camera,Blender,CG,Render,镜头,三维," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="00's Adventure" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="keywords" content="Design,教程,3D,Camera,Blender,CG,Render,镜头,三维">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Blender 的相机参数解析">
+<meta property="og:url" content="http://uegeek.com/190908-blender-camera-setting.html">
+<meta property="og:site_name" content="00&#39;s Adventure">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_dof-bokeh.jpg">
+<meta property="og:image" content="http://img.viz.mobi/BlenderCameraPara.png">
+<meta property="og:image" content="http://img.viz.mobi/BlenderCameraPara-lens.jpg">
+<meta property="og:image" content="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_traintracks-perspective-BI.jpg">
+<meta property="og:image" content="https://docs.blender.org/manual/en/2.80/_images/render_cameras_traintracks-orthographic-BI.jpg">
+<meta property="og:image" content="http://lenoxspartanfitness.com/wp-content/uploads/2015/11/field-of-view.jpg">
+<meta property="og:image" content="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_traintracks-perspective-BI.jpg">
+<meta property="og:image" content="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_traintracks-perspective-telephoto-BI.jpg">
+<meta property="og:image" content="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_traintracks-perspective-lens-shift-BI.jpg">
+<meta property="og:image" content="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_traintracks-perspective-rotate-BI.jpg">
+<meta property="og:image" content="http://img.viz.mobi/BlenderCameraPara-lens.jpg">
+<meta property="og:image" content="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_perspective.svg">
+<meta property="og:image" content="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_orthographic.svg">
+<meta property="og:image" content="http://img.viz.mobi/BlenderCameraPara-dof.jpg">
+<meta property="og:image" content="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_dof-bokeh.jpg">
+<meta property="og:image" content="http://img.viz.mobi/BlenderCameraPara-dof.jpg">
+<meta property="og:image" content="https://www.thelondonphotoshoot.com/wp-content/uploads/exposure-guide.jpg">
+<meta property="og:image" content="https://i.pinimg.com/originals/d0/76/64/d07664e2735dbba536bd4ba6bd8da064.jpg">
+<meta property="og:image" content="http://img.viz.mobi/BlenderCameraPara-camera.jpg">
+<meta property="og:image" content="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_safe-areas-main-BI.png">
+<meta property="og:image" content="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_safe-areas-cuts-BI.png">
+<meta property="og:image" content="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_display-view-BI.png">
+<meta property="og:updated_time" content="2019-09-08T15:25:26.381Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Blender 的相机参数解析">
+<meta name="twitter:image" content="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_dof-bokeh.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://uegeek.com/190908-blender-camera-setting.html"/>
+
+
+
+
+
+  <title>Blender 的相机参数解析 | 00's Adventure</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-12755583-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?816680a99713dbf6762e7f3a2e3f7a96";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">00's Adventure</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Why join the navy if you can be a pirate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://uegeek.com/190908-blender-camera-setting.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kidult00">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="00's Adventure">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Blender 的相机参数解析</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-08T23:20:35+08:00">
+                2019-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/190908-blender-camera-setting.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="190908-blender-camera-setting.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_dof-bokeh.jpg" alt=""></p>
+<a id="more"></a>
+<p>相机在三维软件中必不可少，它定义了渲染图像中的可见部分。</p>
+<p>在 Blender 中，相机镜头相关的选项和参数有很多，它们共同决定了三维物体在二维图像中的呈现效果。</p>
+<p><img src="http://img.viz.mobi/BlenderCameraPara.png" alt=""></p>
+<p>在刚开始接触镜头和渲染时，你可能会对这么多参数感到头秃。今天我们一起来整理一下。</p>
+<h2 id="Lens"><a href="#Lens" class="headerlink" title="Lens"></a>Lens</h2><p><img src="http://img.viz.mobi/BlenderCameraPara-lens.jpg" alt=""></p>
+<h3 id="Type-投影方式"><a href="#Type-投影方式" class="headerlink" title="Type 投影方式"></a>Type 投影方式</h3><p>透视（Perspective）和正交（Orthographic）是两种不同的镜头类型。</p>
+<p>透视跟我们在现实世界中查看事物的方式类似。远处的物体看起来比眼前的物体小，平行线会在视线远处收敛到一个点。</p>
+<p><img src="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_traintracks-perspective-BI.jpg" alt="../_images/render_cameras_traintracks-perspective-BI.jpg"></p>
+<p>跟透视对应的是正交镜头，即无论距离如何，始终显示实际尺寸。这意味着平行线看起来一直平行，不会像透视那样在远处相交。</p>
+<p><img src="https://docs.blender.org/manual/en/2.80/_images/render_cameras_traintracks-orthographic-BI.jpg" alt=""></p>
+<p>如果选择了正交镜头，Orthographic Scale 参数可以控制投影在图像上物体的外观尺寸。</p>
+<h3 id="Focal-Length-焦距"><a href="#Focal-Length-焦距" class="headerlink" title="Focal Length 焦距"></a>Focal Length 焦距</h3><p>焦距控制变焦程度（the amount of zoom），会影响场景在镜头中的可见范围。<strong>焦距越大，视场 FOV / Field of View  越小（more zoom），而焦距较短时，视场范围更大（less zoom）</strong>。</p>
+<p>有点绕，看看下面这张图就明白了：</p>
+<p><img src="http://lenoxspartanfitness.com/wp-content/uploads/2015/11/field-of-view.jpg" alt=""></p>
+<p>在 Blender 中，对同一场景设置不同的焦距，效果如下：</p>
+<p><img src="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_traintracks-perspective-BI.jpg" alt=""></p>
+<p>35mm 焦距</p>
+<p><img src="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_traintracks-perspective-telephoto-BI.jpg" alt=""></p>
+<p>210mm 焦距</p>
+<h3 id="偏移"><a href="#偏移" class="headerlink" title="偏移"></a>偏移</h3><p>调整消失点，即平行线会聚的位置。需要注意的是，偏移容易跟镜头旋转混淆。</p>
+<p><img src="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_traintracks-perspective-lens-shift-BI.jpg" alt=""></p>
+<p>水平镜头偏移 0.330，水平线保持不变</p>
+<p><img src="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_traintracks-perspective-rotate-BI.jpg" alt=""></p>
+<p>旋转镜头而不是使用偏移量，水平线有轻微偏斜</p>
+<h3 id="Clip-start-and-end"><a href="#Clip-start-and-end" class="headerlink" title="Clip start and end"></a>Clip start and end</h3><p><img src="http://img.viz.mobi/BlenderCameraPara-lens.jpg" alt=""></p>
+<p>物体直接可见的范围。此范围之外的物体仍会间接影响图像，因为 clip 范围之外的光照反射依然存在。</p>
+<p><img src="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_perspective.svg" alt=""></p>
+<p>透视镜头下的 clip</p>
+<p><img src="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_orthographic.svg" alt=""></p>
+<p>正交镜头下的 clip</p>
+<h2 id="Depth-of-field-景深"><a href="#Depth-of-field-景深" class="headerlink" title="Depth of field 景深"></a>Depth of field 景深</h2><p><img src="http://img.viz.mobi/BlenderCameraPara-dof.jpg" alt=""></p>
+<p>相机通过镜头传输光线，镜头将光束弯曲并聚焦到传感器上。光束聚集的区域称为焦点，可以使用数值或摄像机与物体之间的距离来设置。</p>
+<p><img src="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_dof-bokeh.jpg" alt=""></p>
+<p>焦点物体：选择某个物体将自动确定焦点</p>
+<p>焦距（Focal Distance）：由数值指定。如果在后面的「视图显示」参数中勾选了 Limits，在视图区域中的焦距处会显示黄色十字。</p>
+<blockquote>
+<p>提示：在 Blender 中，将鼠标悬停在“ 距离”属性上，然后按 E 开启“ 深度选择器”。单击 3D 视图中的一个点，就会采样从该点到相机的距离。</p>
+</blockquote>
+<h3 id="光圈"><a href="#光圈" class="headerlink" title="光圈"></a>光圈</h3><p><img src="http://img.viz.mobi/BlenderCameraPara-dof.jpg" alt=""></p>
+<p><strong>F-Stop</strong></p>
+<p>光圈影响景深。</p>
+<p>从原理上讲，当镜头入光孔径越大，景深就越小，伴随背景模糊的效果。在拍摄人物、室内静物时常用大光圈。</p>
+<p>不过，在参数设置上，最常用 F-stop 来调节光圈大小。在使用真实的相机时也是如此，AV 模式就是光圈优先模式，可以随意调节 F-stop 的大小，其他参数如 Speed 和 ISO 则由相机自动调节。</p>
+<p><img src="https://www.thelondonphotoshoot.com/wp-content/uploads/exposure-guide.jpg" alt=""></p>
+<p>为了方便记忆，我们只需记得 <strong>F-stop 越大，景深也越大</strong>，画面中模糊的部分也会越少。</p>
+<p><img src="https://i.pinimg.com/originals/d0/76/64/d07664e2735dbba536bd4ba6bd8da064.jpg" alt=""></p>
+<p><strong>Blades</strong>：在现实摄影中并没有这个参数，这是三维软件特有的。用于调整渲染中用来模糊物体形状的多边形数量。</p>
+<p><strong>Rotation</strong> 旋转：沿着面轴旋转多边形 blade。</p>
+<p><strong>Ratio</strong>  比率：模拟变形散景效果（anamorphic bokeh effect）。1.0 表示没有失真，小于1.0 水平失真，大于 1.0 垂直失真。</p>
+<h2 id="相机"><a href="#相机" class="headerlink" title="相机"></a>相机</h2><p><img src="http://img.viz.mobi/BlenderCameraPara-camera.jpg" alt=""></p>
+<p>Size 传感器尺寸：此参数是控制焦距的另一种方法，将 Blender 中的相机与物理相机和镜头组合相匹配非常有用，例如用于 <a href="https://docs.blender.org/manual/zh-hans/2.80/movie_clip/index.html" target="_blank" rel="noopener">运动跟踪</a>。</p>
+<h3 id="安全区域"><a href="#安全区域" class="headerlink" title="安全区域"></a>安全区域</h3><p>安全区域提供参考线，确保可以在屏幕上看到内容的主体。</p>
+<p>不同的屏幕有不同数量的 <a href="https://docs.blender.org/manual/zh-hans/2.80/glossary/index.html#term-overscan" target="_blank" rel="noopener">overscan</a>。边缘的部分图像可能会显示不全。后来，在电视中常常会设置两个区域：action safe and title safe，以确保内容显示完全。</p>
+<p>现代 LCD /等离子屏幕其实没有 overscan 的问题，但安全区域仍被保留下来。在 Blender 中，可以在相机和序列视图中设置安全区域。</p>
+<p><a href="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_safe-areas-main-BI.png" target="_blank" rel="noopener"><img src="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_safe-areas-main-BI.png" alt="../_images/render_cameras_safe-areas-main-BI.png"></a></p>
+<p>红线：Action safe；绿线：Title safe</p>
+<p>另外，还可以指定安全区域的外边距（中心和渲染区域的百分比）。</p>
+<ul>
+<li><p>Title Safe Margins X / Y：也称为图像安全。将所有重要信息（图形或文本）放在此区域内，以确保大多数观看者都能看到。</p>
+</li>
+<li><p>Action Safe Margins X / Y：确保镜头中任何重要动作或角色都在此区域内。</p>
+</li>
+<li><p>中心切割安全区域：中心切割是第二组安全区域，用于确保在不同宽高比的屏幕上正确显示内容。Blender 默认在宽屏比率 16:9 之内显示 4:3 区域</p>
+</li>
+</ul>
+<p><img src="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_safe-areas-cuts-BI.png" alt="../_images/render_cameras_safe-areas-cuts-BI.png"></p>
+<p>青线：Action center safe；蓝线：Title center safe</p>
+<h2 id="视图显示"><a href="#视图显示" class="headerlink" title="视图显示"></a>视图显示</h2><p><a href="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_display-view-BI.png" target="_blank" rel="noopener"><img src="https://docs.blender.org/manual/zh-hans/2.80/_images/render_cameras_display-view-BI.png" alt="../_images/render_cameras_display-view-BI.png"></a></p>
+<p>相机视图中安全区域，传感器和名称</p>
+<p>视图显示主要提供辅助的参考线和镜头信息。</p>
+<ul>
+<li><p>尺寸：3D视图中摄像机可视化的大小。此设置对相机的渲染输出没有影响。还可以使用标准比例S变换键缩放相机可视化。</p>
+</li>
+<li><p>Limits 范围：显示 Start and End Clipping 值。</p>
+</li>
+<li><p>Mist 薄雾：显示为摄像机视线上的两个连接的白点。雾的其他选项在 <em>世界环境</em> 面板中的 <a href="https://docs.blender.org/manual/zh-hans/2.80/render/cycles/world_settings.html#render-cycles-integrator-world-mist" target="_blank" rel="noopener">烟雾部分</a> 设置。</p>
+</li>
+<li><p>Sensor 传感器：在摄像机视图中显示虚线框。</p>
+</li>
+<li><p>Name 名称：在摄像机视图中打开和关闭名称显示。</p>
+</li>
+</ul>
+<p>Passepartout 边框：此选项会使摄像机视野外的区域变暗。</p>
+<p>Composition Guides 参考线：覆盖到相机显示屏上，可以在构图时提供帮助。</p>
+<hr>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzI3NzM3NzIzNQ==&amp;mid=100000966&amp;idx=1&amp;sn=ce2a8104ce7bbe6a1a7a6033de033070&amp;chksm=6b667d7a5c11f46c5e9a7430cc3a2525be7e9c198e809a6cb7114adff2532276607f4d92228b#rd" target="_blank" rel="noopener">Blender Principle BSDF shader 使用教程</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzI3NzM3NzIzNQ==&amp;mid=100000954&amp;idx=1&amp;sn=8bcc64963454cca9d0df19a0e5340dea&amp;chksm=6b667d065c11f410f466a18a769a89ea94d77a9ef32399793190672951e8acd1f574738e9bb6#rd" target="_blank" rel="noopener">一文看懂材质/纹理 Material, Texture, Shading, Shader 的区别</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="kidult00 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码关注 00 的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果文章帮您节省时间或者解答疑问，不妨打个赏 :)</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/paycode.png" alt="kidult00 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    kidult00
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://uegeek.com/190908-blender-camera-setting.html" title="Blender 的相机参数解析">http://uegeek.com/190908-blender-camera-setting.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Design/" rel="tag"># Design</a>
+          
+            <a href="/tags/教程/" rel="tag"># 教程</a>
+          
+            <a href="/tags/3D/" rel="tag"># 3D</a>
+          
+            <a href="/tags/Camera/" rel="tag"># Camera</a>
+          
+            <a href="/tags/Blender/" rel="tag"># Blender</a>
+          
+            <a href="/tags/CG/" rel="tag"># CG</a>
+          
+            <a href="/tags/Render/" rel="tag"># Render</a>
+          
+            <a href="/tags/镜头/" rel="tag"># 镜头</a>
+          
+            <a href="/tags/三维/" rel="tag"># 三维</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/190807-design-immersive-exhibition-experience.html" rel="next" title="设计沉浸式的展览体验">
+                <i class="fa fa-chevron-left"></i> 设计沉浸式的展览体验
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="kidult00" />
+          <p class="site-author-name" itemprop="name">kidult00</p>
+           
+              <p class="site-description motion-element" itemprop="description">Designer / Maker / Learner</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">278</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">296</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/kidult/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kidult00/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/kidult/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/qop/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/twee/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/2LSzkz/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/kidult00/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lens"><span class="nav-number">1.</span> <span class="nav-text">Lens</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-投影方式"><span class="nav-number">1.1.</span> <span class="nav-text">Type 投影方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Focal-Length-焦距"><span class="nav-number">1.2.</span> <span class="nav-text">Focal Length 焦距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#偏移"><span class="nav-number">1.3.</span> <span class="nav-text">偏移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clip-start-and-end"><span class="nav-number">1.4.</span> <span class="nav-text">Clip start and end</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Depth-of-field-景深"><span class="nav-number">2.</span> <span class="nav-text">Depth of field 景深</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#光圈"><span class="nav-number">2.1.</span> <span class="nav-text">光圈</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相机"><span class="nav-number">3.</span> <span class="nav-text">相机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安全区域"><span class="nav-number">3.1.</span> <span class="nav-text">安全区域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图显示"><span class="nav-number">4.</span> <span class="nav-text">视图显示</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2007 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kidult00</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://uegeek.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://uegeek.com/190908-blender-camera-setting.html';
+          this.page.identifier = '190908-blender-camera-setting.html';
+          this.page.title = 'Blender 的相机参数解析';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uegeek.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

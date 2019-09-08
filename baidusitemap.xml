@@ -4,6 +4,80 @@
 
     
   <url>
+    <loc>http://uegeek.com/190908-blender-camera-setting.html</loc>
+    <lastmod>2019-09-08T15:25:26.381Z</lastmod>
+    <data>
+        <display>
+        <title>Blender 的相机参数解析</title>
+        <pubTime>2019-09-08T15:20:35.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>教程</tag>
+         
+        <tag>3D</tag>
+         
+        <tag>Camera</tag>
+         
+        <tag>Blender</tag>
+         
+        <tag>CG</tag>
+         
+        <tag>Render</tag>
+         
+        <tag>镜头</tag>
+         
+        <tag>三维</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/190612-principled-bsdf.html</loc>
+    <lastmod>2019-09-05T08:45:50.920Z</lastmod>
+    <data>
+        <display>
+        <title>Blender Principled BSDF shader 使用教程</title>
+        <pubTime>2019-06-12T08:53:17.000Z</pubTime>
+        
+        <tag>3D</tag>
+         
+        <tag>Texture</tag>
+         
+        <tag>Blender</tag>
+         
+        <tag>OpenGL</tag>
+         
+        <tag>Material</tag>
+         
+        <tag>Shader</tag>
+         
+        <tag>材质</tag>
+         
+        <tag>贴图</tag>
+         
+        <tag>计算机图形</tag>
+         
+        <tag>Principled BSDF</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/190807-design-immersive-exhibition-experience.html</loc>
     <lastmod>2019-08-07T10:15:37.040Z</lastmod>
     <data>
@@ -33,44 +107,6 @@
            
              
               <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/190612-principled-bsdf.html</loc>
-    <lastmod>2019-08-07T10:08:26.584Z</lastmod>
-    <data>
-        <display>
-        <title>Blender Principled BSDF shader 使用教程</title>
-        <pubTime>2019-06-12T08:53:17.000Z</pubTime>
-        
-        <tag>3D</tag>
-         
-        <tag>Blender</tag>
-         
-        <tag>Texture</tag>
-         
-        <tag>OpenGL</tag>
-         
-        <tag>Material</tag>
-         
-        <tag>Shader</tag>
-         
-        <tag>材质</tag>
-         
-        <tag>贴图</tag>
-         
-        <tag>计算机图形</tag>
-         
-        <tag>Principled BSDF</tag>
-         
-         
-           
-             
-              <breadCrumb title="教程" url="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -3563,11 +3599,11 @@
         
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
          
         <tag>匈牙利</tag>
+         
+        <tag>历史</tag>
          
         <tag>奥地利</tag>
          
@@ -3595,9 +3631,9 @@
         
         <tag>Note</tag>
          
-        <tag>人类简史</tag>
-         
         <tag>历史</tag>
+         
+        <tag>人类简史</tag>
          
          
            
@@ -3621,9 +3657,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>捷克</tag>
          
@@ -3649,9 +3685,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>奥地利</tag>
          
@@ -3681,9 +3717,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>捷克</tag>
          
@@ -3709,9 +3745,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>东正教</tag>
          
@@ -3745,9 +3781,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>哥特式</tag>
          
@@ -5469,6 +5505,8 @@
          
         <tag>Max/MSP</tag>
          
+        <tag>EQ</tag>
+         
         <tag>Oscilator</tag>
          
         <tag>Filter</tag>
@@ -5476,8 +5514,6 @@
         <tag>LFO</tag>
          
         <tag>过滤器</tag>
-         
-        <tag>EQ</tag>
          
          
            

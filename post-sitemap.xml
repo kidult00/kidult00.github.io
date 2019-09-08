@@ -7,8 +7,8 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/190807-design-immersive-exhibition-experience.html</loc>
-        <lastmod>2019-08-07T10:15:37.040Z</lastmod>
+        <loc>http://uegeek.com/190908-blender-camera-setting.html</loc>
+        <lastmod>2019-09-08T15:25:26.381Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +16,15 @@
 
     <url>
         <loc>http://uegeek.com/190612-principled-bsdf.html</loc>
-        <lastmod>2019-08-07T10:08:26.584Z</lastmod>
+        <lastmod>2019-09-05T08:45:50.920Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/190807-design-immersive-exhibition-experience.html</loc>
+        <lastmod>2019-08-07T10:15:37.040Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
