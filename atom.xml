@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2019-09-08T15:25:26.381Z</updated>
+  <updated>2019-10-09T08:35:48.390Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>科普应援！三分钟了解阿尔茨海默病及幕后创作记录</title>
+    <link href="http://uegeek.com/191009-3minsci-alzheimer.html"/>
+    <id>http://uegeek.com/191009-3minsci-alzheimer.html</id>
+    <published>2019-10-09T08:27:46.000Z</published>
+    <updated>2019-10-09T08:35:48.390Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/AlzheimerCover-title.jpg" alt=""></p><a id="more"></a><p>又一年国庆长假过去了，00 今年依然没有参加朋友圈摄影大赛，而是跟朋友一起做了个科普动画短片，参加 B 站主办的 <a href="https://www.bilibili.com/blackboard/3minscience.html?spm_id_from=333.788.b_7265636f5f6c697374.1" target="_blank" rel="noopener">科学3分钟 - 全国科普微视频大赛</a>。</p><p><img src="https://i0.hdslb.com/bfs/archive/9fc9d0def194c80a34baacc8cf3a17812e8d5f30.jpg" style="zoom:30%;"></p><p>这是我的科普动画处女作，片长 3:59。短片介绍了阿尔茨海默病（老年痴呆症）的常识和预防措施，希望让大家了解并开始重视这个离我们越来越近的疾病。视频地址：</p><p><a href="https://www.bilibili.com/video/av70538776/" target="_blank" rel="noopener">脑中的橡皮擦——阿尔茨海默病的预防和干预_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a></p><p><strong>欢迎大家转发，并且投票支持，让它在「科学3分钟」比赛中获得好的名次，这样能让更多人参与到预防阿尔茨海默病、关怀患者和照护者的行列中。</strong></p><h3 id="如何投票支持"><a href="#如何投票支持" class="headerlink" title="如何投票支持"></a>如何投票支持</h3><p>点击下方图片跳转投票页面，登录 B 站帐号，点击「+1 票」按钮，即可投票。比赛投稿截止前（10.25）每天都可以投一票。</p><p><a href="https://www.bilibili.com/blackboard/activity-8qCJ8URwr.html?share_source=weixin&amp;share_medium=iphone&amp;bbid=7151C7DE-CD7B-42F5-809B-16AEFC491FAC190977infoc&amp;ts=1570530343015&amp;from=singlemessage&amp;isappinstalled=0#a_id=16130798&amp;s_id=11961" target="_blank" rel="noopener"><img src="http://img.viz.mobi/vote-banner-a.jpg" alt=""></a></p><p>也可以在电脑浏览器打开链接 <a href="https://www.bilibili.com/video/av70538776/" target="_blank" rel="noopener">https://www.bilibili.com/video/av70538776/</a> ，点击视频下方的「点击投票」按钮。<strong>对视频点赞、投币、收藏也可以帮助作品获得更好名次</strong>！</p><p><img src="http://img.viz.mobi/%E7%BD%91%E9%A1%B5%E6%8A%95%E7%A5%A8%E5%85%A5%E5%8F%A31.jpeg" alt=""></p><p>如果你想转发视频给更多朋友，可以转发本文，或者直接发送视频链接 <a href="https://b23.tv/av70538776。" target="_blank" rel="noopener">https://b23.tv/av70538776。</a></p><p>感谢支持~</p><h2 id="创作记录"><a href="#创作记录" class="headerlink" title="创作记录"></a>创作记录</h2><p>得知比赛信息，是在投稿开放一周以后。9.21 恰好又是世界阿尔茨海默病日，于是决定创作这个主题相关的科普短片。</p><p><img src="https://www.alzhn.ca/wp-content/uploads/2016/11/WAD-LOGO_LARGE-350x500.jpg" style="zoom:50%;"></p><p>关注阿尔茨海默病已经好几个月，之前写过一篇书评 <a href="https://www.uegeek.com/190523-alzheimers-book-not-recommended.html" target="_blank" rel="noopener">在生命战场，请远离伪科普——医药科普类书籍避坑方法</a>。并且在 <a href="https://github.com/kidult00/fighting_alzheimer" target="_blank" rel="noopener">Github 上面分享了自己整理的阿尔茨海默病优质信息源、纪录片和出版物</a>，Github 链接可以点击以下图片访问：</p><p><a href="https://github.com/kidult00/fighting_alzheimer" target="_blank" rel="noopener"><img src="http://img.viz.mobi/github-banner.jpg" alt=""></a></p><p>在构思科普视频之前，把之前看过的纪录片和关键信息整理了一遍，以<a href="http://www.chinacdc.cn/yyrdgz/201909/t20190921_205709.html" target="_blank" rel="noopener">国家卫生健康委老龄健康司的宣传材料</a>为基础，完成了短片的文案。还尝试学习剧本写作的方式，把文案一点点拆成了人物角色和场景、镜头。</p><p><img src="http://img.viz.mobi/Alzheimer_lines.jpg" style="zoom: 67%;"></p><p>接下来是动画创作阶段。此处省略掺杂了复杂情绪的过程描述约 2 万字……简单说就是借助 FCPX 和 Motion 的 Brightly 人物场景插件，完成了复杂动画的设计和转场。</p><p>接着，进入到关键的配音阶段。十分庆幸自己非常明智地请到了好朋友 MF 来创作声音部分。曾经为千万用户级 APP 主创声音的 MF 同学，带着我到专业的录音室，跳过各种录音时容易踩的坑，非常高效地完成了声音录制。特别感谢她让这个短片同时具有了温度和专业气质，也提供了不少修改建议和支持，让我能提前完成整个作品。</p><p>音乐部分，并没有专门创作背景音乐，而是花了不少时间寻找合适的 Royalty free music。最后采用了 Artificial.Music 的一首作品，感谢 ta 的创作：</p><p>––––––––––––––––––––––––––––––<br>tears that collapse like aurora raindrops of sunlight by Artificial.Music<br><a href="https://www.youtube.com/redirect?redir_token=-FeiKg200GcqUWpHDJ-V5zFlvJx8MTU3MDUxOTkyM0AxNTcwNDMzNTIz&amp;q=https%3A%2F%2Fsoundcloud.com%2Fartificial-music&amp;v=ChPk0BekVKY&amp;event=video_description" target="_blank" rel="noopener">https://soundcloud.com/artificial-music</a><br>Creative Commons — Attribution-ShareAlike 3.0 Unported— CC BY-SA 3.0<br>Free Download / Stream: <a href="https://www.youtube.com/redirect?redir_token=-FeiKg200GcqUWpHDJ-V5zFlvJx8MTU3MDUxOTkyM0AxNTcwNDMzNTIz&amp;q=http%3A%2F%2Fbit.ly%2F2nYoPCn&amp;v=ChPk0BekVKY&amp;event=video_description" target="_blank" rel="noopener">http://bit.ly/2nYoPCn</a><br>Music promoted by Audio Library <a href="https://www.youtube.com/watch?v=ChPk0BekVKY" target="_blank" rel="noopener">https://youtu.be/ChPk0BekVKY</a><br>––––––––––––––––––––––––––––––</p><p><img src="http://img.viz.mobi/creationJourney.png" alt=""></p><p>一次完整的创作历程，也是一段充满各种体验和回忆的旅途。</p><p>这次的国庆创作之旅，是我众多旅途中独特而珍贵的一段。它让我体验到，不论身在何处，有些经历可以由自己去创造。而旅途中不期而遇的人事物，也会因为用心地创造而变得鲜明生动。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/AlzheimerCover-title.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="动手" scheme="http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/"/>
+    
+    
+      <category term="Animation" scheme="http://uegeek.com/tags/Animation/"/>
+    
+      <category term="Alzheimer&#39;s" scheme="http://uegeek.com/tags/Alzheimer-s/"/>
+    
+      <category term="阿尔茨海默病" scheme="http://uegeek.com/tags/%E9%98%BF%E5%B0%94%E8%8C%A8%E6%B5%B7%E9%BB%98%E7%97%85/"/>
+    
+      <category term="科学3分钟" scheme="http://uegeek.com/tags/%E7%A7%91%E5%AD%A63%E5%88%86%E9%92%9F/"/>
+    
+      <category term="科普" scheme="http://uegeek.com/tags/%E7%A7%91%E6%99%AE/"/>
+    
+      <category term="动画" scheme="http://uegeek.com/tags/%E5%8A%A8%E7%94%BB/"/>
+    
+      <category term="原创" scheme="http://uegeek.com/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+  </entry>
   
   <entry>
     <title>Blender 的相机参数解析</title>
@@ -76,19 +110,19 @@
     
       <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
     
+      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
+    
+      <category term="体验" scheme="http://uegeek.com/tags/%E4%BD%93%E9%AA%8C/"/>
+    
       <category term="Exhibition" scheme="http://uegeek.com/tags/Exhibition/"/>
     
       <category term="Immersive" scheme="http://uegeek.com/tags/Immersive/"/>
     
       <category term="Experience" scheme="http://uegeek.com/tags/Experience/"/>
     
-      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
-    
       <category term="展览" scheme="http://uegeek.com/tags/%E5%B1%95%E8%A7%88/"/>
     
       <category term="沉浸式" scheme="http://uegeek.com/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F/"/>
-    
-      <category term="体验" scheme="http://uegeek.com/tags/%E4%BD%93%E9%AA%8C/"/>
     
   </entry>
   
@@ -689,44 +723,6 @@
       <category term="Camera" scheme="http://uegeek.com/tags/Camera/"/>
     
       <category term="Lighting" scheme="http://uegeek.com/tags/Lighting/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数字制造讲义02-Arduino入门</title>
-    <link href="http://uegeek.com/190313-df02-arduino-intro.html"/>
-    <id>http://uegeek.com/190313-df02-arduino-intro.html</id>
-    <published>2019-03-13T11:02:31.000Z</published>
-    <updated>2019-03-13T11:16:52.392Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/week7title.jpg" alt=""></p><a id="more"></a><p>在这个学期，我们会学习数字制造中主要的环节和技术，包括 Build 和 Code 两部分。</p><p><img src="http://img.viz.mobi/Build&amp;Code.001.JPEG" alt=""></p><p>上半学期我们主要学习 Code 部分，它赋予物品「灵魂」，让一件物品能完成我们期望的功能和互动。</p><p>怎样让物品拥有一定的「智力」呢？</p><p>给它加上芯片嘛。</p><p>可是芯片、电路、元件、硬件啊，都涉及到很专业的知识，对一般人来说门槛太高了。所以今天我们来介绍通往硬件世界的捷径——Arduino。</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=m0823vlpahu" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/m0823vlpahu.html" target="_blank" rel="noopener">Arduino创始人TED演讲：开启开源想象力</a></p><p>Arduino 的初衷，是为了让没有电子相关专业背景的人，能够在很短的时间内上手。这个小小的板子，撬开了很多人的想象力，让动手做东西的门槛降低，让无数好玩的想法得以试验和实现。</p><h2 id="为什么要用-Arduino？"><a href="#为什么要用-Arduino？" class="headerlink" title="为什么要用 Arduino？"></a>为什么要用 Arduino？</h2><p>它可以帮助我们用很小的成本，快速地搭建智能物件的原型。也就是</p><blockquote><p>Prototype &amp; Digitize for the Real World</p></blockquote><p>很多时候，我们有一个想法，比如：有一个自动给花浇水的装置。「自动」意味着我们会设定一些规则，在某些条件下自动触发浇花这个动作。要实现自动，就会需要一个类似电脑一样的带有一定「理解能力」的执行者。如果每一个想法，都需要一台电脑来实现，那我们早就破产了。</p><p>这时候只需要一个电脑的极度简化版本——我们一般叫做单片机（Microcontrollers）。它是一种集成电路芯片，把具有数据处理能力的中央处理器CPU、随机存储器RAM、只读存储器ROM、多种I/O口和中断系统、定时器/计数器等功能集成到一块硅片上，构成的一个小而完善的微型计算机系统，在工业控制领域广泛应用。</p><p>单片机的大小确实可以只有薄薄的一片，方便我们放置到各种各样的物体内部，赋予它计算的能力。</p><p>Arduino 就是一种单片机。</p><p><img src="https://cdn.arduino.cc/homepage/static/media/arduino-UNO.bcc69bde.png" alt=""></p><p>类似的工具还有树莓派（不算单片机了，是基于 Linux 的低配电脑）等等，它比 Arduino 要强大，因为芯片不止 8 位，可以运行操作系统。</p><p><img src="https://shawzt.github.io/assets/images/raspberry_pi.png" alt=""></p><h2 id="模拟信号和数字信号"><a href="#模拟信号和数字信号" class="headerlink" title="模拟信号和数字信号"></a>模拟信号和数字信号</h2><p>当我们想要对实体环境施加影响，经常需要将模拟信号转化为数字信号——因为我们能操纵数字信号（编程就是一种强大的操纵），但是不能任意改变模拟信号。</p><p>那么什么是模拟信号和数字信号呢？</p><p>简单来说，模拟信号在时间上和取值上都是连续不间断的（可无限微分）。自然界常见的信号都是模拟信号，比如温度、声音等等。而数字信号在时间上和取值上，不完全连续，存在很多「档位」，档位越多，意味着信号的分辨率越高。</p><p>更详细的讲解，我们可以看看下面这个视频：</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=z06602duiv9" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/z06602duiv9.html" target="_blank" rel="noopener">什么是模拟信号？数字信号？区别是什么？它们又是如何完成转换的？</a></p><p>Arduino 的主要作用之一，就是帮助我们实现模数转换，完成对物理世界数据的采集，以及处理信号后反馈到物理世界中。</p><h2 id="Arduino-开发板"><a href="#Arduino-开发板" class="headerlink" title="Arduino 开发板"></a>Arduino 开发板</h2><p>Arduino 有许多不同型号、功能各异的开发板。</p><p><img src="https://assets.t3n.sc/news/wp-content/uploads/2016/07/Arduino-Boards-595x680.jpg" alt=""></p><p>其中一些体积更小，或是芯片的能力更强，又或者搭载了 wifi 或蓝牙模块。这样我们可以根据自己项目的需要，使用不同的板子。每一块板子的具体信息，可以在官网上查看。</p><p>Arduino 的开发板，本质上都是单片机应用开发板，使用的芯片大都是 AVR 芯片。开发板封装和简化了最常用的软硬件模块。硬件主要是提供基本的芯片、数字信号端口、模拟信号端口、电源和其他一些接口。软件主要提供了简单的函数和应用库，不用直接去操作寄存器，使得没有太多单片机基础的人也可以使用。</p><p><img src="http://img.viz.mobi/arduino-illustration.jpg" alt=""></p><h2 id="用-Arduino-搭建简易电路"><a href="#用-Arduino-搭建简易电路" class="headerlink" title="用 Arduino 搭建简易电路"></a>用 Arduino 搭建简易电路</h2><p>电路是什么玩意儿？</p><p>作为一种路，它其实跟公路、地铁线路有点类似，只不过它运送的不是车辆和人，而是电荷。人和车会选择最短路径或者换乘最少的路线，电荷也会沿着阻碍最小的路径移动。</p><p>在最简单的电路中，有三个必不可少的部分：电源、中间环节、负载。</p><p>负载是指将电能转化为其他形式能量的部分，例如灯泡、电机等。电路的使命，是为了让负载能够正常工作。</p><p><img src="http://img.viz.mobi/circuitMetaphor.jpg" alt=""></p><p>（雾）</p><p>下面就是一个最简单的电路，电流从电源正极流经 LED，返回到电源负极。</p><p><img src="http://img.viz.mobi/breadboardCircuit.jpg" alt=""></p><p>上图右侧是一块面包板，它的作用是提供电路连接，帮助我们快速搭建电路。</p><p>在面包板中，Terminal Strips 都是连通的，而两侧的 Power Rails 也是连通的。</p><p><img src="http://img.viz.mobi/breadboardEX.jpg" alt=""></p><p>关于电路板的使用，可以看看这个讲解得很仔细的视频：<a href="https://www.youtube.com/watch?v=6WReFkfrUIk" target="_blank" rel="noopener">https://www.youtube.com/watch?v=6WReFkfrUIk</a> （备好梯子）</p><p>Arduino 提供了电源和接地的端口，这样我们可以快速连成一个完整的电路：</p><p><img src="http://img.viz.mobi/veryBasicCircuit.png" alt=""></p><h2 id="Arduino-编程环境"><a href="#Arduino-编程环境" class="headerlink" title="Arduino 编程环境"></a>Arduino 编程环境</h2><p>Arduino 开发板是硬件部分。接下来我们了解软件部分。从 Arduino 官网下载 Arduino 软件并安装，打开后就看到 Arduino 的编程环境。</p><p>现在不但可以在软件中编程，还可以访问在线编程工具：<a href="https://create.arduino.cc/" target="_blank" rel="noopener">https://create.arduino.cc/</a></p><p><img src="https://hackster.imgix.net/uploads/attachments/256423/screenshot_2017-01-31_16_Jb6CmduoC2.png?auto=compress%2Cformat&amp;w=680&amp;h=510&amp;fit=max" alt=""></p><p>具体的界面功能就不详细介绍了。</p><p>同学们最开始上传程序到板子时容易遇到一个错误，大都是因为没有选择传输端口导致的。需要注意在 <code>Tools</code> 菜单中选择对应的端口再上传。如果使用 USB 连接板子和电脑，就选择包含 <code>USB</code> 的端口。</p><p><img src="https://i.stack.imgur.com/MOvDD.png" alt=""></p><p>下节课我们介绍一些电路基本知识。C U</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/week7title.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="制造" scheme="http://uegeek.com/tags/%E5%88%B6%E9%80%A0/"/>
-    
-      <category term="Maker" scheme="http://uegeek.com/tags/Maker/"/>
-    
-      <category term="Digital Fabrication" scheme="http://uegeek.com/tags/Digital-Fabrication/"/>
-    
-      <category term="Fab" scheme="http://uegeek.com/tags/Fab/"/>
-    
-      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
-    
-      <category term="单片机" scheme="http://uegeek.com/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-      <category term="电路" scheme="http://uegeek.com/tags/%E7%94%B5%E8%B7%AF/"/>
     
   </entry>
   

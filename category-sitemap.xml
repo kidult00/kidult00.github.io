@@ -7,13 +7,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/</loc>
-        <lastmod>2018-09-25T08:21:26.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/</loc>
         <lastmod>2018-09-25T08:28:49.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -51,6 +44,13 @@
     <url>
         <loc>http://uegeek.com/categories/%E6%95%99%E7%A8%8B/</loc>
         <lastmod>2019-09-08T15:25:26.381Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/categories/%E5%8A%A8%E6%89%8B/</loc>
+        <lastmod>2019-10-09T08:35:48.390Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
