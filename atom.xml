@@ -156,13 +156,13 @@
     
       <category term="Shader" scheme="http://uegeek.com/tags/Shader/"/>
     
-      <category term="Principled BSDF" scheme="http://uegeek.com/tags/Principled-BSDF/"/>
-    
       <category term="材质" scheme="http://uegeek.com/tags/%E6%9D%90%E8%B4%A8/"/>
     
       <category term="贴图" scheme="http://uegeek.com/tags/%E8%B4%B4%E5%9B%BE/"/>
     
       <category term="计算机图形" scheme="http://uegeek.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2/"/>
+    
+      <category term="Principled BSDF" scheme="http://uegeek.com/tags/Principled-BSDF/"/>
     
   </entry>
   
