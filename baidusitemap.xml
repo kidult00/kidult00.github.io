@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://uegeek.com/191009-3minsci-alzheimer.html</loc>
     <lastmod>2019-10-09T08:35:48.390Z</lastmod>
@@ -49,9 +50,9 @@
          
         <tag>3D</tag>
          
-        <tag>Camera</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Camera</tag>
          
         <tag>CG</tag>
          
@@ -81,9 +82,9 @@
         
         <tag>3D</tag>
          
-        <tag>Texture</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Texture</tag>
          
         <tag>OpenGL</tag>
          
@@ -91,13 +92,13 @@
          
         <tag>Shader</tag>
          
+        <tag>Principled BSDF</tag>
+         
         <tag>材质</tag>
          
         <tag>贴图</tag>
          
         <tag>计算机图形</tag>
-         
-        <tag>Principled BSDF</tag>
          
          
            
@@ -121,19 +122,19 @@
          
         <tag>设计</tag>
          
-        <tag>Guideline</tag>
-         
-        <tag>体验</tag>
-         
         <tag>Exhibition</tag>
          
         <tag>Immersive</tag>
          
         <tag>Experience</tag>
          
+        <tag>Guideline</tag>
+         
         <tag>展览</tag>
          
         <tag>沉浸式</tag>
+         
+        <tag>体验</tag>
          
          
            
@@ -1543,9 +1544,9 @@
          
         <tag>服务设计</tag>
          
-        <tag>o2o</tag>
-         
         <tag>体验</tag>
+         
+        <tag>o2o</tag>
          
         <tag>场景</tag>
          
@@ -1575,9 +1576,9 @@
          
         <tag>服务设计</tag>
          
-        <tag>o2o</tag>
-         
         <tag>体验</tag>
+         
+        <tag>o2o</tag>
          
         <tag>场景</tag>
          
@@ -1607,9 +1608,9 @@
          
         <tag>服务设计</tag>
          
-        <tag>o2o</tag>
-         
         <tag>体验</tag>
+         
+        <tag>o2o</tag>
          
         <tag>场景</tag>
          
@@ -1639,9 +1640,9 @@
          
         <tag>服务设计</tag>
          
-        <tag>o2o</tag>
-         
         <tag>体验</tag>
+         
+        <tag>o2o</tag>
          
         <tag>场景</tag>
          
@@ -2483,9 +2484,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>iOS</tag>
-         
         <tag>Guideline</tag>
+         
+        <tag>iOS</tag>
          
         <tag>规范</tag>
          
@@ -3635,11 +3636,11 @@
          
         <tag>中欧</tag>
          
+        <tag>捷克</tag>
+         
         <tag>匈牙利</tag>
          
         <tag>奥地利</tag>
-         
-        <tag>捷克</tag>
          
         <tag>斯洛伐克</tag>
          

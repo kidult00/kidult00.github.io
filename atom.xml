@@ -74,9 +74,9 @@
     
       <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
     
-      <category term="Camera" scheme="http://uegeek.com/tags/Camera/"/>
-    
       <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
+    
+      <category term="Camera" scheme="http://uegeek.com/tags/Camera/"/>
     
       <category term="CG" scheme="http://uegeek.com/tags/CG/"/>
     
@@ -110,19 +110,19 @@
     
       <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
     
-      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
-    
-      <category term="体验" scheme="http://uegeek.com/tags/%E4%BD%93%E9%AA%8C/"/>
-    
       <category term="Exhibition" scheme="http://uegeek.com/tags/Exhibition/"/>
     
       <category term="Immersive" scheme="http://uegeek.com/tags/Immersive/"/>
     
       <category term="Experience" scheme="http://uegeek.com/tags/Experience/"/>
     
+      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
+    
       <category term="展览" scheme="http://uegeek.com/tags/%E5%B1%95%E8%A7%88/"/>
     
       <category term="沉浸式" scheme="http://uegeek.com/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F/"/>
+    
+      <category term="体验" scheme="http://uegeek.com/tags/%E4%BD%93%E9%AA%8C/"/>
     
   </entry>
   
@@ -146,9 +146,9 @@
     
       <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
     
-      <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
-    
       <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
+    
+      <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
     
       <category term="OpenGL" scheme="http://uegeek.com/tags/OpenGL/"/>
     
@@ -156,13 +156,13 @@
     
       <category term="Shader" scheme="http://uegeek.com/tags/Shader/"/>
     
+      <category term="Principled BSDF" scheme="http://uegeek.com/tags/Principled-BSDF/"/>
+    
       <category term="材质" scheme="http://uegeek.com/tags/%E6%9D%90%E8%B4%A8/"/>
     
       <category term="贴图" scheme="http://uegeek.com/tags/%E8%B4%B4%E5%9B%BE/"/>
     
       <category term="计算机图形" scheme="http://uegeek.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2/"/>
-    
-      <category term="Principled BSDF" scheme="http://uegeek.com/tags/Principled-BSDF/"/>
     
   </entry>
   
