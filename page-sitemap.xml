@@ -8,7 +8,14 @@
     
     <url>
         <loc>http://uegeek.com/resources/</loc>
-        <lastmod>2019-10-10T09:52:38.604Z</lastmod>
+        <lastmod>2019-10-10T12:03:16.009Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>http://uegeek.com/categories/</loc>
+        <lastmod>2019-10-10T10:27:51.006Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -23,13 +30,6 @@
     <url>
         <loc>http://uegeek.com/google834c3e9d5c1d696f.html</loc>
         <lastmod>2016-08-06T02:11:33.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>http://uegeek.com/categories/</loc>
-        <lastmod>2016-01-06T12:41:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
