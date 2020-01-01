@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://uegeek.com/200101-design-diary-001.html</loc>
+    <lastmod>2020-01-01T10:57:06.262Z</lastmod>
+    <data>
+        <display>
+        <title>设计日课 Vol.001 - 回到历史寻找设计</title>
+        <pubTime>2020-01-01T10:42:05.000Z</pubTime>
+        
+        <tag>2019</tag>
+         
+        <tag>作品</tag>
+         
+        <tag>零反思</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/191231-2019-collection.html</loc>
     <lastmod>2019-12-31T09:50:15.228Z</lastmod>
     <data>
@@ -75,9 +99,9 @@
          
         <tag>3D</tag>
          
-        <tag>Camera</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Camera</tag>
          
         <tag>CG</tag>
          
@@ -107,9 +131,9 @@
         
         <tag>3D</tag>
          
-        <tag>Texture</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Texture</tag>
          
         <tag>OpenGL</tag>
          
@@ -117,13 +141,13 @@
          
         <tag>Shader</tag>
          
-        <tag>Principled BSDF</tag>
-         
         <tag>材质</tag>
          
         <tag>贴图</tag>
          
         <tag>计算机图形</tag>
+         
+        <tag>Principled BSDF</tag>
          
          
            
@@ -417,9 +441,9 @@
          
         <tag>Arduino</tag>
          
-        <tag>MIDI</tag>
-         
         <tag>通信</tag>
+         
+        <tag>MIDI</tag>
          
         <tag>OSC</tag>
          
@@ -521,9 +545,9 @@
          
         <tag>电路</tag>
          
-        <tag>MIDI</tag>
-         
         <tag>通信</tag>
+         
+        <tag>MIDI</tag>
          
         <tag>OSC</tag>
          
@@ -831,9 +855,9 @@
          
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -873,9 +897,9 @@
          
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -913,9 +937,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -951,9 +975,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -989,9 +1013,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1025,9 +1049,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1087,9 +1111,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1121,9 +1145,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1155,9 +1179,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1195,9 +1219,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>颜色</tag>
          
@@ -1233,9 +1257,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1273,9 +1297,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1305,9 +1329,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -3655,17 +3679,17 @@
         <title>中欧四国扫(ba)盲(gua)帖之一：“中欧”还是“东欧”？</title>
         <pubTime>2015-09-18T13:37:38.000Z</pubTime>
         
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>历史</tag>
          
-        <tag>捷克</tag>
+        <tag>中欧</tag>
          
-        <tag>Travel</tag>
+        <tag>匈牙利</tag>
          
         <tag>奥地利</tag>
          
-        <tag>匈牙利</tag>
+        <tag>捷克</tag>
          
         <tag>斯洛伐克</tag>
          
@@ -3689,9 +3713,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>人类简史</tag>
+         
+        <tag>历史</tag>
          
          
            
@@ -3713,13 +3737,13 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>历史</tag>
          
-        <tag>捷克</tag>
+        <tag>中欧</tag>
          
-        <tag>Travel</tag>
+        <tag>捷克</tag>
          
          
            
@@ -3741,15 +3765,15 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>历史</tag>
          
-        <tag>Travel</tag>
-         
-        <tag>哈布斯堡王朝</tag>
+        <tag>中欧</tag>
          
         <tag>奥地利</tag>
+         
+        <tag>哈布斯堡王朝</tag>
          
         <tag>维也纳</tag>
          
@@ -3773,13 +3797,13 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>历史</tag>
          
-        <tag>捷克</tag>
+        <tag>中欧</tag>
          
-        <tag>Travel</tag>
+        <tag>捷克</tag>
          
          
            
@@ -3801,11 +3825,11 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>历史</tag>
          
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>东正教</tag>
          
@@ -3837,11 +3861,11 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
+        <tag>Travel</tag>
          
         <tag>历史</tag>
          
-        <tag>Travel</tag>
+        <tag>中欧</tag>
          
         <tag>哥特式</tag>
          
@@ -4191,9 +4215,9 @@
         
         <tag>Design</tag>
          
-        <tag>Reading</tag>
-         
         <tag>设计师</tag>
+         
+        <tag>Reading</tag>
          
          
            
@@ -4239,9 +4263,9 @@
         
         <tag>Design</tag>
          
-        <tag>Reading</tag>
-         
         <tag>设计师</tag>
+         
+        <tag>Reading</tag>
          
          
            
@@ -4263,9 +4287,9 @@
         
         <tag>Design</tag>
          
-        <tag>Reading</tag>
-         
         <tag>设计师</tag>
+         
+        <tag>Reading</tag>
          
          
            
@@ -4287,9 +4311,9 @@
         
         <tag>Design</tag>
          
-        <tag>Reading</tag>
-         
         <tag>设计师</tag>
+         
+        <tag>Reading</tag>
          
          
            
@@ -6725,9 +6749,9 @@
         
         <tag>Travel</tag>
          
-        <tag>Singapore</tag>
-         
         <tag>签证</tag>
+         
+        <tag>Singapore</tag>
          
          
            
