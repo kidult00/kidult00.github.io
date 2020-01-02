@@ -4,18 +4,50 @@
 
     
   <url>
+    <loc>http://uegeek.com/200102-design-diary-002.html</loc>
+    <lastmod>2020-01-02T15:32:01.079Z</lastmod>
+    <data>
+        <display>
+        <title>设计日课 Vol.002 - 设计发展的驱动力</title>
+        <pubTime>2020-01-02T14:35:11.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>设计</tag>
+         
+        <tag>艺术</tag>
+         
+        <tag>设计史</tag>
+         
+        <tag>日课</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/200101-design-diary-001.html</loc>
-    <lastmod>2020-01-01T10:57:06.262Z</lastmod>
+    <lastmod>2020-01-02T15:30:42.488Z</lastmod>
     <data>
         <display>
         <title>设计日课 Vol.001 - 回到历史寻找设计</title>
         <pubTime>2020-01-01T10:42:05.000Z</pubTime>
         
-        <tag>2019</tag>
+        <tag>Design</tag>
          
-        <tag>作品</tag>
+        <tag>设计</tag>
          
-        <tag>零反思</tag>
+        <tag>艺术</tag>
+         
+        <tag>设计史</tag>
+         
+        <tag>日课</tag>
          
          
            
@@ -99,9 +131,9 @@
          
         <tag>3D</tag>
          
-        <tag>Blender</tag>
-         
         <tag>Camera</tag>
+         
+        <tag>Blender</tag>
          
         <tag>CG</tag>
          
@@ -131,9 +163,9 @@
         
         <tag>3D</tag>
          
-        <tag>Blender</tag>
-         
         <tag>Texture</tag>
+         
+        <tag>Blender</tag>
          
         <tag>OpenGL</tag>
          
@@ -441,9 +473,9 @@
          
         <tag>Arduino</tag>
          
-        <tag>通信</tag>
-         
         <tag>MIDI</tag>
+         
+        <tag>通信</tag>
          
         <tag>OSC</tag>
          
@@ -545,9 +577,9 @@
          
         <tag>电路</tag>
          
-        <tag>通信</tag>
-         
         <tag>MIDI</tag>
+         
+        <tag>通信</tag>
          
         <tag>OSC</tag>
          
@@ -855,9 +887,9 @@
          
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -897,9 +929,9 @@
          
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -937,9 +969,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -975,9 +1007,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -1013,9 +1045,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -1049,9 +1081,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -1111,9 +1143,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -1145,9 +1177,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -1179,9 +1211,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -1219,9 +1251,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>颜色</tag>
          
@@ -1257,9 +1289,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -1297,9 +1329,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -1329,9 +1361,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>艺术</tag>
+         
+        <tag>Creative Coding</tag>
          
         <tag>Generative Art</tag>
          
@@ -1591,9 +1623,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>体验</tag>
-         
         <tag>服务设计</tag>
+         
+        <tag>体验</tag>
          
         <tag>o2o</tag>
          
@@ -1623,9 +1655,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>体验</tag>
-         
         <tag>服务设计</tag>
+         
+        <tag>体验</tag>
          
         <tag>o2o</tag>
          
@@ -1655,9 +1687,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>体验</tag>
-         
         <tag>服务设计</tag>
+         
+        <tag>体验</tag>
          
         <tag>o2o</tag>
          
@@ -1687,9 +1719,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>体验</tag>
-         
         <tag>服务设计</tag>
+         
+        <tag>体验</tag>
          
         <tag>o2o</tag>
          
@@ -3681,11 +3713,11 @@
         
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
          
         <tag>匈牙利</tag>
+         
+        <tag>历史</tag>
          
         <tag>奥地利</tag>
          
@@ -3713,9 +3745,9 @@
         
         <tag>Note</tag>
          
-        <tag>人类简史</tag>
-         
         <tag>历史</tag>
+         
+        <tag>人类简史</tag>
          
          
            
@@ -3739,9 +3771,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>捷克</tag>
          
@@ -3767,9 +3799,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>奥地利</tag>
          
@@ -3799,9 +3831,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>捷克</tag>
          
@@ -3827,9 +3859,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>东正教</tag>
          
@@ -3863,9 +3895,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>哥特式</tag>
          

@@ -926,13 +926,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
-        <lastmod>2018-09-25T08:07:26.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/tags/%E4%B8%AD%E6%AC%A7/</loc>
         <lastmod>2018-09-25T08:07:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -941,6 +934,13 @@
 
     <url>
         <loc>http://uegeek.com/tags/%E5%8C%88%E7%89%99%E5%88%A9/</loc>
+        <lastmod>2018-09-25T08:07:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
         <lastmod>2018-09-25T08:07:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1584,13 +1584,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/</loc>
-        <lastmod>2018-12-13T11:51:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/tags/Generative-Art/</loc>
         <lastmod>2018-12-13T11:51:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1745,14 +1738,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/</loc>
+        <loc>http://uegeek.com/tags/MIDI/</loc>
         <lastmod>2019-04-09T14:00:19.246Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/MIDI/</loc>
+        <loc>http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/</loc>
         <lastmod>2019-04-09T14:00:19.246Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1885,13 +1878,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/</loc>
-        <lastmod>2019-08-07T10:15:37.040Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/tags/Exhibition/</loc>
         <lastmod>2019-08-07T10:15:37.040Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1997,13 +1983,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Design/</loc>
-        <lastmod>2019-09-08T15:25:26.381Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/tags/%E6%95%99%E7%A8%8B/</loc>
         <lastmod>2019-09-08T15:25:26.381Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -2018,14 +1997,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Blender/</loc>
+        <loc>http://uegeek.com/tags/Camera/</loc>
         <lastmod>2019-09-08T15:25:26.381Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Camera/</loc>
+        <loc>http://uegeek.com/tags/Blender/</loc>
         <lastmod>2019-09-08T15:25:26.381Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -2110,21 +2089,56 @@
 
     <url>
         <loc>http://uegeek.com/tags/2019/</loc>
-        <lastmod>2020-01-01T10:57:06.262Z</lastmod>
+        <lastmod>2019-12-31T09:50:15.228Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E4%BD%9C%E5%93%81/</loc>
-        <lastmod>2020-01-01T10:57:06.262Z</lastmod>
+        <lastmod>2019-12-31T09:50:15.228Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E9%9B%B6%E5%8F%8D%E6%80%9D/</loc>
-        <lastmod>2020-01-01T10:57:06.262Z</lastmod>
+        <lastmod>2019-12-31T09:50:15.228Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/Design/</loc>
+        <lastmod>2020-01-02T15:32:01.079Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/</loc>
+        <lastmod>2020-01-02T15:32:01.079Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/</loc>
+        <lastmod>2020-01-02T15:32:01.079Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1%E5%8F%B2/</loc>
+        <lastmod>2020-01-02T15:32:01.079Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E6%97%A5%E8%AF%BE/</loc>
+        <lastmod>2020-01-02T15:32:01.079Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
