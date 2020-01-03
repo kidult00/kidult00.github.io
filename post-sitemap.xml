@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/200103-design-diary-003.html</loc>
+        <lastmod>2020-01-03T12:06:18.439Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://uegeek.com/200102-design-diary-002.html</loc>
-        <lastmod>2020-01-02T15:32:01.079Z</lastmod>
+        <lastmod>2020-01-02T16:01:43.478Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
