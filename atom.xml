@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2020-01-05T04:00:26.247Z</updated>
+  <updated>2020-01-05T09:53:30.280Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -17,13 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>设计日课 Vol.004 - 好设计的关系框架和时空框架</title>
+    <link href="http://uegeek.com/200105-design-diary-004.html"/>
+    <id>http://uegeek.com/200105-design-diary-004.html</id>
+    <published>2020-01-05T09:50:42.000Z</published>
+    <updated>2020-01-05T09:53:30.280Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/%E8%AE%BE%E8%AE%A1%E6%97%A5%E8%AF%BEtitle.jpg" alt=""></p><a id="more"></a> <p>继续<a href="https://www.uegeek.com/200103-design-diary-003.html" target="_blank" rel="noopener">上一期设计日课 </a>的话题。</p><p>上一期文章发出来以后，收到了 Oliver Ding 老师发来的讨论。</p><p>丁老师用多语言融合的方法来构建符号化表达，提出了一个很有意思的图示：</p><p><img src="http://img.viz.mobi/V004-%E5%93%81.jpeg" alt=""></p><p><img src="http://img.viz.mobi/V004-OliverDing%E4%B8%89%E5%8F%A3%E6%88%90%E5%93%81.jpg" alt=""></p><p>第一人称、第二人称、第三人称的视角代表着客观取向、主观取向与交互取向。</p><p>基于这个框架，丁老师从「设计三味」出发，回应我的问题「这是好设计吗？」，提出有三种视角的「好」的思考脉络：</p><ul><li>客观视角：规范、影响、评价</li><li>主观视角：体验、感受、情绪</li><li>互动生态视角：可供性</li></ul><p>这个思考脉络给我很大启发，特别感谢丁老师。</p><h2 id="设计评价的「关系」框架"><a href="#设计评价的「关系」框架" class="headerlink" title="设计评价的「关系」框架"></a>设计评价的「关系」框架</h2><p>上一期的讨论把问题拆开来，不免显得复杂：</p><ul><li>这个设计的对象是谁？这些人可以再分成不同类别吗？我了解都包括哪些人吗？</li><li>这个设计最初目的是什么？是否达成了呢？设计者会如何衡量？</li><li>这个设计在空间上会影响到哪些人？如何影响？影响会如何变化？</li><li>这个设计在时间上会影响到哪些人？如何影响？影响会如何变化？</li><li>不同人会如何评价它，为什么？这些评价应该如何对待？</li><li>除了「好」跟「不好」，我们更需要回答「哪里好」和「有多好」，以及，「在什么前提」下是好的</li></ul><p>丁老师的框架给出了收敛的评价维度。</p><p>评判设计优劣最常见的几种方式，包括个人偏好、设计规范、功能属性等，可以归入到「我视角」、「你视角」、「他视角」中，提出相应的评价要点：</p><p><img src="http://img.viz.mobi/V004%E5%A5%BD%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%85%B3%E7%B3%BB%E6%A1%86%E6%9E%B6.jpg" alt=""></p><p>有了这个关系框架，我们就容易从完全主观的「喜欢」、「丑」、「美」、「好」更进一步，拓展到他人的视角、群体的视角，看到一个设计的影响。</p><h2 id="设计评价的「时空」框架"><a href="#设计评价的「时空」框架" class="headerlink" title="设计评价的「时空」框架"></a>设计评价的「时空」框架</h2><p>类似的，从设计对人的影响时间尺度来看，我们也可以划分出一条比较清晰的线索：</p><table><thead><tr><th>层次</th><th>时间跨度</th><th>维度</th></tr></thead><tbody><tr><td>认知级别</td><td>&lt;1秒</td><td>形态、感知、情绪、体验</td></tr><tr><td>行为级别</td><td>1秒~天/月/年</td><td>行为、目标、功能</td></tr><tr><td>文化级别</td><td>持久</td><td>观念、文化、影响力</td></tr></tbody></table><p>既然有时间尺度，当然还可以以空间为尺度：</p><table><thead><tr><th>层次</th><th>空间范围</th><th>维度</th></tr></thead><tbody><tr><td>设计客体本身</td><td>设计本身</td><td>点线面等构成元素</td></tr><tr><td>受众</td><td>设计的利益相关者</td><td>对个体产生的影响</td></tr><tr><td>广域</td><td>群体、民族</td><td>对群体产生的影响</td></tr></tbody></table><p>把时空结合到一起，形成一个更完整的评价维度：</p><p><img src="http://img.viz.mobi/V004%E5%A5%BD%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%97%B6%E7%A9%BA%E6%A1%86%E6%9E%B6.jpg" alt=""></p><p>时空框架告诉我们，人是希望不朽的，设计也是 😂 </p><p>这样看来，建筑设计师、游戏设计师们可能分别在时间、空间维度（而不是反过来）能收获更多的好评和成就感，而信息相关的设计可能将沿着这条轨道演进：字体设计 → 平面/装帧设计 → 可视化/交互设计 → 影视和游戏设计 →虚拟现实设计 → 脑机接口设计……😳</p><p>本质上，设计也是一种模因。</p><hr><p>设计日课系列：</p><p><a href="https://www.uegeek.com/200101-design-diary-001.html" target="_blank" rel="noopener">设计日课 Vol.001 - 回到历史寻找设计</a></p><p><a href="https://www.uegeek.com/200102-design-diary-002.html" target="_blank" rel="noopener">设计日课 Vol.002 - 设计发展的驱动力</a></p><p><a href="https://www.uegeek.com/200103-design-diary-003.html" target="_blank" rel="noopener">设计日课 Vol.003 - 这是好设计吗？</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E8%AE%BE%E8%AE%A1%E6%97%A5%E8%AF%BEtitle.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="Design" scheme="http://uegeek.com/tags/Design/"/>
+    
+      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="设计原则" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/"/>
+    
+      <category term="Dieter Rams" scheme="http://uegeek.com/tags/Dieter-Rams/"/>
+    
+      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
+    
+  </entry>
+  
+  <entry>
     <title>适老化改造套内空间设计 - 客厅/起居室篇</title>
     <link href="http://uegeek.com/200105-aging-in-place-livingroom.html"/>
     <id>http://uegeek.com/200105-aging-in-place-livingroom.html</id>
     <published>2020-01-05T03:54:17.000Z</published>
-    <updated>2020-01-05T04:00:26.247Z</updated>
+    <updated>2020-01-05T05:46:32.951Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96%E6%94%B9%E9%80%A0%E5%A5%97%E5%86%85%E7%A9%BA%E9%97%B4%E8%AE%BE%E8%AE%A1-%E5%AE%A2%E5%8E%85%E7%AF%87.jpg" alt=""></p><a id="more"></a> <p>起居室是老年人日常活动的主要场所，也是一般住宅中的核心空间。这个空间需要承载包括聊天、会客、看电视、休闲娱乐等多种功能，是老年人日常生活中停留时间最长的地方之一。在设计时，应该充分考虑老年人的身心特点和需求，促进与家人和外界环境之间的交流。</p><p>00 对客厅做了适老化设计，下面是建模和渲染结果：</p><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%AE%A2%E5%8E%85-%E6%94%B6%E7%BA%B3.jpg" alt=""></p><h2 id="设计要点"><a href="#设计要点" class="headerlink" title="设计要点"></a>设计要点</h2><table><thead><tr><th>布局规划</th><th>安全、舒适，方便日常活动</th></tr></thead><tbody><tr><td>平面规划</td><td>距离老年人房间、卫生间不宜过远，确保一个能停放轮椅的宽裕空间</td></tr><tr><td>立面规划</td><td>尽量避免垂直高差</td></tr></tbody></table><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%AE%A2%E5%8E%85-%E5%B8%83%E5%B1%80.jpg" alt=""></p><p>设计要点</p><blockquote><p><strong>设计合适的空间尺度</strong></p><p><strong>保证安全</strong></p><p><strong>方便日常活动</strong></p><p><strong>根据需要选择和布置家具</strong></p></blockquote><h3 id="1-设计合适的空间尺度"><a href="#1-设计合适的空间尺度" class="headerlink" title="1.设计合适的空间尺度"></a>1.设计合适的空间尺度</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%AE%A2%E5%8E%85-%E5%B0%BA%E5%AF%B8.jpg" alt=""></p><ul><li>起居室过小会阻碍行动，过大则会妨碍沟通</li><li>一般老年住宅中的起居室开间为 3300~4500mm，进深不宜小于 3600mm</li><li>开间与进深比例以 1:1~1:1.2 为宜</li></ul><h3 id="2-保证安全"><a href="#2-保证安全" class="headerlink" title="2.保证安全"></a>2.保证安全</h3><ul><li>起居室与阳台地面交接处不宜留有高差</li><li>地面材质应防滑、耐磨、易清洁</li><li>门窗面积要大，保证良好的采光与通风</li><li>起居室位于中部，尽量减少主要动线穿越，以免频繁打扰和形成危险</li></ul><p><img src="https://pic3.zhimg.com/80/v2-669365e66aa9e658ffa2761b3c3e07ba_hd.jpg" alt=""></p><p><img src="https://pic4.zhimg.com/80/v2-088ce6a3c21025ad3e97123f0f80b06b_hd.jpg" alt=""></p><h3 id="3-方便日常活动"><a href="#3-方便日常活动" class="headerlink" title="3.方便日常活动"></a>3.方便日常活动</h3><ul><li>可设置老人或轮椅专座，位置在方便进出的地方，能获得阳光处更佳</li><li>家具间的距离应大于 800mm，保证轮椅通过</li><li>空调送风方向不应直接对着沙发区域</li><li>提供一定的收纳空间，不费力就能拿取</li><li>老年人视力下降时，起居室照明亮度宜 100 lx 以上，餐厅 150 lx，饭桌 700 lx</li><li>根据需要增设局部照明，方便看报、打电话、进行娱乐活动等</li></ul><h3 id="4-根据需要选择和布置家具"><a href="#4-根据需要选择和布置家具" class="headerlink" title="4.根据需要选择和布置家具"></a>4.根据需要选择和布置家具</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%AE%A2%E5%8E%85-%E7%BA%BF%E7%A8%BF.jpg" alt=""></p><ul><li>沙发两侧应有结实的扶手，便于坐下起身时撑扶</li><li>茶几应略高于沙发，方便不起身就能取放物品</li><li>沙发和茶几旁设有插座，方便使用台灯、充电器、电话等</li><li>茶几与沙发之间距离应大于 300mm，便于通行</li><li>茶几等家具尽量轻巧、可组合，方便移动和布置</li><li>电视柜宜正对沙发，电视与沙发距离为 2000~3000mm，注意避免眩光看不清电视屏幕</li><li>电视等家电插座宜略高于电视柜台面，方便插座</li></ul><p><img src="https://pic1.zhimg.com/80/v2-9d6452a1943fa3c6a8e3cd4b491cd7d4_hd.jpg" alt=""></p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>GB 50340-2016 老年人居住建筑设计规范</li><li>周燕珉, 程晓青, 林菊英, &amp; 林婧怡. (2011). 老年住宅</li><li>财团法人, &amp; 高龄者住宅财团|译者. (2011). 老年住宅设计手册</li></ul>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96%E6%94%B9%E9%80%A0%E5%A5%97%E5%86%85%E7%A9%BA%E9%97%B4%E8%AE%BE%E8%AE%A1-%E5%AE%A2%E5%8E%85%E7%AF%87.jpg" alt=""></p><a id="more"></a> <p>起居室是老年人日常活动的主要场所，也是一般住宅中的核心空间。这个空间需要承载包括聊天、会客、看电视、休闲娱乐等多种功能，是老年人日常生活中停留时间最长的地方之一。在设计时，应该充分考虑老年人的身心特点和需求，促进与家人和外界环境之间的交流。</p><p>00 对客厅做了适老化设计，下面是建模和渲染结果：</p><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%AE%A2%E5%8E%85-%E6%94%B6%E7%BA%B3.jpg" alt=""></p><h2 id="设计要点"><a href="#设计要点" class="headerlink" title="设计要点"></a>设计要点</h2><table><thead><tr><th>布局规划</th><th>安全、舒适，方便日常活动</th></tr></thead><tbody><tr><td>平面规划</td><td>距离老年人房间、卫生间不宜过远，确保一个能停放轮椅的宽裕空间</td></tr><tr><td>立面规划</td><td>尽量避免垂直高差</td></tr></tbody></table><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%AE%A2%E5%8E%85-%E5%B8%83%E5%B1%80.jpg" alt=""></p><p>设计要点</p><blockquote><p><strong>设计合适的空间尺度</strong></p><p><strong>保证安全</strong></p><p><strong>方便日常活动</strong></p><p><strong>根据需要选择和布置家具</strong></p></blockquote><h3 id="1-设计合适的空间尺度"><a href="#1-设计合适的空间尺度" class="headerlink" title="1.设计合适的空间尺度"></a>1.设计合适的空间尺度</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%AE%A2%E5%8E%85-%E5%B0%BA%E5%AF%B8.jpg" alt=""></p><ul><li>起居室过小会阻碍行动，过大则会妨碍沟通</li><li>一般老年住宅中的起居室开间为 3300~4500mm，进深不宜小于 3600mm</li><li>开间与进深比例以 1:1~1:1.2 为宜</li></ul><h3 id="2-保证安全"><a href="#2-保证安全" class="headerlink" title="2.保证安全"></a>2.保证安全</h3><ul><li>起居室与阳台地面交接处不宜留有高差</li><li>地面材质应防滑、耐磨、易清洁</li><li>门窗面积要大，保证良好的采光与通风</li><li>起居室位于中部，尽量减少主要动线穿越，以免频繁打扰和形成危险</li></ul><p><img src="https://pic3.zhimg.com/80/v2-669365e66aa9e658ffa2761b3c3e07ba_hd.jpg" alt=""></p><p><img src="https://pic4.zhimg.com/80/v2-088ce6a3c21025ad3e97123f0f80b06b_hd.jpg" alt=""></p><h3 id="3-方便日常活动"><a href="#3-方便日常活动" class="headerlink" title="3.方便日常活动"></a>3.方便日常活动</h3><ul><li>可设置老人或轮椅专座，位置在方便进出的地方，能获得阳光处更佳</li><li>家具间的距离应大于 800mm，保证轮椅通过</li><li>空调送风方向不应直接对着沙发区域</li><li>提供一定的收纳空间，不费力就能拿取</li><li>老年人视力下降时，起居室照明亮度宜 100 lx 以上，餐厅 150 lx，饭桌 700 lx</li><li>根据需要增设局部照明，方便看报、打电话、进行娱乐活动等</li></ul><h3 id="4-根据需要选择和布置家具"><a href="#4-根据需要选择和布置家具" class="headerlink" title="4.根据需要选择和布置家具"></a>4.根据需要选择和布置家具</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%AE%A2%E5%8E%85-%E7%BA%BF%E7%A8%BF.jpg" alt=""></p><ul><li>沙发两侧应有结实的扶手，便于坐下起身时撑扶</li><li>茶几应略高于沙发，方便不起身就能取放物品</li><li>沙发和茶几旁设有插座，方便使用台灯、充电器、电话等</li><li>茶几与沙发之间距离应大于 300mm，便于通行</li><li>茶几等家具尽量轻巧、可组合，方便移动和布置</li><li>电视柜宜正对沙发，电视与沙发距离为 2000~3000mm，注意避免眩光看不清电视屏幕</li><li>电视等家电插座宜略高于电视柜台面，方便插座</li></ul><p><img src="https://pic1.zhimg.com/80/v2-9d6452a1943fa3c6a8e3cd4b491cd7d4_hd.jpg" alt=""></p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>GB 50340-2016 老年人居住建筑设计规范</li><li>周燕珉, 程晓青, 林菊英, &amp; 林婧怡. (2011). 老年住宅</li><li>财团法人, &amp; 高龄者住宅财团|译者. (2011). 老年住宅设计手册</li></ul><p>家人年纪大了，居家环境如果及时做出相应的调整和改造，能为他们提供更好的生活、保健环境。<strong>广州的朋友如果有相关改造需求，可以与我联系：uegeek@gmail.com.</strong></p><p><img src="http://img.viz.mobi/%E5%BE%AE%E4%BF%A1%E6%90%9C%E4%B8%80%E6%90%9C-%E9%80%82%E8%80%81%E5%8C%96.png" alt=""></p>]]></content>
     
     <summary type="html">
     
@@ -61,9 +91,9 @@
     <link href="http://uegeek.com/200104-aging-in-place-doorway.html"/>
     <id>http://uegeek.com/200104-aging-in-place-doorway.html</id>
     <published>2020-01-04T03:54:17.000Z</published>
-    <updated>2020-01-05T03:57:22.162Z</updated>
+    <updated>2020-01-05T05:46:45.034Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96%E6%94%B9%E9%80%A0%E5%A5%97%E5%86%85%E7%A9%BA%E9%97%B4%E8%AE%BE%E8%AE%A1-%E9%97%A8%E5%8E%85%E7%AF%87.jpg" alt=""></p><a id="more"></a> <p>门厅作为连接家和外界的空间，虽然面积不大，但是使用频繁。老年人随着年龄增大，身体机能逐渐下降，为保证方便外出，顺畅、安全，在门厅设计时有不少细节应该考虑周到。</p><p>00 对门厅做了适老化设计，下面是建模和渲染结果：</p><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85_%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85%E6%95%88%E6%9E%9C%E5%9B%BEx0.5.jpg" alt=""></p><h2 id="常见活动分析"><a href="#常见活动分析" class="headerlink" title="常见活动分析"></a>常见活动分析</h2><p>老年人进门的一般活动流程包括：</p><blockquote><p>1.拿出钥匙开门 → 2.开灯 → 3.放下手中物品 → 4.脱挂外衣 </p><p>→ 5.坐下 → 6.探身取鞋，换鞋，放鞋 → 7.站起</p></blockquote><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85-%E5%8A%A8%E7%BA%BF.jpg" alt=""></p><ul><li>换鞋：需要鞋柜，座位</li><li>穿衣：需要挂钩</li><li>开门，关门：把手易识别、易抓握，有照明</li><li>开灯，关灯：开关位置方便，操作容易</li><li>放拐杖、雨伞、包等物品：有置物空间</li><li>轮椅进出：预留尺寸，保持进出通畅</li></ul><h2 id="设计要点"><a href="#设计要点" class="headerlink" title="设计要点"></a>设计要点</h2><table><thead><tr><th>布局规划</th><th>方便进出</th></tr></thead><tbody><tr><td>平面规划</td><td>避免动线过长，特别是距离老年人经常使用的空间太远</td></tr><tr><td>立面规划</td><td>尽量避免户内外垂直高差</td></tr></tbody></table><p>设计要点</p><blockquote><p><strong>出入通畅、安全</strong></p><p><strong>保证视线和光照</strong></p><p><strong>方便穿衣换鞋</strong></p><p><strong>功能齐全</strong></p></blockquote><h3 id="1-出入通畅、安全"><a href="#1-出入通畅、安全" class="headerlink" title="1. 出入通畅、安全"></a>1. 出入通畅、安全</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85-%E9%97%A8%E5%AE%BD.jpg" alt=""></p><ul><li>户门不应设置门槛，室内外垂直高差不应大于 15mm</li><li>户门洞口宽度不小于 1000mm，高度不小于 2000mm</li><li>户门应采用平开门，采用横杆式把手</li><li>户门拉手侧应保证有 400mm 以上空间，方便轮椅接近门口</li><li>避免通道狭长、曲折，应留出急救时担架出入所需的空间</li><li>地面应采用防滑、耐污材料，易于清理</li><li>鞋柜单扇柜门宽度不宜大于 350mm，打开后不应影响门厅内人的动作</li><li>除了基本进出，还要考虑接待来客的必要空间和护理人员的活动空间</li></ul><h3 id="2-保证视线和光照"><a href="#2-保证视线和光照" class="headerlink" title="2. 保证视线和光照"></a>2. 保证视线和光照</h3><ul><li>门厅宜开门见山，减少屏障和光线遮挡</li><li>门厅内应设有照明，如有自然采光更佳</li><li>灯具开关应设在进门方便操作的位置，距地面 1200mm</li><li>户门应该有高低两个观察孔，低位观察孔便于轮椅老人使用</li><li>方便老人坐在起居沙发上了解门厅的进出状况</li></ul><h3 id="3-方便穿衣换鞋"><a href="#3-方便穿衣换鞋" class="headerlink" title="3. 方便穿衣换鞋"></a>3. 方便穿衣换鞋</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85-%E5%AE%B6%E5%85%B7.jpg" alt=""></p><ul><li>有充裕的空间换鞋换衣</li><li>门厅中的鞋柜、鞋凳应靠近布置，便于取放鞋子</li><li>鞋柜宜在 850mm 高度处设有台面，既可以放置小物品，又可作为扶手便于撑扶</li><li>鞋柜下部留出 300mm 左右空档，安排部分开敞的放鞋空间，便于老人换鞋</li><li>配置结实、稳定、坐面稍宽大的鞋凳，长度宜大于 450mm，方便换鞋和放置随身物品</li><li>鞋凳旁宜设置竖向扶手，上端距地面 1400mm 左右，帮助老人站立起身</li></ul><h3 id="4-功能齐全"><a href="#4-功能齐全" class="headerlink" title="4. 功能齐全"></a>4. 功能齐全</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85-%E9%A2%84%E7%95%99%E5%8A%9F%E8%83%BD.jpg" alt=""></p><ul><li>门厅内可设置伞立，防止雨水滴湿地面</li><li>预留提示板位置，提醒出门前需要做的事情</li><li>可预留一处电源插座，供吸尘器等设备使用</li><li>如空间允许，门厅内宜预留轮椅暂存空间</li><li>使用轮椅的家中，墙壁上可设 350mm 高的防撞板</li><li>门厅可设穿衣镜，为防止轮椅碰撞，穿衣镜下沿应高于地面 350mm 以上</li></ul><p>适老化门厅俯瞰图：</p><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85_%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85%E6%95%88%E6%9E%9C%E5%9B%BE-%E4%BF%AF%E7%9E%B0.jpg" alt=""></p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><p>GB 50340-2016 老年人居住建筑设计规范</p></li><li><p>周燕珉, 程晓青, 林菊英, &amp; 林婧怡. (2011). 老年住宅</p></li><li><p>财团法人, &amp; 高龄者住宅财团|译者. (2011). 老年住宅设计手册</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96%E6%94%B9%E9%80%A0%E5%A5%97%E5%86%85%E7%A9%BA%E9%97%B4%E8%AE%BE%E8%AE%A1-%E9%97%A8%E5%8E%85%E7%AF%87.jpg" alt=""></p><a id="more"></a> <p>门厅作为连接家和外界的空间，虽然面积不大，但是使用频繁。老年人随着年龄增大，身体机能逐渐下降，为保证方便外出，顺畅、安全，在门厅设计时有不少细节应该考虑周到。</p><p>00 对门厅做了适老化设计，下面是建模和渲染结果：</p><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85_%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85%E6%95%88%E6%9E%9C%E5%9B%BEx0.5.jpg" alt=""></p><h2 id="常见活动分析"><a href="#常见活动分析" class="headerlink" title="常见活动分析"></a>常见活动分析</h2><p>老年人进门的一般活动流程包括：</p><blockquote><p>1.拿出钥匙开门 → 2.开灯 → 3.放下手中物品 → 4.脱挂外衣 </p><p>→ 5.坐下 → 6.探身取鞋，换鞋，放鞋 → 7.站起</p></blockquote><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85-%E5%8A%A8%E7%BA%BF.jpg" alt=""></p><ul><li>换鞋：需要鞋柜，座位</li><li>穿衣：需要挂钩</li><li>开门，关门：把手易识别、易抓握，有照明</li><li>开灯，关灯：开关位置方便，操作容易</li><li>放拐杖、雨伞、包等物品：有置物空间</li><li>轮椅进出：预留尺寸，保持进出通畅</li></ul><h2 id="设计要点"><a href="#设计要点" class="headerlink" title="设计要点"></a>设计要点</h2><table><thead><tr><th>布局规划</th><th>方便进出</th></tr></thead><tbody><tr><td>平面规划</td><td>避免动线过长，特别是距离老年人经常使用的空间太远</td></tr><tr><td>立面规划</td><td>尽量避免户内外垂直高差</td></tr></tbody></table><p>设计要点</p><blockquote><p><strong>出入通畅、安全</strong></p><p><strong>保证视线和光照</strong></p><p><strong>方便穿衣换鞋</strong></p><p><strong>功能齐全</strong></p></blockquote><h3 id="1-出入通畅、安全"><a href="#1-出入通畅、安全" class="headerlink" title="1. 出入通畅、安全"></a>1. 出入通畅、安全</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85-%E9%97%A8%E5%AE%BD.jpg" alt=""></p><ul><li>户门不应设置门槛，室内外垂直高差不应大于 15mm</li><li>户门洞口宽度不小于 1000mm，高度不小于 2000mm</li><li>户门应采用平开门，采用横杆式把手</li><li>户门拉手侧应保证有 400mm 以上空间，方便轮椅接近门口</li><li>避免通道狭长、曲折，应留出急救时担架出入所需的空间</li><li>地面应采用防滑、耐污材料，易于清理</li><li>鞋柜单扇柜门宽度不宜大于 350mm，打开后不应影响门厅内人的动作</li><li>除了基本进出，还要考虑接待来客的必要空间和护理人员的活动空间</li></ul><h3 id="2-保证视线和光照"><a href="#2-保证视线和光照" class="headerlink" title="2. 保证视线和光照"></a>2. 保证视线和光照</h3><ul><li>门厅宜开门见山，减少屏障和光线遮挡</li><li>门厅内应设有照明，如有自然采光更佳</li><li>灯具开关应设在进门方便操作的位置，距地面 1200mm</li><li>户门应该有高低两个观察孔，低位观察孔便于轮椅老人使用</li><li>方便老人坐在起居沙发上了解门厅的进出状况</li></ul><h3 id="3-方便穿衣换鞋"><a href="#3-方便穿衣换鞋" class="headerlink" title="3. 方便穿衣换鞋"></a>3. 方便穿衣换鞋</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85-%E5%AE%B6%E5%85%B7.jpg" alt=""></p><ul><li>有充裕的空间换鞋换衣</li><li>门厅中的鞋柜、鞋凳应靠近布置，便于取放鞋子</li><li>鞋柜宜在 850mm 高度处设有台面，既可以放置小物品，又可作为扶手便于撑扶</li><li>鞋柜下部留出 300mm 左右空档，安排部分开敞的放鞋空间，便于老人换鞋</li><li>配置结实、稳定、坐面稍宽大的鞋凳，长度宜大于 450mm，方便换鞋和放置随身物品</li><li>鞋凳旁宜设置竖向扶手，上端距地面 1400mm 左右，帮助老人站立起身</li></ul><h3 id="4-功能齐全"><a href="#4-功能齐全" class="headerlink" title="4. 功能齐全"></a>4. 功能齐全</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85-%E9%A2%84%E7%95%99%E5%8A%9F%E8%83%BD.jpg" alt=""></p><ul><li>门厅内可设置伞立，防止雨水滴湿地面</li><li>预留提示板位置，提醒出门前需要做的事情</li><li>可预留一处电源插座，供吸尘器等设备使用</li><li>如空间允许，门厅内宜预留轮椅暂存空间</li><li>使用轮椅的家中，墙壁上可设 350mm 高的防撞板</li><li>门厅可设穿衣镜，为防止轮椅碰撞，穿衣镜下沿应高于地面 350mm 以上</li></ul><p>适老化门厅俯瞰图：</p><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85_%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85%E6%95%88%E6%9E%9C%E5%9B%BE-%E4%BF%AF%E7%9E%B0.jpg" alt=""></p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><p>GB 50340-2016 老年人居住建筑设计规范</p></li><li><p>周燕珉, 程晓青, 林菊英, &amp; 林婧怡. (2011). 老年住宅</p></li><li><p>财团法人, &amp; 高龄者住宅财团|译者. (2011). 老年住宅设计手册</p></li></ul><p>家人年纪大了，居家环境如果及时做出相应的调整和改造，能为他们提供更好的生活、保健环境。<strong>广州的朋友如果有相关改造需求，可以与我联系：uegeek@gmail.com.</strong></p><p><img src="http://img.viz.mobi/%E5%BE%AE%E4%BF%A1%E6%90%9C%E4%B8%80%E6%90%9C-%E9%80%82%E8%80%81%E5%8C%96.png" alt=""></p>]]></content>
     
     <summary type="html">
     
@@ -114,11 +144,11 @@
     
       <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
     
-      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
-    
       <category term="设计原则" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/"/>
     
       <category term="Dieter Rams" scheme="http://uegeek.com/tags/Dieter-Rams/"/>
+    
+      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
     
   </entry>
   
@@ -266,11 +296,11 @@
     
       <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
     
-      <category term="Camera" scheme="http://uegeek.com/tags/Camera/"/>
-    
       <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
     
       <category term="CG" scheme="http://uegeek.com/tags/CG/"/>
+    
+      <category term="Camera" scheme="http://uegeek.com/tags/Camera/"/>
     
       <category term="Render" scheme="http://uegeek.com/tags/Render/"/>
     
@@ -302,13 +332,13 @@
     
       <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
     
+      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
+    
       <category term="Exhibition" scheme="http://uegeek.com/tags/Exhibition/"/>
     
       <category term="Immersive" scheme="http://uegeek.com/tags/Immersive/"/>
     
       <category term="Experience" scheme="http://uegeek.com/tags/Experience/"/>
-    
-      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
     
       <category term="展览" scheme="http://uegeek.com/tags/%E5%B1%95%E8%A7%88/"/>
     
@@ -338,8 +368,6 @@
     
       <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
     
-      <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
-    
       <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
     
       <category term="OpenGL" scheme="http://uegeek.com/tags/OpenGL/"/>
@@ -349,6 +377,8 @@
       <category term="Shader" scheme="http://uegeek.com/tags/Shader/"/>
     
       <category term="Principled BSDF" scheme="http://uegeek.com/tags/Principled-BSDF/"/>
+    
+      <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
     
       <category term="材质" scheme="http://uegeek.com/tags/%E6%9D%90%E8%B4%A8/"/>
     
@@ -378,13 +408,13 @@
     
       <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
     
-      <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
-    
       <category term="OpenGL" scheme="http://uegeek.com/tags/OpenGL/"/>
     
       <category term="Material" scheme="http://uegeek.com/tags/Material/"/>
     
       <category term="Shader" scheme="http://uegeek.com/tags/Shader/"/>
+    
+      <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
     
       <category term="材质" scheme="http://uegeek.com/tags/%E6%9D%90%E8%B4%A8/"/>
     
@@ -630,9 +660,9 @@
     
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
-      <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
-    
       <category term="通信" scheme="http://uegeek.com/tags/%E9%80%9A%E4%BF%A1/"/>
+    
+      <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
     
       <category term="OSC" scheme="http://uegeek.com/tags/OSC/"/>
     
@@ -671,38 +701,6 @@
       <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
     
       <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>三维制图讲义05 - 几何体编辑：拉伸和环切</title>
-    <link href="http://uegeek.com/190403-3d05-basic-geometry-edit.html"/>
-    <id>http://uegeek.com/190403-3d05-basic-geometry-edit.html</id>
-    <published>2019-04-03T11:20:46.000Z</published>
-    <updated>2019-04-03T11:22:24.063Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/3d_course_title.jpg" alt=""></p><a id="more"></a><p><a href="https://www.uegeek.com/190306-3d01-welcome-to-the-3d-world.html" target="_blank" rel="noopener">三维制图讲义01 - 欢迎来到三维世界</a></p><p><a href="https://www.uegeek.com/190314-3d02-workflow.html" target="_blank" rel="noopener">三维制图讲义02 - 三维制作流程</a></p><p><a href="https://www.uegeek.com/190320-3d03-blender-intro.html" target="_blank" rel="noopener">三维制图讲义03 - 三维软件和Blender介绍</a></p><p><a href="https://www.uegeek.com/190327-3d04-basic-geometry.html" target="_blank" rel="noopener">三维制图讲义04 - 基础几何体</a></p><h2 id="快速回顾"><a href="#快速回顾" class="headerlink" title="快速回顾"></a>快速回顾</h2><p>上一节课我们练习了编辑模式下，点线面的切换和移动、旋转、缩放。</p><p>选中几何体后，按快捷键 Tab 进入编辑模式。这时候按键盘 1、2、3 键（或者点界面中模式选择右边的三个图标），可以切换为 点选择、边选择、面选择状态。</p><p>将点、线、面选择，跟位移、旋转、缩放结合起来练习：</p><ul><li>切换到点选择模式（编辑模式下按 1 键），选中点，进行移动（G）(包括沿轴的操作)</li><li>切换到边选择模式（编辑模式下按 2 键），选中多条边，进行旋转（R）(包括沿轴的操作)</li><li>切换到面选择模式（编辑模式下按 3 键），选中多个面，进行缩放（S）(包括沿轴的操作)</li></ul><p><img src="http://img.viz.mobi/Blender_edit.jpg" alt=""></p><h2 id="拉伸-Extrude"><a href="#拉伸-Extrude" class="headerlink" title="拉伸 Extrude"></a>拉伸 Extrude</h2><p>拉伸(Extrude)是重要的基本操作，也是这一节课的练习重点。</p><p>什么是拉伸？就是拉着一个点/边/面走：</p><p><img src="https://thumbs.gfycat.com/ThunderousHandyBeagle-size_restricted.gif" alt=""></p><p>拉伸操作需要在编辑模式下进行。</p><p>操作顺序是：<strong>选中物体，tab 键进入编辑模式，然后按 e 进入拉伸状态</strong>。</p><p>你可能会问，拉伸 (e) 跟移动 (g) 有什么不同呢？</p><p>注意观察上面的动画，在拉伸时，是在原有面的基础上，增加了一个面，然后沿着这个面的四条边移动。而单纯的移动（选中点线面后按 g），则不会增加面。</p><p>拉伸为什么重要？</p><p>它是三维物体成型最基本的方式之一。甚至只用 extrude 这个基本操作加上点/边/面的 TRS，就可以建出复杂的模型：</p><p><img src="https://raw.githubusercontent.com/a1studmuffin/SpaceshipGenerator/master/screenshots/step-by-step-animation.gif" alt=""></p><h2 id="环切-Loop-Cut"><a href="#环切-Loop-Cut" class="headerlink" title="环切 Loop Cut"></a>环切 Loop Cut</h2><p>环切/Loop Cut 功能可以说是金手指级的作弊型基础功能。它帮助我们快速切分连续的边和面，获得更多的调节节点。</p><p>比如，把一个圆柱体修改成复杂一点的造型，借助环切可以秒完成：</p><p><img src="https://www.plejadium.de/wp-content/uploads/2015/05/blender-loop-cut-and-slide.gif" alt=""></p><p>环切也需要在编辑模式中使用。可以在左侧工具栏中找到：</p><p><img src="http://img.viz.mobi/blander-loopcup-menu.jpg" alt=""></p><p>使用快捷键的操作步骤：</p><ul><li>选择物体，按 tab 进入编辑模式</li><li>按快捷键 ctrl+r，将鼠标移到物体上，会出现环状的指示线(如果想退出环切状态，可以鼠标右键或者按 esc 键)</li><li>移动鼠标到想要的面(指示线只会出现在中点连接线)</li><li>按下鼠标左键，确定 Loop Cut</li></ul><p><img src="https://blenderartists.org/uploads/default/original/4X/8/c/7/8c70cbda30e9fc2a6d84539be6508614756f8e12.gif" alt=""></p><p>然后问题来了：</p><blockquote><p>如果移动环的时候，没有移到对的位置，就不小心点了鼠标左键，环就不动了，怎么办？</p></blockquote><p>没事，毕竟是作弊级别的常用功能，就算已经切了，也还是可以调整位置。</p><ul><li>先选中要调整的 Loop Cut：按住 alt 键点左键，可以选中连续的边或者面</li><li>然后按 g，进行移动</li></ul><p>咦？这时候的移动没有限制轴线，一动 Loop Cut 就歪了……</p><p><img src="http://img.viz.mobi/2019-04-02%2011.47.39.gif" alt=""></p><blockquote><p>如果想沿原来的边缘移动 Loop cut，怎么办？</p></blockquote><p>可以在选择 loop 以后，按两次 g，然后移动到合适的位置。</p><p><img src="http://img.viz.mobi/blender-loopcut-gg.gif" alt=""></p><blockquote><p>问题2：如果想一次性添加多个环切怎么办？</p></blockquote><p>Easy Peasy</p><p>在按 ctrl+r 后，移动到合适的面上，然后<strong>滚动鼠标中键或者按对应的数字键</strong>，就可以指定切割的数量了。</p><h2 id="组合练习"><a href="#组合练习" class="headerlink" title="组合练习"></a>组合练习</h2><p>好了，目前为止，Blender 的基础大招你都已经学过了：</p><ul><li>调整视图和切换正/侧/顶视图</li><li>进入编辑模式</li><li>移动（g）/旋转（r）/缩放（s）物体或者点/线/面</li><li>拉伸(e)</li><li>环切(ctrl+r)</li></ul><p>可以说，你已经可以造出 90% 的基础造型。下面就进入探索和练习时间吧！</p><p><img src="https://blenderartists.org/uploads/default/original/4X/6/9/e/69ec27d84baf0f5f30d46aa956887320da4d182f.gif" alt=""></p><p><img src="https://polygoniq.com/sites/default/files/2018-10/03C_d.gif" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/3d_course_title.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
-    
-      <category term="Modeling" scheme="http://uegeek.com/tags/Modeling/"/>
-    
-      <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
-    
-      <category term="Geometry" scheme="http://uegeek.com/tags/Geometry/"/>
-    
-      <category term="Loop Cut" scheme="http://uegeek.com/tags/Loop-Cut/"/>
     
   </entry>
   
