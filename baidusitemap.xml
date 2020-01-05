@@ -4,6 +4,78 @@
 
     
   <url>
+    <loc>http://uegeek.com/200105-aging-in-place-livingroom.html</loc>
+    <lastmod>2020-01-05T04:00:26.247Z</lastmod>
+    <data>
+        <display>
+        <title>适老化改造套内空间设计 - 客厅/起居室篇</title>
+        <pubTime>2020-01-05T03:54:17.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>适老化</tag>
+         
+        <tag>Aging in place</tag>
+         
+        <tag>养老</tag>
+         
+        <tag>老年住宅</tag>
+         
+        <tag>无障碍设计</tag>
+         
+        <tag>通用设计</tag>
+         
+        <tag>室内设计</tag>
+         
+        <tag>客厅</tag>
+         
+        <tag>Living room</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/200104-aging-in-place-doorway.html</loc>
+    <lastmod>2020-01-05T03:57:22.162Z</lastmod>
+    <data>
+        <display>
+        <title>适老化改造套内空间设计 - 门厅篇</title>
+        <pubTime>2020-01-04T03:54:17.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>适老化</tag>
+         
+        <tag>Aging in place</tag>
+         
+        <tag>养老</tag>
+         
+        <tag>老年住宅</tag>
+         
+        <tag>无障碍设计</tag>
+         
+        <tag>通用设计</tag>
+         
+        <tag>室内设计</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/200103-design-diary-003.html</loc>
     <lastmod>2020-01-03T12:06:18.439Z</lastmod>
     <data>
@@ -201,13 +273,13 @@
          
         <tag>Shader</tag>
          
+        <tag>Principled BSDF</tag>
+         
         <tag>材质</tag>
          
         <tag>贴图</tag>
          
         <tag>计算机图形</tag>
-         
-        <tag>Principled BSDF</tag>
          
          
            
