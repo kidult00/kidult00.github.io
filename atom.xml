@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2020-01-05T09:53:30.280Z</updated>
+  <updated>2020-01-06T15:35:26.705Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计日课 Vol.005 - 老板要求每天花式出图100张，怎么办？</title>
+    <link href="http://uegeek.com/200106-design-diary-005.html"/>
+    <id>http://uegeek.com/200106-design-diary-005.html</id>
+    <published>2020-01-06T15:31:57.000Z</published>
+    <updated>2020-01-06T15:35:26.705Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/%E8%AE%BE%E8%AE%A1%E6%97%A5%E8%AF%BEtitle.jpg" alt=""></p><a id="more"></a> <p>今天设计师们被一段聊天记录炸出来了。</p><p><img src="http://img.viz.mobi/V005-100%E5%BC%A0%E5%9B%BE%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95.jpg" alt=""></p><p>虽然案例极端（也有故意制造话题的可能？）但是本质上是经典的设计需求甲乙方对话。</p><p>事情没有发生在自己身上，大家可以表达愤怒，顺便吐槽年关和日渐浓郁的丧气。可是如果自己就是「系真」，怎么办呢？</p><p>从整个对话来看，缺少上下文，我们也无法判断双方所指的项目和背景。但是，这段对话跟人际关系，甚至是亲密关系中产生矛盾的模式没有太大区别。事情看似是因为权力较大的一方（老板/甲方）提出无理要求，拿钱办事的一方（设计师/乙方）推脱和反抗，导致双方关系破裂。</p><h2 id="矛盾的起点和循环"><a href="#矛盾的起点和循环" class="headerlink" title="矛盾的起点和循环"></a>矛盾的起点和循环</h2><p>一个看似让人哭笑不得的需求，其实真正的矛盾来自于一个循环：</p><p><strong>第一步，A 提出被情绪包装过的需求</strong></p><blockquote><p>今天出 100 张各种款式的小年图 明天的早年图 50 张 做出来发来群里我们选</p></blockquote><p>A 由于某些事件触发了不满情绪，在提出需求时，没有明确表达自己真正想要什么。</p><p><strong>第二步，B 按照字面理解需求，提出被情绪包装过的方案（抗议）</strong></p><blockquote><p>一天出一百张？我 24 小时不睡觉都做不出那么多</p></blockquote><p>B 没有理解对方真正的诉求，开始对表面上不合理的需求感到恐惧</p><p><strong>第三步，A 驳回方案（抗议），升级需求的合法性，并提出新的要求</strong></p><blockquote><p>接下来每天都是 …… 你们看到了吗？看到了要回复  安排工作都不回复的？</p></blockquote><p>A 认为自己的着急竟然被怠慢了，必需进一步施压</p><p><strong>第四步，B 继续抗议，进一步提出了关系破裂的方案（威胁）</strong></p><blockquote><p>每天上班时间 7 小时，一天一百张，三分钟出一张图？</p><p>王总，您觉得我能力不行，您可以按照合同和劳动法通知我办理离职</p></blockquote><p>下面的对话继续着 “A 升级需求为命令，B 抗议不合理” 的循环。</p><h2 id="倾听需求"><a href="#倾听需求" class="headerlink" title="倾听需求"></a>倾听需求</h2><p>这个死循环的症结在哪里？自然是 A 跟 B 共同开启的循环了。</p><p>作为设计师的我们，需要在每一次被虐之后，意识到自己也要承担沟通中 50% 的责任，慢慢修炼真正理解对方真实而没有言说出来的需求的能力。</p><p>比如，王总的焦虑已经溢出屏幕了，可能是因为小年图承载了重要的转化指标，可能是之前的图被大老板骂了，甚至可能是大老板要求她每天出 50 张，于是一个激动就 double 成了 100 张……</p><p>这时候设计师听到 100 张，如果只按字面意思去理解和执行，当然就崩溃了。可怜的王总等待的无非是：</p><ul><li>对设计结果有很高的期待</li><li>要求很多的设计方案</li><li>让大家一起挑选和决策</li></ul><h2 id="化解需求"><a href="#化解需求" class="headerlink" title="化解需求"></a>化解需求</h2><p>王总抛了第一轮的烟雾弹，下面轮到设计师了。你是选择双倍烟雾弹，还是空气清新剂？</p><p>我们一个一个诉求来看：</p><p><strong>对设计结果有很高的期待</strong>——为什么？项目背景有什么变化吗？有指标呢？具体的期待是什么？压力和限制又有哪些？设计师可以根据自己掌握的背景信息进一步提问：</p><blockquote><p>王总我收到您的需求了。感觉您挺着急的，不知道是不是项目有了什么变化？有没有我需要进一步了解的信息呢？</p></blockquote><p><strong>要求很多的设计方案</strong>——为什么？是觉得之前对设计参与得不够，还是不满意之前的方案太雷同，还是觉得多出方案能明显提高质量？设计师可以尝试继续询问：</p><blockquote><p>王总，您是希望多出方案，这样做出满意的设计可能性更大对吗？我其实也想在前期多听听您的意见。如果用三个关键词来概括小年图的风格，您觉得会是哪些？或者图片参考也行，我根据这些多出一些不同的方案。</p></blockquote><p><strong>让大家一起挑选和决策</strong>——为什么？群里都有哪些人？决策过程是怎样的？有更高效的决策方式吗？设计师可以怎样引导？</p><blockquote><p>王总，我明天早上会拿出一批方案，先找熟悉项目的 xx 一起挑出比较满意的，然后跟您当面讨论，收敛一下方向我再着力修改最佳方案，这样会更加高效，下午我们应该就能确定最终设计了。</p></blockquote><p>当然，过程中王总可能还会有其他的问题，这取决于双方的关系和如何解读对方的言行。</p><p>也不完全排除老板就是看你不顺眼（不过看到对话中提离职时，老板没有接话，就知道这不是老板真正的目的了），那就更不妨先做实验，先出 10 张图，但是是跟过去的过程或效果不太一样的图，看看老板什么反应。如果老板连 10 张图看都不看，继续揪着还差 90 张没给，那就拜拜好了。</p><p>另一方面，身为需求方，如果不想对方动不动找借口和提离职，或者每天上班要先看 100 张设计稿看到中午也定不下来到底哪一张好然后回到第一版，也需要尽可能在一开始清楚表达自己的要求，例如</p><blockquote><p>年底的活跃指标就指望小年图和早年图了，大家要尽力冲刺啊！我提一下具体的要求，大家看看怎么一起配合，有没有更好的做法：</p><p>1.小年图更加符合年轻人审美，考虑加入一些流行元素；2.文案要优化，学习xx公司最近做的xx；3.做三个不同方向的尝试，你们可以合计合计，尽量在概念和风格上区别大一些。</p><p>明早要给到三个方向不同的设计，每个方向要不止一个版本。今天早上先把大的概念方向和文案要点确定下来，我们下午花 15 分钟对一下。</p><p>大家有什么需要进一步了解的吗？</p></blockquote><p>这样的沟通真的好累。不过想想可以不用每天早上都看 100 张差不多的图，还是值得的吧！</p><p>😇</p><p>沟通不易，生存要紧，理解万岁。</p><hr><p>设计日课系列：</p><p><a href="https://www.uegeek.com/200101-design-diary-001.html" target="_blank" rel="noopener">设计日课 Vol.001 - 回到历史寻找设计</a></p><p><a href="https://www.uegeek.com/200102-design-diary-002.html" target="_blank" rel="noopener">设计日课 Vol.002 - 设计发展的驱动力</a></p><p><a href="https://www.uegeek.com/200103-design-diary-003.html" target="_blank" rel="noopener">设计日课 Vol.003 - 这是好设计吗？</a></p><p><a href="https://www.uegeek.com/200103-design-diary-004.html" target="_blank" rel="noopener">设计日课 Vol.004 - 好设计的关系框架和时空框架</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E8%AE%BE%E8%AE%A1%E6%97%A5%E8%AF%BEtitle.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="Design" scheme="http://uegeek.com/tags/Design/"/>
+    
+      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="职场" scheme="http://uegeek.com/tags/%E8%81%8C%E5%9C%BA/"/>
+    
+      <category term="沟通" scheme="http://uegeek.com/tags/%E6%B2%9F%E9%80%9A/"/>
+    
+      <category term="需求" scheme="http://uegeek.com/tags/%E9%9C%80%E6%B1%82/"/>
+    
+  </entry>
   
   <entry>
     <title>设计日课 Vol.004 - 好设计的关系框架和时空框架</title>
@@ -38,11 +68,11 @@
     
       <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
     
+      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
+    
       <category term="设计原则" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/"/>
     
       <category term="Dieter Rams" scheme="http://uegeek.com/tags/Dieter-Rams/"/>
-    
-      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
     
   </entry>
   
@@ -144,11 +174,11 @@
     
       <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
     
+      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
+    
       <category term="设计原则" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/"/>
     
       <category term="Dieter Rams" scheme="http://uegeek.com/tags/Dieter-Rams/"/>
-    
-      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
     
   </entry>
   
@@ -298,9 +328,9 @@
     
       <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
     
-      <category term="CG" scheme="http://uegeek.com/tags/CG/"/>
-    
       <category term="Camera" scheme="http://uegeek.com/tags/Camera/"/>
+    
+      <category term="CG" scheme="http://uegeek.com/tags/CG/"/>
     
       <category term="Render" scheme="http://uegeek.com/tags/Render/"/>
     
@@ -332,13 +362,13 @@
     
       <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
     
-      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
-    
       <category term="Exhibition" scheme="http://uegeek.com/tags/Exhibition/"/>
     
       <category term="Immersive" scheme="http://uegeek.com/tags/Immersive/"/>
     
       <category term="Experience" scheme="http://uegeek.com/tags/Experience/"/>
+    
+      <category term="Guideline" scheme="http://uegeek.com/tags/Guideline/"/>
     
       <category term="展览" scheme="http://uegeek.com/tags/%E5%B1%95%E8%A7%88/"/>
     
@@ -370,21 +400,21 @@
     
       <category term="Blender" scheme="http://uegeek.com/tags/Blender/"/>
     
+      <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
+    
       <category term="OpenGL" scheme="http://uegeek.com/tags/OpenGL/"/>
     
       <category term="Material" scheme="http://uegeek.com/tags/Material/"/>
     
       <category term="Shader" scheme="http://uegeek.com/tags/Shader/"/>
     
-      <category term="Principled BSDF" scheme="http://uegeek.com/tags/Principled-BSDF/"/>
-    
-      <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
-    
       <category term="材质" scheme="http://uegeek.com/tags/%E6%9D%90%E8%B4%A8/"/>
     
       <category term="贴图" scheme="http://uegeek.com/tags/%E8%B4%B4%E5%9B%BE/"/>
     
       <category term="计算机图形" scheme="http://uegeek.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2/"/>
+    
+      <category term="Principled BSDF" scheme="http://uegeek.com/tags/Principled-BSDF/"/>
     
   </entry>
   
@@ -408,13 +438,13 @@
     
       <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
     
+      <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
+    
       <category term="OpenGL" scheme="http://uegeek.com/tags/OpenGL/"/>
     
       <category term="Material" scheme="http://uegeek.com/tags/Material/"/>
     
       <category term="Shader" scheme="http://uegeek.com/tags/Shader/"/>
-    
-      <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
     
       <category term="材质" scheme="http://uegeek.com/tags/%E6%9D%90%E8%B4%A8/"/>
     
@@ -667,40 +697,6 @@
       <category term="OSC" scheme="http://uegeek.com/tags/OSC/"/>
     
       <category term="Max" scheme="http://uegeek.com/tags/Max/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ableton Live 连接 Arduino 教程</title>
-    <link href="http://uegeek.com/190408-Ableton-Arduino.html"/>
-    <id>http://uegeek.com/190408-Ableton-Arduino.html</id>
-    <published>2019-04-08T11:14:46.000Z</published>
-    <updated>2019-04-08T11:16:20.557Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://cdn-resources.ableton.com/resources/filer_thumbnails/fd/d4/fdd4707d-fbcb-441a-a07d-f6e58c9e717d/connkit_artwork_1000x1000.jpg__600x600_q85_crop_subsampling-2_upscale.jpg" alt=""></p><a id="more"></a><p>你有没有想过，用 Arduino 做一个简单的 MIDI controller，控制 Ableton Live 中的参数？</p><p>如果想实现两者的连接，以前的解决方案比较复杂，需要基于 Max/MSP，用 <a href="http://www.maxuino.org/" target="_blank" rel="noopener">Maxuino</a> 实现，还需要在 Arduino 上安装对应的固件。</p><p>有没有更简单的方法呢？</p><h2 id="Connection-Kit"><a href="#Connection-Kit" class="headerlink" title="Connection Kit"></a>Connection Kit</h2><p>好消息是，Ableton 已经提供了官方的 <a href="https://www.ableton.com/en/packs/connection-kit/" target="_blank" rel="noopener">Connection Kit</a>，其中包含了与流行的外接设备的连接工具如 Arduino、OSC、LEGO Mindstorms 等。</p><p>介绍视频真是帅炸了~</p><iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=h0190wbyt6w" allowfullscreen="true"></iframe><p><a href="https://v.qq.com/x/page/h0190wbyt6w.html" target="_blank" rel="noopener">Max for Live Connection Kit_腾讯视频</a></p><p>如果你已经购买了 Ableton Live 10 Suit，可以在<a href="https://www.ableton.com/en/packs/connection-kit/" target="_blank" rel="noopener">官网直接下载这个 Pack</a>。如果不能直接下载，这个 Pack 的源文件也可以在 github 找到：<a href="https://github.com/Ableton/m4l-connection-kit" target="_blank" rel="noopener">Ableton/m4l-connection-kit: Max for Live Connection Kit</a>。下载后，将文件夹复制到 Documents-Ableton-Third-Party Packs。打开软件后，就可以在左侧找到 Arduino.amxd：</p><p><img src="http://img.viz.mobi/Ableton-connection-kit-pack.jpg" alt=""></p><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>开始连接之前，让我们看看<a href="https://github.com/Ableton/m4l-connection-kit/tree/master/Arduino" target="_blank" rel="noopener">使用说明</a>。</p><blockquote><p>The Arduino Max4Live device connects an Arduino Uno to Live using its serial port via USB and allows access to its analog inputs as well as its digital GPIOs. The device enables you to receive sensor data like switches, potentiometers or light-dependent resistors as well as sending Live parameter values to LEDs or servo motors. So far you may only connect sensors and other periphals to it directly as we do not yet support I2Cs and other periphals via the Serial Periphal Interface (SPI).</p></blockquote><p>目前应该只支持 Uno 板，由 USB 串口连接。</p><p>因为 Max4Live 需要特定的固件支持，所以我们先上传程序到 Arduino 板。上传的程序在 Arduino IDE 里面就有：File-&gt;Examples-&gt;Firmata-&gt;StandardFirmata。打开文件后(至少是 2.5 版本)，上传到板子。</p><p>接着我们可以在 Ableton 里面编辑一段 clip，双击 Arduino.amxd 加入到 device viewer 里。</p><p><img src="http://img.viz.mobi/addArduino2Ableton.jpg" alt=""></p><h2 id="连接测试电路"><a href="#连接测试电路" class="headerlink" title="连接测试电路"></a>连接测试电路</h2><p>回到 Arduino，接一个最简单的电路。找一个电位计，正极接 Uno 板的 5V 口，负极接 GND，中间的信号接 A0 模拟端口。</p><p><img src="http://img.viz.mobi/potentiometer2arduino.png" alt=""></p><p>上传以下程序，然后打开串口监视器，查看是否可以正常读取旋钮的值：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">// initialize serial communication at 9600 bits per second:</span></span><br><span class="line">  Serial.begin(<span class="number">9600</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the loop routine runs over and over again forever:</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">// read the input on analog pin 0:</span></span><br><span class="line">  <span class="keyword">int</span> sensorValue = analogRead(A0);</span><br><span class="line">  <span class="comment">// print out the value you read:</span></span><br><span class="line">  Serial.println(sensorValue);</span><br><span class="line">  delay(<span class="number">20</span>);        <span class="comment">// delay in between reads for stability</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>成功后，关闭串口监视器。</p><h2 id="Ableton-Mapping"><a href="#Ableton-Mapping" class="headerlink" title="Ableton Mapping"></a>Ableton Mapping</h2><p>然后到 Ableton 中，选择 port 为 usbmodemxxxx。切换到 Analog tab，点 A0 右侧的 Map 按钮，选择已经编辑的那个 track 的 Track Volume。</p><p>做好这一步映射后，可以看到 A0 旁边小小的蓝色指示条已经开始跳动。旋转电位计，会看到 Track 的音量产生了变化。</p><p>可是，这里的变化不太符合我们的预期：扭动旋钮停止后，音量还是会变化，甚至产生随机的爆音。</p><p>这是因为电位计产生了抖动。再打开 Arduino 串口监视器，可以观察到 A0 端口接收到的不是平滑的值，而是夹杂着很多不稳定的波动值。</p><p><img src="http://img.viz.mobi/ArduinoSerialMonitor.png" alt=""></p><h3 id="消抖处理"><a href="#消抖处理" class="headerlink" title="消抖处理"></a>消抖处理</h3><p>最简单的办法是在 kit 里面设置 Smooth 的值：</p><p><img src="http://img.viz.mobi/ableton-arduino-smooth.png" alt=""></p><p>但是这样做，误差会较大。我们可以进一步尝试在代码里消抖，或者在电路中加入电容消抖。可以参考这篇文章 <a href="https://www.instructables.com/id/Smooth-Potentiometer-Input/" target="_blank" rel="noopener">Smooth Potentiometer Input</a>。</p><p>进一步的消抖还需要参考一些资料继续研究。</p><ul><li><a href="http://forum.arduino.cc/index.php?topic=216582.0" target="_blank" rel="noopener">Debouncing a potentiometer</a></li><li><a href="https://forum.arduino.cc/index.php?topic=210348.0" target="_blank" rel="noopener">Writing an analog pot debounce as a function</a></li><li><a href="https://forum.arduino.cc/index.php?topic=75946.0" target="_blank" rel="noopener">Debounce a Potentiometer?</a></li><li><a href="https://www.jianshu.com/p/99d861de03e0" target="_blank" rel="noopener">arduino按钮传感器常见的几种消抖方法 - 简书</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://cdn-resources.ableton.com/resources/filer_thumbnails/fd/d4/fdd4707d-fbcb-441a-a07d-f6e58c9e717d/connkit_artwork_1000x1000.jpg__600x600_q85_crop_subsampling-2_upscale.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="ArtxCode" scheme="http://uegeek.com/tags/ArtxCode/"/>
-    
-      <category term="Music" scheme="http://uegeek.com/tags/Music/"/>
-    
-      <category term="Ableton Live" scheme="http://uegeek.com/tags/Ableton-Live/"/>
-    
-      <category term="Creative Coding" scheme="http://uegeek.com/tags/Creative-Coding/"/>
-    
-      <category term="Maker" scheme="http://uegeek.com/tags/Maker/"/>
-    
-      <category term="Arduino" scheme="http://uegeek.com/tags/Arduino/"/>
-    
-      <category term="MIDI" scheme="http://uegeek.com/tags/MIDI/"/>
     
   </entry>
   

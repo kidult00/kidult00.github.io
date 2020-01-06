@@ -4,6 +4,34 @@
 
     
   <url>
+    <loc>http://uegeek.com/200106-design-diary-005.html</loc>
+    <lastmod>2020-01-06T15:35:26.705Z</lastmod>
+    <data>
+        <display>
+        <title>设计日课 Vol.005 - 老板要求每天花式出图100张，怎么办？</title>
+        <pubTime>2020-01-06T15:31:57.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>设计</tag>
+         
+        <tag>职场</tag>
+         
+        <tag>沟通</tag>
+         
+        <tag>需求</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/200105-design-diary-004.html</loc>
     <lastmod>2020-01-05T09:53:30.280Z</lastmod>
     <data>
@@ -15,11 +43,11 @@
          
         <tag>设计</tag>
          
+        <tag>Guideline</tag>
+         
         <tag>设计原则</tag>
          
         <tag>Dieter Rams</tag>
-         
-        <tag>Guideline</tag>
          
          
            
@@ -115,11 +143,11 @@
          
         <tag>设计</tag>
          
+        <tag>Guideline</tag>
+         
         <tag>设计原则</tag>
          
         <tag>Dieter Rams</tag>
-         
-        <tag>Guideline</tag>
          
          
            
@@ -261,9 +289,9 @@
          
         <tag>Blender</tag>
          
-        <tag>CG</tag>
-         
         <tag>Camera</tag>
+         
+        <tag>CG</tag>
          
         <tag>Render</tag>
          
@@ -293,21 +321,21 @@
          
         <tag>Blender</tag>
          
+        <tag>Texture</tag>
+         
         <tag>OpenGL</tag>
          
         <tag>Material</tag>
          
         <tag>Shader</tag>
          
-        <tag>Principled BSDF</tag>
-         
-        <tag>Texture</tag>
-         
         <tag>材质</tag>
          
         <tag>贴图</tag>
          
         <tag>计算机图形</tag>
+         
+        <tag>Principled BSDF</tag>
          
          
            
@@ -331,13 +359,13 @@
          
         <tag>设计</tag>
          
-        <tag>Guideline</tag>
-         
         <tag>Exhibition</tag>
          
         <tag>Immersive</tag>
          
         <tag>Experience</tag>
+         
+        <tag>Guideline</tag>
          
         <tag>展览</tag>
          
@@ -365,13 +393,13 @@
         
         <tag>3D</tag>
          
+        <tag>Texture</tag>
+         
         <tag>OpenGL</tag>
          
         <tag>Material</tag>
          
         <tag>Shader</tag>
-         
-        <tag>Texture</tag>
          
         <tag>材质</tag>
          
@@ -1431,11 +1459,11 @@
          
         <tag>随机</tag>
          
-        <tag>MaxMSP</tag>
-         
         <tag>巴纳姆效应</tag>
          
         <tag>星座</tag>
+         
+        <tag>MaxMSP</tag>
          
          
            
@@ -1751,9 +1779,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>服务设计</tag>
-         
         <tag>体验</tag>
+         
+        <tag>服务设计</tag>
          
         <tag>o2o</tag>
          
@@ -1783,9 +1811,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>服务设计</tag>
-         
         <tag>体验</tag>
+         
+        <tag>服务设计</tag>
          
         <tag>o2o</tag>
          
@@ -1815,9 +1843,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>服务设计</tag>
-         
         <tag>体验</tag>
+         
+        <tag>服务设计</tag>
          
         <tag>o2o</tag>
          
@@ -1847,9 +1875,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>服务设计</tag>
-         
         <tag>体验</tag>
+         
+        <tag>服务设计</tag>
          
         <tag>o2o</tag>
          
@@ -3791,11 +3819,11 @@
         <title>你为什么不想做，想做也做不到？</title>
         <pubTime>2015-02-10T01:27:33.000Z</pubTime>
         
+        <tag>心理学</tag>
+         
         <tag>Behavior</tag>
          
         <tag>Model</tag>
-         
-        <tag>心理学</tag>
          
          
            
@@ -4059,9 +4087,9 @@
         
         <tag>Note</tag>
          
-        <tag>心理学</tag>
-         
         <tag>行动科学</tag>
+         
+        <tag>心理学</tag>
          
          
            
@@ -6727,9 +6755,9 @@
         <title>Hack myself @ 2016</title>
         <pubTime>2016-12-31T02:50:04.000Z</pubTime>
         
-        <tag>总结</tag>
-         
         <tag>2016</tag>
+         
+        <tag>总结</tag>
          
          
            
