@@ -4,6 +4,34 @@
 
     
   <url>
+    <loc>http://uegeek.com/200107-design-diary-006.html</loc>
+    <lastmod>2020-01-07T14:26:36.173Z</lastmod>
+    <data>
+        <display>
+        <title>设计日课 Vol.006 - 设计的经济基础和文化贡献</title>
+        <pubTime>2020-01-07T14:25:03.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>设计</tag>
+         
+        <tag>艺术</tag>
+         
+        <tag>设计史</tag>
+         
+        <tag>文化</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/200106-design-diary-005.html</loc>
     <lastmod>2020-01-06T15:35:26.705Z</lastmod>
     <data>
@@ -329,13 +357,13 @@
          
         <tag>Shader</tag>
          
+        <tag>Principled BSDF</tag>
+         
         <tag>材质</tag>
          
         <tag>贴图</tag>
          
         <tag>计算机图形</tag>
-         
-        <tag>Principled BSDF</tag>
          
          
            
@@ -3819,11 +3847,11 @@
         <title>你为什么不想做，想做也做不到？</title>
         <pubTime>2015-02-10T01:27:33.000Z</pubTime>
         
-        <tag>心理学</tag>
-         
         <tag>Behavior</tag>
          
         <tag>Model</tag>
+         
+        <tag>心理学</tag>
          
          
            
@@ -4087,9 +4115,9 @@
         
         <tag>Note</tag>
          
-        <tag>行动科学</tag>
-         
         <tag>心理学</tag>
+         
+        <tag>行动科学</tag>
          
          
            
@@ -6755,9 +6783,9 @@
         <title>Hack myself @ 2016</title>
         <pubTime>2016-12-31T02:50:04.000Z</pubTime>
         
-        <tag>2016</tag>
-         
         <tag>总结</tag>
+         
+        <tag>2016</tag>
          
          
            
