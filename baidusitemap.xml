@@ -4,6 +4,44 @@
 
     
   <url>
+    <loc>http://uegeek.com/200108-aging-in-place-bedroom.html</loc>
+    <lastmod>2020-01-08T10:22:04.280Z</lastmod>
+    <data>
+        <display>
+        <title>适老化改造套内空间设计 - 卧室篇</title>
+        <pubTime>2020-01-08T10:20:35.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>适老化</tag>
+         
+        <tag>Aging in place</tag>
+         
+        <tag>养老</tag>
+         
+        <tag>老年住宅</tag>
+         
+        <tag>无障碍设计</tag>
+         
+        <tag>通用设计</tag>
+         
+        <tag>室内设计</tag>
+         
+        <tag>卧室</tag>
+         
+        <tag>Bedroom</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/200107-design-diary-006.html</loc>
     <lastmod>2020-01-07T14:26:36.173Z</lastmod>
     <data>
@@ -315,9 +353,9 @@
          
         <tag>3D</tag>
          
-        <tag>Blender</tag>
-         
         <tag>Camera</tag>
+         
+        <tag>Blender</tag>
          
         <tag>CG</tag>
          
@@ -347,9 +385,9 @@
         
         <tag>3D</tag>
          
-        <tag>Blender</tag>
-         
         <tag>Texture</tag>
+         
+        <tag>Blender</tag>
          
         <tag>OpenGL</tag>
          
@@ -657,9 +695,9 @@
          
         <tag>Arduino</tag>
          
-        <tag>通信</tag>
-         
         <tag>MIDI</tag>
+         
+        <tag>通信</tag>
          
         <tag>OSC</tag>
          
@@ -761,9 +799,9 @@
          
         <tag>电路</tag>
          
-        <tag>通信</tag>
-         
         <tag>MIDI</tag>
+         
+        <tag>通信</tag>
          
         <tag>OSC</tag>
          
@@ -6783,9 +6821,9 @@
         <title>Hack myself @ 2016</title>
         <pubTime>2016-12-31T02:50:04.000Z</pubTime>
         
-        <tag>总结</tag>
-         
         <tag>2016</tag>
+         
+        <tag>总结</tag>
          
          
            
