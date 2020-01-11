@@ -4,6 +4,44 @@
 
     
   <url>
+    <loc>http://uegeek.com/200111-aging-in-place-toilet.html</loc>
+    <lastmod>2020-01-11T11:37:23.174Z</lastmod>
+    <data>
+        <display>
+        <title>适老化改造套内空间设计 - 卫生间篇</title>
+        <pubTime>2020-01-11T11:33:50.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>适老化</tag>
+         
+        <tag>Aging in place</tag>
+         
+        <tag>养老</tag>
+         
+        <tag>老年住宅</tag>
+         
+        <tag>无障碍设计</tag>
+         
+        <tag>通用设计</tag>
+         
+        <tag>室内设计</tag>
+         
+        <tag>厕所</tag>
+         
+        <tag>Bathroom</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/200110-design-diary-007.html</loc>
     <lastmod>2020-01-10T11:33:24.673Z</lastmod>
     <data>
@@ -137,11 +175,11 @@
          
         <tag>设计</tag>
          
+        <tag>Guideline</tag>
+         
         <tag>设计原则</tag>
          
         <tag>Dieter Rams</tag>
-         
-        <tag>Guideline</tag>
          
          
            
@@ -237,11 +275,11 @@
          
         <tag>设计</tag>
          
+        <tag>Guideline</tag>
+         
         <tag>设计原则</tag>
          
         <tag>Dieter Rams</tag>
-         
-        <tag>Guideline</tag>
          
          
            
@@ -381,11 +419,11 @@
          
         <tag>3D</tag>
          
-        <tag>Camera</tag>
-         
         <tag>Blender</tag>
          
         <tag>CG</tag>
+         
+        <tag>Camera</tag>
          
         <tag>Render</tag>
          
@@ -413,8 +451,6 @@
         
         <tag>3D</tag>
          
-        <tag>Texture</tag>
-         
         <tag>Blender</tag>
          
         <tag>OpenGL</tag>
@@ -424,6 +460,8 @@
         <tag>Shader</tag>
          
         <tag>Principled BSDF</tag>
+         
+        <tag>Texture</tag>
          
         <tag>材质</tag>
          
@@ -453,13 +491,13 @@
          
         <tag>设计</tag>
          
-        <tag>Guideline</tag>
-         
         <tag>Exhibition</tag>
          
         <tag>Immersive</tag>
          
         <tag>Experience</tag>
+         
+        <tag>Guideline</tag>
          
         <tag>展览</tag>
          
@@ -487,13 +525,13 @@
         
         <tag>3D</tag>
          
-        <tag>Texture</tag>
-         
         <tag>OpenGL</tag>
          
         <tag>Material</tag>
          
         <tag>Shader</tag>
+         
+        <tag>Texture</tag>
          
         <tag>材质</tag>
          
@@ -1553,11 +1591,11 @@
          
         <tag>随机</tag>
          
+        <tag>MaxMSP</tag>
+         
         <tag>巴纳姆效应</tag>
          
         <tag>星座</tag>
-         
-        <tag>MaxMSP</tag>
          
          
            
@@ -3961,17 +3999,17 @@
         <title>中欧四国扫(ba)盲(gua)帖之一：“中欧”还是“东欧”？</title>
         <pubTime>2015-09-18T13:37:38.000Z</pubTime>
         
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
          
-        <tag>捷克</tag>
+        <tag>中欧</tag>
+         
+        <tag>奥地利</tag>
          
         <tag>Travel</tag>
          
-        <tag>匈牙利</tag>
+        <tag>捷克</tag>
          
-        <tag>奥地利</tag>
+        <tag>匈牙利</tag>
          
         <tag>斯洛伐克</tag>
          
@@ -3995,9 +4033,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>人类简史</tag>
+         
+        <tag>历史</tag>
          
          
            
@@ -4019,13 +4057,13 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
          
-        <tag>捷克</tag>
+        <tag>中欧</tag>
          
         <tag>Travel</tag>
+         
+        <tag>捷克</tag>
          
          
            
@@ -4047,17 +4085,17 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
          
-        <tag>Travel</tag>
-         
-        <tag>奥地利</tag>
+        <tag>中欧</tag>
          
         <tag>哈布斯堡王朝</tag>
          
+        <tag>奥地利</tag>
+         
         <tag>维也纳</tag>
+         
+        <tag>Travel</tag>
          
          
            
@@ -4079,13 +4117,13 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
          
-        <tag>捷克</tag>
+        <tag>中欧</tag>
          
         <tag>Travel</tag>
+         
+        <tag>捷克</tag>
          
          
            
@@ -4107,9 +4145,9 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>Travel</tag>
          
@@ -4143,9 +4181,9 @@
         
         <tag>Note</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>Travel</tag>
          
@@ -7348,9 +7386,9 @@
         
         <tag>Note</tag>
          
-        <tag>UX</tag>
-         
         <tag>Strategy</tag>
+         
+        <tag>UX</tag>
          
          
            
@@ -7392,9 +7430,9 @@
         
         <tag>Design</tag>
          
-        <tag>AD</tag>
-         
         <tag>UX</tag>
+         
+        <tag>AD</tag>
          
          
            
