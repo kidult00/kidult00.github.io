@@ -4,8 +4,66 @@
 
     
   <url>
+    <loc>http://uegeek.com/200112-design-diary-009.html</loc>
+    <lastmod>2020-01-12T12:47:51.597Z</lastmod>
+    <data>
+        <display>
+        <title>设计日课 Vol.009 - 一些重要的人体测定值</title>
+        <pubTime>2020-01-12T12:44:56.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>设计</tag>
+         
+        <tag>人体</tag>
+         
+        <tag>人体工程学</tag>
+         
+        <tag>建筑</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://uegeek.com/200110-design-diary-007.html</loc>
+    <lastmod>2020-01-12T12:46:39.395Z</lastmod>
+    <data>
+        <display>
+        <title>设计日课 Vol.007 - 这个装修好在哪？</title>
+        <pubTime>2020-01-10T11:31:18.000Z</pubTime>
+        
+        <tag>Design</tag>
+         
+        <tag>设计</tag>
+         
+        <tag>室内设计</tag>
+         
+        <tag>空间设计</tag>
+         
+        <tag>装修</tag>
+         
+        <tag>改造</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/200111-design-diary-008.html</loc>
-    <lastmod>2020-01-11T12:21:26.347Z</lastmod>
+    <lastmod>2020-01-12T12:46:04.911Z</lastmod>
     <data>
         <display>
         <title>设计日课 Vol.008 - 人体的骨骼和肌肉</title>
@@ -15,11 +73,9 @@
          
         <tag>设计</tag>
          
-        <tag>艺术</tag>
+        <tag>人体</tag>
          
-        <tag>设计史</tag>
-         
-        <tag>文化</tag>
+        <tag>人体工学</tag>
          
          
            
@@ -58,34 +114,6 @@
         <tag>厕所</tag>
          
         <tag>Bathroom</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://uegeek.com/200110-design-diary-007.html</loc>
-    <lastmod>2020-01-10T11:33:24.673Z</lastmod>
-    <data>
-        <display>
-        <title>设计日课 Vol.007 - 这个装修好在哪？</title>
-        <pubTime>2020-01-10T11:31:18.000Z</pubTime>
-        
-        <tag>Design</tag>
-         
-        <tag>设计</tag>
-         
-        <tag>艺术</tag>
-         
-        <tag>设计史</tag>
-         
-        <tag>文化</tag>
          
          
            
@@ -489,13 +517,13 @@
          
         <tag>Shader</tag>
          
+        <tag>Principled BSDF</tag>
+         
         <tag>材质</tag>
          
         <tag>贴图</tag>
          
         <tag>计算机图形</tag>
-         
-        <tag>Principled BSDF</tag>
          
          
            
@@ -1203,9 +1231,9 @@
          
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1245,9 +1273,9 @@
          
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1285,9 +1313,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1323,9 +1351,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1361,9 +1389,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1397,9 +1425,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1459,9 +1487,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1493,9 +1521,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1527,9 +1555,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1567,9 +1595,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>颜色</tag>
          
@@ -1605,9 +1633,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1645,9 +1673,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -1677,9 +1705,9 @@
         
         <tag>ArtxCode</tag>
          
-        <tag>艺术</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>艺术</tag>
          
         <tag>Generative Art</tag>
          
@@ -4033,11 +4061,11 @@
          
         <tag>中欧</tag>
          
-        <tag>匈牙利</tag>
+        <tag>捷克</tag>
          
         <tag>奥地利</tag>
          
-        <tag>捷克</tag>
+        <tag>匈牙利</tag>
          
         <tag>斯洛伐克</tag>
          
@@ -4119,9 +4147,9 @@
          
         <tag>中欧</tag>
          
-        <tag>奥地利</tag>
-         
         <tag>哈布斯堡王朝</tag>
+         
+        <tag>奥地利</tag>
          
         <tag>维也纳</tag>
          
@@ -4209,6 +4237,8 @@
         
         <tag>Note</tag>
          
+        <tag>建筑</tag>
+         
         <tag>Travel</tag>
          
         <tag>历史</tag>
@@ -4220,8 +4250,6 @@
         <tag>巴洛克</tag>
          
         <tag>布拉格</tag>
-         
-        <tag>建筑</tag>
          
         <tag>文艺复兴</tag>
          
@@ -7342,9 +7370,9 @@
         
         <tag>产品</tag>
          
-        <tag>用户</tag>
-         
         <tag>UCD</tag>
+         
+        <tag>用户</tag>
          
          
            
