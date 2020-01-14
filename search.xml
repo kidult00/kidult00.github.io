@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[设计日课 Vol.010 - 人体站立和坐姿尺寸]]></title>
+    <url>%2F200114-design-diary-010.html</url>
+    <content type="text"><![CDATA[上一篇日课我们划重点了几个重要的人体尺寸：眼高 1450-1580mm，肩宽 400-450mm，坐面高 350-410mm。今天继续来看人体站立和坐下时的一些具体尺寸。 除了标注全面、详细的人体尺寸数据，下面两张图还是优秀的信息图表设计典范，在有限的版面内承载的信息密度很高，值得细细品读。例如，如何显示不同年龄段、不同性别的数据？如何映射属性和数据关系？如何省略数据区间？ 下图是人体站姿时的尺寸值： 眼高与身高有密切关系。成年人的眼高一般为身高减去 110-120mm； 考虑站姿作业时置物台等高度，要以肘头高为标尺，但还需要考虑鞋子高度； 肘头高与重心高接近 上肢自然上举时指尖能达到的最大高度约为人体身高的 1.3 倍 下图是椅子坐姿的人体测量。 坐姿眼高在 1100-1200mm 之间 坐面高在 400mm 左右 坐姿肘高在 650-700mm 之间 参考资料 建筑设计资料集成：人体、空间篇 人因工程学 - Wikiwand 设计日课系列 设计日课 Vol.001 - 回到历史寻找设计 设计日课 Vol.002 - 设计发展的驱动力 设计日课 Vol.003 - 这是好设计吗？ 设计日课 Vol.004 - 好设计的关系框架和时空框架 设计日课 Vol.005 - 老板要求每天花式出图100张，怎么办？ 设计日课 Vol.006 - 设计的经济基础和文化贡献 设计日课 Vol.007 - 这个装修好在哪？ 设计日课 Vol.008 - 人体的骨骼和肌肉 设计日课 Vol.009 - 一些重要的人体测定值]]></content>
+      <categories>
+        <category>设计</category>
+      </categories>
+      <tags>
+        <tag>Design</tag>
+        <tag>设计</tag>
+        <tag>人体</tag>
+        <tag>人体工程学</tag>
+        <tag>建筑</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[设计日课 Vol.009 - 一些重要的人体测定值]]></title>
     <url>%2F200112-design-diary-009.html</url>
     <content type="text"><![CDATA[做设计，尤其是空间和实体产品的设计，一定离不开人的尺度。从某种程度来说，设计就是一种将事物改造为适应人的尺度的活动。 日本人类生活工程学研究中心曾公布了详细的日本人人体测定数据，测量对象包括小学生和高龄者共约 34000 名男女，其中有 21 项与建筑方面紧密相关的尺寸。 其中有几项尤其值得注意： 眼高：决定了站立时视线的高度。成年人大约在 1450-1580mm 之间，老人和儿童则要相应降低。在设计信息内容时，尤其是公共空间的指示、展览内容、标志等尤其需要注意 肩宽：决定了通道需要留出的宽度。成年人肩宽一般在 400-450mm 之间。所以人行通道应以至少按 500mm/人 预留，考虑到提拿物品、多人并行、推车、轮椅、搀扶等场景，应留有更加充裕的宽度 坐面高：为座椅设计提供参考。成年人坐面高一般在 350-410mm 之间，老人和儿童相应降低 举上肢时上指尖高：伸直手臂时可够到的高度。成年人一般为 1900-2100 mm 之间 参考资料 建筑设计资料集成：人体、空间篇 人因工程学 - Wikiwand 设计日课系列： 设计日课 Vol.001 - 回到历史寻找设计 设计日课 Vol.002 - 设计发展的驱动力 设计日课 Vol.003 - 这是好设计吗？ 设计日课 Vol.004 - 好设计的关系框架和时空框架 设计日课 Vol.005 - 老板要求每天花式出图100张，怎么办？ 设计日课 Vol.006 - 设计的经济基础和文化贡献 设计日课 Vol.007 - 这个装修好在哪？ 设计日课 Vol.008 - 人体的骨骼和肌肉]]></content>
@@ -254,8 +269,8 @@
         <tag>Design</tag>
         <tag>教程</tag>
         <tag>3D</tag>
-        <tag>Camera</tag>
         <tag>Blender</tag>
+        <tag>Camera</tag>
         <tag>CG</tag>
         <tag>Render</tag>
         <tag>镜头</tag>
@@ -290,8 +305,8 @@
       </categories>
       <tags>
         <tag>3D</tag>
-        <tag>Texture</tag>
         <tag>Blender</tag>
+        <tag>Texture</tag>
         <tag>OpenGL</tag>
         <tag>Material</tag>
         <tag>Shader</tag>
@@ -342,8 +357,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Modeling</tag>
         <tag>Blender</tag>
+        <tag>Modeling</tag>
         <tag>Geometry</tag>
         <tag>Mirror</tag>
         <tag>Boolean</tag>
@@ -378,8 +393,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Modeling</tag>
         <tag>Blender</tag>
+        <tag>Modeling</tag>
         <tag>Geometry</tag>
         <tag>Mirror</tag>
       </tags>
@@ -413,8 +428,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Modeling</tag>
         <tag>Blender</tag>
+        <tag>Modeling</tag>
         <tag>Geometry</tag>
         <tag>Subdivision</tag>
       </tags>
@@ -468,8 +483,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Modeling</tag>
         <tag>Blender</tag>
+        <tag>Modeling</tag>
         <tag>Geometry</tag>
         <tag>Loop Cut</tag>
       </tags>
@@ -506,8 +521,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Modeling</tag>
         <tag>Blender</tag>
+        <tag>Modeling</tag>
         <tag>Geometry</tag>
       </tags>
   </entry>
@@ -540,8 +555,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Modeling</tag>
         <tag>Blender</tag>
+        <tag>Modeling</tag>
       </tags>
   </entry>
   <entry>
@@ -573,8 +588,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Animation</tag>
         <tag>Modeling</tag>
+        <tag>Animation</tag>
         <tag>Texture</tag>
         <tag>Camera</tag>
         <tag>Lighting</tag>
@@ -609,8 +624,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Animation</tag>
         <tag>Modeling</tag>
+        <tag>Animation</tag>
       </tags>
   </entry>
   <entry>
@@ -655,8 +670,8 @@
       <tags>
         <tag>AI</tag>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -677,8 +692,8 @@
       <tags>
         <tag>AI</tag>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -698,8 +713,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -718,8 +733,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -738,8 +753,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -757,8 +772,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -790,8 +805,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -808,8 +823,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -826,8 +841,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -847,8 +862,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>颜色</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
@@ -867,8 +882,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -888,8 +903,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -908,8 +923,8 @@
       </categories>
       <tags>
         <tag>ArtxCode</tag>
-        <tag>Creative Coding</tag>
         <tag>艺术</tag>
+        <tag>Creative Coding</tag>
         <tag>Generative Art</tag>
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
@@ -3079,8 +3094,8 @@
         <tag>Travel</tag>
         <tag>历史</tag>
         <tag>中欧</tag>
-        <tag>哈布斯堡王朝</tag>
         <tag>奥地利</tag>
+        <tag>哈布斯堡王朝</tag>
         <tag>维也纳</tag>
       </tags>
   </entry>
@@ -3110,9 +3125,9 @@
         <tag>Travel</tag>
         <tag>历史</tag>
         <tag>中欧</tag>
-        <tag>捷克</tag>
-        <tag>奥地利</tag>
         <tag>匈牙利</tag>
+        <tag>奥地利</tag>
+        <tag>捷克</tag>
         <tag>斯洛伐克</tag>
       </tags>
   </entry>
@@ -4099,8 +4114,8 @@
       </categories>
       <tags>
         <tag>产品</tag>
-        <tag>UCD</tag>
         <tag>用户</tag>
+        <tag>UCD</tag>
       </tags>
   </entry>
   <entry>
