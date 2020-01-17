@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2020-01-14T10:16:44.367Z</updated>
+  <updated>2020-01-17T10:29:05.201Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计日课 Vol.011 - 人体尺寸与设备、物件的高度</title>
+    <link href="http://uegeek.com/200117-design-diary-011.html"/>
+    <id>http://uegeek.com/200117-design-diary-011.html</id>
+    <published>2020-01-17T10:27:26.000Z</published>
+    <updated>2020-01-17T10:29:05.201Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/%E8%AE%BE%E8%AE%A1%E6%97%A5%E8%AF%BEtitle.jpg" alt=""></p><a id="more"></a> <p><a href="https://www.uegeek.com/200114-design-diary-010.html" target="_blank" rel="noopener">上一篇日课</a>我们了解了人体站立和坐姿的相关尺寸。今天要更进一步来学习，人在常见的活动中，与空间物件和设备例如架子、烹饪台等，产生互动时的尺寸。</p><p>日常设备和物件与使用者的身高密切相关，下面的图表是以身高为划分标准，利用浮动标值和概略比推导出物体必要的高度。</p><p><img src="http://img.viz.mobi/V011%E4%BB%A5%E8%BA%AB%E9%AB%98%E4%B8%BA%E5%9F%BA%E7%A1%80%E7%9A%84%E8%AE%BE%E5%A4%87%E7%89%A9%E4%BB%B6%E9%AB%98%E5%BA%A6%E7%9A%84%E6%B5%AE%E5%8A%A8%E5%80%BC.jpg" alt=""></p><p>下面列表的序号，对应上图中尺寸高度序号和活动类别序号，右侧的数字表示与身高的比值：</p><p>1    <strong>手能够触到的高度</strong>    1.33</p><p>2    <strong>能取放物品的架子高度</strong>（上限）    1.17</p><p>3    倾斜的地面与天花板之间的距离（最小值，地板倾斜度 5°~15°）    1.15</p><p>4    楼梯与天花板之间的距离（最小值，倾斜度25°~35°）    1.00</p><p>4    遮挡视线的隔墙的高（下限）    1.00</p><p>5    <strong>眼高</strong>    H-12cm</p><p>6    抽屉的高（上限）    0.91</p><p>7    <strong>易于使用的架子的高（上限）</strong>    0.85</p><p>8    陡峭的楼梯的天花板高（最小值，倾斜度50°左右）</p><p>9    易于行使打开动作的高度（最大力）    0.6</p><p>10    人体的重心高    0.55</p><p>10    <strong>站姿作业时的点高</strong>    0.55</p><p>10    <strong>坐高</strong>    0.55</p><p>11    <strong>烹饪台的高度</strong>    0.53</p><p>12    背与椅子靠背接触点的高度    0.5</p><p>13    大转子骨的高度    0.48</p><p>14    <strong>洗脸台的高度</strong>    0.45</p><p>15    <strong>办公用书桌的高度</strong>（不含鞋物）    0.41</p><p>16    使用梯子时的空间（最小值，倾斜度80°~90°）    0.4</p><p>16    <strong>易于使用的架子的高度（下限）</strong>    0.4</p><p>17    <strong>手提物品的长度（最大值）</strong>    0.37</p><p>18    书桌下方的空间（高的最小值）    0.34</p><p>18    小便器的高    0.34</p><p>19    <strong>办公用椅子的高</strong>    0.23</p><p>20    <strong>轻度作业用椅子的高</strong>    0.21</p><p>21    <strong>小憩时用椅子的高</strong>    0.19</p><p>22    差尺    0.18</p><p>23    <strong>休息时用椅子的高</strong>    0.165</p><p>24    <strong>扶手的高</strong>    0.155</p><p>25    <strong>作业用椅子的椅面与靠背点的距离</strong>    0.145</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>建筑设计资料集成：人体、空间篇</li><li><a href="https://www.wikiwand.com/zh-hans/%E4%BA%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B%E5%AD%A6" target="_blank" rel="noopener">人因工程学 - Wikiwand</a></li></ul><h2 id="设计日课系列"><a href="#设计日课系列" class="headerlink" title="设计日课系列"></a>设计日课系列</h2><ul><li><a href="https://www.uegeek.com/200101-design-diary-001.html" target="_blank" rel="noopener">设计日课 Vol.001 - 回到历史寻找设计</a></li><li><a href="https://www.uegeek.com/200102-design-diary-002.html" target="_blank" rel="noopener">设计日课 Vol.002 - 设计发展的驱动力</a></li><li><a href="https://www.uegeek.com/200103-design-diary-003.html" target="_blank" rel="noopener">设计日课 Vol.003 - 这是好设计吗？</a></li><li><a href="https://www.uegeek.com/200103-design-diary-004.html" target="_blank" rel="noopener">设计日课 Vol.004 - 好设计的关系框架和时空框架</a></li><li><a href="https://www.uegeek.com/200103-design-diary-005.html" target="_blank" rel="noopener">设计日课 Vol.005 - 老板要求每天花式出图100张，怎么办？</a></li><li><a href="https://www.uegeek.com/200107-design-diary-006.html" target="_blank" rel="noopener">设计日课 Vol.006 - 设计的经济基础和文化贡献</a></li><li><a href="https://www.uegeek.com/200110-design-diary-007.html" target="_blank" rel="noopener">设计日课 Vol.007 - 这个装修好在哪？</a></li><li><a href="https://www.uegeek.com/200111-design-diary-008.html" target="_blank" rel="noopener">设计日课 Vol.008 - 人体的骨骼和肌肉</a></li><li><a href="https://www.uegeek.com/200112-design-diary-009.html" target="_blank" rel="noopener">设计日课 Vol.009 - 一些重要的人体测定值</a></li><li><a href="https://www.uegeek.com/200114-design-diary-010.html" target="_blank" rel="noopener">设计日课 Vol.010 - 人体站立和坐姿尺寸</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E8%AE%BE%E8%AE%A1%E6%97%A5%E8%AF%BEtitle.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="Design" scheme="http://uegeek.com/tags/Design/"/>
+    
+      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="人体" scheme="http://uegeek.com/tags/%E4%BA%BA%E4%BD%93/"/>
+    
+      <category term="人体工程学" scheme="http://uegeek.com/tags/%E4%BA%BA%E4%BD%93%E5%B7%A5%E7%A8%8B%E5%AD%A6/"/>
+    
+      <category term="建筑" scheme="http://uegeek.com/tags/%E5%BB%BA%E7%AD%91/"/>
+    
+      <category term="尺寸" scheme="http://uegeek.com/tags/%E5%B0%BA%E5%AF%B8/"/>
+    
+      <category term="Dimensions" scheme="http://uegeek.com/tags/Dimensions/"/>
+    
+  </entry>
   
   <entry>
     <title>设计日课 Vol.010 - 人体站立和坐姿尺寸</title>
@@ -639,42 +673,6 @@
       <category term="Shader" scheme="http://uegeek.com/tags/Shader/"/>
     
       <category term="Principled BSDF" scheme="http://uegeek.com/tags/Principled-BSDF/"/>
-    
-      <category term="材质" scheme="http://uegeek.com/tags/%E6%9D%90%E8%B4%A8/"/>
-    
-      <category term="贴图" scheme="http://uegeek.com/tags/%E8%B4%B4%E5%9B%BE/"/>
-    
-      <category term="计算机图形" scheme="http://uegeek.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一文看懂材质/纹理 Material, Texture, Shading, Shader 的区别</title>
-    <link href="http://uegeek.com/190608-material-texture-shaders.html"/>
-    <id>http://uegeek.com/190608-material-texture-shaders.html</id>
-    <published>2019-06-08T12:13:37.000Z</published>
-    <updated>2019-06-08T12:32:21.529Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://i.pinimg.com/150x150/c7/dc/3f/c7dc3f37515f0b4d200d85392c523fc4.jpg" alt=""></p><a id="more"></a><p>在计算机图形学和三维设计中，有几个容易混淆的概念。今天我们来一举拿下。</p><h2 id="概念整理"><a href="#概念整理" class="headerlink" title="概念整理"></a>概念整理</h2><table><thead><tr><th>英文</th><th>中文</th><th>本质</th><th>释义</th></tr></thead><tbody><tr><td><a href="https://www.wikiwand.com/en/Materials_system" target="_blank" rel="noopener">Material</a></td><td>材质</td><td>数据集</td><td>表现物体对光的交互，供渲染器读取的数据集，包括贴图纹理、光照算法等</td></tr><tr><td><a href="https://www.wikiwand.com/en/Texture_mapping" target="_blank" rel="noopener">Texture mapping</a></td><td><a href="[https://www.wikiwand.com/zh/%E6%9D%90%E8%B4%A8%E8%B4%B4%E5%9B%BE](https://www.wikiwand.com/zh/材质贴图">纹理贴图</a>)</td><td>图像映射规则</td><td>把存储在内存里的位图，通过 UV 坐标映射到渲染物体的表面</td></tr><tr><td>Shading</td><td>底纹、阴影</td><td>光影效果</td><td>根据表面法线、光照、视角等计算得出的光照结果</td></tr><tr><td><a href="https://www.wikiwand.com/en/Shader" target="_blank" rel="noopener">Shader</a></td><td><a href="[https://www.wikiwand.com/zh/%E7%9D%80%E8%89%B2%E5%99%A8](https://www.wikiwand.com/zh/着色器">着色器</a>)</td><td>程序</td><td>编写显卡渲染画面的算法来即时演算生成贴图的程序</td></tr><tr><td><a href="https://www.wikiwand.com/zh/GLSL" target="_blank" rel="noopener">GLSL</a></td><td></td><td>程序语言</td><td>OpenGL 着色语言</td></tr></tbody></table><p>可以这么总结：</p><blockquote><p>Material 是表现 Shading 的数据集。其他几个概念都是生成这一数据集的资源或者工具。</p></blockquote><p><img src="http://img.viz.mobi/MaterialConcepts.png" alt=""></p><p>这么多概念，无非是为了完成一个共同目标：<strong>用计算机表现真实可信的 Shading</strong>。</p><p>Shading 是真实世界中的光影效果，它是由物体表面材质、灯光、观察者的视角等多种因素共同决定的。要实现计算机的模拟生成，是一个非常复杂的过程。不过它的原理大概可以简化为一个函数：</p><blockquote><p>Intensity =  Material (Light, Eye)</p></blockquote><p>也就是说，光影的强度，是由 a.照在材质上的光  b.视线 共同决定的。</p><h2 id="如何制造-Shading-效果？"><a href="#如何制造-Shading-效果？" class="headerlink" title="如何制造 Shading 效果？"></a>如何制造 Shading 效果？</h2><p>万物看起来不尽相同，它们有各自的材质和纹理。</p><p>纹理（Texture）是什么？</p><blockquote><p>Texture is pattern or image applied to a surface to change its color, shininess or just about any other part of its appearance. —— <a href="https://classroom.udacity.com/courses/cs291/lessons/124106595/concepts/1703725970923#" target="_blank" rel="noopener">Texture introduction - Udacity</a></p></blockquote><p>纹理就是一段有规律、可重复的图像。利用纹理，我们可以非常取巧地让三维物体看起来更真实。</p><h3 id="方法一：贴上皮肤"><a href="#方法一：贴上皮肤" class="headerlink" title="方法一：贴上皮肤"></a>方法一：贴上皮肤</h3><p>贴图可以说是最简单的材质方法：</p><ul><li>选定物体表面的某些区域</li><li>更改这个区域的一些属性(如颜色、反光度、透明度等)</li></ul><p>那么 UV Mapping 又是什么？跟 Texture Mapping 有什么区别呢？</p><p>可以这么理解，Texture Mapping 是目标，把材质用一种规则映射到物体表面。而 UV Mapping 就是映射的规则。在这个规则中，给三维体每一个顶点增加两个值 U 和 V，它们记录了三维表面和二维表面的坐标对应关系：</p><p><img src="http://img.viz.mobi/textureUV.jpg" alt=""></p><p>via <a href="https://classroom.udacity.com/courses/cs291/lessons/124106595/concepts/1703725990923" target="_blank" rel="noopener">Texture UVs</a></p><p>有了映射关系，我们就可以分门别类地把影响光照的不同参数，都通过图片映射到三维几何体上。这些参数包括：</p><ul><li><p>Diffuse Map 漫反射：模拟一个发光物对物体的方向性影响(Directional Impact)。它是光照模型中最显著的组成部分</p><p><img src="https://downloads.intercomcdn.com/i/o/52646545/49dbc08cd3840bc2d7654bdf/file-YYtlQsfLg4.jpg" alt=""></p></li><li><p>Specular/Reflection Map 镜面：模拟有光泽物体上面出现的亮点，它的颜色更接近光而不是物体的颜色</p><p><img src="https://downloads.intercomcdn.com/i/o/52646559/173c8c8c729e2912d8d8ff20/file-qPzs8jkFjw.jpg" alt=""></p></li><li><p>Normal/Bump Map 法线：决定物体形状的垂直于它的法线向量，提供有关物体表面深度的细节。每一种颜色代表了不同的轴向，看起来类似这样：</p><p><img src="https://downloads.intercomcdn.com/i/o/52646553/fe98859890182904757a311a/file-UzyMUgLevF.jpg" alt=""></p></li><li><p>Displacement Map 位移：使用高度图将经过纹理化的表面的实际几何点位置，沿着表面法线根据保存在纹理中的数值进行移位。相比法线，位移贴图更多用于大规模的地形材质，包括悬崖、岩石等</p><p><img src="https://downloads.intercomcdn.com/i/o/52646556/ccdbd16e6f1ead8d59ac7273/file-L7LoPDZQxz.jpg" alt=""></p></li><li><p>Ambient Map 环境</p></li><li><p>Gloss/Roughness Map 光泽</p></li></ul><h3 id="方法二：长出皮肤"><a href="#方法二：长出皮肤" class="headerlink" title="方法二：长出皮肤"></a>方法二：长出皮肤</h3><p>贴上皮肤的方法虽好，但是局限也很明显。如果没有合适的图像，或者要创建真实世界中罕见的材质，皮肤就不好找了。这个时候需要让程序帮忙「生长」出新的皮肤。</p><p>我们把这种程序叫做 Shaders。</p><p>如果你还记得，Shading 是始终如一的终极目标，那么应该就能明白为什么实现这个目标的程序叫做 Shaders 了。</p><p><img src="https://unity3d.com/sites/default/files/learn/shaderintro01.png" alt=""></p><p>它实际上是一个程序片段、一系列的指令，可以将三维 Mesh(网格)以指定方式与颜色、贴图等组合，完成复杂的计算输出（渲染器可读取的点和颜色的对应关系），会对屏幕上的每个像素同时下达命令。也就是说，代码必须根据像素在屏幕上的不同位置执行不同的操作。就像活字印刷，你的程序就像一个 function（函数），输入位置信息，输出颜色信息，当它编译完之后会以相当快的速度运行。</p><p>为什么 Shaders 运行特别快？因为它们常常运行在专门为并行处理（parallel processing）而设计的 GPU 上面。</p><p>最后一个问题，用什么来写 shaders 程序呢？答案是 OpenGL 着色器语言 (GLSL) 。GLSL 是用类 C 语言写成的，它为图形计算量身定制，包含一些针对向量和矩阵操作的有用特性。</p><hr><p>好了，今天涉及到的概念实在太多了。希望对大家进入三维世界玩耍有所帮助。</p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://learnopengl-cn.readthedocs.io/zh/latest/02%20Lighting/02%20Basic%20Lighting/" target="_blank" rel="noopener">光照基础 - LearnOpenGL-CN</a></li><li><a href="https://classroom.udacity.com/courses/cs291/" target="_blank" rel="noopener">交互式 3D 图形 - Udacity</a></li><li><a href="https://www.zhihu.com/question/25745472" target="_blank" rel="noopener">贴图、纹理、材质的区别是什么？ - 知乎</a></li><li><a href="https://gameinstitute.qq.com/community/detail/115074" target="_blank" rel="noopener">【Shader科普】贴图、纹理、材质的区别-腾讯游戏学院</a></li><li><a href="https://help.poliigon.com/general-information/what-are-the-different-texture-maps-for" target="_blank" rel="noopener">What are the different texture maps for? | Poliigon Help Center</a></li><li><a href="https://learnopengl-cn.readthedocs.io/zh/latest/05%20Advanced%20Lighting/04%20Normal%20Mapping/" target="_blank" rel="noopener">法线贴图 - LearnOpenGL-CN</a></li><li><a href="https://www.wikiwand.com/zh/%E4%BD%8D%E7%A7%BB%E8%B4%B4%E5%9B%BE" target="_blank" rel="noopener">位移贴图 - Wikiwand</a></li><li><a href="https://unity3d.com/es/learn/tutorials/topics/graphics/gentle-introduction-shaders" target="_blank" rel="noopener">A Gentle Introduction to Shaders - Unity</a></li><li><a href="https://www.wikiwand.com/zh/GLSL" target="_blank" rel="noopener">GLSL - Wikiwand</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://i.pinimg.com/150x150/c7/dc/3f/c7dc3f37515f0b4d200d85392c523fc4.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="http://uegeek.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="3D" scheme="http://uegeek.com/tags/3D/"/>
-    
-      <category term="Texture" scheme="http://uegeek.com/tags/Texture/"/>
-    
-      <category term="OpenGL" scheme="http://uegeek.com/tags/OpenGL/"/>
-    
-      <category term="Material" scheme="http://uegeek.com/tags/Material/"/>
-    
-      <category term="Shader" scheme="http://uegeek.com/tags/Shader/"/>
     
       <category term="材质" scheme="http://uegeek.com/tags/%E6%9D%90%E8%B4%A8/"/>
     
