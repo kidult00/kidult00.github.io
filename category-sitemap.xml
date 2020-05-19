@@ -14,13 +14,6 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/categories/HackYourself/</loc>
-        <lastmod>2019-01-05T14:53:59.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/</loc>
         <lastmod>2019-05-23T09:40:35.210Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -50,7 +43,14 @@
 
     <url>
         <loc>http://uegeek.com/categories/%E5%8F%BD%E6%AD%AA/</loc>
-        <lastmod>2020-04-29T13:02:47.916Z</lastmod>
+        <lastmod>2020-05-19T15:01:00.978Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/categories/HackYourself/</loc>
+        <lastmod>2020-05-19T15:05:28.923Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
