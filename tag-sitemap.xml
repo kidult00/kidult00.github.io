@@ -933,6 +933,13 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/tags/%E6%8D%B7%E5%85%8B/</loc>
+        <lastmod>2018-09-25T08:07:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://uegeek.com/tags/%E5%8C%88%E7%89%99%E5%88%A9/</loc>
         <lastmod>2018-09-25T08:07:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -941,13 +948,6 @@
 
     <url>
         <loc>http://uegeek.com/tags/%E5%A5%A5%E5%9C%B0%E5%88%A9/</loc>
-        <lastmod>2018-09-25T08:07:26.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E6%8D%B7%E5%85%8B/</loc>
         <lastmod>2018-09-25T08:07:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -2376,35 +2376,35 @@
 
     <url>
         <loc>http://uegeek.com/tags/%E5%88%9B%E4%BD%9C/</loc>
-        <lastmod>2020-05-19T15:05:28.923Z</lastmod>
+        <lastmod>2020-05-19T15:19:30.424Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E9%98%85%E8%AF%BB/</loc>
-        <lastmod>2020-05-19T15:05:28.923Z</lastmod>
+        <lastmod>2020-05-19T15:19:30.424Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E7%90%86%E8%A7%A3/</loc>
-        <lastmod>2020-05-19T15:05:28.923Z</lastmod>
+        <lastmod>2020-05-19T15:19:30.424Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/Understanding/</loc>
-        <lastmod>2020-05-19T15:05:28.923Z</lastmod>
+        <lastmod>2020-05-19T15:19:30.424Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://uegeek.com/tags/%E6%95%99%E5%AD%A6%E8%AE%BE%E8%AE%A1/</loc>
-        <lastmod>2020-05-19T15:05:28.923Z</lastmod>
+        <lastmod>2020-05-19T15:19:30.424Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
