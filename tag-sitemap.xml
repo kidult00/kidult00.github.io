@@ -919,7 +919,21 @@
     </url>
 
     <url>
+        <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
+        <lastmod>2018-09-25T08:07:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://uegeek.com/tags/%E4%B8%AD%E6%AC%A7/</loc>
+        <lastmod>2018-09-25T08:07:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://uegeek.com/tags/%E6%8D%B7%E5%85%8B/</loc>
         <lastmod>2018-09-25T08:07:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -933,21 +947,7 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/%E5%8E%86%E5%8F%B2/</loc>
-        <lastmod>2018-09-25T08:07:26.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://uegeek.com/tags/%E5%A5%A5%E5%9C%B0%E5%88%A9/</loc>
-        <lastmod>2018-09-25T08:07:26.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://uegeek.com/tags/%E6%8D%B7%E5%85%8B/</loc>
         <lastmod>2018-09-25T08:07:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1808,14 +1808,14 @@
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Fab/</loc>
+        <loc>http://uegeek.com/tags/Arduino/</loc>
         <lastmod>2019-04-23T13:51:18.348Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://uegeek.com/tags/Arduino/</loc>
+        <loc>http://uegeek.com/tags/Fab/</loc>
         <lastmod>2019-04-23T13:51:18.348Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
