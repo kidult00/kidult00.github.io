@@ -540,6 +540,8 @@
 <li><p>清除非中文字符</p>
 <blockquote>
 <p>re.match(pattern, string, flags=0)</p>
+</blockquote>
+<blockquote>
 <p>If zero or more characters at the beginning of string match the regular expression pattern, return a corresponding MatchObject instance. Return None if the string does not match the pattern.</p>
 </blockquote>
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">   	<span class="keyword">if</span> re.match(<span class="string">u'([\u4e00-\u9fff]+)'</span>, word):</span><br><span class="line">  		     segments.append(word)</span><br></pre></td></tr></table></figure>
@@ -548,16 +550,22 @@
 <p> Counter 用法</p>
 <blockquote>
 <p>collections.Counter([iterable-or-mapping])</p>
+</blockquote>
+<blockquote>
 <p>A Counter is a dict subclass for counting hashable objects. It is an unordered collection where elements are stored as dictionary keys and their counts are stored as dictionary values.</p>
 </blockquote>
 <p> sorted 用法</p>
 <blockquote>
 <p>sorted(iterable[, cmp[, key[, reverse]]])<br> Return a new sorted list from the items in iterable.</p>
+</blockquote>
+<blockquote>
 <p>cmp specifies a custom comparison function of two arguments which should return a negative, zero or positive number depending on whether the first argument is considered smaller than, equal to, or larger than the second argument: cmp=lambda x,y: cmp(x.lower(), y.lower()). The default value is None.</p>
 </blockquote>
 <p> lambda 表达式用法</p>
 <blockquote>
 <p>通常在需要一个函数但是又不想命名一个函数时使用，即匿名函数。比如实现一个可以求list中所有元素和的函数：</p>
+</blockquote>
+<blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from functools import reduce </span><br><span class="line">l = [1,2,3,5,-9,0,45,-99] </span><br><span class="line">reduce(lambda x,y:x+y,l)</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p> 在这里，用 Counter 统计字典中词的出现次数，以 lambda 取字典中的 value 值（key 是 x[0]，value 就是 x[1]）用 sorted 方法按降序排序：</p>

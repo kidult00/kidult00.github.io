@@ -460,17 +460,17 @@
 <p><code>阿扣</code>：Hin 棒！你说的没错。说回到训练神经网络，我们需要在训练中及时了解训练效果如何，是不是朝着训练目标在一点点靠近。如果偏离目标，就说明训练模型可能在「犯错」，就要纠正过来。</p>
 <p><code>阿特</code>：那怎么知道模型是不是在「犯错」呢？</p>
 <p><code>阿扣</code>：我们会找一个度量标准。一个常见的度量方法是计算误差的平方和（SSE, sum of the squared errors）：</p>
-<p>$$ E=\frac{1}{2}\sum_\mu\sum_j[y^\mu_j - f(\sum<em>i w</em>{ij}x^\mu_i)]^2 $$</p>
+<p>$$ E=\frac{1}{2}\sum_\mu\sum_j[y^\mu_j - f(\sum_i w_{ij}x^\mu_i)]^2 $$</p>
 <p><img src="http://img.viz.mobi/latex_9521ee448af952b9e073b5d31974241c.png" alt=""></p>
 <p><code>阿特</code>：你……欺负人 &gt;.&lt;</p>
 <p><code>阿扣</code>：别着急，我们来拆解这一坨是个什么东西。先看看各个字母的含义：</p>
 <p><img src="http://img.viz.mobi/il_for_SSE-1.png" alt=""></p>
 <p>这个等式里面，有三个求和项（就是这个翻转了 90° 的 M： $\sum$ ）。</p>
-<p>最右边的求和项 $\sum<em>i w</em>{ij}x^\mu_i$ ，表示我们训练出来的权重 w 乘上输入值 x 得出的目标值 $\hat y$（也就是我们给数据打算的标签），然后用这些结果跟实际的数据中的 y 值做比较，看看偏差有多大。</p>
+<p>最右边的求和项 $\sum_i w_{ij}x^\mu_i$ ，表示我们训练出来的权重 w 乘上输入值 x 得出的目标值 $\hat y$（也就是我们给数据打算的标签），然后用这些结果跟实际的数据中的 y 值做比较，看看偏差有多大。</p>
 <p>现在你理解了最右边的求和项了吗？</p>
 <p><code>阿特</code>：大概意思是我们从数据中预测出来的 y ？</p>
 <p><code>阿扣</code>：没错，我们先把这一坨替换成 $\hat y$，简化一下公式：</p>
-<p>$$<br>E=\frac{1}{2}\sum_\mu\sum_j[y^\mu_j - f(\sum<em>i w</em>{ij}x^\mu<em>i)]^2<br>\<br>\downarrow<br>\<br>E=\frac{1}{2}\sum</em>\mu\sum_j[y^\mu_j - \hat y_j]^2<br>$$</p>
+<p>$$<br>E=\frac{1}{2}\sum_\mu\sum_j[y^\mu_j - f(\sum_i w_{ij}x^\mu_i)]^2<br>\<br>\downarrow<br>\<br>E=\frac{1}{2}\sum_\mu\sum_j[y^\mu_j - \hat y_j]^2<br>$$</p>
 <p><code>阿特</code>：世界清静多了~</p>
 <p><code>阿扣</code>：我们再来看右边这个求和项。j 表示有 j 个隐层节点，把每个节点的误差平方 $[y^\mu_j - \hat y_j]$ 计算出来。现在只剩下最后一个求和项了，它表示把 u 个输出节点的误差加起来。这样就得到了总体误差。</p>
 <h3 id="00-的-DeepLearning-笔记"><a href="#00-的-DeepLearning-笔记" class="headerlink" title="00 的 DeepLearning 笔记"></a>00 的 DeepLearning 笔记</h3><ul>

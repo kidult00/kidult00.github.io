@@ -471,23 +471,23 @@
 <li>初始化权重变化率为 0</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del_w = np.zeros(weights.shape)</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="2">
 <li>正向传播计算</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">output = sigmoid(np.dot(x, weights))</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="3">
 <li>计算输出单元的 error term</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">error = y - output</span><br><span class="line">error_term = error * output * (<span class="number">1</span>-output)</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="4">
 <li>更新权重变化率</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del_w += error_term * x</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="5">
 <li>更新权重</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weights += learnrate * del_w / n_records</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="6">
 <li>重复 epochs</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> e <span class="keyword">in</span> range(epochs):</span><br><span class="line">    del_w = np.zeros(weights.shape)</span><br><span class="line">    <span class="keyword">for</span> x, y <span class="keyword">in</span> zip(features.values, targets):</span><br><span class="line">        <span class="comment"># Loop through all records, x is the input, y is the target</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Calculate the output</span></span><br><span class="line">        output = sigmoid(np.dot(x, weights))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Calculate the error</span></span><br><span class="line">        error = y - output</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Calculate the error term</span></span><br><span class="line">        error_term = error * output * (<span class="number">1</span>-output)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Calculate the change in weights for this sample</span></span><br><span class="line">        <span class="comment"># and add it to the total weight change</span></span><br><span class="line">        del_w += error_term * x</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Update weights using the learning rate and the average change in weights</span></span><br><span class="line">    weights += learnrate * del_w / n_records</span><br></pre></td></tr></table></figure>

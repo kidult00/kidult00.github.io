@@ -521,6 +521,8 @@
 <p>单击标有 2D 的按钮，把 <code>jit.matrix colorbox</code> 对象变成 8x8 二维矩阵，<code>jit.pwindow</code> 也会调整为更合适的形状。无论何时更改矩阵尺寸，它都会清除之前的数据，所以需要再次单击三个 multislider 重新填充矩阵。仍向每个 <code>jit.fill</code> 对象发送 64 个元素的列表，并用 8 个元素填充矩阵的 8 行。</p>
 <blockquote>
 <p>要点：这里没有演示如何使用带有 offset 属性的 2D 矩阵，当 <code>jit.fill</code> 的 name 属性命名 2D 矩阵时，offset 属性需要两个参数： x 偏移量和 y 偏移量。</p>
+</blockquote>
+<blockquote>
 <p><code>jit.fill</code>  仅适用于 1D 和 2D 矩阵。</p>
 </blockquote>
 <p><img src="https://docs.cycling74.com/max7/tutorials/images/jitterchapter11i.png" alt=""><br>相同的例子，列表填充 8x8 矩阵（未插值）</p>

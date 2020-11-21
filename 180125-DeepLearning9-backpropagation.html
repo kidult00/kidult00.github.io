@@ -470,9 +470,9 @@
 <p><code>阿特</code>：咦，那不是反过来了？先知道输出结果，再反推输入权重？</p>
 <p><code>阿扣</code>：对的，所以叫做「反向」呀。</p>
 <p>比如，输出层 k 个节点对应的误差项是 $\delta^o_k$ 。隐层有 j 个节点，那么隐层节点到输出节点的 j 个误差项是：</p>
-<p>$\delta^h<em>j=\sum W</em>{jk} \delta^o_k f’(h_j)$</p>
+<p>$\delta^h_j=\sum W_{jk} \delta^o_k f’(h_j)$</p>
 <p><code>阿特</code>：等等！先让我复习一下误差项是什么……</p>
-<p><code>阿扣</code>：嗯！误差项 δ 表示 <code>误差 * 激活函数的导数</code>，$\delta_j=(y-\hat y)f’(h_j)$。对比一下 $\delta^h<em>j=\sum W</em>{jk} \delta^o_k f’(h_j)$，看看有什么不同？</p>
+<p><code>阿扣</code>：嗯！误差项 δ 表示 <code>误差 * 激活函数的导数</code>，$\delta_j=(y-\hat y)f’(h_j)$。对比一下 $\delta^h_j=\sum W_{jk} \delta^o_k f’(h_j)$，看看有什么不同？</p>
 <p><code>阿特</code>：隐层到输出层的误差 (y-y^) 变成了 $\sum W_{jk} \delta^o_k$</p>
 <p><code>阿扣</code>：很棒！你发现了吧，$\delta_k$ 成为了 wx + b 中的变量 x：</p>
 <p><img src="http://img.viz.mobi/vlcsnap-2017-12-19-15h06m32s756.png" alt=""></p>
@@ -493,14 +493,14 @@
 <li>将误差反向传递到隐层 $\delta^h_j=\delta^oW_jf’(h_j)$</li>
 <li>更新权重步长<ul>
 <li>$\Delta W_j = \Delta W_j + \delta^oa_j$</li>
-<li>$\Delta w<em>{ij} = \Delta w</em>{ij} + \delta^h_ja_i$</li>
+<li>$\Delta w_{ij} = \Delta w_{ij} + \delta^h_ja_i$</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>更新权重（η 为学习率，m 为输入节点的个数):<ul>
 <li>$W_j = W_j + \eta \Delta W_j /m$</li>
-<li>$w<em>{ij} = w</em>{ij} + \eta \Delta w_{ij} /m$</li>
+<li>$w_{ij} = w_{ij} + \eta \Delta w_{ij} /m$</li>
 </ul>
 </li>
 <li>重复 e 次训练步骤 (epochs)</li>

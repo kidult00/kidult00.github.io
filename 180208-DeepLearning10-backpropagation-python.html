@@ -466,14 +466,14 @@
 <li>将误差反向传递到隐层 $\delta^h_j=\delta^oW_jf’(h_j)$</li>
 <li>更新权重步长<ul>
 <li>$\Delta W_j = \Delta W_j + \delta^oa_j$</li>
-<li>$\Delta w<em>{ij} = \Delta w</em>{ij} + \delta^h_ja_i$</li>
+<li>$\Delta w_{ij} = \Delta w_{ij} + \delta^h_ja_i$</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>更新权重（η 为学习率，m 为输入节点的个数):<ul>
 <li>$W_j = W_j + \eta \Delta W_j /m$</li>
-<li>$w<em>{ij} = w</em>{ij} + \eta \Delta w_{ij} /m$</li>
+<li>$w_{ij} = w_{ij} + \eta \Delta w_{ij} /m$</li>
 </ul>
 </li>
 <li>重复 e 次训练步骤 (epochs)</li>

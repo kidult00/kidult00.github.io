@@ -471,7 +471,7 @@
 <p><img src="http://img.viz.mobi/network-with-labeled-weights.png" alt=""></p>
 <p>我们把权重存在一个矩阵中，每一行对应一个输入值的权重，每一列对应一个隐层节点的权重：</p>
 <p><img src="http://img.viz.mobi/multilayer-diagram-weights.png" alt=""></p>
-<p>所以，隐层的第 j 个节点就表示为：$h_j = \sum<em>i w</em>{ij}x_i$</p>
+<p>所以，隐层的第 j 个节点就表示为：$h_j = \sum_i w_{ij}x_i$</p>
 <p>权重和输入值相乘时，需要用到矩阵乘法中的点乘（dot product）：</p>
 <p><img src="http://img.viz.mobi/input-times-weights.png" alt=""></p>
 <p><code>阿特</code>：啊……矩阵，我好些已经忘得差不多了……</p>
@@ -484,7 +484,7 @@
 <p><code>阿扣</code>：记得矩阵需要「门当户对」就好 😄 。上面这个矩阵，我们也可以调换左右顺序，并且让两个矩阵都转置（就是行列互换）一下来满足相乘的条件：</p>
 <p><img src="http://img.viz.mobi/inputs-matrix.png" alt=""></p>
 <p><code>阿特</code>：这跟上面那两个矩阵相乘的结果是一样的吗？</p>
-<p><code>阿扣</code>：是的。按照矩阵点乘的公式 ($h_1=x<em>1w</em>{11} + x<em>2w</em>{21}+x<em>3w</em>{31}$) 把它们展开，会发现其实是一个东西。</p>
+<p><code>阿扣</code>：是的。按照矩阵点乘的公式 ($h_1=x_1w_{11} + x_2w_{21}+x_3w_{31}$) 把它们展开，会发现其实是一个东西。</p>
 <h3 id="00-的-DeepLearning-笔记"><a href="#00-的-DeepLearning-笔记" class="headerlink" title="00 的 DeepLearning 笔记"></a>00 的 DeepLearning 笔记</h3><ul>
 <li><a href="http://www.uegeek.com/171206DLNote1-ML-DL-Basic.html" target="_blank" rel="noopener">DeepLearning笔记：机器学习和深度学习的区别</a></li>
 <li><a href="http://www.uegeek.com/171209DLN2-NeuralNetworks.html" target="_blank" rel="noopener">DeepLearning笔记：Neural Networks 神经网络</a></li>
