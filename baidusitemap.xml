@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://uegeek.com/201121-design-psy-01.html</loc>
+    <lastmod>2020-11-21T13:00:04.985Z</lastmod>
+    <data>
+        <display>
+        <title>201121-design-psy-01</title>
+        <pubTime>2020-11-21T12:56:14.594Z</pubTime>
+        
+        <tag>设计</tag>
+         
+        <tag>数字产品设计与心理学</tag>
+         
+        <tag>心理学</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/200519-understand-understanding.html</loc>
     <lastmod>2020-05-19T15:19:30.424Z</lastmod>
     <data>
@@ -649,9 +673,9 @@
          
         <tag>3D</tag>
          
-        <tag>Camera</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Camera</tag>
          
         <tag>CG</tag>
          
@@ -681,9 +705,9 @@
         
         <tag>3D</tag>
          
-        <tag>Texture</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Texture</tag>
          
         <tag>OpenGL</tag>
          
@@ -857,9 +881,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -893,9 +917,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -987,9 +1011,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
         <tag>通信</tag>
          
@@ -1089,11 +1113,11 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
         <tag>通信</tag>
          
@@ -1159,11 +1183,11 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
         <tag>传感器</tag>
          
@@ -1221,11 +1245,11 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
         <tag>基尔霍夫定律</tag>
          
@@ -1289,13 +1313,13 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>单片机</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
          
            
@@ -1821,11 +1845,11 @@
          
         <tag>随机</tag>
          
-        <tag>MaxMSP</tag>
-         
         <tag>巴纳姆效应</tag>
          
         <tag>星座</tag>
+         
+        <tag>MaxMSP</tag>
          
          
            
@@ -3333,9 +3357,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -3403,9 +3427,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -3573,9 +3597,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -3647,9 +3671,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -3697,9 +3721,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -4159,9 +4183,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -4181,11 +4205,11 @@
         <title>你为什么不想做，想做也做不到？</title>
         <pubTime>2015-02-10T01:27:33.000Z</pubTime>
         
+        <tag>心理学</tag>
+         
         <tag>Behavior</tag>
          
         <tag>Model</tag>
-         
-        <tag>心理学</tag>
          
          
            
@@ -6137,6 +6161,8 @@
          
         <tag>Max/MSP</tag>
          
+        <tag>EQ</tag>
+         
         <tag>Oscilator</tag>
          
         <tag>Filter</tag>
@@ -6144,8 +6170,6 @@
         <tag>LFO</tag>
          
         <tag>过滤器</tag>
-         
-        <tag>EQ</tag>
          
          
            
