@@ -401,10 +401,10 @@
         <tag>OpenGL</tag>
         <tag>Material</tag>
         <tag>Shader</tag>
+        <tag>Principled BSDF</tag>
         <tag>材质</tag>
         <tag>贴图</tag>
         <tag>计算机图形</tag>
-        <tag>Principled BSDF</tag>
       </tags>
   </entry>
   <entry>
@@ -541,8 +541,8 @@
         <tag>Digital Fabrication</tag>
         <tag>Fab</tag>
         <tag>Arduino</tag>
-        <tag>通信</tag>
         <tag>MIDI</tag>
+        <tag>通信</tag>
         <tag>OSC</tag>
         <tag>Max</tag>
       </tags>
@@ -596,8 +596,8 @@
         <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
-        <tag>通信</tag>
         <tag>MIDI</tag>
+        <tag>通信</tag>
         <tag>OSC</tag>
         <tag>Max</tag>
       </tags>
@@ -980,9 +980,9 @@
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>随机</tag>
+        <tag>MaxMSP</tag>
         <tag>巴纳姆效应</tag>
         <tag>星座</tag>
-        <tag>MaxMSP</tag>
       </tags>
   </entry>
   <entry>
@@ -1367,9 +1367,9 @@
         <category>设计</category>
       </categories>
       <tags>
+        <tag>交互设计</tag>
         <tag>AI</tag>
         <tag>ArtxCode</tag>
-        <tag>交互设计</tag>
         <tag>Deisgn</tag>
         <tag>人工智能</tag>
         <tag>HCI</tag>
@@ -1415,9 +1415,9 @@
         <tag>声音</tag>
         <tag>Ableton Live</tag>
         <tag>Max/MSP</tag>
+        <tag>EQ</tag>
         <tag>Compressor</tag>
         <tag>动态压缩</tag>
-        <tag>EQ</tag>
       </tags>
   </entry>
   <entry>
@@ -1608,9 +1608,9 @@
         <tag>Coding</tag>
         <tag>编程</tag>
         <tag>神经网络</tag>
+        <tag>Programming</tag>
         <tag>AWS</tag>
         <tag>GPU</tag>
-        <tag>Programming</tag>
       </tags>
   </entry>
   <entry>
@@ -1674,9 +1674,9 @@
         <tag>Coding</tag>
         <tag>编程</tag>
         <tag>神经网络</tag>
-        <tag>Programming</tag>
         <tag>Backpro</tag>
         <tag>反向传播</tag>
+        <tag>Programming</tag>
       </tags>
   </entry>
   <entry>
@@ -2112,8 +2112,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -2125,8 +2125,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -2138,8 +2138,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -2151,8 +2151,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>设计师</tag>
         <tag>Reading</tag>
+        <tag>设计师</tag>
       </tags>
   </entry>
   <entry>
@@ -3129,8 +3129,8 @@
       <tags>
         <tag>Note</tag>
         <tag>建筑</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>Travel</tag>
         <tag>哥特式</tag>
         <tag>巴洛克</tag>
@@ -3148,8 +3148,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>Travel</tag>
         <tag>东正教</tag>
         <tag>基督教</tag>
@@ -3167,8 +3167,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
         <tag>Travel</tag>
       </tags>
@@ -3182,11 +3182,11 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>Travel</tag>
-        <tag>哈布斯堡王朝</tag>
         <tag>奥地利</tag>
+        <tag>哈布斯堡王朝</tag>
         <tag>维也纳</tag>
       </tags>
   </entry>
@@ -3199,8 +3199,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
         <tag>Travel</tag>
       </tags>
@@ -3213,12 +3213,12 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>历史</tag>
         <tag>中欧</tag>
+        <tag>历史</tag>
         <tag>捷克</tag>
         <tag>Travel</tag>
-        <tag>奥地利</tag>
         <tag>匈牙利</tag>
+        <tag>奥地利</tag>
         <tag>斯洛伐克</tag>
       </tags>
   </entry>
@@ -3231,8 +3231,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>人类简史</tag>
         <tag>历史</tag>
+        <tag>人类简史</tag>
       </tags>
   </entry>
   <entry>
@@ -3482,8 +3482,8 @@
       <tags>
         <tag>Design</tag>
         <tag>设计</tag>
-        <tag>服务设计</tag>
         <tag>service design</tag>
+        <tag>服务设计</tag>
       </tags>
   </entry>
   <entry>
@@ -3972,8 +3972,8 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>可视化</tag>
         <tag>Note</tag>
+        <tag>可视化</tag>
         <tag>Information design</tag>
       </tags>
   </entry>
@@ -4010,8 +4010,8 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>Reading</tag>
         <tag>Note</tag>
+        <tag>Reading</tag>
       </tags>
   </entry>
   <entry>
