@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图研所Logo</title>
+    <g id="图研所Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="512" height="512"></rect>
+        <g id="Group" transform="translate(81.000000, 107.000000)">
+            <path d="M-2.84217094e-14,33 L350,33 L350,198.454545 L350,261.181818 C350,278.754515 335.754515,293 318.181818,293 L-2.84217094e-14,293 L-2.84217094e-14,293 L-2.84217094e-14,33 Z" id="Rectangle" stroke="#000000" stroke-width="12.25" fill="#FFFFFF"></path>
+            <path d="M318.999665,0 C303.719331,0 295.533333,7.93846154 287,15.8769231 C287,23.8153846 287,97.1667692 287,235.931077 C309.64,226.166769 329.88,230.532923 334.28,233.152615 C338.68,235.772308 351,242.123077 351,258 L351,23.8153846 L350.929799,23.8170288 C349.832879,8.30046512 334.28,0 318.999665,0 Z" id="Path" stroke="#000000" stroke-width="12.25" fill="#FFFFFF"></path>
+            <circle id="Oval" stroke="#000000" stroke-width="7.95454545" fill="#000000" cx="160" cy="163" r="80"></circle>
+            <circle id="Oval-Copy" stroke="#FFFFFF" stroke-width="7.95454545" fill="#FFFFFF" cx="180" cy="143" r="40"></circle>
+        </g>
+    </g>
+</svg>
