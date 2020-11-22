@@ -42,6 +42,10 @@
 
 
 
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
 
 
 
@@ -94,7 +98,7 @@
 
 
 
-  <meta name="keywords" content="IxD,Note,交互设计," />
+  <meta name="keywords" content="IxD,交互设计,Note," />
 
 
 
@@ -108,7 +112,7 @@
 
 
 <meta name="description" content="好久没有正儿八经写笔记了，翻完两遍《交互设计沉思录》，还是云里雾里，不得不借助敲键盘来整理一下思路。 这是一本探讨理论的书。这类书很难写，读者一般在读的过程中频频点头认同作者的观点，但是一放下书，却又好像什么都没得到。对这一类的书，如果看完后刷新了自己对该领域的认识，就可以认为是一本好书吧。至于刷新认识，大概是看书里有没有提供一个好用的框架，帮助自己去理解这个领域，弥补过去因视角和深度的缺乏导">
-<meta name="keywords" content="IxD,Note,交互设计">
+<meta name="keywords" content="IxD,交互设计,Note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="科技，美学，人性——交互设计的十字路口">
 <meta property="og:url" content="http://uegeek.com/rd-thoughts-on-ixd.html">
@@ -131,7 +135,7 @@
     scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
+    fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
@@ -308,26 +312,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -550,9 +550,9 @@
           
             <a href="/tags/IxD/" rel="tag"># IxD</a>
           
-            <a href="/tags/Note/" rel="tag"># Note</a>
-          
             <a href="/tags/交互设计/" rel="tag"># 交互设计</a>
+          
+            <a href="/tags/Note/" rel="tag"># Note</a>
           
         </div>
       
@@ -840,6 +840,8 @@
 
 
 
+  
+
 
 
 
@@ -874,6 +876,11 @@
   
   
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
 
@@ -1271,19 +1278,6 @@
   </script>
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 

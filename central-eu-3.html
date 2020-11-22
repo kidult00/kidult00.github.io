@@ -42,6 +42,10 @@
 
 
 
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
 
 
 
@@ -94,7 +98,7 @@
 
 
 
-  <meta name="keywords" content="Note,Travel,中欧,历史,奥地利,哈布斯堡王朝,维也纳," />
+  <meta name="keywords" content="Note,Travel,中欧,历史,哈布斯堡王朝,奥地利,维也纳," />
 
 
 
@@ -108,7 +112,7 @@
 
 
 <meta name="description" content="哈布斯堡王朝（Habsburg）是欧洲历史上统治领域最广的王室。大多数欧洲国家，都与哈布斯堡家族有着千丝万缕的联系。">
-<meta name="keywords" content="Note,Travel,中欧,历史,奥地利,哈布斯堡王朝,维也纳">
+<meta name="keywords" content="Note,Travel,中欧,历史,哈布斯堡王朝,奥地利,维也纳">
 <meta property="og:type" content="article">
 <meta property="og:title" content="中欧四国扫盲帖之三：哈布斯堡王朝和维也纳">
 <meta property="og:url" content="http://uegeek.com/central-eu-3.html">
@@ -133,7 +137,7 @@
     scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
+    fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
@@ -310,26 +314,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -557,9 +557,9 @@
           
             <a href="/tags/历史/" rel="tag"># 历史</a>
           
-            <a href="/tags/奥地利/" rel="tag"># 奥地利</a>
-          
             <a href="/tags/哈布斯堡王朝/" rel="tag"># 哈布斯堡王朝</a>
+          
+            <a href="/tags/奥地利/" rel="tag"># 奥地利</a>
           
             <a href="/tags/维也纳/" rel="tag"># 维也纳</a>
           
@@ -849,6 +849,8 @@
 
 
 
+  
+
 
 
 
@@ -883,6 +885,11 @@
   
   
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
 
@@ -1280,19 +1287,6 @@
   </script>
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 

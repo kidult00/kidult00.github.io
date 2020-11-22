@@ -42,6 +42,10 @@
 
 
 
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
 
 
 
@@ -114,7 +118,7 @@
 <meta property="og:site_name" content="00&#39;s Adventure">
 <meta property="og:description" content="个人常用信息源优质信息源列表：Zotero Translator Test Results，awesome · GitHub Topics 以人为线索 - 学术和专业领域   如何找到顶尖人物      学术影响力 H 指数，学术专著数量   领域专项内容/奖项/组织 Wiki 领域列表，Google 搜索推荐，年度奖项（有哪些）获奖者，顶尖团体（有哪些）领导人   综述型出版物 豆瓣豆列，电商书">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-11-21T16:59:51.842Z">
+<meta property="og:updated_time" content="2020-11-21T17:06:21.124Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="资源">
 <meta name="twitter:description" content="个人常用信息源优质信息源列表：Zotero Translator Test Results，awesome · GitHub Topics 以人为线索 - 学术和专业领域   如何找到顶尖人物      学术影响力 H 指数，学术专著数量   领域专项内容/奖项/组织 Wiki 领域列表，Google 搜索推荐，年度奖项（有哪些）获奖者，顶尖团体（有哪些）领导人   综述型出版物 豆瓣豆列，电商书">
@@ -128,7 +132,7 @@
     scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
+    fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
@@ -305,26 +309,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -459,13 +459,10 @@
 </table>
 <hr>
 <h2 id="I-Design-amp-HCI"><a href="#I-Design-amp-HCI" class="headerlink" title="I - Design &amp; HCI"></a>I - Design &amp; HCI</h2><ul>
-<li><p><a href="https://www.wikiwand.com/en/Design" target="_blank" rel="noopener">Design - disciplines</a></p>
+<li><a href="https://www.wikiwand.com/en/Design" target="_blank" rel="noopener">Design - disciplines</a></li>
+<li><p><a href="https://www.ted.com/playlists/127/design_giants" target="_blank" rel="noopener">Legends of the design world | TED Talks</a><br>Some of history’s greatest designers share intriguing perspectives and vignettes from their prolific journeys.</p>
 </li>
-<li><p><a href="https://www.ted.com/playlists/127/design_giants" target="_blank" rel="noopener">Legends of the design world | TED Talks</a></p>
-<p>Some of history’s greatest designers share intriguing perspectives and vignettes from their prolific journeys.</p>
-</li>
-<li><p><a href="http://designers.watch/" target="_blank" rel="noopener">Designers.Watch - The Must-See Design &amp; Art Documentaries.</a></p>
-<p>The best documentaries for designers and artists.</p>
+<li><p><a href="http://designers.watch/" target="_blank" rel="noopener">Designers.Watch - The Must-See Design &amp; Art Documentaries.</a><br>The best documentaries for designers and artists.</p>
 </li>
 <li><p><a href="https://github.com/gztchan/awesome-design" target="_blank" rel="noopener">gztchan/awesome-design: 🌟Curated design resources</a></p>
 </li>
@@ -482,10 +479,8 @@
 <li><a href="http://motionographer.com/" target="_blank" rel="noopener">Motionographer Sharing the best in moving media</a></li>
 </ul>
 <h3 id="Event-amp-Award"><a href="#Event-amp-Award" class="headerlink" title="Event &amp; Award"></a>Event &amp; Award</h3><ul>
-<li><p><a href="https://ars.electronica.art/news/en/" target="_blank" rel="noopener">Ars Electronica</a></p>
-</li>
-<li><p><a href="https://www.wtn.net/" target="_blank" rel="noopener">The World Technology Network |</a></p>
-<p>The WTN is a curated membership community comprised of the world’s most innovative individuals and organizations in science, technology, and related fields.</p>
+<li><a href="https://ars.electronica.art/news/en/" target="_blank" rel="noopener">Ars Electronica</a></li>
+<li><p><a href="https://www.wtn.net/" target="_blank" rel="noopener">The World Technology Network |</a><br>The WTN is a curated membership community comprised of the world’s most innovative individuals and organizations in science, technology, and related fields.</p>
 </li>
 <li><p><a href="https://www.kikk.be/2019/en/home" target="_blank" rel="noopener">KIKK Festival 2019 - 9th edition - KIKK 2019</a></p>
 </li>
@@ -762,6 +757,8 @@
 
 
 
+  
+
 
 
 
@@ -796,6 +793,11 @@
   
   
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
 
@@ -1193,19 +1195,6 @@
   </script>
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 

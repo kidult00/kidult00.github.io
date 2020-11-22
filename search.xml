@@ -9,8 +9,8 @@
       </categories>
       <tags>
         <tag>设计</tag>
-        <tag>数字产品设计与心理学</tag>
         <tag>心理学</tag>
+        <tag>数字产品设计与心理学</tag>
       </tags>
   </entry>
   <entry>
@@ -360,8 +360,8 @@
         <tag>Design</tag>
         <tag>教程</tag>
         <tag>3D</tag>
-        <tag>Camera</tag>
         <tag>Blender</tag>
+        <tag>Camera</tag>
         <tag>CG</tag>
         <tag>Render</tag>
         <tag>镜头</tag>
@@ -396,15 +396,15 @@
       </categories>
       <tags>
         <tag>3D</tag>
-        <tag>Texture</tag>
         <tag>Blender</tag>
+        <tag>Texture</tag>
         <tag>OpenGL</tag>
         <tag>Material</tag>
         <tag>Shader</tag>
-        <tag>Principled BSDF</tag>
         <tag>材质</tag>
         <tag>贴图</tag>
         <tag>计算机图形</tag>
+        <tag>Principled BSDF</tag>
       </tags>
   </entry>
   <entry>
@@ -470,8 +470,8 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -505,8 +505,8 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -539,8 +539,8 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
         <tag>通信</tag>
         <tag>MIDI</tag>
         <tag>OSC</tag>
@@ -593,9 +593,9 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
         <tag>通信</tag>
         <tag>MIDI</tag>
         <tag>OSC</tag>
@@ -630,9 +630,9 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
         <tag>传感器</tag>
       </tags>
   </entry>
@@ -663,9 +663,9 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
         <tag>基尔霍夫定律</tag>
       </tags>
   </entry>
@@ -699,10 +699,10 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>单片机</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -831,8 +831,8 @@
         <tag>创意</tag>
         <tag>创造力</tag>
         <tag>MaxMSP</tag>
-        <tag>L-system</tag>
         <tag>分形</tag>
+        <tag>L-system</tag>
       </tags>
   </entry>
   <entry>
@@ -850,8 +850,8 @@
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
-        <tag>L-system</tag>
         <tag>分形</tag>
+        <tag>L-system</tag>
       </tags>
   </entry>
   <entry>
@@ -938,8 +938,8 @@
         <tag>Computational Creativity</tag>
         <tag>创意</tag>
         <tag>创造力</tag>
-        <tag>分形</tag>
         <tag>混沌</tag>
+        <tag>分形</tag>
         <tag>Chaotic</tag>
         <tag>Fractal</tag>
       </tags>
@@ -2537,8 +2537,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2590,8 +2590,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2617,8 +2617,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2670,8 +2670,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2721,8 +2721,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2800,8 +2800,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -3185,8 +3185,8 @@
         <tag>Travel</tag>
         <tag>中欧</tag>
         <tag>历史</tag>
-        <tag>奥地利</tag>
         <tag>哈布斯堡王朝</tag>
+        <tag>奥地利</tag>
         <tag>维也纳</tag>
       </tags>
   </entry>
@@ -3215,10 +3215,10 @@
       <tags>
         <tag>Travel</tag>
         <tag>中欧</tag>
-        <tag>匈牙利</tag>
         <tag>历史</tag>
-        <tag>奥地利</tag>
         <tag>捷克</tag>
+        <tag>奥地利</tag>
+        <tag>匈牙利</tag>
         <tag>斯洛伐克</tag>
       </tags>
   </entry>
@@ -3415,9 +3415,9 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>心理学</tag>
         <tag>Behavior</tag>
         <tag>Model</tag>
+        <tag>心理学</tag>
       </tags>
   </entry>
   <entry>
@@ -3608,8 +3608,8 @@
       </categories>
       <tags>
         <tag>IxD</tag>
-        <tag>Note</tag>
         <tag>交互设计</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -3918,8 +3918,8 @@
       </categories>
       <tags>
         <tag>IxD</tag>
-        <tag>Note</tag>
         <tag>交互设计</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -3944,8 +3944,8 @@
       </categories>
       <tags>
         <tag>Design</tag>
-        <tag>Note</tag>
         <tag>交互设计</tag>
+        <tag>Note</tag>
         <tag>Interface</tag>
         <tag>Pattern</tag>
       </tags>
@@ -3972,8 +3972,8 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>可视化</tag>
+        <tag>Note</tag>
         <tag>Information design</tag>
       </tags>
   </entry>
@@ -4010,8 +4010,8 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>Reading</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -4205,8 +4205,8 @@
       </categories>
       <tags>
         <tag>产品</tag>
-        <tag>用户</tag>
         <tag>UCD</tag>
+        <tag>用户</tag>
       </tags>
   </entry>
   <entry>

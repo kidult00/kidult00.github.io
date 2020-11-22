@@ -42,6 +42,10 @@
 
 
 
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
 
 
 
@@ -94,7 +98,7 @@
 
 
 
-  <meta name="keywords" content="设计,数字产品设计与心理学,心理学," />
+  <meta name="keywords" content="设计,心理学,数字产品设计与心理学," />
 
 
 
@@ -107,7 +111,7 @@
 
 
 
-<meta name="keywords" content="设计,数字产品设计与心理学,心理学">
+<meta name="keywords" content="设计,心理学,数字产品设计与心理学">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数字产品设计与心理学01 - 你好，数字生活">
 <meta property="og:url" content="http://uegeek.com/201121-design-psy-01.html">
@@ -129,7 +133,7 @@
     scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
+    fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
@@ -306,26 +310,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -534,9 +534,9 @@
           
             <a href="/tags/设计/" rel="tag"># 设计</a>
           
-            <a href="/tags/数字产品设计与心理学/" rel="tag"># 数字产品设计与心理学</a>
-          
             <a href="/tags/心理学/" rel="tag"># 心理学</a>
+          
+            <a href="/tags/数字产品设计与心理学/" rel="tag"># 数字产品设计与心理学</a>
           
         </div>
       
@@ -795,6 +795,8 @@
 
 
 
+  
+
 
 
 
@@ -829,6 +831,11 @@
   
   
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
 
@@ -1226,19 +1233,6 @@
   </script>
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 
