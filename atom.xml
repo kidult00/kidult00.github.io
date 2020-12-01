@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2020-11-29T09:42:16.597Z</updated>
+  <updated>2020-12-01T14:12:57.466Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数字产品设计与心理学05 - 人们总是视而不见</title>
+    <link href="http://uegeek.com/201201-design-psy-05.html"/>
+    <id>http://uegeek.com/201201-design-psy-05.html</id>
+    <published>2020-12-01T14:08:22.000Z</published>
+    <updated>2020-12-01T14:12:57.466Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><p><img src="http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png" alt="数字产品设计与心理学"></p><a id="more"></a><p>人类的视觉很神奇，能够用较少的认知资源来感知周围的环境，并安全、准确地与之互动。数字产品也应该适应并支持视觉感知的特点，提供良好的视觉体验。在接下来的10+篇文章，我们将了解人们是如何观察世界的，视觉系统为什么要以这样的方式运作，以及可以怎么改善产品的视觉体验。</p><p>现在，先来做一个热身的小游戏。</p><p>请在下面的扑克牌中，选择一张并记住。</p><p><img src="http://img.viz.mobi/2.1.1cards1.png" alt="2.1.1cards1" style="zoom:80%;"></p><p>选好了吗？请在心里默念一遍这张牌的花色。然后，往下翻。</p><p>-</p><p><img src="http://img.viz.mobi/2.1.1cards2.png" alt="2.1.1cards2" style="zoom:80%;"></p><p>在这些扑克牌里，并<strong>没有</strong>你选的那一张。我说对了吗？</p><p>我怎么就能事先知道你会选哪一张，然后把它换掉呢？那你可能要问问自己：除了你挑选的那一张，还能记起来其他几张扑克牌的花色吗？现在，你可以翻回到上一张图片看看。</p><p>🤹‍♂️</p><p>没错，这五张扑克牌全部都换掉了，不知道你之前有没有注意到。与其说这是个鳖足的小魔术，不如说它是个无伤大雅的恶作剧。但这的确揭示了一个重要的现象：<strong>我们真正留意到的信息，比想象中要少很多。</strong></p><p>每天早上当你醒来，一睁开眼，周围的世界好像一张张全景照片，由眼睛捕捉下来。但这种印象只是错觉。我们以为自己对所处环境一目了然，只有在走神的时候才会忽略一些信息。实际上，被忽略掉的信息永远是绝大多数，只有少量信息成功引起了我们的注意。你可能会疑惑：这没有道理啊，我明明都看见了。别着急，我们会慢慢了解这个过程背后都发生了什么。在开始之前，我们再来看一些数字产品的例子。</p><p>下面这个实验很简单，只需要几秒钟。你可以请身边的人试一下。</p><p>准备好了吗？那我们开始吧。</p><p>请在下面这个商品分类页面中，找到「炒货」：</p><p><img src="http://img.viz.mobi/2.1.1%E6%B7%98%E5%AE%9D%E5%95%86%E5%93%81%E5%88%86%E7%B1%BB.jpg" alt="淘宝商品分类" style="zoom: 50%;"></p><p>找到以后，请往下看——</p><p>🤹‍♂️</p><p>现在，你可以回想起来炒货在哪一个分类下面吗？它属于左侧罗列的哪个大类呢？你还有留意到其他品类叫什么吗？它们是怎么排列的呢？</p><p>这些问题大部分人都回答不上来。我们确实都在认真的看，但是只看到了很少的一部分。这就是选择性注意的结果。</p><p>当我们带着明确目标去搜索信息的时候，通常会过滤掉不相关的事物。一方面，我们主观地认为自己洞悉周围发生的每一件事情；另一方面，我们并没有真正「看见」多少。这真是矛盾啊！一览无遗的感觉是怎么来的呢？心理学家解释说，人在某个特定时刻能看到的东西很少，但是大脑会指挥眼睛反复快速运动，以便抽取视觉环境的任何一部分，再叠加整合到一起（O’regan，1992）。这个过程如此迅速，我们会以为自己一下子就看到了整体。关于这个问题，在后面文章还会详细介绍。</p><p>我们很少会留意自己在看什么、怎么看。比如，你正在阅读这段文字，似乎一眼就能看到一个屏幕的内容。实际上，视觉真正起到关键作用的部分，只有眼睛视网膜中央的一小块区域。至于视野的其他部分，并不能真正看清所感知到的内容。<u>如果你把目光集中在当前这一行，稍加注意</u>，会发现靠近屏幕顶部或底部的文字，其实是模糊的。你在「看」那些位于边缘的文字，但你没有「看见」它们。</p><p><strong>视而不见，大多数时候并不是因为走神，也不是阅读能力不足，它是人类视觉的基本特征。</strong></p><p>在使用数字产品的界面时，人们也常常看不见那些近在咫尺的信息，这令设计师很头疼。例如，在填写网页表单时，错误提示（例如登录密码错误）一般出现在两个位置：表单的顶部，或是输入框的行间。哪个位置的信息容易被忽视呢？</p><p><img src="http://img.viz.mobi/2.1.1webform.png" alt="2.1.1webform" style="zoom:50%;"></p><p>没错，在表单顶部的信息容易被忽视，在输入框附近显示错误提示会更好。这是因为填写表单时，人们的注意力高度集中，视觉焦点会停留在当前输入框，那些远离视觉焦点的位置，就容易看不见。而且屏幕越大，越容易视而不见。</p><p>你可能会想，在电脑网页上容易看不见，但是在手机上应该不至于吧？毕竟手机屏幕就只有这么大。</p><p>前几天，我妈妈拿着手机过来问我：“我怎么找不到签到了？你帮我看看。”我一看，那是一个运营商 App 的首页。我问：“你平时都去哪里签到呀？” 她点了点首页中部的「会员中心」图标，说：“就是从这里进去，然后就可以签到了。”</p><p><img src="http://img.viz.mobi/2.1.1check-in-1.jpg" alt="2.1.1check-in" style="zoom:50%;"></p><p>“这两天 App 变了。现在我怎么都找不到了。这里我看了好几遍，还是没看到签到在哪里。“ 妈妈在会员中心页面上下滑动，没有找到她熟悉的签到。这时我点返回按钮，回到 App 首页，指着首页左上角的「签到有礼」告诉她：“签到移到这里了”。</p><p><img src="http://img.viz.mobi/2.1.1check-in-2.png" alt="2.1.1check-in-2" style="zoom:50%;"></p><p>妈妈恍然大悟：“哦，原来在这里，我就是没看到。”</p><p>确实就是没看到。签到离会员中心只有几厘米的距离，依然被无视了。这就是选择性注意的力量，也是习惯的力量：用户已经习以为常地在某个地方做一件事情，一旦改变，他们可能会不知所措。</p><p>视而不见，可能是无心之失，也可能是有意而为之。也许你没有听说过广告盲区（Banner Blindness）现象，但是你一定多少习得了这种能力：在浏览网页时，能够自觉地忽视网页顶部或右侧那些长得像广告的区域，不论它们实际是不是广告。早在十多年前，眼动研究（用仪器记录使用者视线的轨迹和停留情况）就发现了这一现象。</p><p><img src="http://img.viz.mobi/2.1.1banner-blindness-examples.jpg" alt="2.1.1banner-blindness-examples" style="zoom:70%;"></p><center><small>眼动研究中的广告盲区现象。图片来源：<a href="https://www.nngroup.com/articles/banner-blindness-original-eyetracking/" target="_blank" rel="noopener">https://www.nngroup.com/articles/banner-blindness-original-eyetracking/</a></small></center><p>上图是用户在浏览网页时的视觉热点图。视觉聚焦和停留最多的区域用红色表示，黄色次之，蓝色更少，灰色地带则说明没有吸引任何注意力。图上还有一些特意标记出的绿色方框，它们是网页上的广告区域，如你所见，那上面根本没有视线停留。这就是广告盲区现象：用户已经习惯性忽视那些网页中经常出现广告的区域。</p><p>经过十多年的进化，现在更受广告主青睐的是社交媒体信息流广告，也就是那些插入到信息列表中的广告，展现形式与用户所浏览的普通内容一样。这样一来，用户就不得不重新学习如何忽略广告了。</p><p><img src="http://img.viz.mobi/2.1.1%E5%BE%AE%E5%8D%9A%E5%B9%BF%E5%91%8A.jpg" alt="s-微博广告" style="zoom: 30%;"></p><center><small>微博 App 的信息流广告</small></center><p>下一篇文章，我们会说说人们在屏幕上阅读的方式。</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><p>O’regan, J. K. (1992). Solving the” real” mysteries of visual perception: The world as an outside memory. <em>Canadian Journal of Psychology/Revue Canadienne de Psychologie</em>, <em>46</em>(3), 461.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png&quot; alt=&quot;数字产品设计与心理学&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="数字产品设计与心理学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="选择性注意" scheme="http://uegeek.com/tags/%E9%80%89%E6%8B%A9%E6%80%A7%E6%B3%A8%E6%84%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>数字产品设计与心理学04 - 产品设计与三重心智</title>
@@ -36,9 +68,9 @@
       <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
-    
       <category term="交互设计" scheme="http://uegeek.com/tags/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
     
       <category term="数字产品设计与心理学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
@@ -68,9 +100,9 @@
       <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
-    
       <category term="交互设计" scheme="http://uegeek.com/tags/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
     
       <category term="数字产品设计与心理学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
@@ -624,42 +656,6 @@
       <category term="客厅" scheme="http://uegeek.com/tags/%E5%AE%A2%E5%8E%85/"/>
     
       <category term="Living room" scheme="http://uegeek.com/tags/Living-room/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>适老化改造套内空间设计 - 门厅篇</title>
-    <link href="http://uegeek.com/200104-aging-in-place-doorway.html"/>
-    <id>http://uegeek.com/200104-aging-in-place-doorway.html</id>
-    <published>2020-01-04T03:54:17.000Z</published>
-    <updated>2020-01-05T05:46:45.034Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96%E6%94%B9%E9%80%A0%E5%A5%97%E5%86%85%E7%A9%BA%E9%97%B4%E8%AE%BE%E8%AE%A1-%E9%97%A8%E5%8E%85%E7%AF%87.jpg" alt=""></p><a id="more"></a> <p>门厅作为连接家和外界的空间，虽然面积不大，但是使用频繁。老年人随着年龄增大，身体机能逐渐下降，为保证方便外出，顺畅、安全，在门厅设计时有不少细节应该考虑周到。</p><p>00 对门厅做了适老化设计，下面是建模和渲染结果：</p><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85_%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85%E6%95%88%E6%9E%9C%E5%9B%BEx0.5.jpg" alt=""></p><h2 id="常见活动分析"><a href="#常见活动分析" class="headerlink" title="常见活动分析"></a>常见活动分析</h2><p>老年人进门的一般活动流程包括：</p><blockquote><p>1.拿出钥匙开门 → 2.开灯 → 3.放下手中物品 → 4.脱挂外衣 </p><p>→ 5.坐下 → 6.探身取鞋，换鞋，放鞋 → 7.站起</p></blockquote><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85-%E5%8A%A8%E7%BA%BF.jpg" alt=""></p><ul><li>换鞋：需要鞋柜，座位</li><li>穿衣：需要挂钩</li><li>开门，关门：把手易识别、易抓握，有照明</li><li>开灯，关灯：开关位置方便，操作容易</li><li>放拐杖、雨伞、包等物品：有置物空间</li><li>轮椅进出：预留尺寸，保持进出通畅</li></ul><h2 id="设计要点"><a href="#设计要点" class="headerlink" title="设计要点"></a>设计要点</h2><table><thead><tr><th>布局规划</th><th>方便进出</th></tr></thead><tbody><tr><td>平面规划</td><td>避免动线过长，特别是距离老年人经常使用的空间太远</td></tr><tr><td>立面规划</td><td>尽量避免户内外垂直高差</td></tr></tbody></table><p>设计要点</p><blockquote><p><strong>出入通畅、安全</strong></p><p><strong>保证视线和光照</strong></p><p><strong>方便穿衣换鞋</strong></p><p><strong>功能齐全</strong></p></blockquote><h3 id="1-出入通畅、安全"><a href="#1-出入通畅、安全" class="headerlink" title="1. 出入通畅、安全"></a>1. 出入通畅、安全</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85-%E9%97%A8%E5%AE%BD.jpg" alt=""></p><ul><li>户门不应设置门槛，室内外垂直高差不应大于 15mm</li><li>户门洞口宽度不小于 1000mm，高度不小于 2000mm</li><li>户门应采用平开门，采用横杆式把手</li><li>户门拉手侧应保证有 400mm 以上空间，方便轮椅接近门口</li><li>避免通道狭长、曲折，应留出急救时担架出入所需的空间</li><li>地面应采用防滑、耐污材料，易于清理</li><li>鞋柜单扇柜门宽度不宜大于 350mm，打开后不应影响门厅内人的动作</li><li>除了基本进出，还要考虑接待来客的必要空间和护理人员的活动空间</li></ul><h3 id="2-保证视线和光照"><a href="#2-保证视线和光照" class="headerlink" title="2. 保证视线和光照"></a>2. 保证视线和光照</h3><ul><li>门厅宜开门见山，减少屏障和光线遮挡</li><li>门厅内应设有照明，如有自然采光更佳</li><li>灯具开关应设在进门方便操作的位置，距地面 1200mm</li><li>户门应该有高低两个观察孔，低位观察孔便于轮椅老人使用</li><li>方便老人坐在起居沙发上了解门厅的进出状况</li></ul><h3 id="3-方便穿衣换鞋"><a href="#3-方便穿衣换鞋" class="headerlink" title="3. 方便穿衣换鞋"></a>3. 方便穿衣换鞋</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85-%E5%AE%B6%E5%85%B7.jpg" alt=""></p><ul><li>有充裕的空间换鞋换衣</li><li>门厅中的鞋柜、鞋凳应靠近布置，便于取放鞋子</li><li>鞋柜宜在 850mm 高度处设有台面，既可以放置小物品，又可作为扶手便于撑扶</li><li>鞋柜下部留出 300mm 左右空档，安排部分开敞的放鞋空间，便于老人换鞋</li><li>配置结实、稳定、坐面稍宽大的鞋凳，长度宜大于 450mm，方便换鞋和放置随身物品</li><li>鞋凳旁宜设置竖向扶手，上端距地面 1400mm 左右，帮助老人站立起身</li></ul><h3 id="4-功能齐全"><a href="#4-功能齐全" class="headerlink" title="4. 功能齐全"></a>4. 功能齐全</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85-%E9%A2%84%E7%95%99%E5%8A%9F%E8%83%BD.jpg" alt=""></p><ul><li>门厅内可设置伞立，防止雨水滴湿地面</li><li>预留提示板位置，提醒出门前需要做的事情</li><li>可预留一处电源插座，供吸尘器等设备使用</li><li>如空间允许，门厅内宜预留轮椅暂存空间</li><li>使用轮椅的家中，墙壁上可设 350mm 高的防撞板</li><li>门厅可设穿衣镜，为防止轮椅碰撞，穿衣镜下沿应高于地面 350mm 以上</li></ul><p>适老化门厅俯瞰图：</p><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85_%E9%80%82%E8%80%81%E5%8C%96-%E9%97%A8%E5%8E%85%E6%95%88%E6%9E%9C%E5%9B%BE-%E4%BF%AF%E7%9E%B0.jpg" alt=""></p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><p>GB 50340-2016 老年人居住建筑设计规范</p></li><li><p>周燕珉, 程晓青, 林菊英, &amp; 林婧怡. (2011). 老年住宅</p></li><li><p>财团法人, &amp; 高龄者住宅财团|译者. (2011). 老年住宅设计手册</p></li></ul><p>家人年纪大了，居家环境如果及时做出相应的调整和改造，能为他们提供更好的生活、保健环境。<strong>广州的朋友如果有相关改造需求，可以与我联系：<a href="mailto:uegeek@gmail.com" target="_blank" rel="noopener">uegeek@gmail.com</a>.</strong></p><p><img src="http://img.viz.mobi/%E5%BE%AE%E4%BF%A1%E6%90%9C%E4%B8%80%E6%90%9C-%E9%80%82%E8%80%81%E5%8C%96.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96%E6%94%B9%E9%80%A0%E5%A5%97%E5%86%85%E7%A9%BA%E9%97%B4%E8%AE%BE%E8%AE%A1-%E9%97%A8%E5%8E%85%E7%AF%87.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Design" scheme="http://uegeek.com/tags/Design/"/>
-    
-      <category term="适老化" scheme="http://uegeek.com/tags/%E9%80%82%E8%80%81%E5%8C%96/"/>
-    
-      <category term="Aging in place" scheme="http://uegeek.com/tags/Aging-in-place/"/>
-    
-      <category term="养老" scheme="http://uegeek.com/tags/%E5%85%BB%E8%80%81/"/>
-    
-      <category term="老年住宅" scheme="http://uegeek.com/tags/%E8%80%81%E5%B9%B4%E4%BD%8F%E5%AE%85/"/>
-    
-      <category term="无障碍设计" scheme="http://uegeek.com/tags/%E6%97%A0%E9%9A%9C%E7%A2%8D%E8%AE%BE%E8%AE%A1/"/>
-    
-      <category term="通用设计" scheme="http://uegeek.com/tags/%E9%80%9A%E7%94%A8%E8%AE%BE%E8%AE%A1/"/>
-    
-      <category term="室内设计" scheme="http://uegeek.com/tags/%E5%AE%A4%E5%86%85%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
