@@ -4,6 +4,34 @@
 
     
   <url>
+    <loc>http://uegeek.com/201204-design-psy-06.html</loc>
+    <lastmod>2020-12-04T12:30:47.506Z</lastmod>
+    <data>
+        <display>
+        <title>数字产品设计与心理学06 - 扫视，而不是阅读</title>
+        <pubTime>2020-12-04T12:27:30.000Z</pubTime>
+        
+        <tag>设计</tag>
+         
+        <tag>阅读</tag>
+         
+        <tag>数字产品设计与心理学</tag>
+         
+        <tag>心理学</tag>
+         
+        <tag>视觉</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/201201-design-psy-05.html</loc>
     <lastmod>2020-12-01T14:12:57.466Z</lastmod>
     <data>
@@ -39,9 +67,9 @@
         <title>数字产品设计与心理学04 - 产品设计与三重心智</title>
         <pubTime>2020-11-29T09:40:24.000Z</pubTime>
         
-        <tag>交互设计</tag>
-         
         <tag>设计</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>数字产品设计与心理学</tag>
          
@@ -67,9 +95,9 @@
         <title>数字产品设计与心理学03-好设计的秘密钥匙</title>
         <pubTime>2020-11-26T11:52:55.000Z</pubTime>
         
-        <tag>交互设计</tag>
-         
         <tag>设计</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>数字产品设计与心理学</tag>
          
@@ -823,13 +851,13 @@
          
         <tag>Shader</tag>
          
+        <tag>Principled BSDF</tag>
+         
         <tag>材质</tag>
          
         <tag>贴图</tag>
          
         <tag>计算机图形</tag>
-         
-        <tag>Principled BSDF</tag>
          
          
            
@@ -947,9 +975,9 @@
          
         <tag>3D</tag>
          
-        <tag>Blender</tag>
-         
         <tag>Modeling</tag>
+         
+        <tag>Blender</tag>
          
         <tag>Geometry</tag>
          
@@ -989,9 +1017,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -1025,9 +1053,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -1051,9 +1079,9 @@
          
         <tag>3D</tag>
          
-        <tag>Blender</tag>
-         
         <tag>Modeling</tag>
+         
+        <tag>Blender</tag>
          
         <tag>Geometry</tag>
          
@@ -1081,9 +1109,9 @@
          
         <tag>3D</tag>
          
-        <tag>Blender</tag>
-         
         <tag>Modeling</tag>
+         
+        <tag>Blender</tag>
          
         <tag>Geometry</tag>
          
@@ -1119,9 +1147,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
         <tag>通信</tag>
          
@@ -1185,9 +1213,9 @@
          
         <tag>3D</tag>
          
-        <tag>Blender</tag>
-         
         <tag>Modeling</tag>
+         
+        <tag>Blender</tag>
          
         <tag>Geometry</tag>
          
@@ -1221,11 +1249,11 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
          
         <tag>通信</tag>
          
@@ -1257,9 +1285,9 @@
          
         <tag>3D</tag>
          
-        <tag>Blender</tag>
-         
         <tag>Modeling</tag>
+         
+        <tag>Blender</tag>
          
         <tag>Geometry</tag>
          
@@ -1291,11 +1319,11 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
          
         <tag>传感器</tag>
          
@@ -1321,9 +1349,9 @@
          
         <tag>3D</tag>
          
-        <tag>Blender</tag>
-         
         <tag>Modeling</tag>
+         
+        <tag>Blender</tag>
          
          
            
@@ -1353,11 +1381,11 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
          
         <tag>基尔霍夫定律</tag>
          
@@ -1383,9 +1411,9 @@
          
         <tag>3D</tag>
          
-        <tag>Modeling</tag>
-         
         <tag>Animation</tag>
+         
+        <tag>Modeling</tag>
          
         <tag>Texture</tag>
          
@@ -1421,13 +1449,13 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
-        <tag>单片机</tag>
-         
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
+         
+        <tag>单片机</tag>
          
          
            
@@ -1481,9 +1509,9 @@
          
         <tag>3D</tag>
          
-        <tag>Modeling</tag>
-         
         <tag>Animation</tag>
+         
+        <tag>Modeling</tag>
          
          
            
@@ -2053,11 +2081,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>图像</tag>
          
@@ -2223,9 +2251,9 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>IxD</tag>
+         
+        <tag>交互设计</tag>
          
          
            
@@ -2269,9 +2297,9 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>设计</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>体验</tag>
          
@@ -2301,9 +2329,9 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>设计</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>体验</tag>
          
@@ -2333,9 +2361,9 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>设计</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>体验</tag>
          
@@ -2365,9 +2393,9 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>设计</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>体验</tag>
          
@@ -3051,9 +3079,9 @@
         <title>纠结的翻页设计</title>
         <pubTime>2011-07-15T07:20:30.000Z</pubTime>
         
-        <tag>交互设计</tag>
-         
         <tag>IxD</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>Navigation</tag>
          
@@ -3265,9 +3293,9 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>IxD</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>控件</tag>
          
@@ -3317,13 +3345,13 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
-        <tag>产品</tag>
-         
         <tag>IxD</tag>
          
         <tag>设计</tag>
+         
+        <tag>交互设计</tag>
+         
+        <tag>产品</tag>
          
          
            
@@ -3367,9 +3395,9 @@
         <title>Leap Motion开发版试玩</title>
         <pubTime>2013-03-07T13:07:55.000Z</pubTime>
         
-        <tag>交互设计</tag>
-         
         <tag>IxD</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>Leap motion</tag>
          
@@ -3465,9 +3493,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -3535,9 +3563,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -3705,9 +3733,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -3779,9 +3807,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -3829,9 +3857,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -4291,9 +4319,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -4363,13 +4391,13 @@
         
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
          
-        <tag>奥地利</tag>
+        <tag>中欧</tag>
          
         <tag>匈牙利</tag>
+         
+        <tag>奥地利</tag>
          
         <tag>捷克</tag>
          
@@ -4395,9 +4423,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>人类简史</tag>
+         
+        <tag>历史</tag>
          
          
            
@@ -4421,9 +4449,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>捷克</tag>
          
@@ -4449,13 +4477,13 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
          
-        <tag>哈布斯堡王朝</tag>
+        <tag>中欧</tag>
          
         <tag>奥地利</tag>
+         
+        <tag>哈布斯堡王朝</tag>
          
         <tag>维也纳</tag>
          
@@ -4481,9 +4509,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>捷克</tag>
          
@@ -4509,9 +4537,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>东正教</tag>
          
@@ -4547,9 +4575,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>哥特式</tag>
          
@@ -4627,9 +4655,9 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>设计</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>o2o</tag>
          
@@ -6421,11 +6449,11 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
          
            
@@ -6451,11 +6479,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>颜色</tag>
          
@@ -6485,9 +6513,9 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
          
          
            
@@ -6515,9 +6543,9 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
-         
         <tag>教程</tag>
+         
+        <tag>Creative Coding</tag>
          
          
            
@@ -6543,11 +6571,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
          
            
@@ -6573,11 +6601,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>数学</tag>
          
@@ -6607,11 +6635,11 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
          
            
@@ -6637,11 +6665,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>颜色</tag>
          
@@ -6669,11 +6697,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>颜色</tag>
          
@@ -6703,11 +6731,11 @@
          
         <tag>视频</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
          
            
@@ -6733,11 +6761,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>Math</tag>
          
@@ -6765,11 +6793,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>Chromakeying</tag>
          
@@ -6799,11 +6827,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>列表</tag>
          
@@ -6831,11 +6859,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>颜色</tag>
          
@@ -6863,11 +6891,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
          
            
@@ -6893,11 +6921,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>图像</tag>
          
@@ -6925,11 +6953,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>图像</tag>
          
@@ -6957,11 +6985,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>图像</tag>
          
@@ -6989,11 +7017,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>教程</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>图像</tag>
          
@@ -7105,11 +7133,11 @@
         <title>科技，美学，人性——交互设计的十字路口</title>
         <pubTime>2013-05-20T15:42:18.000Z</pubTime>
         
-        <tag>交互设计</tag>
-         
         <tag>IxD</tag>
          
         <tag>Note</tag>
+         
+        <tag>交互设计</tag>
          
          
            
@@ -7155,9 +7183,9 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>Note</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>Interface</tag>
          
@@ -7181,11 +7209,11 @@
         <title>读书笔记-交互设计精髓</title>
         <pubTime>2011-03-02T14:39:46.000Z</pubTime>
         
-        <tag>交互设计</tag>
-         
         <tag>IxD</tag>
          
         <tag>Note</tag>
+         
+        <tag>交互设计</tag>
          
          
            
@@ -7363,9 +7391,9 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>IxD</tag>
+         
+        <tag>交互设计</tag>
          
          
            
@@ -7832,9 +7860,9 @@
         <title>读书笔记-如何阅读一本书</title>
         <pubTime>2010-08-07T16:20:35.000Z</pubTime>
         
-        <tag>Reading</tag>
-         
         <tag>Note</tag>
+         
+        <tag>Reading</tag>
          
          
            
@@ -8000,9 +8028,9 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>IxD</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>设计思维</tag>
          
@@ -8026,9 +8054,9 @@
         
         <tag>Design</tag>
          
-        <tag>交互设计</tag>
-         
         <tag>IxD</tag>
+         
+        <tag>交互设计</tag>
          
         <tag>服务设计</tag>
          
