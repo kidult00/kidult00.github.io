@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2020-12-08T12:48:58.823Z</updated>
+  <updated>2020-12-15T13:04:54.213Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数字产品设计与心理学08 - 视觉聚光灯</title>
+    <link href="http://uegeek.com/201215-design-psy-08.html"/>
+    <id>http://uegeek.com/201215-design-psy-08.html</id>
+    <published>2020-12-15T13:03:49.000Z</published>
+    <updated>2020-12-15T13:04:54.213Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><p><img src="http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png" alt="数字产品设计与心理学"></p><a id="more"></a><p>下面有一张图片，我想请你找到中文词语「框架」的所在位置，然后集中视觉焦点在上面，保持 5 秒钟：</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.1聚焦-1.jpg" alt="2.1.2聚焦-1" style="zoom:50%;"></p><p>当你的视线聚焦并且保持焦点不移动的时候，眼睛里的成像更加接近这样：</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.1聚焦.jpg" alt="2.2.1聚焦" style="zoom:50%;"></p><p>在视觉焦点能看到清晰的文字，但是在焦点以外，看到的东西则模糊不清。人类视觉焦点的分辨率，要远远高于焦点以外的区域。这是一个违反直觉的现象，但它确实存在，并且能帮助我们理解为什么人们视而不见，以及在扫视网页时眼睛是如何工作的。</p><h3 id="细节都在焦点上"><a href="#细节都在焦点上" class="headerlink" title="细节都在焦点上"></a>细节都在焦点上</h3><p>视觉焦点看到的东西远比边缘要清晰，这是怎么回事呢？</p><p>在我们眼睛的视网膜表面，有两个不同的视觉信号接收区域：中央凹（fovea）和外围区域。中央凹在视网膜中心附近，仅占视网膜约 1% 的面积，覆盖约 2°~3° 的视角。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.1eye.png" alt="2.2.1eye" style="zoom:30%;"></p><p>虽然只有针孔般大小，中央凹却是视觉最敏锐的区域，那里密布着视椎细胞，它们对颜色很敏感，能够十分准确地检测颜色和空间细节。人的每只眼球大约有 600~700 万个视锥细胞（Wikipedia，2020），从视网膜中央向边缘递减分布。只有位于视野的中心，才能通过中央凹看到细节。所以在视野中心，我们的视力相当好，眼睛可以在一臂远的距离处，分辨出一个大头针顶端上多达 100 个点。但是在视野的边缘，视力则一落千丈，只能分辨出人头大小的东西（维尔，2009）。中央凹是识别对象的关键，因此视觉注意力通常都在处理中央凹所接收的信息。</p><p>人的视觉好比一束聚光灯，只有在聚光灯照射下的区域才会一清二楚，而光线照射不到的地方就显得暗淡、模糊。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.1spotlight.png" alt="2.2.1spotlight" style="zoom:30%;"></p><p>我们总是有选择地让视觉焦点落在目标物体上，去感知细节、识别物体，视觉焦点决定了我们将看见什么。视觉这束聚光灯能照亮的地方很有限，只要是聚光灯没有经过，或者快速经过却没有停留的话，都可能让我们视而不见。</p><h3 id="快速眼动"><a href="#快速眼动" class="headerlink" title="快速眼动"></a>快速眼动</h3><p>如果人类视野的分辨率是中央高而边缘低，那为什么人眼看到的东西，并不像透过一个放大镜，看到的是中央放大、边缘模糊的图像呢？</p><p>眼睛运动的一瞬间，只能看清非常狭小的区域，确实无法仅凭一次注视就获得整个环境的信息。不过好消息是，勤能补拙，一次不够就再来一次，反复几次不就可以看完整了吗？就好比摄影师要拍摄一个花瓶，如果固定站在一个位置，就只拍到花瓶的一个侧面。花瓶不会动，但是摄影师可以动。只要多从几个不同角度拍摄，就能看到花瓶的各个侧面了。</p><p>我们的眼球上附着了很多强壮的眼肌，可以带动眼球快速旋转。有多快速呢？眼球转动的角速度高达 900 度/秒，一次运动可以在 1/10 秒内完成，这种活动称为扫视（维尔，2009）。扫视发生得如此之快，难怪我们根本意识不到。眼球不断快速移动，让环境中那些值得注意的对象依次对准中央凹，这样眼睛就持续获得高分辨率的成像（Welsh, Chua, et al.，2007）。</p><p>让我们回到前面聚光灯的比喻：如果聚光灯静止不动，它照射的区域就很小。现在来开个脑洞，如果聚光灯背后有一位灯光师在控制，他眼疾手快，能够在一秒钟以内快速调整聚光灯角度，让它照亮舞台的每一个角落，那么舞台看起来是不是就像开了全局灯光一样呢？眼睛这位灯光师，时刻都在调整聚光灯照射的位置，于是在我们的知觉经验中，会认为自己一下子就看到了整体。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.1multispotlight.png" alt="2.2.1multispotlight" style="zoom:30%;"></p><p>中央凹的存在和工作原理，意味着视觉焦点几乎总是处于中央凹注视区域。既然中央凹的识别能力那么强，为什么还需要外围区域来提供边缘视觉呢？进化并不会无中生有、浪费资源，边缘视觉的存在当然也有意义。它处理了大量低分辨率的空间线索，负责感知方向，帮助大脑计划该往哪里移动眼睛，比如，视野中突然出现一个会移动的物体，它会带来危险吗，身体马上会调度资源来集中处理这个信息。中央和边缘视觉各司其职，大千世界才能尽入眼底。</p><h3 id="选择性注意"><a href="#选择性注意" class="headerlink" title="选择性注意"></a>选择性注意</h3><p>大脑非常消耗能量，如果要在大脑中保存整个世界的视觉图像，需要很多认知资源，这完全没有必要。所以进化选择了更经济实惠的方案：按需所「见」。也就是只针对当前需要，快速地获取信息。看到的事物都与注意有关。我们会注意那些可以立即获得有用信息的区域，而不是关注整个周围环境。可以说，视觉思维的本质就是一个注意力的分配过程（维尔，2009），人们根据需要，主动选择注意什么、忽略什么。</p><p>选择性注意（selective attention），指的是把注意集中于某些对象，而不是同时关注许多。这是我们与生俱来的强大过滤器。即便身处陌生、嘈杂的环境，只需要简单扫视，我们便知道该往哪里走，接下来要做什么。这种快速感知周围世界、人、物体、模式的能力，我们并不会觉得有多了不起，毕竟已经习以为常了。但是，正在尝试创造人工智能系统的科学家却发现，这样的过程无比复杂。在我们醒着的大部分时间，身体各种感官默契配合，完成了复杂的信号收集和处理过程——就像大城市的交通系统，循环流动着忙碌而有序的车流——而我们对此却几乎没有觉察。</p><p>选择性注意不只是视觉的注意，它包含 6 种不同的任务类型（Wickens, Hollands, et al.，2015）：</p><ul><li>大范围定向与场景扫描：比如查看图片或者浏览过程中打开新的网页。</li><li>监控：观察或扫描某些动态变化，如果超出一定范围，就执行某个行动。比如秒杀商品开卖之前，你盯着倒计时，随时准备按下购买按钮。</li><li>觉察：对预料之外事件的监控及应对。比如当你在会议上对着 PPT 讲解时，需要时不时留意 PPT 是否正常显示。</li><li>搜索：找寻预先确定的目标物。</li><li>阅读：处理文字、图片等符号化的信息。</li><li>确认：确认某些结果已经发生。比如下载已经完成。</li></ul><p>接下来的几篇文章，我们主要关注视觉搜索过程，即如何在杂乱的视觉环境中找到特定的物体，它大致包含几个步骤：眼球运动 - 获取信息 - 解释信息并计划下一次眼球运动。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.1视觉搜索过程.png" alt="2.2.1视觉搜索过程" style="zoom:40%;"></p><ul><li>第一步，根据当前任务，确定搜索目标。</li><li>第二步，开始搜索符合要求的模式。视觉皮层会生成一组特征映射，分别检测不同的特征，例如垂直轮廓、大小或颜色。 </li><li>接下来，依次进行眼球运动。首先搜索和注视最可能出现目标的区域，然后移动到下一个目标区域。 </li></ul><p>回见。</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li>Cone cell. (2020). In <em>Wikipedia</em>. <a href="https://en.wikipedia.org/w/index.php?title=Cone_cell&amp;oldid=949785199" target="_blank" rel="noopener">https://en.wikipedia.org/w/index.php?title=Cone_cell&amp;oldid=949785199</a></li><li>维尔. (2009). <em>设计中的视觉思维</em> (陈媛嫄, Trans).</li><li>Welsh, T. N., Chua, R., Weeks, D. J., Goodman, D., Chua, R., Weeks, D. J., &amp; Goodman, D. (2007, September 19). <em>PERCEPTUAL-MOTOR INTERACTION: SOME IMPLICATIONS FOR HCI</em>. The Human-Computer Interaction Handbook; CRC Press.</li><li>Wickens, C. D., Hollands, J. G., Banbury, S., &amp; Parasuraman, R. (2015). <em>Engineering Psychology and Human Performance</em>. Psychology Press. </li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png&quot; alt=&quot;数字产品设计与心理学&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="数字产品设计与心理学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>数字产品设计与心理学07 - 注意力经济</title>
@@ -70,11 +102,11 @@
     
       <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
     
+      <category term="阅读" scheme="http://uegeek.com/tags/%E9%98%85%E8%AF%BB/"/>
+    
       <category term="数字产品设计与心理学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
-      <category term="阅读" scheme="http://uegeek.com/tags/%E9%98%85%E8%AF%BB/"/>
     
       <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
     
@@ -620,36 +652,6 @@
       <category term="设计史" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1%E5%8F%B2/"/>
     
       <category term="文化" scheme="http://uegeek.com/tags/%E6%96%87%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计日课 Vol.005 - 老板要求每天花式出图100张，怎么办？</title>
-    <link href="http://uegeek.com/200106-design-diary-005.html"/>
-    <id>http://uegeek.com/200106-design-diary-005.html</id>
-    <published>2020-01-06T15:31:57.000Z</published>
-    <updated>2020-01-06T15:35:26.705Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/%E8%AE%BE%E8%AE%A1%E6%97%A5%E8%AF%BEtitle.jpg" alt=""></p><a id="more"></a> <p>今天设计师们被一段聊天记录炸出来了。</p><p><img src="http://img.viz.mobi/V005-100%E5%BC%A0%E5%9B%BE%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95.jpg" alt=""></p><p>虽然案例极端（也有故意制造话题的可能？）但是本质上是经典的设计需求甲乙方对话。</p><p>事情没有发生在自己身上，大家可以表达愤怒，顺便吐槽年关和日渐浓郁的丧气。可是如果自己就是「系真」，怎么办呢？</p><p>从整个对话来看，缺少上下文，我们也无法判断双方所指的项目和背景。但是，这段对话跟人际关系，甚至是亲密关系中产生矛盾的模式没有太大区别。事情看似是因为权力较大的一方（老板/甲方）提出无理要求，拿钱办事的一方（设计师/乙方）推脱和反抗，导致双方关系破裂。</p><h2 id="矛盾的起点和循环"><a href="#矛盾的起点和循环" class="headerlink" title="矛盾的起点和循环"></a>矛盾的起点和循环</h2><p>一个看似让人哭笑不得的需求，其实真正的矛盾来自于一个循环：</p><p><strong>第一步，A 提出被情绪包装过的需求</strong></p><blockquote><p>今天出 100 张各种款式的小年图 明天的早年图 50 张 做出来发来群里我们选</p></blockquote><p>A 由于某些事件触发了不满情绪，在提出需求时，没有明确表达自己真正想要什么。</p><p><strong>第二步，B 按照字面理解需求，提出被情绪包装过的方案（抗议）</strong></p><blockquote><p>一天出一百张？我 24 小时不睡觉都做不出那么多</p></blockquote><p>B 没有理解对方真正的诉求，开始对表面上不合理的需求感到恐惧</p><p><strong>第三步，A 驳回方案（抗议），升级需求的合法性，并提出新的要求</strong></p><blockquote><p>接下来每天都是 …… 你们看到了吗？看到了要回复  安排工作都不回复的？</p></blockquote><p>A 认为自己的着急竟然被怠慢了，必需进一步施压</p><p><strong>第四步，B 继续抗议，进一步提出了关系破裂的方案（威胁）</strong></p><blockquote><p>每天上班时间 7 小时，一天一百张，三分钟出一张图？</p><p>王总，您觉得我能力不行，您可以按照合同和劳动法通知我办理离职</p></blockquote><p>下面的对话继续着 “A 升级需求为命令，B 抗议不合理” 的循环。</p><h2 id="倾听需求"><a href="#倾听需求" class="headerlink" title="倾听需求"></a>倾听需求</h2><p>这个死循环的症结在哪里？自然是 A 跟 B 共同开启的循环了。</p><p>作为设计师的我们，需要在每一次被虐之后，意识到自己也要承担沟通中 50% 的责任，慢慢修炼真正理解对方真实而没有言说出来的需求的能力。</p><p>比如，王总的焦虑已经溢出屏幕了，可能是因为小年图承载了重要的转化指标，可能是之前的图被大老板骂了，甚至可能是大老板要求她每天出 50 张，于是一个激动就 double 成了 100 张……</p><p>这时候设计师听到 100 张，如果只按字面意思去理解和执行，当然就崩溃了。可怜的王总等待的无非是：</p><ul><li>对设计结果有很高的期待</li><li>要求很多的设计方案</li><li>让大家一起挑选和决策</li></ul><h2 id="化解需求"><a href="#化解需求" class="headerlink" title="化解需求"></a>化解需求</h2><p>王总抛了第一轮的烟雾弹，下面轮到设计师了。你是选择双倍烟雾弹，还是空气清新剂？</p><p>我们一个一个诉求来看：</p><p><strong>对设计结果有很高的期待</strong>——为什么？项目背景有什么变化吗？有指标呢？具体的期待是什么？压力和限制又有哪些？设计师可以根据自己掌握的背景信息进一步提问：</p><blockquote><p>王总我收到您的需求了。感觉您挺着急的，不知道是不是项目有了什么变化？有没有我需要进一步了解的信息呢？</p></blockquote><p><strong>要求很多的设计方案</strong>——为什么？是觉得之前对设计参与得不够，还是不满意之前的方案太雷同，还是觉得多出方案能明显提高质量？设计师可以尝试继续询问：</p><blockquote><p>王总，您是希望多出方案，这样做出满意的设计可能性更大对吗？我其实也想在前期多听听您的意见。如果用三个关键词来概括小年图的风格，您觉得会是哪些？或者图片参考也行，我根据这些多出一些不同的方案。</p></blockquote><p><strong>让大家一起挑选和决策</strong>——为什么？群里都有哪些人？决策过程是怎样的？有更高效的决策方式吗？设计师可以怎样引导？</p><blockquote><p>王总，我明天早上会拿出一批方案，先找熟悉项目的 xx 一起挑出比较满意的，然后跟您当面讨论，收敛一下方向我再着力修改最佳方案，这样会更加高效，下午我们应该就能确定最终设计了。</p></blockquote><p>当然，过程中王总可能还会有其他的问题，这取决于双方的关系和如何解读对方的言行。</p><p>也不完全排除老板就是看你不顺眼（不过看到对话中提离职时，老板没有接话，就知道这不是老板真正的目的了），那就更不妨先做实验，先出 10 张图，但是是跟过去的过程或效果不太一样的图，看看老板什么反应。如果老板连 10 张图看都不看，继续揪着还差 90 张没给，那就拜拜好了。</p><p>另一方面，身为需求方，如果不想对方动不动找借口和提离职，或者每天上班要先看 100 张设计稿看到中午也定不下来到底哪一张好然后回到第一版，也需要尽可能在一开始清楚表达自己的要求，例如</p><blockquote><p>年底的活跃指标就指望小年图和早年图了，大家要尽力冲刺啊！我提一下具体的要求，大家看看怎么一起配合，有没有更好的做法：</p><p>1.小年图更加符合年轻人审美，考虑加入一些流行元素；2.文案要优化，学习xx公司最近做的xx；3.做三个不同方向的尝试，你们可以合计合计，尽量在概念和风格上区别大一些。</p><p>明早要给到三个方向不同的设计，每个方向要不止一个版本。今天早上先把大的概念方向和文案要点确定下来，我们下午花 15 分钟对一下。</p><p>大家有什么需要进一步了解的吗？</p></blockquote><p>这样的沟通真的好累。不过想想可以不用每天早上都看 100 张差不多的图，还是值得的吧！</p><p>😇</p><p>沟通不易，生存要紧，理解万岁。</p><hr><p>设计日课系列：</p><p><a href="https://www.uegeek.com/200101-design-diary-001.html" target="_blank" rel="noopener">设计日课 Vol.001 - 回到历史寻找设计</a></p><p><a href="https://www.uegeek.com/200102-design-diary-002.html" target="_blank" rel="noopener">设计日课 Vol.002 - 设计发展的驱动力</a></p><p><a href="https://www.uegeek.com/200103-design-diary-003.html" target="_blank" rel="noopener">设计日课 Vol.003 - 这是好设计吗？</a></p><p><a href="https://www.uegeek.com/200103-design-diary-004.html" target="_blank" rel="noopener">设计日课 Vol.004 - 好设计的关系框架和时空框架</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E8%AE%BE%E8%AE%A1%E6%97%A5%E8%AF%BEtitle.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Design" scheme="http://uegeek.com/tags/Design/"/>
-    
-      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
-    
-      <category term="职场" scheme="http://uegeek.com/tags/%E8%81%8C%E5%9C%BA/"/>
-    
-      <category term="沟通" scheme="http://uegeek.com/tags/%E6%B2%9F%E9%80%9A/"/>
-    
-      <category term="需求" scheme="http://uegeek.com/tags/%E9%9C%80%E6%B1%82/"/>
     
   </entry>
   
