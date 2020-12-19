@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2020-12-15T13:04:54.213Z</updated>
+  <updated>2020-12-19T10:30:23.421Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>所见即所得，还是先入为主？</title>
+    <link href="http://uegeek.com/201219-design-psy-09.html"/>
+    <id>http://uegeek.com/201219-design-psy-09.html</id>
+    <published>2020-12-19T10:27:29.000Z</published>
+    <updated>2020-12-19T10:30:23.421Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><p><img src="http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png" alt="数字产品设计与心理学"></p><a id="more"></a><p>前面几篇文章反复提到，看并不总等于看见，一览无遗是日常体验带来的错觉。如果忘记这一点，在设计数字产品时，可能就不会仔细考虑用户如何阅读、扫视、是否容易遗漏重要的信息。学习心理学相关原理，能让我们更精细而准确地<strong>理解信息获取/处理机制，分离「看」和「看见」这两个过程</strong>。在设计时，应该为这两个过程搭建桥梁，让信息传达更为顺畅。</p><p>「看」和「看见」都是人类知觉处理的过程。「看」是视觉从周边环境获取信息，它是感觉（sensation）的一部分。而「看见」是信息处理的环节，它是知觉（perception）的一部分。</p><blockquote><p>感觉：眼睛、耳朵等器官，把物理能量转换成大脑能够识别的神经编码的过程。</p><p>知觉：一系列组织并解释外界产生的感觉信息的加工过程。</p></blockquote><p>举个例子：</p><p><img src="http://img.viz.mobi/2.2.2Golden%20Arches.png" alt="2.4.2Golden Arches" style="zoom: 50%;"></p><p>你肯定一眼就认出了这个标志。在那一瞬间，如果用低倍速回放，我们首先在「看」的阶段，从白色背景中识别出黄色曲线围合的形状，这是感觉的输入；然后我们判断出这两段黄色曲线是对称的，而且曾经见过这个形状，这是知觉加工的结果。现在，这个图形激活了存储在记忆中的模式——「看见」了金拱门的标识。</p><h3 id="两种加工方式"><a href="#两种加工方式" class="headerlink" title="两种加工方式"></a>两种加工方式</h3><p>影响视觉信息加工的因素，既包括客观外界条件的刺激，也包括主观经验的影响。当知觉去处理来自感觉的信息时，就发生自下而上的加工。当知觉受个体的经验、动机、期望和其他心智过程影响时，就发生自上而下的加工。</p><p><img src="http://img.viz.mobi/2.2.2%E7%9F%A5%E8%A7%89%E8%BF%87%E7%A8%8B.png" alt="2.2.2知觉过程" style="zoom:100%;"></p><center><small>图的下半部分，表示基于外界条件的刺激加工；上半部分，表示经由大脑高级功能的加工，包括知觉和理解。</small></center><p>上一节介绍过的选择性注意，也有对应的两个策略（Yantis，1993）：</p><ul><li>刺激驱动捕获：环境中的物体自动抓住了视觉注意，例如等电梯时电梯门打开了（“它成功引起了我的注意”）</li><li>目的指向选择：基于目标去选择将要注意的物体，例如在地图上找到当前所在位置（“我要把它识别出来”）</li></ul><p>总的来说，两种知觉加工类型的区别如下：</p><table><thead><tr><th>类型</th><th>驱动因素</th><th>功能</th><th>说明</th></tr></thead><tbody><tr><td>自下而上加工</td><td>刺激/特征驱动</td><td>“那儿有什么？”</td><td>由外界刺激的特征决定是否、如何进行加工。</td></tr><tr><td>自上而下加工</td><td>知识/语境驱动</td><td>“那儿应该有什么？”</td><td>知觉源于已有的知识或预期，认为/期望在某些地方出现某些事物。</td></tr></tbody></table><p>具体到视觉加工，自下而上的过程源自呈现在视网膜上的图案信息，我把它称为<strong>所见即所得</strong>；自上而下的过程则出自注意力的需要，由目标来决定关注点，会受到先前经验的影响，我把它称为<strong>先入为主</strong>。下面这个例子，能帮助我们理解这两种加工过程。</p><p>请分别在两张图片中找出三角形：</p><p><img src="http://img.viz.mobi/2.2.2searchCircle.png" alt="2.2.2searchCircle" style="zoom:50%;"></p><p>找出三角形一点都不难，有意思的是你会发现，在右侧图片中找到三角形，比左侧要慢一些。因为看到右侧图片时，第一眼会注意到黄色圆形这个凸显的刺激源，让我们下意识地迅速感知并开始知觉加工，这是自下而上的过程。不过，很快我们又会进入自上而下的加工过程，毕竟目标是要找到三角形，而我们预期在图中会有一个三角形，这个预期将引导视觉快速搜索并找到目标。</p><p>自下而上的视觉加工，是一个从局部到整体的组合过程：视网膜成像→特征→图案→物体。在这个过程中，信息经过连续的选择和过滤，第一阶段是无规律的低层特征，在第二阶段组合成了图案，然后在第三阶段形成有意义的物体（Rensink，2002）。</p><p><img src="http://img.viz.mobi/2.2.2%E8%A7%86%E8%A7%89%E5%8A%A0%E5%B7%A5%E4%B8%89%E9%98%B6%E6%AE%B5.png" alt="2.2.2视觉加工三阶段" style="zoom: 100%;"></p><p>在上图的特征处理阶段，不同类型的视觉处理器一起获取各种细节特征：有的处理尺寸和方向信息，产生边缘或轮廓；有的处理红绿色差和黄蓝色差；还有一些会处理运动和立体深度要素。</p><p>在视觉处理的中间层，视觉空间被划分为纹理区域和颜色区域。许多特征在这一层连接起来形成了连续的轮廓，并构建出复杂的图案（维尔，2007），比如哆啦 A 梦的眼睛和胡须。理解这一过程对于设计很关键，因为视觉从这一层开始变得有组织。</p><p>在视觉加工的最上层，特征形成的图案再一次经过简化和提取，最后综合得到了几个视觉目标。视觉系统大约能保持对三个目标的注意力，这叫做视觉工作记忆，它的容量非常有限，是认知的主要瓶颈。</p><p>如果说自下而上的加工，像从局部到整体的拼图，那么自上而下就像拿着榔头找钉子，它由需求驱动，比如在地图上识别出自己当前所处位置。自上而下产生的注意，会激活人们正在寻找的信号。如果要找一个红色圆点，那么视觉红色点检测器捕获的信号就会变强（维尔，2009）。当我们观察环境时，总是同时利用两种视觉加工过程。</p><p>举个芒果，哦不，举个栗子，我去超市买芒果，走在玲琅满目的货架之间，大脑会估计出一个可能出现芒果的目标区域，同时指挥眼睛开始一系列运动，关注这个空间中所有潜在目标。在计划下一次眼睛运动的一瞬间，大脑基于当前注视、以及前几次注视后残留的信息作出判断。眼睛运动快速核对目标区域中有没有出现芒果，如果没有，就转移到下一个目标区域，直到找到芒果为止。</p><h3 id="阅读时的信息加工"><a href="#阅读时的信息加工" class="headerlink" title="阅读时的信息加工"></a>阅读时的信息加工</h3><p>这一小节涉及不少理论和概念，阅读时你走神了吗？会不会觉得需要有意识地集中注意力，才能理解文字的意思？这正是我们在阅读时常有的感受。阅读跟说话和理解语言不同，它并非人类天性，大脑也不是为阅读而设计的。相反，阅读是一种人为的、需要经过系统的指导和训练才会获得的能力。</p><p>阅读的信息加工过程，也可以分为自下而上和自上而下两种模式。当阅读由特征驱动时，视觉系统从识别简单特征开始，例如，屏幕上某个方向的线段，或者某个角度的弧线，并组合成更复杂的形状和图案。然后，大脑再识别某些形状为字符，接着处理不同字符，组合为单词、词句、句子和段落。而语境驱动的阅读，则会先理解完整的句子/段落的主旨，然后利用这些语境信息去了解或猜测具体的单词和字符，这更像我们常说的「脑补」。</p><p>在阅读过程中，自下而上的加工容易受到速度和清晰度的影响。所以在设计阅读内容的展示形式时，设计师可以在这几方面做好优化（威肯斯，2007）：</p><ul><li><p>最大化自下而上的加工，例如提高视觉目标的清晰度。</p></li><li><p>使用熟悉的视觉特征，例如熟悉的字体、有意义的图标、使用单词而不是缩写。</p></li><li><p>在特征模糊或者背景信息不足时（例如不熟悉的符号或语言），要充分利用读者的经验和情境信息，例如：将区别性特征最大化，避免混淆；使用短小、通用、熟悉的词汇；创造具体的背景信息，例如「你的余额不足」比「余额不足」更容易感知和理解。</p></li></ul><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li>理查德·格里格, &amp; 菲利普·津巴多. (2003). <em>心理学与生活</em> (王垒王甦 等, Trans.). 人民邮电出版社.</li><li>Yantis, S. (1993). Stimulus-Driven Attentional Capture. <em>Current Directions in Psychological Science</em>, <em>2</em>(5), 156–161.</li><li>Rensink, R. A. (2002). Change Detection. <em>Annual Review of Psychology</em>, <em>53</em>(1), 245–277. </li><li>维尔. (2009). <em>设计中的视觉思维</em> (陈媛嫄, Trans.). </li><li>威肯斯. (2007). <em>人因工程学导论</em> (张侃（等）, Trans.). 华东师范大学出版社. </li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png&quot; alt=&quot;数字产品设计与心理学&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="数字产品设计与心理学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
+    
+      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+  </entry>
   
   <entry>
     <title>数字产品设计与心理学08 - 视觉聚光灯</title>
@@ -42,9 +74,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
-    
       <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
+    
+      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
     
   </entry>
   
@@ -622,36 +654,6 @@
       <category term="卧室" scheme="http://uegeek.com/tags/%E5%8D%A7%E5%AE%A4/"/>
     
       <category term="Bedroom" scheme="http://uegeek.com/tags/Bedroom/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计日课 Vol.006 - 设计的经济基础和文化贡献</title>
-    <link href="http://uegeek.com/200107-design-diary-006.html"/>
-    <id>http://uegeek.com/200107-design-diary-006.html</id>
-    <published>2020-01-07T14:25:03.000Z</published>
-    <updated>2020-01-07T14:26:36.173Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/%E8%AE%BE%E8%AE%A1%E6%97%A5%E8%AF%BEtitle.jpg" alt=""></p><a id="more"></a> <p>今天继续读《现代设计史》。在<a href="https://www.uegeek.com/200102-design-diary-002.html" target="_blank" rel="noopener">设计日课 Vol.002 - 设计发展的驱动力</a>中，我们回顾了现代设计发端于 18 世纪的手工艺。设计从艺术和制作中独立出来，得益于需求扩大、多样性增加、专业技术的进步等因素。但其中最重要的，还是整个社会生产力的进步，消费从皇家逐步扩散至民众，也开启了艺术平民化的时代，这是设计对社会文化做出的重要贡献之一。</p><p>今天读到现代设计史的第三卷，<code>艺术、手工艺和机器——工业化：希望与恐惧（1866-1914）</code>，是从十九世纪后半叶到一战之前的这一段历史时期设计的发展。</p><p>随着生产力发展，分工带来专门化，市场体系要求价格更便宜、生产效率更快。对工厂里越来越严重的劳动分工和机械化不人道的一面，英国工艺美术运动致力于发起革新，探索手工艺，以此逃离城市化、工业化的现代世界产生的疏离感。</p><blockquote><p>对于最近关于分工的伟大文明创新，我们已经研究了很多，称赞了太多，实际上，被分开的并不是劳动，而是人。人被分割成小小的碎片，挣扎于琐碎的生活；每个人残留的点滴智慧，甚至不足以创造一个大头针，或者一个铁钉，却在制造针尖或者钉帽的过程中耗尽生命。</p></blockquote><p>这是工艺美术运动理论先导者之一约翰·罗斯金的观点。听起来跟 2020 年的今天多少有点相似。人好像总是在生产力革新之后追赶和适应，逐渐找到办法驯化技术，通过各种形式的思潮、革新来让人性回归。</p><p>随着工业化的进程，设计从最初的手工艺品、印刷、建筑等扩展的越来越多领域。例如在 19 世界下半叶，美国和欧洲的许多建筑师和纯艺术家逐渐参与到室内设计和装饰中。许多年轻的设计师开始关注可制造性问题，倡导工艺品行业的进步，提升公众品味。</p><p>在 19 世纪 80 年代的美国，逐渐采用合理化机械大生产方式，并在全国范围内销售产品，再加上印刷广告和邮购目录，刺激了工业产品和室内陈设品的需求。百货公司的成功始于 19 世纪 60 年代，同样刺激了设计品的生产和销售，越来越以庞大的中产阶级消费者为导向。</p><p>历史告诉我们，类似的规律会一次又一次上演。无论是 200 年前的家具设计还是今天的数字产品设计，都有坚实的经济基础。也就是说，如果没有广泛的阶层的消费需求，也就没有相应设计领域的出现和发展。设计再理想化，最初也是应需而生的。如果说艺术提供了设计发展的躯壳和灵魂，那么需求和市场则提供了阳光、空气和水。</p><p>设计随着消费品渗透到普通民众的日常生活中，启发和引导着他们的艺术审美和生活品味。生产成为艺术平民化的希望，设计者在其中发挥的作用不可替代。</p><blockquote><p>日本人把那些能制造出精美的茶壶、可爱的橱柜、诱人的织物和精致的雕刻饰件的手工艺人，视为比单纯的买主和卖家高一等的人物……一方把他最宝贵的精力用于赚钱之际，另一方却用他的心灵、智慧、感情和技艺，使物品变得高贵起来。——《日本的传统艺术和手工艺》，1882</p></blockquote><p>一战之前的设计革新运动，都相信装饰艺术是审美体验的重要媒介，也是有意义的劳动的产物。工艺美术运动专注于过程，努力减少工匠和他们的产品之间的疏离。唯美主义运动的艺术家认同主观经验，并努力通过装饰艺术作品将其表现出来，他们常通过室内装饰，将对生活的审美态度落到实处。</p><p>另一方面是艺术与工业关系的加强，使独立的艺术活动超越了纯艺术领域，提高了公众品味，把产品与生活品质提高、城市环境改善和自我实现的希望连在一起。设计师便是活跃其中的桥梁和翻译者。</p><hr><p>设计日课系列：</p><p><a href="https://www.uegeek.com/200101-design-diary-001.html" target="_blank" rel="noopener">设计日课 Vol.001 - 回到历史寻找设计</a></p><p><a href="https://www.uegeek.com/200102-design-diary-002.html" target="_blank" rel="noopener">设计日课 Vol.002 - 设计发展的驱动力</a></p><p><a href="https://www.uegeek.com/200103-design-diary-003.html" target="_blank" rel="noopener">设计日课 Vol.003 - 这是好设计吗？</a></p><p><a href="https://www.uegeek.com/200103-design-diary-004.html" target="_blank" rel="noopener">设计日课 Vol.004 - 好设计的关系框架和时空框架</a></p><p><a href="https://www.uegeek.com/200103-design-diary-005.html" target="_blank" rel="noopener">设计日课 Vol.005 - 老板要求每天花式出图100张，怎么办？</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E8%AE%BE%E8%AE%A1%E6%97%A5%E8%AF%BEtitle.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Design" scheme="http://uegeek.com/tags/Design/"/>
-    
-      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
-    
-      <category term="艺术" scheme="http://uegeek.com/tags/%E8%89%BA%E6%9C%AF/"/>
-    
-      <category term="设计史" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1%E5%8F%B2/"/>
-    
-      <category term="文化" scheme="http://uegeek.com/tags/%E6%96%87%E5%8C%96/"/>
     
   </entry>
   
