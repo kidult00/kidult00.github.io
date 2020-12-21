@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://uegeek.com/201221-design-psy-10.html</loc>
-    <lastmod>2020-12-21T13:19:29.139Z</lastmod>
+    <lastmod>2020-12-21T13:45:06.364Z</lastmod>
     <data>
         <display>
         <title>数字产品设计与心理学10 - 解密视觉搜索</title>
@@ -921,9 +921,9 @@
          
         <tag>3D</tag>
          
-        <tag>Camera</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Camera</tag>
          
         <tag>CG</tag>
          
@@ -953,9 +953,9 @@
         
         <tag>3D</tag>
          
-        <tag>Texture</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Texture</tag>
          
         <tag>OpenGL</tag>
          
@@ -1129,9 +1129,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -1165,9 +1165,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -1259,13 +1259,13 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
-        <tag>MIDI</tag>
+        <tag>Fab</tag>
          
         <tag>通信</tag>
+         
+        <tag>MIDI</tag>
          
         <tag>OSC</tag>
          
@@ -1361,15 +1361,15 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
          
-        <tag>MIDI</tag>
+        <tag>Fab</tag>
          
         <tag>通信</tag>
+         
+        <tag>MIDI</tag>
          
         <tag>OSC</tag>
          
@@ -1431,11 +1431,11 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
          
         <tag>传感器</tag>
          
@@ -1493,11 +1493,11 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
          
         <tag>基尔霍夫定律</tag>
          
@@ -1561,13 +1561,13 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
-        <tag>单片机</tag>
-         
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
+         
+        <tag>单片机</tag>
          
          
            
@@ -3605,9 +3605,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -3675,9 +3675,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -3845,9 +3845,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -3919,9 +3919,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -3969,9 +3969,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -4431,9 +4431,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -4503,15 +4503,15 @@
         
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
-        <tag>匈牙利</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>奥地利</tag>
          
         <tag>捷克</tag>
+         
+        <tag>匈牙利</tag>
          
         <tag>斯洛伐克</tag>
          
@@ -4535,9 +4535,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>人类简史</tag>
+         
+        <tag>历史</tag>
          
          
            
@@ -4561,9 +4561,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>捷克</tag>
          
@@ -4589,13 +4589,13 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
          
-        <tag>奥地利</tag>
+        <tag>中欧</tag>
          
         <tag>哈布斯堡王朝</tag>
+         
+        <tag>奥地利</tag>
          
         <tag>维也纳</tag>
          
@@ -4621,9 +4621,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>捷克</tag>
          
@@ -4649,9 +4649,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>东正教</tag>
          
@@ -4687,9 +4687,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>哥特式</tag>
          
@@ -5957,9 +5957,9 @@
          
         <tag>Coding</tag>
          
-        <tag>神经网络</tag>
-         
         <tag>编程</tag>
+         
+        <tag>神经网络</tag>
          
         <tag>Backpro</tag>
          
@@ -6081,9 +6081,9 @@
          
         <tag>Coding</tag>
          
-        <tag>神经网络</tag>
-         
         <tag>编程</tag>
+         
+        <tag>神经网络</tag>
          
         <tag>Programming</tag>
          
@@ -6121,9 +6121,9 @@
          
         <tag>Coding</tag>
          
-        <tag>神经网络</tag>
-         
         <tag>编程</tag>
+         
+        <tag>神经网络</tag>
          
         <tag>Programming</tag>
          
