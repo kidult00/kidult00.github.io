@@ -4,6 +4,34 @@
 
     
   <url>
+    <loc>http://uegeek.com/201221-design-psy-10.html</loc>
+    <lastmod>2020-12-21T13:19:29.139Z</lastmod>
+    <data>
+        <display>
+        <title>数字产品设计与心理学10 - 解密视觉搜索</title>
+        <pubTime>2020-12-21T13:18:35.000Z</pubTime>
+        
+        <tag>设计</tag>
+         
+        <tag>数字产品设计与心理学</tag>
+         
+        <tag>心理学</tag>
+         
+        <tag>视觉</tag>
+         
+        <tag>认知</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/201219-design-psy-09.html</loc>
     <lastmod>2020-12-19T10:50:02.790Z</lastmod>
     <data>
@@ -1235,9 +1263,9 @@
          
         <tag>Arduino</tag>
          
-        <tag>通信</tag>
-         
         <tag>MIDI</tag>
+         
+        <tag>通信</tag>
          
         <tag>OSC</tag>
          
@@ -1339,9 +1367,9 @@
          
         <tag>电路</tag>
          
-        <tag>通信</tag>
-         
         <tag>MIDI</tag>
+         
+        <tag>通信</tag>
          
         <tag>OSC</tag>
          
@@ -7361,9 +7389,9 @@
         <title>Hack myself @ 2016</title>
         <pubTime>2016-12-31T02:50:04.000Z</pubTime>
         
-        <tag>2016</tag>
-         
         <tag>总结</tag>
+         
+        <tag>2016</tag>
          
          
            

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2020-12-19T10:50:02.790Z</updated>
+  <updated>2020-12-21T13:19:29.139Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数字产品设计与心理学10 - 解密视觉搜索</title>
+    <link href="http://uegeek.com/201221-design-psy-10.html"/>
+    <id>http://uegeek.com/201221-design-psy-10.html</id>
+    <published>2020-12-21T13:18:35.000Z</published>
+    <updated>2020-12-21T13:19:29.139Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><p><img src="http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png" alt="数字产品设计与心理学"></p><a id="more"></a><p>地图是我最喜爱的视觉工具。不仅因为我曾经学习相关的专业，而且在生活中我还是一个路痴——查看地图是日常功课（也是爱好）。这天，我跟一位朋友约在名叫小北的片区见面，我需要从琶洲地铁站出发，找到去小北站的路线。要在日益复杂的广州地铁线路网中完成这个任务，可不简单。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.3广州地铁.jpg" alt="2.2.3广州地铁" style="zoom:30%;"></p><p>这是一个复杂的视觉搜索问题。然而它发生在瞬时之间，我们基本意识不到。下面我试着借助视觉搜索研究中的三层嵌套循环来展开讲讲（Ware，2010）。</p><p>在外层循环中，大脑构建一系列解决问题的步骤，然后执行。例如我们进房间找眼镜，大脑给出的搜索策略大概是确定头部的方向、获得最佳视角，开始连续的特征搜索。如果没有找到目标，就转移到新的位置继续搜索。在查找地铁线路的任务中，我的初步的策略则是：圈定区域，寻找终点车站，对比路线，确定换乘站。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.3gzmetro-1.png" alt="2.2.3gzmetro-1" style="zoom:45%;"></p><center><small>外层循环：圈定大致的区域，找到起点和终点车站。</small></center><p>中间循环是视觉搜索。这个阶段眼睛会寻找视觉查询的目标图案，以每秒 1~3 次的频率转动眼球，根据目标的形状特征（例如大小、颜色和方向）来确定它们是否成为新的候选目标。在寻找地铁线路时，我主要靠不同颜色的线段来查询，从起点车站开始，沿着线段图案进行视觉追踪。我发现有两条路线可以到达小北，其中一条是由青色和蓝色组成的线路，另一条则是青色-橙色-红色线路。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.3gzmetro-2.png" alt="2.2.3gzmetro-2" style="zoom:50%;"></p><center><small>中间循环：按颜色搜索代表地铁线路的线段。</small></center><p>内层循环是图案检测。当视觉焦点落在可能的目标区域中，内层循环的视觉检测过程就会开始。眼睛快速判断视野中心区域的图案是不是搜索目标，判断一次即完成了一次内部循环。尽管眼睛在某个关注点上的停留时间还不足 1/5 秒，但是每次停留时可以判断 1~4 个简单的图案。在选择了线路后，我需要确定换乘车站，这属于图案检测的任务。我根据两个特征来确定换乘站：线路颜色是否改变，以及换乘站得是一个循环符号的标识。最后，我确定了出行的路线以及换乘地点。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.3gzmetro-3.png" alt="2.2.3gzmetro-3" style="zoom:50%;"></p><center><small>内层循环：检测代表换成站的图案。</small></center><p>从上面这个例子可以看到，发生在几秒之内的视觉搜索竟然如此复杂。每天我们都要完成无数次复杂的视觉搜索任务，无论是从人群中认出熟人，在炒菜时从一堆瓶瓶罐罐中抓起调味盒，还是在手机上找到点赞按钮。这些任务都与注意相关，它引导眼睛运动，调整图案发现的路径，找出对完成当前工作最有帮助的图案。这个过程可以总结为三个循环（Ware，2010）：</p><ul><li>外层问题解决循环：查找视觉问题的备选解决方案</li><li>中层模式搜索循环：由眼球运动带来的视觉模式搜索</li><li>内层图案检测循环：检测图案是否为目标图案</li></ul><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.3视觉搜索循环.png" alt="2.2.3视觉搜索循环" style="zoom:40%;"></p><h3 id="自下而上：基于特征的视觉搜索"><a href="#自下而上：基于特征的视觉搜索" class="headerlink" title="自下而上：基于特征的视觉搜索"></a>自下而上：基于特征的视觉搜索</h3><p>视觉搜索并不会随机发生。寻找比较小的东西时，我们只有去看，才能看到它。但是还没有看见之前，如何引导眼睛看向正确的位置呢？视觉有一个预处理过程来引导注意力，但首先我们要了解什么样的东西容易看得到。当我们在寻找某件物品的时候，大脑能预先启动感知觉通道，使它们对要寻找的东西变得非常敏感。例如，在下图中找红色竖线时，视觉对红色更为敏感：</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.3visual search1.png" alt="visual search1" style="zoom:50%;"></p><p>视觉搜索的效率取决于干扰物的数量，以及所选取的搜索特征是否有效。如果只有一个特征（红色）并激活它时，视觉搜索效率最高。随着特征增多，视觉加工的复杂性也逐渐增加。例如，在下图中找到红色的竖线就没有那么容易了：</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.3visual search2.png" alt="visual search2" style="zoom:50%;"></p><p>视觉显著性模型（Li Zhaoping，2014）可以帮助我们更好理解视觉搜索特征：</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.3视觉显著性框架.png" alt="2.2.3视觉显著性框架" style="zoom:50%;"></p><p>图 A：视觉输入由多个独立的特征映射合集组成，例如颜色、方向、透明度、大小、运动、深度等。视觉系统根据当前任务赋予这些映射不同的权重。 比如，想找出人群中穿黄色雨衣的人，那么映射集将突出黄色特征。 </p><p>图 B： 有多个目标特征时，这些特征（红色、蓝色、垂直线段、水平线段）映射汇总成主视图。</p><p>基于特征去搜索，是视觉系统高效的秘密之一。例如，要在一辆大型停车场找到自己的车。如果这辆车特别庞大，比如是一辆集装箱货车，那我们会优先以大小为特征去搜索。如果这辆车拥有少见的亮橙色，那么颜色就会是主要搜索特征，接近橙色的车会在视觉扫描时跃然而出，而其他颜色的车几乎都会被忽略掉。</p><h3 id="自上而下：指向目标的视觉搜索"><a href="#自上而下：指向目标的视觉搜索" class="headerlink" title="自上而下：指向目标的视觉搜索"></a>自上而下：指向目标的视觉搜索</h3><p>视觉搜索目标，决定着我们往哪里看。1967 年，俄罗斯心理学家 Yarbus 做了一个早期的眼动实验：他用附在眼球上的吸盘连接着镜子，将光线反射到相纸上，从而记录下眼球的运动。他向被试展示 Ilya Repin 的画作 “Unexpected Visitors”，让被试猜测画中人物的年龄。这时候，人们的眼动轨迹是这样的：</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.3Eye gaze when guessing age. Adapted from Yarbus.jpg" alt="Eye gaze when guessing age. Adapted from Yarbus" style="zoom:20%;"></p><center><small>图片来源：<a href="http://www.cabinetmagazine.org/issues/30/archibald.php" target="_blank" rel="noopener">http://www.cabinetmagazine.org/issues/30/archibald.php</a></small></center><p>当估计人物年龄时，被试的搜索策略是看人的脸部，画的其他部分则没有多少注视停留的轨迹。</p><p>接下来，被试要猜测画中人物的社会地位。这时，眼动轨迹则大不相同，视觉焦点大部分停留在人物的衣服上面。眼动结果直接反应了搜索策略的变化，被试认为人物的服饰能够暗示其社会地位。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.3Eye gaze when guessing age. Adapted from Yarbus1.jpg" alt="Eye gaze when guessing age. Adapted from Yarbus1" style="zoom:20%;"></p><center><small>图片来源：<a href="http://www.cabinetmagazine.org/issues/30/archibald.php" target="_blank" rel="noopener">http://www.cabinetmagazine.org/issues/30/archibald.php</a></small></center><p>这个实验再次生动地展示了视而不见的根源：我们只在需要时才看到所需要的信息。提前设定目标，会过滤掉感知收集到的无关信息，大大提高视觉搜索效率。</p><p>在设计数字产品时，可以充分利用两种视觉搜索的特点。无论用户采用哪种加工方式，都要安排好视觉的「游览路径」，让用户带着需要的信息离开。</p><ul><li><p>自上而下：要明确用户在当前情境下的视觉任务是什么，最终想要找到什么信息。比如在看一幅图表时，是在寻找关键数据例如月活跃用户数呢，还是想了解数据变化的趋势？对此用户有什么经验，形成了哪些习惯？他会去哪里寻找到这些信息？比如，在阅读新闻时，我们一般会习惯先看一下大标题和题图。</p></li><li><p>自下而上：视觉搜索从哪里开始？哪些低层的视觉特征最重要、最有效？应该如何呈现这些特征？它们足够显著、易于区分和识别吗？减少非目标物的干扰，加强有效的搜索特征，能让重要信息更容易识别和理解。</p></li></ul><h3 id="预测视觉搜索路径"><a href="#预测视觉搜索路径" class="headerlink" title="预测视觉搜索路径"></a>预测视觉搜索路径</h3><p>当人们在寻找目标的时候，有没有办法可以更准确地预测他们会看哪里、忽略哪里呢？有关监控任务中视觉注意的研究（Wickens, 2015）指出，有四个因素决定了视觉注意会集中在哪里：</p><ul><li>显著性（Salience）：指兴趣区因为其大小、颜色、强度或对比，从背景中凸显出来的程度。</li><li>努力（Effort）：指注意从一个兴趣区转移到另一个兴趣区所需要付出的代价。</li><li>期望（Expectancy）：我们更倾向于关注那些有许多变化的地方，这些变化将影响后续行为。</li><li>价值（Value）：信息的有用程度或重要程度。</li></ul><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.2.3SEEV模型.png" alt="2.2.3SEEV模型" style="zoom:40%;"></p><p>SEEV 模型就是这四个因素的叠加，它能够解释和预测人会如何进行视觉搜索。</p><p>运用到数字产品的设计中，我们可以注意这样做：梳理清楚哪些信息和元素更重要，它们的权重应该如何分配；价值更高的信息，应该突出呈现，与其他信息形成明确对比；信息较多时，合理安排顺序，减少视线转移所需付出的努力；减少不必要的元素变化，将变化集中在重要信息上。</p><h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul><li>Ware, C. (2010). <em>Visual Thinking for Design</em>. Elsevier.</li><li>Li Zhaoping. (2014). <em>Understanding Vision: Theory, Models, and Data</em>. OUP Oxford.</li><li>Wickens, C. D., Hollands, J. G., Banbury, S., &amp; Parasuraman, R. (2015). <em>Engineering Psychology and Human Performance</em>. Psychology Press.</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png&quot; alt=&quot;数字产品设计与心理学&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="数字产品设计与心理学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>数字产品设计与心理学09 - 所见即所得，还是先入为主？</title>
@@ -614,46 +646,6 @@
       <category term="装修" scheme="http://uegeek.com/tags/%E8%A3%85%E4%BF%AE/"/>
     
       <category term="改造" scheme="http://uegeek.com/tags/%E6%94%B9%E9%80%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>适老化改造套内空间设计 - 卧室篇</title>
-    <link href="http://uegeek.com/200108-aging-in-place-bedroom.html"/>
-    <id>http://uegeek.com/200108-aging-in-place-bedroom.html</id>
-    <published>2020-01-08T10:20:35.000Z</published>
-    <updated>2020-01-08T10:26:16.864Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96%E6%94%B9%E9%80%A0%E5%A5%97%E5%86%85%E7%A9%BA%E9%97%B4%E8%AE%BE%E8%AE%A1-%E5%8D%A7%E5%AE%A4%E7%AF%87.jpg" alt=""></p><a id="more"></a> <p>卧室是老年人生活和休息的主要场所，对于需要护理的老人来说，停留时间更长，也伴随多种特殊需求。空间设计首先要考虑安全性和舒适度，例如采光、通风、隔音等。另外，还需要考虑睡眠中可能发生健康状况的急剧变化，做好应对准备。</p><p>00 对卧室做了简单的适老化设计：</p><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%8D%A7%E5%AE%A4-%E5%BA%8A%E8%A7%86%E8%A7%92-1.jpg" alt=""></p><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%8D%A7%E5%AE%A4-%E5%9D%90%E8%A7%86%E8%A7%92-1.jpg" alt=""></p><h2 id="常见活动分析"><a href="#常见活动分析" class="headerlink" title="常见活动分析"></a>常见活动分析</h2><p>老年人卧室应基本满足以下日常活动：</p><ul><li>睡眠：最好有阳光照射，避开凉风，床边有通行、整理和置物空间</li><li>收纳、整理：储藏衣物、被褥和其他用品，方便拿取，要留出操作空间</li><li>阅读或其他休闲活动：靠近采光窗，空间完整、集中，有充足的置物台面</li><li>通行：预留轮椅通行空间，并留出使用家具的操作空间</li><li>接受护理（失能失智老人）</li></ul><h2 id="设计要点"><a href="#设计要点" class="headerlink" title="设计要点"></a>设计要点</h2><p>布局规划</p><ul><li>考虑采光、通风、隔音等问题</li><li>预留轮椅通道，通往户外动线布局不宜过长</li><li>为日后护理预留较宽敞的空间</li></ul><p>设计要点</p><blockquote><p>安全第一</p><p>合理功能布局</p><p>注重空间舒适感</p><p>考虑家具布置细节</p></blockquote><h3 id="安全第一"><a href="#安全第一" class="headerlink" title="安全第一"></a>安全第一</h3><ul><li>卧室进门处不宜有狭窄拐角，以免急救时担架出入不便</li><li>床头应设紧急呼叫器，保证老人躺在床上伸手可及</li><li>门窗隔扇应开闭方便，并考虑安全性</li><li>预留扶手位置，以邻接主要动线的墙面为宜，扶手高度一般距地面 700~900mm</li><li>尽可能设置火灾报警器等设备</li></ul><h3 id="合理功能布局"><a href="#合理功能布局" class="headerlink" title="合理功能布局"></a>合理功能布局</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%8D%A7%E5%AE%A4-%E4%BF%AF%E7%9E%B0-2.jpg" alt=""></p><ul><li>老人卧室面宽一般为 3600mm 以上，进深应比一般卧室略大（单人大于 3600mm，双人大于 4200mm），为轮椅转圈留出足够空间</li><li>床与对面家具之间的距离大于 800mm，以便轮椅通过</li><li>老人宜分床或分房休息，避免相互干扰</li><li>门后墙面留有一定空间设置挂钩，方便挂衣帽等物品</li><li>衣柜不应阻挡光线和进门视线，前方应设有足够的取衣置物空间，通常不小于 600mm</li><li>在不费力就能拿取的位置，一般距地面 400~1500mm，设置充裕的收纳空间</li></ul><h3 id="注重空间舒适感"><a href="#注重空间舒适感" class="headerlink" title="注重空间舒适感"></a>注重空间舒适感</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%8D%A7%E5%AE%A4-%E9%80%8F%E8%A7%86.jpg" alt=""></p><ul><li>注重通风和采光的要求，特别是在老人长期卧床时</li><li>合理选择朝向，尽量引入阳光，并且可以调节进光量</li><li><p>有条件可设置阳光角、落地凸窗，便于在卧室中晒太阳</p></li><li><p>主灯开关设在卧室门开启侧的墙面上，位置应明显</p></li><li>卧室主灯宜设双控开关，其中一处靠近床头，方便在床上开闭</li><li>卧室整体照明照度应较高（40 lx），保证老人晚间活动安全，宜选用吸顶灯安全灯泡</li><li>空调不宜直接吹向床头及座位</li><li>尽可能考虑隔音性能，远离电梯井、空调室外机等设备</li></ul><h3 id="考虑家具布置细节"><a href="#考虑家具布置细节" class="headerlink" title="考虑家具布置细节"></a>考虑家具布置细节</h3><ul><li>卧室中电视屏幕高度，应保证老人在卧姿时观看电视也较为舒适<br><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%8D%A7%E5%AE%A4-%E5%BA%8A%E5%92%8C%E7%94%B5%E8%A7%86.jpg" alt=""></li><li>卧室内有衣帽挂钩，方便放置衣物</li><li>床头柜宜略高一些（600mm 左右，方便撑扶），可设置明格或抽屉，便于识别、翻找物品</li><li>床边的书桌、床头柜最好有较大台面，放置水杯、眼镜、药品、台灯等物品</li><li>插座位于床头柜、桌面之上</li><li>床头和书桌应设台灯，作为写字阅读的辅助光源（1000 lx）</li><li>有护理需求时，床最好三边临空放置</li><li>衣柜挂衣杆高度应小于 1400mm，深度小于 600mm</li></ul><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><p>GB 50340-2016 老年人居住建筑设计规范</p></li><li><p>周燕珉, 程晓青, 林菊英, &amp; 林婧怡. (2011). 老年住宅</p></li><li><p>财团法人, &amp; 高龄者住宅财团|译者. (2011). 老年住宅设计手册</p></li></ul><p>适老化住宅改造空间设计系列：</p><ul><li><a href="https://www.uegeek.com/200104-aging-in-place-doorway.html" target="_blank" rel="noopener">适老化改造套内空间设计 - 玄关篇</a></li><li><a href="https://www.uegeek.com/200105-aging-in-place-livingroom.html" target="_blank" rel="noopener">适老化改造套内空间设计 - 客厅/起居室篇</a></li></ul><p>家人年纪大了，居家环境如果及时做出相应的调整和改造，能为他们提供更好的生活、保健环境。<strong>广州的朋友如果有相关改造需求，可以与我联系：<a href="mailto:uegeek@gmail.com" target="_blank" rel="noopener">uegeek@gmail.com</a>.</strong></p><p><img src="http://img.viz.mobi/%E5%BE%AE%E4%BF%A1%E6%90%9C%E4%B8%80%E6%90%9C-%E9%80%82%E8%80%81%E5%8C%96.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96%E6%94%B9%E9%80%A0%E5%A5%97%E5%86%85%E7%A9%BA%E9%97%B4%E8%AE%BE%E8%AE%A1-%E5%8D%A7%E5%AE%A4%E7%AF%87.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Design" scheme="http://uegeek.com/tags/Design/"/>
-    
-      <category term="适老化" scheme="http://uegeek.com/tags/%E9%80%82%E8%80%81%E5%8C%96/"/>
-    
-      <category term="Aging in place" scheme="http://uegeek.com/tags/Aging-in-place/"/>
-    
-      <category term="养老" scheme="http://uegeek.com/tags/%E5%85%BB%E8%80%81/"/>
-    
-      <category term="老年住宅" scheme="http://uegeek.com/tags/%E8%80%81%E5%B9%B4%E4%BD%8F%E5%AE%85/"/>
-    
-      <category term="无障碍设计" scheme="http://uegeek.com/tags/%E6%97%A0%E9%9A%9C%E7%A2%8D%E8%AE%BE%E8%AE%A1/"/>
-    
-      <category term="通用设计" scheme="http://uegeek.com/tags/%E9%80%9A%E7%94%A8%E8%AE%BE%E8%AE%A1/"/>
-    
-      <category term="室内设计" scheme="http://uegeek.com/tags/%E5%AE%A4%E5%86%85%E8%AE%BE%E8%AE%A1/"/>
-    
-      <category term="卧室" scheme="http://uegeek.com/tags/%E5%8D%A7%E5%AE%A4/"/>
-    
-      <category term="Bedroom" scheme="http://uegeek.com/tags/Bedroom/"/>
     
   </entry>
   
