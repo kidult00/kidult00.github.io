@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2020-12-29T12:31:45.528Z</updated>
+  <updated>2021-01-02T09:43:27.405Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数字产品设计与心理学12 - 视觉通道</title>
+    <link href="http://uegeek.com/210102-design-psy-12.html"/>
+    <id>http://uegeek.com/210102-design-psy-12.html</id>
+    <published>2021-01-02T09:40:07.000Z</published>
+    <updated>2021-01-02T09:43:27.405Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><p><img src="http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png" alt="数字产品设计与心理学"></p><a id="more"></a><p># </p><p>人的视觉感知系统，是迄今为止人类所知的处理带宽最高的生物系统（陈为，2019）。视觉接收的原始数据量，高达 10<sup>9</sup> 比特/秒。</p><p><img src="http://img.viz.mobi/2.4.1%E8%A7%86%E8%A7%89%E9%80%9A%E8%BF%87%E6%B3%A8%E6%84%8F%E7%93%B6%E9%A2%88.png" alt="2.4.1-视觉通过注意瓶颈" style="zoom:50%;"></p><p>人类视觉的模式识别能力很强，从可视符号中获取信息的效率远高于文本和数字。有时候只要基于某些视觉特征，就能启动下意识的快速眼动搜索。从上一小节我们知道，想让某个物体「鹤立鸡群」，就要突出它的一些初级视觉通道特征，例如使用不一样的颜色。那么，如果要让多个物体都易于识别，该怎么办呢？初级视觉皮层中的各层，又分为许多小的区域，分别处理形状、颜色和运动等，如果想要在众多目标中快速识别，最有效的方法就是使用不同的视觉通道。</p><p>视觉通道是可视化中的重要概念。可视化编码由标记和视觉通道组成。标记通常是一些抽象的几何图形元素，如点、线、面、体。视觉通道为标记提供视觉特征，包括位置、大小、形状、颜色、运动方向、色调、亮度等。</p><p><img src="http://img.viz.mobi/2.4.1%E8%A7%86%E8%A7%89%E9%80%9A%E9%81%93.png" alt="2.4.1视觉通道" style="zoom:50%;"></p><p>感知系统接收视觉信号时，有两种基本的识别模式：</p><ul><li>类别模式：获得关于对象本身特征和位置等信息，描述对象是什么或在哪里</li><li>次序模式：获得关于对象某一属性在数值上的程度信息，描述对象具体有多少</li></ul><p>对应这两种识别模式，可以划分视觉通道为定性（类别）和定量（连续、有序）两种。例如，用不同色调表现定性的类别数据，用同一颜色的不同亮度表示定量的次序数据。合理地选择视觉通道，是信息传达的前提，对数据这种抽象信息尤为重要。</p><p>在数字产品的界面设计中，设计师就是在跟各种视觉通道要素打交道：决定文字、符号、图像等视觉元素的位置，选择合适的形状表示一定的含义，赋予元素特定的长度、大小、颜色，在元素之间形成各种关系，等等。</p><p>视觉通道的表现力和有效性可以由这几个维度来衡量（陈为，2019）：</p><ul><li>准确性，是否能够准确的表达视觉数据之间的变化</li><li>可辨认性，同一个视觉通道能够编码的分类个数，即可辨识的分类个数上限</li><li>可分离性，不同视觉通道的编码对象放置到一起，是否容易分辨</li><li>视觉突出，重要的信息，是否用更加突出的视觉通道进行编码</li></ul><p><img src="http://img.viz.mobi/2.4.1%E8%A7%86%E8%A7%89%E9%80%9A%E9%81%93%E6%AF%94%E8%BE%83.png" alt="2.4.1视觉通道比较" style="zoom:50%;"></p><p>对数据这类抽象信息而言，位置、长度、颜色、形状的视觉通道表现力较好，在设计时应优先选择用这些形式来映射设计对象的特征。</p><p><strong>Ref</strong></p><p>陈为 等. (2019). <em>数据可视化（第2版）</em>. 电子工业出版社.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png&quot; alt=&quot;数字产品设计与心理学&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="可视化" scheme="http://uegeek.com/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+      <category term="数字产品设计与心理学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
+    
+      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+  </entry>
   
   <entry>
     <title>数字产品设计与心理学11 - 视觉的偏好</title>
@@ -42,9 +76,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
-    
       <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
+    
+      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
     
       <category term="格式塔" scheme="http://uegeek.com/tags/%E6%A0%BC%E5%BC%8F%E5%A1%94/"/>
     
@@ -78,9 +112,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
-    
       <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
+    
+      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
     
   </entry>
   
@@ -110,9 +144,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
-    
       <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
+    
+      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
     
   </entry>
   
@@ -142,9 +176,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
-    
       <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
+    
+      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
     
   </entry>
   
@@ -202,11 +236,11 @@
     
       <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
     
+      <category term="阅读" scheme="http://uegeek.com/tags/%E9%98%85%E8%AF%BB/"/>
+    
       <category term="数字产品设计与心理学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
-      <category term="阅读" scheme="http://uegeek.com/tags/%E9%98%85%E8%AF%BB/"/>
     
       <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
     
@@ -610,46 +644,6 @@
       <category term="人体" scheme="http://uegeek.com/tags/%E4%BA%BA%E4%BD%93/"/>
     
       <category term="人体工学" scheme="http://uegeek.com/tags/%E4%BA%BA%E4%BD%93%E5%B7%A5%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>适老化改造套内空间设计 - 卫生间篇</title>
-    <link href="http://uegeek.com/200111-aging-in-place-toilet.html"/>
-    <id>http://uegeek.com/200111-aging-in-place-toilet.html</id>
-    <published>2020-01-11T11:33:50.000Z</published>
-    <updated>2020-01-11T11:42:15.268Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96%E6%94%B9%E9%80%A0%E5%A5%97%E5%86%85%E7%A9%BA%E9%97%B4%E8%AE%BE%E8%AE%A1-%E5%8D%AB%E7%94%9F%E9%97%B4%E7%AF%87.jpg" alt=""></p><a id="more"></a> <p>随着老年人身体机能下降，使用厕所会变得频繁，而浴室同时也是一个容易摔倒或发生溺水事故的空间。卫生间虽然空间不大，但是设备较多，对通风、采光、防滑、保暖等要求也较高，在适老化设计中，是需要重点考虑的空间。</p><h2 id="设计要点"><a href="#设计要点" class="headerlink" title="设计要点"></a>设计要点</h2><table><thead><tr><th>布局规划</th><th>以老年人需求特点出发，强调安全舒适</th></tr></thead><tbody><tr><td>平面规划</td><td>距离老年人卧室不宜过远，确保轮椅进出方便，确保较大面积以备日后的护理需要</td></tr><tr><td>立面规划</td><td>尽量避免垂直高差，包括湿分离的区隔</td></tr></tbody></table><p>设计原则</p><blockquote><p>空间大小适当，布局可灵活调整</p><p>划分干湿区域</p><p>重视安全防护</p><p>保证坐姿操作</p><p>注意通风和保暖</p></blockquote><h3 id="整体"><a href="#整体" class="headerlink" title="整体"></a>整体</h3><p>卫生间布局俯瞰图：</p><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%8D%AB%E7%94%9F%E9%97%B4-%E4%BF%AF%E7%9E%B0.jpg" alt=""></p><ul><li>配置坐便器、洗浴器、洗面器三件卫生洁具，卫生间使用面积不应小于 3.0m²，并应满足轮椅使用</li><li>划分干湿区域，减少因湿滑摔倒的可能</li><li>卫生间尽量临近老年人卧室</li><li>地面应采用防滑、易清洁的材料，墙面应采用身体刮蹭之后也不易受伤的材料</li><li>门窗隔扇应开闭方便，并考虑安全性</li></ul><h3 id="洗手池"><a href="#洗手池" class="headerlink" title="洗手池"></a>洗手池</h3><p>00 对盥洗区域做了适老化设计，下面是渲染结果：</p><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%8D%AB%E7%94%9F%E9%97%B4-%E7%9B%A5%E6%B4%97.jpg" alt=""></p><ul><li>采用浅水池，洗手盆下部留空，净高不小于 650mm，净深不宜小于  300mm，前沿可设置扶手，便于轮椅坐姿洗漱</li><li>洗手池周边留出充足台面，减少从高处取放物品的必要</li><li>就近设置毛巾钩，避免手上的水滴到地上造成湿滑</li><li>洗手盆旁应设置防水插座，方便使用电吹风等小家电</li><li>为保证坐姿照镜子方便，镜子下沿不宜过高，距台面 150-200mm、距地面 1100-1200mm 为宜</li><li>设置镜柜，增加储物空间</li></ul><h3 id="洗浴区"><a href="#洗浴区" class="headerlink" title="洗浴区"></a>洗浴区</h3><p>00 对洗浴区做了适老化设计，下面是渲染结果：</p><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%8D%AB%E7%94%9F%E9%97%B4-%E6%B7%8B%E6%B5%B4%E5%8C%BA.jpg" alt=""></p><ul><li>墙面若设置 L 型扶手，横向扶手距地面 700mm，纵向扶手顶端距地面不小于 1400mm</li><li>淋浴喷头高度可调节，满足坐姿和站姿时的淋浴需求</li><li>设置浴帘而不是玻璃淋浴间，既能防止水流外溅，又不影响护理人员辅助操作</li><li>淋浴间应有淋浴凳</li><li>地漏位置宜设在淋浴区域里侧角落，使积水向里侧排放</li><li>应设加热器和排风扇，开关最好能在如厕或洗浴时均能控制调节，并避免水溅</li><li>建议在淋浴区外侧设置强度高、重量轻、易清理的截水篦子，防止积水外溢带来隐患</li></ul><h3 id="坐便器"><a href="#坐便器" class="headerlink" title="坐便器"></a>坐便器</h3><p><img src="http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96-%E5%8D%AB%E7%94%9F%E9%97%B4-%E5%9D%90%E4%BE%BF%E5%99%A8.jpg" alt=""></p><ul><li><p>坐便器高度不应低于 400mm</p></li><li><p>如坐便器墙侧安装 L型扶手，坐便器中心线距墙面 450mm，扶手垂直段距坐便器前沿 200-250mm，最高点距地面 1400mm 以上，水平段距地面 650-700mm</p></li><li>如坐便器临空侧设上翻式扶手，扶手距坐便器中心线水平距离 350-400mm，放下时上层扶手距地面 700mm</li><li>坐便器上方设置吊柜、置物架等储物空间，存放毛巾、卫生纸、洗涤剂等</li><li>坐便器后方设置电源插座，智能坐便器操作面板和插座设在常用手那一侧</li></ul><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul><li>设置紧急呼叫器（最好防水），宜设置在坐便器侧前方墙面上，按钮中心距地面 500mm，拉绳下垂末端距地面 100mm</li><li>设置一定储藏空间，放置卫生纸等用品</li><li>主灯应有足够的亮度照亮全室</li><li>设置镜前灯，一般距地面 2000mm 左右，以消除面部阴影，但不宜过于明亮晃眼</li><li>坐便器上方可加灯照射，帮助检查排泄物</li></ul><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><p>GB 50340-2016 老年人居住建筑设计规范</p></li><li><p>周燕珉, 程晓青, 林菊英, &amp; 林婧怡. (2011). 老年住宅</p></li><li><p>财团法人, &amp; 高龄者住宅财团|译者. (2011). 老年住宅设计手册</p></li></ul><p>适老化住宅改造空间设计系列：</p><ul><li><a href="https://www.uegeek.com/200104-aging-in-place-doorway.html" target="_blank" rel="noopener">适老化改造套内空间设计 - 玄关篇</a></li><li><a href="https://www.uegeek.com/200105-aging-in-place-livingroom.html" target="_blank" rel="noopener">适老化改造套内空间设计 - 客厅/起居室篇</a></li><li><a href="https://www.uegeek.com/200108-aging-in-place-bedroom.html" target="_blank" rel="noopener">适老化改造套内空间设计 - 卧室篇</a></li></ul><p>家人年纪大了，居家环境如果及时做出相应的调整和改造，能为他们提供更好的生活、保健环境。<strong>广州的朋友如果有相关改造需求，可以与我联系：<a href="mailto:uegeek@gmail.com" target="_blank" rel="noopener">uegeek@gmail.com</a>.</strong></p><p><img src="http://img.viz.mobi/%E5%BE%AE%E4%BF%A1%E6%90%9C%E4%B8%80%E6%90%9C-%E9%80%82%E8%80%81%E5%8C%96.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E9%80%82%E8%80%81%E5%8C%96%E6%94%B9%E9%80%A0%E5%A5%97%E5%86%85%E7%A9%BA%E9%97%B4%E8%AE%BE%E8%AE%A1-%E5%8D%AB%E7%94%9F%E9%97%B4%E7%AF%87.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Design" scheme="http://uegeek.com/tags/Design/"/>
-    
-      <category term="适老化" scheme="http://uegeek.com/tags/%E9%80%82%E8%80%81%E5%8C%96/"/>
-    
-      <category term="Aging in place" scheme="http://uegeek.com/tags/Aging-in-place/"/>
-    
-      <category term="养老" scheme="http://uegeek.com/tags/%E5%85%BB%E8%80%81/"/>
-    
-      <category term="老年住宅" scheme="http://uegeek.com/tags/%E8%80%81%E5%B9%B4%E4%BD%8F%E5%AE%85/"/>
-    
-      <category term="无障碍设计" scheme="http://uegeek.com/tags/%E6%97%A0%E9%9A%9C%E7%A2%8D%E8%AE%BE%E8%AE%A1/"/>
-    
-      <category term="通用设计" scheme="http://uegeek.com/tags/%E9%80%9A%E7%94%A8%E8%AE%BE%E8%AE%A1/"/>
-    
-      <category term="室内设计" scheme="http://uegeek.com/tags/%E5%AE%A4%E5%86%85%E8%AE%BE%E8%AE%A1/"/>
-    
-      <category term="厕所" scheme="http://uegeek.com/tags/%E5%8E%95%E6%89%80/"/>
-    
-      <category term="Bathroom" scheme="http://uegeek.com/tags/Bathroom/"/>
     
   </entry>
   
