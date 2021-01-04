@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2021-01-02T09:43:27.405Z</updated>
+  <updated>2021-01-04T12:38:40.812Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -17,13 +17,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>数字产品设计与心理学13 - 颜色和深色模式</title>
+    <link href="http://uegeek.com/210104-design-psy-13.html"/>
+    <id>http://uegeek.com/210104-design-psy-13.html</id>
+    <published>2021-01-04T12:22:39.000Z</published>
+    <updated>2021-01-04T12:38:40.812Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><p><img src="http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png" alt="数字产品设计与心理学"></p><a id="more"></a><p>颜色是最重要的视觉通道和视觉语言之一。设计师可以用颜色来强化或突出一个想法，引起情绪反应，或者吸引用户注意一些信息。</p><p><img src="http://img.viz.mobi/2.4.2colorred.jpeg" alt="2.4.2colorred" style="zoom:25%;"></p><center><small>iOS 用醒目的红色标记某些重要或危险的操作</small></center><h2 id="颜色感知"><a href="#颜色感知" class="headerlink" title="颜色感知"></a>颜色感知</h2><p>颜色是描述光的颜色类别的视觉感知特征，它由眼睛、大脑和生活经验共同作用产生。没有光，就没有颜色。不过，可见光是一种电磁波，本身并不带颜色，颜色只是人的一种感知。那么人是怎么「看见」颜色的呢？这首先要归功于眼睛视网膜里的视椎细胞，它们对不同频率的光很敏感。当人眼识别可见光，并在大脑中加工光源中编码的信息，便产生了颜色感知。大部分时间里，视觉完全依靠视椎细胞提供信息。</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Nasir-al_molk_-1.jpg/600px-Nasir-al_molk_-1.jpg" alt=""></p><center><small>图片来源：<a href="https://en.wikipedia.org/wiki/Color" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Color</a></small></center><p>关于颜色视觉，有两个主流的理论：三原色视觉理论（trichromatic theory）与补色过程理论（opponent-process theory）（Ware，2019）。</p><p>三原色视觉理论认为，人眼的三种视椎细胞（L-长波视椎细胞、M-中波视椎细胞和 S-短波视椎细胞）分别优先捕获相应波长区域光信号的刺激，最终合成产生颜色感知。从下图可以看到，不同视椎细胞对不同波段颜色的吸光率不同，总体而言对波长较长的颜色更为敏感，这也是暖色调更吸引人注意的原因。</p><p><img src="http://img.viz.mobi/2.4.2%E8%A7%86%E6%A4%8E%E7%BB%86%E8%83%9E%E5%AF%B9%E4%B8%8D%E5%90%8C%E6%B3%A2%E9%95%BF%E7%9A%84%E6%95%8F%E6%84%9F%E5%BA%A6.png" alt="2.4.2视椎细胞对不同波长的敏感度"></p><p>补色过程理论则认为，视觉系统有两种感受器，受到某种颜色的光刺激时，它会同时释放出两种信号：刺激/兴奋信号和抑制信号。人的视觉系统用这种对比的方式获得颜色感知：红色对应绿色，蓝色对应黄色，黑色对应白色。在生活中你可能有过这样的经验：如果眼睛盯着一种颜色看一段时间，然后把目光转开，就会在别的地方看到这种颜色的补色。</p><p><img src="http://img.viz.mobi/2.4.2%E8%A1%A5%E8%89%B2%E8%BF%87%E7%A8%8B%E7%90%86%E8%AE%BA%E6%A8%A1%E5%9E%8B.png" alt="2.4.2补色过程理论模型"></p><p>人会在环境中根据一些视觉特征来快速搜索目标，颜色就是最常用的特征之一。不过 ，基于颜色的视觉搜索效率，也取决于环境中一共有多少种颜色。如果整个环境都是单一色调，一小块鲜艳的颜色就跃然而出；如果环境是五光十色的，那么针对某个颜色的视觉搜索就困难多了。</p><p>颜色理论和颜色心理学是一个庞大的话题，这一节只能作为一个小小的引子。如果大家感兴趣，推荐阅读这两本专业的论著：</p><ul><li>Colin Ware. (2019). <em>Information Visualization: Perception for Design</em>. Morgan Kaufmann.</li><li>Elliot, A. J., Fairchild, M. D., &amp; Franklin, A. (2015). <em>Handbook of Color Psychology</em>. Cambridge University Press.</li></ul><h2 id="色彩感觉"><a href="#色彩感觉" class="headerlink" title="色彩感觉"></a>色彩感觉</h2><p>远-近。在日常生活中，我们时不时会有这样的体验：不同的色彩，让人感觉距离它们的远近有所不同。看起来比实际空间距离更近的颜色，我们称为前进色，反之为后退色。这是由于单色光的折射角不同，人眼产生了某种调节所致（朝仓直已，2018）。一般而言，波长较长的暖色，比波长短的颜色更有前进的感觉。两种颜色放在一起时，亮度和饱和度偏高的色彩会更突出。</p><p><img src="http://img.viz.mobi/2.4.2%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E8%89%B2.png" alt="2.4.2前进后退色" style="zoom:50%;"></p><p>轻-重。人通过肌肉的紧张程度来感知物体的重量，但是心理过程也会影响色彩感知，产生与物体实际轻重不一样的感觉。一般我们会觉得明度高的颜色比较轻，明度低的颜色比较重。</p><p>扩张-收缩。在面积相等的情况下，看起来比实际面积更大的颜色，称为扩张色，反之为收缩色。前进色大都是扩张色，后退色一般都是收缩色。同样面积的暖色比冷色看起来面积更大；饱和度高的颜色，比饱和度低的颜色看起来面积更大；处于背景的颜色明度越高，前景的颜色看起来面积就越小；在黑暗背景上，高明度的颜色看起来比实际面积更大。</p><p><img src="http://img.viz.mobi/2.4.2%E6%89%A9%E5%BC%A0%E8%89%B2%E6%94%B6%E7%BC%A9%E8%89%B2.png" alt="2.4.2扩张色收缩色" style="zoom:50%;"></p><p>清晰-模糊。决定视觉辨识度的关键因素之一，是视觉主体和背景的明度差异 。背景色是明度最高的白色时，黑色的视觉辨识度最高；背景色是明度最低的黑色时，白色的视觉辨识度最高。</p><p>冷-暖。设计中常用不同色温的暖色、冷色和中性色能唤起人们的情绪反应。暖色是指黄色和红色等；冷色包括蓝色、绿色或紫色的色调；中性色包括棕色、灰色、黑色和白色。某些颜色会让人产生某些感受，例如，鲜艳的色彩给人以活力、直接或紧迫的感感，明亮的色调让人感觉有更多的能量和积极的情绪，可以用它们来唤起用户对产品、服务或重要信息的关注。而柔和的、不那么鲜艳的颜色则让人更放松平和。但是，颜色的情感体验也会受到性别、经历、文化关联和其他个人因素的影响。</p><h2 id="深色模式"><a href="#深色模式" class="headerlink" title="深色模式"></a>深色模式</h2><p>随着人们使用数字产品的时间越来越长，深色模式界面近几年来很受欢迎，Apple、Google 等手机平台纷纷提供了这一功能。</p><p><img src="http://img.viz.mobi/2.4.2ios13dark.jpg" alt="2.4.2ios13dark" style="zoom:50%;"></p><center><small>iOS 的深色模式</small></center><p>为什么深色模式趋于流行呢？最直接的原因是电子设备的显示技术不断进步，苹果、谷歌、三星、华为等大厂商都开始使用无需背光的 OLED 屏。深色界面在 OLED 设备中能耗更少，可以提升设备的续航能力。值得注意的是，环境中的光照量不仅影响能耗，也影响我们的感知。 </p><p>人的瞳孔对光照量很敏感。光线由瞳孔到达视网膜，瞳孔会根据环境中的光照量而改变大小：当光线充足时，瞳孔会收缩并变窄，而当光线较暗时，瞳孔会扩张，让更多的光线进入。瞳孔较小时，不容易产生球面像差（即图像看起来不对焦），同时也增加了景深，因此易于辨认文字，眼睛就不容易疲劳。不过，瞳孔太小也意味着进入眼睛的光线很少，会影响阅读，尤其是在光线黯淡的地方。老年人的视力下降也跟瞳孔大小有关：随着年龄的增长，瞳孔会逐渐减小。</p><p>虽然有研究表明，深色模式可能有利于一些视力不佳的使用者（Papadopoulos &amp; Goudiras，2005)，但发布在《人因》杂志的另一项研究，则不建议普及深色模式。这一研究考察了文字大小与对比度对人们完成校对任务的影响。结果显示，对于视力正常的用户来说，浅色模式在大多数情况下阅读效果更好，即使字体很小，用户也比较容易看清楚文字（Piepenbrock et al.，2013）。为什么浅色模式对阅读更加有利呢？解释是在正反差极性的影响下（with positive contrast polarity），整体光照更多时，瞳孔收缩得更小。因此，球面像差更少，景深更大，就容易聚焦于细节而不累眼睛。</p><p>当然，深色模式的流行，是考虑综合设备、情境、活动、习惯、内容、使用体验等多种因素的结果。很多时候，为了烘托氛围，设计师会选择深色背景。</p><p><img src="http://img.viz.mobi/2.4.2appleTVjpg.jpg" alt="2.4.2appleTVjpg" style="zoom:100%;"></p><center><small>Apple TV 的介绍页，在深色模式下视觉效果更富戏剧性，让人一下子进入夜间影院的情境当中。</small></center><p>与娱乐相关的数字产品界面（智能电视、游戏机和电影应用）都喜欢采用深色主题。因为大多数娱乐活动都发生在晚上，人们在光线较暗的房间内观看，所以深色主题与环境更匹配。此外，丰富多彩的图像内容例如电影海报和宣传片等，在深色界面上会非常突出。总的来说，深色模式的优势包括：</p><ul><li>实现鲜明的、强烈的、戏剧性的视觉效果</li><li>给人以时尚、优雅、豪华、尊贵的感觉</li><li>营造出一种阴险和神秘的感觉</li><li>有助于集中和引导用户的注意力，尽量减少分心</li><li>支持可视化的层次结构和信息架构</li></ul><p>但是，深色模式在内容较多时就不是一个好的选择，比如包含各种图文/视频/数据表/下拉菜单的页面。一般来说，所有颜色在白色背景下都显示良好。而在深色背景下，颜色的可用范围会缩小，如果内容很多又要保持足够的对比度，就会影响可读性（Scharff &amp; Ahumada，2005）。深色背景能让大图片和简约的页面显得优雅而戏剧化，但它会让小图标和内容密集的页面看起来杂乱无章和不专业。可以对比以下两个页面，哪个看起来更舒适：</p><p><img src="http://img.viz.mobi/2.4.2Veltrix-light.png" alt="2.4.2Veltrix-light" style="zoom:50%;"></p><p><img src="http://img.viz.mobi/2.4.2Veltrix-light.png" alt="2.4.2Veltrix-dark" style="zoom:50%;"></p><center><small>图片来源：<a href="https://themesbrand.com/veltrix/layouts/vertical/index.html" target="_blank" rel="noopener">https://themesbrand.com/veltrix/layouts/vertical/index.html</a></small></center><p>深色模式并不一定优于浅色模式。但总的来说，仍然应该提供选项允许用户切换，对于需要长时间阅读的应用（如图书阅读器、杂志等）更是如此。</p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li>Color. (2020). In <em>Wikipedia</em>. <a href="https://en.wikipedia.org/w/index.php?title=Color&amp;oldid=957435307" target="_blank" rel="noopener">https://en.wikipedia.org/w/index.php?title=Color&amp;oldid=957435307</a></li><li>Ware, C. (2019). <em>Information Visualization: Perception for Design</em>. Morgan Kaufmann.</li><li>Elliot, A. J., Fairchild, M. D., &amp; Franklin, A. (2015). <em>Handbook of Color Psychology</em>. Cambridge University Press.</li><li>朝仓直巳. (2018). <em>艺术·设计的色彩构成（修订版）</em> (赵郧安, Trans.). 江苏凤凰科学技术出版社.</li><li>Papadopoulos, K. S., &amp; Goudiras, D. B. (2005). Accessibility assistance for visually-impaired people in digital texts. <em>British Journal of Visual Impairment</em>, <em>23</em>(2), 75–83.</li><li>Piepenbrock, C., Mayr, S., Mund, I., &amp; Buchner, A. (2013). Positive display polarity is advantageous for both younger and older adults. <em>Ergonomics</em>, <em>56</em>(7), 1116–1124.</li><li>Scharff, L. V., &amp; Ahumada, A. J. (2005). Why is light text harder to read than dark text? <em>Journal of Vision</em>, <em>5</em>(8), 812–812.</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png&quot; alt=&quot;数字产品设计与心理学&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="颜色" scheme="http://uegeek.com/tags/%E9%A2%9C%E8%89%B2/"/>
+    
+      <category term="数字产品设计与心理学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数字产品设计与心理学12 - 视觉通道</title>
     <link href="http://uegeek.com/210102-design-psy-12.html"/>
     <id>http://uegeek.com/210102-design-psy-12.html</id>
     <published>2021-01-02T09:40:07.000Z</published>
-    <updated>2021-01-02T09:43:27.405Z</updated>
+    <updated>2021-01-04T12:22:54.224Z</updated>
     
-    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><p><img src="http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png" alt="数字产品设计与心理学"></p><a id="more"></a><p># </p><p>人的视觉感知系统，是迄今为止人类所知的处理带宽最高的生物系统（陈为，2019）。视觉接收的原始数据量，高达 10<sup>9</sup> 比特/秒。</p><p><img src="http://img.viz.mobi/2.4.1%E8%A7%86%E8%A7%89%E9%80%9A%E8%BF%87%E6%B3%A8%E6%84%8F%E7%93%B6%E9%A2%88.png" alt="2.4.1-视觉通过注意瓶颈" style="zoom:50%;"></p><p>人类视觉的模式识别能力很强，从可视符号中获取信息的效率远高于文本和数字。有时候只要基于某些视觉特征，就能启动下意识的快速眼动搜索。从上一小节我们知道，想让某个物体「鹤立鸡群」，就要突出它的一些初级视觉通道特征，例如使用不一样的颜色。那么，如果要让多个物体都易于识别，该怎么办呢？初级视觉皮层中的各层，又分为许多小的区域，分别处理形状、颜色和运动等，如果想要在众多目标中快速识别，最有效的方法就是使用不同的视觉通道。</p><p>视觉通道是可视化中的重要概念。可视化编码由标记和视觉通道组成。标记通常是一些抽象的几何图形元素，如点、线、面、体。视觉通道为标记提供视觉特征，包括位置、大小、形状、颜色、运动方向、色调、亮度等。</p><p><img src="http://img.viz.mobi/2.4.1%E8%A7%86%E8%A7%89%E9%80%9A%E9%81%93.png" alt="2.4.1视觉通道" style="zoom:50%;"></p><p>感知系统接收视觉信号时，有两种基本的识别模式：</p><ul><li>类别模式：获得关于对象本身特征和位置等信息，描述对象是什么或在哪里</li><li>次序模式：获得关于对象某一属性在数值上的程度信息，描述对象具体有多少</li></ul><p>对应这两种识别模式，可以划分视觉通道为定性（类别）和定量（连续、有序）两种。例如，用不同色调表现定性的类别数据，用同一颜色的不同亮度表示定量的次序数据。合理地选择视觉通道，是信息传达的前提，对数据这种抽象信息尤为重要。</p><p>在数字产品的界面设计中，设计师就是在跟各种视觉通道要素打交道：决定文字、符号、图像等视觉元素的位置，选择合适的形状表示一定的含义，赋予元素特定的长度、大小、颜色，在元素之间形成各种关系，等等。</p><p>视觉通道的表现力和有效性可以由这几个维度来衡量（陈为，2019）：</p><ul><li>准确性，是否能够准确的表达视觉数据之间的变化</li><li>可辨认性，同一个视觉通道能够编码的分类个数，即可辨识的分类个数上限</li><li>可分离性，不同视觉通道的编码对象放置到一起，是否容易分辨</li><li>视觉突出，重要的信息，是否用更加突出的视觉通道进行编码</li></ul><p><img src="http://img.viz.mobi/2.4.1%E8%A7%86%E8%A7%89%E9%80%9A%E9%81%93%E6%AF%94%E8%BE%83.png" alt="2.4.1视觉通道比较" style="zoom:50%;"></p><p>对数据这类抽象信息而言，位置、长度、颜色、形状的视觉通道表现力较好，在设计时应优先选择用这些形式来映射设计对象的特征。</p><p><strong>Ref</strong></p><p>陈为 等. (2019). <em>数据可视化（第2版）</em>. 电子工业出版社.</p>]]></content>
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><p><img src="http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png" alt="数字产品设计与心理学"></p><a id="more"></a><p>人的视觉感知系统，是迄今为止人类所知的处理带宽最高的生物系统（陈为，2019）。视觉接收的原始数据量，高达 10<sup>9</sup> 比特/秒。</p><p><img src="http://img.viz.mobi/2.4.1%E8%A7%86%E8%A7%89%E9%80%9A%E8%BF%87%E6%B3%A8%E6%84%8F%E7%93%B6%E9%A2%88.png" alt="2.4.1-视觉通过注意瓶颈" style="zoom:50%;"></p><p>人类视觉的模式识别能力很强，从可视符号中获取信息的效率远高于文本和数字。有时候只要基于某些视觉特征，就能启动下意识的快速眼动搜索。从上一小节我们知道，想让某个物体「鹤立鸡群」，就要突出它的一些初级视觉通道特征，例如使用不一样的颜色。那么，如果要让多个物体都易于识别，该怎么办呢？初级视觉皮层中的各层，又分为许多小的区域，分别处理形状、颜色和运动等，如果想要在众多目标中快速识别，最有效的方法就是使用不同的视觉通道。</p><p>视觉通道是可视化中的重要概念。可视化编码由标记和视觉通道组成。标记通常是一些抽象的几何图形元素，如点、线、面、体。视觉通道为标记提供视觉特征，包括位置、大小、形状、颜色、运动方向、色调、亮度等。</p><p><img src="http://img.viz.mobi/2.4.1%E8%A7%86%E8%A7%89%E9%80%9A%E9%81%93.png" alt="2.4.1视觉通道" style="zoom:50%;"></p><p>感知系统接收视觉信号时，有两种基本的识别模式：</p><ul><li>类别模式：获得关于对象本身特征和位置等信息，描述对象是什么或在哪里</li><li>次序模式：获得关于对象某一属性在数值上的程度信息，描述对象具体有多少</li></ul><p>对应这两种识别模式，可以划分视觉通道为定性（类别）和定量（连续、有序）两种。例如，用不同色调表现定性的类别数据，用同一颜色的不同亮度表示定量的次序数据。合理地选择视觉通道，是信息传达的前提，对数据这种抽象信息尤为重要。</p><p>在数字产品的界面设计中，设计师就是在跟各种视觉通道要素打交道：决定文字、符号、图像等视觉元素的位置，选择合适的形状表示一定的含义，赋予元素特定的长度、大小、颜色，在元素之间形成各种关系，等等。</p><p>视觉通道的表现力和有效性可以由这几个维度来衡量（陈为，2019）：</p><ul><li>准确性，是否能够准确的表达视觉数据之间的变化</li><li>可辨认性，同一个视觉通道能够编码的分类个数，即可辨识的分类个数上限</li><li>可分离性，不同视觉通道的编码对象放置到一起，是否容易分辨</li><li>视觉突出，重要的信息，是否用更加突出的视觉通道进行编码</li></ul><p><img src="http://img.viz.mobi/2.4.1%E8%A7%86%E8%A7%89%E9%80%9A%E9%81%93%E6%AF%94%E8%BE%83.png" alt="2.4.1视觉通道比较" style="zoom:50%;"></p><p>对数据这类抽象信息而言，位置、长度、颜色、形状的视觉通道表现力较好，在设计时应优先选择用这些形式来映射设计对象的特征。</p><p><strong>Ref</strong></p><p>陈为 等. (2019). <em>数据可视化（第2版）</em>. 电子工业出版社.</p>]]></content>
     
     <summary type="html">
     
@@ -44,9 +78,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
-    
       <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
     
   </entry>
   
@@ -76,9 +110,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
-    
       <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
     
       <category term="格式塔" scheme="http://uegeek.com/tags/%E6%A0%BC%E5%BC%8F%E5%A1%94/"/>
     
@@ -112,9 +146,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
-    
       <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
     
   </entry>
   
@@ -144,9 +178,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
-    
       <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
     
   </entry>
   
@@ -176,9 +210,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
-    
       <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
     
   </entry>
   
@@ -616,34 +650,6 @@
       <category term="人体工程学" scheme="http://uegeek.com/tags/%E4%BA%BA%E4%BD%93%E5%B7%A5%E7%A8%8B%E5%AD%A6/"/>
     
       <category term="建筑" scheme="http://uegeek.com/tags/%E5%BB%BA%E7%AD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计日课 Vol.008 - 人体的骨骼和肌肉</title>
-    <link href="http://uegeek.com/200111-design-diary-008.html"/>
-    <id>http://uegeek.com/200111-design-diary-008.html</id>
-    <published>2020-01-11T12:20:27.000Z</published>
-    <updated>2020-01-12T12:46:04.911Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/%E8%AE%BE%E8%AE%A1%E6%97%A5%E8%AF%BEtitle.jpg" alt=""></p><a id="more"></a> <p>做设计，尤其是空间和实体产品的设计，一定离不开人的尺度。从某种程度来说，设计就是一种将事物改造为适应人的尺度的活动。</p><h2 id="骨骼"><a href="#骨骼" class="headerlink" title="骨骼"></a>骨骼</h2><p>人体有长、短、扁平等各种各样大小、形状的骨头 200 多块。这些骨头相互连接形成骨骼。骨骼主要分为头骨、脊椎、肋骨、骨盆等核心骨与形成上下肢的附属骨两个部分。</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Human_skeleton_front_zh.svg/640px-Human_skeleton_front_zh.svg.png?1578739069734" alt=""></p><p>（读音：下颌 xiahe，肱骨 gonggu，桡骨 raogu，骶骨 digu，髌骨 bingu，胫骨 jinggu，腓骨 feigu，跗骨 fugu，跖骨 zhigu）</p><p>骨骼作为人体支撑的同时，也担负着作为肌肉附着点的作用。骨头的连接形式可以分为纤维连接（头盖骨等）、软骨连接（椎间盘等）、骨性结合（肩关节、骨关节等）等。皮肤通过纤维组织附着在骨骼上，包绕着骨骼的主要部位。</p><h2 id="肌肉"><a href="#肌肉" class="headerlink" title="肌肉"></a>肌肉</h2><p>人体内有不能按人的意志随意运动的肌肉，叫做不随意肌（平滑肌、心肌等），以及主要附着在骨头上，能够按意志运动的随意肌（横纹肌）。平时我们常说的肌肉一般指骨骼肌也就是随意肌。</p><p><img src="http://img.viz.mobi/V008-ezgif-2-3da297d98fbe.jpg" alt=""></p><p>肌肉有各种各样的形状，一般呈纺锤形，形成中部粗大两端细小的形状的肌腱附着在骨头上。肌头分叉为两部分甚至三部分，叫做二头肌及三头肌。</p><p>肌肉收缩时会带动关节，收缩时利用肌腹而不是肌腱。肌肉收缩产生的最大力量，与构成肌肉的纤维总数成正比。同时，肌肉活动的状态可以用肌电计测出电位差来表示。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>建筑设计资料集成：人体、空间篇</li><li><a href="https://www.wikiwand.com/zh/%E4%BA%BA%E9%AB%94%E9%AA%A8%E6%9E%B6" target="_blank" rel="noopener">人體骨架 - Wikiwand</a></li><li><a href="https://www.wikiwand.com/zh/%E8%82%8C%E8%82%89#/%E5%8F%83%E8%A6%8B" target="_blank" rel="noopener">肌肉 - Wikiwand</a></li></ul><p>设计日课系列：</p><ul><li><a href="https://www.uegeek.com/200101-design-diary-001.html" target="_blank" rel="noopener">设计日课 Vol.001 - 回到历史寻找设计</a></li><li><a href="https://www.uegeek.com/200102-design-diary-002.html" target="_blank" rel="noopener">设计日课 Vol.002 - 设计发展的驱动力</a></li><li><a href="https://www.uegeek.com/200103-design-diary-003.html" target="_blank" rel="noopener">设计日课 Vol.003 - 这是好设计吗？</a></li><li><a href="https://www.uegeek.com/200103-design-diary-004.html" target="_blank" rel="noopener">设计日课 Vol.004 - 好设计的关系框架和时空框架</a></li><li><a href="https://www.uegeek.com/200103-design-diary-005.html" target="_blank" rel="noopener">设计日课 Vol.005 - 老板要求每天花式出图100张，怎么办？</a></li><li><a href="https://www.uegeek.com/200107-design-diary-006.html" target="_blank" rel="noopener">设计日课 Vol.006 - 设计的经济基础和文化贡献</a></li><li><a href="https://www.uegeek.com/200110-design-diary-007.html" target="_blank" rel="noopener">设计日课 Vol.007 - 这个装修好在哪？</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E8%AE%BE%E8%AE%A1%E6%97%A5%E8%AF%BEtitle.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Design" scheme="http://uegeek.com/tags/Design/"/>
-    
-      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
-    
-      <category term="人体" scheme="http://uegeek.com/tags/%E4%BA%BA%E4%BD%93/"/>
-    
-      <category term="人体工学" scheme="http://uegeek.com/tags/%E4%BA%BA%E4%BD%93%E5%B7%A5%E5%AD%A6/"/>
     
   </entry>
   
