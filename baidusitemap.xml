@@ -4,6 +4,36 @@
 
     
   <url>
+    <loc>http://uegeek.com/210106-design-psy-14.html</loc>
+    <lastmod>2021-01-06T15:30:34.041Z</lastmod>
+    <data>
+        <display>
+        <title>数字产品设计与心理学14 - 界面的词汇和语法</title>
+        <pubTime>2021-01-06T14:55:00.000Z</pubTime>
+        
+        <tag>设计</tag>
+         
+        <tag>数字产品设计与心理学</tag>
+         
+        <tag>心理学</tag>
+         
+        <tag>认知</tag>
+         
+        <tag>设计规范</tag>
+         
+        <tag>界面</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/210104-design-psy-13.html</loc>
     <lastmod>2021-01-04T12:38:40.812Z</lastmod>
     <data>
@@ -770,11 +800,11 @@
          
         <tag>设计</tag>
          
-        <tag>Guideline</tag>
-         
         <tag>设计原则</tag>
          
         <tag>Dieter Rams</tag>
+         
+        <tag>Guideline</tag>
          
          
            
@@ -870,11 +900,11 @@
          
         <tag>设计</tag>
          
-        <tag>Guideline</tag>
-         
         <tag>设计原则</tag>
          
         <tag>Dieter Rams</tag>
+         
+        <tag>Guideline</tag>
          
          
            
@@ -1055,13 +1085,13 @@
          
         <tag>Shader</tag>
          
+        <tag>Principled BSDF</tag>
+         
         <tag>材质</tag>
          
         <tag>贴图</tag>
          
         <tag>计算机图形</tag>
-         
-        <tag>Principled BSDF</tag>
          
          
            
@@ -1085,13 +1115,13 @@
          
         <tag>设计</tag>
          
+        <tag>Guideline</tag>
+         
         <tag>Exhibition</tag>
          
         <tag>Immersive</tag>
          
         <tag>Experience</tag>
-         
-        <tag>Guideline</tag>
          
         <tag>展览</tag>
          
@@ -1221,9 +1251,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -1257,9 +1287,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -1351,13 +1381,13 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
          
-        <tag>MIDI</tag>
+        <tag>Arduino</tag>
          
         <tag>通信</tag>
+         
+        <tag>MIDI</tag>
          
         <tag>OSC</tag>
          
@@ -1453,15 +1483,15 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
          
-        <tag>Fab</tag>
+        <tag>通信</tag>
          
         <tag>MIDI</tag>
-         
-        <tag>通信</tag>
          
         <tag>OSC</tag>
          
@@ -1523,11 +1553,11 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
         <tag>传感器</tag>
          
@@ -1585,11 +1615,11 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
         <tag>基尔霍夫定律</tag>
          
@@ -1653,13 +1683,13 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>单片机</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
          
            
@@ -2185,11 +2215,11 @@
          
         <tag>随机</tag>
          
+        <tag>MaxMSP</tag>
+         
         <tag>巴纳姆效应</tag>
          
         <tag>星座</tag>
-         
-        <tag>MaxMSP</tag>
          
          
            
@@ -2505,9 +2535,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>体验</tag>
-         
         <tag>服务设计</tag>
+         
+        <tag>体验</tag>
          
         <tag>o2o</tag>
          
@@ -2537,9 +2567,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>体验</tag>
-         
         <tag>服务设计</tag>
+         
+        <tag>体验</tag>
          
         <tag>o2o</tag>
          
@@ -2569,9 +2599,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>体验</tag>
-         
         <tag>服务设计</tag>
+         
+        <tag>体验</tag>
          
         <tag>o2o</tag>
          
@@ -2601,9 +2631,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>体验</tag>
-         
         <tag>服务设计</tag>
+         
+        <tag>体验</tag>
          
         <tag>o2o</tag>
          
@@ -3697,9 +3727,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -3767,9 +3797,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -3937,9 +3967,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -4011,9 +4041,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -4061,9 +4091,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -4523,9 +4553,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -4595,11 +4625,11 @@
         
         <tag>Travel</tag>
          
+        <tag>历史</tag>
+         
         <tag>中欧</tag>
          
         <tag>匈牙利</tag>
-         
-        <tag>历史</tag>
          
         <tag>奥地利</tag>
          
@@ -4627,9 +4657,9 @@
         
         <tag>Note</tag>
          
-        <tag>历史</tag>
-         
         <tag>人类简史</tag>
+         
+        <tag>历史</tag>
          
          
            
@@ -4653,9 +4683,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>捷克</tag>
          
@@ -4681,9 +4711,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>奥地利</tag>
          
@@ -4713,9 +4743,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>捷克</tag>
          
@@ -4741,9 +4771,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>东正教</tag>
          
@@ -4779,9 +4809,9 @@
          
         <tag>Travel</tag>
          
-        <tag>中欧</tag>
-         
         <tag>历史</tag>
+         
+        <tag>中欧</tag>
          
         <tag>哥特式</tag>
          
@@ -6177,11 +6207,11 @@
          
         <tag>神经网络</tag>
          
-        <tag>Programming</tag>
-         
         <tag>AWS</tag>
          
         <tag>GPU</tag>
+         
+        <tag>Programming</tag>
          
          
            
