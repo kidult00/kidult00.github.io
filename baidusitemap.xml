@@ -4,6 +4,36 @@
 
     
   <url>
+    <loc>http://uegeek.com/210110-reading-note.html</loc>
+    <lastmod>2021-01-10T12:42:26.122Z</lastmod>
+    <data>
+        <display>
+        <title>作家之眼，治疗师之诚</title>
+        <pubTime>2021-01-10T12:40:09.000Z</pubTime>
+        
+        <tag>设计</tag>
+         
+        <tag>读书笔记</tag>
+         
+        <tag>心理治疗</tag>
+         
+        <tag>传记</tag>
+         
+        <tag>欧文亚隆</tag>
+         
+        <tag>卡尔维诺</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="http://uegeek.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/210106-design-psy-14.html</loc>
     <lastmod>2021-01-06T15:30:34.041Z</lastmod>
     <data>
@@ -800,11 +830,11 @@
          
         <tag>设计</tag>
          
+        <tag>Guideline</tag>
+         
         <tag>设计原则</tag>
          
         <tag>Dieter Rams</tag>
-         
-        <tag>Guideline</tag>
          
          
            
@@ -900,11 +930,11 @@
          
         <tag>设计</tag>
          
+        <tag>Guideline</tag>
+         
         <tag>设计原则</tag>
          
         <tag>Dieter Rams</tag>
-         
-        <tag>Guideline</tag>
          
          
            
@@ -1115,13 +1145,13 @@
          
         <tag>设计</tag>
          
-        <tag>Guideline</tag>
-         
         <tag>Exhibition</tag>
          
         <tag>Immersive</tag>
          
         <tag>Experience</tag>
+         
+        <tag>Guideline</tag>
          
         <tag>展览</tag>
          
@@ -1251,9 +1281,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -1287,9 +1317,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -1381,9 +1411,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
         <tag>通信</tag>
          
@@ -1483,11 +1513,11 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
          
         <tag>通信</tag>
          
@@ -1553,11 +1583,11 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
          
         <tag>传感器</tag>
          
@@ -1615,11 +1645,11 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
          
         <tag>基尔霍夫定律</tag>
          
@@ -1683,13 +1713,13 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
          
         <tag>单片机</tag>
          
         <tag>电路</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -2215,11 +2245,11 @@
          
         <tag>随机</tag>
          
-        <tag>MaxMSP</tag>
-         
         <tag>巴纳姆效应</tag>
          
         <tag>星座</tag>
+         
+        <tag>MaxMSP</tag>
          
          
            
@@ -2535,9 +2565,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>服务设计</tag>
-         
         <tag>体验</tag>
+         
+        <tag>服务设计</tag>
          
         <tag>o2o</tag>
          
@@ -2567,9 +2597,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>服务设计</tag>
-         
         <tag>体验</tag>
+         
+        <tag>服务设计</tag>
          
         <tag>o2o</tag>
          
@@ -2599,9 +2629,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>服务设计</tag>
-         
         <tag>体验</tag>
+         
+        <tag>服务设计</tag>
          
         <tag>o2o</tag>
          
@@ -2631,9 +2661,9 @@
          
         <tag>交互设计</tag>
          
-        <tag>服务设计</tag>
-         
         <tag>体验</tag>
+         
+        <tag>服务设计</tag>
          
         <tag>o2o</tag>
          
@@ -3727,9 +3757,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -3797,9 +3827,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -3967,9 +3997,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -4041,9 +4071,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -4091,9 +4121,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -4553,9 +4583,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Fab</tag>
-         
         <tag>Arduino</tag>
+         
+        <tag>Fab</tag>
          
          
            
@@ -4625,11 +4655,11 @@
         
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
          
         <tag>匈牙利</tag>
+         
+        <tag>历史</tag>
          
         <tag>奥地利</tag>
          
@@ -4657,9 +4687,9 @@
         
         <tag>Note</tag>
          
-        <tag>人类简史</tag>
-         
         <tag>历史</tag>
+         
+        <tag>人类简史</tag>
          
          
            
@@ -4683,9 +4713,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>捷克</tag>
          
@@ -4711,9 +4741,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>奥地利</tag>
          
@@ -4743,9 +4773,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>捷克</tag>
          
@@ -4771,9 +4801,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>东正教</tag>
          
@@ -4809,9 +4839,9 @@
          
         <tag>Travel</tag>
          
-        <tag>历史</tag>
-         
         <tag>中欧</tag>
+         
+        <tag>历史</tag>
          
         <tag>哥特式</tag>
          
@@ -6207,11 +6237,11 @@
          
         <tag>神经网络</tag>
          
+        <tag>Programming</tag>
+         
         <tag>AWS</tag>
          
         <tag>GPU</tag>
-         
-        <tag>Programming</tag>
          
          
            
