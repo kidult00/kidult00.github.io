@@ -4,6 +4,36 @@
 
     
   <url>
+    <loc>http://uegeek.com/210114-design-psy-15.html</loc>
+    <lastmod>2021-01-14T13:23:35.380Z</lastmod>
+    <data>
+        <display>
+        <title>数字产品设计与心理学15 - 提供视觉结构</title>
+        <pubTime>2021-01-14T13:19:12.000Z</pubTime>
+        
+        <tag>设计</tag>
+         
+        <tag>数字产品设计与心理学</tag>
+         
+        <tag>心理学</tag>
+         
+        <tag>认知</tag>
+         
+        <tag>界面</tag>
+         
+        <tag>视觉设计</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://uegeek.com/210110-reading-note.html</loc>
     <lastmod>2021-01-10T12:42:26.122Z</lastmod>
     <data>
@@ -79,9 +109,9 @@
          
         <tag>心理学</tag>
          
-        <tag>视觉</tag>
-         
         <tag>认知</tag>
+         
+        <tag>视觉</tag>
          
          
            
@@ -109,9 +139,9 @@
          
         <tag>心理学</tag>
          
-        <tag>视觉</tag>
-         
         <tag>认知</tag>
+         
+        <tag>视觉</tag>
          
          
            
@@ -137,9 +167,9 @@
          
         <tag>心理学</tag>
          
-        <tag>视觉</tag>
-         
         <tag>认知</tag>
+         
+        <tag>视觉</tag>
          
         <tag>格式塔</tag>
          
@@ -169,9 +199,9 @@
          
         <tag>心理学</tag>
          
-        <tag>视觉</tag>
-         
         <tag>认知</tag>
+         
+        <tag>视觉</tag>
          
          
            
@@ -197,9 +227,9 @@
          
         <tag>心理学</tag>
          
-        <tag>视觉</tag>
-         
         <tag>认知</tag>
+         
+        <tag>视觉</tag>
          
          
            
@@ -225,9 +255,9 @@
          
         <tag>心理学</tag>
          
-        <tag>视觉</tag>
-         
         <tag>认知</tag>
+         
+        <tag>视觉</tag>
          
          
            
@@ -1073,9 +1103,9 @@
          
         <tag>3D</tag>
          
-        <tag>Camera</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Camera</tag>
          
         <tag>CG</tag>
          
@@ -1105,9 +1135,9 @@
         
         <tag>3D</tag>
          
-        <tag>Texture</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Texture</tag>
          
         <tag>OpenGL</tag>
          
@@ -1115,13 +1145,13 @@
          
         <tag>Shader</tag>
          
-        <tag>Principled BSDF</tag>
-         
         <tag>材质</tag>
          
         <tag>贴图</tag>
          
         <tag>计算机图形</tag>
+         
+        <tag>Principled BSDF</tag>
          
          
            
@@ -1239,9 +1269,9 @@
          
         <tag>3D</tag>
          
-        <tag>Modeling</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Modeling</tag>
          
         <tag>Geometry</tag>
          
@@ -1281,9 +1311,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -1317,9 +1347,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -1343,9 +1373,9 @@
          
         <tag>3D</tag>
          
-        <tag>Modeling</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Modeling</tag>
          
         <tag>Geometry</tag>
          
@@ -1373,9 +1403,9 @@
          
         <tag>3D</tag>
          
-        <tag>Modeling</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Modeling</tag>
          
         <tag>Geometry</tag>
          
@@ -1411,9 +1441,9 @@
          
         <tag>Digital Fabrication</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
         <tag>通信</tag>
          
@@ -1477,9 +1507,9 @@
          
         <tag>3D</tag>
          
-        <tag>Modeling</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Modeling</tag>
          
         <tag>Geometry</tag>
          
@@ -1513,11 +1543,11 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
         <tag>通信</tag>
          
@@ -1549,9 +1579,9 @@
          
         <tag>3D</tag>
          
-        <tag>Modeling</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Modeling</tag>
          
         <tag>Geometry</tag>
          
@@ -1583,11 +1613,11 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
         <tag>传感器</tag>
          
@@ -1613,9 +1643,9 @@
          
         <tag>3D</tag>
          
-        <tag>Modeling</tag>
-         
         <tag>Blender</tag>
+         
+        <tag>Modeling</tag>
          
          
            
@@ -1645,11 +1675,11 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
         <tag>基尔霍夫定律</tag>
          
@@ -1675,9 +1705,9 @@
          
         <tag>3D</tag>
          
-        <tag>Animation</tag>
-         
         <tag>Modeling</tag>
+         
+        <tag>Animation</tag>
          
         <tag>Texture</tag>
          
@@ -1713,13 +1743,13 @@
          
         <tag>Digital Fabrication</tag>
          
+        <tag>Fab</tag>
+         
         <tag>Arduino</tag>
          
         <tag>单片机</tag>
          
         <tag>电路</tag>
-         
-        <tag>Fab</tag>
          
          
            
@@ -1773,9 +1803,9 @@
          
         <tag>3D</tag>
          
-        <tag>Animation</tag>
-         
         <tag>Modeling</tag>
+         
+        <tag>Animation</tag>
          
          
            
@@ -2345,11 +2375,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>图像</tag>
          
@@ -3757,9 +3787,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -3827,9 +3857,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -3997,9 +4027,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -4071,9 +4101,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -4121,9 +4151,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -4583,9 +4613,9 @@
          
         <tag>Maker</tag>
          
-        <tag>Arduino</tag>
-         
         <tag>Fab</tag>
+         
+        <tag>Arduino</tag>
          
          
            
@@ -6713,11 +6743,11 @@
          
         <tag>视频</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
          
            
@@ -6743,11 +6773,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>颜色</tag>
          
@@ -6777,9 +6807,9 @@
          
         <tag>视频</tag>
          
-        <tag>教程</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>教程</tag>
          
          
            
@@ -6807,9 +6837,9 @@
          
         <tag>视频</tag>
          
-        <tag>教程</tag>
-         
         <tag>Creative Coding</tag>
+         
+        <tag>教程</tag>
          
          
            
@@ -6835,11 +6865,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
          
            
@@ -6865,11 +6895,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>数学</tag>
          
@@ -6899,11 +6929,11 @@
          
         <tag>视频</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
          
            
@@ -6929,11 +6959,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>颜色</tag>
          
@@ -6961,11 +6991,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>颜色</tag>
          
@@ -6995,11 +7025,11 @@
          
         <tag>视频</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
          
            
@@ -7025,11 +7055,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>Math</tag>
          
@@ -7057,11 +7087,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>Chromakeying</tag>
          
@@ -7091,11 +7121,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>列表</tag>
          
@@ -7123,11 +7153,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>颜色</tag>
          
@@ -7155,11 +7185,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
          
            
@@ -7185,11 +7215,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>图像</tag>
          
@@ -7217,11 +7247,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>图像</tag>
          
@@ -7249,11 +7279,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>图像</tag>
          
@@ -7281,11 +7311,11 @@
          
         <tag>Jitter</tag>
          
-        <tag>矩阵</tag>
+        <tag>Creative Coding</tag>
          
         <tag>教程</tag>
          
-        <tag>Creative Coding</tag>
+        <tag>矩阵</tag>
          
         <tag>图像</tag>
          
