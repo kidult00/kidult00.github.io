@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数字产品设计与心理学16 - 视觉隐喻]]></title>
+    <url>%2F210116-design-psy-16.html</url>
+    <content type="text"><![CDATA[隐喻是借助过去已经熟悉的事物，来认识和理解新事物的方法。 人类的概念系统是通过隐喻性来构成和界定的。隐喻允许我们依据一个经验领域去理解另一个经验领域。（莱考夫 &amp; 约翰逊，2015） 我们的概念系统建立于真实世界中的各种经验。在计算机问世的早期，人并没有与计算机对话的经验。为了跨越机器与人的沟通鸿沟，数字产品一直都有使用隐喻的传统。 桌面就是最经典的人机交互界面隐喻。早在 1970 年，施乐帕洛阿尔托研究中心的 Alan Kay 就在计算机系统中引入桌面隐喻。苹果公司在 1984 年推出图形用户界面 Macintosh 系统，这是计算机系统首次提供了一整套桌面办公的隐喻，包含现实生活中的物品图标（例如垃圾箱）。这让那些熟悉日常办公室环境的用户，能够直观地理解如何操作电脑。 图片来源：https://en.wikipedia.org/wiki/Macintosh 50 年过去了，桌面隐喻已经进化到 VR 的版本： 图片来源：https://developer.oculus.com/ 借助现成的比喻，可以快速传达复杂的含义。善用隐喻是 UI 界面设计的重要能力。具体来说，隐喻可以帮助设计师： 引起注意 解释抽象或复杂的概念 触发情绪 营造熟悉和信任感 激励用户采取行动 概念隐喻大规模的概念迁移和隐喻产生，往往出现在技术发展的早期，因为有太多模式的概念等待人们去了解和学习。以下是人机交互领域早期的隐喻集合的整理： 用户界面隐喻例子（Dennis，1997） 把生活中人们所熟知的概念，迁移到难以简单描述的数字产品和服务，是很多革命性产品早期成功的关键。 Facebook 最早使用学生档案的类比，开始在常青藤学校内推广。这对学生们来说既熟悉又自然。很快，这个概念就在学生群体中扩散开来。 图片来源：https://uxplanet.org/metaphors-and-analogies-in-product-design-b9af77c18dba 图片分享网站 Pinterest 的快速崛起，则得益于「把图片钉在画板上」这个大家熟悉的、来源于日常生活的隐喻。 图片来源：http://www.myborrowedheaven.com/2016/01/pinterest-tips-for-bloggers.html 隐喻之所以有用而且高效，是因为它在经验之间构建起了桥梁——过去的、其他领域的经验，与未来的、另外一个领域的经验部分相通。而经验来自于人与真实世界的互动。如果想要构建出好的隐喻，就需要先深入观察人在特定情境中的需要、想法、行为、反应，知道他们有哪些熟知的概念和经验。在理解经验的基础之上，再去抽象出旧经验可以用于新经验的部分，并且以生动形象的方式表达出来。 作出好类比的秘诀就是作出更抽象的类比，就是那些在编码方式或是概念框架之间的类比。 （侯世达，2018） 形式隐喻：拟物化数字产品中的所有内容都是数字——没有体量，无法触摸，怎么能让人一看就懂、知道该怎么操作呢？互联网早期的界面设计，大量借用了物理世界中的物品来表示虚拟世界中的对象：文件夹、垃圾桶、书架、指南针……在移动互联网爆发早期，更是兴起了拟物化设计风潮，目的是帮助人们在陌生的交互平台上，快速建立起熟悉的认知。 iBooks 早期的拟物化界面。图片来源：https://www.wired.com/2010/07/ibooks-updated-with-image-zoom-audio-and-video-support/ 设计是否需要拟物，并不由审美偏好决定，而是由用户对数字产品的经验和期望决定。如果用户在物理世界中有丰富的经验，但是没有使用过对应的复杂的数字产品，拟物化就是降低人们理解成本的必然选择。从物理世界迁移过来的复杂数字产品，总是倚重于还原物理对象的外表，来帮助人们理解和使用。比如，很早就开始了数字化浪潮的音乐产业。 处理声音的硬件和软件。图片来源：https://unsplash.com/@mirnyy 著名的数字音乐工作站软件 Logic Pro 中，有大量模拟物理硬件的界面设计，例如各种合成器、音效器、乐器等，目的是让已经熟悉了物理硬件的音乐创作者们，能与硬件一一对应起来，快速学会使用软件的功能。 图片来源：https://9to5mac.com/2019/08/11/logic-plug-in-link/ 符号图标符号是包含了一定意义共识的图形化表达。数字产品使用大量符号来表示抽象的概念，例如各式各样的图标。图标往往是对真实世界中物体或概念的抽象表达，例如用四五根线条就可以组合成一个垃圾桶的形状： 真实的垃圾桶很复杂，为什么人们依然能够轻松识别垃圾桶图标呢？在前面的章节中，我们知道视觉搜索时，眼睛会识别物体的边缘，再组合成熟悉的模式，也会以大小、颜色、方向等特征来加速搜索过程。图标的设计就是利用了人的注意和视觉加工机制，来强化人们对特定图形的识别。如果说文字和概念隐喻是整体经验的迁移，那么图标的隐喻，则更多利用了人类经验中相对固定的图形记忆。 用图标代表物体、概念或功能，依赖于我们基于过往经验学习图标意义的能力。比如说，一个从来没有了解和使用过 Snapchat 的人，看见 Snapchat 的 Logo 可能会完全摸不着头脑： 具体来说，影响图标识别的因素包括（Isherwood et al.，2007）： 具体性：描绘现实生活中物体或人的具体程度 视觉复杂性：图标细节程度和复杂程度 语义距离：图标本身和它所代表意义之间的关系是否接近 熟悉度：用户对图标本身或对图标指代的对象有多熟悉 随着人们使用数字产品的经验越来越丰富，图标越来越简单、抽象。现在主流的 UI 设计，基本以简洁的线型或基本几何图形组合而成的图标为主。 虽然图标可以用精简的形式表达较复杂的含义，但还是要留意用户对图标所传递概念是否熟，尽量缩小图标和意义之间的语义距离。如果语义距离太大，或者同时出现的多个不易区分的图标，就应该考虑增加辅助的识别方式，例如图标文字、帮助提示等。下面是 Snapseed 和 iOS 分享照片的两个功能弹窗，请比较一下它们如何处理多个图标同时展示时的识别问题，以及为什么要这么处理，可以如何优化？ Ref 乔治·莱考夫, &amp; 马克· 约翰逊. (2015). 我们赖以生存的隐喻 (何文忠, Trans.). 浙江大学出版社. Dennis C. Neale, &amp; John M. Carroll. (1997). The Role of Metaphors in User Interface Design. In Marting G. Helander, Thomas K. Landauer, &amp; Prasad V. Prabhu (Eds.), Handbook of Human-Computer Interaction (Second Edition) (pp. 441–462). North-Holland. 侯世达, &amp; 桑德尔. (2018). 表象与本质 (刘健, 胡海, &amp; 陈祺, Trans.). 浙江人民出版社. Isherwood, S. J., McDougall, S. J. P., &amp; Curry, M. B. (2007). Icon Identification in Context: The Changing Role of Icon Characteristics With User Experience. Human Factors, 49(3), 465–476.]]></content>
+      <categories>
+        <category>设计</category>
+      </categories>
+      <tags>
+        <tag>设计</tag>
+        <tag>数字产品设计与心理学</tag>
+        <tag>心理学</tag>
+        <tag>界面</tag>
+        <tag>隐喻</tag>
+        <tag>视觉设计</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数字产品设计与心理学15 - 提供视觉结构]]></title>
     <url>%2F210114-design-psy-15.html</url>
     <content type="text"><![CDATA[视觉依赖结构来简化信息。格式塔原理告诉我们，视觉甚至会主动「创造」结构以减轻信息加工的负担。如果想高效地传递信息，就必需为视觉提供一个清晰、符合直觉的视觉结构。 结构是不同对象之间的关系。比如说，一篇文章采用总-分结构，意味着段落之间形成了总体-组成部分的关系，作者先给出总的结论，然后用多个段落说明分论点。 让我们来复习一下 DP10 讲过的视觉搜索。我们知道，视网膜的分辨率从中心向边缘递减。视觉边缘只能识别较大的目标，无法看清细微的物体。如果一个细小的目标不在视网膜中央的探测域内，那要怎样才能把它找出来呢？秘诀在于快速眼动。眼球多次移动，如果一次聚焦没有找到目标，就在探测域附近继续搜索，直到确定目标。 如上图所示，眼球在查找目标的过程中，一共移动并聚焦了 5 次。在第 4 次注视时，发现目标在探测域边缘，下一次眼动就可以把目标对准到视网膜中心。这种方法也可以应用在数字产品的界面布局上面。 层级设计良好的页面层级结构，不只是因为「好看」，这些结构其实在为视觉搜索提供线索，暗示眼睛可以先看哪里、再看哪里，而不必茫然扫视。如果信息较多，则需要提供不同的层级结构，引导用户先搜索大的结构，找到感兴趣的模块，再进一步寻找位于细节层次中的信息。如果用户对结构之间的关联理解正确，就能提高视觉搜索的效率。 层级清晰的网页结构 这个过程使用电子地图类似。首先，定位到一个大的兴趣范围，然后放大这个区域；水平移动让这个区域位于屏幕中央；继续寻找兴趣范围，放大，平移。在数字设备中的视觉搜索，就是「框定范围-聚焦-搜索」的层层嵌套的过程。 位置当视觉层级中有多个对象时，它们分别处在什么位置？A 在 B 的上面还是下面？关系紧密的对象之间的距离远吗？它们有内在的顺序吗？我们一般习惯先看到哪个再看到哪个？提供元素之间有意义的位置结构，也是引导视线的关键。 矩形的空间关系模式（蒂莫西·萨马拉，2016） 焦点这些对象之间，以哪个为主？哪个处于靠近中心的位置？还有什么特征表示出它的重要性？如果想提供信息传递的效率，必需仔细思考哪些元素是重点，如何确保它们获得足够的、优先的关注。数字产品设计与心理学06 - 扫视，而不是阅读总结了一些常见的扫视模式，比如 Z 型模式是用图片和文字作为焦点，当它们交替摆放时，用户的焦点就会来回摆动，形成 Z 字型。而蛋糕模式，则以标题和小标题为焦点，用户只要快速扫视标题，就可以判断这个部分是否需要进一步阅读。 时间呈现元素的时间关系，表示一系列事件或者变化，也是提供视觉结构的方法。 顺序关系。 正念冥想应用 Headspace App 的课程，以天为单位按顺序排列 因果关系。 京东 App 在完成某个任务后，弹出浮层提示任务已完成 变化/动画。 打开 Gmail 时，页面动画+进度条的变化告诉用户正在进入 变量关系。 使用货币转换应用 iMoney 时，输入任意一种货币的数值，其他货币对应的数值就会实时变化 无论是空间结构还是时间结构，结构表达了元素之间的关系。重复与交错、节奏与韵律、对称与均衡、对比与调和、比例与适度、变异与秩序、虚实与留白、变化与统一等形式，都是规划版面的关系法则。 下面是两个网站的首页设计，我们一起来看看设计师如何处理结构，而结构又是如何影响感知和视觉搜索的。 图片来源：https://www.pinterest.com/pin/805299977096401005/ 第一个页面设计很大方，但是整体结构不是太合理。虽然只有四个主要的内容区域（不包含顶部导航和页脚），但是每一个区域都没有闭合成一个视觉层级。整体扫视下来，有多达数十个相对独立的视觉元素。层级关系不明确，会干扰视线快速浏览和集中，也就容易产生认知上的负荷。它处理得比较好的部分，是每一个部分都有焦点，在区域内搜索时，容易聚焦到重点内容上。 下面是第二个网站首页： 图片来源：https://www.pinterest.com/pin/89931323793367013/ 一眼扫视下来，整个页面只有两个大的组块：处于背景的标题、页脚内容，和处于前景的主要内容。在主要内容这个大的组块中，又非常明确地区分出了四部分内容，只要简单扫视，就可以定位到感兴趣的组块。在各组块内，基本都遵循了「先从左至右，再从上到下」的顺序和优先级，方便用户以相同的模式搜索组块内的内容，进一步确定视觉焦点。组块内的焦点也很明确、突出，以图片和数字为主。 所有的视觉结构，都是为了呈现元素之间的关系。下一次使用数字产品时，不妨留意一下，它如何提供视觉层级，是否容易发现自己感兴趣的内容。 Ref蒂莫西·萨马拉. (2016). 好设计的造型元素 (齐际, 何清新, &amp; 温迪, Trans.). 广西美术出版社.]]></content>
@@ -60,8 +76,8 @@
         <tag>颜色</tag>
         <tag>数字产品设计与心理学</tag>
         <tag>心理学</tag>
-        <tag>认知</tag>
         <tag>视觉</tag>
+        <tag>认知</tag>
       </tags>
   </entry>
   <entry>
@@ -76,8 +92,8 @@
         <tag>可视化</tag>
         <tag>数字产品设计与心理学</tag>
         <tag>心理学</tag>
-        <tag>认知</tag>
         <tag>视觉</tag>
+        <tag>认知</tag>
       </tags>
   </entry>
   <entry>
@@ -91,8 +107,8 @@
         <tag>设计</tag>
         <tag>数字产品设计与心理学</tag>
         <tag>心理学</tag>
-        <tag>认知</tag>
         <tag>视觉</tag>
+        <tag>认知</tag>
         <tag>格式塔</tag>
         <tag>黄金分割</tag>
       </tags>
@@ -108,8 +124,8 @@
         <tag>设计</tag>
         <tag>数字产品设计与心理学</tag>
         <tag>心理学</tag>
-        <tag>认知</tag>
         <tag>视觉</tag>
+        <tag>认知</tag>
       </tags>
   </entry>
   <entry>
@@ -123,8 +139,8 @@
         <tag>设计</tag>
         <tag>数字产品设计与心理学</tag>
         <tag>心理学</tag>
-        <tag>认知</tag>
         <tag>视觉</tag>
+        <tag>认知</tag>
       </tags>
   </entry>
   <entry>
@@ -138,8 +154,8 @@
         <tag>设计</tag>
         <tag>数字产品设计与心理学</tag>
         <tag>心理学</tag>
-        <tag>认知</tag>
         <tag>视觉</tag>
+        <tag>认知</tag>
       </tags>
   </entry>
   <entry>
@@ -678,8 +694,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Blender</tag>
         <tag>Modeling</tag>
+        <tag>Blender</tag>
         <tag>Geometry</tag>
         <tag>Mirror</tag>
         <tag>Boolean</tag>
@@ -700,8 +716,8 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -714,8 +730,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Blender</tag>
         <tag>Modeling</tag>
+        <tag>Blender</tag>
         <tag>Geometry</tag>
         <tag>Mirror</tag>
       </tags>
@@ -735,8 +751,8 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -749,8 +765,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Blender</tag>
         <tag>Modeling</tag>
+        <tag>Blender</tag>
         <tag>Geometry</tag>
         <tag>Subdivision</tag>
       </tags>
@@ -769,8 +785,8 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
         <tag>通信</tag>
         <tag>MIDI</tag>
         <tag>OSC</tag>
@@ -804,8 +820,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Blender</tag>
         <tag>Modeling</tag>
+        <tag>Blender</tag>
         <tag>Geometry</tag>
         <tag>Loop Cut</tag>
       </tags>
@@ -823,9 +839,9 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
         <tag>通信</tag>
         <tag>MIDI</tag>
         <tag>OSC</tag>
@@ -842,8 +858,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Blender</tag>
         <tag>Modeling</tag>
+        <tag>Blender</tag>
         <tag>Geometry</tag>
       </tags>
   </entry>
@@ -860,9 +876,9 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
         <tag>传感器</tag>
       </tags>
   </entry>
@@ -876,8 +892,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Blender</tag>
         <tag>Modeling</tag>
+        <tag>Blender</tag>
       </tags>
   </entry>
   <entry>
@@ -893,9 +909,9 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
         <tag>基尔霍夫定律</tag>
       </tags>
   </entry>
@@ -909,8 +925,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Modeling</tag>
         <tag>Animation</tag>
+        <tag>Modeling</tag>
         <tag>Texture</tag>
         <tag>Camera</tag>
         <tag>Lighting</tag>
@@ -929,10 +945,10 @@
         <tag>制造</tag>
         <tag>Maker</tag>
         <tag>Digital Fabrication</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
-        <tag>单片机</tag>
         <tag>电路</tag>
+        <tag>Fab</tag>
+        <tag>单片机</tag>
       </tags>
   </entry>
   <entry>
@@ -945,8 +961,8 @@
       <tags>
         <tag>ArtxCode</tag>
         <tag>3D</tag>
-        <tag>Modeling</tag>
         <tag>Animation</tag>
+        <tag>Modeling</tag>
       </tags>
   </entry>
   <entry>
@@ -1263,9 +1279,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
         <tag>图像</tag>
       </tags>
   </entry>
@@ -1280,9 +1296,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
         <tag>图像</tag>
       </tags>
   </entry>
@@ -1297,9 +1313,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
         <tag>图像</tag>
       </tags>
   </entry>
@@ -1314,9 +1330,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
         <tag>图像</tag>
       </tags>
   </entry>
@@ -1331,9 +1347,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
         <tag>图像</tag>
       </tags>
   </entry>
@@ -1348,9 +1364,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
       </tags>
   </entry>
   <entry>
@@ -1364,9 +1380,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
         <tag>颜色</tag>
       </tags>
   </entry>
@@ -1381,9 +1397,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
         <tag>列表</tag>
       </tags>
   </entry>
@@ -1398,9 +1414,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
         <tag>Chromakeying</tag>
         <tag>抠图</tag>
       </tags>
@@ -1416,9 +1432,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
         <tag>Math</tag>
       </tags>
   </entry>
@@ -1434,9 +1450,9 @@
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
         <tag>视频</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
       </tags>
   </entry>
   <entry>
@@ -1450,9 +1466,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
         <tag>颜色</tag>
       </tags>
   </entry>
@@ -1467,9 +1483,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
         <tag>颜色</tag>
       </tags>
   </entry>
@@ -1484,9 +1500,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
         <tag>颜色</tag>
       </tags>
   </entry>
@@ -1502,9 +1518,9 @@
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
         <tag>视频</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
       </tags>
   </entry>
   <entry>
@@ -1518,9 +1534,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
         <tag>数学</tag>
       </tags>
   </entry>
@@ -1535,9 +1551,9 @@
         <tag>ArtxCode</tag>
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
       </tags>
   </entry>
   <entry>
@@ -1552,8 +1568,8 @@
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
         <tag>视频</tag>
-        <tag>Creative Coding</tag>
         <tag>教程</tag>
+        <tag>Creative Coding</tag>
       </tags>
   </entry>
   <entry>
@@ -1568,8 +1584,8 @@
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
         <tag>视频</tag>
-        <tag>Creative Coding</tag>
         <tag>教程</tag>
+        <tag>Creative Coding</tag>
       </tags>
   </entry>
   <entry>
@@ -1584,9 +1600,9 @@
         <tag>Max/MSP</tag>
         <tag>Jitter</tag>
         <tag>视频</tag>
-        <tag>Creative Coding</tag>
-        <tag>教程</tag>
         <tag>矩阵</tag>
+        <tag>教程</tag>
+        <tag>Creative Coding</tag>
       </tags>
   </entry>
   <entry>
@@ -2767,8 +2783,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2820,8 +2836,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2847,8 +2863,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2900,8 +2916,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -2951,8 +2967,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -3030,8 +3046,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Maker</tag>
-        <tag>Fab</tag>
         <tag>Arduino</tag>
+        <tag>Fab</tag>
       </tags>
   </entry>
   <entry>
@@ -3360,8 +3376,8 @@
         <tag>Note</tag>
         <tag>建筑</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>哥特式</tag>
         <tag>巴洛克</tag>
         <tag>布拉格</tag>
@@ -3379,8 +3395,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>东正教</tag>
         <tag>基督教</tag>
         <tag>天主教</tag>
@@ -3398,8 +3414,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>捷克</tag>
       </tags>
   </entry>
@@ -3413,8 +3429,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>奥地利</tag>
         <tag>哈布斯堡王朝</tag>
         <tag>维也纳</tag>
@@ -3430,8 +3446,8 @@
       <tags>
         <tag>Note</tag>
         <tag>Travel</tag>
-        <tag>中欧</tag>
         <tag>历史</tag>
+        <tag>中欧</tag>
         <tag>捷克</tag>
       </tags>
   </entry>
@@ -3444,9 +3460,9 @@
       </categories>
       <tags>
         <tag>Travel</tag>
+        <tag>历史</tag>
         <tag>中欧</tag>
         <tag>匈牙利</tag>
-        <tag>历史</tag>
         <tag>奥地利</tag>
         <tag>捷克</tag>
         <tag>斯洛伐克</tag>
@@ -3461,8 +3477,8 @@
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>历史</tag>
         <tag>人类简史</tag>
+        <tag>历史</tag>
       </tags>
   </entry>
   <entry>

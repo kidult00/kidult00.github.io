@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uegeek.com/"/>
-  <updated>2021-01-14T13:23:35.380Z</updated>
+  <updated>2021-01-16T12:09:56.828Z</updated>
   <id>http://uegeek.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数字产品设计与心理学16 - 视觉隐喻</title>
+    <link href="http://uegeek.com/210116-design-psy-16.html"/>
+    <id>http://uegeek.com/210116-design-psy-16.html</id>
+    <published>2021-01-16T12:07:56.000Z</published>
+    <updated>2021-01-16T12:09:56.828Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><p><img src="http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png" alt="数字产品设计与心理学"></p><a id="more"></a><p>隐喻是借助过去已经熟悉的事物，来认识和理解新事物的方法。</p><blockquote><p>人类的概念系统是通过隐喻性来构成和界定的。隐喻允许我们依据一个经验领域去理解另一个经验领域。（莱考夫 &amp; 约翰逊，2015）</p></blockquote><p>我们的概念系统建立于真实世界中的各种经验。在计算机问世的早期，人并没有与计算机对话的经验。为了跨越机器与人的沟通鸿沟，数字产品一直都有使用隐喻的传统。</p><p>桌面就是最经典的人机交互界面隐喻。早在 1970 年，施乐帕洛阿尔托研究中心的 Alan Kay 就在计算机系统中引入桌面隐喻。苹果公司在 1984 年推出图形用户界面 Macintosh 系统，这是计算机系统首次提供了一整套桌面办公的隐喻，包含现实生活中的物品图标（例如垃圾箱）。这让那些熟悉日常办公室环境的用户，能够直观地理解如何操作电脑。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.4.5Apple_Macintosh_Desktop.png" alt="2.3.5Apple_Macintosh_Desktop" style="zoom:80%;"></p><center><small>图片来源：<a href="https://en.wikipedia.org/wiki/Macintosh" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Macintosh</a></small></center><p>50 年过去了，桌面隐喻已经进化到 VR 的版本：</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.4.5OculusUI.jpg" alt="2.4.5OculusUI" style="zoom:60%;"></p><center><small>图片来源：<a href="https://developer.oculus.com/" target="_blank" rel="noopener">https://developer.oculus.com/</a></small></center><p>借助现成的比喻，可以快速传达复杂的含义。善用隐喻是 UI 界面设计的重要能力。具体来说，隐喻可以帮助设计师：</p><ul><li>引起注意</li><li>解释抽象或复杂的概念</li><li>触发情绪 </li><li>营造熟悉和信任感 </li><li>激励用户采取行动</li></ul><h2 id="概念隐喻"><a href="#概念隐喻" class="headerlink" title="概念隐喻"></a>概念隐喻</h2><p>大规模的概念迁移和隐喻产生，往往出现在技术发展的早期，因为有太多模式的概念等待人们去了解和学习。以下是人机交互领域早期的隐喻集合的整理：</p><center>用户界面隐喻例子（Dennis，1997）</center><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.4.5用户界面隐喻例子.jpg" alt="2.4.5用户界面隐喻例子" style="zoom:40%;"></p><p>把生活中人们所熟知的概念，迁移到难以简单描述的数字产品和服务，是很多革命性产品早期成功的关键。</p><p>Facebook 最早使用学生档案的类比，开始在常青藤学校内推广。这对学生们来说既熟悉又自然。很快，这个概念就在学生群体中扩散开来。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.4.5Facebook used an analogy with a physical profile page for user digital profile.png" style="zoom:30%;"></p><center><small>图片来源：<a href="https://uxplanet.org/metaphors-and-analogies-in-product-design-b9af77c18dba" target="_blank" rel="noopener">https://uxplanet.org/metaphors-and-analogies-in-product-design-b9af77c18dba</a></small></center><p>图片分享网站 Pinterest 的快速崛起，则得益于「把图片钉在画板上」这个大家熟悉的、来源于日常生活的隐喻。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.4.5Pinterest-blogger-tips.jpg" alt="Pinterest-blogger-tips" style="zoom: 60%;"></p><center><small>图片来源：<a href="http://www.myborrowedheaven.com/2016/01/pinterest-tips-for-bloggers.html" target="_blank" rel="noopener">http://www.myborrowedheaven.com/2016/01/pinterest-tips-for-bloggers.html</a></small></center><p><strong>隐喻之所以有用而且高效，是因为它在经验之间构建起了桥梁——过去的、其他领域的经验，与未来的、另外一个领域的经验部分相通。</strong>而经验来自于人与真实世界的互动。如果想要构建出好的隐喻，就需要先深入观察人在特定情境中的需要、想法、行为、反应，知道他们有哪些熟知的概念和经验。在理解经验的基础之上，再去抽象出旧经验可以用于新经验的部分，并且以生动形象的方式表达出来。</p><blockquote><p>作出好类比的秘诀就是作出更抽象的类比，就是那些在编码方式或是概念框架之间的类比。</p><p>（侯世达，2018）</p></blockquote><h2 id="形式隐喻：拟物化"><a href="#形式隐喻：拟物化" class="headerlink" title="形式隐喻：拟物化"></a>形式隐喻：拟物化</h2><p>数字产品中的所有内容都是数字——没有体量，无法触摸，怎么能让人一看就懂、知道该怎么操作呢？互联网早期的界面设计，大量借用了物理世界中的物品来表示虚拟世界中的对象：文件夹、垃圾桶、书架、指南针……在移动互联网爆发早期，更是兴起了拟物化设计风潮，目的是帮助人们在陌生的交互平台上，快速建立起熟悉的认知。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.4.5ibooks111.jpg" alt="2.4.5ibooks111" style="zoom:60%;"></p><center><small>iBooks 早期的拟物化界面。图片来源：<a href="https://www.wired.com/2010/07/ibooks-updated-with-image-zoom-audio-and-video-support/" target="_blank" rel="noopener">https://www.wired.com/2010/07/ibooks-updated-with-image-zoom-audio-and-video-support/</a></small></center><p><strong>设计是否需要拟物，并不由审美偏好决定，而是由用户对数字产品的经验和期望决定。</strong>如果用户在物理世界中有丰富的经验，但是没有使用过对应的复杂的数字产品，拟物化就是降低人们理解成本的必然选择。从物理世界迁移过来的复杂数字产品，总是倚重于还原物理对象的外表，来帮助人们理解和使用。比如，很早就开始了数字化浪潮的音乐产业。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.4.5musichardware.jpg" alt="2.3.5musichardware" style="zoom: 50%;"></p><center><small>处理声音的硬件和软件。图片来源：<a href="https://unsplash.com/@mirnyy" target="_blank" rel="noopener">https://unsplash.com/@mirnyy</a></small></center><p>著名的数字音乐工作站软件 Logic Pro 中，有大量模拟物理硬件的界面设计，例如各种合成器、音效器、乐器等，目的是让已经熟悉了物理硬件的音乐创作者们，能与硬件一一对应起来，快速学会使用软件的功能。</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.4.5Logic-Pros-Logic-Pro-X-Plug-in-L.jpg" alt="2.4.5Logic-Pros-Logic-Pro-X-Plug-in-L" style="zoom:30%;"></p><center><small>图片来源：<a href="https://9to5mac.com/2019/08/11/logic-plug-in-link/" target="_blank" rel="noopener">https://9to5mac.com/2019/08/11/logic-plug-in-link/</a></small></center><h2 id="符号图标"><a href="#符号图标" class="headerlink" title="符号图标"></a>符号图标</h2><p>符号是包含了一定意义共识的图形化表达。数字产品使用大量符号来表示抽象的概念，例如各式各样的图标。图标往往是对真实世界中物体或概念的抽象表达，例如用四五根线条就可以组合成一个垃圾桶的形状：</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.4.5trashicon.png" alt="2.4.5trashicon" style="zoom:20%;"></p><p>真实的垃圾桶很复杂，为什么人们依然能够轻松识别垃圾桶图标呢？在前面的章节中，我们知道视觉搜索时，眼睛会识别物体的边缘，再组合成熟悉的模式，也会以大小、颜色、方向等特征来加速搜索过程。图标的设计就是利用了人的注意和视觉加工机制，来强化人们对特定图形的识别。如果说文字和概念隐喻是整体经验的迁移，那么图标的隐喻，则更多利用了人类经验中相对固定的图形记忆。</p><p>用图标代表物体、概念或功能，依赖于我们基于过往经验学习图标意义的能力。比如说，一个从来没有了解和使用过 Snapchat 的人，看见 Snapchat 的 Logo 可能会完全摸不着头脑：</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.4.5snapchat-y.png" alt="2.4.5snapchat" style="zoom:30%;"></p><p>具体来说，影响图标识别的因素包括（Isherwood et al.，2007）：</p><ul><li>具体性：描绘现实生活中物体或人的具体程度</li><li>视觉复杂性：图标细节程度和复杂程度</li><li>语义距离：图标本身和它所代表意义之间的关系是否接近</li><li>熟悉度：用户对图标本身或对图标指代的对象有多熟悉</li></ul><p>随着人们使用数字产品的经验越来越丰富，图标越来越简单、抽象。现在主流的 UI 设计，基本以简洁的线型或基本几何图形组合而成的图标为主。</p><p>虽然图标可以用精简的形式表达较复杂的含义，但还是要留意用户对图标所传递概念是否熟，尽量缩小图标和意义之间的语义距离。如果语义距离太大，或者同时出现的多个不易区分的图标，就应该考虑增加辅助的识别方式，例如图标文字、帮助提示等。下面是 Snapseed 和 iOS 分享照片的两个功能弹窗，请比较一下它们如何处理多个图标同时展示时的识别问题，以及为什么要这么处理，可以如何优化？</p><p><img src="/Users/kidult00/OneDrive/1-Writing/gitbook.me/DesignPsy/Ch2/misc/2.4.5manyicons.jpg" alt="2.4.5manyicons" style="zoom: 40%;"></p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li>乔治·莱考夫, &amp; 马克· 约翰逊. (2015). <em>我们赖以生存的隐喻</em> (何文忠, Trans.). 浙江大学出版社.</li><li>Dennis C. Neale, &amp; John M. Carroll. (1997). The Role of Metaphors in User Interface Design. In Marting G. Helander, Thomas K. Landauer, &amp; Prasad V. Prabhu (Eds.), <em>Handbook of Human-Computer Interaction (Second Edition)</em> (pp. 441–462). North-Holland.</li><li>侯世达, &amp; 桑德尔. (2018). <em>表象与本质</em> (刘健, 胡海, &amp; 陈祺, Trans.). 浙江人民出版社.</li><li>Isherwood, S. J., McDougall, S. J. P., &amp; Curry, M. B. (2007). Icon Identification in Context: The Changing Role of Icon Characteristics With User Experience. <em>Human Factors</em>, <em>49</em>(3), 465–476.</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6-cover.png&quot; alt=&quot;数字产品设计与心理学&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="数字产品设计与心理学" scheme="http://uegeek.com/tags/%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+      <category term="界面" scheme="http://uegeek.com/tags/%E7%95%8C%E9%9D%A2/"/>
+    
+      <category term="隐喻" scheme="http://uegeek.com/tags/%E9%9A%90%E5%96%BB/"/>
+    
+      <category term="视觉设计" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>数字产品设计与心理学15 - 提供视觉结构</title>
@@ -151,9 +185,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
-    
       <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
     
   </entry>
   
@@ -185,9 +219,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
-    
       <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
     
   </entry>
   
@@ -217,9 +251,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
-    
       <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
     
       <category term="格式塔" scheme="http://uegeek.com/tags/%E6%A0%BC%E5%BC%8F%E5%A1%94/"/>
     
@@ -253,9 +287,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
-    
       <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
     
   </entry>
   
@@ -285,9 +319,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
-    
       <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
     
   </entry>
   
@@ -317,9 +351,9 @@
     
       <category term="心理学" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
-    
       <category term="视觉" scheme="http://uegeek.com/tags/%E8%A7%86%E8%A7%89/"/>
+    
+      <category term="认知" scheme="http://uegeek.com/tags/%E8%AE%A4%E7%9F%A5/"/>
     
   </entry>
   
@@ -629,40 +663,6 @@
       <category term="疫情" scheme="http://uegeek.com/tags/%E7%96%AB%E6%83%85/"/>
     
       <category term="心理" scheme="http://uegeek.com/tags/%E5%BF%83%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计日课 Vol.012 - 人因工程相关术语解析</title>
-    <link href="http://uegeek.com/200208-design-diary-012.html"/>
-    <id>http://uegeek.com/200208-design-diary-012.html</id>
-    <published>2020-02-08T11:43:48.000Z</published>
-    <updated>2020-02-08T11:45:36.853Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.viz.mobi/%E8%AE%BE%E8%AE%A1%E6%97%A5%E8%AF%BEtitle.jpg" alt=""></p><a id="more"></a> <p>今天我们来辨析一组容易混淆的术语。</p><table><thead><tr><th>英文</th><th>中文译名</th><th>使用范围</th></tr></thead><tbody><tr><td>Ergonomics</td><td>人类工效学、工效学，人机工学</td><td>欧洲、世界其他国家</td></tr><tr><td>Human Factors</td><td>人因学、人体学</td><td>美国</td></tr><tr><td>Human Factor Engineering</td><td>人因工程学</td><td>美国</td></tr><tr><td>Human Engineering</td><td>人类工程学，人体工程学</td><td>某些学者</td></tr><tr><td>Engineering Psychology</td><td>工程心理学</td><td>主要是心理学家</td></tr></tbody></table><p>国际人因学会（International Ergonomics Association，简称 IEA）将人因学（Ergonomics）定义为：</p><blockquote><p>人机工程学是研究人在某种工作环境中的<a href="https://www.wikiwand.com/zh-hans/解剖学" target="_blank" rel="noopener">解剖学</a>、<a href="https://www.wikiwand.com/zh-hans/生理学" target="_blank" rel="noopener">生理学</a>和<a href="https://www.wikiwand.com/zh-hans/心理学" target="_blank" rel="noopener">心理学</a>等方面的各种因素；研究人和机器及环境的相互作用；研究在工作中、家庭生活中和休假中怎样统一考虑工作效率、人的健康、安全和舒适等问题的学科。</p><p>— International Ergonomics Association</p></blockquote><p>简单的说，<strong>人因工程学是一门研究人-机-环境三者之间相互关系，</strong>深入理解人与系统中的各个组成元素之间如何产生相互关系的学科。</p><p>IEA 强调，人因工程关注的是规律（discipline）而不是技术（technique）。而 human factors 则直接强调人作为系统中心因素的重要性。人因工程的名称在世界各地虽然表述各异，研究的侧重点也不完全一样，但中心内容大体相同：</p><ul><li>研究内容：人-机器-环境系统的相互关系。</li><li>研究方法：对人的能力和行为（生理的、心理的）进行深入研究，把成果用于设计和改善机器和环境。</li><li>研究目的：使机器和环境适应人的需要，这些需要包括：提高工作和生产效率；保障人的健康、安全和舒适。</li></ul><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Kieler_Puppe.jpg/460px-Kieler_Puppe.jpg" alt=""></p><p>Human factors 在欧洲又称为 ergonomics，20 世纪 50 年代传入我国。而在同样使用汉字的日本，则称为「人间工学」。1979 年在北京召开了一次研讨会，确定将 human factors/ergonomics 翻译为「人类工效学」，主要考虑它是一门研究人的学科，又注重人机系统的效率。1989 年，中国人类工效学会成立。</p><p>曾任人类工效学会理事长的张侃认为「人类工效学」的翻译有几方面不妥之处：</p><ul><li>human factors 不只关注工效，而有更多更深的人文精神在里面</li><li>「人类工效学」容易让非专业人员从表面上看得懂，实际上并不能懂</li><li>它不是一个很凝练的中文术语，在和一些专业术语搭配使用时不方便</li></ul><p>他建议翻译为「人因学」。并在 2007 年翻译「An Introduction to Human Factors Engineering」书名为「人因工程学导论」。</p><p>为了人因工程的理念在全世界范围内更广泛的推广，世界各国逐渐开始使用「Human Factors and Ergonomics」来代替原来繁复多样的名称。为了便于与国际接轨，我们广泛接受「人因工程学」作为此学科的中文定义名称，简称「人因学」。</p><p><img src="http://inews.gtimg.com/newsapp_bt/0/2861401844/1000/0" alt=""></p><p>人因工程的研究领域包括：生理人类、生物力学、人机交互、工程心理及管理工效等。</p><p>人因学和心理学是一对姐妹学科，特别是在当代人机系统发展到监控系统的阶段，工程心理学更是成为人因学的核心部分。不同范围内人因学因素（如体力局限、显示加工、记忆失败等）所显示的人的操作绩效不同，也需要分析不同领域生产设备中的重要元素（例如交通系统中的人因学因素分析）。</p><p>至于人体工学、人机工程学、人类工程学、人机工学，也都是 human factor 和 ergonomics 的不同翻译。</p><p>重要学会：</p><ul><li><a href="https://www.iea.cc/" target="_blank" rel="noopener">International Ergonomics Association (Switzerland)</a></li><li><a href="https://www.ergonomics.org.uk/" target="_blank" rel="noopener">Chartered Institute of Ergonomics &amp; Human Factors (UK)</a></li><li><a href="https://www.hfes.org/" target="_blank" rel="noopener">Human Factors and Ergonomics Society (US)</a></li><li><a href="https://www.cdc.gov/niosh/about/default.html" target="_blank" rel="noopener">The National Institute for Occupational Safety and Health (NIOSH) (US)</a></li><li><a href="http://www.bcpe.org/" target="_blank" rel="noopener">Board of Certification in Professional Ergonomics (BPCE) (US)</a></li><li><a href="http://www.cesbj.org/" target="_blank" rel="noopener">中国人类工效学学会</a></li><li><a href="http://www.ergonomics.org.hk/" target="_blank" rel="noopener">The Hong Kong Ergonomics Society</a></li><li><a href="http://www.ie.tsinghua.edu.cn/List/index/cid/54.html" target="_blank" rel="noopener">人因与工效学研究所-清华大学工业工程系</a></li></ul><p><a href="https://www.scimagojr.com/" target="_blank" rel="noopener">SJR</a> 排名前几位的期刊：</p><ul><li><a href="http://hfs.sagepub.com/" target="_blank" rel="noopener">Human Factors</a></li><li><a href="http://www.informaworld.com/smpp/title~content=t713701117~db=all" target="_blank" rel="noopener">Ergonomics</a></li><li><a href="http://www.elsevier.com/wps/find/journaldescription.cws_home/30389/description#description" target="_blank" rel="noopener">Applied Ergonomics</a></li><li>IEEE Transactions on Human-Machine Systems</li></ul><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.wikiwand.com/en/Human_factors_and_ergonomics" target="_blank" rel="noopener">Human factors and ergonomics - Wikiwand</a></li><li>人因工程学导论</li><li>工程心理学与人的作业</li><li><a href="https://www.humanics-es.com/recc-ergonomics.htm#humanfactorsergonomics" target="_blank" rel="noopener">Ergonomics workplace &amp; product design research, anthropometrics, training, ergonomic standards &amp; guidelines</a></li><li><a href="https://www.scimagojr.com/" target="_blank" rel="noopener">Scimago Journal &amp; Country Rank</a></li><li><a href="http://kuaibao.qq.com/s/20180209A0USQP00?refer=cp_1026" target="_blank" rel="noopener">人因工程碰到人工智能，将会迸发出什么样的火花？</a></li></ul><h2 id="设计日课系列"><a href="#设计日课系列" class="headerlink" title="设计日课系列"></a>设计日课系列</h2><ul><li><p><a href="https://www.uegeek.com/200101-design-diary-001.html" target="_blank" rel="noopener">设计日课 Vol.001 - 回到历史寻找设计</a></p></li><li><p><a href="https://www.uegeek.com/200102-design-diary-002.html" target="_blank" rel="noopener">设计日课 Vol.002 - 设计发展的驱动力</a></p></li><li><p><a href="https://www.uegeek.com/200103-design-diary-003.html" target="_blank" rel="noopener">设计日课 Vol.003 - 这是好设计吗？</a></p></li><li><p><a href="https://www.uegeek.com/200103-design-diary-004.html" target="_blank" rel="noopener">设计日课 Vol.004 - 好设计的关系框架和时空框架</a></p></li><li><p><a href="https://www.uegeek.com/200103-design-diary-005.html" target="_blank" rel="noopener">设计日课 Vol.005 - 老板要求每天花式出图100张，怎么办？</a></p></li><li><p><a href="https://www.uegeek.com/200107-design-diary-006.html" target="_blank" rel="noopener">设计日课 Vol.006 - 设计的经济基础和文化贡献</a></p></li><li><p><a href="https://www.uegeek.com/200110-design-diary-007.html" target="_blank" rel="noopener">设计日课 Vol.007 - 这个装修好在哪？</a></p></li><li><p><a href="https://www.uegeek.com/200111-design-diary-008.html" target="_blank" rel="noopener">设计日课 Vol.008 - 人体的骨骼和肌肉</a></p></li><li><p><a href="https://www.uegeek.com/200112-design-diary-009.html" target="_blank" rel="noopener">设计日课 Vol.009 - 一些重要的人体测定值</a></p></li><li><p><a href="https://www.uegeek.com/200114-design-diary-010.html" target="_blank" rel="noopener">设计日课 Vol.010 - 人体站立和坐姿尺寸</a></p></li><li><p><a href="https://www.uegeek.com/200117-design-diary-011.html" target="_blank" rel="noopener">设计日课 Vol.011 - 人体尺寸与设备、物件的高度</a></p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.viz.mobi/%E8%AE%BE%E8%AE%A1%E6%97%A5%E8%AF%BEtitle.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="设计" scheme="http://uegeek.com/categories/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Design" scheme="http://uegeek.com/tags/Design/"/>
-    
-      <category term="设计" scheme="http://uegeek.com/tags/%E8%AE%BE%E8%AE%A1/"/>
-    
-      <category term="人体" scheme="http://uegeek.com/tags/%E4%BA%BA%E4%BD%93/"/>
-    
-      <category term="人体工程学" scheme="http://uegeek.com/tags/%E4%BA%BA%E4%BD%93%E5%B7%A5%E7%A8%8B%E5%AD%A6/"/>
-    
-      <category term="建筑" scheme="http://uegeek.com/tags/%E5%BB%BA%E7%AD%91/"/>
-    
-      <category term="尺寸" scheme="http://uegeek.com/tags/%E5%B0%BA%E5%AF%B8/"/>
-    
-      <category term="Dimensions" scheme="http://uegeek.com/tags/Dimensions/"/>
     
   </entry>
   
